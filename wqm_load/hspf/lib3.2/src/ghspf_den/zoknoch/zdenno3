@@ -1,0 +1,75 @@
+crhnu.inc:     $              (DENNO3,NUCF4(2,1)),(BODNO3,NUCF4(3,1))
+crhnu.inc:     $              DSPO4(4),NITNO3,DENNO3,BODNO3,PHYNO3,ZOONO3,
+hrchnut_cheater.f:          DENNO3= -NO3DE*VOLSP
+hrchnut_cheater.f:        DENNO3= 0.0
+hrchnut_cheater.f:     O                    DENNO3)
+hrchnut_cheater.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut_cheater.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut_cheater.f:        DENNO3= 0.0
+hrchnut_cheater.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut_cheater.f:          NO3   = NO3 - DENNO3
+hrchnut_cheater.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut_cheater.f:        DENNO3= 0.0
+hrchnut.f:          DENNO3= -NO3DE*VOLSP
+hrchnut.f:        DENNO3= 0.0
+hrchnut.f:     O                    DENNO3)
+hrchnut.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut.f:        DENNO3= 0.0
+hrchnut.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut.f:          NO3   = NO3 - DENNO3
+hrchnut.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut.f:        DENNO3= 0.0
+hrchnut_ok22.f:!         DENNO3= -NO3DE*VOLSP
+hrchnut_ok22.f:          DENNO3 = - dddnit
+hrchnut_ok22.f:        DENNO3= 0.0
+hrchnut_ok22.f:!    O                    DENNO3)
+hrchnut_ok22.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut_ok22.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut_ok22.f:        DENNO3= 0.0
+hrchnut_ok22.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut_ok22.f:          NO3   = NO3 - DENNO3
+hrchnut_ok22.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut_ok22.f:!       DENNO3= 0.0
+hrchnut_oked2.f:!         DENNO3= -NO3DE*VOLSP
+hrchnut_oked2.f:          DENNO3 = - dddnit
+hrchnut_oked2.f:        DENNO3= 0.0
+hrchnut_oked2.f:!    O                    DENNO3)
+hrchnut_oked2.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut_oked2.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut_oked2.f:        DENNO3= 0.0
+hrchnut_oked2.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut_oked2.f:          NO3   = NO3 - DENNO3
+hrchnut_oked2.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut_oked2.f:!       DENNO3= 0.0
+hrchnut_okedtng.f:!         DENNO3= -NO3DE*VOLSP
+hrchnut_okedtng.f:          DENNO3 = - dddnit
+hrchnut_okedtng.f:        DENNO3= 0.0
+hrchnut_okedtng.f:!    O                    DENNO3)
+hrchnut_okedtng.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut_okedtng.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut_okedtng.f:        DENNO3= 0.0
+hrchnut_okedtng.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut_okedtng.f:          NO3   = NO3 - DENNO3
+hrchnut_okedtng.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut_okedtng.f:!       DENNO3= 0.0
+hrchnut_org.f:          DENNO3= -NO3DE*VOLSP
+hrchnut_org.f:        DENNO3= 0.0
+hrchnut_org.f:     O                    DENNO3)
+hrchnut_org.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut_org.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut_org.f:        DENNO3= 0.0
+hrchnut_org.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut_org.f:          NO3   = NO3 - DENNO3
+hrchnut_org.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut_org.f:        DENNO3= 0.0
+hrchnut_original.f:          DENNO3= -NO3DE*VOLSP
+hrchnut_original.f:        DENNO3= 0.0
+hrchnut_original.f:     O                    DENNO3)
+hrchnut_original.f:      REAL       KNO320,TCDEN,TW,DOX,DENOXT,NO3,DENNO3
+hrchnut_original.f:C     DENNO3 - flux of nitrate denitrified to nitrogen gas expressed
+hrchnut_original.f:        DENNO3= 0.0
+hrchnut_original.f:          DENNO3= KNO320*(TCDEN**(TW-20.))*NO3
+hrchnut_original.f:          NO3   = NO3 - DENNO3
+hrchnut_original.f:            DENNO3= DENNO3 + NO3 - .001
+hrchnut_original.f:        DENNO3= 0.0

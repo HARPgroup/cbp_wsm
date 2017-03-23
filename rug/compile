@@ -1,0 +1,31 @@
+#!/bin/csh
+set FC = $argv[1]
+set usrdir = ../lib
+set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
+
+$FC -fbounds-check -c rextsources.f
+$FC -fbounds-check -c rexttargets.f
+$FC -fbounds-check -c rfiles.f
+$FC -fbounds-check -c rglobal.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c ropseq.f
+$FC -fbounds-check -c rspecact.f
+$FC -fbounds-check -c rtables.f
+$FC -fbounds-check -c ftables.f
+$FC -fbounds-check -c readvarftab.f
+$FC -fbounds-check -c varftab.f
+$FC -fbounds-check -c rnetwork.f
+$FC -fbounds-check -c rpgen.f
+$FC -fbounds-check -c special_case_varftab.f
+$FC -fbounds-check -c writeftables.f
+$FC -fbounds-check -c getdischarge.f
+$FC -fbounds-check -c getwdm.f
+
+$FC -fbounds-check -c main_scenario.f
+$FC -fbounds-check -c rtables_scenario.f
+
+$FC -o ../../bin/rug.exe rextsources.o rexttargets.o rfiles.o rglobal.o main.o ropseq.o rspecact.o rtables.o ftables.o readvarftab.o varftab.o rnetwork.o rpgen.o special_case_varftab.o writeftables.o getdischarge.o getwdm.o $usrlib
+
+$FC -o ../../bin/scenario_rug.exe rextsources.o rexttargets.o rfiles.o rglobal.o main_scenario.o ropseq.o rspecact.o rtables_scenario.o ftables.o readvarftab.o varftab.o rnetwork.o rpgen.o special_case_varftab.o writeftables.o getdischarge.o getwdm.o $usrlib
+
+rm *.o

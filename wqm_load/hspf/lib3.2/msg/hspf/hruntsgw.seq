@@ -1,0 +1,30 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+END COMMENT
+CLU          234    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  HRUNTSGW
+  END LABEL
+  DATA   CLU   234
+#GROUP    1  TYPE TEXT
+$TEXT
+   20    1    1    5
+ FILE: &I
+
+ Data from the WDM file have been set to the 'Missing Data' value,
+ probably because the data 'quality' is less than the specified
+ threshold.  Relevant data are listed below.  (Subr. GETWDM)
+
+                 INPTIM               NVALS      QLFG    GAPVAL    RETCOD
+      &I   &I   &I   &I   &I   &I     &I        &I        &I        &I
+  END DATA
+END CLU
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                

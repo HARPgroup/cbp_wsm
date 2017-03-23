@@ -1,0 +1,12 @@
+#!/bin/csh
+
+f77 -c main.f
+f77 -c getRvars.f
+f77 -c getvars.f
+f77 -c loadinfo.f
+f77 -c readcontrol_wdm.f
+
+ar rv getatdep.a main.o getRvars.o getvars.o loadinfo.o readcontrol_wdm.o 
+
+rm *.o
+

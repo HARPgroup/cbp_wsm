@@ -1,0 +1,19 @@
+#!/bin/csh
+set FC = $argv[1]
+set usrdir = ../../../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+$FC -c main.f
+$FC -c findcolumn.f
+$FC -c getcolumns.f
+$FC -c getkserfac.f
+$FC -c gettargets.f
+$FC -c ioparvar.f
+$FC -c getparmrules.f
+
+$FC -o ../../../../../bin/calib_SEDMNT_1lu.exe main.o findcolumn.o getcolumns.o getkserfac.o gettargets.o ioparvar.o getparmrules.o $usrlib
+
+rm *.o
+
+
+

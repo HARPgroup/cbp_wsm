@@ -1,0 +1,14 @@
+cwork.inc:      COMMON/SCRTCH/ ASVEC,        WRKSPA
+cwork.inc:      INTEGER        ASVEC(MAXOSV),WRKSPA(50,4760)
+hiowrk.f:          REC(I)=WRKSPA(I,KEY)
+hiowrk.f:          WRKSPA(I,KEY)=REC(I)
+hspfec.f:     $          '                MAXIMUM WRKSPA RECORD = ',I5)
+Binary file hspfec.o matches
+htsinsi.f: 2000 FORMAT(/,' RECORDS WRITTEN TO WRKSPA ARE:')
+Binary file htsinsi.o matches
+specact.f:      CHARACTER*6  BLANK,CWRKSP
+specact.f:      CWRKSP= 'WORKSP'
+specact.f:        IF (VNAME .EQ. CWRKSP) THEN
+specsort.f:      CHARACTER*6  CHSTR,BLANK,CWRKSP
+specsort.f:      CWRKSP= 'WORKSP'
+specsort.f:        IF (VNAME .EQ. CWRKSP) THEN

@@ -1,0 +1,21 @@
+#!/bin/csh
+
+set libdir = /usr/opt/wrdapp/lib3.2/lib/
+set lib1 = $libdir/wdmlib.a
+set lib2 = $libdir/adwdmlib.a
+set lib3 = $libdir/utillib.a
+set usrdir = ../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../lib/dsn/dsn_utils.o
+
+f77  -c main.f
+f77  -c masslink.f
+f77  -c Rmasslink.f
+f77  -c getriver.f
+f77  -c readcontrol_twdm.f
+f77  -c readpair.f
+f77  -c readriver.f
+
+f77  -o ../../bin/p5_to_ch3d.exe main.o masslink.o Rmasslink.o readcontrol_twdm.o getriver.o readpair.o readriver.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

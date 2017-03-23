@@ -1,0 +1,27 @@
+#!/bin/csh
+set FC = $argv[1]
+set usrdir = ../../../lib
+set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
+
+$FC -fbounds-check -c anntf.f
+$FC -fbounds-check -c avetf.f
+$FC -fbounds-check -c datann.f
+$FC -fbounds-check -c datave.f
+$FC -fbounds-check -c datmon.f
+$FC -fbounds-check -c delinfo.f
+$FC -fbounds-check -c getloads.f
+$FC -fbounds-check -c getRvars.f
+$FC -fbounds-check -c getsegload.f
+$FC -fbounds-check -c getupstreamload.f
+$FC -fbounds-check -c lsegann.f
+$FC -fbounds-check -c lsegave.f
+$FC -fbounds-check -c lsegmon.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c montf.f
+$FC -fbounds-check -c readcontrol_dat.f
+$FC -fbounds-check -c writetfs.f
+
+$FC -o ../../../../bin/TFS.exe main.o anntf.o avetf.o datann.o datave.o datmon.o delinfo.o getloads.o getRvars.o getsegload.o getupstreamload.o lsegann.o lsegave.o lsegmon.o montf.o readcontrol_dat.o writetfs.o $usrlib
+
+rm *.o
+

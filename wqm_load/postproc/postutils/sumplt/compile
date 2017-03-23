@@ -1,0 +1,12 @@
+#!/bin/csh
+  set FC = $argv[1]
+  set usrdir = ../../../lib
+  set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+  $FC -fbounds-check -c main.f
+  $FC -fbounds-check -c readcontrol_vartypes.f
+
+  $FC -o ../../../../bin/sumplt.exe main.o readcontrol_vartypes.o $usrlib
+
+  rm *.o
+

@@ -1,0 +1,29 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+
+gfortran -mcmodel=medium -fbounds-check -c checkriver.f
+gfortran -mcmodel=medium -fbounds-check -c getl2r.f
+gfortran -mcmodel=medium -fbounds-check -c getrflags.f
+gfortran -mcmodel=medium -fbounds-check -c getevap.f
+gfortran -mcmodel=medium -fbounds-check -c getupstream.f
+gfortran -mcmodel=medium -fbounds-check -c getallupstream.f
+gfortran -mcmodel=medium -fbounds-check -c getconseg.f
+gfortran -mcmodel=medium -fbounds-check -c getlutype.f
+gfortran -mcmodel=medium -fbounds-check -c readseglist.f
+gfortran -mcmodel=medium -fbounds-check -c getrsegs.f
+gfortran -mcmodel=medium -fbounds-check -c getBMPcons.f
+gfortran -mcmodel=medium -fbounds-check -c getvarfac.f
+gfortran -mcmodel=medium -fbounds-check -c getl2rlist.f
+gfortran -mcmodel=medium -fbounds-check -c getpsonlyl2r.f
+gfortran -mcmodel=medium -fbounds-check -c getconfluence.f
+
+ar rv ../g_get_lib.a checkriver.o getl2r.o getrflags.o getevap.o getupstream.o getallupstream.o getconseg.o getlutype.o readseglist.o getrsegs.o getBMPcons.o getvarfac.o getl2rlist.o getpsonlyl2r.o
+
+#gfortran -o ../../../bin/getconfluence.exe getconfluence.o ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3 ../../lib/get_lib.a ../../lib/util_lib.a
+
+rm *.o

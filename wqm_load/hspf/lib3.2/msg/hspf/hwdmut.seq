@@ -1,0 +1,25 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+END COMMENT
+CLU          206    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  HWDMUT
+  END LABEL
+  DATA   CLU   206
+#GROUP    1  TYPE TEXT
+$TEXT
+    1    1    1    5
+ WDMS routines not successfully initialized; processing must terminate.
+
+ Return code = &I
+  END DATA
+END CLU
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                

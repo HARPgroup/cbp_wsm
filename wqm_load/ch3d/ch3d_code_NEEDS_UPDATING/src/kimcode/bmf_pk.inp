@@ -1,0 +1,91 @@
+C  New Chesapeake Bay (March, 2004: SK)
+C1 Information for river and open boundaries
+C: Index I increases from left to right and J from bottom to upward.
+C: RB_ID(I,J) = 1, 2, 3, 4 to have river inflow face at left, bottom, right, top of 
+C  cell (I,J) respectively.  RB faces are defined for cells just inside domain.
+C: OB_ID(I,J) = 1, 2, 3, 4 to have open boundary face at right, top, left, bottom of
+C  cell (I,J) respectively.  OB faces are defined for cells just outside domain.
+C: BARID(I,J) = 1 (2) to block left (bottom) face of cell (I,I)
+C2 other inputs
+C: GRIDNAME = alpha character (up to 50) to identify all ASCII output files
+C: alpha character (up to 50 characters) for the file names of DEPTH input,
+C          and MAP, FILE94, TXT_MAP, DIA & GEO output
+C: HYDC = BINARY (ASCII) for binary (ascii) output from SUBR WQMOUT
+C: HYDDT = HM time step in seconds
+C: NAVG = # of HM time steps to average over
+C: ITWQS = time iteration when time-varying processing is to begin (used by CH3D)
+
+CBAY                                                       !GRIDNAME(A50)
+../fort.50                                                 !DEPTH INPUT FILE NAME
+fort.95                                                    !MAP OUTPUT FILE NAME
+fort.94                                                    !FILE94 OUTPUT FILE NAME
+CBAY\txtmap.out                                            !TEXT_MAP OUTPUT FILE NAME
+CBAY\diag.out                                              !DIAGNOSTIC OUTPUT FILE NAME
+CBAY\wqmgeo.out                                            !GEO OUTPUT FILE NAME
+CBAY\wqminp.out                                            !FILE containing info for WQM INPs
+
+    HYDC DRAW_PT
+  BINARY     YES
+
+   HYDDT    NAVG   ITWQS
+    60.0      60    7200
+
+  NRBDRY
+      13
+    RBID       I       J      (one cell info per line) (I,J) = cell ID
+       1      46      24      02037500 JAMES R.                                        
+       1      52      21      02041650 APPOMATTOX   R.                                        
+       1      54      40      01673000 PAMUNKEY R.                               
+       1      60      44      01674500 MATTAPONI R.                              
+       1      35      72      01668000 RAPPAHANNOCK R.                                 
+       1       2     106      01646500 POTOMAC R.                                      
+       1      58     138      01594440 PATUXENT R.                                      
+       1     104     252      01578310 SUSQUEHANNA R.                                   
+       1     104     253      01578310 SUSQUEHANNA R.                                   
+       1     104     254      01578310 SUSQUEHANNA R.                                   
+       1      99     216      01589000 PATAPSCO R.                  
+       3     178     169      01491000 CHOPTANK R.                                      
+       4     134     282      C&D CANAL                                       
+  NOBDRY
+      37
+   OB_ID       I       J      (one cell info per line) (I,J) = cell ID
+       2      117      3
+       2      118      3
+       2      119      3
+       2      120      3
+       2      121      3
+       2      122      3
+       2      123      3
+       2      124      3
+       2      125      3
+       2      126      3
+       2      127      3
+       2      128      3
+       2      129      3
+       2      130      3
+       2      131      3
+       2      132      3
+       2      133      3
+       2      134      3
+       2      135      3
+       2      136      3
+       2      137      3
+       2      138      3
+       2      139      3
+       2      140      3
+       2      141      3
+       2      142      3
+       2      143      3
+       2      144      3
+       2      145      3
+       2      146      3
+       2      147      3
+       2      148      3
+       2      149      3
+       2      150      3
+       2      151      3
+       2      152      3
+       2      153      3
+    NBAR
+       0
+   BARID       I       J      (one cell info per line) (I,J) = cell ID

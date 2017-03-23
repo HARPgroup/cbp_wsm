@@ -1,0 +1,64 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+END COMMENT
+CLU          303    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  HPERWAT
+  END LABEL
+  DATA   CLU   303
+#GROUP    1  TYPE TEXT
+$TEXT
+   20    1    1    5
+&D
+
+ Pervious land segment: &I
+
+ Error in table look-up procedure used to compute inflow to the upper zone
+ (subroutine uzinf).  The non-analytic function linking UZRA to INTGRL is
+ stored in arrays with dimension 10.  Intermediate values are found by
+ interpolation.  In trying to interpolate, HSPF has attempted to use a value
+ beyond those tabulated.
+
+       UZR1      UZR2     UZRAA
+ &R        &R        &R
+#GROUP    2  TYPE TEXT
+$TEXT
+   20    1    1    5
+&D
+
+ Pervious land segment: &I
+
+ Error in table look-up procedure used to compute inflow to the upper zone
+ (subroutine uzinf).  The non-analytic function linking UZRA to INTGRL is
+ stored in arrays with dimension 10.  Intermediate values are found by
+ interpolation.  In trying to interpolate, HSPF has attempted to use a value
+ beyond those tabulated.
+
+      INTG1     INTG2     INTGB
+ &R        &R        &R
+#GROUP    3  TYPE TEXT
+$TEXT
+   10    1    1    5
+ Pervious land segment: &I
+
+ Error - Iteration in subroutine PROUTE did not converge in 100+ cycles.
+
+      SURSE       SURO     SURSNW      FSURO     DFSURO      DSURO
+ &R         &R         &R         &R         &R         &R
+  END DATA
+END CLU
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                

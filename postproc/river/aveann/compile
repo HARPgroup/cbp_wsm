@@ -1,0 +1,19 @@
+#!/bin/csh
+set FC = $argv[1]
+source ../../../../set_wdmlibdir
+set wdmlibdir = ../../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../../lib/dsn/dsn_utils.o
+
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c avann.f
+$FC -fbounds-check -c loadinfo.f
+$FC -fbounds-check -c gethours.f
+
+$FC -o ../../../../bin/Raveann.exe loadinfo.o main.o gethours.o avann.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
+
+rm *.o

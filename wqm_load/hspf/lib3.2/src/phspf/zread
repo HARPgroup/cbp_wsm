@@ -1,0 +1,172 @@
+hextutil.f:      READ (CHSTR,1000) KWDLIB,KWDDIM,KWDTYP
+hextutil.f:        READ(CHSTR,1000) (KWDLIB(J,I),J=1,LKWDS),KWDDIM(I),KWDTYP(I)
+hextutil.f:      READ (CHSTR,1040) (IVLLIB(J),J=1,NIVLS)
+hfiles.f:        READ (USRFL,1000,END=50) RECBUF
+hfiles.f:          READ (RECBUF,1010) FILSTR
+hfiles.f:            READ (RECBUF,1020,ERR=30) FTYPE(FIL),FUNIT(FIL),FNAME(FIL)
+hfiles.f:              WRITE (*,*) ' ERROR READING ENTRY IN FILES BLOCK'
+hiouci.f:        READ(UCIBUF(LPOS:RPOS),1000) (TXT1(I),I=1,LKWD)
+hiouci.f:            READ(UCIBUF(LPOS+I4:RPOS+I4),1000) (TXT1(I),I=1,LKWD)
+hiouci.f:        READ (USRFL,1000,END=100) TXT
+hprbut.f:        READ(TBUFF,1000) MAXCNT,MAXGRP,MAXACT,ILEN,RLEN,SDIG,DECP
+hprbut_print.f:        READ(TBUFF,1000) MAXCNT,MAXGRP,MAXACT,ILEN,RLEN,SDIG,DECP
+hrchaci.f:        READ (CNAMES(I),1000) (INAMES(I,J),J=1,3)
+hrchgqu.f:          READ (CHSTR,1000) (LIT(K,L),K=1,9)
+hrchgqu.f:          READ (CHSTR,1000) (LIT(K,L),K=10,18)
+hrchhtr.f:      READ (CHSTR,1000) (LAPSE(J),J=1,8)
+hrchhtr.f:      READ (CHSTR,1000) (LAPSE(J),J=9,16)
+hrchhtr.f:      READ (CHSTR,1000) (LAPSE(J),J=17,24)
+hrchhyd.f:            READ (CPRIOR,1000,ERR= 160) COGTP(IG)
+hrchhyd.f:              READ (CPRIOR,1010,ERR= 170) YY,MM,DD
+hrchhyd.f:        READ (UCIBF,1010,ERR=10)  NROWS, NCOLS
+hrchhyd.f:              READ (UCIBF,1020,ERR=40)  RVAL
+hrchoxr.f:        READOX= DOREA*VOLSP
+hrchoxr.f:        READOX= 0.0
+hrchplk.f:          READ(LIMC,1000) LIMPHY
+hrchplk.f:          READ(LIMC,1000) LIMBAL
+hrchplk.f:      READ(LIM,1000) LIMR
+hrchrq.f:      READ(FLUXID(1),1000) RQFLID(1)
+hrchrq.f:      READ(FLUXID(2),1000) RQFLID(2)
+hrchrq.f:      READOX= READOX + (DOX - DOXS)*VOLSP
+hringen.f:        READ (UCIBF,1030,ERR=10) SEDAT
+hringen.f:        READ (UCIBF,1040,ERR=40)  OUTLEV,SPOUT
+hringen.f:        READ (UCIBF,1050,ERR=60)  RESMFG,RUNFG,UNIT
+hringen.f:        READ(OPTSTR,1000) (OPNTAB(J,OPNO),J=1,2)
+hringen.f:          READ (UCIBF,1010,ERR=60)  HRMIN
+hringen.f:        READ(CHSTR,1010) KWDLIB
+hringen.f:              READ (UCIBF,1025,ERR=40)  NUMBR
+hringen.f:                READ (UCIBF,1025,ERR=60)  NUMBR
+hringen.f:            READ (UCIBF,1020,ERR=30) CATID,LCATNM
+hringen.f:        READ (CHSTR,1000) (DTPKWL(I),I=1,NKWDS)
+hringen.f:              READ (UCIBUF,1020,ERR=30) DSSDSN(NPATH), DSSFL(NPATH),
+hringeut.f:      READ (LTAG,1000,ERR=10) VAL
+hrinoput.f:            READ (UCIBF,1010,ERR=20)  OPFST, OPLST
+hrinseq.f:                  READ(UCIBF,1000,ERR=30) FMTCOD
+hrinseq.f:            READ(MEMN,1010) (TABL(K,NTS),K=1,2)
+hrints.f:      READ (INBUFF,1010) EXTKWL
+hrints.f:      READ (INBUFF,1010) AMDKWL
+hrints.f:      READ (INBUFF,1010) SYSKWL
+hrints.f:      READ (INBUFF,1010) GAPKWL
+hrints.f:        READ (INBUFF,1040) FMTKWL(N),(FMTINF(J,N),J=1,2)
+hrints.f:      READ (INBUFF,1010) TRNKWL
+hrints.f:        READ(INBUFF,1050) CASE,STKIND,(TRNTAB(J,STKIND,CASE),J=1,9)
+hrints.f:        READ(INBUFF,1000) TESTFG
+hrints.f:        READ (INBUFF,1000) SGPNAM(NUMCON),SMMNAM(NUMCON),
+hrints.f:                READ (UCIBF,1000) (PVAR(J),J=1,19)
+hrints.f:                READ (CBLNK,1020) PVAR(20)
+hrints.f:                READ (INBUFF,1010) (PVAR(J),J=1,19)
+hrints.f:                READ (CBLNK,1020) PVAR(20)
+hrints.f:                    READ (CTYPE(I),1010) (CTYPI(J),J= 1, 2)
+hrints.f:                    READ (CPATH(I),1010) (PVAR(J),J= 1, 16)
+hrints.f:                      READ(CBLNK,1020) PVAR(J)
+hrints.f:          READ (INBUFF,1000) GKYWDS(GMAX),GGRP(GMAX)
+hrints.f:            READ (INBUFF,1000) MKYWDS(MMAX)
+hrints.f:      READ (INBUFF,1000) MEMN,MDIM1,MAXSB1,MAXSB2,MKIND,SPTRN,MSECT,
+hrints.f:      READ (INBUFF,1005) ((LTVAL(K,L,2),K=1,2),L=1,2)
+hrints.f:                READ (MEMN,1010) (TABL(J,NTS),J=1,2)
+hrints.f:                READ(SVOLC,1000) (REC(J),J=1,2)
+hrints.f:                READ(SGRPN,1000) (REC(J),J=5,6)
+hrints.f:                READ(TVOLC,1000) (REC(J),J=27,28)
+hrints.f:                READ(TGRPN,1000) (REC(J),J=31,32)
+hrintss.f:      READ (TSSFL,REC=1)  REC
+hrintss.f:          READ (MEMNAM(MNUM),1000) (TABL(K,NTS),K=1,2)
+hrintss.f:          READ (MEMNAM(MNUM),1000) (TABL(K,NTS),K=1,2)
+hrinwdm.f:        READ(MEMN,1000) (TABL(I,NTS),I=1,2)
+hruntsgq.f:        READ(FILE,PVARC,ERR=30,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:          READ (FILE,1000) EBUFF
+hruntsgq.f:          READ(FILE,PVARC,ERR=80,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:            READ (FILE,1000) EBUFF
+hruntsgq.f:        READ(FILE,PVARC,ERR=30,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:          READ (FILE,1000) EBUFF
+hruntsgq.f:          READ(FILE,PVARC,ERR=80,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:            READ (FILE,1000) EBUFF
+hruntsgq.f:        READ(FILE,PVARC,ERR=30,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:          READ (FILE,1000) EBUFF
+hruntsgq.f:          READ(FILE,PVARC,ERR=80,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:            READ (FILE,1000) EBUFF
+hruntsgq.f:        READ(FILE,PVARC,ERR=30,END=500) CRDDAT,CRDNUM,CRDVAL
+hruntsgq.f:          READ (FILE,1000) EBUFF
+hruntsgq.f:          READ (FILE,PVARC,ERR=80,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:            READ (FILE,1000) EBUFF
+hruntsgq.f:        READ(FILE,PVARC,ERR=30,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:          READ (FILE,1000) EBUFF
+hruntsgq.f:          READ(FILE,PVARC,ERR=80,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:            READ (FILE,1000) EBUFF
+hruntsgq.f:        READ(FILE,PVARC,ERR=30,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:          READ (FILE,1000) EBUFF
+hruntsgq.f:          READ(FILE,PVARC,ERR=80,END=500) (CRDDAT(J),J=1,DATLEN),
+hruntsgq.f:            READ (FILE,1000) EBUFF
+hruntsgt.f:     $        3X, 'YEAR READ FROM TSS=',I6)
+hspfec.f:          READ (UCIBF,1010,ERR=10)  SVOL, SVOLNO, SMEMN, CSMSUB(1),
+hspfec.f:          READ (UCIBF,1020,ERR=20)  SVOL, SVOLNO, SGRPN, SMEMN,
+hspfec.f:          READ (UCIBF,1030,ERR=30)  SVOL, SVOLNO, SGRPN, SMEMN,
+hspfec.f:          READ (UCIBF,1040,ERR=40) SVOL,SVOLNO,CMFACT,TVOL,TVOLNO,
+hspfec.f:            READ (UCIBF,1000,ERR=30) SGPNAM(CNNXN),SMMNAM(CNNXN),
+hspfec.f:        READ (CMFACT,1000,ERR= 10) MFACTR
+hspf.f:      READ (CHSTR,1000) KWDLIB,KWDDIM,KWDTYP
+hspf.f:            READ (CHSTR,1020) TABDIM(NTABT),TABNAM(NTABT)
+hspfitab.f:          READ (OBUFF,1020) (TABGRP(I,NUMREC),I= 1, 4)
+hspfitab.f:                READ (C4BUF,1010) IVAL(IPOS)
+hspfitab.f:          READ (OBUFF,1030) (TABGRP(I,NUMREC),I= 1, 4)
+hspfitab.f:          READ (INBUFF,1020) CNVTAB(CNVCNT),CNVFLD(CNVCNT),
+hspfitab.f:                READ (C4BUF,1010) RVAL(IPOS)
+hspfitab.f:        READ (UCIBF,1020,ERR=5) MTHVAL
+htssut.f:      READ (TSSFL,REC=REC) BUFF
+hutop.f:            READ(MUTFL,1000,END=10)
+hutop.f:        READ(MUTFL,1010,ERR=40,END=50) SEQDAT,(VAL(N),N=1,NCURV)
+hutop.f:          READ (MUTFL,1020) EBUFF
+hutop.f:          READ (MUTFL,1010,ERR=90,END=100) SEQDAT,(VAL(N),N=1,NCURV)
+hutop.f:            READ (MUTFL,1020) EBUFF
+hutopinp.f:      READ (CHSTR,1020) KWDLIB,BLNK1,ZEROC
+hutopinp.f:          READ (KWDLIB(1),1080) TRAN(1)
+hutopinp.f:      READ (CHSTR,1030) FMT1
+hutopinp.f:      READ (CHSTR,1030) FMT11
+hutopinp.f:      READ (CHSTR,1040) ((MONTHT(I,J),I=1,2),J=1,6)
+hutopinp.f:      READ (CHSTR,1040) ((MONTHT(I,J),I=1,2),J=7,12)
+hutopinp.f:      READ (CHSTR,1050) FORS,FORF,FORA,FORE,BLANKR
+hutopinp.f:      READ (CHSTR,1060) FORT
+hutopinp.f:      READ (CHSTR,1070) HRSPAN,DASPAN,MNSPAN
+hutopinp.f:      READ (CHSTR,1000) KWDLIB
+hutopinp.f:          READ (BLANK,2070) GLABL(I)
+hutopinp.f:            READ (KWDLIB(1),1010) CUVDAT(8,N)
+specact.f:          READ (CHSTR,1000) LOSPFL(I),LOSPST(I),LOSPKY(I),LONAM(I),
+specact.f:        READ (CHSTR,1010) NVNMS,LOCDIR
+specact.f:            READ (CHSTR,1020) (VNAMLB(K),(VDIM(J2,K),J2=1,3),VLOC(K),
+specact.f:          READ (CHSTR,1030) VACFST(I),VACCNT(I)
+specact.f:          READ (CHSTR,1040) CRFADD(1),CACADD(1),CRFADD(2),CACADD(2)
+specact.f:        READ (UCIBUF,1000,ERR=10)  UVQNAM(NVQD),COPTYP,UVQOPN(2,NVQD),
+specact.f:      READ(UCIBUF,1000,ERR=20) IND,CNT,CTCODE,TSTEP,CDEFFG,FRACT
+specact.f:      READ (UCIBUF,1000,ERR=5) COUNT
+specact.f:        READ (UCIBUF(11:16),1010) SPUVNM(SPUCNT)
+specact.f:            READ(BTMP(17:21),1020,ERR=20) SPUFRC(UPOS)
+specact.f:      READ (UCIBUF,1000,ERR=10) COPTYP,TOPFST,TOPLST,CTCODE(1),
+specact.f:        READ (CACUSR,1010,ERR=70) ACTCD
+specact.f:          READ (UCIBUF(43:48),1020) UVNAME
+specact.f:                READ (VNAME,1030) SPBF(10,SPOS),SPBF(11,SPOS)
+specact.f:                READ (COPTYP,1030) SPBF(15,SPOS),SPBF(16,SPOS)
+specact.f:      READ (INPBUF,1000) VNAME,CSUB
+specact.f:          READ (CSUB(I),1010,ERR=30) NSUB(I)
+specact.f:            READ (INPBUF,1020,ERR=60) ADDR
+specact.f:      READ (CBLK,1000) BLANK
+specact.f:          READ (QUAN,1000,ERR=10) I
+specact.f:          READ (QUAN,1010,ERR=10) R
+specsort.f:          READ (CHSTR,1000) LOSPFL(I),LOSPST(I),LOSPKY(I),LONAM(I),
+specsort.f:        READ (CHSTR,1010) NVNMS,LOCDIR
+specsort.f:            READ (CHSTR,1020) (VNAMLB(K),(VDIM(J2,K),J2=1,3),VLOC(K),
+specsort.f:          READ (CHSTR,1030) VACFST(I),VACCNT(I)
+specsort.f:          READ (CHSTR,1040) CRFADD(1),CACADD(1),CRFADD(2),CACADD(2)
+specsort.f:        READ (UCIBUF,1000,ERR=10)  UVQNAM(NVQD),COPTYP,UVQOPN(2,NVQD),
+specsort.f:      READ(UCIBUF,1000,ERR=20) IND,CNT,CTCODE,TSTEP,CDEFFG,FRACT
+specsort.f:      READ (UCIBUF,1000) COUNT
+specsort.f:        READ (UCIBUF(11:16),1010) SPUVNM(SPUCNT)
+specsort.f:            READ(BTMP(17:21),1020,ERR=20) SPUFRC(UPOS)
+specsort.f:      READ (UCIBUF,1000,ERR=10) COPTYP,TOPFST,TOPLST,CTCODE(1),
+specsort.f:        READ (CACUSR,1010,ERR=70) ACTCD
+specsort.f:          READ (UCIBUF(43:48),1020) UVNAME
+specsort.f:                READ (VNAME,1030) SPBF(10,SPOS),SPBF(11,SPOS)
+specsort.f:                READ (COPTYP,1030) SPBF(15,SPOS),SPBF(16,SPOS)
+specsort.f:      READ (INPBUF,1000,ERR=10) VNAME,CSUB
+specsort.f:        READ (CSUB(I),1010,ERR=30) NSUB(I)
+specsort.f:            READ (INPBUF,1020,ERR=60) ADDR
+specsort.f:          READ (QUAN,1000,ERR=10) I
+specsort.f:          READ (QUAN,1010,ERR=10) R

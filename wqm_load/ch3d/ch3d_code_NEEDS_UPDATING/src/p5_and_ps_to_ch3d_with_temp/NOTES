@@ -1,0 +1,6 @@
+masslinks file in this directory is an older version that does not
+operate correctly with the version of the land_to_river file.
+
+Discovered 4/11/06 after hydrology had been sent.  The result is that
+  no water was sent to the hydrodynamic model from iml or imh
+

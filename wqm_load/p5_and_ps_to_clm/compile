@@ -1,0 +1,17 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+set wqmlib = ../wqmlib/wqmlib.a
+
+f77 -c main_nps_and_ps_together.f
+
+f77  -o ../../../bin/p5_nps_and_ps_to_clm.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

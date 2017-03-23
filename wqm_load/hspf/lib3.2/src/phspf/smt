@@ -1,0 +1,3517 @@
+hdatut.f:      EXTERNAL   DAYMNH,OMSG,OMSTI,HDATIN
+hdatut.f:        CALL OMSTI (EDATIM(1))
+hdatut.f:        CALL OMSTI (EDATIM(2))
+hdatut.f:        CALL OMSTI (EDATIM(3))
+hdatut.f:        CALL OMSTI (EDATIM(4))
+hdatut.f:        CALL OMSTI (EDATIM(5))
+hdatut.f:      EXTERNAL   DAYMNH,OMSG,OMSTI,HDATIN
+hdatut.f:        CALL OMSTI (SDATIM(1))
+hdatut.f:        CALL OMSTI (SDATIM(2))
+hdatut.f:        CALL OMSTI (SDATIM(3))
+hdatut.f:        CALL OMSTI (SDATIM(4))
+hdatut.f:        CALL OMSTI (SDATIM(5))
+hdatut.f:      EXTERNAL   OMSTI,OMSG
+hdatut.f:          CALL OMSTI (DATIM(1))
+hdatut.f:          CALL OMSTI (DATIM(2))
+hdatut.f:          CALL OMSTI (DATIM(3))
+hdatut.f:          CALL OMSTI (DATIM(4))
+hdatut.f:          CALL OMSTI (DATIM(5))
+himp.f:      EXTERNAL  DAYMNH,ITABLE,HSCKFL,OMSTI,OMSG
+himp.f:        CALL OMSTI(LSNO)
+himp.f:          CALL OMSTI(LSNO)
+himp.f:          CALL OMSTI(PDELT)
+himpqua.f:      EXTERNAL     ITABLE,RTABLE,OMSG,OMSTC,ZIPR,MDATBL
+himpqua.f:            CALL OMSTC (I,CSTR1)
+himpqua.f:            CALL OMSTC (I,CSTR1)
+himpqua.f:            CALL OMSTC (I,CSTR1)
+himpwat.f:      EXTERNAL   DAYVAL,OMSTI,OMSTR,OMSG
+himpwat.f:              CALL OMSTI (LSNO)
+himpwat.f:              CALL OMSTR (SURSE)
+himpwat.f:              CALL OMSTR (SURO)
+himpwat.f:              CALL OMSTR (SURSNW)
+himpwat.f:              CALL OMSTR (FSURO)
+himpwat.f:              CALL OMSTR (DFSURO)
+himpwat.f:              CALL OMSTR (DSURO)
+hiouci.f:      EXTERNAL     OMSG,OMSTC,OMSTI
+hiouci.f:            CALL OMSTC(LOUT,CKEY)
+hiouci.f:            CALL OMSTC(LOUT,COUT)
+hiouci.f:                CALL OMSTC(LOUT,COUT)
+hiouci.f:                CALL OMSTC(LOUT,COUT)
+hiouci.f:                CALL OMSTC(LOUT,CKEY)
+hiouci.f:                  CALL OMSTC(LOUT,COUT)
+hiouci.f:                  CALL OMSTI(KWDDIM(KWDNO))
+hiouci.f:        CALL OMSTC(LOUT,CKEY)
+hperagut.f:      EXTERNAL   RTABLE,OMSG,OMSTI,OMSTC
+hperagut.f:        CALL OMSTI (LSNO)
+hperagut.f:          CALL OMSTI (WARNG(I))
+hperagut.f:        CALL OMSTC (I4,CHSTR1)
+hperagut.f:     I                   (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hperagut.f:     I                    SOSDBX,MSTFP,FRACFP,MSTBFP,
+hperagut.f:     O                    SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hperagut.f:     $           MSTBFP(3,NBLKS),MSTFP(5),MSTLFG,PSTFG,SEDFG,SLTFP,
+hperagut.f:      REAL       FRAC(8),FRACB(5,NBLKS),LGTMP,MST(5),MSTB(3,NBLKS),
+hperagut.f:C     MSTLFG - ???
+hperagut.f:C     MSTFP  - ???
+hperagut.f:C     MSTBFP - ???
+hperagut.f:C     MST    - ???
+hperagut.f:C     MSTB   - ???
+hperagut.f:      IF (MSTLFG .EQ. 0) THEN
+hperagut.f:            MST(J)= PAD(MSTFP(J)+IVL1)
+hperagut.f:              MSTB(J,N)= PAD(MSTBFP(J,N)+IVL1)
+hperagut.f:          MST(4) = PAD(MSTFP(4)+IVL1)
+hperagut.f:          MST(5) = PAD(MSTFP(5)+IVL1)
+hperagut.f:      EXTERNAL   OMSTD,OMSTI,OMSTC,OMSTR,OMSG
+hperagut.f:          CALL OMSTD (DATIM)
+hperagut.f:          CALL OMSTI (LSNO)
+hperagut.f:          CALL OMSTC (I4,CHSTR1)
+hperagut.f:          CALL OMSTC (I20,CHSTR2)
+hperagut.f:          CALL OMSTR (FRAC)
+hperagut.f:          CALL OMSTR (TCM)
+hperagut.f:          CALL OMSTR (X)
+hperagut.f:          CALL OMSTR (SOILM)
+hperagut.f:          CALL OMSTR (C)
+hperagut.f:          CALL OMSTR (MOISTM)
+hperagut.f:      EXTERNAL   OMSTI,OMSTD,OMSTR,OMSG
+hperagut.f:        CALL OMSTD (DATIM)
+hperagut.f:        CALL OMSTI (LSNO)
+hperagut.f:        CALL OMSTR (FSD)
+hperagut.f:        CALL OMSTR (SOSED)
+hperagut.f:        CALL OMSTR (SLME)
+hperagut.f:        CALL OMSTD (DATIM)
+hperagut.f:        CALL OMSTI (LSNO)
+hperagut.f:        CALL OMSTR (FSD)
+hperagut.f:        CALL OMSTR (SOSED)
+hperagut.f:        CALL OMSTR (SLME)
+hperagut.f:      EXTERNAL ZIPI,ZIPR,COPYI,CKCRDT,OMSTI,OMSG
+hperagut.f:            CALL OMSTI (J)
+hperagut.f:            CALL OMSTI (CRPDAT(1,J))
+hperagut.f:            CALL OMSTI (CRPDAT(2,J))
+hperagut.f:            CALL OMSTI (CRPDAT(3,J))
+hperagut.f:            CALL OMSTI (CRPDAT(4,J))
+hperagut.f:            CALL OMSTI (JJ)
+hperagut.f:            CALL OMSTI (CRPDAT(1,JJ))
+hperagut.f:            CALL OMSTI (CRPDAT(2,JJ))
+hperagut.f:            CALL OMSTI (CRPDAT(3,JJ))
+hperagut.f:            CALL OMSTI (CRPDAT(4,JJ))
+hperagut_newton.f:      EXTERNAL   RTABLE,OMSG,OMSTI,OMSTC
+hperagut_newton.f:        CALL OMSTI (LSNO)
+hperagut_newton.f:          CALL OMSTI (WARNG(I))
+hperagut_newton.f:        CALL OMSTC (I4,CHSTR1)
+hperagut_newton.f:     I                   (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hperagut_newton.f:     I                    SOSDBX,MSTFP,FRACFP,MSTBFP,
+hperagut_newton.f:     O                    SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hperagut_newton.f:     $           MSTBFP(3,NBLKS),MSTFP(5),MSTLFG,PSTFG,SEDFG,SLTFP,
+hperagut_newton.f:      REAL       FRAC(8),FRACB(5,NBLKS),LGTMP,MST(5),MSTB(3,NBLKS),
+hperagut_newton.f:C     MSTLFG - ???
+hperagut_newton.f:C     MSTFP  - ???
+hperagut_newton.f:C     MSTBFP - ???
+hperagut_newton.f:C     MST    - ???
+hperagut_newton.f:C     MSTB   - ???
+hperagut_newton.f:      IF (MSTLFG .EQ. 0) THEN
+hperagut_newton.f:            MST(J)= PAD(MSTFP(J)+IVL1)
+hperagut_newton.f:              MSTB(J,N)= PAD(MSTBFP(J,N)+IVL1)
+hperagut_newton.f:          MST(4) = PAD(MSTFP(4)+IVL1)
+hperagut_newton.f:          MST(5) = PAD(MSTFP(5)+IVL1)
+hperagut_newton.f:      EXTERNAL   OMSTD,OMSTI,OMSTC,OMSTR,OMSG
+hperagut_newton.f:          CALL OMSTD (DATIM)
+hperagut_newton.f:          CALL OMSTI (LSNO)
+hperagut_newton.f:          CALL OMSTC (I4,CHSTR1)
+hperagut_newton.f:          CALL OMSTC (I20,CHSTR2)
+hperagut_newton.f:          CALL OMSTR (FRAC)
+hperagut_newton.f:          CALL OMSTR (TCM)
+hperagut_newton.f:          CALL OMSTR (X)
+hperagut_newton.f:          CALL OMSTR (SOILM)
+hperagut_newton.f:          CALL OMSTR (C)
+hperagut_newton.f:          CALL OMSTR (MOISTM)
+hperagut_newton.f:      EXTERNAL   OMSTI,OMSTD,OMSTR,OMSG
+hperagut_newton.f:        CALL OMSTD (DATIM)
+hperagut_newton.f:        CALL OMSTI (LSNO)
+hperagut_newton.f:        CALL OMSTR (FSD)
+hperagut_newton.f:        CALL OMSTR (SOSED)
+hperagut_newton.f:        CALL OMSTR (SLME)
+hperagut_newton.f:        CALL OMSTD (DATIM)
+hperagut_newton.f:        CALL OMSTI (LSNO)
+hperagut_newton.f:        CALL OMSTR (FSD)
+hperagut_newton.f:        CALL OMSTR (SOSED)
+hperagut_newton.f:        CALL OMSTR (SLME)
+hperagut_newton.f:      EXTERNAL ZIPI,ZIPR,COPYI,CKCRDT,OMSTI,OMSG
+hperagut_newton.f:            CALL OMSTI (J)
+hperagut_newton.f:            CALL OMSTI (CRPDAT(1,J))
+hperagut_newton.f:            CALL OMSTI (CRPDAT(2,J))
+hperagut_newton.f:            CALL OMSTI (CRPDAT(3,J))
+hperagut_newton.f:            CALL OMSTI (CRPDAT(4,J))
+hperagut_newton.f:            CALL OMSTI (JJ)
+hperagut_newton.f:            CALL OMSTI (CRPDAT(1,JJ))
+hperagut_newton.f:            CALL OMSTI (CRPDAT(2,JJ))
+hperagut_newton.f:            CALL OMSTI (CRPDAT(3,JJ))
+hperagut_newton.f:            CALL OMSTI (CRPDAT(4,JJ))
+hperagut_original.f:      EXTERNAL   RTABLE,OMSG,OMSTI,OMSTC
+hperagut_original.f:        CALL OMSTI (LSNO)
+hperagut_original.f:          CALL OMSTI (WARNG(I))
+hperagut_original.f:        CALL OMSTC (I4,CHSTR1)
+hperagut_original.f:     I                   (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hperagut_original.f:     I                    SOSDBX,MSTFP,FRACFP,MSTBFP,
+hperagut_original.f:     O                    SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hperagut_original.f:     $           MSTBFP(3,NBLKS),MSTFP(5),MSTLFG,PSTFG,SEDFG,SLTFP,
+hperagut_original.f:      REAL       FRAC(8),FRACB(5,NBLKS),LGTMP,MST(5),MSTB(3,NBLKS),
+hperagut_original.f:C     MSTLFG - ???
+hperagut_original.f:C     MSTFP  - ???
+hperagut_original.f:C     MSTBFP - ???
+hperagut_original.f:C     MST    - ???
+hperagut_original.f:C     MSTB   - ???
+hperagut_original.f:      IF (MSTLFG .EQ. 0) THEN
+hperagut_original.f:            MST(J)= PAD(MSTFP(J)+IVL1)
+hperagut_original.f:              MSTB(J,N)= PAD(MSTBFP(J,N)+IVL1)
+hperagut_original.f:          MST(4) = PAD(MSTFP(4)+IVL1)
+hperagut_original.f:          MST(5) = PAD(MSTFP(5)+IVL1)
+hperagut_original.f:      EXTERNAL   OMSTD,OMSTI,OMSTC,OMSTR,OMSG
+hperagut_original.f:        CALL OMSTD (DATIM)
+hperagut_original.f:        CALL OMSTI (LSNO)
+hperagut_original.f:        CALL OMSTC (I4,CHSTR1)
+hperagut_original.f:        CALL OMSTC (I20,CHSTR2)
+hperagut_original.f:        CALL OMSTR (FRAC)
+hperagut_original.f:        CALL OMSTR (TCM)
+hperagut_original.f:        CALL OMSTR (X)
+hperagut_original.f:        CALL OMSTR (SOILM)
+hperagut_original.f:        CALL OMSTR (C)
+hperagut_original.f:        CALL OMSTR (MOISTM)
+hperagut_original.f:      EXTERNAL   OMSTI,OMSTD,OMSTR,OMSG
+hperagut_original.f:        CALL OMSTD (DATIM)
+hperagut_original.f:        CALL OMSTI (LSNO)
+hperagut_original.f:        CALL OMSTR (FSD)
+hperagut_original.f:        CALL OMSTR (SOSED)
+hperagut_original.f:        CALL OMSTR (SLME)
+hperagut_original.f:        CALL OMSTD (DATIM)
+hperagut_original.f:        CALL OMSTI (LSNO)
+hperagut_original.f:        CALL OMSTR (FSD)
+hperagut_original.f:        CALL OMSTR (SOSED)
+hperagut_original.f:        CALL OMSTR (SLME)
+hperagut_original.f:      EXTERNAL ZIPI,ZIPR,COPYI,CKCRDT,OMSTI,OMSG
+hperagut_original.f:            CALL OMSTI (J)
+hperagut_original.f:            CALL OMSTI (CRPDAT(1,J))
+hperagut_original.f:            CALL OMSTI (CRPDAT(2,J))
+hperagut_original.f:            CALL OMSTI (CRPDAT(3,J))
+hperagut_original.f:            CALL OMSTI (CRPDAT(4,J))
+hperagut_original.f:            CALL OMSTI (JJ)
+hperagut_original.f:            CALL OMSTI (CRPDAT(1,JJ))
+hperagut_original.f:            CALL OMSTI (CRPDAT(2,JJ))
+hperagut_original.f:            CALL OMSTI (CRPDAT(3,JJ))
+hperagut_original.f:            CALL OMSTI (CRPDAT(4,JJ))
+hper.f:     $          PMSTLA,PPEST,PNITR,PPHOS,PTRACR,PERRST,PUTOSV
+hper.f:        IF (MSTLFG.EQ.1) THEN
+hper.f:          CALL PMSTLA
+hper.f:      EXTERNAL  DAYMNH,ITABLE,HSCKFL,OMSTI,OMSG
+hper.f:        CALL OMSTI (LSNO)
+hper.f:          CALL OMSTI (OPTNO)
+hper.f:          CALL OMSTI (PDELT)
+hper.f:     $            PSTEMP, PWTGAS, PQUAL, MSTLAY, PEST, NITR, PHOS,
+hper.f:          IF (MSTLFG .EQ. 1) THEN
+hper.f:            CALL MSTLAY
+hper.f:     $            MSTPRT,PESPRT,NITPRT,PHOPRT,TRAPRT
+hper.f:        IF (MSTLFG .EQ. 1 .AND. PFLAG(8) .LE. LEV) THEN
+hper.f:          CALL MSTPRT
+hper.f:     $         MSTLPT,PESTPT,NITRPT,PHOSPT,TRACPT
+hper.f:        IF (MSTLFG .EQ. 1) THEN
+hper.f:          CALL MSTLPT
+hpermst.f:      SUBROUTINE   PMSTLA
+hpermst.f:C     + + + COMMON BLOCKS- SCRTCH, VERSION MSTLAY1 + + +
+hpermst.f: 2000 FORMAT (/,' PROCESSING INPUT FOR SECTION MSTLAY')
+hpermst.f: 2050 FORMAT (/,' FINISHED PROCESSING INPUT FOR SECTION MSTLAY')
+hpermst.f:     M             MSTPM)
+hpermst.f:     M               MST)
+hpermst.f:     M                 MSTB(1,BLK))
+hpermst.f:     M             MST(4))
+hpermst.f:      SUBROUTINE   MSTLAY
+hpermst.f:C     + + + COMMON BLOCKS- SCRTCH, VERSION MSTLAY2 + + +
+hpermst.f:     O               MST,FRAC)
+hpermst.f:     O                 MSTB(1,I),FRACB(1,I))
+hpermst.f:     O             MST,FRAC)
+hpermst.f:      SUBROUTINE   MSTLPT
+hpermst.f:C     + + + COMMON BLOCKS- SCRTCH, VERSION MSTLAY2 + + +
+hpermst.f:          IF (MSTFP(J).GE.1)  PAD(MSTFP(J)+IVL1)  = MST(J)
+hpermst.f:            IF (MSTBFP(J,I).GE.1)
+hpermst.f:     $        PAD(MSTBFP(J,I)+IVL1)= MSTB(J,I)
+hpermst.f:          IF (MSTFP(J).GE.1)  PAD(MSTFP(J)+IVL1)  = MST(J)
+hpermst.f:      SUBROUTINE MSTPRT
+hpermst.f:C     + + + COMMON BLOCKS- SCRTCH, VERSION MSTLAY2 + + +
+hpermst.f: 2000 FORMAT (/,1H ,'*** MSTLAY ***')
+hpermst.f: 2080 FORMAT (' ',45X,'SMSTM',15X,'UMSTM',15X,'IMSTM',15X,'LMSTM',15X,
+hpermst.f:     $        'AMSTM')
+hpermst.f:        CALL TRNVEC (I5,MST,MFACTA,MFACTB,
+hpermst.f:        PSTAT2= MST(4)*MFACTA+ MFACTB
+hpermst.f:        PSTAT3= MST(5)*MFACTA+ MFACTB
+hpermst.f:          CALL TRNVEC (I3,MSTB(1,I),MFACTA,MFACTB,
+hpermst.f:     O                   MST,FRAC)
+hpermst.f:     $           LZSN,MST(5)
+hpermst.f:C     MST    - ???
+hpermst.f:      REAL       AMST,AMSTM,FAO,FLDP,FLP,LLMPF,LMST,LMSTM
+hpermst.f:      LMST= LZS+ (IGWI+AGWI)
+hpermst.f:      IF (LMST.LE.0.0) GO TO 10
+hpermst.f:        LMSTM= LMST*CFINMA
+hpermst.f:        FLP= LLMPF*AGWI/LMST
+hpermst.f:        FLDP= LLMPF*IGWI/LMST
+hpermst.f:        LMSTM= 0.0
+hpermst.f:      AMST= AGWS+ AGWO
+hpermst.f:      IF (AMST.LE.0.0) GO TO 30
+hpermst.f:        AMSTM= AMST*CFINMA
+hpermst.f:        FAO= AGWO/AMST
+hpermst.f:        AMSTM= 0.0
+hpermst.f:      MST(4) = LMSTM
+hpermst.f:      MST(5) = AMSTM
+hpermst.f:     O                   MST,FRAC)
+hpermst.f:      REAL       CFINMA,FRAC(5),IFWI,IFWO,IFWS,INFIL,MST(3),
+hpermst.f:C     MST    - ???
+hpermst.f:      REAL       FII,FIO,FSO,FSP,FUP,IMSTM,ISMST,SDOWN,SMST,SMSTM,
+hpermst.f:     $           UDOWN,ULMPF,UMST,UMSTM
+hpermst.f:      SMST= SURSS+ SURI
+hpermst.f:      IF (SMST.LE.0.0) GO TO 10
+hpermst.f:        SMSTM= SMST*CFINMA
+hpermst.f:        FSO= SURO/SMST
+hpermst.f:        FSP= SLMPF*SDOWN/SMST
+hpermst.f:        SMSTM= 0.0
+hpermst.f:      UMST= UZS+ (IFWI+PERC+INFIL)
+hpermst.f:      IF (UMST.LE.0.0) GO TO 30
+hpermst.f:        UMSTM= UMST*CFINMA
+hpermst.f:        FII= IFWI/UMST
+hpermst.f:        FUP= ULMPF*UDOWN/UMST
+hpermst.f:        UMSTM= 0.0
+hpermst.f:      ISMST= IFWS+ IFWO
+hpermst.f:      IMSTM= ISMST*CFINMA
+hpermst.f:      IF (ISMST.LE.0.0) GO TO 50
+hpermst.f:        FIO= IFWO/ISMST
+hpermst.f:      MST(1) = SMSTM
+hpermst.f:      MST(2) = UMSTM
+hpermst.f:      MST(3) = IMSTM
+hpernit_1.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_1.f:          CALL OMSTI (LSNO)
+hpernit_1.f:          CALL OMSTR (SUMFRC)
+hpernit_1.f:            CALL OMSTI (LSNO)
+hpernit_1.f:            CALL OMSTI (I)
+hpernit_1.f:            CALL OMSTR (SUMFRC)
+hpernit_1.f:        CALL OMSTI (LSNO)
+hpernit_1.f:        CALL OMSTR (SUMFRC)
+hpernit_1.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_1.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_1.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_1.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_1.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_1.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_1.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_1.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_1.f:      MOISTM = MST(5)
+hpernit_1.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_1.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_1.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_1.f:C     SMST   - soil moisture storage in inches
+hpernit_1.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_1.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_1.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_1.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_1.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_1.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_1.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_1.f:                KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_1.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_1.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_1.f:                KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_1.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_1.f:        CALL OMSTD (DATIM)
+hpernit_1.f:        CALL OMSTI (LSNO)
+hpernit_1.f:        CALL OMSTR (FRAC)
+hpernit_1.f:        CALL OMSTR (PLON)
+hpernit_1.f:        CALL OMSTR (TPLON)
+hpernit_1.f:        CALL OMSTR (AMMIF)
+hpernit_1.f:        CALL OMSTR (IMMAM)
+hpernit_1.f:        CALL OMSTR (IMMNI)
+hpernit_1.f:        CALL OMSTR (PRETL)
+hpernit_1.f:        CALL OMSTR (RFON)
+hpernit_1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_1.f:        CALL OMSTD (DATIM)
+hpernit_1.f:        CALL OMSTI (LSNO)
+hpernit_1.f:        CALL OMSTR (FRAC)
+hpernit_1.f:        CALL OMSTR (AMAD)
+hpernit_1.f:        CALL OMSTR (TAMAD)
+hpernit_1.f:        CALL OMSTR (ADSAM)
+hpernit_1.f:        CALL OMSTR (DESAM)
+hpernit_1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_1.f:        CALL OMSTD (DATIM)
+hpernit_1.f:        CALL OMSTI (LSNO)
+hpernit_1.f:        CALL OMSTR (FRAC)
+hpernit_1.f:        CALL OMSTR (NO3)
+hpernit_1.f:        CALL OMSTR (TNO3)
+hpernit_1.f:        CALL OMSTR (NITRF)
+hpernit_1.f:        CALL OMSTR (IMMNI)
+hpernit_1.f:        CALL OMSTR (DENI)
+hpernit_1.f:        CALL OMSTR (UTNI)
+hpernit_1.f:        CALL OMSTR (UTNIA)
+hpernit_1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_1.f:        CALL OMSTD (DATIM)
+hpernit_1.f:        CALL OMSTI (LSNO)
+hpernit_1.f:        CALL OMSTR (FRAC)
+hpernit_1.f:        CALL OMSTR (AMSU)
+hpernit_1.f:        CALL OMSTR (TAMSU)
+hpernit_1.f:        CALL OMSTR (ADSAM)
+hpernit_1.f:        CALL OMSTR (DESAM)
+hpernit_1.f:        CALL OMSTR (AMMIF)
+hpernit_1.f:        CALL OMSTR (IMMAM)
+hpernit_1.f:        CALL OMSTR (NITRF)
+hpernit_1.f:        CALL OMSTR (UTAM)
+hpernit_1.f:        CALL OMSTR (UTAMA)
+hpernit_1.f:        CALL OMSTR (AMVO)
+hpernit_1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_1.f:          IF (SMST .GE. WILTPT) THEN
+hpernit.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit.f:          CALL OMSTI (LSNO)
+hpernit.f:          CALL OMSTR (SUMFRC)
+hpernit.f:            CALL OMSTI (LSNO)
+hpernit.f:            CALL OMSTI (I)
+hpernit.f:            CALL OMSTR (SUMFRC)
+hpernit.f:        CALL OMSTI (LSNO)
+hpernit.f:        CALL OMSTR (SUMFRC)
+hpernit.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit.f:      MOISTM = MST(5)
+hpernit.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit.f:C     SMST   - soil moisture storage in inches
+hpernit.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit.f:           NICONC = factmg*( SMST /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit.f:                KSINIKe=KSINIK !*SMST   /(fldcp) !effective mass max immobil
+hpernit.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit.f:           NICONC = factmg*(SMST  /(fldcp))*NO3/pwmoistV  ! /MOISTM*1.0E6 
+hpernit.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit.f:           AMCONC = factmg*( SMST /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit.f:                KSIAMKe=KSIAMK !*SMST   /(fldcp) !effective mass max immobil
+hpernit.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit.f:           AMCONC = factmg*(SMST  /(fldcp))*AMSU/pwmoistV  ! /MOISTM*1.0E6 
+hpernit.f:            IF (SMST .GE. WILTPT) THEN
+hpernit.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit.f:            AMCONC =factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit.f:            AMCONC = factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit.f:c     write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernit.f:        CALL OMSTD (DATIM)
+hpernit.f:        CALL OMSTI (LSNO)
+hpernit.f:        CALL OMSTR (FRAC)
+hpernit.f:        CALL OMSTR (PLON)
+hpernit.f:        CALL OMSTR (TPLON)
+hpernit.f:        CALL OMSTR (AMMIF)
+hpernit.f:        CALL OMSTR (IMMAM)
+hpernit.f:        CALL OMSTR (IMMNI)
+hpernit.f:        CALL OMSTR (PRETL)
+hpernit.f:        CALL OMSTR (RFON)
+hpernit.f:        CALL OMSTC (I4,CHSTR1)
+hpernit.f:        CALL OMSTD (DATIM)
+hpernit.f:        CALL OMSTI (LSNO)
+hpernit.f:        CALL OMSTR (FRAC)
+hpernit.f:        CALL OMSTR (AMAD)
+hpernit.f:        CALL OMSTR (TAMAD)
+hpernit.f:        CALL OMSTR (ADSAM)
+hpernit.f:        CALL OMSTR (DESAM)
+hpernit.f:        CALL OMSTC (I4,CHSTR1)
+hpernit.f:        CALL OMSTD (DATIM)
+hpernit.f:        CALL OMSTI (LSNO)
+hpernit.f:        CALL OMSTR (FRAC)
+hpernit.f:        CALL OMSTR (NO3)
+hpernit.f:        CALL OMSTR (TNO3)
+hpernit.f:        CALL OMSTR (NITRF)
+hpernit.f:        CALL OMSTR (IMMNI)
+hpernit.f:        CALL OMSTR (DENI)
+hpernit.f:        CALL OMSTR (UTNI)
+hpernit.f:        CALL OMSTR (UTNIA)
+hpernit.f:        CALL OMSTC (I4,CHSTR1)
+hpernit.f:        CALL OMSTD (DATIM)
+hpernit.f:        CALL OMSTI (LSNO)
+hpernit.f:        CALL OMSTR (FRAC)
+hpernit.f:        CALL OMSTR (AMSU)
+hpernit.f:        CALL OMSTR (TAMSU)
+hpernit.f:        CALL OMSTR (ADSAM)
+hpernit.f:        CALL OMSTR (DESAM)
+hpernit.f:        CALL OMSTR (AMMIF)
+hpernit.f:        CALL OMSTR (IMMAM)
+hpernit.f:        CALL OMSTR (NITRF)
+hpernit.f:        CALL OMSTR (UTAM)
+hpernit.f:        CALL OMSTR (UTAMA)
+hpernit.f:        CALL OMSTR (AMVO)
+hpernit.f:        CALL OMSTC (I4,CHSTR1)
+hpernit.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_loss2.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_loss2.f:          CALL OMSTI (LSNO)
+hpernit_loss2.f:          CALL OMSTR (SUMFRC)
+hpernit_loss2.f:            CALL OMSTI (LSNO)
+hpernit_loss2.f:            CALL OMSTI (I)
+hpernit_loss2.f:            CALL OMSTR (SUMFRC)
+hpernit_loss2.f:        CALL OMSTI (LSNO)
+hpernit_loss2.f:        CALL OMSTR (SUMFRC)
+hpernit_loss2.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_loss2.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_loss2.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_loss2.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_loss2.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_loss2.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_loss2.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_loss2.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_loss2.f:      MOISTM = MST(5)
+hpernit_loss2.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_loss2.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_loss2.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_loss2.f:C     SMST   - soil moisture storage in inches
+hpernit_loss2.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_loss2.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_loss2.f:c      write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_loss2.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_loss2.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_loss2.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_loss2.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_loss2.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss2.f:           NICONC = factmg*( SMST /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss2.f:                KSINIKe=KSINIK !*SMST   /(fldcp) !effective mass max immobil
+hpernit_loss2.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss2.f:           NICONC = factmg*(SMST  /(fldcp))*NO3/pwmoistV  ! /MOISTM*1.0E6 
+hpernit_loss2.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_loss2.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss2.f:           AMCONC = factmg*( SMST /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss2.f:                KSIAMKe=KSIAMK !*SMST   /(fldcp) !effective mass max immobil
+hpernit_loss2.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss2.f:           AMCONC = factmg*(SMST  /(fldcp))*AMSU/pwmoistV  ! /MOISTM*1.0E6 
+hpernit_loss2.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_loss2.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_loss2.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_loss2.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss2.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss2.f:            AMCONC =factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss2.f:            AMCONC = factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss2.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit_loss2.f:c     write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernit_loss2.f:        CALL OMSTD (DATIM)
+hpernit_loss2.f:        CALL OMSTI (LSNO)
+hpernit_loss2.f:        CALL OMSTR (FRAC)
+hpernit_loss2.f:        CALL OMSTR (PLON)
+hpernit_loss2.f:        CALL OMSTR (TPLON)
+hpernit_loss2.f:        CALL OMSTR (AMMIF)
+hpernit_loss2.f:        CALL OMSTR (IMMAM)
+hpernit_loss2.f:        CALL OMSTR (IMMNI)
+hpernit_loss2.f:        CALL OMSTR (PRETL)
+hpernit_loss2.f:        CALL OMSTR (RFON)
+hpernit_loss2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss2.f:        CALL OMSTD (DATIM)
+hpernit_loss2.f:        CALL OMSTI (LSNO)
+hpernit_loss2.f:        CALL OMSTR (FRAC)
+hpernit_loss2.f:        CALL OMSTR (AMAD)
+hpernit_loss2.f:        CALL OMSTR (TAMAD)
+hpernit_loss2.f:        CALL OMSTR (ADSAM)
+hpernit_loss2.f:        CALL OMSTR (DESAM)
+hpernit_loss2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss2.f:        CALL OMSTD (DATIM)
+hpernit_loss2.f:        CALL OMSTI (LSNO)
+hpernit_loss2.f:        CALL OMSTR (FRAC)
+hpernit_loss2.f:        CALL OMSTR (NO3)
+hpernit_loss2.f:        CALL OMSTR (TNO3)
+hpernit_loss2.f:        CALL OMSTR (NITRF)
+hpernit_loss2.f:        CALL OMSTR (IMMNI)
+hpernit_loss2.f:        CALL OMSTR (DENI)
+hpernit_loss2.f:        CALL OMSTR (UTNI)
+hpernit_loss2.f:        CALL OMSTR (UTNIA)
+hpernit_loss2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss2.f:        CALL OMSTD (DATIM)
+hpernit_loss2.f:        CALL OMSTI (LSNO)
+hpernit_loss2.f:        CALL OMSTR (FRAC)
+hpernit_loss2.f:        CALL OMSTR (AMSU)
+hpernit_loss2.f:        CALL OMSTR (TAMSU)
+hpernit_loss2.f:        CALL OMSTR (ADSAM)
+hpernit_loss2.f:        CALL OMSTR (DESAM)
+hpernit_loss2.f:        CALL OMSTR (AMMIF)
+hpernit_loss2.f:        CALL OMSTR (IMMAM)
+hpernit_loss2.f:        CALL OMSTR (NITRF)
+hpernit_loss2.f:        CALL OMSTR (UTAM)
+hpernit_loss2.f:        CALL OMSTR (UTAMA)
+hpernit_loss2.f:        CALL OMSTR (AMVO)
+hpernit_loss2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss2.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_loss.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_loss.f:          CALL OMSTI (LSNO)
+hpernit_loss.f:          CALL OMSTR (SUMFRC)
+hpernit_loss.f:            CALL OMSTI (LSNO)
+hpernit_loss.f:            CALL OMSTI (I)
+hpernit_loss.f:            CALL OMSTR (SUMFRC)
+hpernit_loss.f:        CALL OMSTI (LSNO)
+hpernit_loss.f:        CALL OMSTR (SUMFRC)
+hpernit_loss.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_loss.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_loss.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_loss.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_loss.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_loss.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_loss.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_loss.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_loss.f:      MOISTM = MST(5)
+hpernit_loss.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_loss.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_loss.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_loss.f:C     SMST   - soil moisture storage in inches
+hpernit_loss.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_loss.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_loss.f:c      write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_loss.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_loss.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_loss.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_loss.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_loss.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss.f:           NICONC = factmg*( SMST /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss.f:                KSINIKe=KSINIK !*SMST   /(fldcp) !effective mass max immobil
+hpernit_loss.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss.f:           NICONC = factmg*(SMST  /(fldcp))*NO3/pwmoistV  ! /MOISTM*1.0E6 
+hpernit_loss.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_loss.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss.f:           AMCONC = factmg*( SMST /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss.f:                KSIAMKe=KSIAMK !*SMST   /(fldcp) !effective mass max immobil
+hpernit_loss.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_loss.f:           AMCONC = factmg*(SMST  /(fldcp))*AMSU/pwmoistV  ! /MOISTM*1.0E6 
+hpernit_loss.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_loss.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_loss.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_loss.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss.f:            AMCONC =factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss.f:            AMCONC = factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernit_loss.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit_loss.f:c     write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernit_loss.f:        CALL OMSTD (DATIM)
+hpernit_loss.f:        CALL OMSTI (LSNO)
+hpernit_loss.f:        CALL OMSTR (FRAC)
+hpernit_loss.f:        CALL OMSTR (PLON)
+hpernit_loss.f:        CALL OMSTR (TPLON)
+hpernit_loss.f:        CALL OMSTR (AMMIF)
+hpernit_loss.f:        CALL OMSTR (IMMAM)
+hpernit_loss.f:        CALL OMSTR (IMMNI)
+hpernit_loss.f:        CALL OMSTR (PRETL)
+hpernit_loss.f:        CALL OMSTR (RFON)
+hpernit_loss.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss.f:        CALL OMSTD (DATIM)
+hpernit_loss.f:        CALL OMSTI (LSNO)
+hpernit_loss.f:        CALL OMSTR (FRAC)
+hpernit_loss.f:        CALL OMSTR (AMAD)
+hpernit_loss.f:        CALL OMSTR (TAMAD)
+hpernit_loss.f:        CALL OMSTR (ADSAM)
+hpernit_loss.f:        CALL OMSTR (DESAM)
+hpernit_loss.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss.f:        CALL OMSTD (DATIM)
+hpernit_loss.f:        CALL OMSTI (LSNO)
+hpernit_loss.f:        CALL OMSTR (FRAC)
+hpernit_loss.f:        CALL OMSTR (NO3)
+hpernit_loss.f:        CALL OMSTR (TNO3)
+hpernit_loss.f:        CALL OMSTR (NITRF)
+hpernit_loss.f:        CALL OMSTR (IMMNI)
+hpernit_loss.f:        CALL OMSTR (DENI)
+hpernit_loss.f:        CALL OMSTR (UTNI)
+hpernit_loss.f:        CALL OMSTR (UTNIA)
+hpernit_loss.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss.f:        CALL OMSTD (DATIM)
+hpernit_loss.f:        CALL OMSTI (LSNO)
+hpernit_loss.f:        CALL OMSTR (FRAC)
+hpernit_loss.f:        CALL OMSTR (AMSU)
+hpernit_loss.f:        CALL OMSTR (TAMSU)
+hpernit_loss.f:        CALL OMSTR (ADSAM)
+hpernit_loss.f:        CALL OMSTR (DESAM)
+hpernit_loss.f:        CALL OMSTR (AMMIF)
+hpernit_loss.f:        CALL OMSTR (IMMAM)
+hpernit_loss.f:        CALL OMSTR (NITRF)
+hpernit_loss.f:        CALL OMSTR (UTAM)
+hpernit_loss.f:        CALL OMSTR (UTAMA)
+hpernit_loss.f:        CALL OMSTR (AMVO)
+hpernit_loss.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_loss.f:          IF (SMST .GE. WILTPT) THEN
+hpernitm.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernitm.f:          CALL OMSTI (LSNO)
+hpernitm.f:          CALL OMSTR (SUMFRC)
+hpernitm.f:            CALL OMSTI (LSNO)
+hpernitm.f:            CALL OMSTI (I)
+hpernitm.f:            CALL OMSTR (SUMFRC)
+hpernitm.f:        CALL OMSTI (LSNO)
+hpernitm.f:        CALL OMSTR (SUMFRC)
+hpernitm.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernitm.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernitm.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernitm.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernitm.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernitm.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernitm.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernitm.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernitm.f:      MOISTM = MST(5)
+hpernitm.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernitm.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernitm.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernitm.f:C     SMST   - soil moisture storage in inches
+hpernitm.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernitm.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernitm.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernitm.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernitm.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernitm.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernitm.f:           NICONC = factmg*( SMST /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernitm.f:                KSINIKe=KSINIK !*SMST   /(fldcp) !effective mass max immobil
+hpernitm.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernitm.f:           NICONC = factmg*(SMST  /(fldcp))*NO3/pwmoistV  ! /MOISTM*1.0E6 
+hpernitm.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernitm.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernitm.f:           AMCONC = factmg*( SMST /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernitm.f:                KSIAMKe=KSIAMK !*SMST   /(fldcp) !effective mass max immobil
+hpernitm.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernitm.f:           AMCONC = factmg*(SMST  /(fldcp))*AMSU/pwmoistV  ! /MOISTM*1.0E6 
+hpernitm.f:            IF (SMST .GE. WILTPT) THEN
+hpernitm.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernitm.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernitm.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernitm.f:            NICONC = factmg*(  SMST  /(fldcp))*NO3/pwmoistV ! MOISTM*1.0E6 
+hpernitm.f:            AMCONC =factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernitm.f:            AMCONC = factmg*(  SMST  /(fldcp))*AMSU/pwmoistV ! MOISTM*1.0E6 
+hpernitm.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernitm.f:c     write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernitm.f:        CALL OMSTD (DATIM)
+hpernitm.f:        CALL OMSTI (LSNO)
+hpernitm.f:        CALL OMSTR (FRAC)
+hpernitm.f:        CALL OMSTR (PLON)
+hpernitm.f:        CALL OMSTR (TPLON)
+hpernitm.f:        CALL OMSTR (AMMIF)
+hpernitm.f:        CALL OMSTR (IMMAM)
+hpernitm.f:        CALL OMSTR (IMMNI)
+hpernitm.f:        CALL OMSTR (PRETL)
+hpernitm.f:        CALL OMSTR (RFON)
+hpernitm.f:        CALL OMSTC (I4,CHSTR1)
+hpernitm.f:        CALL OMSTD (DATIM)
+hpernitm.f:        CALL OMSTI (LSNO)
+hpernitm.f:        CALL OMSTR (FRAC)
+hpernitm.f:        CALL OMSTR (AMAD)
+hpernitm.f:        CALL OMSTR (TAMAD)
+hpernitm.f:        CALL OMSTR (ADSAM)
+hpernitm.f:        CALL OMSTR (DESAM)
+hpernitm.f:        CALL OMSTC (I4,CHSTR1)
+hpernitm.f:        CALL OMSTD (DATIM)
+hpernitm.f:        CALL OMSTI (LSNO)
+hpernitm.f:        CALL OMSTR (FRAC)
+hpernitm.f:        CALL OMSTR (NO3)
+hpernitm.f:        CALL OMSTR (TNO3)
+hpernitm.f:        CALL OMSTR (NITRF)
+hpernitm.f:        CALL OMSTR (IMMNI)
+hpernitm.f:        CALL OMSTR (DENI)
+hpernitm.f:        CALL OMSTR (UTNI)
+hpernitm.f:        CALL OMSTR (UTNIA)
+hpernitm.f:        CALL OMSTC (I4,CHSTR1)
+hpernitm.f:        CALL OMSTD (DATIM)
+hpernitm.f:        CALL OMSTI (LSNO)
+hpernitm.f:        CALL OMSTR (FRAC)
+hpernitm.f:        CALL OMSTR (AMSU)
+hpernitm.f:        CALL OMSTR (TAMSU)
+hpernitm.f:        CALL OMSTR (ADSAM)
+hpernitm.f:        CALL OMSTR (DESAM)
+hpernitm.f:        CALL OMSTR (AMMIF)
+hpernitm.f:        CALL OMSTR (IMMAM)
+hpernitm.f:        CALL OMSTR (NITRF)
+hpernitm.f:        CALL OMSTR (UTAM)
+hpernitm.f:        CALL OMSTR (UTAMA)
+hpernitm.f:        CALL OMSTR (AMVO)
+hpernitm.f:        CALL OMSTC (I4,CHSTR1)
+hpernitm.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22b.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22b.f:          CALL OMSTI (LSNO)
+hpernit_nut22b.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22b.f:            CALL OMSTI (LSNO)
+hpernit_nut22b.f:            CALL OMSTI (I)
+hpernit_nut22b.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22b.f:        CALL OMSTI (LSNO)
+hpernit_nut22b.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22b.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22b.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22b.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22b.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22b.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22b.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22b.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22b.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22b.f:      MOISTM = MST(5)
+hpernit_nut22b.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22b.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22b.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22b.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22b.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22b.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22b.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22b.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22b.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22b.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22b.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22b.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22b.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22b.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22b.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22b.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22b.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22b.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22b.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22b.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22b.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22b.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22b.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22b.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22b.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22b.f:            NICONC = (  SMST*10.  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22b.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22b.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22b.f:         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22b.f:        CALL OMSTD (DATIM)
+hpernit_nut22b.f:        CALL OMSTI (LSNO)
+hpernit_nut22b.f:        CALL OMSTR (FRAC)
+hpernit_nut22b.f:        CALL OMSTR (PLON)
+hpernit_nut22b.f:        CALL OMSTR (TPLON)
+hpernit_nut22b.f:        CALL OMSTR (AMMIF)
+hpernit_nut22b.f:        CALL OMSTR (IMMAM)
+hpernit_nut22b.f:        CALL OMSTR (IMMNI)
+hpernit_nut22b.f:        CALL OMSTR (PRETL)
+hpernit_nut22b.f:        CALL OMSTR (RFON)
+hpernit_nut22b.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22b.f:        CALL OMSTD (DATIM)
+hpernit_nut22b.f:        CALL OMSTI (LSNO)
+hpernit_nut22b.f:        CALL OMSTR (FRAC)
+hpernit_nut22b.f:        CALL OMSTR (AMAD)
+hpernit_nut22b.f:        CALL OMSTR (TAMAD)
+hpernit_nut22b.f:        CALL OMSTR (ADSAM)
+hpernit_nut22b.f:        CALL OMSTR (DESAM)
+hpernit_nut22b.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22b.f:        CALL OMSTD (DATIM)
+hpernit_nut22b.f:        CALL OMSTI (LSNO)
+hpernit_nut22b.f:        CALL OMSTR (FRAC)
+hpernit_nut22b.f:        CALL OMSTR (NO3)
+hpernit_nut22b.f:        CALL OMSTR (TNO3)
+hpernit_nut22b.f:        CALL OMSTR (NITRF)
+hpernit_nut22b.f:        CALL OMSTR (IMMNI)
+hpernit_nut22b.f:        CALL OMSTR (DENI)
+hpernit_nut22b.f:        CALL OMSTR (UTNI)
+hpernit_nut22b.f:        CALL OMSTR (UTNIA)
+hpernit_nut22b.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22b.f:        CALL OMSTD (DATIM)
+hpernit_nut22b.f:        CALL OMSTI (LSNO)
+hpernit_nut22b.f:        CALL OMSTR (FRAC)
+hpernit_nut22b.f:        CALL OMSTR (AMSU)
+hpernit_nut22b.f:        CALL OMSTR (TAMSU)
+hpernit_nut22b.f:        CALL OMSTR (ADSAM)
+hpernit_nut22b.f:        CALL OMSTR (DESAM)
+hpernit_nut22b.f:        CALL OMSTR (AMMIF)
+hpernit_nut22b.f:        CALL OMSTR (IMMAM)
+hpernit_nut22b.f:        CALL OMSTR (NITRF)
+hpernit_nut22b.f:        CALL OMSTR (UTAM)
+hpernit_nut22b.f:        CALL OMSTR (UTAMA)
+hpernit_nut22b.f:        CALL OMSTR (AMVO)
+hpernit_nut22b.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22b.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22c.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22c.f:          CALL OMSTI (LSNO)
+hpernit_nut22c.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22c.f:            CALL OMSTI (LSNO)
+hpernit_nut22c.f:            CALL OMSTI (I)
+hpernit_nut22c.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22c.f:        CALL OMSTI (LSNO)
+hpernit_nut22c.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22c.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22c.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22c.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22c.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22c.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22c.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22c.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22c.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22c.f:      MOISTM = MST(5)
+hpernit_nut22c.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22c.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22c.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22c.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22c.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22c.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22c.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22c.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22c.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22c.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22c.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22c.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22c.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22c.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22c.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22c.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22c.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22c.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22c.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22c.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22c.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22c.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22c.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22c.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22c.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22c.f:            NICONC = (  SMST*10.  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22c.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22c.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22c.f:         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22c.f:        CALL OMSTD (DATIM)
+hpernit_nut22c.f:        CALL OMSTI (LSNO)
+hpernit_nut22c.f:        CALL OMSTR (FRAC)
+hpernit_nut22c.f:        CALL OMSTR (PLON)
+hpernit_nut22c.f:        CALL OMSTR (TPLON)
+hpernit_nut22c.f:        CALL OMSTR (AMMIF)
+hpernit_nut22c.f:        CALL OMSTR (IMMAM)
+hpernit_nut22c.f:        CALL OMSTR (IMMNI)
+hpernit_nut22c.f:        CALL OMSTR (PRETL)
+hpernit_nut22c.f:        CALL OMSTR (RFON)
+hpernit_nut22c.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22c.f:        CALL OMSTD (DATIM)
+hpernit_nut22c.f:        CALL OMSTI (LSNO)
+hpernit_nut22c.f:        CALL OMSTR (FRAC)
+hpernit_nut22c.f:        CALL OMSTR (AMAD)
+hpernit_nut22c.f:        CALL OMSTR (TAMAD)
+hpernit_nut22c.f:        CALL OMSTR (ADSAM)
+hpernit_nut22c.f:        CALL OMSTR (DESAM)
+hpernit_nut22c.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22c.f:        CALL OMSTD (DATIM)
+hpernit_nut22c.f:        CALL OMSTI (LSNO)
+hpernit_nut22c.f:        CALL OMSTR (FRAC)
+hpernit_nut22c.f:        CALL OMSTR (NO3)
+hpernit_nut22c.f:        CALL OMSTR (TNO3)
+hpernit_nut22c.f:        CALL OMSTR (NITRF)
+hpernit_nut22c.f:        CALL OMSTR (IMMNI)
+hpernit_nut22c.f:        CALL OMSTR (DENI)
+hpernit_nut22c.f:        CALL OMSTR (UTNI)
+hpernit_nut22c.f:        CALL OMSTR (UTNIA)
+hpernit_nut22c.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22c.f:        CALL OMSTD (DATIM)
+hpernit_nut22c.f:        CALL OMSTI (LSNO)
+hpernit_nut22c.f:        CALL OMSTR (FRAC)
+hpernit_nut22c.f:        CALL OMSTR (AMSU)
+hpernit_nut22c.f:        CALL OMSTR (TAMSU)
+hpernit_nut22c.f:        CALL OMSTR (ADSAM)
+hpernit_nut22c.f:        CALL OMSTR (DESAM)
+hpernit_nut22c.f:        CALL OMSTR (AMMIF)
+hpernit_nut22c.f:        CALL OMSTR (IMMAM)
+hpernit_nut22c.f:        CALL OMSTR (NITRF)
+hpernit_nut22c.f:        CALL OMSTR (UTAM)
+hpernit_nut22c.f:        CALL OMSTR (UTAMA)
+hpernit_nut22c.f:        CALL OMSTR (AMVO)
+hpernit_nut22c.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22c.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22d.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22d.f:          CALL OMSTI (LSNO)
+hpernit_nut22d.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22d.f:            CALL OMSTI (LSNO)
+hpernit_nut22d.f:            CALL OMSTI (I)
+hpernit_nut22d.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22d.f:        CALL OMSTI (LSNO)
+hpernit_nut22d.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22d.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22d.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22d.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22d.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22d.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22d.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22d.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22d.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22d.f:      MOISTM = MST(5)
+hpernit_nut22d.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22d.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22d.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22d.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22d.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22d.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_nut22d.f:       write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_nut22d.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22d.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22d.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22d.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22d.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22d.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22d.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22d.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22d.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22d.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22d.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22d.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22d.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22d.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22d.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22d.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22d.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22d.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22d.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22d.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22d.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22d.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22d.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22d.f:         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22d.f:        CALL OMSTD (DATIM)
+hpernit_nut22d.f:        CALL OMSTI (LSNO)
+hpernit_nut22d.f:        CALL OMSTR (FRAC)
+hpernit_nut22d.f:        CALL OMSTR (PLON)
+hpernit_nut22d.f:        CALL OMSTR (TPLON)
+hpernit_nut22d.f:        CALL OMSTR (AMMIF)
+hpernit_nut22d.f:        CALL OMSTR (IMMAM)
+hpernit_nut22d.f:        CALL OMSTR (IMMNI)
+hpernit_nut22d.f:        CALL OMSTR (PRETL)
+hpernit_nut22d.f:        CALL OMSTR (RFON)
+hpernit_nut22d.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22d.f:        CALL OMSTD (DATIM)
+hpernit_nut22d.f:        CALL OMSTI (LSNO)
+hpernit_nut22d.f:        CALL OMSTR (FRAC)
+hpernit_nut22d.f:        CALL OMSTR (AMAD)
+hpernit_nut22d.f:        CALL OMSTR (TAMAD)
+hpernit_nut22d.f:        CALL OMSTR (ADSAM)
+hpernit_nut22d.f:        CALL OMSTR (DESAM)
+hpernit_nut22d.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22d.f:        CALL OMSTD (DATIM)
+hpernit_nut22d.f:        CALL OMSTI (LSNO)
+hpernit_nut22d.f:        CALL OMSTR (FRAC)
+hpernit_nut22d.f:        CALL OMSTR (NO3)
+hpernit_nut22d.f:        CALL OMSTR (TNO3)
+hpernit_nut22d.f:        CALL OMSTR (NITRF)
+hpernit_nut22d.f:        CALL OMSTR (IMMNI)
+hpernit_nut22d.f:        CALL OMSTR (DENI)
+hpernit_nut22d.f:        CALL OMSTR (UTNI)
+hpernit_nut22d.f:        CALL OMSTR (UTNIA)
+hpernit_nut22d.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22d.f:        CALL OMSTD (DATIM)
+hpernit_nut22d.f:        CALL OMSTI (LSNO)
+hpernit_nut22d.f:        CALL OMSTR (FRAC)
+hpernit_nut22d.f:        CALL OMSTR (AMSU)
+hpernit_nut22d.f:        CALL OMSTR (TAMSU)
+hpernit_nut22d.f:        CALL OMSTR (ADSAM)
+hpernit_nut22d.f:        CALL OMSTR (DESAM)
+hpernit_nut22d.f:        CALL OMSTR (AMMIF)
+hpernit_nut22d.f:        CALL OMSTR (IMMAM)
+hpernit_nut22d.f:        CALL OMSTR (NITRF)
+hpernit_nut22d.f:        CALL OMSTR (UTAM)
+hpernit_nut22d.f:        CALL OMSTR (UTAMA)
+hpernit_nut22d.f:        CALL OMSTR (AMVO)
+hpernit_nut22d.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22d.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22f.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22f.f:          CALL OMSTI (LSNO)
+hpernit_nut22f.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22f.f:            CALL OMSTI (LSNO)
+hpernit_nut22f.f:            CALL OMSTI (I)
+hpernit_nut22f.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22f.f:        CALL OMSTI (LSNO)
+hpernit_nut22f.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22f.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22f.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22f.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22f.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22f.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22f.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22f.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22f.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22f.f:      MOISTM = MST(5)
+hpernit_nut22f.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22f.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22f.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22f.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22f.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22f.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_nut22f.f:       write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_nut22f.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22f.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22f.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22f.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22f.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22f.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22f.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22f.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22f.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22f.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22f.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22f.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22f.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22f.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22f.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22f.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22f.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22f.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22f.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22f.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22f.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22f.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22f.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22f.f:cee      AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22f.f:        CALL OMSTD (DATIM)
+hpernit_nut22f.f:        CALL OMSTI (LSNO)
+hpernit_nut22f.f:        CALL OMSTR (FRAC)
+hpernit_nut22f.f:        CALL OMSTR (PLON)
+hpernit_nut22f.f:        CALL OMSTR (TPLON)
+hpernit_nut22f.f:        CALL OMSTR (AMMIF)
+hpernit_nut22f.f:        CALL OMSTR (IMMAM)
+hpernit_nut22f.f:        CALL OMSTR (IMMNI)
+hpernit_nut22f.f:        CALL OMSTR (PRETL)
+hpernit_nut22f.f:        CALL OMSTR (RFON)
+hpernit_nut22f.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22f.f:        CALL OMSTD (DATIM)
+hpernit_nut22f.f:        CALL OMSTI (LSNO)
+hpernit_nut22f.f:        CALL OMSTR (FRAC)
+hpernit_nut22f.f:        CALL OMSTR (AMAD)
+hpernit_nut22f.f:        CALL OMSTR (TAMAD)
+hpernit_nut22f.f:        CALL OMSTR (ADSAM)
+hpernit_nut22f.f:        CALL OMSTR (DESAM)
+hpernit_nut22f.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22f.f:        CALL OMSTD (DATIM)
+hpernit_nut22f.f:        CALL OMSTI (LSNO)
+hpernit_nut22f.f:        CALL OMSTR (FRAC)
+hpernit_nut22f.f:        CALL OMSTR (NO3)
+hpernit_nut22f.f:        CALL OMSTR (TNO3)
+hpernit_nut22f.f:        CALL OMSTR (NITRF)
+hpernit_nut22f.f:        CALL OMSTR (IMMNI)
+hpernit_nut22f.f:        CALL OMSTR (DENI)
+hpernit_nut22f.f:        CALL OMSTR (UTNI)
+hpernit_nut22f.f:        CALL OMSTR (UTNIA)
+hpernit_nut22f.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22f.f:        CALL OMSTD (DATIM)
+hpernit_nut22f.f:        CALL OMSTI (LSNO)
+hpernit_nut22f.f:        CALL OMSTR (FRAC)
+hpernit_nut22f.f:        CALL OMSTR (AMSU)
+hpernit_nut22f.f:        CALL OMSTR (TAMSU)
+hpernit_nut22f.f:        CALL OMSTR (ADSAM)
+hpernit_nut22f.f:        CALL OMSTR (DESAM)
+hpernit_nut22f.f:        CALL OMSTR (AMMIF)
+hpernit_nut22f.f:        CALL OMSTR (IMMAM)
+hpernit_nut22f.f:        CALL OMSTR (NITRF)
+hpernit_nut22f.f:        CALL OMSTR (UTAM)
+hpernit_nut22f.f:        CALL OMSTR (UTAMA)
+hpernit_nut22f.f:        CALL OMSTR (AMVO)
+hpernit_nut22f.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22f.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22g.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22g.f:          CALL OMSTI (LSNO)
+hpernit_nut22g.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22g.f:            CALL OMSTI (LSNO)
+hpernit_nut22g.f:            CALL OMSTI (I)
+hpernit_nut22g.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22g.f:        CALL OMSTI (LSNO)
+hpernit_nut22g.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22g.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22g.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22g.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22g.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22g.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22g.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22g.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22g.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22g.f:      MOISTM = MST(5)
+hpernit_nut22g.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22g.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22g.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22g.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22g.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22g.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_nut22g.f:c      write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_nut22g.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22g.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22g.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22g.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22g.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22g.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22g.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22g.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22g.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22g.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22g.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22g.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22g.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22g.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22g.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22g.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22g.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22g.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22g.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22g.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22g.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22g.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22g.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22g.f:cee      AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22g.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22g.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22g.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22g.f:      write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22g.f:        CALL OMSTD (DATIM)
+hpernit_nut22g.f:        CALL OMSTI (LSNO)
+hpernit_nut22g.f:        CALL OMSTR (FRAC)
+hpernit_nut22g.f:        CALL OMSTR (PLON)
+hpernit_nut22g.f:        CALL OMSTR (TPLON)
+hpernit_nut22g.f:        CALL OMSTR (AMMIF)
+hpernit_nut22g.f:        CALL OMSTR (IMMAM)
+hpernit_nut22g.f:        CALL OMSTR (IMMNI)
+hpernit_nut22g.f:        CALL OMSTR (PRETL)
+hpernit_nut22g.f:        CALL OMSTR (RFON)
+hpernit_nut22g.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22g.f:        CALL OMSTD (DATIM)
+hpernit_nut22g.f:        CALL OMSTI (LSNO)
+hpernit_nut22g.f:        CALL OMSTR (FRAC)
+hpernit_nut22g.f:        CALL OMSTR (AMAD)
+hpernit_nut22g.f:        CALL OMSTR (TAMAD)
+hpernit_nut22g.f:        CALL OMSTR (ADSAM)
+hpernit_nut22g.f:        CALL OMSTR (DESAM)
+hpernit_nut22g.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22g.f:        CALL OMSTD (DATIM)
+hpernit_nut22g.f:        CALL OMSTI (LSNO)
+hpernit_nut22g.f:        CALL OMSTR (FRAC)
+hpernit_nut22g.f:        CALL OMSTR (NO3)
+hpernit_nut22g.f:        CALL OMSTR (TNO3)
+hpernit_nut22g.f:        CALL OMSTR (NITRF)
+hpernit_nut22g.f:        CALL OMSTR (IMMNI)
+hpernit_nut22g.f:        CALL OMSTR (DENI)
+hpernit_nut22g.f:        CALL OMSTR (UTNI)
+hpernit_nut22g.f:        CALL OMSTR (UTNIA)
+hpernit_nut22g.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22g.f:        CALL OMSTD (DATIM)
+hpernit_nut22g.f:        CALL OMSTI (LSNO)
+hpernit_nut22g.f:        CALL OMSTR (FRAC)
+hpernit_nut22g.f:        CALL OMSTR (AMSU)
+hpernit_nut22g.f:        CALL OMSTR (TAMSU)
+hpernit_nut22g.f:        CALL OMSTR (ADSAM)
+hpernit_nut22g.f:        CALL OMSTR (DESAM)
+hpernit_nut22g.f:        CALL OMSTR (AMMIF)
+hpernit_nut22g.f:        CALL OMSTR (IMMAM)
+hpernit_nut22g.f:        CALL OMSTR (NITRF)
+hpernit_nut22g.f:        CALL OMSTR (UTAM)
+hpernit_nut22g.f:        CALL OMSTR (UTAMA)
+hpernit_nut22g.f:        CALL OMSTR (AMVO)
+hpernit_nut22g.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22g.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22h.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22h.f:          CALL OMSTI (LSNO)
+hpernit_nut22h.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22h.f:            CALL OMSTI (LSNO)
+hpernit_nut22h.f:            CALL OMSTI (I)
+hpernit_nut22h.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22h.f:        CALL OMSTI (LSNO)
+hpernit_nut22h.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22h.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22h.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22h.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22h.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22h.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22h.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22h.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22h.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22h.f:      MOISTM = MST(5)
+hpernit_nut22h.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22h.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22h.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22h.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22h.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22h.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_nut22h.f:c      write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_nut22h.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22h.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22h.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22h.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22h.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22h.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22h.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22h.f:                KSINIKe=KSINIK!*SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22h.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22h.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22h.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22h.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22h.f:                KSIAMKe=KSIAMK!*SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22h.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22h.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22h.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22h.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22h.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22h.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22h.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22h.f:c           NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22h.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22h.f:c           AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22h.f:cee      AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22h.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22h.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22h.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22h.f:      write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernit_nut22h.f:        CALL OMSTD (DATIM)
+hpernit_nut22h.f:        CALL OMSTI (LSNO)
+hpernit_nut22h.f:        CALL OMSTR (FRAC)
+hpernit_nut22h.f:        CALL OMSTR (PLON)
+hpernit_nut22h.f:        CALL OMSTR (TPLON)
+hpernit_nut22h.f:        CALL OMSTR (AMMIF)
+hpernit_nut22h.f:        CALL OMSTR (IMMAM)
+hpernit_nut22h.f:        CALL OMSTR (IMMNI)
+hpernit_nut22h.f:        CALL OMSTR (PRETL)
+hpernit_nut22h.f:        CALL OMSTR (RFON)
+hpernit_nut22h.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22h.f:        CALL OMSTD (DATIM)
+hpernit_nut22h.f:        CALL OMSTI (LSNO)
+hpernit_nut22h.f:        CALL OMSTR (FRAC)
+hpernit_nut22h.f:        CALL OMSTR (AMAD)
+hpernit_nut22h.f:        CALL OMSTR (TAMAD)
+hpernit_nut22h.f:        CALL OMSTR (ADSAM)
+hpernit_nut22h.f:        CALL OMSTR (DESAM)
+hpernit_nut22h.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22h.f:        CALL OMSTD (DATIM)
+hpernit_nut22h.f:        CALL OMSTI (LSNO)
+hpernit_nut22h.f:        CALL OMSTR (FRAC)
+hpernit_nut22h.f:        CALL OMSTR (NO3)
+hpernit_nut22h.f:        CALL OMSTR (TNO3)
+hpernit_nut22h.f:        CALL OMSTR (NITRF)
+hpernit_nut22h.f:        CALL OMSTR (IMMNI)
+hpernit_nut22h.f:        CALL OMSTR (DENI)
+hpernit_nut22h.f:        CALL OMSTR (UTNI)
+hpernit_nut22h.f:        CALL OMSTR (UTNIA)
+hpernit_nut22h.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22h.f:        CALL OMSTD (DATIM)
+hpernit_nut22h.f:        CALL OMSTI (LSNO)
+hpernit_nut22h.f:        CALL OMSTR (FRAC)
+hpernit_nut22h.f:        CALL OMSTR (AMSU)
+hpernit_nut22h.f:        CALL OMSTR (TAMSU)
+hpernit_nut22h.f:        CALL OMSTR (ADSAM)
+hpernit_nut22h.f:        CALL OMSTR (DESAM)
+hpernit_nut22h.f:        CALL OMSTR (AMMIF)
+hpernit_nut22h.f:        CALL OMSTR (IMMAM)
+hpernit_nut22h.f:        CALL OMSTR (NITRF)
+hpernit_nut22h.f:        CALL OMSTR (UTAM)
+hpernit_nut22h.f:        CALL OMSTR (UTAMA)
+hpernit_nut22h.f:        CALL OMSTR (AMVO)
+hpernit_nut22h.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22h.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22i.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22i.f:          CALL OMSTI (LSNO)
+hpernit_nut22i.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22i.f:            CALL OMSTI (LSNO)
+hpernit_nut22i.f:            CALL OMSTI (I)
+hpernit_nut22i.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22i.f:        CALL OMSTI (LSNO)
+hpernit_nut22i.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22i.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22i.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22i.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22i.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22i.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22i.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22i.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22i.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22i.f:      MOISTM = MST(5)
+hpernit_nut22i.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22i.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22i.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22i.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22i.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22i.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_nut22i.f:c      write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_nut22i.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22i.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22i.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22i.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22i.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22i.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22i.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22i.f:                KSINIKe=KSINIK!*SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22i.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22i.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22i.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22i.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22i.f:                KSIAMKe=KSIAMK!*SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22i.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22i.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22i.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22i.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22i.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22i.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22i.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22i.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22i.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22i.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22i.f:cee      AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22i.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22i.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22i.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit_nut22i.f:c     write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernit_nut22i.f:        CALL OMSTD (DATIM)
+hpernit_nut22i.f:        CALL OMSTI (LSNO)
+hpernit_nut22i.f:        CALL OMSTR (FRAC)
+hpernit_nut22i.f:        CALL OMSTR (PLON)
+hpernit_nut22i.f:        CALL OMSTR (TPLON)
+hpernit_nut22i.f:        CALL OMSTR (AMMIF)
+hpernit_nut22i.f:        CALL OMSTR (IMMAM)
+hpernit_nut22i.f:        CALL OMSTR (IMMNI)
+hpernit_nut22i.f:        CALL OMSTR (PRETL)
+hpernit_nut22i.f:        CALL OMSTR (RFON)
+hpernit_nut22i.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22i.f:        CALL OMSTD (DATIM)
+hpernit_nut22i.f:        CALL OMSTI (LSNO)
+hpernit_nut22i.f:        CALL OMSTR (FRAC)
+hpernit_nut22i.f:        CALL OMSTR (AMAD)
+hpernit_nut22i.f:        CALL OMSTR (TAMAD)
+hpernit_nut22i.f:        CALL OMSTR (ADSAM)
+hpernit_nut22i.f:        CALL OMSTR (DESAM)
+hpernit_nut22i.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22i.f:        CALL OMSTD (DATIM)
+hpernit_nut22i.f:        CALL OMSTI (LSNO)
+hpernit_nut22i.f:        CALL OMSTR (FRAC)
+hpernit_nut22i.f:        CALL OMSTR (NO3)
+hpernit_nut22i.f:        CALL OMSTR (TNO3)
+hpernit_nut22i.f:        CALL OMSTR (NITRF)
+hpernit_nut22i.f:        CALL OMSTR (IMMNI)
+hpernit_nut22i.f:        CALL OMSTR (DENI)
+hpernit_nut22i.f:        CALL OMSTR (UTNI)
+hpernit_nut22i.f:        CALL OMSTR (UTNIA)
+hpernit_nut22i.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22i.f:        CALL OMSTD (DATIM)
+hpernit_nut22i.f:        CALL OMSTI (LSNO)
+hpernit_nut22i.f:        CALL OMSTR (FRAC)
+hpernit_nut22i.f:        CALL OMSTR (AMSU)
+hpernit_nut22i.f:        CALL OMSTR (TAMSU)
+hpernit_nut22i.f:        CALL OMSTR (ADSAM)
+hpernit_nut22i.f:        CALL OMSTR (DESAM)
+hpernit_nut22i.f:        CALL OMSTR (AMMIF)
+hpernit_nut22i.f:        CALL OMSTR (IMMAM)
+hpernit_nut22i.f:        CALL OMSTR (NITRF)
+hpernit_nut22i.f:        CALL OMSTR (UTAM)
+hpernit_nut22i.f:        CALL OMSTR (UTAMA)
+hpernit_nut22i.f:        CALL OMSTR (AMVO)
+hpernit_nut22i.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22i.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_nut22j.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_nut22j.f:          CALL OMSTI (LSNO)
+hpernit_nut22j.f:          CALL OMSTR (SUMFRC)
+hpernit_nut22j.f:            CALL OMSTI (LSNO)
+hpernit_nut22j.f:            CALL OMSTI (I)
+hpernit_nut22j.f:            CALL OMSTR (SUMFRC)
+hpernit_nut22j.f:        CALL OMSTI (LSNO)
+hpernit_nut22j.f:        CALL OMSTR (SUMFRC)
+hpernit_nut22j.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_nut22j.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_nut22j.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_nut22j.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22j.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22j.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_nut22j.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_nut22j.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_nut22j.f:      MOISTM = MST(5)
+hpernit_nut22j.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_nut22j.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_nut22j.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_nut22j.f:C     SMST   - soil moisture storage in inches
+hpernit_nut22j.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_nut22j.f:c      write(98,*) YEAR, MD, DAY, SMST
+hpernit_nut22j.f:c      write(98,*) SMST, pwsoildd, wiltpt, fldcp 
+hpernit_nut22j.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_nut22j.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_nut22j.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22j.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22j.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22j.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22j.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22j.f:                KSINIKe=KSINIK!*SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22j.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22j.f:chh          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_nut22j.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_nut22j.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22j.f:                KSIAMKe=KSIAMK!*SMST   /(fldcp) !effective mass max immobil
+hpernit_nut22j.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22j.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_nut22j.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22j.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22j.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22j.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_nut22j.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_nut22j.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_nut22j.f:cee         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6  ! cbb  
+hpernit_nut22j.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22j.f:cee      AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_nut22j.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22j.f:c     write(98,*) SMST, pwsoildd, wiltpt, fldcp, utni, utam
+hpernit_nut22j.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit_nut22j.f:c     write(98,431)SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc
+hpernit_nut22j.f:        CALL OMSTD (DATIM)
+hpernit_nut22j.f:        CALL OMSTI (LSNO)
+hpernit_nut22j.f:        CALL OMSTR (FRAC)
+hpernit_nut22j.f:        CALL OMSTR (PLON)
+hpernit_nut22j.f:        CALL OMSTR (TPLON)
+hpernit_nut22j.f:        CALL OMSTR (AMMIF)
+hpernit_nut22j.f:        CALL OMSTR (IMMAM)
+hpernit_nut22j.f:        CALL OMSTR (IMMNI)
+hpernit_nut22j.f:        CALL OMSTR (PRETL)
+hpernit_nut22j.f:        CALL OMSTR (RFON)
+hpernit_nut22j.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22j.f:        CALL OMSTD (DATIM)
+hpernit_nut22j.f:        CALL OMSTI (LSNO)
+hpernit_nut22j.f:        CALL OMSTR (FRAC)
+hpernit_nut22j.f:        CALL OMSTR (AMAD)
+hpernit_nut22j.f:        CALL OMSTR (TAMAD)
+hpernit_nut22j.f:        CALL OMSTR (ADSAM)
+hpernit_nut22j.f:        CALL OMSTR (DESAM)
+hpernit_nut22j.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22j.f:        CALL OMSTD (DATIM)
+hpernit_nut22j.f:        CALL OMSTI (LSNO)
+hpernit_nut22j.f:        CALL OMSTR (FRAC)
+hpernit_nut22j.f:        CALL OMSTR (NO3)
+hpernit_nut22j.f:        CALL OMSTR (TNO3)
+hpernit_nut22j.f:        CALL OMSTR (NITRF)
+hpernit_nut22j.f:        CALL OMSTR (IMMNI)
+hpernit_nut22j.f:        CALL OMSTR (DENI)
+hpernit_nut22j.f:        CALL OMSTR (UTNI)
+hpernit_nut22j.f:        CALL OMSTR (UTNIA)
+hpernit_nut22j.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22j.f:        CALL OMSTD (DATIM)
+hpernit_nut22j.f:        CALL OMSTI (LSNO)
+hpernit_nut22j.f:        CALL OMSTR (FRAC)
+hpernit_nut22j.f:        CALL OMSTR (AMSU)
+hpernit_nut22j.f:        CALL OMSTR (TAMSU)
+hpernit_nut22j.f:        CALL OMSTR (ADSAM)
+hpernit_nut22j.f:        CALL OMSTR (DESAM)
+hpernit_nut22j.f:        CALL OMSTR (AMMIF)
+hpernit_nut22j.f:        CALL OMSTR (IMMAM)
+hpernit_nut22j.f:        CALL OMSTR (NITRF)
+hpernit_nut22j.f:        CALL OMSTR (UTAM)
+hpernit_nut22j.f:        CALL OMSTR (UTAMA)
+hpernit_nut22j.f:        CALL OMSTR (AMVO)
+hpernit_nut22j.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_nut22j.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_org.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_org.f:          CALL OMSTI (LSNO)
+hpernit_org.f:          CALL OMSTR (SUMFRC)
+hpernit_org.f:            CALL OMSTI (LSNO)
+hpernit_org.f:            CALL OMSTI (I)
+hpernit_org.f:            CALL OMSTR (SUMFRC)
+hpernit_org.f:        CALL OMSTI (LSNO)
+hpernit_org.f:        CALL OMSTR (SUMFRC)
+hpernit_org.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_org.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_org.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_org.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_org.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_org.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_org.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_org.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_org.f:      MOISTM = MST(5)
+hpernit_org.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_org.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_org.f:C     SMST   - soil moisture storage in inches
+hpernit_org.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_org.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_org.f:        CALL OMSTD (DATIM)
+hpernit_org.f:        CALL OMSTI (LSNO)
+hpernit_org.f:        CALL OMSTR (FRAC)
+hpernit_org.f:        CALL OMSTR (PLON)
+hpernit_org.f:        CALL OMSTR (TPLON)
+hpernit_org.f:        CALL OMSTR (AMMIF)
+hpernit_org.f:        CALL OMSTR (IMMAM)
+hpernit_org.f:        CALL OMSTR (IMMNI)
+hpernit_org.f:        CALL OMSTR (PRETL)
+hpernit_org.f:        CALL OMSTR (RFON)
+hpernit_org.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org.f:        CALL OMSTD (DATIM)
+hpernit_org.f:        CALL OMSTI (LSNO)
+hpernit_org.f:        CALL OMSTR (FRAC)
+hpernit_org.f:        CALL OMSTR (AMAD)
+hpernit_org.f:        CALL OMSTR (TAMAD)
+hpernit_org.f:        CALL OMSTR (ADSAM)
+hpernit_org.f:        CALL OMSTR (DESAM)
+hpernit_org.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org.f:        CALL OMSTD (DATIM)
+hpernit_org.f:        CALL OMSTI (LSNO)
+hpernit_org.f:        CALL OMSTR (FRAC)
+hpernit_org.f:        CALL OMSTR (NO3)
+hpernit_org.f:        CALL OMSTR (TNO3)
+hpernit_org.f:        CALL OMSTR (NITRF)
+hpernit_org.f:        CALL OMSTR (IMMNI)
+hpernit_org.f:        CALL OMSTR (DENI)
+hpernit_org.f:        CALL OMSTR (UTNI)
+hpernit_org.f:        CALL OMSTR (UTNIA)
+hpernit_org.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org.f:        CALL OMSTD (DATIM)
+hpernit_org.f:        CALL OMSTI (LSNO)
+hpernit_org.f:        CALL OMSTR (FRAC)
+hpernit_org.f:        CALL OMSTR (AMSU)
+hpernit_org.f:        CALL OMSTR (TAMSU)
+hpernit_org.f:        CALL OMSTR (ADSAM)
+hpernit_org.f:        CALL OMSTR (DESAM)
+hpernit_org.f:        CALL OMSTR (AMMIF)
+hpernit_org.f:        CALL OMSTR (IMMAM)
+hpernit_org.f:        CALL OMSTR (NITRF)
+hpernit_org.f:        CALL OMSTR (UTAM)
+hpernit_org.f:        CALL OMSTR (UTAMA)
+hpernit_org.f:        CALL OMSTR (AMVO)
+hpernit_org.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_org_print2.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_org_print2.f:          CALL OMSTI (LSNO)
+hpernit_org_print2.f:          CALL OMSTR (SUMFRC)
+hpernit_org_print2.f:            CALL OMSTI (LSNO)
+hpernit_org_print2.f:            CALL OMSTI (I)
+hpernit_org_print2.f:            CALL OMSTR (SUMFRC)
+hpernit_org_print2.f:        CALL OMSTI (LSNO)
+hpernit_org_print2.f:        CALL OMSTR (SUMFRC)
+hpernit_org_print2.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_org_print2.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_org_print2.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_org_print2.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_org_print2.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_org_print2.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_org_print2.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_org_print2.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_org_print2.f:      MOISTM = MST(5)
+hpernit_org_print2.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_org_print2.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_org_print2.f:C     SMST   - soil moisture storage in inches
+hpernit_org_print2.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_org_print2.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_org_print2.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6
+hpernit_org_print2.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6
+hpernit_org_print2.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit_org_print2.f:        CALL OMSTD (DATIM)
+hpernit_org_print2.f:        CALL OMSTI (LSNO)
+hpernit_org_print2.f:        CALL OMSTR (FRAC)
+hpernit_org_print2.f:        CALL OMSTR (PLON)
+hpernit_org_print2.f:        CALL OMSTR (TPLON)
+hpernit_org_print2.f:        CALL OMSTR (AMMIF)
+hpernit_org_print2.f:        CALL OMSTR (IMMAM)
+hpernit_org_print2.f:        CALL OMSTR (IMMNI)
+hpernit_org_print2.f:        CALL OMSTR (PRETL)
+hpernit_org_print2.f:        CALL OMSTR (RFON)
+hpernit_org_print2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print2.f:        CALL OMSTD (DATIM)
+hpernit_org_print2.f:        CALL OMSTI (LSNO)
+hpernit_org_print2.f:        CALL OMSTR (FRAC)
+hpernit_org_print2.f:        CALL OMSTR (AMAD)
+hpernit_org_print2.f:        CALL OMSTR (TAMAD)
+hpernit_org_print2.f:        CALL OMSTR (ADSAM)
+hpernit_org_print2.f:        CALL OMSTR (DESAM)
+hpernit_org_print2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print2.f:        CALL OMSTD (DATIM)
+hpernit_org_print2.f:        CALL OMSTI (LSNO)
+hpernit_org_print2.f:        CALL OMSTR (FRAC)
+hpernit_org_print2.f:        CALL OMSTR (NO3)
+hpernit_org_print2.f:        CALL OMSTR (TNO3)
+hpernit_org_print2.f:        CALL OMSTR (NITRF)
+hpernit_org_print2.f:        CALL OMSTR (IMMNI)
+hpernit_org_print2.f:        CALL OMSTR (DENI)
+hpernit_org_print2.f:        CALL OMSTR (UTNI)
+hpernit_org_print2.f:        CALL OMSTR (UTNIA)
+hpernit_org_print2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print2.f:        CALL OMSTD (DATIM)
+hpernit_org_print2.f:        CALL OMSTI (LSNO)
+hpernit_org_print2.f:        CALL OMSTR (FRAC)
+hpernit_org_print2.f:        CALL OMSTR (AMSU)
+hpernit_org_print2.f:        CALL OMSTR (TAMSU)
+hpernit_org_print2.f:        CALL OMSTR (ADSAM)
+hpernit_org_print2.f:        CALL OMSTR (DESAM)
+hpernit_org_print2.f:        CALL OMSTR (AMMIF)
+hpernit_org_print2.f:        CALL OMSTR (IMMAM)
+hpernit_org_print2.f:        CALL OMSTR (NITRF)
+hpernit_org_print2.f:        CALL OMSTR (UTAM)
+hpernit_org_print2.f:        CALL OMSTR (UTAMA)
+hpernit_org_print2.f:        CALL OMSTR (AMVO)
+hpernit_org_print2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print2.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_org_print.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_org_print.f:          CALL OMSTI (LSNO)
+hpernit_org_print.f:          CALL OMSTR (SUMFRC)
+hpernit_org_print.f:            CALL OMSTI (LSNO)
+hpernit_org_print.f:            CALL OMSTI (I)
+hpernit_org_print.f:            CALL OMSTR (SUMFRC)
+hpernit_org_print.f:        CALL OMSTI (LSNO)
+hpernit_org_print.f:        CALL OMSTR (SUMFRC)
+hpernit_org_print.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_org_print.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_org_print.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_org_print.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_org_print.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_org_print.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_org_print.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_org_print.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_org_print.f:      MOISTM = MST(5)
+hpernit_org_print.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_org_print.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_org_print.f:C     SMST   - soil moisture storage in inches
+hpernit_org_print.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_org_print.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_org_print.f:     .     SMST,pwsoildd,wiltpt,fldcp,utni,utam,niconc,amconc,
+hpernit_org_print.f:        CALL OMSTD (DATIM)
+hpernit_org_print.f:        CALL OMSTI (LSNO)
+hpernit_org_print.f:        CALL OMSTR (FRAC)
+hpernit_org_print.f:        CALL OMSTR (PLON)
+hpernit_org_print.f:        CALL OMSTR (TPLON)
+hpernit_org_print.f:        CALL OMSTR (AMMIF)
+hpernit_org_print.f:        CALL OMSTR (IMMAM)
+hpernit_org_print.f:        CALL OMSTR (IMMNI)
+hpernit_org_print.f:        CALL OMSTR (PRETL)
+hpernit_org_print.f:        CALL OMSTR (RFON)
+hpernit_org_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print.f:        CALL OMSTD (DATIM)
+hpernit_org_print.f:        CALL OMSTI (LSNO)
+hpernit_org_print.f:        CALL OMSTR (FRAC)
+hpernit_org_print.f:        CALL OMSTR (AMAD)
+hpernit_org_print.f:        CALL OMSTR (TAMAD)
+hpernit_org_print.f:        CALL OMSTR (ADSAM)
+hpernit_org_print.f:        CALL OMSTR (DESAM)
+hpernit_org_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print.f:        CALL OMSTD (DATIM)
+hpernit_org_print.f:        CALL OMSTI (LSNO)
+hpernit_org_print.f:        CALL OMSTR (FRAC)
+hpernit_org_print.f:        CALL OMSTR (NO3)
+hpernit_org_print.f:        CALL OMSTR (TNO3)
+hpernit_org_print.f:        CALL OMSTR (NITRF)
+hpernit_org_print.f:        CALL OMSTR (IMMNI)
+hpernit_org_print.f:        CALL OMSTR (DENI)
+hpernit_org_print.f:        CALL OMSTR (UTNI)
+hpernit_org_print.f:        CALL OMSTR (UTNIA)
+hpernit_org_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print.f:        CALL OMSTD (DATIM)
+hpernit_org_print.f:        CALL OMSTI (LSNO)
+hpernit_org_print.f:        CALL OMSTR (FRAC)
+hpernit_org_print.f:        CALL OMSTR (AMSU)
+hpernit_org_print.f:        CALL OMSTR (TAMSU)
+hpernit_org_print.f:        CALL OMSTR (ADSAM)
+hpernit_org_print.f:        CALL OMSTR (DESAM)
+hpernit_org_print.f:        CALL OMSTR (AMMIF)
+hpernit_org_print.f:        CALL OMSTR (IMMAM)
+hpernit_org_print.f:        CALL OMSTR (NITRF)
+hpernit_org_print.f:        CALL OMSTR (UTAM)
+hpernit_org_print.f:        CALL OMSTR (UTAMA)
+hpernit_org_print.f:        CALL OMSTR (AMVO)
+hpernit_org_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_org_print.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_print.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_print.f:          CALL OMSTI (LSNO)
+hpernit_print.f:          CALL OMSTR (SUMFRC)
+hpernit_print.f:            CALL OMSTI (LSNO)
+hpernit_print.f:            CALL OMSTI (I)
+hpernit_print.f:            CALL OMSTR (SUMFRC)
+hpernit_print.f:        CALL OMSTI (LSNO)
+hpernit_print.f:        CALL OMSTR (SUMFRC)
+hpernit_print.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_print.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_print.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_print.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_print.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_print.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_print.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_print.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_print.f:      MOISTM = MST(5)
+hpernit_print.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_print.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_print.f:C     SMST   - soil moisture storage in inches
+hpernit_print.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_print.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_print.f:        CALL OMSTD (DATIM)
+hpernit_print.f:        CALL OMSTI (LSNO)
+hpernit_print.f:        CALL OMSTR (FRAC)
+hpernit_print.f:        CALL OMSTR (PLON)
+hpernit_print.f:        CALL OMSTR (TPLON)
+hpernit_print.f:        CALL OMSTR (AMMIF)
+hpernit_print.f:        CALL OMSTR (IMMAM)
+hpernit_print.f:        CALL OMSTR (IMMNI)
+hpernit_print.f:        CALL OMSTR (PRETL)
+hpernit_print.f:        CALL OMSTR (RFON)
+hpernit_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_print.f:        CALL OMSTD (DATIM)
+hpernit_print.f:        CALL OMSTI (LSNO)
+hpernit_print.f:        CALL OMSTR (FRAC)
+hpernit_print.f:        CALL OMSTR (AMAD)
+hpernit_print.f:        CALL OMSTR (TAMAD)
+hpernit_print.f:        CALL OMSTR (ADSAM)
+hpernit_print.f:        CALL OMSTR (DESAM)
+hpernit_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_print.f:        CALL OMSTD (DATIM)
+hpernit_print.f:        CALL OMSTI (LSNO)
+hpernit_print.f:        CALL OMSTR (FRAC)
+hpernit_print.f:        CALL OMSTR (NO3)
+hpernit_print.f:        CALL OMSTR (TNO3)
+hpernit_print.f:        CALL OMSTR (NITRF)
+hpernit_print.f:        CALL OMSTR (IMMNI)
+hpernit_print.f:        CALL OMSTR (DENI)
+hpernit_print.f:        CALL OMSTR (UTNI)
+hpernit_print.f:        CALL OMSTR (UTNIA)
+hpernit_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_print.f:        CALL OMSTD (DATIM)
+hpernit_print.f:        CALL OMSTI (LSNO)
+hpernit_print.f:        CALL OMSTR (FRAC)
+hpernit_print.f:        CALL OMSTR (AMSU)
+hpernit_print.f:        CALL OMSTR (TAMSU)
+hpernit_print.f:        CALL OMSTR (ADSAM)
+hpernit_print.f:        CALL OMSTR (DESAM)
+hpernit_print.f:        CALL OMSTR (AMMIF)
+hpernit_print.f:        CALL OMSTR (IMMAM)
+hpernit_print.f:        CALL OMSTR (NITRF)
+hpernit_print.f:        CALL OMSTR (UTAM)
+hpernit_print.f:        CALL OMSTR (UTAMA)
+hpernit_print.f:        CALL OMSTR (AMVO)
+hpernit_print.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_print.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_pw1.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_pw1.f:          CALL OMSTI (LSNO)
+hpernit_pw1.f:          CALL OMSTR (SUMFRC)
+hpernit_pw1.f:            CALL OMSTI (LSNO)
+hpernit_pw1.f:            CALL OMSTI (I)
+hpernit_pw1.f:            CALL OMSTR (SUMFRC)
+hpernit_pw1.f:        CALL OMSTI (LSNO)
+hpernit_pw1.f:        CALL OMSTR (SUMFRC)
+hpernit_pw1.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_pw1.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_pw1.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_pw1.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw1.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw1.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw1.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw1.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_pw1.f:      MOISTM = MST(5)
+hpernit_pw1.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_pw1.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_pw1.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_pw1.f:C     SMST   - soil moisture storage in inches
+hpernit_pw1.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_pw1.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_pw1.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_pw1.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw1.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw1.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw1.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw1.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw1.f:                KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw1.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw1.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw1.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw1.f:                KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw1.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_pw1.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw1.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw1.f:        CALL OMSTD (DATIM)
+hpernit_pw1.f:        CALL OMSTI (LSNO)
+hpernit_pw1.f:        CALL OMSTR (FRAC)
+hpernit_pw1.f:        CALL OMSTR (PLON)
+hpernit_pw1.f:        CALL OMSTR (TPLON)
+hpernit_pw1.f:        CALL OMSTR (AMMIF)
+hpernit_pw1.f:        CALL OMSTR (IMMAM)
+hpernit_pw1.f:        CALL OMSTR (IMMNI)
+hpernit_pw1.f:        CALL OMSTR (PRETL)
+hpernit_pw1.f:        CALL OMSTR (RFON)
+hpernit_pw1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw1.f:        CALL OMSTD (DATIM)
+hpernit_pw1.f:        CALL OMSTI (LSNO)
+hpernit_pw1.f:        CALL OMSTR (FRAC)
+hpernit_pw1.f:        CALL OMSTR (AMAD)
+hpernit_pw1.f:        CALL OMSTR (TAMAD)
+hpernit_pw1.f:        CALL OMSTR (ADSAM)
+hpernit_pw1.f:        CALL OMSTR (DESAM)
+hpernit_pw1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw1.f:        CALL OMSTD (DATIM)
+hpernit_pw1.f:        CALL OMSTI (LSNO)
+hpernit_pw1.f:        CALL OMSTR (FRAC)
+hpernit_pw1.f:        CALL OMSTR (NO3)
+hpernit_pw1.f:        CALL OMSTR (TNO3)
+hpernit_pw1.f:        CALL OMSTR (NITRF)
+hpernit_pw1.f:        CALL OMSTR (IMMNI)
+hpernit_pw1.f:        CALL OMSTR (DENI)
+hpernit_pw1.f:        CALL OMSTR (UTNI)
+hpernit_pw1.f:        CALL OMSTR (UTNIA)
+hpernit_pw1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw1.f:        CALL OMSTD (DATIM)
+hpernit_pw1.f:        CALL OMSTI (LSNO)
+hpernit_pw1.f:        CALL OMSTR (FRAC)
+hpernit_pw1.f:        CALL OMSTR (AMSU)
+hpernit_pw1.f:        CALL OMSTR (TAMSU)
+hpernit_pw1.f:        CALL OMSTR (ADSAM)
+hpernit_pw1.f:        CALL OMSTR (DESAM)
+hpernit_pw1.f:        CALL OMSTR (AMMIF)
+hpernit_pw1.f:        CALL OMSTR (IMMAM)
+hpernit_pw1.f:        CALL OMSTR (NITRF)
+hpernit_pw1.f:        CALL OMSTR (UTAM)
+hpernit_pw1.f:        CALL OMSTR (UTAMA)
+hpernit_pw1.f:        CALL OMSTR (AMVO)
+hpernit_pw1.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw1.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_pw2.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_pw2.f:          CALL OMSTI (LSNO)
+hpernit_pw2.f:          CALL OMSTR (SUMFRC)
+hpernit_pw2.f:            CALL OMSTI (LSNO)
+hpernit_pw2.f:            CALL OMSTI (I)
+hpernit_pw2.f:            CALL OMSTR (SUMFRC)
+hpernit_pw2.f:        CALL OMSTI (LSNO)
+hpernit_pw2.f:        CALL OMSTR (SUMFRC)
+hpernit_pw2.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_pw2.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_pw2.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_pw2.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw2.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw2.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw2.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw2.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_pw2.f:      MOISTM = MST(5)
+hpernit_pw2.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_pw2.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_pw2.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_pw2.f:C     SMST   - soil moisture storage in inches
+hpernit_pw2.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_pw2.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_pw2.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_pw2.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw2.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw2.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw2.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw2.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw2.f:                KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw2.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw2.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw2.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw2.f:                KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw2.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_pw2.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw2.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw2.f:        CALL OMSTD (DATIM)
+hpernit_pw2.f:        CALL OMSTI (LSNO)
+hpernit_pw2.f:        CALL OMSTR (FRAC)
+hpernit_pw2.f:        CALL OMSTR (PLON)
+hpernit_pw2.f:        CALL OMSTR (TPLON)
+hpernit_pw2.f:        CALL OMSTR (AMMIF)
+hpernit_pw2.f:        CALL OMSTR (IMMAM)
+hpernit_pw2.f:        CALL OMSTR (IMMNI)
+hpernit_pw2.f:        CALL OMSTR (PRETL)
+hpernit_pw2.f:        CALL OMSTR (RFON)
+hpernit_pw2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw2.f:        CALL OMSTD (DATIM)
+hpernit_pw2.f:        CALL OMSTI (LSNO)
+hpernit_pw2.f:        CALL OMSTR (FRAC)
+hpernit_pw2.f:        CALL OMSTR (AMAD)
+hpernit_pw2.f:        CALL OMSTR (TAMAD)
+hpernit_pw2.f:        CALL OMSTR (ADSAM)
+hpernit_pw2.f:        CALL OMSTR (DESAM)
+hpernit_pw2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw2.f:        CALL OMSTD (DATIM)
+hpernit_pw2.f:        CALL OMSTI (LSNO)
+hpernit_pw2.f:        CALL OMSTR (FRAC)
+hpernit_pw2.f:        CALL OMSTR (NO3)
+hpernit_pw2.f:        CALL OMSTR (TNO3)
+hpernit_pw2.f:        CALL OMSTR (NITRF)
+hpernit_pw2.f:        CALL OMSTR (IMMNI)
+hpernit_pw2.f:        CALL OMSTR (DENI)
+hpernit_pw2.f:        CALL OMSTR (UTNI)
+hpernit_pw2.f:        CALL OMSTR (UTNIA)
+hpernit_pw2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw2.f:        CALL OMSTD (DATIM)
+hpernit_pw2.f:        CALL OMSTI (LSNO)
+hpernit_pw2.f:        CALL OMSTR (FRAC)
+hpernit_pw2.f:        CALL OMSTR (AMSU)
+hpernit_pw2.f:        CALL OMSTR (TAMSU)
+hpernit_pw2.f:        CALL OMSTR (ADSAM)
+hpernit_pw2.f:        CALL OMSTR (DESAM)
+hpernit_pw2.f:        CALL OMSTR (AMMIF)
+hpernit_pw2.f:        CALL OMSTR (IMMAM)
+hpernit_pw2.f:        CALL OMSTR (NITRF)
+hpernit_pw2.f:        CALL OMSTR (UTAM)
+hpernit_pw2.f:        CALL OMSTR (UTAMA)
+hpernit_pw2.f:        CALL OMSTR (AMVO)
+hpernit_pw2.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw2.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_pw3.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_pw3.f:          CALL OMSTI (LSNO)
+hpernit_pw3.f:          CALL OMSTR (SUMFRC)
+hpernit_pw3.f:            CALL OMSTI (LSNO)
+hpernit_pw3.f:            CALL OMSTI (I)
+hpernit_pw3.f:            CALL OMSTR (SUMFRC)
+hpernit_pw3.f:        CALL OMSTI (LSNO)
+hpernit_pw3.f:        CALL OMSTR (SUMFRC)
+hpernit_pw3.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_pw3.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_pw3.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_pw3.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw3.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw3.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw3.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw3.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_pw3.f:      MOISTM = MST(5)
+hpernit_pw3.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_pw3.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_pw3.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_pw3.f:C     SMST   - soil moisture storage in inches
+hpernit_pw3.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_pw3.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_pw3.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_pw3.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw3.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw3.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw3.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw3.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw3.f:                KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw3.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw3.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw3.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw3.f:                KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw3.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_pw3.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw3.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw3.f:        CALL OMSTD (DATIM)
+hpernit_pw3.f:        CALL OMSTI (LSNO)
+hpernit_pw3.f:        CALL OMSTR (FRAC)
+hpernit_pw3.f:        CALL OMSTR (PLON)
+hpernit_pw3.f:        CALL OMSTR (TPLON)
+hpernit_pw3.f:        CALL OMSTR (AMMIF)
+hpernit_pw3.f:        CALL OMSTR (IMMAM)
+hpernit_pw3.f:        CALL OMSTR (IMMNI)
+hpernit_pw3.f:        CALL OMSTR (PRETL)
+hpernit_pw3.f:        CALL OMSTR (RFON)
+hpernit_pw3.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw3.f:        CALL OMSTD (DATIM)
+hpernit_pw3.f:        CALL OMSTI (LSNO)
+hpernit_pw3.f:        CALL OMSTR (FRAC)
+hpernit_pw3.f:        CALL OMSTR (AMAD)
+hpernit_pw3.f:        CALL OMSTR (TAMAD)
+hpernit_pw3.f:        CALL OMSTR (ADSAM)
+hpernit_pw3.f:        CALL OMSTR (DESAM)
+hpernit_pw3.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw3.f:        CALL OMSTD (DATIM)
+hpernit_pw3.f:        CALL OMSTI (LSNO)
+hpernit_pw3.f:        CALL OMSTR (FRAC)
+hpernit_pw3.f:        CALL OMSTR (NO3)
+hpernit_pw3.f:        CALL OMSTR (TNO3)
+hpernit_pw3.f:        CALL OMSTR (NITRF)
+hpernit_pw3.f:        CALL OMSTR (IMMNI)
+hpernit_pw3.f:        CALL OMSTR (DENI)
+hpernit_pw3.f:        CALL OMSTR (UTNI)
+hpernit_pw3.f:        CALL OMSTR (UTNIA)
+hpernit_pw3.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw3.f:        CALL OMSTD (DATIM)
+hpernit_pw3.f:        CALL OMSTI (LSNO)
+hpernit_pw3.f:        CALL OMSTR (FRAC)
+hpernit_pw3.f:        CALL OMSTR (AMSU)
+hpernit_pw3.f:        CALL OMSTR (TAMSU)
+hpernit_pw3.f:        CALL OMSTR (ADSAM)
+hpernit_pw3.f:        CALL OMSTR (DESAM)
+hpernit_pw3.f:        CALL OMSTR (AMMIF)
+hpernit_pw3.f:        CALL OMSTR (IMMAM)
+hpernit_pw3.f:        CALL OMSTR (NITRF)
+hpernit_pw3.f:        CALL OMSTR (UTAM)
+hpernit_pw3.f:        CALL OMSTR (UTAMA)
+hpernit_pw3.f:        CALL OMSTR (AMVO)
+hpernit_pw3.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw3.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_pw4.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_pw4.f:          CALL OMSTI (LSNO)
+hpernit_pw4.f:          CALL OMSTR (SUMFRC)
+hpernit_pw4.f:            CALL OMSTI (LSNO)
+hpernit_pw4.f:            CALL OMSTI (I)
+hpernit_pw4.f:            CALL OMSTR (SUMFRC)
+hpernit_pw4.f:        CALL OMSTI (LSNO)
+hpernit_pw4.f:        CALL OMSTR (SUMFRC)
+hpernit_pw4.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_pw4.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_pw4.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_pw4.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw4.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw4.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw4.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw4.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_pw4.f:      MOISTM = MST(5)
+hpernit_pw4.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_pw4.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_pw4.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_pw4.f:C     SMST   - soil moisture storage in inches
+hpernit_pw4.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_pw4.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_pw4.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_pw4.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw4.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw4.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw4.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw4.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw4.f:                KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw4.f:             if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw4.f:               if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw4.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw4.f:                KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw4.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_pw4.f:c!          NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw4.f:c!          AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw4.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_pw4.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_pw4.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw4.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw4.f:        CALL OMSTD (DATIM)
+hpernit_pw4.f:        CALL OMSTI (LSNO)
+hpernit_pw4.f:        CALL OMSTR (FRAC)
+hpernit_pw4.f:        CALL OMSTR (PLON)
+hpernit_pw4.f:        CALL OMSTR (TPLON)
+hpernit_pw4.f:        CALL OMSTR (AMMIF)
+hpernit_pw4.f:        CALL OMSTR (IMMAM)
+hpernit_pw4.f:        CALL OMSTR (IMMNI)
+hpernit_pw4.f:        CALL OMSTR (PRETL)
+hpernit_pw4.f:        CALL OMSTR (RFON)
+hpernit_pw4.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw4.f:        CALL OMSTD (DATIM)
+hpernit_pw4.f:        CALL OMSTI (LSNO)
+hpernit_pw4.f:        CALL OMSTR (FRAC)
+hpernit_pw4.f:        CALL OMSTR (AMAD)
+hpernit_pw4.f:        CALL OMSTR (TAMAD)
+hpernit_pw4.f:        CALL OMSTR (ADSAM)
+hpernit_pw4.f:        CALL OMSTR (DESAM)
+hpernit_pw4.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw4.f:        CALL OMSTD (DATIM)
+hpernit_pw4.f:        CALL OMSTI (LSNO)
+hpernit_pw4.f:        CALL OMSTR (FRAC)
+hpernit_pw4.f:        CALL OMSTR (NO3)
+hpernit_pw4.f:        CALL OMSTR (TNO3)
+hpernit_pw4.f:        CALL OMSTR (NITRF)
+hpernit_pw4.f:        CALL OMSTR (IMMNI)
+hpernit_pw4.f:        CALL OMSTR (DENI)
+hpernit_pw4.f:        CALL OMSTR (UTNI)
+hpernit_pw4.f:        CALL OMSTR (UTNIA)
+hpernit_pw4.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw4.f:        CALL OMSTD (DATIM)
+hpernit_pw4.f:        CALL OMSTI (LSNO)
+hpernit_pw4.f:        CALL OMSTR (FRAC)
+hpernit_pw4.f:        CALL OMSTR (AMSU)
+hpernit_pw4.f:        CALL OMSTR (TAMSU)
+hpernit_pw4.f:        CALL OMSTR (ADSAM)
+hpernit_pw4.f:        CALL OMSTR (DESAM)
+hpernit_pw4.f:        CALL OMSTR (AMMIF)
+hpernit_pw4.f:        CALL OMSTR (IMMAM)
+hpernit_pw4.f:        CALL OMSTR (NITRF)
+hpernit_pw4.f:        CALL OMSTR (UTAM)
+hpernit_pw4.f:        CALL OMSTR (UTAMA)
+hpernit_pw4.f:        CALL OMSTR (AMVO)
+hpernit_pw4.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw4.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_pw5.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_pw5.f:          CALL OMSTI (LSNO)
+hpernit_pw5.f:          CALL OMSTR (SUMFRC)
+hpernit_pw5.f:            CALL OMSTI (LSNO)
+hpernit_pw5.f:            CALL OMSTI (I)
+hpernit_pw5.f:            CALL OMSTR (SUMFRC)
+hpernit_pw5.f:        CALL OMSTI (LSNO)
+hpernit_pw5.f:        CALL OMSTR (SUMFRC)
+hpernit_pw5.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_pw5.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_pw5.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_pw5.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw5.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw5.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw5.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw5.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_pw5.f:      MOISTM = MST(5)
+hpernit_pw5.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_pw5.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_pw5.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_pw5.f:C     SMST   - soil moisture storage in inches
+hpernit_pw5.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_pw5.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_pw5.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_pw5.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw5.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw5.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw5.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw5.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw5.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw5.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw5.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw5.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw5.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw5.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw5.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw5.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_pw5.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw5.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw5.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_pw5.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_pw5.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw5.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw5.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw5.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw5.f:        CALL OMSTD (DATIM)
+hpernit_pw5.f:        CALL OMSTI (LSNO)
+hpernit_pw5.f:        CALL OMSTR (FRAC)
+hpernit_pw5.f:        CALL OMSTR (PLON)
+hpernit_pw5.f:        CALL OMSTR (TPLON)
+hpernit_pw5.f:        CALL OMSTR (AMMIF)
+hpernit_pw5.f:        CALL OMSTR (IMMAM)
+hpernit_pw5.f:        CALL OMSTR (IMMNI)
+hpernit_pw5.f:        CALL OMSTR (PRETL)
+hpernit_pw5.f:        CALL OMSTR (RFON)
+hpernit_pw5.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw5.f:        CALL OMSTD (DATIM)
+hpernit_pw5.f:        CALL OMSTI (LSNO)
+hpernit_pw5.f:        CALL OMSTR (FRAC)
+hpernit_pw5.f:        CALL OMSTR (AMAD)
+hpernit_pw5.f:        CALL OMSTR (TAMAD)
+hpernit_pw5.f:        CALL OMSTR (ADSAM)
+hpernit_pw5.f:        CALL OMSTR (DESAM)
+hpernit_pw5.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw5.f:        CALL OMSTD (DATIM)
+hpernit_pw5.f:        CALL OMSTI (LSNO)
+hpernit_pw5.f:        CALL OMSTR (FRAC)
+hpernit_pw5.f:        CALL OMSTR (NO3)
+hpernit_pw5.f:        CALL OMSTR (TNO3)
+hpernit_pw5.f:        CALL OMSTR (NITRF)
+hpernit_pw5.f:        CALL OMSTR (IMMNI)
+hpernit_pw5.f:        CALL OMSTR (DENI)
+hpernit_pw5.f:        CALL OMSTR (UTNI)
+hpernit_pw5.f:        CALL OMSTR (UTNIA)
+hpernit_pw5.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw5.f:        CALL OMSTD (DATIM)
+hpernit_pw5.f:        CALL OMSTI (LSNO)
+hpernit_pw5.f:        CALL OMSTR (FRAC)
+hpernit_pw5.f:        CALL OMSTR (AMSU)
+hpernit_pw5.f:        CALL OMSTR (TAMSU)
+hpernit_pw5.f:        CALL OMSTR (ADSAM)
+hpernit_pw5.f:        CALL OMSTR (DESAM)
+hpernit_pw5.f:        CALL OMSTR (AMMIF)
+hpernit_pw5.f:        CALL OMSTR (IMMAM)
+hpernit_pw5.f:        CALL OMSTR (NITRF)
+hpernit_pw5.f:        CALL OMSTR (UTAM)
+hpernit_pw5.f:        CALL OMSTR (UTAMA)
+hpernit_pw5.f:        CALL OMSTR (AMVO)
+hpernit_pw5.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw5.f:          IF (SMST .GE. WILTPT) THEN
+hpernit_pw6.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hpernit_pw6.f:          CALL OMSTI (LSNO)
+hpernit_pw6.f:          CALL OMSTR (SUMFRC)
+hpernit_pw6.f:            CALL OMSTI (LSNO)
+hpernit_pw6.f:            CALL OMSTI (I)
+hpernit_pw6.f:            CALL OMSTR (SUMFRC)
+hpernit_pw6.f:        CALL OMSTI (LSNO)
+hpernit_pw6.f:        CALL OMSTR (SUMFRC)
+hpernit_pw6.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hpernit_pw6.f:     I               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hpernit_pw6.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hpernit_pw6.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw6.f:     I               FORAFG,ULTMP,MST(2),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw6.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_pw6.f:     I                 FORAFG,ULTMP,MSTB(2,I),ULSM,UNPM,LAYID(2),UKPLN,
+hpernit_pw6.f:     I             FORAFG,LGTMP,MST(4),LLSM,LNPM,LAYID(3),LKPLN,
+hpernit_pw6.f:      MOISTM = MST(5)
+hpernit_pw6.f:     I                    KRET,KRETF,ANUTF,SMST,
+hpernit_pw6.f:     $            KRET,KRETF,ANUTF,SMST,NDEFC,AGPLTN,NIT(8),NITRXF(16)
+hpernit_pw6.f:c    x           , pwwiltpt, pwsoild, pwsoilv     ! pw  pwmoistD=SMST
+hpernit_pw6.f:C     SMST   - soil moisture storage in inches
+hpernit_pw6.f:      EXTERNAL    FIRORD,SV,OMSTR,OMSTC,OMSTD,OMSTI,OMSG
+hpernit_pw6.f:c   !  should be = SMST?? soil moisture in inches (after mstley). 
+hpernit_pw6.f:           if( SMST    .lt. fldcp)then ! 0.2*pwsoildd = fldcp 
+hpernit_pw6.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw6.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw6.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw6.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw6.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw6.f:caa             KSINIKe=KSINIK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw6.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw6.f:cbb          if(SMST .lt. wiltpt ) then   ! compare depth of water
+hpernit_pw6.f:cbb            if( SMST    .le. fldcp) then ! less than field capacity
+hpernit_pw6.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw6.f:caa             KSIAMKe=KSIAMK* SMST   /(fldcp) !effective mass max immobil
+hpernit_pw6.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw6.f:            IF (SMST .GE. WILTPT) THEN
+hpernit_pw6.f:            NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw6.f:            AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw6.f:c           NICONC = (  SMST  /(fldcp))*NICONC           
+hpernit_pw6.f:c           AMCONC = (  SMST  /(fldcp))*AMCONC            
+hpernit_pw6.f:caa         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw6.f:cbb         NICONC = (  SMST  /(fldcp))*NO3/MOISTM*1.0E6 
+hpernit_pw6.f:caa         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw6.f:cbb         AMCONC = (  SMST  /(fldcp))*AMSU/MOISTM*1.0E6 
+hpernit_pw6.f:        CALL OMSTD (DATIM)
+hpernit_pw6.f:        CALL OMSTI (LSNO)
+hpernit_pw6.f:        CALL OMSTR (FRAC)
+hpernit_pw6.f:        CALL OMSTR (PLON)
+hpernit_pw6.f:        CALL OMSTR (TPLON)
+hpernit_pw6.f:        CALL OMSTR (AMMIF)
+hpernit_pw6.f:        CALL OMSTR (IMMAM)
+hpernit_pw6.f:        CALL OMSTR (IMMNI)
+hpernit_pw6.f:        CALL OMSTR (PRETL)
+hpernit_pw6.f:        CALL OMSTR (RFON)
+hpernit_pw6.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw6.f:        CALL OMSTD (DATIM)
+hpernit_pw6.f:        CALL OMSTI (LSNO)
+hpernit_pw6.f:        CALL OMSTR (FRAC)
+hpernit_pw6.f:        CALL OMSTR (AMAD)
+hpernit_pw6.f:        CALL OMSTR (TAMAD)
+hpernit_pw6.f:        CALL OMSTR (ADSAM)
+hpernit_pw6.f:        CALL OMSTR (DESAM)
+hpernit_pw6.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw6.f:        CALL OMSTD (DATIM)
+hpernit_pw6.f:        CALL OMSTI (LSNO)
+hpernit_pw6.f:        CALL OMSTR (FRAC)
+hpernit_pw6.f:        CALL OMSTR (NO3)
+hpernit_pw6.f:        CALL OMSTR (TNO3)
+hpernit_pw6.f:        CALL OMSTR (NITRF)
+hpernit_pw6.f:        CALL OMSTR (IMMNI)
+hpernit_pw6.f:        CALL OMSTR (DENI)
+hpernit_pw6.f:        CALL OMSTR (UTNI)
+hpernit_pw6.f:        CALL OMSTR (UTNIA)
+hpernit_pw6.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw6.f:        CALL OMSTD (DATIM)
+hpernit_pw6.f:        CALL OMSTI (LSNO)
+hpernit_pw6.f:        CALL OMSTR (FRAC)
+hpernit_pw6.f:        CALL OMSTR (AMSU)
+hpernit_pw6.f:        CALL OMSTR (TAMSU)
+hpernit_pw6.f:        CALL OMSTR (ADSAM)
+hpernit_pw6.f:        CALL OMSTR (DESAM)
+hpernit_pw6.f:        CALL OMSTR (AMMIF)
+hpernit_pw6.f:        CALL OMSTR (IMMAM)
+hpernit_pw6.f:        CALL OMSTR (NITRF)
+hpernit_pw6.f:        CALL OMSTR (UTAM)
+hpernit_pw6.f:        CALL OMSTR (UTAMA)
+hpernit_pw6.f:        CALL OMSTR (AMVO)
+hpernit_pw6.f:        CALL OMSTC (I4,CHSTR1)
+hpernit_pw6.f:          IF (SMST .GE. WILTPT) THEN
+hperpes.f:      CALL AGRGET  (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hperpes.f:     $              SOSDBX,MSTFP,FRACFP,MSTBFP,
+hperpes.f:     O              SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hperpes.f:     I                 SLTMP,MST(1),SLSM,
+hperpes.f:     I                 ULTMP,MST(2),ULSM,
+hperpes.f:     I                   SLTMP,MSTB(1,I),SLSM,
+hperpes.f:     I                   ULTMP,MSTB(2,I),ULSM,
+hperpes.f:     I               LGTMP,MST(4),LLSM,LAYID(3),
+hperpes.f:     I               LGTMP,MST(5),ALSM,LAYID(4),
+hperpes.f:      EXTERNAL    FIRORD,SV,OMSTC,OMSTR,OMSG,NONSV,DEGRAS,OMSTI,OMSTD
+hperpes.f:              CALL OMSTD (DATIM)
+hperpes.f:              CALL OMSTI (LSNO)
+hperpes.f:              CALL OMSTC (I20,CHSTR2)
+hperpes.f:              CALL OMSTR (FRAC)
+hperpes.f:              CALL OMSTR (PSAD)
+hperpes.f:              CALL OMSTR (TPSAD)
+hperpes.f:              CALL OMSTR (ADSPS)
+hperpes.f:              CALL OMSTR (DESPS)
+hperpes.f:              CALL OMSTC (I4,CHSTR1)
+hperpes.f:              CALL OMSTD (DATIM)
+hperpes.f:              CALL OMSTI (LSNO)
+hperpes.f:              CALL OMSTC (I20,CHSTR2)
+hperpes.f:              CALL OMSTR (FRAC)
+hperpes.f:              CALL OMSTR (PSSU)
+hperpes.f:              CALL OMSTR (TPSSU)
+hperpes.f:              CALL OMSTR (ADSPS)
+hperpes.f:              CALL OMSTR (DESPS)
+hperpes.f:              CALL OMSTC (I4,CHSTR1)
+hperpho.f:      EXTERNAL     ZIPR,MDATBL,OMSTI,OMSTR,OMSG,RTABLE
+hperpho.f:          CALL OMSTI (LSNO)
+hperpho.f:          CALL OMSTR (SUMFRC)
+hperpho.f:            CALL OMSTI (LSNO)
+hperpho.f:            CALL OMSTI (I)
+hperpho.f:            CALL OMSTR (SUMFRC)
+hperpho.f:        CALL AGRGET (SEDFG,NBLKS,MSTLFG,PSTFG,TMPFG,IVL1,SOSDFP,
+hperpho.f:     $               SOSDBX,MSTFP,FRACFP,MSTBFP,
+hperpho.f:     O               SOSED,SOSDB,MST,FRAC,MSTB,FRACB,
+hperpho.f:     I               SLTMP,MST(1),SLSM,SPPM,LAYID(1),SKPLP,
+hperpho.f:     I               ULTMP,MST(2),ULSM,UPPM,LAYID(2),UKPLP,
+hperpho.f:     I                 SLTMP,MSTB(1,I),SLSM,SPPM,LAYID(1),SKPLP,
+hperpho.f:     I                 ULTMP,MSTB(2,I),ULSM,UPPM,LAYID(2),UKPLP,
+hperpho.f:     I             MST(4),LLSM,LPPM,LAYID(3),LKPLP,
+hperpho.f:      MOISTM = MST(5)
+hperpho.f:     I                    PUPTFG,PUPTG,PMXRAT,WILTPT,SMST,
+hperpho.f:     $            PPM(8),SOILM,TMP,PUPTG,PMXRAT,WILTPT,SMST,PDEFC
+hperpho.f:C     SMST   - soil moisture storage in inches
+hperpho.f:      EXTERNAL    FIRORD,SV,OMSG,OMSTI,OMSTD,OMSTC,OMSTR
+hperpho.f:            IF (SMST .GE. WILTPT) THEN
+hperpho.f:        CALL OMSTD (DATIM)
+hperpho.f:        CALL OMSTI (LSNO)
+hperpho.f:        CALL OMSTR (FRAC)
+hperpho.f:        CALL OMSTR (ORGP)
+hperpho.f:        CALL OMSTR (TORGP)
+hperpho.f:        CALL OMSTR (MINZOP)
+hperpho.f:        CALL OMSTR (IMMP4)
+hperpho.f:        CALL OMSTC (I4,CHSTR1)
+hperpho.f:        CALL OMSTD (DATIM)
+hperpho.f:        CALL OMSTI (LSNO)
+hperpho.f:        CALL OMSTR (FRAC)
+hperpho.f:        CALL OMSTR (P4AD)
+hperpho.f:        CALL OMSTR (TP4AD)
+hperpho.f:        CALL OMSTR (ADSP4)
+hperpho.f:        CALL OMSTR (DESP4)
+hperpho.f:        CALL OMSTC (I4,CHSTR1)
+hperpho.f:        CALL OMSTD (DATIM)
+hperpho.f:        CALL OMSTI (LSNO)
+hperpho.f:        CALL OMSTR (FRAC)
+hperpho.f:        CALL OMSTR (P4SU)
+hperpho.f:        CALL OMSTR (TP4SU)
+hperpho.f:        CALL OMSTR (ADSP4)
+hperpho.f:        CALL OMSTR (DESP4)
+hperpho.f:        CALL OMSTR (MINZOP)
+hperpho.f:        CALL OMSTR (IMMP4)
+hperpho.f:        CALL OMSTR (UTP4)
+hperpho.f:        CALL OMSTC (I4,CHSTR1)
+hperqua.f:      EXTERNAL   ITABLE,RTABLE,OMSG,OMSTC
+hperqua.f:            CALL OMSTC (I12,CHSTR1)
+hperqua.f:            CALL OMSTC (I12,CHSTR1)
+hperqua.f:            CALL OMSTC (I12,CHSTR1)
+hperqua.f:            CALL OMSTC (I12,CHSTR1)
+hperqua.f:            CALL OMSTC (I12,CHSTR1)
+hpersno.f:     $          NOPACK, OMSG, OMSTR, OMSTD, OMSTI
+hpersno.f:          CALL OMSTD (DATIM)
+hpersno.f:          CALL OMSTI (LSNO)
+hpersno.f:          CALL OMSTR (PACKF)
+hpersno.f:          CALL OMSTR (PACKI)
+hpersno.f:      EXTERNAL  OMSTR,OMSG,OMSTD,OMSTI
+hpersno.f:        CALL OMSTD (DATIM)
+hpersno.f:        CALL OMSTI (LSNO)
+hpersno.f:        CALL OMSTR (INDEX)
+hpersno.f:        CALL OMSTR (TMP)
+hpersno.f:        CALL OMSTD (DATIM)
+hpersno.f:        CALL OMSTI (LSNO)
+hpersno.f:        CALL OMSTR (INDEX)
+hpersno.f:        CALL OMSTR (TMP)
+hpertra.f:      IF (MSTLFG.EQ.0.AND.PESTFG.EQ.0.AND.NITRFG.EQ.0.AND.PHOSFG.EQ.0)
+hpertra.f:            MST(J)= PAD(MSTFP(J)+IVL1)
+hpertra.f:              MSTB(J,N)= PAD(MSTBFP(J,N)+IVL1)
+hpertra.f:          MST(4) = PAD(MSTFP(4)+IVL1)
+hpertra.f:          MST(5) = PAD(MSTFP(5)+IVL1)
+hperwat.f:C     it is used by module section MSTLAY
+hperwat.f:      EXTERNAL   OMSG,OMSTI,OMSTR
+hperwat.f:              CALL OMSTI (LSNO)
+hperwat.f:              CALL OMSTR (SURSE)
+hperwat.f:              CALL OMSTR (SURO)
+hperwat.f:              CALL OMSTR (SURSNW)
+hperwat.f:              CALL OMSTR (FSURO)
+hperwat.f:              CALL OMSTR (DFSURO)
+hperwat.f:              CALL OMSTR (DSURO)
+hperwat.f:      EXTERNAL   OMSTR,OMSG,OMSTI,OMSTD
+hperwat.f:        CALL OMSTD (DATIM)
+hperwat.f:        CALL OMSTI (LSNO)
+hperwat.f:        CALL OMSTR (UZR1)
+hperwat.f:        CALL OMSTR (UZR2)
+hperwat.f:        CALL OMSTR (UZRAA)
+hperwat.f:        CALL OMSTD (DATIM)
+hperwat.f:        CALL OMSTI (LSNO)
+hperwat.f:        CALL OMSTR (INTG1)
+hperwat.f:        CALL OMSTR (INTG2)
+hperwat.f:        CALL OMSTR (INTGB)
+hprbut.f:      SUBROUTINE   OMSTI
+hprbut.f:      SUBROUTINE   OMSTR
+hprbut.f:      SUBROUTINE   OMSTC
+hprbut.f:      SUBROUTINE   OMSTD
+hprbut_print.f:      SUBROUTINE   OMSTI
+hprbut_print.f:      SUBROUTINE   OMSTR
+hprbut_print.f:      SUBROUTINE   OMSTC
+hprbut_print.f:      SUBROUTINE   OMSTD
+hrchaci.f:      EXTERNAL   ITABLE, RTABLE, ACINIT, OMSG, OMSTI, ZIPI
+hrchaci.f:        CALL OMSTI (RCHNO)
+hrchaci.f:        CALL OMSTI (NUMCON)
+hrchaci.f:        CALL OMSTI (NCONS)
+hrchaci.f:        CALL OMSTI (NUMGQL)
+hrchaci.f:        CALL OMSTI (NGQUAL)
+hrchaci.f:      EXTERNAL   OMSG, OMSTI, OMSTD
+hrchaci.f:          CALL OMSTD (DATIM)
+hrchaci.f:          CALL OMSTI (RCHNO)
+hrchaci.f:            CALL OMSTD (DATIM)
+hrchaci.f:            CALL OMSTI (RCHNO)
+hrch.f:      EXTERNAL   DAYMNH,ITABLE,OMSTI,OMSG,HSCKFL
+hrch.f:        CALL OMSTI (RCHNO)
+hrch.f:          CALL OMSTI (OPTNO)
+hrch.f:          CALL OMSTI (PDELT)
+hrchgqu.f:      EXTERNAL     OMSTI,RTABLE,ITABLE,OMSG,ADDTIM,ZIPI
+hrchgqu.f:          CALL OMSTI (RCHNO)
+hrchgqu.f:          CALL OMSTI(RCHNO)
+hrchgqu.f:              CALL OMSTI(RCHNO)
+hrchgqu.f:              CALL OMSTI(RCHNO)
+hrchgqu.f:      EXTERNAL   OMSTD,OMSTI,OMSTC,OMSG,OMSTR
+hrchgqu.f:            CALL OMSTD (DATIM)
+hrchgqu.f:            CALL OMSTI (RCHNO)
+hrchgqu.f:            CALL OMSTR (ISQAL)
+hrchgqu.f:            CALL OMSTR (RSQALS)
+hrchgqu.f:            CALL OMSTC (I20,CHSTR1)
+hrchgqu.f:            CALL OMSTI (J)
+hrchgqu.f:            CALL OMSTD (DATIM)
+hrchgqu.f:            CALL OMSTI (RCHNO)
+hrchgqu.f:            CALL OMSTR (DSQAL)
+hrchgqu.f:            CALL OMSTR (RBQALS)
+hrchgqu.f:            CALL OMSTC (I20,CHSTR1)
+hrchgqu.f:            CALL OMSTI (J)
+hrchhyd.f:      EXTERNAL   OMSTC,ZIPD,ZIPR,OMSTI,OMSTR,CATSRT,DISCH,FNDROW,AUXIL
+hrchhyd.f:          CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:            CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:            CALL OMSTI (I)
+hrchhyd.f:              CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:              CALL OMSTI (I)
+hrchhyd.f:            CALL OMSTR (SUMFRC)
+hrchhyd.f:              CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:              CALL OMSTI (I)
+hrchhyd.f:            CALL OMSTR (SUMFRC)
+hrchhyd.f:              CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:              CALL OMSTI (I)
+hrchhyd.f:              CALL OMSTR (SUMFRC)
+hrchhyd.f:              CALL OMSTI (CEVAPP(LEVND))
+hrchhyd.f:              CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:              CALL OMSTI (I)
+hrchhyd.f:                  CALL OMSTR (SUMFRC)
+hrchhyd.f:                  CALL OMSTI (CFVOLP(LEVND,IX))
+hrchhyd.f:                  CALL OMSTI (IX)
+hrchhyd.f:              CALL OMSTC (I2,CTAG1(3))
+hrchhyd.f:              CALL OMSTI (I)
+hrchhyd.f:              CALL OMSTC (I,CPRIO1)
+hrchhyd.f:      EXTERNAL   VALNO,OMSG,OMSTI,OMSTC,DUMPER,GETUCI
+hrchhyd.f:        CALL OMSTI (FTABNO)
+hrchhyd.f:          CALL OMSTI (FTABNO)
+hrchhyd.f:          CALL OMSTC (I,UCIBF1)
+hrchhyd.f:          CALL OMSTI (FTABNO)
+hrchhyd.f:          CALL OMSTI (NROWS)
+hrchhyd.f:          CALL OMSTI (NCOLS)
+hrchhyd.f:              CALL OMSTI (FTABNO)
+hrchhyd.f:              CALL OMSTI (NROWS)
+hrchhyd.f:              CALL OMSTI (KEYND)
+hrchhyd.f:                CALL OMSTI (NR)
+hrchhyd.f:                CALL OMSTI (FTABNO)
+hrchhyd.f:                CALL OMSTC (I,UCIBF1)
+hrchhyd.f:                CALL OMSTI (FTABNO)
+hrchhyd.f:                CALL OMSTI (NR)
+hrchhyd.f:                CALL OMSTI (NR)
+hrchhyd.f:                CALL OMSTI (FTABNO)
+hrchhyd.f:            CALL OMSTI (FTABNO)
+hrchhyd.f:            CALL OMSTI (VZERPT)
+hrchhyd.f:      EXTERNAL     OMSG,OMSTI,CHKWDM,WDTBFX,WDTBSP,WTBGET
+hrchhyd.f:        CALL OMSTI (FTBDSN)
+hrchhyd.f:        CALL OMSTI (FTABNO)
+hrchhyd.f:          CALL OMSTI (FTBDSN)
+hrchhyd.f:          CALL OMSTI (FTABNO)
+hrchhyd.f:            CALL OMSTI (FTBDSN)
+hrchhyd.f:            CALL OMSTI (FTABNO)
+hrchhyd.f:            CALL OMSTI (RETCOD)
+hrchhyd.f:              CALL OMSTI (FTBDSN)
+hrchhyd.f:              CALL OMSTI (FTABNO)
+hrchhyd.f:              CALL OMSTI (RETCOD)
+hrchhyd.f:                CALL OMSTI (FTBDSN)
+hrchhyd.f:                CALL OMSTI (FTABNO)
+hrchhyd.f:                CALL OMSTI (NROWS)
+hrchhyd.f:                CALL OMSTI (NCOLS)
+hrchhyd.f:                    CALL OMSTI (FTBDSN)
+hrchhyd.f:                    CALL OMSTI (FTABNO)
+hrchhyd.f:                    CALL OMSTI (NR)
+hrchhyd.f:                    CALL OMSTI (FTBDSN)
+hrchhyd.f:                    CALL OMSTI (FTABNO)
+hrchhyd.f:                    CALL OMSTI (NR)
+hrchhyd.f:                  CALL OMSTI (FTBDSN)
+hrchhyd.f:                  CALL OMSTI (FTABNO)
+hrchhyd.f:                  CALL OMSTI (VZERPT)
+hrchhyd.f:      EXTERNAL         CATSRT,CATFRC,ROUTE,NOROUT,OMSTD,OMSTI,OMSTR
+hrchhyd.f:              CALL OMSTD (DATIM)
+hrchhyd.f:              CALL OMSTI (RCHNO)
+hrchhyd.f:              CALL OMSTR (RTMP)
+hrchhyd.f:              CALL OMSTR (RTMP)
+hrchhyd.f:              CALL OMSTR (RTMP)
+hrchhyd.f:            CALL OMSTD (DATIM)
+hrchhyd.f:            CALL OMSTI (RCHNO)
+hrchhyd.f:            CALL OMSTR (RTMP)
+hrchhyd.f:            CALL OMSTR (RTMP)
+hrchhyd.f:      EXTERNAL   OMSTD,OMSG,OMSTI,OMSTR
+hrchhyd.f:            CALL OMSTD (DATIM)
+hrchhyd.f:            CALL OMSTI (RCHNO)
+hrchhyd.f:            CALL OMSTI (NROWS)
+hrchhyd.f:            CALL OMSTR (V1)
+hrchhyd.f:            CALL OMSTR (V2)
+hrchhyd.f:            CALL OMSTR (VOLSP)
+hrchhyd.f:      EXTERNAL         DEMAND,OMSG,OMSTI,OMSTR,OMSTD
+hrchhyd.f:          CALL OMSTD (DATIM)
+hrchhyd.f:          CALL OMSTI (RCHNO)
+hrchhyd.f:          CALL OMSTR (V1)
+hrchhyd.f:          CALL OMSTR (V2)
+hrchhyd.f:          CALL OMSTR (ROD1)
+hrchhyd.f:          CALL OMSTR (ROD2)
+hrchhyd.f:            CALL OMSTD (DATIM)
+hrchhyd.f:            CALL OMSTI (RCHNO)
+hrchhyd.f:            CALL OMSTI (NROWS)
+hrchhyd.f:            CALL OMSTR (V1)
+hrchhyd.f:            CALL OMSTR (V2)
+hrchhyd.f:            CALL OMSTR (VR4)
+hrchhyd.f:          CALL OMSTD (DATIM)
+hrchhyd.f:          CALL OMSTI (RCHNO)
+hrchhyd.f:          CALL OMSTI (MOVE)
+hrchhyd.f:          CALL OMSTI (PREMOV)
+hrchhyd.f:      EXTERNAL   OMSTD,OMSG,OMSTR,OMSTI
+hrchhyd.f:            CALL OMSTD (DATIM)
+hrchhyd.f:            CALL OMSTI (RCHNO)
+hrchhyd.f:            CALL OMSTR (A)
+hrchhyd.f:            CALL OMSTR (B)
+hrchhyd.f:            CALL OMSTR (C)
+hrchhyd.f:            CALL OMSTR (RDEP1)
+hrchhyd.f:            CALL OMSTR (RDEP2)
+hrchhyd.f:            CALL OMSTI (COUNT)
+hrchhyd.f:          CALL OMSTD (DATIM)
+hrchhyd.f:          CALL OMSTI (RCHNO)
+hrchhyd.f:          CALL OMSTR (A)
+hrchhyd.f:          CALL OMSTR (B)
+hrchhyd.f:          CALL OMSTR (C)
+hrchhyd.f:          CALL OMSTR (RDEP1)
+hrchhyd.f:          CALL OMSTR (RDEP2)
+hrchhyd.f:          CALL OMSTI (COUNT)
+hrchnut_cheater.f:      EXTERNAL   RTABLE,ITABLE,OMSG,OMSTI,ZIPI
+hrchnut_cheater.f:        CALL OMSTI(RCHNO)
+hrchnut_cheater.f:        CALL OMSTI(RCHNO)
+hrchnut_cheater.f:      EXTERNAL     OMSG,OMSTI,OMSTC,OMSTR,OMSTD
+hrchnut_cheater.f:            CALL OMSTD (DATIM)
+hrchnut_cheater.f:            CALL OMSTI (RCHNO)
+hrchnut_cheater.f:            CALL OMSTR (ISNUT)
+hrchnut_cheater.f:            CALL OMSTR (RSNUTS)
+hrchnut_cheater.f:            CALL OMSTC (I20,CHSTR1)
+hrchnut_cheater.f:            CALL OMSTI (J)
+hrchnut_cheater.f:            CALL OMSTD (DATIM)
+hrchnut_cheater.f:            CALL OMSTI (RCHNO)
+hrchnut_cheater.f:            CALL OMSTR (DSNUT)
+hrchnut_cheater.f:            CALL OMSTR (RBNUTS)
+hrchnut_cheater.f:            CALL OMSTC (I20,CHSTR1)
+hrchnut_cheater.f:            CALL OMSTI (J)
+hrchnut.f:      EXTERNAL   RTABLE,ITABLE,OMSG,OMSTI,ZIPI
+hrchnut.f:        CALL OMSTI(RCHNO)
+hrchnut.f:        CALL OMSTI(RCHNO)
+hrchnut.f:      EXTERNAL     OMSG,OMSTI,OMSTC,OMSTR,OMSTD
+hrchnut.f:            CALL OMSTD (DATIM)
+hrchnut.f:            CALL OMSTI (RCHNO)
+hrchnut.f:            CALL OMSTR (ISNUT)
+hrchnut.f:            CALL OMSTR (RSNUTS)
+hrchnut.f:            CALL OMSTC (I20,CHSTR1)
+hrchnut.f:            CALL OMSTI (J)
+hrchnut.f:            CALL OMSTD (DATIM)
+hrchnut.f:            CALL OMSTI (RCHNO)
+hrchnut.f:            CALL OMSTR (DSNUT)
+hrchnut.f:            CALL OMSTR (RBNUTS)
+hrchnut.f:            CALL OMSTC (I20,CHSTR1)
+hrchnut.f:            CALL OMSTI (J)
+hrchnut_original.f:      EXTERNAL   RTABLE,ITABLE,OMSG,OMSTI,ZIPI
+hrchnut_original.f:        CALL OMSTI(RCHNO)
+hrchnut_original.f:        CALL OMSTI(RCHNO)
+hrchnut_original.f:      EXTERNAL     OMSG,OMSTI,OMSTC,OMSTR,OMSTD
+hrchnut_original.f:            CALL OMSTD (DATIM)
+hrchnut_original.f:            CALL OMSTI (RCHNO)
+hrchnut_original.f:            CALL OMSTR (ISNUT)
+hrchnut_original.f:            CALL OMSTR (RSNUTS)
+hrchnut_original.f:            CALL OMSTC (I20,CHSTR1)
+hrchnut_original.f:            CALL OMSTI (J)
+hrchnut_original.f:            CALL OMSTD (DATIM)
+hrchnut_original.f:            CALL OMSTI (RCHNO)
+hrchnut_original.f:            CALL OMSTR (DSNUT)
+hrchnut_original.f:            CALL OMSTR (RBNUTS)
+hrchnut_original.f:            CALL OMSTC (I20,CHSTR1)
+hrchnut_original.f:            CALL OMSTI (J)
+hrchnuttemp.f:      EXTERNAL   RTABLE,ITABLE,OMSG,OMSTI,ZIPI
+hrchnuttemp.f:        CALL OMSTI(RCHNO)
+hrchnuttemp.f:        CALL OMSTI(RCHNO)
+hrchnuttemp.f:      EXTERNAL     OMSG,OMSTI,OMSTC,OMSTR,OMSTD
+hrchnuttemp.f:            CALL OMSTD (DATIM)
+hrchnuttemp.f:            CALL OMSTI (RCHNO)
+hrchnuttemp.f:            CALL OMSTR (ISNUT)
+hrchnuttemp.f:            CALL OMSTR (RSNUTS)
+hrchnuttemp.f:            CALL OMSTC (I20,CHSTR1)
+hrchnuttemp.f:            CALL OMSTI (J)
+hrchnuttemp.f:            CALL OMSTD (DATIM)
+hrchnuttemp.f:            CALL OMSTI (RCHNO)
+hrchnuttemp.f:            CALL OMSTR (DSNUT)
+hrchnuttemp.f:            CALL OMSTR (RBNUTS)
+hrchnuttemp.f:            CALL OMSTC (I20,CHSTR1)
+hrchnuttemp.f:            CALL OMSTI (J)
+hrchphc.f:      EXTERNAL   RTABLE,ITABLE,OMSTI,OMSG
+hrchphc.f:        CALL OMSTI (RCHNO)
+hrchphc.f:        CALL OMSTI (ALKCON)
+hrchphc.f:        CALL OMSTI (NCONS)
+hrchphc.f:      EXTERNAL   ADVECT,BENTH,PHCALC,OMSG,OMSTR,OMSTI,OMSTD
+hrchphc.f:          CALL OMSTD (DATIM)
+hrchphc.f:          CALL OMSTI (RCHNO)
+hrchphc.f:          CALL OMSTR (COEFF1)
+hrchphc.f:          CALL OMSTR (COEFF2)
+hrchphc.f:          CALL OMSTR (COEFF3)
+hrchphc.f:          CALL OMSTR (COEFF4)
+hrchphc.f:          CALL OMSTR (ALK)
+hrchphc.f:          CALL OMSTR (TIC)
+hrchplk.f:      EXTERNAL   RTABLE,ITABLE,OMSG,ZIPI,OMSTI
+hrchplk.f:        CALL OMSTI (RCHNO)
+hrchplk.f:        CALL OMSTI (RCHNO)
+hrchplk.f:        CALL OMSTI (RCHNO)
+hrchplk.f:      REAL       OFLO,STAY,MSTAY,PLNKAD
+hrchplk.f:        MSTAY= STAY*VOLS
+hrchplk.f:          PLANK= PLNKAD + MSTAY/VOL
+hrchplk.f:        MSTAY= PLANK*VOLS
+hrchplk.f:          PLANK= (MSTAY + IPLANK)/VOL
+hrchsed.f:      EXTERNAL   RTABLE,ITABLE,OMSG,OMSTR,ZIPI
+hrchsed.f:        CALL OMSTR (RVAL(2))
+hrchsed.f:        CALL OMSTR (RVAL(3))
+hrchsed.f:        CALL OMSTR (RVAL(4))
+hrchsed.f:      EXTERNAL   COHESV,SANDLD,OMSTR,OMSTI,OMSTD,OMSG
+hrchsed.f:          CALL OMSTD (DATIM)
+hrchsed.f:          CALL OMSTI (RCHNO)
+hrchsed.f:          CALL OMSTI (J)
+hrchsed.f:        CALL OMSTD (DATIM)
+hrchsed.f:        CALL OMSTI (RCHNO)
+hrchsed.f:        CALL OMSTR (BEDDEP)
+hrchsed.f:        CALL OMSTR (BEDWRN)
+hrchsed.f:      EXTERNAL   OMSTI,OMSTD,OMSG,OMSTR,COLBY,TOFFAL
+hrchsed.f:              CALL OMSTD (DATIM)
+hrchsed.f:              CALL OMSTI (RCHNO)
+hrchsed.f:              CALL OMSTR (DB50M)
+hrchsed.f:              CALL OMSTR (HRADE)
+hrchsed.f:              CALL OMSTR (AVVELE)
+hringen.f:      EXTERNAL  OMSG,OMSTI,OMSTC,STDATE,ENDATE,DIFTIM,GETUCI,COPYI
+hringen.f:          CALL OMSTC (ITMP,UCIBF1)
+hringen.f:              CALL OMSTI (SEDAT(J))
+hringen.f:          CALL OMSTC (ITMP,UCIBF1)
+hringen.f:            CALL OMSTI (OUTLEV)
+hringen.f:            CALL OMSTI (SPOUT)
+hringen.f:          CALL OMSTC (ITMP,UCIBF1)
+hringen.f:      EXTERNAL    VALNO,CRINTE,DUMPER,OMSTC,OMSTI,OMSG,WMSGTT
+hringen.f:              CALL OMSTC (I12,CHSTR1)
+hringen.f:              CALL OMSTI (NUMBR)
+hringen.f:              CALL OMSTC (I12,CHSTR1)
+hringen.f:              CALL OMSTI (MSLINX(OPENFG,1))
+hringen.f:                CALL OMSTC (I12,CHSTR1)
+hringen.f:                CALL OMSTI (NUMBR)
+hringen.f:                CALL OMSTC (I12,CHSTR1)
+hringen.f:                CALL OMSTI (NUMBR)
+hringen.f:                CALL OMSTC (I12,CHSTR1)
+hringen.f:                CALL OMSTI (NUMBR)
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                  CALL OMSTI (NUMBR)
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                  CALL OMSTI (OPENNO)
+hringen.f:          CALL OMSTC (I12,CHSTR1)
+hringen.f:          CALL OMSTI (MSLINX(OPENFG,1))
+hringen.f:      EXTERNAL    VALNO,CRINTE,DUMPER,OMSTC,OMSTI,OMSG,WMSGTT
+hringen.f:                CALL OMSTC (I12,CHSTR1)
+hringen.f:                CALL OMSTI (NUMBR)
+hringen.f:                CALL OMSTC (I12,CHSTR1)
+hringen.f:                CALL OMSTI (MDTINX(OPENFG,1))
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                  CALL OMSTI (NUMBR)
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                  CALL OMSTI (NUMBR)
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                  CALL OMSTI (NUMBR)
+hringen.f:                    CALL OMSTC (I12,CHSTR1)
+hringen.f:                    CALL OMSTI (NUMBR)
+hringen.f:                    CALL OMSTC (I12,CHSTR1)
+hringen.f:                    CALL OMSTI (OPENNO)
+hringen.f:          CALL OMSTC (I12,CHSTR1)
+hringen.f:          CALL OMSTI (MDTINX(OPENFG,1))
+hringen.f:      EXTERNAL   VALNO,OMSG,OMSTI
+hringen.f:        CALL OMSTI (XGRPNO)
+hringen.f:        CALL OMSTI (GRPNO)
+hringen.f:        CALL OMSTI (HRMIN(1))
+hringen.f:        CALL OMSTI (HRMIN(2))
+hringen.f:          CALL OMSTI (RUNMIN)
+hringen.f:          CALL OMSTI (XDELT)
+hringen.f:      EXTERNAL   VALNO,OMSG,OMSTI,NEWEXG,PMXTFT
+hringen.f:        CALL OMSTI (GRPNO)
+hringen.f:        CALL OMSTI (HRMIN(1))
+hringen.f:        CALL OMSTI (HRMIN(2))
+hringen.f:            CALL OMSTI (XDELT)
+hringen.f:            CALL OMSTI (NDELT)
+hringen.f:      EXTERNAL   OPNNO,NEWING,OMSG,OMSTC,OMSTI,PMXTFT
+hringen.f:        CALL OMSTC (I6,CHSTR1)
+hringen.f:        CALL OMSTI (OPTNO)
+hringen.f:          CALL OMSTI (HRMIN(1))
+hringen.f:          CALL OMSTI (HRMIN(2))
+hringen.f:      EXTERNAL   ENDING,OMSTC,WMSGTT,GETUCI,GETSE,GETEND,CHKSTR
+hringen.f:            CALL OMSTC (I,UCIBF1(24))
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                  CALL OMSTC (I12,CHSTR1)
+hringen.f:                CALL OMSTC (I12,CHSTR1)
+hringen.f:      EXTERNAL     VALNO,DUMPER,OMSG,OMSTI,OMSTC,WMSGTT
+hringen.f:                CALL OMSTC (I,CHSTR1)
+hringen.f:                CALL OMSTC (I6,CHSTR1)
+hringen.f:                CALL OMSTI (NUMBR)
+hringen.f:                CALL OMSTC (I6,CHSTR1)
+hringen.f:                CALL OMSTI (TABINX(OPENFG,1))
+hringen.f:                  CALL OMSTC (I6,CHSTR1)
+hringen.f:                  CALL OMSTI (NUMBR)
+hringen.f:                  CALL OMSTC (I,CHSTR1)
+hringen.f:                  CALL OMSTC (I6,CHSTR1)
+hringen.f:                  CALL OMSTI (NUMBR)
+hringen.f:                    CALL OMSTC (I6,CHSTR1)
+hringen.f:                    CALL OMSTI (NUMBR)
+hringen.f:                      CALL OMSTC (I6,CHSTR1)
+hringen.f:                      CALL OMSTI (NUMBR)
+hringen.f:                      CALL OMSTC (I6,CHSTR1)
+hringen.f:                      CALL OMSTI (OPENNO)
+hringen.f:          CALL OMSTC (I6,CHSTR1)
+hringen.f:          CALL OMSTI (TABINX(OPENFG,1))
+hringen.f:      EXTERNAL     OMSTC,OMSG,GETUCI,GETSE,PMXTFT,HDMES2,CHKSTR
+hringen.f:                CALL OMSTC (I2,CATID1)
+hringen.f:              CALL OMSTC (I2,CATID1)
+hringen.f:              CALL OMSTC (I,TBUF1)
+hringen.f:      EXTERNAL WMSGTT,OMSTI,OMSTC,OMSG,CHKSTR,HDMES2
+hringen.f:                CALL OMSTC (I,CHSTR1(1))
+hringen.f:                CALL OMSTI (DSSDSN(NPATH))
+hringen.f:                CALL OMSTC (I64,CHSTR1)
+hringen.f:                CALL OMSTI (DSSFL(NPATH))
+hringen.f:                CALL OMSTI (MAXDSS)
+hringen.f:                CALL OMSTI (DSSDSN(NPATH))
+hringen.f:                CALL OMSTC (I8,CHSTR1)
+hringen.f:                CALL OMSTC (I8,CHSTR1)
+hringen.f:                CALL OMSTC (I8,CHSTR1)
+hringen.f:                CALL OMSTC (I8,CHSTR1)
+hringen.f:                CALL OMSTC (I8,CHSTR1)
+hringen.f:                CALL OMSTI (DSSDSN(NPATH))
+hringen.f:                CALL OMSTC (I64,CHSTR1)
+hringen.f:                  CALL OMSTI (DSSFL(NPATH))
+hringen.f:                  CALL OMSTC (I64,CHSTR1)
+hringen.f:                  CALL OMSTI (DSSDSN(I))
+hringen.f:                  CALL OMSTI (DSSDSN(NPATH))
+hringen.f:                CALL OMSTI (DSSDSN(RETCOD))
+hringen.f:              CALL OMSTI (MAXPTH)
+hringeut.f:      EXTERNAL   OMSG,OMSTI
+hringeut.f:        CALL OMSTI (TOPFST)
+hringeut.f:        CALL OMSTI (TOPLST)
+hringeut.f:        CALL OMSTI (TOPFST)
+hringeut.f:      EXTERNAL CHKSTR,OMSTC,OMSG
+hringeut.f:          CALL OMSTC (I2,LTAG1)
+hringeut.f:        CALL OMSTC (I2,LTAG1)
+hrinoput.f:      EXTERNAL   OMSG,OMSTC,OMSTI,GETUCI
+hrinoput.f:              CALL OMSTC (I12,TABNM1)
+hrinoput.f:              CALL OMSTI (TABSUB)
+hrinoput.f:              CALL OMSTC (I12,TABNM1)
+hrinoput.f:              CALL OMSTI (TABSUB)
+hrinoput.f:              CALL OMSTI (OPFST)
+hrinoput.f:              CALL OMSTC (I12,TABNM1)
+hrinoput.f:              CALL OMSTI (TABSUB)
+hrinoput.f:              CALL OMSTI (OPLST)
+hrinoput.f:              CALL OMSTI (OPFST)
+hrinseq.f:      EXTERNAL   OMSTI,OMSG,OMSTC,HSCKFL,GETUCI,CHKSTR
+hrinseq.f:          CALL OMSTI (VOLNO)
+hrinseq.f:          CALL OMSTC (I6,CHSTR1)
+hrinseq.f:                    CALL OMSTC (I4,CHSTR1)
+hrinseq.f:              CALL OMSTI (VOLNO)
+hrinseq.f:              CALL OMSTI (VOLNO)
+hrinseq.f:            CALL OMSTI (VOLNO)
+hrinseq.f:            CALL OMSTC (I4,CHSTR1)
+hrinseq.f:        CALL OMSTI (VOLNO)
+hrints.f:     #            OMSTI,GETTSI,PUTTSI,GETUCI
+hrints.f:                  CALL OMSTI (VECA(2))
+hrints.f:      EXTERNAL   GTTMRC,OPNNO,OPNTS,TOPTNO,PAIRS,OMSG,OMSTI,OMSTC
+hrints.f:                    CALL OMSTC (I6,SVOLC1)
+hrints.f:                    CALL OMSTI (SVOLNO)
+hrints.f:                    CALL OMSTC (I6,TVOLC1)
+hrints.f:                    CALL OMSTI (TVOLNO)
+hrints.f:      EXTERNAL    CHKSTR,OMSG,OMSTI,OMSTC,GETOSV,MEMTS,WMSGTT
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTI (OPTNO)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTI (OPTNO)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:      EXTERNAL     OMSG,OMSTI,OMSTC,IVALUE,WMSGTT
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTI (OPTNO)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTI (MEMSB(2))
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTI (OPTNO)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTC (I6,CHSTR1)
+hrints.f:            CALL OMSTI (MEMSB(1))
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTI (OPTNO)
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTI (OPTNO)
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:        CALL OMSTC (I6,CHSTR1)
+hrints.f:      EXTERNAL    CHKSTR,WORKIO,OMSG,ZIPI,OMSTC,OMSTI
+hrints.f:              CALL OMSTC (I6,SVOLC1)
+hrints.f:              CALL OMSTI (SVOLNO)
+hrints.f:              CALL OMSTC (I6,TVOLC1)
+hrints.f:              CALL OMSTI (TVOLNO)
+hrints.f:                CALL OMSTC (I6,SVOLC1)
+hrints.f:                CALL OMSTI (SVOLNO)
+hrints.f:                CALL OMSTC (I6,CHSTR1)
+hrints.f:                CALL OMSTC (I6,CHSTR1)
+hrints.f:                CALL OMSTI (STABL(3,N))
+hrints.f:                CALL OMSTI (STABL(4,N))
+hrints.f:                CALL OMSTC (I6,TVOLC1)
+hrints.f:                CALL OMSTI (TVOLNO)
+hrints.f:                CALL OMSTC (I6,CHSTR1)
+hrints.f:                CALL OMSTC (I6,CHSTR1)
+hrints.f:                CALL OMSTI (TTABL(3,N))
+hrints.f:                CALL OMSTI (TTABL(4,N))
+hrints.f:                  CALL OMSTC (I6,SVOLC1)
+hrints.f:                  CALL OMSTI (SVOLNO)
+hrints.f:                  CALL OMSTC (I6,CHSTR1)
+hrints.f:                  CALL OMSTC (I6,CHSTR1)
+hrints.f:                  CALL OMSTI (STABL(3,N))
+hrints.f:                  CALL OMSTI (STABL(4,N))
+hrints.f:                  CALL OMSTC (I4,CHSTR1)
+hrints.f:                  CALL OMSTI (STKIND)
+hrints.f:                  CALL OMSTI (CASE)
+hrints.f:                  CALL OMSTC (I6,TVOLC1)
+hrints.f:                  CALL OMSTI (TVOLNO)
+hrints.f:                  CALL OMSTC (I6,CHSTR1)
+hrints.f:                  CALL OMSTC (I6,CHSTR1)
+hrints.f:                  CALL OMSTI (TTABL(3,N))
+hrints.f:                  CALL OMSTI (TTABL(4,N))
+hrints.f:      EXTERNAL    OPNNO,PSCHEM,OPNTS,TOPTNO,OMSG,OMSTI,OMSTC
+hrints.f:                    CALL OMSTC (I6,SVOLC1)
+hrints.f:                    CALL OMSTI (SVOLNO)
+hrints.f:                    CALL OMSTC (I6,TVOLC1)
+hrints.f:                    CALL OMSTI (TVOLNO)
+hrintss.f:      EXTERNAL  RPUNC,AIUNC,AICOMP,OMSG,OMSTI
+hrintss.f:            CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL   BCWCAL,WBUFF,PVAL,OMSG,OMSTI
+hrintss.f:            CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL   BCWCAL,WBUFF,GWORD,PVAL,OMSG,OMSTI
+hrintss.f:            CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL   RBUFF,OMSG,OMSTI
+hrintss.f:              CALL OMSTI (DSN)
+hrintss.f:          CALL OMSTI (DSN)
+hrintss.f:        CALL OMSTI (DSN)
+hrintss.f:      EXTERNAL    GWORD,OMSTI,OMSG,BCWSPL
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL   OMSG,RBUFF,OMSTI
+hrintss.f:        CALL OMSTI (FILE)
+hrintss.f:        CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL  WBUFF,GWORD,OMSTI,OMSG,PVAL
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL  ADJLAB,FNDGAP,OMSTI
+hrintss.f:              CALL OMSTI (FILE)
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:        CALL OMSTI (FILE)
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:                  CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL   OMSG,OMSTI
+hrintss.f:          CALL OMSTI (SVOLNO)
+hrintss.f:          CALL OMSTI (SUB)
+hrintss.f:      EXTERNAL   OMSTI,OMSG,WBUFF,MEXT
+hrintss.f:        CALL OMSTI (FILE)
+hrintss.f:        CALL OMSTI (FILE)
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:          CALL OMSTI (FILE)
+hrintss.f:            CALL OMSTI (FILE)
+hrintss.f:              CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL  OMSG,OMSTI
+hrintss.f:        CALL OMSTI (FILE)
+hrintss.f:      EXTERNAL   DSCHK,CHKSTR,OMSG,OMSTC,OMSTI,PROMEM
+hrintss.f:          CALL OMSTI (VOLNO)
+hrintss.f:          CALL OMSTI (BASEYR)
+hrintss.f:            CALL OMSTI (VOLNO)
+hrintss.f:          CALL OMSTI (VOLNO)
+hrintss.f:          CALL OMSTI (BASEYR)
+hrintss.f:            CALL OMSTI (VOLNO)
+hrintss.f:            CALL OMSTI (VOLNO)
+hrintss.f:            CALL OMSTC (I4,CHSTR1)
+hrintss.f:            CALL OMSTI (VOLNO)
+hrintss.f:            CALL OMSTC (I6,CHSTR1)
+hrintss.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:      EXTERNAL    TIMHTW,WDBSGC,OMSG,OMSTI,OMSTC,WDBSGI,WTFNDT,TIMADD
+hrinwdm.f:          CALL OMSTI (VOLNO)
+hrinwdm.f:          CALL OMSTI (MEMSB(2))
+hrinwdm.f:          CALL OMSTC (I4,CHSTR1)
+hrinwdm.f:          CALL OMSTC (I4,CHSTR1)
+hrinwdm.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:        CALL OMSTI (MEMSB(2))
+hrinwdm.f:          CALL OMSTI (VOLNO)
+hrinwdm.f:          CALL OMSTI (MEMSB(2))
+hrinwdm.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:        CALL OMSTI (MEMSB(2))
+hrinwdm.f:          CALL OMSTI (VOLNO)
+hrinwdm.f:          CALL OMSTI (MEMSB(2))
+hrinwdm.f:          CALL OMSTI (VOLNO)
+hrinwdm.f:          CALL OMSTI (MEMSB(2))
+hrinwdm.f:            CALL OMSTI (VOLNO)
+hrinwdm.f:            CALL OMSTI (MEMSB(2))
+hrinwdm.f:            CALL OMSTI (VOLNO)
+hrinwdm.f:            CALL OMSTI (MEMSB(2))
+hrinwdm.f:          CALL OMSTI (VOLNO)
+hrinwdm.f:          CALL OMSTI (MEMSB(2))
+hrinwdm.f:            CALL OMSTI (VOLNO)
+hrinwdm.f:            CALL OMSTI (MEMSB(2))
+hrinwdm.f:          CALL OMSTI (VOLNO)
+hrinwdm.f:          CALL OMSTI (MEMSB(2))
+hrinwdm.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:        CALL OMSTI (MEMSB(2))
+hrinwdm.f:        CALL OMSTI (ERRCOD)
+hrinwdm.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:        CALL OMSTI (MEMSB(2))
+hrinwdm.f:            CALL OMSTI (VOLNO)
+hrinwdm.f:            CALL OMSTI (MEMSB(2))
+hrinwdm.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:        CALL OMSTI (MEMSB(2))
+hrinwdm.f:      EXTERNAL   WDDSCK,PROWDS,OMSG,OMSTI
+hrinwdm.f:        CALL OMSTI (VOLNO)
+hrinwdm.f:        CALL OMSTI (MEMSB(2))
+hruntsgp.f:      EXTERNAL  GETSEQ,MOVROW,GETTSS,GETWDM,GPDUMP,OMSG,OMSTI,OMSTD
+hruntsgp.f:            CALL OMSTD (DATIM)
+hruntsgp.f:            CALL OMSTI (VOLCOD)
+hruntsgp.f:            CALL OMSTI (I)
+hruntsgp.f:      EXTERNAL  PUTWDM,OMSG,OMSTD,OMSTI,FDATIM
+hruntsgp.f:            CALL OMSTD (DATIM)
+hruntsgp.f:            CALL OMSTI (FILE)
+hruntsgq.f:      EXTERNAL  DYPMON,TDIF,OMSG,OMSTI,OMSTD
+hruntsgq.f:        CALL OMSTD (DATIM)
+hruntsgq.f:        CALL OMSTI (FILE)
+hruntsgq.f:        CALL OMSTI (NEWDAT(1))
+hruntsgq.f:        CALL OMSTI (NEWDAT(2))
+hruntsgq.f:        CALL OMSTI (NEWDAT(3))
+hruntsgq.f:        CALL OMSTD (DATIM)
+hruntsgq.f:        CALL OMSTI (FILE)
+hruntsgq.f:        CALL OMSTI (NEWNUM)
+hruntsgq.f:        CALL OMSTI (NEWDAT(1))
+hruntsgq.f:        CALL OMSTI (NEWDAT(2))
+hruntsgq.f:        CALL OMSTI (NEWDAT(3))
+hruntsgq.f:            CALL OMSTD (DATIM)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTI (NEWNUM)
+hruntsgq.f:            CALL OMSTI (NEWDAT(1))
+hruntsgq.f:            CALL OMSTI (NEWDAT(2))
+hruntsgq.f:            CALL OMSTI (NEWDAT(3))
+hruntsgq.f:            CALL OMSTI (OLDNUM)
+hruntsgq.f:            CALL OMSTI (OLDDAT(1))
+hruntsgq.f:            CALL OMSTI (OLDDAT(2))
+hruntsgq.f:            CALL OMSTI (OLDDAT(3))
+hruntsgq.f:      EXTERNAL  CHKSEQ,TDIF,LPYEAR,OMSTD,OMSG,OMSTI,FDATIM
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTC (I,EBUFF)
+hruntsgq.f:          CALL OMSTC (I,PVARC1)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTC (I,EBUFF)
+hruntsgq.f:            CALL OMSTC (I,PVARC1)
+hruntsgq.f:          CALL OMSTD (DATIM)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (CRDSEQ(2))
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTC (I,EBUFF)
+hruntsgq.f:          CALL OMSTC (I,PVARC1)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTC (I,EBUFF)
+hruntsgq.f:            CALL OMSTC (I,PVARC1)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTC (I,EBUFF)
+hruntsgq.f:          CALL OMSTC (I,PVARC1)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTC (I,EBUFF)
+hruntsgq.f:            CALL OMSTC (I,PVARC1)
+hruntsgq.f:      EXTERNAL  OMSTD,OMSG,OMSTI,FDATIM
+hruntsgq.f:          CALL OMSTD (DATIM)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (DELT)
+hruntsgq.f:          CALL OMSTI (DELTAT)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTD (DATIM)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (DELT)
+hruntsgq.f:          CALL OMSTI (DELTAT)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (FMTCLS)
+hruntsgq.f:          CALL OMSTD (DATIM)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (DELT)
+hruntsgq.f:          CALL OMSTI (DELTAT)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (FMTCLS)
+hruntsgq.f:        CALL OMSTD (DATIM)
+hruntsgq.f:        CALL OMSTI (FILE)
+hruntsgq.f:        CALL OMSTI (FMTCLS)
+hruntsgq.f:        CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTC (I,EBUFF)
+hruntsgq.f:          CALL OMSTC (I,PVARC1)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTC (I,EBUFF)
+hruntsgq.f:            CALL OMSTC (I,PVARC1)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTC (I,EBUFF)
+hruntsgq.f:          CALL OMSTC (I,PVARC1)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTC (I,EBUFF)
+hruntsgq.f:            CALL OMSTC (I,PVARC1)
+hruntsgq.f:      EXTERNAL  OMSTD,OMSG,OMSTI,INMOD,LPYEAR,LTRAN,FDATIM
+hruntsgq.f:            CALL OMSTD (DATIM)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTI (MAXCNT)
+hruntsgq.f:            CALL OMSTI (CRDCNT)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTI (FILE)
+hruntsgq.f:          CALL OMSTC (I,EBUFF)
+hruntsgq.f:          CALL OMSTC (I,PVARC1)
+hruntsgq.f:            CALL OMSTI (FILE)
+hruntsgq.f:            CALL OMSTC (I,EBUFF)
+hruntsgq.f:            CALL OMSTC (I,PVARC1)
+hruntsgt.f:      EXTERNAL  GTSSRC,LPYEAR,BCWSPL,OMSTD,FDATIM,OMSG,OMSTI
+hruntsgt.f:          CALL OMSTD (DATIM)
+hruntsgt.f:          CALL OMSTI (FILE)
+hruntsgt.f:          CALL OMSTI (BCW)
+hruntsgt.f:          CALL OMSTI (INPEND)
+hruntsgt.f:          CALL OMSTI (FRMTIM)
+hruntsgt.f:          CALL OMSTI (TENDR)
+hruntsgt.f:          CALL OMSTI (FILE)
+hruntsgt.f:          CALL OMSTD (DATIM)
+hruntsgt.f:          CALL OMSTI (FILE)
+hruntsgt.f:          CALL OMSTI (YEAR)
+hruntsgt.f:          CALL OMSTI (YR)
+hruntsgt.f:          CALL OMSTI (FILE)
+hruntsgt.f:      EXTERNAL  GTSSRC,OMSTD,FDATIM,OMSG,OMSTI,BCWUPD
+hruntsgt.f:        CALL OMSTD (DATIM)
+hruntsgt.f:        CALL OMSTI (FILE)
+hruntsgt.f:        CALL OMSTI (BCWBTI)
+hruntsgt.f:        CALL OMSTI (FILE)
+hruntsgt.f:      EXTERNAL  OMSTD,FDATIM,OMSG,OMSTI,RBUFF
+hruntsgt.f:        CALL OMSTD (DATIM)
+hruntsgt.f:        CALL OMSTI (FILE)
+hruntsgt.f:        CALL OMSTI (RECNO)
+hruntsgt.f:        CALL OMSTI (FREC)
+hruntsgt.f:        CALL OMSTI (LREC)
+hruntsgt.f:        CALL OMSTI (FILE)
+hruntsgw.f:      EXTERNAL  WDTGET,TIMADD,SETVEC,OMSTR,OMSTI,OMSG,LTRAN
+hruntsgw.f:            CALL OMSTI (FILE)
+hruntsgw.f:            CALL OMSTI (INPTIM(1))
+hruntsgw.f:            CALL OMSTI (INPTIM(2))
+hruntsgw.f:            CALL OMSTI (INPTIM(3))
+hruntsgw.f:            CALL OMSTI (INPTIM(4))
+hruntsgw.f:            CALL OMSTI (INPTIM(5))
+hruntsgw.f:            CALL OMSTI (INPTIM(6))
+hruntsgw.f:            CALL OMSTI (NVALS)
+hruntsgw.f:            CALL OMSTI (QLFG)
+hruntsgw.f:            CALL OMSTR (GAPVAL)
+hruntsgw.f:            CALL OMSTI (RETCOD)
+hruntspt.f:      EXTERNAL   OMSTD,OMSTI,FDATIM,OMSG,RBUFF
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  RBUFF,OMSTD,OMSTI,FDATIM,OMSG
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:            CALL OMSTD (DATIM)
+hruntspt.f:            CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  OMSTD,OMSTI,FDATIM,OMSG,REPLC,XVEXP,FINIS,XVPUT,SQUISH
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:                CALL OMSTD (DATIM)
+hruntspt.f:                CALL OMSTI (FILE)
+hruntspt.f:            CALL OMSTD (DATIM)
+hruntspt.f:            CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  OMSTD,OMSTI,FDATIM,OMSG,WBUFF,MEXT
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:            CALL OMSTD (DATIM)
+hruntspt.f:            CALL OMSTI (FILE)
+hruntspt.f:              CALL OMSTD (DATIM)
+hruntspt.f:              CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  OMSTD,OMSTI,FDATIM,OMSG,RPUT,RGET,GTWORD,RINIT
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:              CALL OMSTD (DATIM)
+hruntspt.f:              CALL OMSTI (FILE)
+hruntspt.f:              CALL OMSTD (DATIM)
+hruntspt.f:              CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  OMSTD,OMSTI,FDATIM,OMSG,WBUFF,RBUFF
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  BCWSPL,OMSTD,OMSTI,FDATIM,OMSG,RPUT
+hruntspt.f:        CALL OMSTD (DATIM)
+hruntspt.f:        CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL  OMSTD,OMSTI,FDATIM,OMSG,WBUFF,RBUFF
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:            CALL OMSTD (DATIM)
+hruntspt.f:            CALL OMSTI (FILE)
+hruntspt.f:          CALL OMSTD (DATIM)
+hruntspt.f:          CALL OMSTI (FILE)
+hruntspt.f:      EXTERNAL    WBUFF,MEXT,OMSTD,OMSTI,FDATIM,OMSG
+hruntspt.f:            CALL OMSTD (DATIM)
+hruntspt.f:            CALL OMSTI (FILE)
+hruntspw.f:      EXTERNAL    AGGWDS,LTRAN,WDTPUT,OMSTI,OMSG,TIMADD
+hruntspw.f:                CALL OMSTI (FILE)
+hruntspw.f:                CALL OMSTI (INPTIM(1))
+hruntspw.f:                CALL OMSTI (INPTIM(2))
+hruntspw.f:                CALL OMSTI (INPTIM(3))
+hruntspw.f:                CALL OMSTI (INPTIM(4))
+hruntspw.f:                CALL OMSTI (INPTIM(5))
+hruntspw.f:                CALL OMSTI (INPTIM(6))
+hruntspw.f:                CALL OMSTI (DELTAT)
+hruntspw.f:                CALL OMSTI (NVALS)
+hruntspw.f:                CALL OMSTI (DTOVWR)
+hruntspw.f:                CALL OMSTI (RETCOD)
+hruntsut.f:      EXTERNAL  OMSG,OMSTI,OMSTD,FDATIM
+hruntsut.f:        CALL OMSTD (DATIM)
+hruntsut.f:        CALL OMSTI (STKIND(1))
+hruntsut.f:        CALL OMSTI (I)
+hruntsut.f:        CALL OMSTI (FILE)
+hrunut.f:      EXTERNAL     OMSTR,OMSG,OMSTI,OMSTD,OMSTC
+hrunut.f:        CALL OMSTD (DATIM)
+hrunut.f:        CALL OMSTC (I6,COPTY1(1,OPTYP))
+hrunut.f:        CALL OMSTI (OPNO)
+hrunut.f:        CALL OMSTR (RELERR)
+hrunut.f:        CALL OMSTR (STORS)
+hrunut.f:        CALL OMSTR (STOR)
+hrunut.f:        CALL OMSTR (MATIN)
+hrunut.f:        CALL OMSTR (MATDIF)
+hspfec.f:      EXTERNAL  GETUCI,CHRDIG,TAGVAL,RDMFAC,OMSG,OMSTC
+hspfec.f:            CALL OMSTC (I80,UCIBF1)
+hspfec.f:            CALL OMSTC (I80,UCIBF1)
+hspfec.f:            CALL OMSTC (I80,UCIBF1)
+hspfec.f:            CALL OMSTC (I80,UCIBF1)
+hspfec.f:      EXTERNAL  OPNNO,OMSG,OMSTI,OMSTC,HRIMSI,GETUCI,TAGVAL,RDMFAC
+hspfec.f:              CALL OMSTI (MSLKTB)
+hspfec.f:              CALL OMSTC (I,UCIBF1)
+hspfec.f:          CALL OMSTC (I6,CHSTR1)
+hspfec.f:          CALL OMSTI (SVOLNO)
+hspfec.f:          CALL OMSTC (I6,CHSTR1)
+hspfec.f:          CALL OMSTI (TVOLNO)
+hspfec.f:      EXTERNAL    CHKSTR,TSSDS,OMSG,SEQDS,WDMDS,OMSTI,DSSDS
+hspfec.f:          CALL OMSTI(VOLNO)
+hspfec.f:          CALL OMSTI(VOLNO)
+hspfec.f:          CALL OMSTI(VOLNO)
+hspfec.f:          CALL OMSTI(MEMSB(2))
+hspfec.f:        CALL OMSTI(VOLNO)
+hspfec.f:      EXTERNAL LENSTR,OMSTC,OMSG
+hspfec.f:          CALL OMSTC (I10,CHSTR1)
+hspfitab.f:      EXTERNAL     OMSTC,OMSTI,OMSG,GETUCI,PMXTFT,PMXTFC,HDMES3
+hspfitab.f:                CALL OMSTC (I,OPTYP1)
+hspfitab.f:                CALL OMSTI (OPTNO)
+hspfitab.f:                CALL OMSTC (I,TABNM1(1,TABNO))
+hspfitab.f:                CALL OMSTI (TABSUB)
+hspfitab.f:                CALL OMSTI (IFLD-1)
+hspfitab.f:                CALL OMSTI (IVAL(IPOS))
+hspfitab.f:                CALL OMSTI (LMIN)
+hspfitab.f:                CALL OMSTI (LMAX)
+hspfitab.f:                CALL OMSTI (LDEF)
+hspfitab.f:            CALL OMSTC (I,OPTYP1)
+hspfitab.f:            CALL OMSTI (OPTNO)
+hspfitab.f:            CALL OMSTC (I,TABNM1(1,TABNO))
+hspfitab.f:            CALL OMSTI (TABSUB)
+hspfitab.f:            CALL OMSTI (IFLD-1)
+hspfitab.f:      EXTERNAL       TABREC,CHRDEC,LENSTR,WMSGTT,WMSGTX,ZIPR,OMSTC
+hspfitab.f:      EXTERNAL       OMSTI,OMSTR,OMSG,GETUCI,RHTSTR,COPYC,PMXTFT,PMXTFC
+hspfitab.f:                CALL OMSTC (I,OPTYP1)
+hspfitab.f:                CALL OMSTI (OPTNO)
+hspfitab.f:                CALL OMSTC (I,TABNM1(1,TABNO))
+hspfitab.f:                CALL OMSTI (TABSUB)
+hspfitab.f:                CALL OMSTI (IFLD-1)
+hspfitab.f:                CALL OMSTR (RVAL(IPOS))
+hspfitab.f:                CALL OMSTR (LMIN)
+hspfitab.f:                CALL OMSTR (LMAX)
+hspfitab.f:                CALL OMSTR (LDEF)
+hspfitab.f:            CALL OMSTC (I,OPTYP1)
+hspfitab.f:            CALL OMSTI (OPTNO)
+hspfitab.f:            CALL OMSTC (I,TABNM1(1,TABNO))
+hspfitab.f:            CALL OMSTI (TABSUB)
+hspfitab.f:            CALL OMSTI (IFLD-1)
+hspfitab.f:      EXTERNAL   VALNO,OMSG,OMSTI,OMSTC,DUMPER,GETUCI,OMSTR
+hspfitab.f:        CALL OMSTI (MDATNO)
+hspfitab.f:          CALL OMSTI (MDATNO)
+hspfitab.f:          CALL OMSTC (I,UCIBF1)
+hspfitab.f:              CALL OMSTI (MDATNO)
+hspfitab.f:              CALL OMSTI (I)
+hspfitab.f:              CALL OMSTR (MTHVAL(I))
+htsinsi.f:      EXTERNAL  OMSTI,OMSG
+htsinsi.f:        CALL OMSTI (MROW)
+htsinsi.f:      EXTERNAL    WORKIO,OMSG,OMSTI
+htsinsi.f:                CALL OMSTI (CSEQ)
+htsinsi.f:                CALL OMSTI (IX)
+htsinsi.f:                  CALL OMSTI (CTSS)
+htsinsi.f:                  CALL OMSTI (REC1(CHK1))
+htssut.f:      EXTERNAL  OMSTI,OMSG,OMSTD,FDATIM
+htssut.f:          CALL OMSTD (DATIM)
+htssut.f:          CALL OMSTI (FILE)
+htssut.f:          CALL OMSTI (STTRAN(I))
+htssut.f:          CALL OMSTI (I)
+htssut.f:          CALL OMSTI (FILE)
+hutdura.f:      EXTERNAL  ITABLE,HSCKFL,STDATE,ENDATE,RTABLE,PUTOSV,OMSG,OMSTR
+hutdura.f:        CALL OMSTR (LEVEL(2))
+hutdura.f:        CALL OMSTR (LEVEL(3))
+hutdura.f:        CALL OMSTR (LEVEL(4))
+hutdura.f:        CALL OMSTR (LEVEL(5))
+hutdura.f:        CALL OMSTR (LEVEL(6))
+hutdura.f:        CALL OMSTR (LEVEL(7))
+hutdura.f:        CALL OMSTR (LEVEL(8))
+hutdura.f:        CALL OMSTR (LEVEL(9))
+hutop.f:      EXTERNAL  ADDTIM,EXDATE,OMSG,OMSTI
+hutop.f:              CALL OMSTI (MUTNO)
+hutop.f:              CALL OMSTI (MUTFL)
+hutop.f:          CALL OMSTI (MUTNO)
+hutop.f:          CALL OMSTI (MUTFL)
+hutop.f:          CALL OMSTC (N,EBUFF)
+hutop.f:          CALL OMSTI (MUTNO)
+hutop.f:          CALL OMSTI (MUTFL)
+hutop.f:            CALL OMSTI (MUTNO)
+hutop.f:            CALL OMSTI (MUTFL)
+hutop.f:            CALL OMSTI (EXDAT(1))
+hutop.f:            CALL OMSTI (EXDAT(2))
+hutop.f:            CALL OMSTI (EXDAT(3))
+hutop.f:            CALL OMSTI (EXDAT(4))
+hutop.f:            CALL OMSTI (EXDAT(5))
+hutop.f:            CALL OMSTC (N,EBUFF)
+hutop.f:            CALL OMSTI (MUTNO)
+hutop.f:            CALL OMSTI (MUTFL)
+hutop.f:            CALL OMSTI (EXDAT(1))
+hutop.f:            CALL OMSTI (EXDAT(2))
+hutop.f:            CALL OMSTI (EXDAT(3))
+hutop.f:            CALL OMSTI (EXDAT(4))
+hutop.f:            CALL OMSTI (EXDAT(5))
+hutop.f:            CALL OMSTI (MUTNO)
+hutop.f:            CALL OMSTI (MUTFL)
+hutop.f:            CALL OMSTI (SEQDAT(1))
+hutop.f:            CALL OMSTI (SEQDAT(2))
+hutop.f:            CALL OMSTI (SEQDAT(3))
+hutop.f:            CALL OMSTI (SEQDAT(4))
+hutop.f:            CALL OMSTI (SEQDAT(5))
+hutop.f:            CALL OMSTI (EXDAT(1))
+hutop.f:            CALL OMSTI (EXDAT(2))
+hutop.f:            CALL OMSTI (EXDAT(3))
+hutop.f:            CALL OMSTI (EXDAT(4))
+hutop.f:            CALL OMSTI (EXDAT(5))
+hutopinp.f:      EXTERNAL     ITABLE,HSCKFL,OMSG,OMSTC,OMSTI,RTABLE,CHKSTR,PUTOSV,
+hutopinp.f:        CALL OMSTC (I4,CHSTR1)
+hutopinp.f:          CALL OMSTI (OPTNO)
+hutopinp.f:          CALL OMSTI (PDELT)
+hutopinp.f:      EXTERNAL  DAYMNH,ITABLE,PUTOSV,HSCKFL,OMSG,OMSTI
+hutopinp.f:        CALL OMSTI (NCURV)
+hutopinp.f:      EXTERNAL  OMSG,OMSTI,OMSTC,WMSGTT
+hutopinp.f:        CALL OMSTI (NCURV)
+hutopinp.f:          CALL OMSTC (I4,CHSTR1)
+hwdmut.f:      EXTERNAL   WDFLCK,OMSG,OMSTI
+hwdmut.f:        CALL OMSTI (RETCOD)
+specact.f:      EXTERNAL    OMSTI,OMSG,OMSTC,GETOSV,DADDR
+specact.f:            CALL OMSTI (MXPIPE)
+specact.f:            CALL OMSTI (MXPIPE)
+specact.f:                CALL OMSTC (I6,OBUF1)
+specact.f:                CALL OMSTI (UVQADD(I))
+specact.f:                CALL OMSTI (OSVLEN)
+specact.f:      EXTERNAL     OMSTC,OMSG,OMSTI,OPNNO,CHKSTR,CKTCOD,MKADDR
+specact.f:        CALL OMSTI (MXSPVQ)
+specact.f:          CALL OMSTC (I80,EBUF1)
+specact.f:          CALL OMSTC (I6,OBUF1)
+specact.f:          CALL OMSTC (I6,OBUF1)
+specact.f:          CALL OMSTC (I6,COPTP1)
+specact.f:            CALL OMSTC (I6,OBUF1)
+specact.f:            CALL OMSTC (I6,COPTP1)
+specact.f:            CALL OMSTI (UVQOPN(2,NVQD))
+specact.f:          CALL OMSTC (I6,OBUF1)
+specact.f:          CALL OMSTI(UVQTYP(NVQD))
+specact.f:          CALL OMSTI(IMIN)
+specact.f:          CALL OMSTI(IMAX)
+specact.f:            CALL OMSTC (I6,OBUF1)
+specact.f:            CALL OMSTC (I2,CTCODE(I))
+specact.f:              CALL OMSTC (I6,OBUF1)
+specact.f:              CALL OMSTI (TSTEP(I))
+specact.f:          CALL OMSTC (I4,CTRAN)
+specact.f:          CALL OMSTC (I6,OBUF1)
+specact.f:      EXTERNAL OMSTI,OMSG,SPARSE
+specact.f:          CALL OMSTI (KEY)
+specact.f:          CALL OMSTI (MXBKLV)
+specact.f:          CALL OMSTI (KEY)
+specact.f:          CALL OMSTI (MXSPBK)
+specact.f:              CALL OMSTI (KEY)
+specact.f:              CALL OMSTI (MXSPCH)
+specact.f:              CALL OMSTI (KEY)
+specact.f:              CALL OMSTI (MXSPCR)
+specact.f:          CALL OMSTI (KEY)
+specact.f:          CALL OMSTI (KEY)
+specact.f:          CALL OMSTI (KEY)
+specact.f:          CALL OMSTI (MXSPBK)
+specact.f:                CALL OMSTI (KEY)
+specact.f:                CALL OMSTI (MXSPCH)
+specact.f:                CALL OMSTI (KEY)
+specact.f:                CALL OMSTI (MXSPCR)
+specact.f:          CALL OMSTI (KEY)
+specact.f:          CALL OMSTI (MXSPVQ)
+specact.f:      EXTERNAL     CKTCOD,OMSTI,OMSTC,OMSG,CVARAR
+specact.f:        CALL OMSTI (IND)
+specact.f:        CALL OMSTI (I1)
+specact.f:        CALL OMSTI (MXSPDS)
+specact.f:          CALL OMSTI (IND)
+specact.f:          CALL OMSTC(I,CDEFF1)
+specact.f:          CALL OMSTI (TSTEP)
+specact.f:          CALL OMSTI (CNT)
+specact.f:          CALL OMSTI (I1)
+specact.f:          CALL OMSTI (IMAX)
+specact.f:        CALL OMSTC (I,CUBUF1)
+specact.f:      EXTERNAL     MKADDR,GETUCI,OMSTI,OMSG,OMSTC
+specact.f:        CALL OMSTC (I6,ECHBU1)
+specact.f:        CALL OMSTC (I,ECHBU1)
+specact.f:        CALL OMSTI (I)
+specact.f:          CALL OMSTC (I6,ECHBU1)
+specact.f:          CALL OMSTI (MXSPUX)
+specact.f:            CALL OMSTC (I6,ECHBU1)
+specact.f:            CALL OMSTI (LOPTYP)
+specact.f:            CALL OMSTC (I6,ECHBU1)
+specact.f:            CALL OMSTI (SPUTYP(SPUCNT))
+specact.f:              CALL OMSTC (I6,ECHBU1)
+specact.f:              CALL OMSTC (I6,ECHBU1)
+specact.f:              CALL OMSTC (J,BTMP1)
+specact.f:      EXTERNAL      OMSTC,OMSG,TOPTNO,MKQUAN,CKRWID,CKTCOD,OMSTI,CHKSTR,
+specact.f:        CALL OMSTC(I,ECHBU1)
+specact.f:          CALL OMSTC(I,ECHBU1)
+specact.f:            CALL OMSTC (I2,CTCODE(1))
+specact.f:              CALL OMSTI (TSTEP(I))
+specact.f:          CALL OMSTI(TYPCOD)
+specact.f:          CALL OMSTI(IMIN)
+specact.f:          CALL OMSTI(IMAX)
+specact.f:          CALL OMSTI (NUMINC)
+specact.f:          CALL OMSTI (ACTCD)
+specact.f:          CALL OMSTI (IMIN)
+specact.f:          CALL OMSTI (IMAX)
+specact.f:          CALL OMSTC (I,CACUS1)
+specact.f:          CALL OMSTI (DSIND)
+specact.f:              CALL OMSTC(I,ECHBU1)
+specact.f:              CALL OMSTI (NUMINC)
+specact.f:              CALL OMSTI (DSIND)
+specact.f:              CALL OMSTC (I,OBUF1(1))
+specact.f:              CALL OMSTI (ACTCD)
+specact.f:                    CALL OMSTC (I,OBUF1(1))
+specact.f:                    CALL OMSTI (I)
+specact.f:      EXTERNAL    OMSTI,OMSTC,OMSG,CVARAR
+specact.f:        CALL OMSTC(I,CTCOD1)
+specact.f:        CALL OMSTI(TCODE)
+specact.f:      EXTERNAL     OMSG,OMSTI,OMSTC,CHKSTR,TAGVAL
+specact.f:              CALL OMSTC (I,CHSTR1)
+specact.f:            CALL OMSTC (I6,CHSTR1)
+specact.f:              CALL OMSTC (I6,CHSTR1)
+specact.f:              CALL OMSTI (SUBCN2)
+specact.f:              CALL OMSTC (I6,CHSTR1)
+specact.f:      EXTERNAL     CHKSTR,OMSTC,OMSG,LFTSTR
+specact.f:            CALL OMSTC (I10,QUAN)
+specact.f:      EXTERNAL     ZIPI,LENSTR,ZIPC,SPITEM,OMSTI,OMSG,OMSTC,MKQUAN,
+specact.f:                  CALL OMSTI (PREPOS)
+specact.f:              CALL OMSTI (PREPOS)
+specact.f:                CALL OMSTI (PREPOS)
+specact.f:                        CALL OMSTI (PREPOS)
+specact.f:              CALL OMSTI (PREPOS)
+specact.f:              CALL OMSTC (I,CITEM(1:10))
+specact.f:              CALL OMSTI (PREPOS)
+specact.f:              CALL OMSTC (I,CITEM(1:2))
+specact.f:                CALL OMSTI (PREPOS)
+specact.f:                CALL OMSTC (I,CITEM(1:10))
+specact.f:              CALL OMSTI (PREPOS)
+specact.f:              CALL OMSTC (I,CITEM(1:3))
+specact.f:              CALL OMSTI (PREPOS)
+specsort.f:      EXTERNAL    OMSTI,OMSG,OMSTC,GETOSV,DADDR
+specsort.f:            CALL OMSTI (MXPIPE)
+specsort.f:            CALL OMSTI (MXPIPE)
+specsort.f:                CALL OMSTC (I6,OBUF1)
+specsort.f:                CALL OMSTI (UVQADD(I))
+specsort.f:                CALL OMSTI (OSVLEN)
+specsort.f:      EXTERNAL     OMSTC,OMSG,OMSTI,OPNNO,CHKSTR,CKTCOD,MKADDR
+specsort.f:        CALL OMSTI (MXSPVQ)
+specsort.f:          CALL OMSTC (I80,EBUF1)
+specsort.f:          CALL OMSTC (I6,OBUF1)
+specsort.f:          CALL OMSTC (I6,OBUF1)
+specsort.f:          CALL OMSTC (I6,COPTP1)
+specsort.f:            CALL OMSTC (I6,OBUF1)
+specsort.f:            CALL OMSTC (I6,COPTP1)
+specsort.f:            CALL OMSTI (UVQOPN(2,NVQD))
+specsort.f:          CALL OMSTC (I6,OBUF1)
+specsort.f:          CALL OMSTI(UVQTYP(NVQD))
+specsort.f:          CALL OMSTI(IMIN)
+specsort.f:          CALL OMSTI(IMAX)
+specsort.f:            CALL OMSTC (I6,OBUF1)
+specsort.f:            CALL OMSTC (I2,CTCODE(I))
+specsort.f:              CALL OMSTC (I6,OBUF1)
+specsort.f:              CALL OMSTI (TSTEP(I))
+specsort.f:          CALL OMSTC (I4,CTRAN)
+specsort.f:          CALL OMSTC (I6,OBUF1)
+specsort.f:      EXTERNAL OMSTI,OMSG,SPARSE
+specsort.f:          CALL OMSTI (KEY)
+specsort.f:          CALL OMSTI (MXBKLV)
+specsort.f:          CALL OMSTI (KEY)
+specsort.f:          CALL OMSTI (MXSPBK)
+specsort.f:              CALL OMSTI (KEY)
+specsort.f:              CALL OMSTI (MXSPCH)
+specsort.f:              CALL OMSTI (KEY)
+specsort.f:              CALL OMSTI (MXSPCR)
+specsort.f:          CALL OMSTI (KEY)
+specsort.f:          CALL OMSTI (KEY)
+specsort.f:          CALL OMSTI (KEY)
+specsort.f:          CALL OMSTI (MXSPBK)
+specsort.f:                CALL OMSTI (KEY)
+specsort.f:                CALL OMSTI (MXSPCH)
+specsort.f:                CALL OMSTI (KEY)
+specsort.f:                CALL OMSTI (MXSPCR)
+specsort.f:          CALL OMSTI (KEY)
+specsort.f:          CALL OMSTI (MXSPVQ)
+specsort.f:      EXTERNAL     CKTCOD,OMSTI,OMSTC,OMSG,CVARAR
+specsort.f:        CALL OMSTI (IND)
+specsort.f:        CALL OMSTI (I1)
+specsort.f:        CALL OMSTI (MXSPDS)
+specsort.f:          CALL OMSTI (IND)
+specsort.f:          CALL OMSTC(I,CDEFF1)
+specsort.f:          CALL OMSTI (TSTEP)
+specsort.f:          CALL OMSTI (CNT)
+specsort.f:          CALL OMSTI (I1)
+specsort.f:          CALL OMSTI (IMAX)
+specsort.f:        CALL OMSTC (I,CUBUF1)
+specsort.f:      EXTERNAL     MKADDR,GETUCI,OMSTI,OMSG,OMSTC
+specsort.f:        CALL OMSTI (I)
+specsort.f:          CALL OMSTC (I6,ECHBU1)
+specsort.f:          CALL OMSTI (MXSPUX)
+specsort.f:            CALL OMSTC (I6,ECHBU1)
+specsort.f:            CALL OMSTI (LOPTYP)
+specsort.f:            CALL OMSTC (I6,ECHBU1)
+specsort.f:            CALL OMSTI (SPUTYP(SPUCNT))
+specsort.f:      EXTERNAL      OMSTC,OMSG,TOPTNO,MKQUAN,CKRWID,CKTCOD,OMSTI,CHKSTR,
+specsort.f:        CALL OMSTC(I,ECHBU1)
+specsort.f:          CALL OMSTC(I,ECHBU1)
+specsort.f:            CALL OMSTC (I2,CTCODE(1))
+specsort.f:              CALL OMSTI (TSTEP(I))
+specsort.f:          CALL OMSTI(TYPCOD)
+specsort.f:          CALL OMSTI(IMIN)
+specsort.f:          CALL OMSTI(IMAX)
+specsort.f:          CALL OMSTI (NUMINC)
+specsort.f:          CALL OMSTI (ACTCD)
+specsort.f:          CALL OMSTI (IMIN)
+specsort.f:          CALL OMSTI (IMAX)
+specsort.f:          CALL OMSTC (I,CACUS1)
+specsort.f:          CALL OMSTI (DSIND)
+specsort.f:              CALL OMSTC(I,ECHBU1)
+specsort.f:              CALL OMSTI (NUMINC)
+specsort.f:              CALL OMSTI (DSIND)
+specsort.f:              CALL OMSTC (I,OBUF1(1))
+specsort.f:              CALL OMSTI (ACTCD)
+specsort.f:                    CALL OMSTC (I,OBUF1(1))
+specsort.f:                    CALL OMSTI (I)
+specsort.f:      EXTERNAL    OMSTI,OMSTC,OMSG,CVARAR
+specsort.f:        CALL OMSTC(I,CTCOD1)
+specsort.f:        CALL OMSTI(TCODE)
+specsort.f:      EXTERNAL     OMSG,OMSTI,OMSTC,CHKSTR,TAGVAL
+specsort.f:            CALL OMSTC (I6,CHSTR1)
+specsort.f:              CALL OMSTC (I6,CHSTR1)
+specsort.f:              CALL OMSTI (SUBCN2)
+specsort.f:              CALL OMSTC (I6,CHSTR1)
+specsort.f:      EXTERNAL     CHKSTR,OMSTC,OMSG,LFTSTR
+specsort.f:            CALL OMSTC (I10,QUAN)
+specsort.f:      EXTERNAL     ZIPI,LENSTR,ZIPC,SPITEM,OMSTI,OMSG,OMSTC,MKQUAN,
+specsort.f:                  CALL OMSTI (PREPOS)
+specsort.f:              CALL OMSTI (PREPOS)
+specsort.f:                CALL OMSTI (PREPOS)
+specsort.f:                        CALL OMSTI (PREPOS)
+specsort.f:              CALL OMSTI (PREPOS)
+specsort.f:              CALL OMSTC (I,CITEM(1:10))
+specsort.f:              CALL OMSTI (PREPOS)
+specsort.f:              CALL OMSTC (I,CITEM(1:2))
+specsort.f:                CALL OMSTI (PREPOS)
+specsort.f:                CALL OMSTC (I,CITEM(1:10))
+specsort.f:              CALL OMSTI (PREPOS)
+specsort.f:              CALL OMSTC (I,CITEM(1:3))
+specsort.f:              CALL OMSTI (PREPOS)

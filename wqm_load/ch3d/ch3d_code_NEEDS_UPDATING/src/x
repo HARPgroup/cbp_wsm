@@ -1,0 +1,410 @@
+convert_my_output_to_sung_chan_output/oldcode/compare_33s.f:        write(year,'(i4)') iyr
+convert_my_output_to_sung_chan_output/oldcode/compare_33s.f:          if(iday.ne.idy) write(*,*)'Error at day',iday,idy
+convert_my_output_to_sung_chan_output/oldcode/compare_33s.f:        write(*,*) iyr,icnt-1
+convert_my_output_to_sung_chan_output/oldcode/compare_33s.f:              write(11,*)i,',',j,',',totalq(i,j,iyr),',',totalt(i,j,iyr)
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:        write(year,'(i4)') iyr
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:c        write(*,*) imon
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:c        write(*,*) jmon
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:          write(33,201) iday,itm
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:          write(13,301) idy,itm
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:          if(iday.ne.idy) write(*,*)'Error at day',iday,idy
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:            if(qf(3).lt.0.) write(*,*) iday,3,qf(3),q(46,24)
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:            if(qf(5).lt.0.) write(*,*) iday,5,qf(5),q(54,40)
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:            if(qf(4).lt.0.) write(*,*) iday,7,qf(7),q(60,44)
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:            write(33,211)(q(i,j),i=1,icell1)
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:c            write(*,*) j,ic(j),imon(ic(j)),jmon(ic(j)),qf(ic(j))
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:            write(13,302) imon(ic(j)),jmon(ic(j)),qf(ic(j))
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:          write(13,302) 134,282,-750.
+convert_my_output_to_sung_chan_output/oldcode/gen_13_33_from_flows_110905.f:        write(*,*) iyr,icnt-1
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:        write(year,'(i4)') iyr
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:c        write(*,*) imon
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:c        write(*,*) jmon
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(33,201) iday,itm
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(34,201) iday,itm
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(13,301) idy,itm
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,304) idy,itm
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          if(iday.ne.idy) write(*,*)'Error at day',iday,idy
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:            if(qf(3).lt.0.) write(*,*) iday,3,qf(3),q(46,24)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:            if(qf(5).lt.0.) write(*,*) iday,5,qf(5),q(54,40)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:            if(qf(4).lt.0.) write(*,*) iday,7,qf(7),q(60,44)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:            write(33,211)(q(i,j),i=1,icell1)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:            write(34,211)(t(i,j),i=1,icell1)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:c            write(*,*) j,ic(j),imon(ic(j)),jmon(ic(j)),qf(ic(j))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:            write(13,302) imon(ic(j)),jmon(ic(j)),qf(ic(j))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:C          write(13,302) 134,282,-750.
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(13,302) 134,282,750.
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(1)),jmon(ic(1)),(tf(ic(1)),j=1,4)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(2)),jmon(ic(2)),tf(ic(2))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(3)),jmon(ic(3)),tf(ic(3))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(4)),jmon(ic(4)),tf(ic(4))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(5)),jmon(ic(5)),(tf(ic(5)),j=1,2)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(6)),jmon(ic(6)),(tf(ic(6)),j=1,3)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(7)),jmon(ic(7)),(tf(ic(7)),j=1,2)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(8)),jmon(ic(8)),tf(ic(8))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(9)),jmon(ic(9)),(tf(ic(9)),j=1,3)
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(10)),jmon(ic(10)),tf(ic(10))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(11)),jmon(ic(11)),tf(ic(7))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) imon(ic(12)),jmon(ic(12)),abs(tf(ic(12)))
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:          write(78,303) 134,282,(tf(ic(9)),j=1,4)  ! use susq for C&D
+convert_my_output_to_sung_chan_output/gen_13_33_14_34.f:        write(*,*) iyr,icnt-1
+kimcode/gary_NOTES:    writes fort.13 >> i,j,q (cfs)  daily
+kimcode/gary_NOTES:	reads discharge files and writes i,j,q  (daily)
+kimcode/gary_NOTES:               write day
+kimcode/gary_NOTES:                 write i,j,q  2I8,f8.0
+kimcode/gary_NOTES:     writes the distributed output file
+kimcode/gary_NOTES:         write the day and a zero 2I8
+kimcode/gary_NOTES:           write the daily flow  22F6.1
+kimcode/gen33_from_cbp.f:c          write(*,*) ic,iy,imn
+kimcode/gen33_from_cbp.f:          write(33,201) idy-1,0
+kimcode/gen33_from_cbp.f:                write(*,*) idy,i,j,q(idy,i,j)
+kimcode/gen33_from_cbp.f:            write(33,211)(Q(idy,I,J),I=1,ICELL1)
+kimcode/gen13_final_mde.f:      write(*,*)' year to extract (e.g. 97)'
+kimcode/gen13_final_mde.f:        write(13,201) iday,0
+kimcode/gen13_final_mde.f:          write(13,202) imon(j),jmon(j),cros(j)*q(i,j)
+kimcode/gen13_pot.f:      write(*,*) 'nst=',nst
+kimcode/gen13_pot.f:        write(*,*) i,xfact(i),nindx(i)
+kimcode/gen13_pot.f:        write(year,'(i4)') iyear
+kimcode/gen13_pot.f:          write(13,201) iday,0
+kimcode/gen13_pot.f:            write(13,202) imon(j),jmon(j),cros(j)*q(j)
+kimcode/gen33_final_mde.f:      write(*,*)' year to extract (e.g. 97)'
+kimcode/gen33_final_mde.f:        write(33,201) iday,0
+kimcode/gen33_final_mde.f:              write(*,*) idy,i,j,q(idy,i,j)
+kimcode/gen33_final_mde.f:          write(33,211)(Q(idy,I,J),I=1,ICELL1)
+lib/dsn/dsn_utils.f:      write(report(2),'(i6)')dsn
+lib/dsn/dsn_utils.f:        write(report(3),*)'Invalid Date'
+lib/dsn/dsn_utils.f:        write(report(3),*)
+lib/dsn/dsn_utils.f:        write(report(3),*)'date from WDM does not match expected date'
+lib/dsn/dsn_utils.f:        write(report(3),*)'data set ',dsn,' does not exist'
+lib/dsn/dsn_utils.f:        write(report(3),*)'data set exists, but is wrong DSTYP'
+lib/dsn/dsn_utils.f:        write(report(3),*)'data set number out of range'
+lib/dsn/dsn_utils.f:        write(report(3),*)
+lib/dsn/dsn_utils.f:991   write(report(1),*) 'Problem writing data for data set ',dsn
+lib/dsn/dsn_utils.f:        write(report(2),*) 'data set ',dsn,' does not exist'
+lib/dsn/dsn_utils.f:        report(2) = 'Can not write to read only data set'
+lib/dsn/dsn_utils.f:        write(report(2),*)
+lib/dsn/dsn_utils.f:!  output file path (A64) - name of file to write export to
+lib/dsn/dsn_utils.f:991   write(report(1),*) "error getting start and end of existing data"
+lib/dsn/dsn_utils.f:      write(report(2),*) "error code=",err
+lib/dsn/dsn_utils.f:      write(report(3),*) 'dsn = ',dsn
+lib/dsn/dsn_utils.f:992   write(report(1),*)
+lib/dsn/dsn_utils.f:      write(report(2),*)'requested date ',sdate
+lib/dsn/dsn_utils.f:      write(report(3),*)'DSN start date ',asdate
+lib/dsn/dsn_utils.f:993   write(report(1),*)
+lib/dsn/dsn_utils.f:      write(report(2),*)'requested date ',edate
+lib/dsn/dsn_utils.f:      write(report(3),*)'DSN end date ',aedate
+lib/dsn/dsn_utils.f:!  output file path (A64) - name of file to write export to
+lib/dsn/dsn_utils.f:991   write(report(1),*)'error getting start and end of existing data'
+lib/dsn/dsn_utils.f:      write(report(2),*)'error code=',err
+lib/dsn/dsn_utils.f:      write(report(3),*)'dsn = ',dsn
+lib/dsn/dsn_utils.f:992   write(report(1),*)
+lib/dsn/dsn_utils.f:      write(report(2),*)'requested date ',sdate
+lib/dsn/dsn_utils.f:      write(report(3),*)'DSN start date ',asdate
+lib/dsn/dsn_utils.f:993   write(report(1),*)
+lib/dsn/dsn_utils.f:      write(report(2),*)'requested date ',edate
+lib/dsn/dsn_utils.f:      write(report(3),*)'DSN end date ',aedate
+lib/dsn/dsn_utils.f:!  output file path (A64) - name of file to write export to
+lib/dsn/dsn_utils.f:!  output file path (A64) - name of file to write export to
+lib/dsn/dsn_utils.f:        errdescribe = 'trying to write to a read-only data set'
+lib/dsn/dsn_utils.f:        write(errdescribe,*) 'error = ',err
+Binary file lib/dsn/dsn_utils.o matches
+Binary file lib/util_lib.a matches
+Binary file lib/get_lib.a matches
+oldcode/p5_to_ch3d/x:<       write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+oldcode/p5_to_ch3d/x:>       write(report(2),*)'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+oldcode/p5_to_ch3d/x:<       write(report(1),*) 'file date: ',temp1y,' ',temp1m,' ',temp1d
+oldcode/p5_to_ch3d/x:>       write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd
+oldcode/p5_to_ch3d/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d/readriver.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/readriver.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+oldcode/p5_to_ch3d/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ch3d/Rmasslink.f:      write(report(3),*)
+oldcode/p5_to_ch3d/main.f:            write(tlseg(2:6),'(i5)')fips(np)  ! convert to character
+oldcode/p5_to_ch3d/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d/main.f:          write(dfile) nd
+oldcode/p5_to_ch3d/main.f:          write(dfile)((q(nd,ny,i,j),i=1,icell1),j=1,jcell1)
+oldcode/p5_to_ch3d/main.f:      write(dfile,*)'year, day, 0001s (cfs), 0000s (cfs)'
+oldcode/p5_to_ch3d/main.f:          write(dfile,*) ny,',',nd,',',afl(nd,ny),',',bfl(nd,ny)
+oldcode/p5_to_ch3d/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d/readpair.f:      write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+oldcode/p5_to_ch3d/readpair.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_ch3d/readpair.f:      write(report(1),*) 'file date: ',temp1y,' ',temp1m,' ',temp1d
+oldcode/p5_to_ch3d/readpair.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_ch3d/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/old_code/oldest/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_ch3d/old_code/oldest/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d/old_code/oldest/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_ch3d/old_code/oldest/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_ch3d/old_code/oldest/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d/old_code/oldest/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d/old_code/oldest/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/old_code/oldest/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/old_code/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_ch3d/old_code/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d/old_code/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_ch3d/old_code/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_ch3d/old_code/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d/old_code/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d/old_code/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/old_code/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/old_code/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ch3d/old_code/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d/old_code/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d/old_code/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/old_code/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/readpair_p518.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d/readpair_p518.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d/readpair_p518.f:      write(report(2),*)'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+oldcode/p5_to_ch3d/readpair_p518.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_ch3d/readpair_p518.f:      write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd
+oldcode/p5_to_ch3d/readpair_p518.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_ch3d/readpair_p518.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/readpair_p518.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_fall_line/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_fall_line/readriver.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_fall_line/readriver.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_fall_line/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+oldcode/p5_fall_line/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_fall_line/Rmasslink.f:      write(report(3),*)
+oldcode/p5_fall_line/main.f:        write(fnam(15:18),'(i4)')ny
+oldcode/p5_fall_line/main.f:        write(dfile) ncells,i,j
+oldcode/p5_fall_line/main.f:          write(dfile) nd
+oldcode/p5_fall_line/main.f:          write(dfile) (q(nd,ny,nc),nc=1,ncells)
+oldcode/p5_fall_line/main.f:      write(dfile,*)'year, day, 0001s (cfs), 0000s (cfs)'
+oldcode/p5_fall_line/main.f:          write(dfile,*) ny,',',nd,',',afl(nd,ny)
+oldcode/p5_to_harry/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_harry/readriver.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/readriver.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+oldcode/p5_to_harry/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_harry/Rmasslink.f:      write(report(3),*)
+oldcode/p5_to_harry/main.f:            write(tlseg(2:6),'(i5)')fips(np)  ! convert to character
+oldcode/p5_to_harry/main.f:      write(dfile,'(a10,12(i4,a1))') 
+oldcode/p5_to_harry/main.f:          write(dfile,'(i4,a1,i3,12(a1,f10.2))') 
+oldcode/p5_to_harry/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_harry/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_harry/readpair.f:      write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+oldcode/p5_to_harry/readpair.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_harry/readpair.f:      write(report(1),*) 'file date: ',temp1y,' ',temp1m,' ',temp1d
+oldcode/p5_to_harry/readpair.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_harry/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/old_code/oldest/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_harry/old_code/oldest/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_harry/old_code/oldest/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_harry/old_code/oldest/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_harry/old_code/oldest/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_harry/old_code/oldest/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_harry/old_code/oldest/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/old_code/oldest/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/old_code/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_harry/old_code/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_harry/old_code/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_harry/old_code/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_harry/old_code/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_harry/old_code/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_harry/old_code/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/old_code/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/old_code/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_harry/old_code/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_harry/old_code/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_harry/old_code/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/old_code/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/readpair_p518.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_harry/readpair_p518.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_harry/readpair_p518.f:      write(report(2),*)'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+oldcode/p5_to_harry/readpair_p518.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_harry/readpair_p518.f:      write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd
+oldcode/p5_to_harry/readpair_p518.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_harry/readpair_p518.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/readpair_p518.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_harry/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ICPRB/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ICPRB/readriver.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/readriver.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+oldcode/p5_to_ICPRB/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ICPRB/Rmasslink.f:      write(report(3),*)
+oldcode/p5_to_ICPRB/main.f:            write(tlseg(2:6),'(i5)')fips(np)  ! convert to character
+oldcode/p5_to_ICPRB/main.f:      write(dfile,'(a10,343(i6,a1))') 
+oldcode/p5_to_ICPRB/main.f:          write(dfile,'(i4,a1,i3,343(a1,f10.2))') 
+oldcode/p5_to_ICPRB/main.f:      write(dfile,*)'year,day,cell,flow'
+oldcode/p5_to_ICPRB/main.f:            write(dfile,*)ny,',',nd,',',cells(nc),',',q(nd,ny,nc)
+oldcode/p5_to_ICPRB/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ICPRB/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ICPRB/readpair.f:      write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+oldcode/p5_to_ICPRB/readpair.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_ICPRB/readpair.f:      write(report(1),*) 'file date: ',temp1y,' ',temp1m,' ',temp1d
+oldcode/p5_to_ICPRB/readpair.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_ICPRB/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/old_code/oldest/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_ICPRB/old_code/oldest/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ICPRB/old_code/oldest/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_ICPRB/old_code/oldest/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_ICPRB/old_code/oldest/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ICPRB/old_code/oldest/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ICPRB/old_code/oldest/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/old_code/oldest/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/old_code/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_ICPRB/old_code/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ICPRB/old_code/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_ICPRB/old_code/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_ICPRB/old_code/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ICPRB/old_code/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ICPRB/old_code/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/old_code/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/old_code/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ICPRB/old_code/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ICPRB/old_code/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ICPRB/old_code/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/old_code/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/readpair_p518.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ICPRB/readpair_p518.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ICPRB/readpair_p518.f:      write(report(2),*)'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+oldcode/p5_to_ICPRB/readpair_p518.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_ICPRB/readpair_p518.f:      write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd
+oldcode/p5_to_ICPRB/readpair_p518.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_ICPRB/readpair_p518.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/readpair_p518.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ICPRB/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ch3d_with_temp/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d_with_temp/readriver.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/readriver.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+oldcode/p5_to_ch3d_with_temp/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ch3d_with_temp/Rmasslink.f:      write(report(3),*)
+oldcode/p5_to_ch3d_with_temp/main.f:            write(tlseg(2:6),'(i5)')fips(np)  ! convert to character
+oldcode/p5_to_ch3d_with_temp/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d_with_temp/main.f:          write(dfile) nd
+oldcode/p5_to_ch3d_with_temp/main.f:          write(dfile)((q(nd,ny,i,j),i=1,icell1),j=1,jcell1)
+oldcode/p5_to_ch3d_with_temp/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d_with_temp/main.f:          write(dfile) nd
+oldcode/p5_to_ch3d_with_temp/main.f:          write(dfile) ((H(nd,ny,i,j),i=1,icell1),j=1,jcell1)
+oldcode/p5_to_ch3d_with_temp/main.f:      write(dfile,*)'year, day, 0001s (cfs), 0000s (cfs)'
+oldcode/p5_to_ch3d_with_temp/main.f:          write(dfile,*) ny,',',nd,',',afl(nd,ny),',',bfl(nd,ny)
+oldcode/p5_to_ch3d_with_temp/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d_with_temp/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d_with_temp/readpair.f:      write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+oldcode/p5_to_ch3d_with_temp/readpair.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_ch3d_with_temp/readpair.f:      write(report(1),*) 'file date: ',temp1y,' ',temp1m,' ',temp1d
+oldcode/p5_to_ch3d_with_temp/readpair.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_ch3d_with_temp/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/old_code/oldest/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/old_code/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+oldcode/p5_to_ch3d_with_temp/old_code/main.f:        write(fnam(12:15),'(i4)')ny
+oldcode/p5_to_ch3d_with_temp/old_code/main.f:          write(dfile,'(i4)') nd
+oldcode/p5_to_ch3d_with_temp/old_code/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+oldcode/p5_to_ch3d_with_temp/old_code/readpair.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d_with_temp/old_code/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d_with_temp/old_code/readpair.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/old_code/readpair.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/old_code/masslink.f:      write(report(3)(16:18),'(i3)') err
+oldcode/p5_to_ch3d_with_temp/old_code/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d_with_temp/old_code/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d_with_temp/old_code/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/old_code/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:**      write appropriate output files (eos, wqm)                     **
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:      write(report(2),*)'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:      write(report(3),*) 'req end date: ',year2,' 1, 1'
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:      write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:      write(report(3),*) 'req date: ',year1,' 12, 31'
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:      write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/readpair_p518.f:        write(report(1)(22:24),'(i3)')err
+oldcode/p5_to_ch3d_with_temp/masslink.f:      write(report(3)(16:18),'(i3)') err
+p5_and_ps_to_ch3d_with_temp/readhourlydat.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/readhourlydat.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/readhourlydat.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/readhourlydat.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/getvars.f:      write(report(3)(16:18),'(i3)') err
+p5_and_ps_to_ch3d_with_temp/readdailydat.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/readdailydat.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/readdailydat.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/readdailydat.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/readriver.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/readriver.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+p5_and_ps_to_ch3d_with_temp/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+p5_and_ps_to_ch3d_with_temp/Rmasslink.f:      write(report(3),*)
+p5_and_ps_to_ch3d_with_temp/main.f:            write(tlseg(2:6),'(i5)')fips(np)  ! convert to character
+p5_and_ps_to_ch3d_with_temp/main.f:          write(ccell,'(i6)') cell
+p5_and_ps_to_ch3d_with_temp/main.f:        write(fnam(12:15),'(i4)')ny
+p5_and_ps_to_ch3d_with_temp/main.f:          write(dfile) nd
+p5_and_ps_to_ch3d_with_temp/main.f:          write(dfile)((q(nd,ny,i,j),i=1,icell1),j=1,jcell1)
+p5_and_ps_to_ch3d_with_temp/main.f:        write(fnam(12:15),'(i4)')ny
+p5_and_ps_to_ch3d_with_temp/main.f:          write(dfile) nd
+p5_and_ps_to_ch3d_with_temp/main.f:          write(dfile) ((H(nd,ny,i,j),i=1,icell1),j=1,jcell1)
+p5_and_ps_to_ch3d_with_temp/main.f:      write(fnam(13:16),'(i4)') year1
+p5_and_ps_to_ch3d_with_temp/main.f:      write(fnam(18:21),'(i4)') year2
+p5_and_ps_to_ch3d_with_temp/main.f:      write(dfile,*)'year, day, 0001s (cfs), 0000s (cfs)'
+p5_and_ps_to_ch3d_with_temp/main.f:          write(dfile,*) ny,',',nd,',',afl(nd,ny),',',bfl(nd,ny)
+p5_and_ps_to_ch3d_with_temp/main.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/readpair.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/readpair.f:      write(report(2),*) 'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+p5_and_ps_to_ch3d_with_temp/readpair.f:      write(report(3),*) 'req end date: ',year2,',',month2,',',day2
+p5_and_ps_to_ch3d_with_temp/readpair.f:      write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd
+p5_and_ps_to_ch3d_with_temp/readpair.f:      write(report(3),*) 'req date: ',year1,',',month1,',',day1
+p5_and_ps_to_ch3d_with_temp/readpair.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/readpair.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/main.f:        write(fnam(12:15),'(i4)')ny
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/main.f:          write(dfile,'(i4)') nd
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/old_code/oldest/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/old_code/main.f:          write(tlseg(2:6),'(i5)')fips(np)
+p5_and_ps_to_ch3d_with_temp/old_code/main.f:        write(fnam(12:15),'(i4)')ny
+p5_and_ps_to_ch3d_with_temp/old_code/main.f:          write(dfile,'(i4)') nd
+p5_and_ps_to_ch3d_with_temp/old_code/main.f:            write(dfile,'(178F6.1)')(q(nd,ny,i,j),i=1,icell1)
+p5_and_ps_to_ch3d_with_temp/old_code/readpair.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/old_code/readpair.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/old_code/readpair.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/old_code/readpair.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/old_code/masslink.f:      write(report(3)(16:18),'(i3)') err
+p5_and_ps_to_ch3d_with_temp/old_code/readpairyear.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/old_code/readpairyear.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_and_ps_to_ch3d_with_temp/old_code/readpairyear.f:      write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/old_code/readpairyear.f:        write(report(1)(22:24),'(i3)')err
+p5_and_ps_to_ch3d_with_temp/x.f:**      write appropriate output files (eos, wqm)                     **
+p5_and_ps_to_ch3d_with_temp/getwateracres.f:      write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+p5_and_ps_to_ch3d_with_temp/getwateracres.f:      write(report(3),*) 'req end date: ',year2,' ',month2,' ',day2
+p5_and_ps_to_ch3d_with_temp/getwateracres.f:      write(report(1),*)'file start date: ',temp1y,' ',temp1m,' ',temp1d
+p5_and_ps_to_ch3d_with_temp/getwateracres.f:      write(report(3),*)'req start date: ',year1,' ',month1,' ',day1
+p5_and_ps_to_ch3d_with_temp/masslink.f:      write(report(3)(16:18),'(i3)') err
+p5_fall_line_with_temp/readriver.f:      write(report(3),*)'exp ',ndays,' read ',jdaytot
+p5_fall_line_with_temp/readriver.f:      write(report(1)(22:24),'(i3)')err
+p5_fall_line_with_temp/readriver.f:        write(report(1)(22:24),'(i3)')err
+p5_fall_line_with_temp/Rmasslink.f:      write(fnam(last-1:last-1),'(i1)') upNexits
+p5_fall_line_with_temp/Rmasslink.f:      write(report(3)(16:18),'(i3)') err
+p5_fall_line_with_temp/Rmasslink.f:      write(report(3),*)
+p5_fall_line_with_temp/main.f:        write(fnam(15:18),'(i4)')ny
+p5_fall_line_with_temp/main.f:        write(dfile) ncells,i,j
+p5_fall_line_with_temp/main.f:          write(dfile) nd
+p5_fall_line_with_temp/main.f:          write(dfile) (q(nd,ny,nc),nc=1,ncells)
+p5_fall_line_with_temp/main.f:      write(fnam(18:21),'(i4)')year1
+p5_fall_line_with_temp/main.f:      write(fnam(23:26),'(i4)')year2
+p5_fall_line_with_temp/main.f:      write(dfile,*)'year, day, 0001s (cfs)'
+p5_fall_line_with_temp/main.f:          write(dfile,*) ny,',',nd,',',afl(nd,ny)
+p5_fall_line_with_temp/main.f:        write(fnam(20:23),'(i4)')ny
+p5_fall_line_with_temp/main.f:        write(dfile) ncells,i,j
+p5_fall_line_with_temp/main.f:          write(dfile) nd
+p5_fall_line_with_temp/main.f:          write(dfile) (H(nd,ny,nc),nc=1,ncells)
+wangcode/p5ch3d.f:             write(cseg(i), 940) iseg(i)     ! converting integer to char 
+wangcode/p5ch3d.f:             write(ccnty(i),950) icnty(i) 
+wangcode/p5ch3d.f:               write(31, 1234) icell, iyr,imn,idy,flow   

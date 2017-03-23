@@ -1,0 +1,10 @@
+#!/bin/csh 
+ set FC = $argv[1]
+ $FC -fbounds-check -c main.f
+ $FC -fbounds-check -c make1type.f
+ $FC -fbounds-check -c makeptype.f
+
+ $FC -o ../../../../bin/summarystats.exe main.o make1type.o makeptype.o ../../../lib/util_lib.a
+
+ rm *.o
+

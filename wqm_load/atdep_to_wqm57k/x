@@ -1,0 +1,34 @@
+183,184c194,195
+<           wetnh3load(nd) = DNH3narr * cellarea  ! in kg/day
+<           wetno3load(nd) = DNO3narr * cellarea  ! in kg/day
+---
+>           wetnh3load(nd) = DNH3narr * cellarea * facwetnh3 ! in kg/day
+>           wetno3load(nd) = DNO3narr * cellarea * facwetno3 ! in kg/day
+196a208
+>      .                     * facwetorn
+197a210
+>      .                     * facwetorp
+198a212
+>      .                     * facwetpo4
+200a215
+>      .                     * facwetorn
+201a217
+>      .                     * facwetorp
+202a219
+>      .                     * facwetpo4
+467c484
+<      .                   * cellarea
+---
+>      .                   * cellarea * facdryno3
+470c487
+<      .                   * cellarea
+---
+>      .                   * cellarea * facdrynh3
+499c516
+< ************** PRINT AVEANN, ANNUAL, AND MONTHLY VALUES OF ALL LOADS
+---
+> ************** PRINT ANNUAL AND MONTHLY VALUES OF ALL LOADS
+545c562
+<       
+---
+> 

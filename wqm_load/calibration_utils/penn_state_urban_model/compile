@@ -1,0 +1,13 @@
+#!/bin/csh
+set FC = $argv[1]
+$FC -c getbmpbreaks.f
+$FC -c getlandbreaks.f
+$FC -c main.f
+$FC -c maketransfile.f
+$FC -c readcontrol.f
+$FC -c sortB.f
+
+$FC -o ../../../bin/penn_state_urban_model.exe getbmpbreaks.o getlandbreaks.o main.o maketransfile.o readcontrol.o sortB.o ../../lib/util_lib.a ../../lib/get_lib.a
+
+rm *.o
+

@@ -1,0 +1,20 @@
+#!/bin/csh
+### this compile script only forms the objects.  The final linkage
+###  is done in the run script that starts the whole iteration process
+###  The objects in this directory are linked with function objects in
+###  ./run/control/calib/IQUAL/$calscen/$calscen_sensitivities.o
+set FC = $argv[1]
+$FC -c findcolumn.f
+$FC -c getcolumns.f
+$FC -c getsimEOF.f
+$FC -c gettarget.f
+$FC -c ioparvar.f
+
+ar rv calib_iter_IQUAL.a findcolumn.o getcolumns.o getsimEOF.o gettarget.o ioparvar.o 
+
+rm *.o
+
+$FC -c main.f
+$FC -c main_assign_initial_params.f
+$FC -c main_check_calib.f
+

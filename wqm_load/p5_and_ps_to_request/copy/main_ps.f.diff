@@ -1,0 +1,21 @@
+--- ../main_ps.f	2012-01-31 11:05:39.000000000 -0500
++++ ./main_ps.f	2013-07-12 17:49:04.771198788 -0400
+@@ -370,14 +370,10 @@
+         month = 1
+         day = 1
+         do nd = 1,ndaysinyear(ny)
+-          if (day.eq.1) then
+-            do nc = 1,ncells
+-C              if (writecell(nc)) then
+-                write(dfile,1234)
+-     .                cell(nc),year,month,(wq(nd,ny,nc,nq),nq=1,nBvar)
+-C              end if
+-            end do
+-          end if
++          do nc = 1,ncells
++            write(dfile,1234)
++     .            cell(nc),year,month,day,(wq(nd,ny,nc,nq),nq=1,nBvar)
++          end do
+           call tomorrow(year,month,day)
+         end do
+         close(dfile)

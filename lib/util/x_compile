@@ -1,0 +1,20 @@
+f77 -mcmodel=medium -fbounds-check -c chars.f
+f77 -mcmodel=medium -fbounds-check -c columnorder.f
+f77 -mcmodel=medium -fbounds-check -c comment.f
+f77 -mcmodel=medium -fbounds-check -c csv.f
+f77 -mcmodel=medium -fbounds-check -c dates.f
+f77 -mcmodel=medium -fbounds-check -c stopreport.f
+f77 -mcmodel=medium -fbounds-check -c wdm.f
+f77 -mcmodel=medium -fbounds-check -c writeline.f
+f77 -mcmodel=medium -fbounds-check -c fchar.f
+f77 -mcmodel=medium -fbounds-check -c findopen.f
+f77 -mcmodel=medium -fbounds-check -c correl.f
+f77 -mcmodel=medium -fbounds-check -c interpolate.f
+f77 -mcmodel=medium -fbounds-check -c readcontrol.f
+f77 -mcmodel=medium -fbounds-check -c sort.f
+f77 -mcmodel=medium -fbounds-check -c fipstate.f
+f77 -mcmodel=medium -fbounds-check -c addvector.f
+
+ar rv ../x_util_lib.a chars.o columnorder.o comment.o csv.o dates.o findopen.o stopreport.o wdm.o writeline.o fchar.o correl.o interpolate.o readcontrol.o sort.o fipstate.o addvector.o
+
+rm *.o

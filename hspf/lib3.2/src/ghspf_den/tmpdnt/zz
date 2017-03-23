@@ -1,0 +1,7 @@
+hrch.f:      bedarea = ength * bedwidd 
+hrchnut_0.f:          dw2s = dw2s*bedarea*porop      
+hrchnut_0.f:          ddnit = ddnit * bedarea * porop * zdpth
+hrchnut_1.f:          dw2s = dw2s*bedarea*porop      
+hrchnut_1.f:          ddnit = ddnit * bedarea * porop * zdpth
+hrchnut.f:          dw2s = dw2s*bedarea*porop      
+hrchnut.f:          ddnit = ddnit * bedarea * porop * zdpth

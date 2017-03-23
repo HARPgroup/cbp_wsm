@@ -1,0 +1,50 @@
+31c31
+<       real bmpfac(ndaymax,nbcon,nlu)
+---
+>       real bmpfac(ndaymax*24,nbcon,nlu)
+58,59c58,61
+<       integer temp1y,temp1m,temp1d  ! start time of etm file
+<       integer temp2y,temp2m,temp2d  ! stop time of etm file
+---
+>       integer etmSRTy,etmSRTm,etmSRTd  ! start time of etm file
+>       integer etmENDy,etmENDm,etmENDd  ! stop time of etm file
+>       integer jdcorrect ! first day of requested data relative to etm
+>       integer hour1  ! first hour of requested data relative to etm
+61,62d62
+<       integer jdcorrect  ! correction between start time of etm
+<                          ! file and time series from wdm
+105,106c105,106
+<      .            temp1y,temp1m,temp1d,
+<      .            temp2y,temp2m,temp2d,
+---
+>      .               etmSRTy,etmSRTm,etmSRTd,
+>      .               etmENDy,etmENDm,etmENDd,
+112c112
+<       jday = julian(temp2y,temp2m,temp2d,year2,12,31)
+---
+>       jday = julian(etmENDy,etmENDm,etmENDd,year2,12,31)
+114c114
+<       jday = julian(temp1y,temp1m,temp1d,year1,1,1)
+---
+>       jday = julian(etmSRTy,etmSRTm,etmSRTd,year1,1,1)
+117a118
+>       hour1 = (jdcorrect-1)*24 + 1
+176,178c177
+<               fac2 = fac1 * lufac(jday+jdcorrect-1,l) *
+<      .                      bmpfac(jday+jdcorrect-1,nb,l)
+< 
+---
+>               fac2 = fac1 * lufac(jday+jdcorrect-1,l) 
+181c180,181
+<                 hvaltemp(nv,Rvar)=fac2*hval(nv)+hvaltemp(nv,Rvar) !(6)
+---
+>                 hvaltemp(nv,Rvar)=fac2*hval(nv)*bmpfac(hour1-1+nv,nb,l)
+>      .                            +hvaltemp(nv,Rvar) !(6)
+238c238
+<       write(report(2),*) 'file end date: ',temp2y,' ',temp2m,' ',temp2d
+---
+>       write(report(2),*)'file end: ',etmENDy,' ',etmENDm,' ',etmENDd
+243c243
+<       write(report(1),*) 'file date: ',temp1y,' ',temp1m,' ',temp1d
+---
+>       write(report(1),*) 'file start: ',etmSRTy,' ',etmSRTm,' ',etmSRTd

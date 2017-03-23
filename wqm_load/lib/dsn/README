@@ -1,0 +1,58 @@
+
+
+This directory contains simple subroutines to call standard wdm library routines.
+
+For any programs that put and get dsns, make sure that the following lines are in the makefile, replacing MyProg with your program
+
+  
+include ../../workspace
+
+LIBDIR = /usr/opt/wrdapp/lib3.2/lib/
+LIB32= $(LIBDIR)/wdmlib.a $(LIBDIR)/adwdmlib.a $(LIBDIR)/utillib.a
+
+DUDIR = $(workspace)/pp/etm/src/wdm_utils/dsn_utils/
+INCDIR = $(workspace)/pp/lib/inc/
+INC = $(INCDIR)/wdm.inc $(INCDIR)/standard.inc
+
+MyProg : MyProg.f $(DUDIR)/dsn_utils.o  $(LIB32)
+	f77 -o MyProg MyProg.f $(DUDIR)/dsn_utils.o $(LIB32)
+
+$(DUDIR)/dsn_utils.o : $(DUDIR)/dsn_utils.f $(INC)
+	f77 -c $(DUDIR)/dsn_utils.f 
+
+
+many useful routines are in lib3.2/src/wdm/wdtms[1-3].f
+
+to close a wdm file, use the subroutine WDFLCL(unit#,err).
+  You can not close the last wdm with this routine 
+    since it is assumed to be the message wdm.
+  A new subroutine has been added to /usr/opt/wrdapp/lib3.2/src/adwdm/utwdmd.f
+    called WDFLC1 that can be called to close the file
+
+to open a wdm file, use the subroutine WDBOPN(wdmnum,wdmfnam,I,err)
+  wdmnum is the integer file number, wdmfnam is a 64 character string, and
+  the third argument is 0 for read/write, 1 for read only, 2 is for new
+
+to read DSNs use gethourdsn or getdailydsn
+to write DSNs use puthourdsn or putdailydsn
+
+to get dates from a time series use 
+      SUBROUTINE   WDATIM
+     I                   ( WDMSFL, DSN,
+     O                     STRT, STOP, TSTEP, TCODE,RETCOD )
+C     WDMSFL - Fortran unit number of WDM file
+C     DSN    - data set number
+C     STRT   - start of record
+C     STOP   - end of record
+C     TSTEP  - time step of data, in TCODE units
+C     TCODE  - time units of data
+C              1 - second        4 - day
+C              2 - minute        5 - month
+C              3 - hour          6 - year
+C     RETCOD - return code
+C                  0 - all information successfully retrieved
+C                 -6 - no data in the data set
+C                -81 - data set does not exist
+C                -82 - data set is not a time-series data set
+C               -107 - one or more attributes not present in data set
+

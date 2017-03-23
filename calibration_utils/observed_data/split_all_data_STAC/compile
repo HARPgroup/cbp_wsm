@@ -1,0 +1,20 @@
+#!/bin/csh
+
+set usrdir = ../../../src/lib
+
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a $usrdir/ttyux.o)
+
+f77 -c main.f
+f77 -c getrsegs.f
+f77 -c getvsegs.f
+f77 -c getconcname.f
+
+f77 -o ../../../bin/split_WQ_data.exe main.o getrsegs.o getvsegs.o getconcname.o $usrlib 
+
+f77 -c main_patuxent.f
+f77 -o ../../../bin/split_Patuxent_WQ_data.exe main_patuxent.o getrsegs.o getvsegs.o getconcname.o $usrlib 
+
+f77 -c main_oneseg.f
+f77 -o ../../../bin/split_oneseg.exe main_oneseg.o getrsegs.o getvsegs.o getconcname.o $usrlib 
+
+rm *.o

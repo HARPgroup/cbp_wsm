@@ -1,0 +1,10 @@
+#!/bin/csh
+set FC = $argv[1]
+$FC -fbounds-check -c checkflow.f
+$FC -fbounds-check -c WDMinfo.f
+$FC -fbounds-check -c WDMinfoIN.f
+
+ar rv postriverlib.a checkflow.o WDMinfo.o WDMinfoIN.o
+
+rm *.o
+

@@ -1,0 +1,132 @@
+
+
+
+graph(1)         U.S. Geological Survey (wrdapp)         graph(1)
+
+
+NAME
+       graph - Interface to Graphical Kernel System (GKS)
+
+ABSTRACT
+       The GRAPH library contains a set of routines that have been used to
+       generate a range of plots in hydrologic applications.  Graphics
+       include time plots at scales of minutes to years, x-y plots, and
+       probability plots.  Non-time axes can be arithmetic, logarithmic, or
+       probability.  Probability plots with Gaussian transformations can be
+       fraction, percent, or recurrence interval.  The library was
+       developed using the Graphical Kernel System (GKS) standard to
+       provide portability.  The GRAPH library is used by ANNIE, GLSNET,
+       HSPEXP, HYSEP, PEAKFQ, SWSTAT, and other programs.
+
+       The GRAPH library is included in the LIB distribution.  It requires
+       the UTIL and STATS libraries from the LIB distribution.
+
+SYSTEM REQUIREMENTS
+       GRAPH is written in Fortran 77 with the following extension: use of
+       include files. The GRAPH library requires STATS and UTIL libraries.
+
+DOCUMENTATION
+       A subroutine reference guide is provided in the distribution.
+
+SUPPORTING SOFTWARE
+       The GRAPH library is written using the GKS standard.  An
+       implementation of GKS is required for the UNIX platform.  The PC
+       version includes a set of routines that translate GKS calls to
+       Interactive Software Services's INTERACTER calls.
+
+       GKS libraries are available from a number of vendors.  Free or
+       shareware versions are available via anonymous ftp to:
+
+          ftp.zam.kfa-juelich.de in /pub/unix/graphics/gligks
+                                     gligks-4.5.[17 18].tar.gz
+                                    (works under linux, sun, aix, osf,
+                                     pc (Lahey FORTRAN))
+
+          unidata.ucar.edu in /pub/xgks
+
+CONTACTS
+       Operation and Distribution:
+          U.S. Geological Survey
+          Hydrologic Analysis Software Support Team
+          Kate Flynn
+          437 National Center
+          Reston, VA 20192
+
+          h2osoft@usgs.gov
+
+       Official versions of U.S. Geological Survey water-resources analysis
+       software are available for electronic retrieval via the World Wide
+       Web (WWW) at:
+
+
+
+
+                           26 Mar 1998                          1
+
+
+
+
+
+graph(1)         U.S. Geological Survey (wrdapp)         graph(1)
+
+
+                  http://water.usgs.gov/software/
+
+       and via anonymous File Transfer Protocol (FTP) from:
+
+                  water.usgs.gov (path: /pub/software).
+
+       The WWW page and anonymous FTP directory from which the LIB software
+       can be retrieved are, respectively:
+
+                  http://water.usgs.gov/software/lib.html
+                                --and--
+                  /pub/software/general/lib
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           26 Mar 1998                          2
+
+

@@ -1,0 +1,7 @@
+#!/bin/csh
+set FC = $argv[1]
+$FC -fbounds-check -c main.f
+
+$FC -o ../../../bin/check_river.exe main.o ../../lib/get_lib.a ../../lib/util_lib.a
+
+rm *.o

@@ -1,0 +1,10 @@
+#!/bin/csh
+
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a $usrdir/ttyux.o)
+
+f77 -c copy_p4.f
+
+f77 -o ../../../bin/copy_p4.exe copy_p4.o $usrlib
+
+rm *.o

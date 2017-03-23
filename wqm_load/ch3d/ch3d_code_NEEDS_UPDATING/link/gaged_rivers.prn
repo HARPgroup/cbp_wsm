@@ -1,0 +1,34 @@
+*** potomac - 4820 is the 0001 segment
+   2106  1.00000000     4820
+
+*** Rappahannock - 6030 is the 0001 segment
+  35072  1.00000000     6030
+
+**** James - 6800 goes to 7070 which is the downstream segment, substract 6800 from 7070 and add to distributed file
+  46024  1.00000000     6800
+
+**** Appomattox - 7480 is the 0001 segment
+  52021  1.00000000     7480
+
+*** Pamunkey - 6720 goes to 6750 which is the downstream segment, subtract 6720 from 6750 and add to distibuted file
+  54040  1.00000000     6720
+
+*** Patuxent 4650 is the 0001 segment
+  58138  1.00000000     4650
+
+*** Mattaponi 6430 and 6370 combine at the gauge.  6620 is the 0001 segment, subract 6430 and 6370 from 6620 and add to distributed file
+  60044  1.00000000     6370
+  60044  1.00000000     6430
+
+*** Patapsco 3880 goes to 4060 which is the downstream segment, subtract 3880 from 4060 and add to distributed file
+ 100215  1.00000000     3880 
+
+*** Susquehanna - 2720 is 0001 segment - split into 3 parts
+ 104252  0.33333333     2720
+ 104253  0.33333333     2720
+ 104254  0.33333333     2720
+
+*** Choptank - 3980 is 0001 segment  -- negative for momentum
+ 178169  -1.0000000     3980
+
+end

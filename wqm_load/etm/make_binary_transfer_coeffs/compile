@@ -1,0 +1,30 @@
+#!/bin/csh
+set FC = $argv[1]
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+
+$FC -fbounds-check -c -O fix_negatives.f
+$FC -fbounds-check -c -O getbmpbreaks.f
+$FC -fbounds-check -c -O getbmpspecs.f
+$FC -fbounds-check -c -O gethgmr.f
+$FC -fbounds-check -c -O getlandbreaks.f
+$FC -fbounds-check -c -O gettransport.f
+$FC -fbounds-check -c -O getpoundbreaks.f
+$FC -fbounds-check -c -O hydroeffect.f
+$FC -fbounds-check -c -O main.f
+$FC -fbounds-check -c -O maketransfile.f
+$FC -fbounds-check -c -O randomeffect.f
+$FC -fbounds-check -c -O readcontrol.f
+$FC -fbounds-check -c -O returnfq.f
+$FC -fbounds-check -c -O sortB.f
+
+$FC -O -o ../../../bin/make_binary_transfer_coeffs.exe fix_negatives.o getbmpbreaks.o getbmpspecs.o gethgmr.o getlandbreaks.o gettransport.o getpoundbreaks.o hydroeffect.o main.o maketransfile.o randomeffect.o readcontrol.o sortB.o returnfq.o $usrlib ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3
+
+rm *.o
+

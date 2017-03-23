@@ -1,0 +1,17 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+set wqmlib = ../wqmlib/wqmlib.a
+
+f77 -c main.f
+
+f77  -o ../../../bin/p5_no_ps_to_boynton.exe main.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

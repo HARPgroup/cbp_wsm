@@ -1,0 +1,3 @@
+start and stop dates are not consistent between the postprocessor and the etm.  Need to read the dates from the river file to determine the etm dates (I think) check etm file.
+
+also, you can't query the same dsn and wdm twice with different dates, apparently.

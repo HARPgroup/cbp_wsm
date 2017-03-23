@@ -1,0 +1,17 @@
+      implicit none
+      integer nsegs,ns
+      parameter (nsegs=10)
+
+      character*13 p5segs(nsegs)
+      data p5segs /'SL9_2720_0001','SL9_2490_2520','PM7_4820_0001',
+     .             'XU3_4650_0001','RU5_6030_0001','YM4_6620_0003',
+     .             'YP4_6720_6750','JL7_7100_7030','JA5_7480_0001',
+     .             'EM2_3980_0001'/
+      character*3 p4segs(nsegs)
+      data p4segs /'140','720','220',
+     .             '340','230','240',
+     .             '260','280','310',
+     .             '770'/
+      character*5 p4basin(nsegs),p4sub(nsegs)
+      data p4basin
+      

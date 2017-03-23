@@ -1,0 +1,22 @@
+#!/bin/csh
+set FC = $argv[1]
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+$FC -c main.f
+$FC -c rating_SMcensor.f
+$FC -c rating_OBcensor.f
+$FC -c seperation.f
+$FC -c transform.f
+$FC -c checkflow.f
+$FC -c date.f
+
+$FC -o ../../../bin/TSSRating_censored.exe main.o seperation.o rating_SMcensor.o rating_OBcensor.o transform.o checkflow.o date.o $dsnlib $lib1 $lib2 $lib3 $usrlib ../../postproc/river/part/part_sub.o
+
+rm *.o

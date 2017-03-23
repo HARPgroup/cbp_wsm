@@ -1,0 +1,48 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+END COMMENT
+CLU          238    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  HRUNUT
+  END LABEL
+  DATA   CLU   238
+#GROUP    1  TYPE TEXT
+$TEXT
+    5   11    0    5              5   -4
+ The continuity error reported below is greater than 1 part in 1000 and is
+ therefore considered high.
+
+ Did you specify any "special actions"?  If so, they could account for it.
+
+ Relevant data are:
+&D
+
+ &CCCCC :&I
+
+     RELERR       STORS        STOR       MATIN      MATDIF
+ &R          &R          &R          &R          &R
+
+ Where:
+
+ RELERR is the relative error (ERROR/REFVAL).
+ ERROR  is (STOR-STORS) - MATDIF.
+ REFVAL is the reference value (STORS+MATIN).
+ STOR   is the storage of material in the processing unit (land-segment or
+           reach/reservior) at the end of the present interval.
+ STORS  is the storage of material in the pu at the start of the present
+           printout reporting period.
+ MATIN  is the total inflow of material to the pu during the present printout
+           reporting period.
+ MATDIF is the net inflow (inflow-outflow) of material to the pu during the
+           present printout reporting period.
+  END DATA
+END CLU
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                

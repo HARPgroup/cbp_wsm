@@ -1,0 +1,18 @@
+#!/bin/csh
+
+set libdir = /usr/opt/wrdapp/lib3.2/lib/
+set lib1 = $libdir/wdmlib.a
+set lib2 = $libdir/adwdmlib.a
+set lib3 = $libdir/utillib.a
+set usrdir = ../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../lib/dsn/dsn_utils.o
+
+f77 -c main.f
+f77 -c masslink.f
+f77 -c riverbay.f
+f77 -c getatdep.f
+
+f77  -o ../../bin/atdep_to_wqm50k.exe main.o masslink.o riverbay.o getatdep.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

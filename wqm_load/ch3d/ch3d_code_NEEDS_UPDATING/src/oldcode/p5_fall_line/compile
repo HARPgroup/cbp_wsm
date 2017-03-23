@@ -1,0 +1,18 @@
+#!/bin/csh
+
+set libdir = /usr/opt/wrdapp/lib3.2/lib/
+set lib1 = $libdir/wdmlib.a
+set lib2 = $libdir/adwdmlib.a
+set lib3 = $libdir/utillib.a
+set usrdir = ../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../lib/dsn/dsn_utils.o
+
+f77 -c main.f
+f77 -c Rmasslink.f
+f77 -c getriver.f
+f77 -c readriver.f
+
+f77 -o ../../bin/p5_fall_line.exe main.o Rmasslink.o getriver.o readriver.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

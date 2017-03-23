@@ -1,0 +1,40 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+END COMMENT
+CLU          209    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  HDSSUT
+  END LABEL
+  DATA   CLU   209
+#GROUP    1  TYPE TEXT
+$TEXT
+    1    1    1    5
+DSS file number &I    is an incorrect DSS version; processing must terminate.
+Version returned by ZINQIR is &CCCC.  Only versions 6-* are allowed by HSPF.
+#GROUP    2  TYPE TEXT
+$TEXT
+    1    1    1    5
+An error occurred retrieving &I    data points from DSS file number &I   .
+The starting date and time were &CCC &CCCCCCCCCCCCCCCCCCC, and the pathname was:
+   &CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+The return code was &I   .
+#GROUP    3  TYPE TEXT
+$TEXT
+    1    1    1    5
+Program bug encountered in DSSGET.  Simulation timestep of &I    minutes is not
+compatible with data timestep of &I    minutes.  This should have been caught in
+subroutine PAIRS in the TIMSER section of the run interpreter.
+
+ DSS FILE    PATHNAME
+    &I       &CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#GROUP    4  TYPE TEXT
+$TEXT
+    1    1    1    5
+An error occurred storing &I    data points from DSS file number &I   .
+The starting date and time were &CCC &CCCCCCCCCCCCCCCCCCC, and the pathname was:
+   &CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+The return code was &I   .
+  END DATA
+END CLU

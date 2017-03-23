@@ -1,0 +1,8 @@
+hpernit.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_print.f:     I               FORAFG,SLTMP,MST(1),SLSM,SNPM,LAYID(1),SKPLN,
+hpernit_print.f:     I                 FORAFG,SLTMP,MSTB(1,I),SLSM,SNPM,LAYID(1),SKPLN,
+hperpes.f:     I                 SLTMP,MST(1),SLSM,
+hperpes.f:     I                   SLTMP,MSTB(1,I),SLSM,
+hperpho.f:     I               SLTMP,MST(1),SLSM,SPPM,LAYID(1),SKPLP,
+hperpho.f:     I                 SLTMP,MSTB(1,I),SLSM,SPPM,LAYID(1),SKPLP,

@@ -1,0 +1,29 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+
+f77 -mcmodel=medium -fbounds-check -c checkriver.f
+f77 -mcmodel=medium -fbounds-check -c getl2r.f
+f77 -mcmodel=medium -fbounds-check -c getrflags.f
+f77 -mcmodel=medium -fbounds-check -c getevap.f
+f77 -mcmodel=medium -fbounds-check -c getupstream.f
+f77 -mcmodel=medium -fbounds-check -c getallupstream.f
+f77 -mcmodel=medium -fbounds-check -c getconseg.f
+f77 -mcmodel=medium -fbounds-check -c getlutype.f
+f77 -mcmodel=medium -fbounds-check -c readseglist.f
+f77 -mcmodel=medium -fbounds-check -c getrsegs.f
+f77 -mcmodel=medium -fbounds-check -c getBMPcons.f
+f77 -mcmodel=medium -fbounds-check -c getvarfac.f
+f77 -mcmodel=medium -fbounds-check -c getl2rlist.f
+f77 -mcmodel=medium -fbounds-check -c getpsonlyl2r.f
+f77 -mcmodel=medium -fbounds-check -c getconfluence.f
+
+ar rv ../x_get_lib.a checkriver.o getl2r.o getrflags.o getevap.o getupstream.o getallupstream.o getconseg.o getlutype.o readseglist.o getrsegs.o getBMPcons.o getvarfac.o getl2rlist.o getpsonlyl2r.o
+
+#f77 -o ../../../bin/getconfluence.exe getconfluence.o ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3 ../../lib/get_lib.a ../../lib/util_lib.a
+
+rm *.o

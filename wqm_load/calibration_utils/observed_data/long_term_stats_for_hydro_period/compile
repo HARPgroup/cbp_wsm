@@ -1,0 +1,15 @@
+#!/bin/csh
+
+set usrdir = ../../../src/lib
+
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -c main.f
+f77 -c main30.f
+f77 -c localutils.f
+f77 -c KStest.f
+
+f77 -o ../../../bin/long_term_stats_for_hydro_period.exe main.o localutils.o KStest.o $usrlib 
+f77 -o ../../../bin/30_year_stats_for_hydro_period.exe main30.o localutils.o KStest.o $usrlib 
+
+rm *.o

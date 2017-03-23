@@ -1,0 +1,330 @@
+hpernit_061201.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_061201.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_061201.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_061201.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_061201.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_061201.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_061201.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_061201.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_061201.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_061201.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_1.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_1.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_1.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_1.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_1.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_1.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_1.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_1.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_1.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_1.f:              MAXUPT= NUPTG*NMXRAT
+hpernit.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_hwm.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_hwm.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_hwm.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_hwm.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_hwm.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_hwm.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_hwm.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_hwm.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_hwm.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_hwm.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_m2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_m2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_m2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_m2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_m2.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_m2.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_m2.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_m2.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_m2.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_m2.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_mass.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_mass.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_mass.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_mass.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_mass.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_mass.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_mass.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_mass.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_mass.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_mass.f:              MAXUPT= NUPTG*NMXRAT
+hpernitm.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernitm.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernitm.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernitm.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernitm.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernitm.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernitm.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernitm.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernitm.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernitm.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_mgl.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_mgl.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_mgl.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_mgl.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_mgl.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_mgl.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_mgl.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_mgl.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_mgl.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_mgl.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22b.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22b.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22b.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22b.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22b.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22b.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22b.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22b.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22b.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22b.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22c.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22c.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22c.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22c.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22c.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22c.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22c.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22c.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22c.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22c.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22d.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22d.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22d.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22d.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22d.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22d.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22d.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22d.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22d.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22d.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22f.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22f.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22f.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22f.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22f.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22f.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22f.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22f.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22f.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22f.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22g.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22g.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22g.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22g.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22g.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22g.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22g.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22g.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22g.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22g.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22h.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22h.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22h.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22h.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22h.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22h.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22h.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22h.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22h.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22h.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22i.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22i.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22i.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22i.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22i.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22i.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22i.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22i.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22i.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22i.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nut22j.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22j.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22j.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nut22j.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nut22j.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nut22j.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nut22j.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nut22j.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nut22j.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nut22j.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nwconc.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nwconc.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nwconc.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nwconc.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nwconc.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nwconc.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nwconc.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nwconc.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nwconc.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nwconc.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_nwcon.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nwcon.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nwcon.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_nwcon.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_nwcon.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_nwcon.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_nwcon.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_nwcon.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_nwcon.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_nwcon.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_oldprint.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_oldprint.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_oldprint.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_oldprint.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_oldprint.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_oldprint.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_oldprint.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_oldprint.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_oldprint.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_oldprint.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_org.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_org.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_org.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_org.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_org.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_org.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_org.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_org.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_org.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_org.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_org_print2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_org_print2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_org_print2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_org_print2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_org_print2.f:     I            NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,pwWILTPT(3),
+hpernit_org_print2.f:     I            NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,pwWILTPT(4),
+hpernit_org_print2.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_org_print2.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_org_print2.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_org_print2.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_org_print.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_org_print.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_org_print.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_org_print.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_org_print.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_org_print.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_org_print.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_org_print.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_org_print.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_org_print.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_print.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_print.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_print.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_print.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_print.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_print.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_print.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_print.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_print.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_print.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_pw1.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw1.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw1.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw1.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw1.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_pw1.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_pw1.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_pw1.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_pw1.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_pw1.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_pw2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw2.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_pw2.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_pw2.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_pw2.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_pw2.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_pw2.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_pw3.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw3.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw3.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw3.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw3.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_pw3.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_pw3.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_pw3.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_pw3.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_pw3.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_pw4.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw4.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw4.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw4.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw4.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_pw4.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_pw4.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_pw4.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_pw4.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_pw4.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_pw5.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw5.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw5.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw5.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw5.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_pw5.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_pw5.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_pw5.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_pw5.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_pw5.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_pw6.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw6.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw6.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_pw6.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_pw6.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_pw6.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_pw6.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_pw6.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_pw6.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_pw6.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_sav061127.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_sav061127.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_sav061127.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_sav061127.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_sav061127.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_sav061127.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_sav061127.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_sav061127.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_sav061127.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_sav061127.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_sav.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_sav.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_sav.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_sav.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_sav.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_sav.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_sav.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_sav.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_sav.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_sav.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_tmp2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_tmp2.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_tmp2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_tmp2.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_tmp2.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_tmp2.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_tmp2.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_tmp2.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_tmp2.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_tmp2.f:              MAXUPT= NUPTG*NMXRAT
+hpernit_tmp.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_tmp.f:     I               NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_tmp.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,SNUPTG,NMXRAT,
+hpernit_tmp.f:     I                 NUPTFG,FIXNFG,ALPNFG,AMVOFG,UNUPTG,NMXRAT,
+hpernit_tmp.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,LNUPTG,NMXRAT,WILTPT(3),
+hpernit_tmp.f:     I             NUPTFG,FIXNFG,ALPNFG,AMVOFG,ANUPTG,NMXRAT,WILTPT(4),
+hpernit_tmp.f:     I                    KPLN,NUPTFG,FIXNFG,ALPNFG,AMVOFG,NUPTG,NMXRAT,
+hpernit_tmp.f:      REAL        GNPM(11),TMP,MOISTM,SOILM,NPM(11),KPLN,NUPTG,NMXRAT,
+hpernit_tmp.f:C     NMXRAT - ratio of maximum plant uptake to target uptake (NUPTFG= 1)
+hpernit_tmp.f:              MAXUPT= NUPTG*NMXRAT

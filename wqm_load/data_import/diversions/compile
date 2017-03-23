@@ -1,0 +1,23 @@
+#!/bin/csh
+set FC = $argv[1]
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib/
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+$FC -fbounds-check -c main_calib.f
+$FC -fbounds-check -c readstdin.f
+$FC -fbounds-check -c main_year_scenario_from_calib.f
+$FC -fbounds-check -c main_add_2001-2003_diversions_to_calib.f
+$FC -fbounds-check -c extract_diversions.f
+
+$FC -o ../../../bin/quickcreate1wdm_convert_mgd_to_cfs main_calib.o readstdin.o $usrlib $dsnlib $lib1 $lib2 $lib3
+$FC -o ../../../bin/create_year_scenario_diversions_from_calib main_year_scenario_from_calib.o $usrlib $dsnlib $lib1 $lib2 $lib3
+$FC -o ../../../bin/add_2001-2003_diversions_to_calib main_add_2001-2003_diversions_to_calib.o $usrlib $dsnlib $lib1 $lib2 $lib3
+$FC -o ../../../bin/extract_diversions.exe extract_diversions.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

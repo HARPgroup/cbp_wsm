@@ -1,0 +1,11 @@
+#!/bin/csh
+
+set usrdir = ../../../src/lib
+
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a $usrdir/ttyux.o)
+
+f77 -c main_get_all_stations.f
+
+f77 -o ../../../bin/get_all_stations.exe main_get_all_stations.o $usrlib 
+
+rm *.o

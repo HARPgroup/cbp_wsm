@@ -1,0 +1,28 @@
+ gen13_final_mde.f
+	hard coded file names, segments, cells, and factors
+    writes fort.13 >> i,j,q (cfs)  daily
+
+ gen13_pot.f
+	reads discharge files and writes i,j,q  (daily)
+	don't understand the output files,
+	  one file per year
+             loop over days from -5 to 365(6)
+               write day
+               loop over cells
+                 write i,j,q  2I8,f8.0
+               end 
+             end
+           There is no reference in the file to the number of expected cells
+
+ gen33_final_mde.f
+     writes the distributed output file
+       loop over days from -5 to 365(6)
+         write the day and a zero 2I8
+         loop over Jcells
+           check for format problems >9999.0
+           write the daily flow  22F6.1
+           (q(i),i=1,icells)
+         end
+       end
+  
+           

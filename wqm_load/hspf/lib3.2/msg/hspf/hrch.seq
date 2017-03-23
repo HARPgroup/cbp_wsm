@@ -1,0 +1,42 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+END COMMENT
+CLU          340    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  HRCH
+  END LABEL
+  DATA   CLU   340
+#GROUP   27  TYPE TEXT
+$TEXT
+   20    1    1    5
+ RCHRES operation &I    has no active sections.
+#GROUP   28  TYPE TEXT
+$TEXT
+   20    1    1    5
+ Section ADCALC of the RCHRES application module must be active
+ if any "quality" sections are active.  This condition has been
+ violated.
+#GROUP   29  TYPE TEXT
+$TEXT
+   20    1    1    5
+ If any of the RQUAL sections of the RCHRES application module
+ are active, then all preceding RQUAL sections must also be active.
+ This condition has been violated.
+#GROUP   30  TYPE TEXT
+$TEXT
+   20    1    1    5
+ The printout level for the operation listed below is 2; that is,
+ some printout should occur more frequently than daily.  In this
+ case, the value of PIVL (specified by the user or by default) must
+ imply a minimum printout interval of one day or an integer fraction
+ thereof.  However, this condition has been violated.
+
+  Operation           PDELT (Mins)
+  RCHRES &I           &I
+$HELP
+ The remedy is to adjust PIVL (table-type print-info) so that
+ PDELT (=DELT*PIVL) meets the above requirement.
+  END DATA
+END CLU

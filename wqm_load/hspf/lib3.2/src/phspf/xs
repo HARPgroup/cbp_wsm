@@ -1,0 +1,41 @@
+hosuper.f:      EXTERNAL     HSPSTA,TSGET,GETOSV,PERLND,IMPLND,RCHRES,COPY
+hosuper.f:                        CALL PERLND (STIVL,IW)
+hperair.f:C     than one section of the PERLND or IMPLND modules.
+hper.f:C     Process the general input for the PERLND module
+hper.f:      SUBROUTINE   PERLND
+hper.f:      DATA       OPTYP /'PERLND'/
+hper.f:C     Perform printout and continuity checks for module PERLND.
+hper.f:C     materials balance checks for PERLND module.
+hpernit_1.f:C     LSNO   - land segment number of PERLND
+hpernit.f:C     LSNO   - land segment number of PERLND
+hpernit_loss2.f:C     LSNO   - land segment number of PERLND
+hpernit_loss.f:C     LSNO   - land segment number of PERLND
+hpernitm.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22b.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22c.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22d.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22f.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22g.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22h.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22i.f:C     LSNO   - land segment number of PERLND
+hpernit_nut22j.f:C     LSNO   - land segment number of PERLND
+hpernit_org.f:C     LSNO   - land segment number of PERLND
+hpernit_org_print2.f:C     LSNO   - land segment number of PERLND
+hpernit_org_print.f:C     LSNO   - land segment number of PERLND
+hpernit_print.f:C     LSNO   - land segment number of PERLND
+hpernit_pw1.f:C     LSNO   - land segment number of PERLND
+hpernit_pw2.f:C     LSNO   - land segment number of PERLND
+hpernit_pw3.f:C     LSNO   - land segment number of PERLND
+hpernit_pw4.f:C     LSNO   - land segment number of PERLND
+hpernit_pw5.f:C     LSNO   - land segment number of PERLND
+hpernit_pw6.f:C     LSNO   - land segment number of PERLND
+hpersed_bicknell_nvsi_fix.f:      DATA OPTYP,SECNAM/'PERLND','SEDMNT'/
+hpersed_bicknell_nvsi_fix.f:          WRITE (BINU) I0,'PERLND  ',LSNO,'SEDMNT  ',
+hpersed_bicknell_nvsi_fix.f:        WRITE (BINU) I1,'PERLND  ', LSNO,'SEDMNT  ',UNITFG,
+hrinopn.f:C     OPTYP  - operation type 1-PERLND, 2-IMPLND, etc.
+hrunut.f:      DATA COPTYP/'PERLND','IMPLND','RCHRES'/
+hspfitab.f:C       may need to change to internal units with PERLND,IMPLND,RCHRES
+specact.f:        ELSE IF (COPTYP .EQ. 'PERLND') THEN
+specact.f:        IF (COPTYP .EQ. 'PERLND') THEN
+specsort.f:        ELSE IF (COPTYP .EQ. 'PERLND') THEN
+specsort.f:        IF (COPTYP .EQ. 'PERLND') THEN

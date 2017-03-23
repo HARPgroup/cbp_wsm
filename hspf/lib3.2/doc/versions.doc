@@ -1,0 +1,139 @@
+versions.doc                                               January 28, 1998
+
+          Descriptions of files that differ by operating system
+
+                           lib  Version 3.2
+
+
+
+________________________________________________________________________________
+
+Table 1.--Files that contain variables that may need to be modified and a
+          description of those variables.
+
+________________________________________________________________________________
+
+                       variables that might be modified (see below for details)
+                       ---------------------------------------------------------
+file name              version   lib archive  compiler flags & name     shell
+---------------------  -------  ------------  ---------------------  -----------
+src/Makefile           SeqVrsn                                       SHELL shCmd
+    util/makefile      ObjVrsn  SymTbl ArOpt  FFLAGS F77  CFLAGS CC  SHELL
+    adwdm/makefile     ObjVrsn  SymTbl ArOpt  FFLAGS F77             SHELL
+          fmsgwd.inc   WDNAME
+    wdm/makefile                SymTbl ArOpt  FFLAGS F77             SHELL
+    aide/makefile      ObjVrsn  SymTbl ArOpt  FFLAGS F77             SHELL
+         fmsgwd.inc    WDNAME
+    awstat/makefile             SymTbl ArOpt  FFLAGS F77             SHELL
+    graph/makefile     ObjVrsn  SymTbl ArOpt  FFLAGS F77             SHELL
+    stats/makefile              SymTbl ArOpt  FFLAGS F77             SHELL
+    waide/makefile              SymTbl ArOpt  FFLAGS F77             SHELL
+    ann/makefile                SymTbl ArOpt  FFLAGS F77             SHELL
+    hspf/makefile               SymTbl ArOpt  FFLAGS F77             SHELL
+    newaqt/makefile             SymTbl ArOpt  FFLAGS F77             SHELL
+    hspnodss/makefile           SymTbl ArOpt  FFLAGS F77             SHELL
+    wdimex/makefile             SymTbl ArOpt  FFLAGS F77             SHELL
+    wdmrx/makefile              SymTbl ArOpt  FFLAGS F77             SHELL
+          wdmrx.f      RECL
+    hspdss/makefile             SymTbl ArOpt  FFLAGS F77             SHELL
+    hec/makefile                                                     SHELL
+        dc/makefile             SymTbl ArOpt  FFLAGS F77             SHELL
+        dss/makefile   ObjVrsn  SymTbl ArOpt  FFLAGS F77             SHELL
+        gen/makefile   ObjVrsn  SymTbl ArOpt  FFLAGS F77             SHELL
+        lahey/makefile          SymTbl ArOpt  FFLAGS F77             SHELL
+________________________________________________________________________________
+
+variable   current value         description
+--------   --------------------  -----------------------------------------------
+SeqVrsn    $(SeqDG)              The parm__.seq file is system specific.
+                                 Three versions of the file are provided:
+                                   ux - unix version (try this one first)
+                                   dg - Data General version
+                                   pc - pc version
+                                 See doc/config.doc for more details on using
+                                 the optimal values and on customizing this
+                                 file.
+ObjVrsn    $(ObjDG)              There are a few code groups that are system
+                                 specific, assumes Data General AViiON.
+                                 See below for a description of the variations.
+WDNAME     /usr/opt/wrdapp       Path name of directory containing the
+                                 required message file, immediately followed
+                                 by the directory name and file name.
+                                 This is usually the last line in the file.
+RECL       2048 bytes            The units used for the record length in an
+                                 open statement for a binary direct access
+                                 file vary between operating systems, and even
+                                 between compilers on the same operating system.
+                                 The record length of a WDM file is 512 words,
+                                 adjust RECL as appropriate for the compiler.
+                                 512 words = 1024 half words = 2048 bytes.
+SymTbl     $(SYS_V)              System V library archive automatically
+                                 builds a symbol table.  When BSD is used,
+                                 the symbol table must be explicitly built,
+                                 set SymTbl to $(BSD).
+ArOpt      rv                    Library archive options.
+FFLAGS     -C -u $(OptDbg)       Fortran compiler flags, assumes Green Hills
+                                 on a Data General AViiON.
+                                 NOTE:  The names of the C functions in the
+                                        library code end in an underscore, but
+                                        the underscore is omitted when the 
+                                        functions are invoked.  You may need 
+                                        to include a linker option in FFLAGS
+                                        which will cause compiler-generated 
+                                        external names to be postfixed with an 
+                                        underscore.
+F77        f77                   Fortran compiler name, assumes Green Hills
+                                 on a Data General AViiON.
+CFLAGS     -ansi $(DbgC)         C compiler flags.
+CC         gcc                   C compiler name.
+SHELL      /bin/sh               The make file(s) contain commands for the
+                                 Bourne shell, sh.  This will override
+                                 implementations of make that use the
+                                 SHELL environment variable.  If this is
+                                 changed, additional changes will probably
+                                 have to be made in the make file(s).
+shCmd      sh                    The shell command is sh.  If SHELL is
+                                 changed, this may need to be modified.
+________________________________________________________________________________
+
+
+
+Table 2.--Brief description of source code files that are system specific.
+_______________________________________________________________________________
+
+directory  file         description (first choice marked with *)
+---------  --------     -------------------------------------------------------
+  util     utcp__._     utilities for copying arrays (fortran and c versions)
+                        * ux.c - c versions, developed for speed
+                          gn.f - original fortran versions
+           dttm__.f     date and time routines, you may need to write your own
+                        or provide dummy routines.
+                          dg - data general version
+                          sn - sun os version
+                          pc - pc version, Lahey compiler
+                          sg - Silicon Graphics version
+           ckfsdg.f     wild card file name matching
+                        * dg - data general version
+           uscn__.f     screen addressing 
+                        * vt - assumes vt100 emulation
+                          ux - uses curses
+           utsc__.f     get/put single character from/to screen
+                        * dg - data general version
+           ttyux.c      get/put single character, used with utscdg.f
+  adwdm    wdop__.f     open binary direct access wdm file.  It
+                        is important that wdm files be opened with
+                        the correct record length.  The units used
+                        in an open statement vary between platforms
+                        and even between compilers on the same plat-
+                        form.  The record length of a wdm file is
+                        512 words.
+                        * ux - unix version
+           usys__.f     Miscelaneous routines
+                        * ux - unix version
+  aide     zsys__.f     code for screen io
+                        * ux - unix version
+  graph    grsy__.f     code dependent on version GKS being used
+                        * ux - using Xgks library
+                          dg - using Prior GKS library
+_____________________________________________________________________________
+

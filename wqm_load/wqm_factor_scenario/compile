@@ -1,0 +1,13 @@
+#!/bin/csh
+set FC = $argv[1]
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set wqmlib = ../wqmlib/wqmlib.a
+
+$FC -c main_nps.f
+$FC -c main_ps.f
+
+$FC  -o ../../../bin/wqm_factor_scenario_ps_to_wqm57k.exe main_ps.o $wqmlib $usrlib 
+$FC  -o ../../../bin/wqm_factor_scenario_nps_to_wqm57k.exe main_nps.o $wqmlib $usrlib 
+
+rm *.o

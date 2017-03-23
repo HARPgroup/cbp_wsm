@@ -1,0 +1,28 @@
+125c125
+< hosuper.o:  cmosv.inc  cmpad.inc  cosupm.inc chrchnit.inc pmxosv.inc
+---
+> hosuper.o:  cmosv.inc  cmpad.inc  cosupm.inc pmxosv.inc
+127c127
+<             pmxmdt.inc pmxopn.inc pmxtab.inc 
+---
+>             pmxmdt.inc pmxopn.inc pmxtab.inc
+155c155
+<             pmxmdt.inc pmxopn.inc pmxtab.inc chrchnit.inc
+---
+>             pmxmdt.inc pmxopn.inc pmxtab.inc
+166c166
+<             pmxopn.inc pmxtab.inc phcat.inc  chrchnit.inc
+---
+>             pmxopn.inc pmxtab.inc phcat.inc
+168c168
+<             pmxmdt.inc pmxopn.inc pmxtab.inc chrchnit.inc
+---
+>             pmxmdt.inc pmxopn.inc pmxtab.inc
+176c176
+<             pmxmdt.inc pmxopn.inc pmxtab.inc chrchnit.inc
+---
+>             pmxmdt.inc pmxopn.inc pmxtab.inc
+178c178
+<             pmxmdt.inc pmxopn.inc pmxtab.inc chrchnit.inc
+---
+>             pmxmdt.inc pmxopn.inc pmxtab.inc
