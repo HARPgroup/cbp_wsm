@@ -1,0 +1,6 @@
+ed paxtmp/paxtmp_river_land.csv < /model/p516/change.edp
+ed stmp/stmp_river_land.csv < /model/p516/change.edp
+ed wbtmp/wbtmp_river_land.csv < /model/p516/change.edp
+ed wtmp701/wtmp701_river_land.csv < /model/p516/change.edp
+ed wtmpT1/wtmpT1_river_land.csv < /model/p516/change.edp
+ed wtmpT2/wtmpT2_river_land.csv < /model/p516/change.edp

@@ -1,0 +1,14 @@
+this data set was created by gary shenk on 8/19/2008
+using the script /model/p517/pp/observed/scripts/split_WQ_data.csh
+calling the program /model/p517/pp/observed/code/split_all_data_STAC/
+which takes the /model/p517/pp/observed/alldata/ data
+  and creates the /model/p517/pp/observed/calib/ and 
+     /model/p517/pp/observed/validation/ data sets
+by taking the last 25% of the data for those segments contained in
+ /model/p517/pp/observed/validation_segs.csv
+  and putting into the validation data set
+all other segments were just copied from 'alldata' to 'calib'
+
+This procedure was recommended by the second STAC phase 5 review of 2/20/2008
+
+*** JL

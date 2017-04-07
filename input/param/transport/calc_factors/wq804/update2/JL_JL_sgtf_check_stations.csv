@@ -1,0 +1,285 @@
+ STATION JL1_6560_6440 for TOTN
+   upstream segment JL1_6560_6440 JL1_6560_6440 TOTN
+ STATION JL2_7240_7350 for TOTN
+   upstream segment JL2_7240_7350 JL2_7240_7350 TOTN
+ STATION JU2_6410_6640 for TOTN
+   upstream segment JU2_6410_6640 JU2_6410_6640 TOTN
+ STATION JU1_6300_6650 for TOTN
+   upstream segment JU1_6300_6650 JU1_6300_6650 TOTN
+ STATION JU4_7260_0003 for TOTN
+   upstream segment JU1_6880_7260 JU4_7260_0003 TOTN
+   upstream segment JU3_6790_7260 JU4_7260_0003 TOTN
+   upstream segment JU3_6640_6790 JU4_7260_0003 TOTN
+     upstream station JU2_6410_6640 JU4_7260_0003 TOTN
+ STATION JU2_6600_6810 for TOTN
+   upstream segment JU2_6600_6810 JU2_6600_6810 TOTN
+   upstream segment JU1_6590_6600 JU2_6600_6810 TOTN
+   upstream segment JU1_6290_6590 JU2_6600_6810 TOTN
+ STATION JU3_6900_6950 for TOTN
+   upstream segment JU3_6900_6950 JU3_6900_6950 TOTN
+   upstream segment JU3_6380_6900 JU3_6900_6950 TOTN
+   upstream segment JU2_6810_6900 JU3_6900_6950 TOTN
+     upstream station JU2_6600_6810 JU3_6900_6950 TOTN
+ STATION JU4_7330_0003 for TOTN
+   upstream segment JU2_7140_7330 JU4_7330_0003 TOTN
+   upstream segment JU3_6950_7330 JU4_7330_0003 TOTN
+     upstream station JU3_6900_6950 JU4_7330_0003 TOTN
+ STATION JU4_7000_7300 for TOTN
+   upstream segment JU4_7000_7300 JU4_7000_7300 TOTN
+   upstream segment JU2_7360_7000 JU4_7000_7300 TOTN
+   upstream segment JU2_7450_7360 JU4_7000_7300 TOTN
+   upstream segment JU4_7330_7000 JU4_7000_7300 TOTN
+     upstream station JU4_7330_0003 JU4_7000_7300 TOTN
+ STATION JL6_7160_7440 for TOTN
+   upstream segment JL6_7160_7440 JL6_7160_7440 TOTN
+   upstream segment JU4_7380_7160 JL6_7160_7440 TOTN
+   upstream segment JU5_7420_7160 JL6_7160_7440 TOTN
+   upstream segment JU2_7180_7380 JL6_7160_7440 TOTN
+   upstream segment JU5_7500_7420 JL6_7160_7440 TOTN
+   upstream segment JU1_7560_7500 JL6_7160_7440 TOTN
+   upstream segment JU5_7510_7500 JL6_7160_7440 TOTN
+   upstream segment JU1_7750_7560 JL6_7160_7440 TOTN
+   upstream segment JU3_7400_7510 JL6_7160_7440 TOTN
+   upstream segment JU5_7300_7510 JL6_7160_7440 TOTN
+   upstream segment JU3_7490_7400 JL6_7160_7440 TOTN
+   upstream segment JU3_6650_7300 JL6_7160_7440 TOTN
+   upstream segment JU1_7630_7490 JL6_7160_7440 TOTN
+   upstream segment JU1_7690_7490 JL6_7160_7440 TOTN
+   upstream segment JU1_6340_6650 JL6_7160_7440 TOTN
+   upstream segment JU4_7260_7380 JL6_7160_7440 TOTN
+     upstream station JU4_7260_0003 JL6_7160_7440 TOTN
+     upstream station JU4_7000_7300 JL6_7160_7440 TOTN
+     upstream station JU1_6300_6650 JL6_7160_7440 TOTN
+ STATION JL7_7100_7030 for TOTN
+   upstream segment JL7_7100_7030 JL7_7100_7030 TOTN
+   upstream segment JL3_7020_7100 JL7_7100_7030 TOTN
+   upstream segment JL6_6740_7100 JL7_7100_7030 TOTN
+   upstream segment JL4_6710_6740 JL7_7100_7030 TOTN
+   upstream segment JL6_6970_6740 JL7_7100_7030 TOTN
+   upstream segment JL4_6520_6710 JL7_7100_7030 TOTN
+   upstream segment JL2_7120_6970 JL7_7100_7030 TOTN
+   upstream segment JL6_6960_6970 JL7_7100_7030 TOTN
+   upstream segment JL2_6240_6520 JL7_7100_7030 TOTN
+   upstream segment JL2_6441_6520 JL7_7100_7030 TOTN
+   upstream segment JL2_7110_7120 JL7_7100_7030 TOTN
+   upstream segment JL1_6910_6960 JL7_7100_7030 TOTN
+   upstream segment JL6_6990_6960 JL7_7100_7030 TOTN
+   upstream segment JL2_6440_6441 JL7_7100_7030 TOTN
+   upstream segment JL1_6760_6910 JL7_7100_7030 TOTN
+   upstream segment JL6_6890_6990 JL7_7100_7030 TOTN
+   upstream segment JL2_6850_6890 JL7_7100_7030 TOTN
+   upstream segment JL6_7150_6890 JL7_7100_7030 TOTN
+   upstream segment JL1_6770_6850 JL7_7100_7030 TOTN
+   upstream segment JL3_7090_7150 JL7_7100_7030 TOTN
+   upstream segment JL6_7320_7150 JL7_7100_7030 TOTN
+   upstream segment JL2_7350_7090 JL7_7100_7030 TOTN
+   upstream segment JL2_7250_7090 JL7_7100_7030 TOTN
+   upstream segment JL6_7430_7320 JL7_7100_7030 TOTN
+   upstream segment JL1_7190_7250 JL7_7100_7030 TOTN
+   upstream segment JL1_7200_7250 JL7_7100_7030 TOTN
+   upstream segment JL1_7530_7430 JL7_7100_7030 TOTN
+   upstream segment JL6_7440_7430 JL7_7100_7030 TOTN
+   upstream segment JL1_7080_7190 JL7_7100_7030 TOTN
+   upstream segment JL1_6940_7200 JL7_7100_7030 TOTN
+     upstream station JL1_6560_6440 JL7_7100_7030 TOTN
+     upstream station JL2_7240_7350 JL7_7100_7030 TOTN
+     upstream station JL6_7160_7440 JL7_7100_7030 TOTN
+ STATION JL7_6800_7070 for TOTN
+   upstream segment JL7_6800_7070 JL7_6800_7070 TOTN
+   upstream segment JL1_7170_6800 JL7_6800_7070 TOTN
+   upstream segment JL7_7030_6800 JL7_6800_7070 TOTN
+     upstream station JL7_7100_7030 JL7_6800_7070 TOTN
+ STATION JL2_6240_6520 for TOTP
+   upstream segment JL2_6240_6520 JL2_6240_6520 TOTP
+ STATION JL2_7110_7120 for TOTP
+   upstream segment JL2_7110_7120 JL2_7110_7120 TOTP
+ STATION JL1_6560_6440 for TOTP
+   upstream segment JL1_6560_6440 JL1_6560_6440 TOTP
+ STATION JL2_6441_6520 for TOTP
+   upstream segment JL2_6441_6520 JL2_6441_6520 TOTP
+   upstream segment JL2_6440_6441 JL2_6441_6520 TOTP
+     upstream station JL1_6560_6440 JL2_6441_6520 TOTP
+ STATION JL1_7080_7190 for TOTP
+   upstream segment JL1_7080_7190 JL1_7080_7190 TOTP
+ STATION JL4_6520_6710 for TOTP
+   upstream segment JL4_6520_6710 JL4_6520_6710 TOTP
+     upstream station JL2_6240_6520 JL4_6520_6710 TOTP
+     upstream station JL2_6441_6520 JL4_6520_6710 TOTP
+ STATION JL2_7240_7350 for TOTP
+   upstream segment JL2_7240_7350 JL2_7240_7350 TOTP
+ STATION JU2_6410_6640 for TOTP
+   upstream segment JU2_6410_6640 JU2_6410_6640 TOTP
+ STATION JU1_7630_7490 for TOTP
+   upstream segment JU1_7630_7490 JU1_7630_7490 TOTP
+ STATION JU3_6640_6790 for TOTP
+   upstream segment JU3_6640_6790 JU3_6640_6790 TOTP
+     upstream station JU2_6410_6640 JU3_6640_6790 TOTP
+ STATION JU1_6300_6650 for TOTP
+   upstream segment JU1_6300_6650 JU1_6300_6650 TOTP
+ STATION JU4_7260_0003 for TOTP
+   upstream segment JU1_6880_7260 JU4_7260_0003 TOTP
+   upstream segment JU3_6790_7260 JU4_7260_0003 TOTP
+     upstream station JU3_6640_6790 JU4_7260_0003 TOTP
+ STATION JU3_6650_7300 for TOTP
+   upstream segment JU3_6650_7300 JU3_6650_7300 TOTP
+   upstream segment JU1_6340_6650 JU3_6650_7300 TOTP
+     upstream station JU1_6300_6650 JU3_6650_7300 TOTP
+ STATION JU3_6380_6900 for TOTP
+   upstream segment JU3_6380_6900 JU3_6380_6900 TOTP
+ STATION JU2_6600_6810 for TOTP
+   upstream segment JU2_6600_6810 JU2_6600_6810 TOTP
+   upstream segment JU1_6590_6600 JU2_6600_6810 TOTP
+   upstream segment JU1_6290_6590 JU2_6600_6810 TOTP
+ STATION JU3_6900_6950 for TOTP
+   upstream segment JU3_6900_6950 JU3_6900_6950 TOTP
+   upstream segment JU3_6380_6900 JU3_6900_6950 TOTP
+   upstream segment JU2_6810_6900 JU3_6900_6950 TOTP
+   upstream segment JU2_6600_6810 JU3_6900_6950 TOTP
+   upstream segment JU1_6590_6600 JU3_6900_6950 TOTP
+   upstream segment JU1_6290_6590 JU3_6900_6950 TOTP
+ STATION JU4_7330_0003 for TOTP
+   upstream segment JU2_7140_7330 JU4_7330_0003 TOTP
+   upstream segment JU3_6950_7330 JU4_7330_0003 TOTP
+   upstream segment JU3_6900_6950 JU4_7330_0003 TOTP
+   upstream segment JU3_6380_6900 JU4_7330_0003 TOTP
+   upstream segment JU2_6810_6900 JU4_7330_0003 TOTP
+   upstream segment JU2_6600_6810 JU4_7330_0003 TOTP
+   upstream segment JU1_6590_6600 JU4_7330_0003 TOTP
+   upstream segment JU1_6290_6590 JU4_7330_0003 TOTP
+ STATION JU4_7000_7300 for TOTP
+   upstream segment JU4_7000_7300 JU4_7000_7300 TOTP
+   upstream segment JU2_7360_7000 JU4_7000_7300 TOTP
+   upstream segment JU4_7330_7000 JU4_7000_7300 TOTP
+   upstream segment JU2_7450_7360 JU4_7000_7300 TOTP
+   upstream segment JU2_7140_7330 JU4_7000_7300 TOTP
+   upstream segment JU3_6950_7330 JU4_7000_7300 TOTP
+   upstream segment JU3_6900_6950 JU4_7000_7300 TOTP
+   upstream segment JU3_6380_6900 JU4_7000_7300 TOTP
+   upstream segment JU2_6810_6900 JU4_7000_7300 TOTP
+   upstream segment JU2_6600_6810 JU4_7000_7300 TOTP
+   upstream segment JU1_6590_6600 JU4_7000_7300 TOTP
+   upstream segment JU1_6290_6590 JU4_7000_7300 TOTP
+ STATION JL6_7160_7440 for TOTP
+   upstream segment JL6_7160_7440 JL6_7160_7440 TOTP
+   upstream segment JU4_7380_7160 JL6_7160_7440 TOTP
+   upstream segment JU5_7420_7160 JL6_7160_7440 TOTP
+   upstream segment JU2_7180_7380 JL6_7160_7440 TOTP
+   upstream segment JU5_7500_7420 JL6_7160_7440 TOTP
+   upstream segment JU1_7560_7500 JL6_7160_7440 TOTP
+   upstream segment JU5_7510_7500 JL6_7160_7440 TOTP
+   upstream segment JU1_7750_7560 JL6_7160_7440 TOTP
+   upstream segment JU3_7400_7510 JL6_7160_7440 TOTP
+   upstream segment JU5_7300_7510 JL6_7160_7440 TOTP
+   upstream segment JU3_7490_7400 JL6_7160_7440 TOTP
+   upstream segment JU3_6650_7300 JL6_7160_7440 TOTP
+   upstream segment JU4_7000_7300 JL6_7160_7440 TOTP
+   upstream segment JU1_7690_7490 JL6_7160_7440 TOTP
+   upstream segment JU1_6340_6650 JL6_7160_7440 TOTP
+   upstream segment JU2_7360_7000 JL6_7160_7440 TOTP
+   upstream segment JU4_7330_7000 JL6_7160_7440 TOTP
+   upstream segment JU2_7450_7360 JL6_7160_7440 TOTP
+   upstream segment JU2_7140_7330 JL6_7160_7440 TOTP
+   upstream segment JU3_6950_7330 JL6_7160_7440 TOTP
+   upstream segment JU3_6900_6950 JL6_7160_7440 TOTP
+   upstream segment JU3_6380_6900 JL6_7160_7440 TOTP
+   upstream segment JU2_6810_6900 JL6_7160_7440 TOTP
+   upstream segment JU2_6600_6810 JL6_7160_7440 TOTP
+   upstream segment JU1_6590_6600 JL6_7160_7440 TOTP
+   upstream segment JU1_6290_6590 JL6_7160_7440 TOTP
+   upstream segment JU4_7260_7380 JL6_7160_7440 TOTP
+     upstream station JU4_7260_0003 JL6_7160_7440 TOTP
+     upstream station JU1_7630_7490 JL6_7160_7440 TOTP
+     upstream station JU1_6300_6650 JL6_7160_7440 TOTP
+ STATION JL6_7430_7320 for TOTP
+   upstream segment JL6_7430_7320 JL6_7430_7320 TOTP
+   upstream segment JL1_7530_7430 JL6_7430_7320 TOTP
+   upstream segment JL6_7440_7430 JL6_7430_7320 TOTP
+   upstream segment JL6_7160_7440 JL6_7430_7320 TOTP
+   upstream segment JU4_7380_7160 JL6_7430_7320 TOTP
+   upstream segment JU5_7420_7160 JL6_7430_7320 TOTP
+   upstream segment JU2_7180_7380 JL6_7430_7320 TOTP
+   upstream segment JU5_7500_7420 JL6_7430_7320 TOTP
+   upstream segment JU1_7560_7500 JL6_7430_7320 TOTP
+   upstream segment JU5_7510_7500 JL6_7430_7320 TOTP
+   upstream segment JU1_7750_7560 JL6_7430_7320 TOTP
+   upstream segment JU3_7400_7510 JL6_7430_7320 TOTP
+   upstream segment JU5_7300_7510 JL6_7430_7320 TOTP
+   upstream segment JU3_7490_7400 JL6_7430_7320 TOTP
+   upstream segment JU3_6650_7300 JL6_7430_7320 TOTP
+   upstream segment JU4_7000_7300 JL6_7430_7320 TOTP
+   upstream segment JU1_7690_7490 JL6_7430_7320 TOTP
+   upstream segment JU1_6340_6650 JL6_7430_7320 TOTP
+   upstream segment JU2_7360_7000 JL6_7430_7320 TOTP
+   upstream segment JU4_7330_7000 JL6_7430_7320 TOTP
+   upstream segment JU2_7450_7360 JL6_7430_7320 TOTP
+   upstream segment JU2_7140_7330 JL6_7430_7320 TOTP
+   upstream segment JU3_6950_7330 JL6_7430_7320 TOTP
+   upstream segment JU3_6900_6950 JL6_7430_7320 TOTP
+   upstream segment JU3_6380_6900 JL6_7430_7320 TOTP
+   upstream segment JU2_6810_6900 JL6_7430_7320 TOTP
+   upstream segment JU2_6600_6810 JL6_7430_7320 TOTP
+   upstream segment JU1_6590_6600 JL6_7430_7320 TOTP
+   upstream segment JU1_6290_6590 JL6_7430_7320 TOTP
+   upstream segment JU4_7260_7380 JL6_7430_7320 TOTP
+     upstream station JU4_7260_0003 JL6_7430_7320 TOTP
+     upstream station JU1_7630_7490 JL6_7430_7320 TOTP
+     upstream station JU1_6300_6650 JL6_7430_7320 TOTP
+ STATION JL7_7100_7030 for TOTP
+   upstream segment JL7_7100_7030 JL7_7100_7030 TOTP
+   upstream segment JL3_7020_7100 JL7_7100_7030 TOTP
+   upstream segment JL6_6740_7100 JL7_7100_7030 TOTP
+   upstream segment JL4_6710_6740 JL7_7100_7030 TOTP
+   upstream segment JL6_6970_6740 JL7_7100_7030 TOTP
+   upstream segment JL2_7120_6970 JL7_7100_7030 TOTP
+   upstream segment JL6_6960_6970 JL7_7100_7030 TOTP
+   upstream segment JL1_6910_6960 JL7_7100_7030 TOTP
+   upstream segment JL6_6990_6960 JL7_7100_7030 TOTP
+   upstream segment JL1_6760_6910 JL7_7100_7030 TOTP
+   upstream segment JL6_6890_6990 JL7_7100_7030 TOTP
+   upstream segment JL2_6850_6890 JL7_7100_7030 TOTP
+   upstream segment JL6_7150_6890 JL7_7100_7030 TOTP
+   upstream segment JL1_6770_6850 JL7_7100_7030 TOTP
+   upstream segment JL3_7090_7150 JL7_7100_7030 TOTP
+   upstream segment JL6_7320_7150 JL7_7100_7030 TOTP
+   upstream segment JL2_7350_7090 JL7_7100_7030 TOTP
+   upstream segment JL2_7250_7090 JL7_7100_7030 TOTP
+   upstream segment JL6_7430_7320 JL7_7100_7030 TOTP
+   upstream segment JL1_7190_7250 JL7_7100_7030 TOTP
+   upstream segment JL1_7200_7250 JL7_7100_7030 TOTP
+   upstream segment JL1_7530_7430 JL7_7100_7030 TOTP
+   upstream segment JL6_7440_7430 JL7_7100_7030 TOTP
+   upstream segment JL1_6940_7200 JL7_7100_7030 TOTP
+   upstream segment JL6_7160_7440 JL7_7100_7030 TOTP
+   upstream segment JU4_7380_7160 JL7_7100_7030 TOTP
+   upstream segment JU5_7420_7160 JL7_7100_7030 TOTP
+   upstream segment JU2_7180_7380 JL7_7100_7030 TOTP
+   upstream segment JU5_7500_7420 JL7_7100_7030 TOTP
+   upstream segment JU1_7560_7500 JL7_7100_7030 TOTP
+   upstream segment JU5_7510_7500 JL7_7100_7030 TOTP
+   upstream segment JU1_7750_7560 JL7_7100_7030 TOTP
+   upstream segment JU3_7400_7510 JL7_7100_7030 TOTP
+   upstream segment JU5_7300_7510 JL7_7100_7030 TOTP
+   upstream segment JU3_7490_7400 JL7_7100_7030 TOTP
+   upstream segment JU3_6650_7300 JL7_7100_7030 TOTP
+   upstream segment JU4_7000_7300 JL7_7100_7030 TOTP
+   upstream segment JU1_7690_7490 JL7_7100_7030 TOTP
+   upstream segment JU1_6340_6650 JL7_7100_7030 TOTP
+   upstream segment JU2_7360_7000 JL7_7100_7030 TOTP
+   upstream segment JU4_7330_7000 JL7_7100_7030 TOTP
+   upstream segment JU2_7450_7360 JL7_7100_7030 TOTP
+   upstream segment JU2_7140_7330 JL7_7100_7030 TOTP
+   upstream segment JU3_6950_7330 JL7_7100_7030 TOTP
+   upstream segment JU3_6900_6950 JL7_7100_7030 TOTP
+   upstream segment JU3_6380_6900 JL7_7100_7030 TOTP
+   upstream segment JU2_6810_6900 JL7_7100_7030 TOTP
+   upstream segment JU2_6600_6810 JL7_7100_7030 TOTP
+   upstream segment JU1_6590_6600 JL7_7100_7030 TOTP
+   upstream segment JU1_6290_6590 JL7_7100_7030 TOTP
+   upstream segment JU4_7260_7380 JL7_7100_7030 TOTP
+     upstream station JL4_6520_6710 JL7_7100_7030 TOTP
+     upstream station JL2_7110_7120 JL7_7100_7030 TOTP
+     upstream station JL2_7240_7350 JL7_7100_7030 TOTP
+     upstream station JL1_7080_7190 JL7_7100_7030 TOTP
+     upstream station JU4_7260_0003 JL7_7100_7030 TOTP
+     upstream station JU1_7630_7490 JL7_7100_7030 TOTP
+     upstream station JU1_6300_6650 JL7_7100_7030 TOTP

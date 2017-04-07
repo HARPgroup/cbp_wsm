@@ -1,0 +1,11 @@
+sbatch run_postproc_river_aveann.csh SWA SW 1991 2000
+#sbatch run_postproc_river_aveann.csh SUA SU 1991 2000
+sbatch run_postproc_river_aveann.csh SJA SJ 1991 2000
+sbatch run_postproc_river_aveann.csh JLA JLcal 1991 2000
+sbatch run_postproc_river_aveann.csh CPA CPcal 1991 2000
+sbatch run_postproc_river_aveann.csh RUA RU 1991 2000
+sbatch run_postproc_river_aveann.csh JAA JA 1991 2000
+sbatch run_postproc_river_aveann.csh YPA YPcal 1991 2000
+sbatch run_postproc_river_aveann.csh GYA GYcal 1991 2000
+sbatch run_postproc_river_aveann.csh XUA XU 1991 2000
+#sbatch run_postproc_river_aveann.csh YMA YM 1991 2000

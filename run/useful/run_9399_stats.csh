@@ -1,0 +1,327 @@
+#!/bin/csh
+#   GET SCENARIO, BASIN, and TREE
+
+  if (${#argv} != 4) then
+    if (${#argv} != 5) then
+      echo ' '
+      echo 'usage:  run_9399_stats.csh scenario calscen module basin'
+      echo ' or     run_9399_stats.csh scenario calscen module basin tree'
+      echo ' '
+      exit
+    endif
+  endif
+
+  set scenario = $argv[1]
+  set calscen = $argv[2]
+  set module = $argv[3]
+  set basin = $argv[4]
+
+  if (${#argv} == 5) then
+    set tree = $argv[5]
+  else
+    source ../fragments/set_tree
+    mkdir -p ../../tmp/scratch/temp$$/
+    cd ../../tmp/scratch/temp$$/
+  endif
+
+# SET SCENARIO FOR OBSERVED DATA
+  source $tree/run/control/calib/$module/$calscen/set_obscen
+
+#  SET AVERAGING YEARS
+  set AVEYEAR1 = 1993
+  set AVEYEAR2 = 1999
+
+# LOGICAL VARIABLES TO GENERATE DIFFERENT TYPES OF OUTPUT.  0 = NO OUTPUT, 1 = OUTPUT
+  set wqm = 0
+  set TSSRating =  0
+  set Rstats =     1
+  set Rallmonth =  0
+  set Rannual =    0
+  set Raveann =    0
+  set Rdaily =     0
+  set RdailyPart = 0
+
+# real EOF loads are calculated in the ETM, these programs just aggregate them to more meaningful variables
+  set EOFdaily =   0
+  set EOFannual =  0
+
+# real EOS loads are calculated in the ETM, these programs just aggregate them to more meaningful variables
+  set EOS =  0
+  set EOSdaily = 0
+  set EOSmonth = 0
+
+# other outputs
+  set DATannual =  0
+  set DATmonthly = 0
+  set DATaveann =  0
+
+  set TFSannual =  0
+  set TFSaveann =  0
+
+  set DFSannual =  0
+  set DFSaveann =  0
+
+  set DELannual =  0
+  set DELmonthly = 0
+  set DELaveann =  0
+
+#  SET the number of peaks to investigate, zero if no investigation
+  set npeaks = 50
+
+#  SET the window for number of hours to search simulated data looking for match
+#  Searches forward and backward in time by 2*window+1 total hours
+  set window = 24
+
+#  SET loudness 0= no output for some programs, 1=regular output
+  set loud = 0
+
+####### RIVER SEGMENTS or WQ RECEIVING AREAS ONLY, EOS OUTPUTS DEFINED BY THE BODY THEY FLOW INTO  ########
+  source $tree/config/seglists/${basin}.riv
+
+  if (-e problem) then
+    rm problem
+  endif
+
+
+####### DO WQM FIRST
+  
+  foreach seg ($segments)
+
+    if ($wqm) then
+      echo $scenario, $seg | $tree/code/bin/wqm_input.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+  end
+
+####### DO ANY EDGE-OF-FIELD CALCULATIONS 
+
+  foreach seg ($segments)
+
+    if ($EOFdaily) then
+      echo $scenario, $seg | $tree/code/bin/EOF_daily.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($EOFannual) then
+      echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/EOF_annual.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+   end
+
+####### DO ANY EDGE-OF-STREAM CALCULATIONS BEFORE RIVER
+  
+  foreach seg ($segments)
+
+    if ($EOS) then
+      echo $scenario, $seg, $loud, $AVEYEAR1, $AVEYEAR2 $EOSdaily $EOSmonth | $tree/code/bin/EOS.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+  end
+
+####### FIND DATA INPUTS (POINT SOURCE, AT DEP, SEPTIC)
+  foreach seg ($segments)
+
+    if ($DATannual) then
+      echo $scenario, $seg | $tree/code/bin/DATannual.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($DATmonthly) then
+      echo $scenario, $seg | $tree/code/bin/DATmonthly.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($DATaveann) then
+      echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DATaveann.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+  end
+
+
+####### DO RIVER CALCULATIONS NEXT
+  
+  foreach seg ($segments)
+
+    if ($TSSRating) then
+      echo $scenario $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/TSSRating.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+
+    if ($Rstats) then
+      echo $scenario,$obscen,$seg,$AVEYEAR1,$AVEYEAR2,$npeaks,$window | $tree/code/bin/Rstats.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($Rallmonth) then
+      echo $scenario $seg | $tree/code/bin/Rallmonth.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($Rannual) then
+      echo $scenario, $seg | $tree/code/bin/Rannual.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($Rdaily) then
+      echo $scenario, $seg | $tree/code/bin/Rdaily.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($RdailyPart) then
+      echo $scenario, $seg | $tree/code/bin/part_daily_simulated.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($Raveann) then
+      echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/Raveann.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+  
+
+  end
+
+####### DO DELIVERED CALCULATIONS LAST
+  
+  foreach seg ($segments)
+
+    if ($TFSannual) then
+      echo $scenario, $seg | $tree/code/bin/TFSannual.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($TFSaveann) then
+      echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/TFSaveann.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+  end
+
+  foreach seg ($segments)
+
+    if ($DFSannual) then
+      echo $scenario, $seg | $tree/code/bin/DFSannual.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($DFSaveann) then
+      echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DFSaveann.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+  end
+
+  foreach seg ($segments)
+
+    if ($DELannual) then
+      echo $scenario, $seg | $tree/code/bin/DELannual.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($DELaveann) then
+      echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DELaveann.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+    if ($DELmonthly) then
+      echo $scenario, $seg | $tree/code/bin/DELmonthly.exe
+      if (-e problem) then
+        echo ' '
+        cat problem
+        exit
+      endif
+    endif
+
+  end
+
+  if (${#argv} == 4) then
+    cd ../
+    rm -r temp$$
+  endif
+
+
+      

@@ -1,0 +1,43 @@
+DSN     Name    TimeStep  Type  Variable  ***
+******   meteorology dsns
+1000    EVAP    DAILY     MET   Evaporation Potential
+1001    DEWP    DAILY     MET   Dew Point
+1002    WNDH    HOURLY    MET   Wind Speed
+1003    RADH    HOURLY    MET   Solar Radiation
+1004    ATMP    HOURLY    MET   Air Temperature
+1005    CLDC    DAILY     MET   Cloud Cover fraction
+
+******   precipitation and atmospheric deposition dsns
+2000    HPRC    HOURLY    PRE   Precipitation
+2001    NO23    DAILY     ATD   Wet Nitrate
+2002    NH4A    DAILY     ATD   Ammonia
+2003    NO3D    DAILY     ATD   Dry Nitrate
+2004    ORGN    DAILY     ATD   Organic N
+2005    PO4A    DAILY     ATD   Phosphate
+2006    ORGP    DAILY     ATD   Organic P
+
+******   point source, septic, and diversion dsns
+3000    FLOW    DAILY     PTS   Flow
+3001    HEAT    DAILY     PTS   Heat
+3002    NH3X    DAILY     PTS   Ammonia
+3003    NO3X    DAILY     PTS   Nitrate
+3004    ORGX    DAILY     PTS   Refractory Organic N
+3005    PO4X    DAILY     PTS   Phosphate
+3006    ORGX    DAILY     PTS   Refractory Organic P
+3007    DIVR    DAILY     DIV   Ind Diversions
+3008    DIVA    DAILY     DIV   Ag Diversions
+3010    SNO3    DAILY     SEP   Septic Loads
+3021    BODX    DAILY     PTS   BOD
+3022    TSSX    DAILY     PTS   FSS clay
+3023    DOXX    DAILY     PTS   Dissolved Oxygen
+3024    TOCX    DAILY     PTS   Refractory organic C
+
+******   aeolian sediment to rchres dsns
+3061    SFAS    DAILY     AMS   Atomos deposition to silt
+3062    SFAC    DAILY     AMS   Atomos deposition to clay
+
+end
+
+the first number of the the dsn refers to the WDM that is called
+  in the UCI. For instance, precipitation is dsn 2000 in WDM2
+

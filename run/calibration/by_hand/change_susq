@@ -1,0 +1,55 @@
+#
+# echo conow,rchand,plank,"plnk-parm1",malgr,r,e,.7 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"phyto-parm",physet,r,m,.75 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"plnk-parm3",aldh,r,m,.8 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"plnk-parm3",aldl,r,m,.8 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"plnk-parm3",alr20,r,m,.8 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"benal-parm",cfbalg,r,a,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"benal-parm",cfbalr,r,a,.1 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"plnk-parm2",cmmn,r,e,.045 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,plank,"plnk-parm2",cmmp,r,e,.015 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo conow,rchand,oxrx,"ox-reaparm",reak,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,oxrx,"ox-cforea",cforea,r,e,9 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,oxrx,"ox-benparm",benod,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,oxrx,"ox-genparm",kbod20,r,e,.01 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,oxrx,"ox-genparm",tcbod,r,e,1.07 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,oxrx,"ox-genparm",kodset,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,oxrx,"ox-genparm",supsat,r,e,1.35 | ../pp/bin/Rchange_params_one_line.exe
+
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#1",staucs,r,p,100 | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#1",staucd,r,p,100 | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#2",ctaucs,r,p,98 | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#2",ctaucd,r,p,98 | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#1",sm,r,m,.1. | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#2",cm,r,m,.1. | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#1",sw,r,e,.19  | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,SEDTRN,"SILT-CLAY-PM#2",cw,r,m,2  | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,sedtrn,"sand-pm",ksand,r,m,1. | ../../../pp/bin/Rchange_params_one_line.exe
+#echo SLres,wq804,sedtrn,"sand-pm",expsnd,r,m,1. | ../../../pp/bin/Rchange_params_one_line.exe
+
+ echo SL2_1850_1990,susq,plank,"phyto-parm",refset,r,e,1. | ../../../pp/bin/Rchange_params_one_line.exe
+
+# echo SL2_1850_1990,susq,nutrx,"nut-nitdenit",kno320,r,e,0.011016 | ../../../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-nitdenit",ktam20,r,m,.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-nitdenit",denoxt,r,e,20 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo conow,rchand,nutrx,"nut-adsparm",po4-sand,r,m,.10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-adsparm",po4-silt,r,m,.10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-adsparm",po4-clay,r,m,.10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-bedconc",po4-sand,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-bedconc",po4-silt,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-bedconc",po4-clay,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo conow,rchand,nutrx,"nut-adsparm",nh4-sand,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-adsparm",nh4-silt,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-adsparm",nh4-clay,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-bedconc",nh4-sand,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-bedconc",nh4-silt,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-bedconc",nh4-clay,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo SLres,conow,nutrx,"nut-benparm",brtam1,r,m,1. | ../../../pp/bin/Rchange_params_one_line.exe
+# echo SLres,conow,nutrx,"nut-benparm",brtam2,r,m,1. | ../../../pp/bin/Rchange_params_one_line.exe
+# echo SLres,conow,nutrx,"nut-benparm",brpo41,r,m,1. | ../../../pp/bin/Rchange_params_one_line.exe
+# echo SLres,conow,nutrx,"nut-benparm",brpo42,r,m,1. | ../../../pp/bin/Rchange_params_one_line.exe
+# echo conow,rchand,nutrx,"nut-benparm",anaer,r,e,8 | ../pp/bin/Rchange_params_one_line.exe

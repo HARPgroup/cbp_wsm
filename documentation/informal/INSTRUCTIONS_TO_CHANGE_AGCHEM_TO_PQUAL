@@ -1,0 +1,32 @@
+to change the mechanism of nutrient simulation from agchem to pqual requires several steps
+
+ ./pp/data/  - may have to add to files here if expecting special actions
+               see documentation for this section
+
+ ./pp/src/lib/inc/piqual.inc - If this must be changed to accomodate new
+                constituents, the rest of the changes are more complicated.
+                Leave this alone if at all possible.
+
+ ./pp/param/ - get the correct parameter files in the directories.
+               The easiest way is to copy from othe land uses. If changes were
+               made in piqual.inc, change all PQUAL land uses to match.
+
+ ./pp/catalog/iovars/perlnd - Make the appropriate connections.  This step must
+                be done very carefully.  A mistake will probably not cause a
+                run-time error, but would probably result in inconsistencies
+                between what is reported as EOS, what gets into a RCHRES, and
+                what is in the PLTGENs.  If changes were made in piqual.inc, 
+                you must change all PQUAL land uses.
+                The trick here is that you must simulate all PQUAL constituents
+                to simulate any PQUAL constituents.  You do not have to connect
+                them to output variables in this file, however.  Any variables
+                not connected will be simulated but will only appear in the
+                .out file and any PLTGENs specified in the control file.  They
+                will not end up in the output.
+
+ ./run/control/land - change the control files to call the correct subroutines
+                         in the MODULES section and change the PLTGENs to call
+                         the appropriate modules.  If changes were made in 
+                         piqual.inc, you must change all PQUAL land uses.
+
+

@@ -1,0 +1,84 @@
+ID#   GROUP  MEMBER # #  NAME DESCRIPTION                          LAND USES
+
+*** water
+111   PWATER SURO        SURO surf water in/ac/ivld                for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+211   PWATER IFWO        IFWO interflow water in/ac/ivld           for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+411   PWATER AGWO        AGWO gw flow in/ac/ivld                   for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+    
+*** sediment
+121   SEDMNT SOSED  1    SEDM total sediment tons/ac/ivld          for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+
+*** heat
+131   PWTGAS SOHT        SOHT surf heat BTU/ac/ivld                for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+231   PWTGAS IOHT        IOHT interflow heat BTU/ac/ivld           for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+431   PWTGAS AOHT        AOHT gw heat BTU/ac/ivld                  for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+
+*** oxygen
+132   PWTGAS SODOXM      SDOX surf oxygen lb/ac/ivld               for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+232   PWTGAS IODOXM      IDOX interflow oxygen lb/ac/ivld          for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+432   PWTGAS AODOXM      ADOX gw oxygen lb/ac/ivld                 for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo puh pul hvf urs trp ext bar
+
+*** PQUAL
+142   PQUAL  SOQS   1    DNH3 adsorbed ammonium lb/ac/ivld         hvf urs trp ext bar
+144   PQUAL  SOQO   1    SNH3 surf solution ammonia lb/ac/ivld     hvf urs trp ext bar
+244   PQUAL  IOQUAL 1    INH3 infw solution ammonia lb/ac/ivld     hvf urs trp ext bar
+444   PQUAL  AOQUAL 1    ANH3 gw solution ammonia lb/ac/ivld       hvf urs trp ext bar
+    
+145   PQUAL  SOQO   2    SNO3 surf nitrate lb/ac/ivld              hvf urs trp ext bar
+245   PQUAL  IOQUAL 2    INO3 infw nitrate lb/ac/ivld              hvf urs trp ext bar
+445   PQUAL  AOQUAL 2    ANO3 gw nitrate lb/ac/ivld                hvf urs trp ext bar
+
+141   PQUAL  SOQS   3    DLON adsorbed labile organic N lb/ac/ivld hvf urs trp ext bar
+146   PQUAL  SOQO   3    SLON surf labile organic N lb/ac/ivld     hvf urs trp ext bar
+246   PQUAL  IOQUAL 3    ILON infw labile organic N lb/ac/ivld     hvf urs trp ext bar
+446   PQUAL  AOQUAL 3    ALON gw labile organic N lb/ac/ivld       hvf urs trp ext bar
+
+143   PQUAL  SOQS   4    DRON adsorbed refractory org N lb/ac/ivld hvf urs trp ext bar
+147   PQUAL  SOQO   4    SRON surf refractory organic N lb/ac/ivld hvf urs trp ext bar
+247   PQUAL  IOQUAL 4    IRON infw refractory organic N lb/ac/ivld hvf urs trp ext bar
+447   PQUAL  AOQUAL 4    ARON gw refractory organic N lb/ac/ivld   hvf urs trp ext bar
+
+152   PQUAL  SOQS   5    DPO4 adsorbed phosphate lb/ac/ivld        hvf urs trp ext bar for puh pul
+153   PQUAL  SOQO   5    SPO4 surf phosphate lb/ac/ivld            hvf urs trp ext bar for puh pul
+253   PQUAL  IOQUAL 5    IPO4 infw phosphate lb/ac/ivld            hvf urs trp ext bar for puh pul
+453   PQUAL  AOQUAL 5    APO4 gw phosphate lb/ac/ivld              hvf urs trp ext bar for puh pul
+
+*** AGCHEM
+*** nitrogen
+142   NITR   SEDN   2    DNH3 adsorbed ammonium lb/ac/ivld         for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+144   NITR   TSAMS  1    SNH3 surf solution ammonia lb/ac/ivld     for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+244   NITR   TSAMS  5    INH3 infw solution ammonia lb/ac/ivld     for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+444   NITR   SSAMS  3    ANH3 gw solution ammonia lb/ac/ivld       for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+
+145   NITR   TSNO3  1    SNO3 surf nitrate lb/ac/ivld              for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+245   NITR   TSNO3  5    INO3 infw nitrate lb/ac/ivld              for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+445   NITR   SSNO3  3    ANO3 gw nitrate lb/ac/ivld                for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+
+141   NITR   SEDN   1    DLON adsorbed labile organic N lb/ac/ivld for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+146   NITR   TSSLN  1    SLON surf labile organic N lb/ac/ivld     for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+246   NITR   TSSLN  5    ILON infw labile organic N lb/ac/ivld     for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+446   NITR   SSSLN  3    ALON gw labile organic N lb/ac/ivld       for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+
+143   NITR   SEDN   3    DRON adsorbed refractory org N lb/ac/ivld for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+147   NITR   TSSRN  1    SRON surf refractory organic N lb/ac/ivld for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+247   NITR   TSSRN  5    IRON infw refractory organic N lb/ac/ivld for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+447   NITR   SSSRN  3    ARON gw refractory organic N lb/ac/ivld   for pas npa hyw nhy puh pul alf hyo hom hwm lwm nal nho nhi nlo
+
+*** AGCHEM
+*** phosphorus
+152   PHOS   SEDP   2    DPO4 adsorbed phosphate lb/ac/ivld        pas npa hyw nhy alf hyo hom hwm lwm nal nho nhi nlo   
+
+153   PHOS   TSP4S  1    SPO4 surf phosphate lb/ac/ivld            pas npa hyw nhy alf hyo hom hwm lwm nal nho nhi nlo 
+253   PHOS   TSP4S  5    IPO4 infw phosphate lb/ac/ivld            pas npa hyw nhy alf hyo hom hwm lwm nal nho nhi nlo 
+453   PHOS   SSP4S  3    APO4 gw phosphate lb/ac/ivld              pas npa hyw nhy alf hyo hom hwm lwm nal nho nhi nlo 
+
+
+end
+
+***********************************************************************************
+
+******** the pqual values 1-6 must match the iqual values in perlnd
+****** and also reflect the integers in the file
+******* ./pp/src/lib/inc/PIqual.inc
+
+

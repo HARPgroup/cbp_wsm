@@ -1,0 +1,5 @@
+sbatch run_river.csh p52hyd SU
+sbatch run_river.csh p52hyd SW
+sbatch run_river.csh p52hyd SL
+sbatch run_river.csh p52hyd PS
+sbatch run_river.csh p52hyd PU

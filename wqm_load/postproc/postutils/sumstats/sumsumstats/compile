@@ -1,7 +1,0 @@
- f77 -fbounds-check -c main.f
- f77 -fbounds-check -c avesums.f
-
- f77 -o ../../../../../bin/sumsumstats.exe main.o avesums.o ../../../../lib/util_lib.a
-
- rm *.o
-

@@ -1,0 +1,16 @@
+**** values are relative to parameters for hom (hitil no manure)
+
+*** min and max allowed by user, min and max allowed by HSPF
+LIMITS
+ASLT,     32.0,  100.0,   -99.,  999.
+ULTP1,    32.0,   90.0,   -99.,  999.
+LGTP1,    32.0,   60.0,   -99.,  999.
+END LIMITS
+
+SLOPES
+param,for,hvf,pas,npa,alf,nal,hyw,nhy,hyo,hwm,nhi,hom,nho,lwm,nlo,puh,pul,ext,bar,trp,urs,afo
+BSLT,  .5,.53,.52,.52,.52,.52,.52,.52,.52,.52,.52,.52,.52,.52,.52,.55,.54,.56,.56,.54,.54,.54
+ULTP2, .1,.11,.11,.11,.11,.11,.11,.11,.11,.11,.11,.11,.11,.11,.11,.13,.12,.13,.13,.12,.12,.12
+END SLOPES
+
+end

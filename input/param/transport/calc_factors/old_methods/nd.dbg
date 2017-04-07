@@ -1,0 +1,11 @@
+The handle is invalid.The handle is invalid.
+------------------- TRACEBACK -------------------------
+Module "Msw  " Message   0: file ".\msw.c   " line 493
+Module "Draw " Message  -1: file ".\drawmsw.c" line 4853
+Module "Draw " Message  -1: file ".\drawinva.c" line 54
+Module "Event" Message  -1: file ".\event.c " line 2594
+Module "Event" Message  -1: file ".\event.c " line 2594
+Module "Appl " Message  -1: file "..\appl\appl.c" line 1798
+Module "Err  " Message  -1: file ".\err.c   " line 2009
+-------------------------------------------------------
+FATAL ERROR     Failure during error recovery

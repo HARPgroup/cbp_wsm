@@ -1,0 +1,351 @@
+*** exhaustive list of tables.  some tables not used for some land uses
+***   if all values are at default levels
+ATEMP
+  ATEMP-DAT        2f10
+  V #    #     ELDAT    AIRTMP ***
+END ATEMP
+SNOW
+  ICE-FLAG         1i5
+  V #    # ICFG  ***
+  SNOW-PARM1       5f10
+  V #    #       LAT      ELEV     SHADE    SNOWCF    COVIND  ***
+  SNOW-PARM2       6f10
+  V #    #     RDCSN     TSNOW    SNOEVP    CCFACT    MWATER    MGMELT  ***
+  SNOW-INIT1       6f10
+  V #    # PACK-SNOW  PACK-ICE PACK-WATR    RDENPF      DULL    PAKTMP  ***
+  SNOW-INIT2       3f10
+  V #    #    COVINX    XLNMLT    SKYCLR  ***
+END SNOW
+PWATER
+  PWAT-PARM1       9i5
+  V #    # CSNO RTOP UZFG  VCS  VUZ  VNN VIFW VIRC  VLE  ***
+  PWAT-PARM2       7f10
+  V #*** #    FOREST      LZSN    INFILT      LSUR     SLSUR     KVARY      AGWR
+  PWAT-PARM3       7f10
+  V #*** #    PETMAX    PETMIN    INFEXP    INFILD    DEEPFR   BASETPR    AGWETP
+  PWAT-PARM4       6f10
+  V #    #     CEPSC      UZSN      NSUR     INTFW       IRC     LZETP  ***
+  MON-INTERCEP    12f5 
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-UZSN        12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-MANNING     12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-LZETPARM    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***  
+  PWAT-STATE1      7f10
+  V #*** #      CEPS      SURS       UZS      IFWS       LZS      AGWS      GWVS
+END PWATER
+SEDMNT
+  SED-PARM1        3i5
+  V # -  #  CRV VSIV SDOP  ***
+  SED-PARM2        6f10
+  V # -  #      SMPF      KRER      JRER     AFFIX     COVER      NVSI  *** 
+  SED-PARM3        4f10
+  V # -  #      KSER      JSER      KGER      JGER  *** 
+  MON-COVER       12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  *** 
+  MON-NVSI        12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  SED-STOR         1f10
+  V # -  #      DETS                                  *** 
+END SEDMNT
+PSTEMP
+  PSTEMP-PARM1     4i5
+  V # -  # SLTV ULTV LGTV TSOP  *** 
+  PSTEMP-PARM2     6f10
+  V # -  #      ASLT      BSLT     ULTP1     ULTP2     LGTP1     LGTP2*** 
+  MON-ASLT        12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-BSLT        12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-ULTP1       12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-ULTP2       12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-LGTP1       12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  PSTEMP-TEMPS     4f10
+  V #    #     AIRTC     SLTMP     ULTMP     LGTMP  ***
+END PSTEMP
+PWTGAS
+  PWT-PARM1        4i5
+  V #    #  IDV  ICV  GDV  GCV  ***
+  PWT-PARM2        5f10
+  V #    #      ELEV     IDOXP     ICO2P     ADOXP     ACO2P  ***
+  MON-IFWDOX      12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-GRNDDOX     12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  PWT-TEMPS        3f10
+  V # -  #     SOTMP     IOTMP     AOTMP*** 
+  PWT-GASES        6f10
+  V #    #     SODOX     SOCO2     IODOX     IOCO2     AODOX     AOCO2  ***
+END PWTGAS
+PQUAL
+  NQUALS           1i5
+  V # -  # NQAL  ***
+  QUAL-PROPS#1      unique
+  V #    #                      QSD VPFW VPFS  QSO  VQO QIFW VIQC QAGW VAQC  ***
+  QUAL-INPUT#1     8f8
+  V # -  #     SQO   POTFW   POTFS   ACQOP  SQOLIM   WSQOP    IOQC    AOQC*** 
+  QUAL-PROPS#2      unique
+  V #    #                      QSD VPFW VPFS  QSO  VQO QIFW VIQC QAGW VAQC  ***
+  QUAL-INPUT#2     8f8
+  V # -  #     SQO   POTFW   POTFS   ACQOP  SQOLIM   WSQOP    IOQC    AOQC*** 
+  QUAL-PROPS#3      unique
+  V #    #                      QSD VPFW VPFS  QSO  VQO QIFW VIQC QAGW VAQC  ***
+  QUAL-INPUT#3     8f8
+  V # -  #     SQO   POTFW   POTFS   ACQOP  SQOLIM   WSQOP    IOQC    AOQC*** 
+  QUAL-PROPS#4      unique
+  V #    #                      QSD VPFW VPFS  QSO  VQO QIFW VIQC QAGW VAQC  ***
+  QUAL-INPUT#4     8f8
+  V # -  #     SQO   POTFW   POTFS   ACQOP  SQOLIM   WSQOP    IOQC    AOQC*** 
+  QUAL-PROPS#5      unique
+  V #    #                      QSD VPFW VPFS  QSO  VQO QIFW VIQC QAGW VAQC  ***
+  QUAL-INPUT#5     8f8
+  V # -  #     SQO   POTFW   POTFS   ACQOP  SQOLIM   WSQOP    IOQC    AOQC*** 
+END PQUAL
+MSTLAY
+  MST-PARM         3f10
+  V #    #     SLMPF      ULPF      LLPF*** 
+END MSTLAY
+NITR
+  SOIL-DATA        8f8
+  V # -  # SURFDEP   UPDEP   LODEP GRNDDEP  SURFBD    UPBD    LOBD  GRNDBD   ***
+  NIT-FLAGS       10i5
+  V # -  # VNUT FORA ITMX BNUM CNUM NUPT FIXN AMVO ALPN VNPR ***
+  NIT-AD-FLAGS      unique
+  V # -  # NSFNSC NUFNUC  HSFHSC HUFHUC  OSFOSC OUFOUC ***
+  NIT-FSTGEN      10f5
+  V #    #  NO3  NH4  PLN KDSA KADA KIMN  KAM KDNI  KNI KIMA***
+  NIT-FSTPM#1      7f10
+  V #*** #     KDSAM     KADAM     KIMNI       KAM      KDNI       KNI     KIMAM
+  NIT-FSTPM#2      7f10
+  V #*** #     KDSAM     KADAM     KIMNI       KAM      KDNI       KNI     KIMAM
+  NIT-FSTPM#3      7f10
+  V #*** #     KDSAM     KADAM     KIMNI       KAM      KDNI       KNI     KIMAM
+  NIT-FSTPM#4      7f10
+  V #*** #     KDSAM     KADAM     KIMNI       KAM      KDNI       KNI     KIMAM
+  NIT-ORGPM#1      4f10
+  V # -  #      KLON      KRON     KONLR     THNLR  ***
+  NIT-ORGPM#2      4f10
+  V # -  #      KLON      KRON     KONLR     THNLR  ***
+  NIT-ORGPM#3      4f10
+  V # -  #      KLON      KRON     KONLR     THNLR  ***
+  NIT-ORGPM#4      4f10
+  V # -  #      KLON      KRON     KONLR     THNLR  ***
+  NIT-AMVOLAT      6f10
+  V # -  #     SKVOL     UKVOL     LKVOL     AKVOL     THVOL    TRFVOL ***
+  NIT-CMAX         1f10
+  V #    #     CMAX                                ***
+  NIT-SVALPM#1     3f10
+  V #    #      XFIX        K1        N1***
+  NIT-SVALPM#2     3f10
+  V #    #      XFIX        K1        N1***
+  NIT-SVALPM#3     3f10
+  V #    #      XFIX        K1        N1***
+  NIT-SVALPM#4     3f10
+  V #    #      XFIX        K1        N1***
+  MON-NITUPT#1    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NITUPT#2    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NITUPT#3    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NITUPT#4    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  SOIL-DATA2       4f10
+  V #    #    SWILTP    UWILTP    LWILTP    AWILTP ***
+  CROP-DATES        unique
+  V # -  # NCRP    PM1PD1  HM1HD1    PM2PD2  HM2HD2    PM3PD3  HM3HD3  ***
+  NIT-YIELD        2f10
+  V # -  #    NUTTGT    NMXRAT ***
+  MON-NUPT-FR1    12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NUPT-FR2#1  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NUPT-FR2#2  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NUPT-FR2#3  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-NUPT-FR2#4  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  NIT-UPIMCSAT#1   4f10
+  V # -  #     CSUNI     CSUAM     CSINI     CSIAM ***
+  NIT-UPIMCSAT#2   4f10
+  V # -  #     CSUNI     CSUAM     CSINI     CSIAM ***
+  NIT-UPIMCSAT#3   4f10
+  V # -  #     CSUNI     CSUAM     CSINI     CSIAM ***
+  NIT-UPIMCSAT#4   4f10
+  V # -  #     CSUNI     CSUAM     CSINI     CSIAM ***
+  MON-NITUPNI#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPNI#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPNI#3   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPNI#4   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPAM#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPAM#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPAM#3   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITUPAM#4   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMNI#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMNI#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMNI#3   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMNI#4   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMAM#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMAM#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMAM#3   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITIMAM#4   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETBG#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETBG#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETBG#3   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETBG#4   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETFBG    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITAGUTF#1  12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITAGUTF#2  12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITAGUTF#3  12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NITAGUTF#4  12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETAG     12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETLI#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETLI#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  MON-NPRETFLI    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC  ***
+  NIT-STOR1#1      6f10
+  V #    #      ORGN      AMAD      AMSU       NO3      PLTN     RORGN***
+  NIT-STOR1#2      6f10
+  V #    #      ORGN      AMAD      AMSU       NO3      PLTN     RORGN***
+  NIT-STOR1#3      6f10
+  V #    #      ORGN      AMAD      AMSU       NO3      PLTN     RORGN***
+  NIT-STOR1#4      6f10
+  V #    #      ORGN      AMAD      AMSU       NO3      PLTN     RORGN***
+  NIT-STOR2        6f10
+  V #    #     IAMSU      INO3     ISLON     ISRON    AGPLTN    LITTRN***
+END NITR
+PHOS
+  PHOS-FLAGS       6i5
+  V #    # VPUT FORP ITMX BMUM CNUM PUPT ***
+  PHOS-AD-FLAGS     unique
+  V # -  # PSFPSC PUFPUC  OSFOSC OUFOUC ***
+  PHOS-FSTGEN      5f10
+  V #    #     THPLP    THKDSP    THKADP    THKIMP     THKMP           ***
+  PHOS-FSTPM#1     4f10
+  V #    #      KDSP      KADP      KIMP       KMP                   ***
+  PHOS-FSTPM#2     4f10
+  V #    #      KDSP      KADP      KIMP       KMP                   ***
+  PHOS-FSTPM#3     4f10
+  V #    #      KDSP      KADP      KIMP       KMP                   ***
+  PHOS-FSTPM#4     4f10
+  V #    #      KDSP      KADP      KIMP       KMP                   ***
+  PHOS-CMAX        1f10
+  V #    #      CMAX                         ***
+  PHOS-SVALPM#1    3f10
+  V #    #      XFIX        K1        N1***
+  PHOS-SVALPM#2    3f10
+  V #    #      XFIX        K1        N1***
+  PHOS-SVALPM#3    3f10
+  V #    #      XFIX        K1        N1***
+  PHOS-SVALPM#4    3f10
+  V #    #      XFIX        K1        N1***
+  MON-PHOSUPT#1   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PHOSUPT#2   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PHOSUPT#3   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PHOSUPT#4   12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  PHOS-YIELD       2f10
+  V #    #    PUPTGT    PMXRAT ***
+  MON-PUPT-FR1    12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PUPT-FR2#1  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PUPT-FR2#2  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PUPT-FR2#3  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  MON-PUPT-FR2#4  12f5
+  V # -  #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ***
+  PHOS-STOR1#1     4f10
+  V #    #      ORGP      P4AD      P4SU      PLTP            ***
+  PHOS-STOR1#2     4f10
+  V #    #      ORGP      P4AD      P4SU      PLTP            ***
+  PHOS-STOR1#3     4f10
+  V #    #      ORGP      P4AD      P4SU      PLTP            ***
+  PHOS-STOR1#4     4f10
+  V #    #      ORGP      P4AD      P4SU      PLTP            ***
+END PHOS
+IWATER
+  IWAT-PARM1       5i5
+  V #    # CSNO RTOP  VRS  VNN RTLI  ***
+  IWAT-PARM2       4f10
+  V #    #      LSUR     SLSUR      NSUR     RETSC  ***
+  IWAT-PARM3       2f10
+  V #    #    PETMAX    PETMIN  ***
+END IWATER
+SOLIDS
+  SLD-PARM1        3i5
+  V # -  # VASD VRSD SDOP  ***
+  SLD-PARM2        4f10
+  V # -  #      KEIM      JEIM    ACCSDP    REMSDP  *** 
+  SLD-STOR         1f10
+  V # -  #      SLDS                   ***
+END SOLIDS
+IWTGAS
+  IWT-PARM1        2i5
+  V #    # WTFV CSNO  ***
+  IWT-PARM2        3f10
+  V # -  #      ELEV      AWTF      BWTF*** 
+END IWTGAS
+IQUAL
+  NQUALS           1i5
+  V #    # NQAL  ***
+  QUAL-PROPS#1      unique
+  V #    #                      QSD VPFW  QSO  VQO  ***
+  QUAL-INPUT#1     5f8
+  V #    #     SQO   POTFW   ACQOP  SQOLIM   WSQOP  ***
+  QUAL-PROPS#2      unique
+  V #    #                      QSD VPFW  QSO  VQO  ***
+  QUAL-INPUT#2     5f8
+  V #    #     SQO   POTFW   ACQOP  SQOLIM   WSQOP  ***
+  QUAL-PROPS#3      unique
+  V #    #                      QSD VPFW  QSO  VQO  ***
+  QUAL-INPUT#3     5f8
+  V #    #     SQO   POTFW   ACQOP  SQOLIM   WSQOP  ***
+  QUAL-PROPS#4      unique
+  V #    #                      QSD VPFW  QSO  VQO  ***
+  QUAL-INPUT#4     5f8
+  V #    #     SQO   POTFW   ACQOP  SQOLIM   WSQOP  ***
+  QUAL-PROPS#5      unique
+  V #    #                      QSD VPFW  QSO  VQO  ***
+  QUAL-INPUT#5     5f8
+  V #    #     SQO   POTFW   ACQOP  SQOLIM   WSQOP  ***
+END IQUAL
+end

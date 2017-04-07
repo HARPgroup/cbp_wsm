@@ -1,0 +1,40 @@
+#
+ echo potm,rchand,oxrx,"ox-reaparm",reak,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,oxrx,"ox-genparm",supsat,r,e,1.25 | ../pp/bin/Rchange_params_one_line.exe
+ echo potm,rchand,oxrx,"ox-cforea",cforea,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,oxrx,"ox-benparm",benod,r,m,4 | ../pp/bin/Rchange_params_one_line.exe
+
+
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#1",staucs,r,p,98 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#1",staucd,r,p,98 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#2",ctaucs,r,p,95 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#2",ctaucd,r,p,95 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#1",sm,r,e,.3 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#2",cm,r,e,.1 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,SEDTRN,"SILT-CLAY-PM#1",sw,r,e,.06  | ../pp/bin/Rchange_params_one_line.exe
+ echo potm,rchand,SEDTRN,"SILT-CLAY-PM#2",cw,r,e,.001 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,sedtrn,"sand-pm",ksand,r,e,.0001 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,sedtrn,"sand-pm",expsnd,r,e,4 | ../pp/bin/Rchange_params_one_line.exe
+
+ echo potm,rchand,plank,"plnk-parm1",malgr,r,e,.15 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,plank,"phyto-parm",physet,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+ echo potm,rchand,plank,"phyto-parm",refset,r,m,.7 | ../pp/bin/Rchange_params_one_line.exe
+ echo potm,rchand,plank,"benal-parm",cfbalg,r,a,-.1 | ../pp/bin/Rchange_params_one_line.exe
+ echo potm,rchand,plank,"benal-parm",cfbalr,r,a,-.1 | ../pp/bin/Rchange_params_one_line.exe
+
+ echo potm,rchand,nutrx,"nut-nitdenit",ktam20,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-nitdenit",kno320,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-nitdenit",denoxt,r,e,20 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-adsparm",po4-sand,r,m,.3 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-adsparm",po4-silt,r,m,.3 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-adsparm",po4-clay,r,m,.3 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-bedconc",po4-sand,r,m,0.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-bedconc",po4-silt,r,m,0.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-bedconc",po4-clay,r,m,0.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-adsparm",nh4-sand,r,m,.10 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-adsparm",nh4-silt,r,m,.10 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-adsparm",nh4-clay,r,m,.10 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-bedconc",nh4-sand,r,m,0.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-bedconc",nh4-silt,r,m,0.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo potm,rchand,nutrx,"nut-bedconc",nh4-clay,r,m,0.5 | ../pp/bin/Rchange_params_one_line.exe
+

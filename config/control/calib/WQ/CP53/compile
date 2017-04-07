@@ -1,0 +1,23 @@
+#!/bin/csh
+
+f77 -c concinfo.f
+f77 -c findcolumn.f
+f77 -c getall.f
+f77 -c ioparvar.f
+f77 -c param_list.f
+f77 -c shear_stress.f
+f77 -c convergetest.f
+f77 -c getbalance.f
+f77 -c getParIndices.f
+f77 -c newpar.f
+f77 -c readoutfile.f
+f77 -c sumoutfile.f
+
+
+ar rv callib.a convergetest.o getbalance.o getParIndices.o newpar.o readoutfile.o sumoutfile.o concinfo.o findcolumn.o getall.o ioparvar.o param_list.o shear_stress.o
+
+rm *.o
+
+f77 -c main.f
+f77 -c main_setdefaults.f
+

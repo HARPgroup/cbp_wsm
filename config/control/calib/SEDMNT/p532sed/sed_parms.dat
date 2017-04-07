@@ -1,0 +1,45 @@
+**** KSER values are relative to KRER, NVSI is relative to EOF target
+**** final scenario, NVSI ratio = 1.5, KS/KR = 5
+
+PARAMETERS
+all,AFFIX,0.07675
+alf,NVSI,1.5
+rcn,NVSI,1.5 
+ccn,NVSI,1.5
+rex,NVSI,1.5
+nex,NVSI,1.5
+cex,NVSI,1.5
+for,NVSI,1.5
+hom,NVSI,1.5
+hvf,NVSI,1.5
+hwm,NVSI,1.5
+hyo,NVSI,1.5
+hyw,NVSI,1.5
+lwm,NVSI,1.5
+nal,NVSI,1.5
+nhi,NVSI,1.5
+nho,NVSI,1.5
+nhy,NVSI,1.5
+nlo,NVSI,1.5
+npa,NVSI,1.5
+pas,NVSI,1.5
+rpd,NVSI,1.5
+npd,NVSI,1.5
+cpd,NVSI,1.5
+trp,NVSI,1.5
+urs,NVSI,1.5
+all,KS-KR,5
+END PARAMETERS
+
+*** target to be calibrated
+TARGET
+p532
+END TARGET
+
+*** min and max allowed by user, min and max allowed by HSPF
+LIMITS
+KRER,     0.05,   20.0,    0.0,   20.0
+KSER,      0.1,  100.0,    0.0,  100.0
+END LIMITS
+
+end

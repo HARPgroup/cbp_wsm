@@ -1,0 +1,2 @@
+grep -il problem slurm*
+grep -il ech slurm*

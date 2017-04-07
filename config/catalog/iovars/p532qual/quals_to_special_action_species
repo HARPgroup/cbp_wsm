@@ -1,0 +1,13 @@
+QUAL,nspecies,species***
+1,3,nh3n,no3n,orgn
+2,3,nh3n,no3n,orgn
+3,5,nh3n,no3n,orgn,po4p,orgp
+4,5,nh3n,no3n,orgn,po4p,orgp
+5,2,po4p,orgp
+
+******** first column is the number of PQUAL or IQUAL constituent from the piqual file
+******** second column is the number of the special action constituents that are used to modify it
+******** remaining columns are the special action constituents for that QUAL
+******* nh3 is more closely tied to the balance of TN applications rather than
+***** the balance of nh3 applications.  The same goes for the rest of the species
+**** labile and refractory organics are tied to both N and P

@@ -1,0 +1,38 @@
+ID#   GROUP  MEMBER # #  NAME DESCRIPTION                          LAND USES    
+*** water
+111   IWATER SURO        SURO water in/ac/ivld                     afo cfo rid nid cid 
+
+*** heat
+131   IWTGAS SOHT        SOHT heat BTU/ac/ivld                     afo cfo rid nid cid
+
+*** oxygen
+132   IWTGAS SODOXM      SDOX oxygen lb/ac/ivld                    afo cfo rid nid cid
+
+*** sediment
+121   SOLIDS SOSLD       SEDM solids tons/ac/ivld                  afo cfo rid nid cid
+
+*** IQUAL
+142   IQUAL  SOQS   1    DNH3 adsorbed ammonium lb/ac/ivld         afo cfo rid nid cid
+144   IQUAL  SOQO   1    SNH3 surf solution ammonia lb/ac/ivld     afo cfo rid nid cid
+    
+145   IQUAL  SOQO   2    SNO3 surf nitrate lb/ac/ivld              afo cfo 
+
+141   IQUAL  SOQS   3    DLON adsorbed labile organic N lb/ac/ivld afo cfo rid nid cid
+146   IQUAL  SOQO   3    SLON surf labile organic N lb/ac/ivld     afo cfo rid nid cid
+
+143   IQUAL  SOQS   4    DRON adsorbed refractory org N lb/ac/ivld afo cfo rid nid cid
+147   IQUAL  SOQO   4    SRON surf refractory organic N lb/ac/ivld afo cfo rid nid cid
+
+152   IQUAL  SOQS   5    DPO4 adsorbed phosphate lb/ac/ivld        afo cfo rid nid cid
+153   IQUAL  SOQO   5    SPO4 surf phosphate lb/ac/ivld            afo cfo rid nid cid
+
+end
+
+*************** SOQS 2 must be turned on or else everything gets out of order
+************** due to a bug in HSPF.  SOQS is simulated, but not connected
+************** to anything
+
+******** the Iqual values 1-6 must match the pqual values in perlnd
+****** and also reflect the integers in the file
+******* ./pp/src/lib/inc/PIqual.inc
+

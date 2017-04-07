@@ -1,0 +1,15 @@
+MODULE ID#   <-factor->   GROUP  MEMBER # #    NAME   DESCRIPTION  ***
+SEDTRN 61     7.027e-06   INFLOW ISED   2      WASF   water surfce for aeolian deposition -silt ton/ivld
+SEDTRN 62     7.027e-06   INFLOW ISED   3      WASF   water surfce for aeolian deposition -clay ton/ivld
+
+end
+
+
+******************************************* NOTE *******************************************************
+Multiply Facor = 0.00513 tons/acre-year 
+               = 0.00513/365 tons/acre-day 
+               = 1.405e-05 tons/acre-day
+
+This load is equally divied into silt and clay, and so each will receive 7.027e-06 tons/acre-day   
+
+Water surface(acre)*7.027e-06 tons/acre-day = daily aeolian sources of sediment (tons/day)

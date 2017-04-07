@@ -1,0 +1,132 @@
+<html>
+<body>
+
+
+
+<?php
+
+include('./config.php');
+
+if (isset($_GET['projectid'])) {
+   $projectid = $_GET['projectid'];
+}
+
+
+
+if (isset($_POST['projectid'])) {
+   $projectid = $_POST['projectid'];
+   $actiontype = $_POST['actiontype'];
+   $infiles = $_POST['infiles'];
+} else {
+   $infiles = array();
+}
+
+if (count($argv)) {
+   $projectid = $argv[1];
+   $thisfile = $argv[2];
+}
+
+
+/*
+print("<form action='$_SERVER['PHP_SELF']' method='Post'>");
+
+print("<b>Select Files to Import Model Calibrated Uptakes: </b><br>");
+fileMultiSelectedForm('infiles',$indir,'',10,$infiles);
+showHiddenField('projectid',$projectid);
+
+showSubmitButton('submit','Parse Model Uptakes');
+print("</form>");
+
+*/
+
+
+
+list($headerline) = createDBFromCSV($listobject,"$indir/$thisfile",'uptake_test', 255, 0,1);
+
+print("Finished Parsing $thisfile\n");
+
+$listobject->querystring = "delete from scen_model_uptake where oid in ";
+$listobject->querystring .= " (select a.oid ";
+$listobject->querystring .= "     from scen_model_uptake as a, ";
+$listobject->querystring .= "        uptake_test as b";
+$listobject->querystring .= "     where a.landseg = b.landseg ";
+$listobject->querystring .= "        and a.thisyear = b.thisyear ";
+$listobject->querystring .= "        and a.luname = b.luname ";
+$listobject->querystring .= "        and a.scenarioid = b.scenarioid ) ";
+
+$listobject->performQuery();
+print(".");
+#print("$listobject->querystring \n");
+
+$listobject->querystring = " insert into scen_model_uptake ($headerline) ";
+$listobject->querystring .= " select $headerline from uptake_test";
+
+
+$listobject->performQuery();
+#print("$listobject->querystring \n");
+
+$listobject->querystring = "select count(*) as numrecs from uptake_test";
+$listobject->performQuery();
+$utrecs = $listobject->getRecordValue(1,'numrecs');
+print("$utrecs retrieved <br>");
+
+$listobject->querystring = "delete from calib_uptake where oid in ";
+$listobject->querystring .= " (select a.oid ";
+$listobject->querystring .= "     from calib_uptake as a, ";
+$listobject->querystring .= "        uptake_test as b";
+$listobject->querystring .= "     where a.subshedid = b.subshedid ";
+$listobject->querystring .= "        and a.thisyear = b.thisyear ";
+$listobject->querystring .= "        and a.luname = b.luname ";
+$listobject->querystring .= "        and a.scenarioid = b.scenarioid ) ";
+
+$listobject->performQuery();
+print(".");
+#print("$listobject->querystring \n");
+
+$listobject->querystring = " insert into calib_uptake (subshedid, luname, luarea, thisyear, scenarioid, ";
+$listobject->querystring .= "   pollutantname, max_uptake, agc_uptake, agc_pct, mod_uptake, mod_eof, ";
+$listobject->querystring .= "   min_lseguptk, max_lseguptk, mod_pct, agc_rept_pct)";
+$listobject->querystring .= " select  b.subshedid, b.luname, c.luarea, a.thisyear, b.scenarioid,";
+$listobject->querystring .= "    b.constit, c.uptake_n,";
+$listobject->querystring .= "    a.agc_uptake, a.agc_uptake/c.uptake_n as agc_pct,";
+$listobject->querystring .= "    b.mod_uptake, b.min_lseguptk, b.max_lseguptk, ";
+$listobject->querystring .= "    b.mod_uptake/c.uptake_n as mod_pct, ";
+$listobject->querystring .= "    a.reparea/a.croparea as agc_rept_pct";
+$listobject->querystring .= " from agc_reported_ylds as a,";
+$listobject->querystring .= "    (select a.subshedid,b.luname,b.thisyear, a.scenarioid, b.constit,";
+$listobject->querystring .= "       sum(a.luarea * b.annual_uptake)/sum(a.luarea) as mod_uptake, ";
+$listobject->querystring .= "       sum(a.luarea * b.annual_eof)/sum(a.luarea) as mod_eof, ";
+$listobject->querystring .= "       min(b.annual_uptake) as min_lseguptk, ";
+$listobject->querystring .= "       max(b.annual_uptake) as max_lseguptk ";
+$listobject->querystring .= "    from scen_lrsegs as a, scen_model_uptake as b, ";
+$listobject->querystring .= "        uptake_test as c";
+$listobject->querystring .= "    where a.landseg = c.landseg ";
+$listobject->querystring .= "       and a.thisyear = c.thisyear ";
+$listobject->querystring .= "       and a.luname = c.luname ";
+$listobject->querystring .= "       and a.scenarioid = 1 ";
+$listobject->querystring .= "       and a.landseg = b.landseg";
+$listobject->querystring .= "       and a.thisyear = b.thisyear";
+$listobject->querystring .= "       and b.scenarioid = 1";
+$listobject->querystring .= "       and a.luname = b.luname";
+#$listobject->querystring .= "       and c.constit = b.constit";
+$listobject->querystring .= "       and a.luarea > 0";
+$listobject->querystring .= "    group by a.subshedid, b.luname,b.thisyear, a.scenarioid, b.constit";
+$listobject->querystring .= "    ) as b,";
+$listobject->querystring .= "    scen_subsheds as c";
+$listobject->querystring .= " where a.stcofips = b.subshedid";
+$listobject->querystring .= "    and b.subshedid = c.subshedid";
+$listobject->querystring .= "    and b.scenarioid = 1";
+$listobject->querystring .= "    and c.scenarioid = 1";
+$listobject->querystring .= "    and a.luname = b.luname";
+$listobject->querystring .= "    and a.luname = c.luname";
+$listobject->querystring .= "    and a.thisyear = b.thisyear";
+$listobject->querystring .= "    and a.thisyear = c.thisyear";
+
+$listobject->performQuery();
+print("$listobject->querystring \n");
+
+
+?>
+
+</body>
+</html>

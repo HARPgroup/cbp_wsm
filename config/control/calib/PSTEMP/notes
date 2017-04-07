@@ -1,0 +1,21 @@
+Calibrate this like pwater, using the same land-water method.
+
+There will be 24 sensitivities, which are the needed temperature adjustment for the 15 days before and
+  after the first of each month, possibly offset 1-7 days, for both baseflow and stormflow
+
+LGTP1 will be sensitive to baseflow, while ASLT and ULTP1 will be sensitive to stormflow. 
+
+
+Different trials can assume different offsets, relationships between ASLT and ULTP1, and BSLTs and ULTP2s
+
+SLTMP = ASLT + BSLT*AIRTC         (surface)
+ULTMP = ULTP1 + ULTP2*AIRTC       (upper layer)
+LL&GWTMP = LGTP1                  (Lower Layer and Ground Water)  
+Also make sure to set the lower and gw starting temperature the same as the january LGTP1
+PSTEMP-TEMPS    LGTMP
+
+all calibrated values will be constant over land uses.  The groundwater temperature LGTP1 will be the
+  same for all land uses as will the intercepts ASLT and ULTP1.
+
+There will be differences in the BSLT and ULTP2 by land use.  These will be set in the 'factors' file
+Initial values of

@@ -1,0 +1,118 @@
+To add a PQUAL or IQUAL quality constituent to the Watershed Model 
+
+Amy Dale     August 14, 2013
+
+Overview of how the WSM interfaces with HSPF (for more details, see the Phase 5 manual and the HSPF manual, version 11): 
+The lug and rug scripts, which make the User Controlled Input files (UCIs) that direct an HSPF model run (e.g., by defining parameters and parameter values, and by specifying which operations to perform), read the PER MODULES and IMP MODULES tables in the WSM control files ($scenario_name.con in ./config/control/land or ./config/control/river) to discover which HSPF modules to run (PQUAL and IQUAL should already be included in the land control file, so these won.t need to be changed).  Once these modules are identified, the script looks in the ./config/catalog/modules/ directory to determine which parameters must be defined for each module and how the tables in the UCIs should be formatted.  The script then looks in ./input/param/ for the parameter values for the given land use and scenario.  
+Unique identifiers (DSNs) for each state variable in the land or river simulation are assigned in files in the ./config/catalog/iovars/ directory.  HSPF uses these DSNs to index time series data stored in WDM files.  Other files in the iovars directory also define the relationships between source constituents (e.g., land, point sources, atmospheric deposition, and septic) and river constituents.
+
+To create a new PQUAL or IQUAL constituent:
+1.	Define the new constituents in the appropriate files above the ./config/catalog/iovars/$scenario_name/ directory
+2.	Extend the UCI table in the appropriate file above ./config/catalog/modules/
+3.	Place csv files containing parameter values for the new constituents in ./input/param/ (see note below about adjusting the preexisting files PQUAL$(N+1).csv and IQUAL$(N+1).csv, where N is the original number of PQUAL/IQUAL constituents)
+4.	Add empty time series to ./config/blank_wdm/land.wdm to provide a location for HSPF output
+5.	If necessary, edit the maxQuals parameter in ./code/src/lug/acts.inc and recompile the relevant directories
+
+Details for each step are provided below.  Note that this overview does not go into detail regarding the purpose or function of HSPF modules or pre-defined HSPF variables, or the required format of the tables in the UCIs.  The HSPF v11 manual covers this information in depth.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+1. Define the new constituents in the appropriate files above the ./config/catalog/iovars/$scenario_name/ directory
+
+The following files must be updated:
+	./implnd
+This file contains the comprehensive list of DSNs (data set numbers) for state variables defined for impervious land segments.  Follow the format of other entries in the file to add an IQUAL parameter (the HSPF v11 manual should used as a guide in understanding the purpose and function of the group and member names specified in the file) 
+./perlnd
+This file contains the comprehensive list of DSNs (data set numbers) for state variables defined for pervious land segments.  Follow the format of other entries in the file to add a PQUAL parameter (again, the HSPF v11 manual will aid in understanding) 
+./piqual
+This file lists all PQUAL/IQUAL constituents.  The names of each quality constituent are, as far as I can tell, arbitrary in that they do not need to exactly match any names used in the ./implnd and ./perlnd files.  Note that a single constituent (e.g., PQUAL 6) can be represented by multiple DSNs (e.g., an adsorbed species and dissolved species in different soil layers)
+./quals_to_special_action_species
+If you want to apply a pre-defined HSPF special action to this species, you must indicate that in this file.  Creating and assigning an entirely new special action requires modification of the lug script and is not considered here.
+
+
+A sidenote on DSN naming conventions for perlnd and implnd files (from Gary Shenk): 
+A.	perlnd
+a.	The first digit is the soil layer.  For sediment-associated species or species associated with surface water, this is 1. For species associated with interflow, this is 2.  For those associated with groundwater, this is 4.
+b.	The second digit is the type.  Phosphorus species are 5, nitrogen species are 4, water is 1.  Choose the next highest number that has not been used elsewhere.  
+c.	The third digit is subtype and can be anything.  1 is probably a good choice.
+d.	Note that HSPF will throw a runtime error if you accidently choose a DSN that is already in use.  Even though it fits the naming convention provided here, the DSN 162 is already taken. Trial and error should work.
+B.	implnd
+a.	Follow the same scheme as for perlnd.  Note that a DSN defined for one species in PQUAL must exactly match the DSN chosen for its counterpart in IQUAL.
+
+
+
+
+2. Extend the UCI table in the appropriate file above ./config/catalog/modules/
+  
+The tables IQUAL and PQUAL in the file ./config/catalog/modules/tables tell the scripts lug and rug how to format the parameter tables in the UCIs.  These tables must be extended to include the new quality constituents (formatting will look like this):
+
+  QUAL-PROPS#6      unique
+  V #    #                      QSD VPFW VPFS  QSO  VQO QIFW VIQC QAGW VAQC  ***
+  QUAL-INPUT#6     8f8
+  V # -  #     SQO   POTFW   POTFS   ACQOP  SQOLIM   WSQOP    IOQC    AOQC***
+
+
+Note that you should NOT change the NQUALS line in the file:
+  PQUAL
+  NQUALS           1i5
+Here, 5 signifies the length of each variable, not the number of PQUAL variables.
+
+3. Place csv files containing parameter values for the new constituents in ./input/param/
+
+Follow the format of the csv files for other PQUAL and IQUAL constituents in these folders.  There are at least a couple ways to go wrong here:
+(1) The scripts could not read the files if I edited them using Microsoft Excel.  Editing them in a simple text editor worked fine.  The error looked like this:
+
+fmt: end of file
+apparent state: unit 11 named ../../../input/param/hvf/p532cal/PQUAL7.csv
+last format: (a)
+lately reading sequential formatted external IO
+Abort
+
+This error occurs because Excel removes the empty line at the end of the file.  This prevents Fortran from reading the last line of text.  Just replace the blank line in a text file and you should be fine.  I also got this error if I didn.t use a Windows OS newline character.
+
+(2) PQUAL$(N+1).csv and IQUAL$(N+1).csv (where N is the previous number of quality constituents) already exist.  These files specify the number of PQUAL/IQUAL parameters.  They must be renamed PQUAL$(N+2) and IQUAL$(N+2).  You do not need to specify elsewhere that the files have been renamed.the scripts will automatically search for the number one higher than the number of PQUAL parameters specified in piqual.  However, you do need to go into these files and change the value of the NQAL parameter in all cases to match the new number of quality constituents.
+(3) All of the parameters defined in these CSV files are defined and described in the HSPF v11 manual (under the specifications for UCI table formatting for the PERLND module).  Parameter values specified here should fall within the acceptable upper and lower bounds indicated in the manual.
+
+
+
+4. Add empty time series to ./config/blank_wdm/land.wdm to provide a location for HSPF output for the new DSNs
+This is apparently difficult to do with code.  In the WDM utility that comes with BASINS (either v3.0 or v4.0), WDMutil, a new time series can be added by selecting the New Time Series option from the Time Series drop down menu on the toolbar (from Gopal Bhatt).  
+
+Note that this may require some trial and error.  HSPF will throw runtime errors with relatively clear error messages if things go wrong.
+
+
+5.  If necessary, edit the maxQuals parameter in ./code/src/lug/acts.inc and recompile
+ 
+The maximum allowed number of quality constituents for which special actions apply is hard-coded into one of the include files, ./code/src/lug/acts.inc.  The parameter maxQuals must be increased to match the new number of constituents.  Failure to do so with throw the following error:
+
+PROBLEM FILE WRITTEN
+ 
+more quality constituents than expected in file                 
+../../../config/catalog/iovars/p532/quals_to_special_action_spec
+be extremely careful with modifications to this file    
+
+Note that changing an include file requires recompilation to take effect.  This can be done using the compile script in the ./code/src/lug/ directory: 
+$ csh compile
+
+This will probably throw the following errors unless recompilation is also done in two additional directories:
+f77: ../lib/ttyux.o: No such file or directory
+f77: ../lib/get_lib.a: No such file or directory
+f77: ../lib/util_lib.a: No such file or directory
+f77: ../lib/dsn/dsn_utils.o: No such file or directory
+f77: ../hspf/lib3.2/lib//wdmlib.a: No such file or directory
+f77: ../hspf/lib3.2/lib//adwdmlib.a: No such file or directory
+f77: ../hspf/lib3.2/lib//utillib.a: No such file or directory
+f77: ../lib/ttyux.o: No such file or directory
+f77: ../lib/get_lib.a: No such file or directory
+f77: ../lib/util_lib.a: No such file or directory
+f77: ../lib/dsn/dsn_utils.o: No such file or directory
+f77: ../hspf/lib3.2/lib//wdmlib.a: No such file or directory
+f77: ../hspf/lib3.2/lib//adwdmlib.a: No such file or directory
+f77: ../hspf/lib3.2/lib//utillib.a: No such file or directory
+
+So, to avoid errors, also recompile from ./code/src (compile_hspf_libs.csh) and ./code/src/lib (compile_lib.csh).
+
+
+ 
+NOTE: This can also be used as a guide to add any new state variable.  However, adding a new HSPF module or special action requires some additional steps (esp. modification of the lug scripts) that will depend on the needs of the user.

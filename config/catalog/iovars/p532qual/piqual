@@ -1,0 +1,11 @@
+qual number, name  ****
+1,NH3N
+2,NO3N
+3,LORN
+4,RORN
+5,PO4P
+
+********** sets the number of pqual parameters and the consituents they represent
+*********** the perlnd and implnd files should be consistent with this
+********* as well as the quals_to_special_action_species file in this directory
+**********   and the parameters in the ./input/param/ directories should be consistent with this

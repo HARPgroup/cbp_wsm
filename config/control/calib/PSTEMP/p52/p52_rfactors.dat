@@ -1,0 +1,8 @@
+**** values are relative to parameters for hom (hitil no manure)
+
+*** min and max allowed by user, min and max allowed by HSPF
+LIMITS
+KATRAD,    5.0,   17.0,     1.,   20.
+END LIMITS
+
+end

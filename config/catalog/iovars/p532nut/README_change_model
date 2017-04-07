@@ -1,0 +1,43 @@
+The files in this directory specify the land use variables, 
+  the river variables, and the correspondance between them
+
+FILE		NOTES
+perlnd		pervious land variables with DSNs, HSPF name, nickname,
+		land uses using this variable, and description.
+
+implnd		impervious land variables with DSNs, HSPF name, nickname,
+                land uses using this variable, and description.
+
+rchres_in	river input variables with DSNs, HSPF name, nickname,
+		and description.
+
+rchres_out_1x	same as rchres_in but with different HSPF names and
+                DSNs.  Use for rivers with only one exit.
+
+rchres_out_Nx	same as rchres_in but with different HSPF names and
+                DSNs.  Use for rivers with more than one exit.
+
+land_to_river	used to replace MASS-LINK in HSPF.  This file shows
+		river DSN and nickname to land DSN and nickname,
+		using a factor where appropriate and specifying the
+		land uses where it applies.
+
+
+The following files pertain to output formats
+
+FILE			NOTES
+rchres_out_to_annual	rchres variables related to standard output variables
+                        Any tables that are output are in terms of the
+         		variables specified under 'VALU'a	
+			These variables should agree with those in
+                        pp/lib/catalogs/data/*_to_eos
+
+rchres_out_to_daily	output specifier for concentrations rather than load.
+			the plot name should correspond to observed variables.
+
+NOTE:   land variables go first into river format and are then interpreted
+	using the rchres_out_to_annual file
+
+The file delivery_ratio_calc puts the 'VALUs' in rchres_out_to_annual into
+   bins to be added together and equated.
+

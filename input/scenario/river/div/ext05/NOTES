@@ -1,0 +1,14 @@
+ the process and code for generating these files can be found in
+
+/model/p5_big_dataset_storage/diversions/
+or ./input/unformatted/diversions/
+
+and /model/p508/pp/src/calibration_utils/cbw/src/add_extended_diversions
+and /model/p508/pp/src/calibration_utils/cbw/src/make_diversion_wdms
+
+on 4/6/05
+extended though 2003 by Gary Shenk based on work done by Alan Simpson
+
+on 3/14/06
+extended through 2005 by copying 2002 and 2003 to 2004 and 2005
+

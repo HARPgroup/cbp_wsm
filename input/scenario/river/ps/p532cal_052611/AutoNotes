@@ -1,0 +1,15 @@
+This dataset, p532cal_052611
+ was created by gshenk
+ 
+ on
+Wed Jun  1 09:45:25 EDT 2011
+ 
+Using the code
+../../..//code/bin/create_calib_ps_wdms.exe
+ 
+and the data in
+../../../unformatted/point_source/p532_calib/PS_CAL_WWTP_MUNICIPAL_2011-4-21.txt
+ 
+../../../unformatted/point_source/p532_calib/PS_CAL_WWTP_INDUSTRIAL_2011-4-21.txt
+ and 
+../../../unformatted/point_source/p532_calib/PS_CAL_CSO_2011-5-26.txt

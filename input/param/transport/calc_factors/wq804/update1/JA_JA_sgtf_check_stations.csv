@@ -1,0 +1,24 @@
+ STATION JA5_7480_0001 for TOTN
+   upstream segment JA5_7480_0001 JA5_7480_0001 TOTN
+   upstream segment JA2_7570_7480 JA5_7480_0001 TOTN
+   upstream segment JA4_7470_7480 JA5_7480_0001 TOTN
+   upstream segment JA1_7600_7570 JA5_7480_0001 TOTN
+   upstream segment JA2_7410_7470 JA5_7480_0001 TOTN
+   upstream segment JA4_7340_7470 JA5_7480_0001 TOTN
+   upstream segment JA4_7280_7340 JA5_7480_0001 TOTN
+   upstream segment JA1_7640_7280 JA5_7480_0001 TOTN
+   upstream segment JA2_7550_7280 JA5_7480_0001 TOTN
+ STATION JA1_7600_7570 for TOTP
+   upstream segment JA1_7600_7570 JA1_7600_7570 TOTP
+ STATION JA2_7550_7280 for TOTP
+   upstream segment JA2_7550_7280 JA2_7550_7280 TOTP
+ STATION JA5_7480_0001 for TOTP
+   upstream segment JA5_7480_0001 JA5_7480_0001 TOTP
+   upstream segment JA2_7570_7480 JA5_7480_0001 TOTP
+   upstream segment JA4_7470_7480 JA5_7480_0001 TOTP
+   upstream segment JA2_7410_7470 JA5_7480_0001 TOTP
+   upstream segment JA4_7340_7470 JA5_7480_0001 TOTP
+   upstream segment JA4_7280_7340 JA5_7480_0001 TOTP
+   upstream segment JA1_7640_7280 JA5_7480_0001 TOTP
+   upstream segment JA2_7550_7280 JA5_7480_0001 TOTP
+     upstream station JA1_7600_7570 JA5_7480_0001 TOTP

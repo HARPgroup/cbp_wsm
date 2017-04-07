@@ -1,0 +1,126 @@
+********** phase5.3, using p5.3 hydrology and temperature calibrations
+********* but using no special actions, setting all target
+******* values to the literature medians and calibrating with PQUAL
+
+**** start and end time, must have exactly two lines in this table
+TIME
+1984 01 01
+2005 12 31
+END TIME
+
+LAND USE
+year mo da <-file------------->***
+1985 07 01 1985CALIBN040611
+1987 07 01 1987CALIBN040611
+1992 07 01 1992CALIBN040611
+1997 07 01 1997CALIBN052511
+2002 07 01 2002CALIBN052511
+2005 07 01 2005CALIBN052511
+END LAND USE
+
+AFO CFO LOADS
+1985 07 01 1985CALIBN040611
+1987 07 01 1987CALIBN040611
+1992 07 01 1992CALIBN040611
+1997 07 01 1997CALIBN052511
+2002 07 01 2002CALIBN052511
+2005 07 01 2005CALIBN052511
+END AFO CFO LOADS
+
+*** Acreage of BMPs
+BMPACRES
+year mo da <-file------------->***
+1985 07 01 1985CALIBN040611
+1987 07 01 1987CALIBN040611
+1992 07 01 1992CALIBN040611
+1997 07 01 1997CALIBN052511
+2002 07 01 2002CALIBN052511
+2005 07 01 2005CALIBN052511
+END BMPACRES
+
+*** specifications for BMP types and efficiencies
+TYPEBMP
+p532
+END TYPEBMP
+
+*** pounds reduced for non-percentage BMPs
+BMPPOUNDS
+year mo da <-file------------->***
+1985 07 01 1985CALIBN040611
+1987 07 01 1987CALIBN040611
+1992 07 01 1992CALIBN040611
+1997 07 01 1997CALIBN052511
+2002 07 01 2002CALIBN052511
+2005 07 01 2005CALIBN052511
+END BMPPOUNDS
+
+TRANSPORT
+p532cal.csv
+END TRANSPORT
+
+PARAMETERS
+p532cal_062211
+END PARAMETERS
+
+*** set of IO specifications under iovars
+IOVARS
+p532
+END IOVARS
+
+LAND SCENARIO
+LU  <-file--->***
+all p532cal_062211
+END LAND SCENARIO
+
+DIVERSIONS  
+ext05
+END DIVERSIONS  
+
+SEPTIC
+p532cal
+END SEPTIC
+
+POINT SOURCE
+p532cal_052611
+END POINT SOURCE
+
+PRECIP ATMOS DEPOSITION
+f611nsA902
+END PRECIP ATMOS DEPOSITION
+
+METEOROLOGY
+fjs8405xyz
+END METEOROLOGY
+
+*** specifications that contain the total list of land and river
+*** segments and the connections between them
+GEOMETRY
+p532
+END GEOMETRY
+
+*** active modules for this scenario
+MODULES
+HYDR
+ADCALC
+***CONS
+HTRCH
+SEDTRN
+***GQUAL
+RQUAL
+OXRX
+NUTRX
+PLANK
+***PHCARB
+END MODULES
+
+*** calibration scenario reference for river parameter modification
+CALIBSCEN
+p532cal_062211
+END CALIBSCEN
+
+PLTGEN
+***tau    HYDR   TAU    0 0 AVER MEAN  1 AVER daily_shear_stress_lbsft2
+tau    HYDR   TAU    0 0 AVER MEAN 24 AVER daily_shear_stress_lbsft2
+END PLTGEN
+
+end

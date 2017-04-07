@@ -1,0 +1,73 @@
+MODULE | -RIVER VAR | - LAND VAR |  FACTOR  | land use  
+-NAME- | ID#   NAME | ID#   NAME
+HYDR   | 11    WATR | 111   SURO | 0.083333 | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid 
+HYDR   | 11    WATR | 211   IFWO | 0.083333 | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+HYDR   | 11    WATR | 411   AGWO | 0.083333 | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+HTRCH  | 12    HEAT | 131   SOHT |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+HTRCH  | 12    HEAT | 231   IOHT |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+HTRCH  | 12    HEAT | 431   AOHT |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+OXRX   | 13    DOXY | 132   SDOX |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid 
+OXRX   | 13    DOXY | 232   IDOX |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex
+OXRX   | 13    DOXY | 432   ADOX |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+SEDTRN | 21    SAND | 121   SEDM | -9.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+SEDTRN | 22    SILT | 121   SEDM | -9.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+SEDTRN | 23    CLAY | 121   SEDM | -9.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+
+NUTRX  | 31    NO3D | 145   SNO3 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo 
+NUTRX  | 31    NO3D | 245   INO3 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+NUTRX  | 31    NO3D | 445   ANO3 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+NUTRX  | 32    NH3D | 144   SNH3 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+NUTRX  | 32    NH3D | 244   INH3 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+NUTRX  | 32    NH3D | 444   ANH3 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+NUTRX  | 34    NH3I | 142   DNH3 | 0.70     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+NUTRX  | 35    NH3C | 142   DNH3 | 0.30     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+
+PLANK  | 36    RORN | 143   DRON |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+PLANK  | 36    RORN | 147   SRON |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+PLANK  | 36    RORN | 247   IRON |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+PLANK  | 36    RORN | 447   ARON |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+NUTRX  | 41    PO4D | 153   SPO4 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+NUTRX  | 41    PO4D | 253   IPO4 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+NUTRX  | 41    PO4D | 453   APO4 |          | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+ 
+NUTRX  | 43    PO4I | 152   DPO4 | 0.70     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+NUTRX  | 44    PO4C | 152   DPO4 | 0.30     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+
+PLANK  | 45    RORP | 151   DRON | 0.01384  | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+PLANK  | 45    RORP | 147   SRON | 0.01384  | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+PLANK  | 45    RORP | 247   IRON | 0.01384  | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+PLANK  | 45    RORP | 447   ARON | 0.01384  | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+
+OXRX   | 51    BODA | 141   DLON | 22.95    | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+OXRX   | 51    BODA | 146   SLON | 22.95    | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+OXRX   | 51    BODA | 246   ILON | 22.95    | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+OXRX   | 51    BODA | 446   ALON | 22.95    | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex
+
+PLANK  | 52    TORC | 143   DRON | 17.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+PLANK  | 52    TORC | 147   SRON | 17.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex afo cfo rid nid cid
+PLANK  | 52    TORC | 247   IRON | 17.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex 
+PLANK  | 52    TORC | 447   ARON | 17.0     | for hvf pas urs npa trp alf hyw hyo nhy nal hom hwm nho nhi lwm nlo rpd npd cpd rcn ccn rex nex cex
+
+
+end
+
+COMMENTS:
+
+Sediment fraction of SAND, SILT and CLAY vary by lseg, so lfactor =- 9.0 means that 
+the program needs to go to a file to read the fraction for each lseg. The fraction files 
+are stored in: ../pp/catalog/iovars/variable_l2r_factors/
+Three seperate files: SEDM_to_SAND.csv, SEDM_to_SILT.csv, SEDM_to_CLAY.csv,
+
+Checked so that each river constituent has one source from each land use
+
+River variable #53, PHYT does not have a land source and so is not listed
+   in this file.
+
+Refractory organic carbon C:N ratio is about 3X Algal ratio, see Sun et al 1997
+

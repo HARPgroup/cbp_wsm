@@ -1,0 +1,1 @@
+srun --ntasks=64 --ntasks-per-node=16 --ntasks-per-core=2 test1.csh testHYD allBay 1985 2000 water.yr

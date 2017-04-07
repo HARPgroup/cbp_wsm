@@ -1,0 +1,54 @@
+ID#   GROUP  MEMBER # #  NAME DESCRIPTION                          LAND USES
+
+*** water
+111   PWATER SURO        SURO surf water in/ac/ivld                for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex 
+211   PWATER IFWO        IFWO interflow water in/ac/ivld           for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+411   PWATER AGWO        AGWO gw flow in/ac/ivld                   for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+    
+*** sediment
+121   SEDMNT SOSED  1    SEDM total sediment tons/ac/ivld          for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+*** heat
+131   PWTGAS SOHT        SOHT surf heat BTU/ac/ivld                for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+231   PWTGAS IOHT        IOHT interflow heat BTU/ac/ivld           for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+431   PWTGAS AOHT        AOHT gw heat BTU/ac/ivld                  for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+*** oxygen
+132   PWTGAS SODOXM      SDOX surf oxygen lb/ac/ivld               for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+232   PWTGAS IODOXM      IDOX interflow oxygen lb/ac/ivld          for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+432   PWTGAS AODOXM      ADOX gw oxygen lb/ac/ivld                 for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+*** PQUAL
+142   PQUAL  SOQS   1    DNH3 adsorbed ammonium lb/ac/ivld         for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+144   PQUAL  SOQO   1    SNH3 surf solution ammonia lb/ac/ivld     for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+244   PQUAL  IOQUAL 1    INH3 infw solution ammonia lb/ac/ivld     for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+444   PQUAL  AOQUAL 1    ANH3 gw solution ammonia lb/ac/ivld       for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+    
+145   PQUAL  SOQO   2    SNO3 surf nitrate lb/ac/ivld              for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+245   PQUAL  IOQUAL 2    INO3 infw nitrate lb/ac/ivld              for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+445   PQUAL  AOQUAL 2    ANO3 gw nitrate lb/ac/ivld                for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+141   PQUAL  SOQS   3    DLON adsorbed labile organic N lb/ac/ivld for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+146   PQUAL  SOQO   3    SLON surf labile organic N lb/ac/ivld     for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+246   PQUAL  IOQUAL 3    ILON infw labile organic N lb/ac/ivld     for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+446   PQUAL  AOQUAL 3    ALON gw labile organic N lb/ac/ivld       for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+143   PQUAL  SOQS   4    DRON adsorbed refractory org N lb/ac/ivld for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+147   PQUAL  SOQO   4    SRON surf refractory organic N lb/ac/ivld for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+247   PQUAL  IOQUAL 4    IRON infw refractory organic N lb/ac/ivld for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+447   PQUAL  AOQUAL 4    ARON gw refractory organic N lb/ac/ivld   for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+152   PQUAL  SOQS   5    DPO4 adsorbed phosphate lb/ac/ivld        for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+153   PQUAL  SOQO   5    SPO4 surf phosphate lb/ac/ivld            for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+253   PQUAL  IOQUAL 5    IPO4 infw phosphate lb/ac/ivld            for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+453   PQUAL  AOQUAL 5    APO4 gw phosphate lb/ac/ivld              for pas npa alf hyw hyo nhy nal hom hwm nho nhi lwm nlo hvf urs trp rpd npd cpd rcn ccn rex nex cex
+
+end
+
+***********************************************************************************
+
+******** the pqual values 1-6 must match the iqual values in perlnd
+****** and also reflect the integers in the file
+******* ./pp/src/lib/inc/PIqual.inc
+
+

@@ -1,0 +1,43 @@
+1. Create the new directory structure:
+    > mkdir p5new
+  under p5new, create the directories
+	code
+	config
+	documentation
+	input
+	output
+	run
+	sumout
+	tmp
+   The CBP file storage system (as of 2009) is partitioned in to 'archive'
+    and 'nobackup' sections.  The non-reproducible information should be on
+    'archive' and the rest should be on 'nobackup'.  This can be done through
+    symbolic links so that it looks like a cohesive file system.  To implement
+    this, do the following:
+  Under /bluefish/archive/modeling/p5new/>
+  	md code config documentation input run sumout
+  Under /bluefish/nobackup/modeling/p5new/>
+ 	md output tmp
+  Back Under /bluefish/archive/modeling/p5new/>
+   	ln -s /bluefish/nobackup/modeling/p5new/output output
+   	ln -s /bluefish/nobackup/modeling/p5new/tmp tmp
+  Back Under /bluefish/nobackup/modeling/p5new/>
+	similar 'ln' statements for code config documentation input run sumout
+
+2. Copy the entire code, config, documentation, and run directories
+  ./p5old/code/> tar cf - . | (cd ../../p5new/code; tar xvf -)
+     etc, DO NOT use the 'cp' command as it may damage the system
+
+3. In the ./p5old/input/ directory:
+    Selectively copy the datasets you want.  Not all will be needed.
+    remember to use tar for the big data sets
+
+4. you may recompile all code using
+   ./p5new/code/src/compile_hspf_libs.csh
+   ./p5new/code/src/compile_all.csh
+ 	especially if transferring machines
+
+5. Make the rest of the directories using run/make_land_directories.csh
+
+6. Change ownership 
+

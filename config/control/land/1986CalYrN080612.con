@@ -1,0 +1,249 @@
+********** phase 5.3 calibration of hydrology
+
+**** start and end time, must have exactly two lines in this table
+TIME
+1984 01 01
+2005 12 31
+END TIME
+
+*** for land cover, use the four points available and interpolate between
+CROP COVER
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END CROP COVER
+
+DETS
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END DETS
+
+FERTILIZER
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END FERTILIZER
+
+MANURE
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END MANURE
+
+LEGUME
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END LEGUME
+
+TOTAL UPTAKE
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END TOTAL UPTAKE
+
+MONTHLY FRACTION UPTAKE
+year mo da <-file------------->***
+1997 07 01 1986CalYrN080612
+END MONTHLY FRACTION UPTAKE
+
+********** default crop data to be used
+******** if there are missing values for
+******** for a given land use, lseg, and data type
+******* for uptake, fertlizer, manure, legume, or crop cover
+DEFAULT CROPDATA
+year mo da <-file------------->***
+1992 07 01 FullCALIBN040611
+END DEFAULT CROPDATA
+
+SPECIAL ACTION FLAGS
+p532
+END SPECIAL ACTION FLAGS
+
+PRECIP ATMOS DEPOSITION
+p532_1986
+END PRECIP ATMOS DEPOSITION
+
+METEOROLOGY
+fjs8405xyz
+END METEOROLOGY
+
+PARAMETERS
+p532cal
+END PARAMETERS
+
+*** set of I/O specifications under ./catalog/iovars/
+IOVARS
+p532
+END IOVARS
+
+*** specifications that contain the total list of land and river
+*** segments and the connections between them
+GEOMETRY
+p532
+END GEOMETRY
+
+*** perlnd modules to turn on.  First line is pervious land uses, followed by active modules
+*** PQUAL land uses
+PER MODULES
+hvf urs trp rcn ccn rex nex cex 
+ATEMP
+SNOW
+PWATER
+SEDMNT
+PSTEMP
+PWTGAS
+PQUAL
+END PER MODULES
+
+****** AGCHEM land uses 
+PER MODULES
+hom nho hwm nhi lwm nlo alf nal
+ATEMP
+SNOW
+PWATER
+SEDMNT
+PSTEMP
+PWTGAS
+MSTLAY
+NITR
+PHOS
+END PER MODULES
+
+*** NITR/PQUAL land uses.  These land uses are a combination of 
+******** NITR and PQUAL, PQUAL is used for problem constituents
+***** all constituents are simulated for PQUAL, but only some are connected
+**** for pas npa hyo rpd npd and cpd use PQUAL for PO4
+PER MODULES
+for pas npa hyo rpd npd cpd 
+ATEMP
+SNOW
+PWATER
+SEDMNT
+PSTEMP
+PWTGAS
+MSTLAY
+NITR
+PQUAL
+END PER MODULES
+
+*** NITR/PQUAL land uses.  These land uses are a combination of 
+******** NITR and PQUAL, PQUAL is used for problem constituents
+***** all constituents are simulated for PQUAL, but only some are connected
+****  hyw and nhy use PQUAL for all N
+**** NITR must be active to simulate PHOS correctly
+PER MODULES
+hyw nhy 
+ATEMP
+SNOW
+PWATER
+SEDMNT
+PSTEMP
+PWTGAS
+MSTLAY
+NITR
+PHOS
+PQUAL
+END PER MODULES
+
+*** implnd modules.  First line is impervious land uses
+******* active modules on following lines
+IMP MODULES
+afo cfo rid nid cid
+ATEMP
+SNOW
+IWATER
+SOLIDS
+IWTGAS
+IQUAL
+END IMP MODULES
+
+*** calibration scenario reference for land P/I QUAL parameter modification
+CALIBSCEN
+p532cal_062211
+END CALIBSCEN
+
+****** pltgens for SEDMNT
+***PLTGEN
+***for hvf rpd npd cpd rcn ccn rex nex cex pas trp urs alf hyw hyo hom hwm lwm nhy npa nal nho nhi nlo
+***dets SEDMNT DETS 0 0 AVER MEAN -2 AVER daily_average_mass_det_storage_in_tons
+***for hvf rpd npd cpd rcn ccn rex nex cex pas trp urs alf hyw hyo hom hwm lwm nhy npa nal nho nhi nlo
+***wssd SEDMNT WSSD 0 0 SAME MEAN -2 SUM daily_washoff_in_tons
+***afo cfo rid nid cid
+***dets SOLIDS SLDS 0 0 AVER MEAN -2 AVER daily_average_mass_det_storage_in_tons
+***afo cfo rid nid cid
+***wssd SOLIDS SOSLD 0 0 SAME MEAN -2 SUM daily_washoff_in_tons
+***END PLTGEN
+
+********** pltgens for AGCHEM land uses
+***PLTGEN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***SNH4  NITR TSAMS 1 0 SAME MEAN -2 SUM su_solu_NH4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***INH4  NITR TSAMS 5 0 SAME MEAN -2 SUM infw_solu_NH4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***DNH4  NITR SEDN 2 0 SAME MEAN -2 SUM sed_NH4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***BNH4  NITR SSAMS 3 0 SAME MEAN -2 SUM gw_solu_NH4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***SNO3  NITR TSNO3 1 0 SAME MEAN -2 SUM su_NO3
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***INO3  NITR TSNO3 5 0 SAME MEAN -2 SUM infw_NO3
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***BNO3  NITR SSNO3 3 0 SAME MEAN -2 SUM gw_NO3
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***SLON  NITR TSSLN 1 0 SAME MEAN -2 SUM su_lab_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***ILON  NITR TSSLN 5 0 SAME MEAN -2 SUM infw_lab_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***DLON  NITR SEDN 1 0 SAME MEAN -2 SUM sed_lab_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***BLON  NITR SSSLN 3 0 SAME MEAN -2 SUM gw_lab_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***SRON  NITR TSSRN 1 0 SAME MEAN -2 SUM su_ref_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***IRON  NITR TSSRN 5 0 SAME MEAN -2 SUM infw_ref_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***DRON  NITR SEDN 3 0 SAME MEAN -2 SUM sed_ref_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***BRON  NITR SSSRN 3 0 SAME MEAN -2 SUM gw_ref_ORGN
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***SPO4  PHOS TSP4S 1 0 SAME MEAN -2 SUM su_solu_PO4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***IPO4  PHOS TSP4S 5 0 SAME MEAN -2 SUM infw_solu_PO4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***DPO4  PHOS SEDP 2 0 SAME MEAN -2 SUM adsop_PO4
+***alf hyw hyo hom hwm lwm pas nhy npa nal nho nhi nlo
+***BPO4  PHOS SSP4S 3 0 SAME MEAN -2 SUM gw_solu_PO4
+***END PLTGEN
+
+********** pltgens for AGCHEM/PQUAL land uses when calibrating AGCHEM
+***PLTGEN
+***for rpd npd cpd
+***SNH4  NITR TSAMS 1 0 SAME MEAN -2 SUM su_solu_NH4
+***for rpd npd cpd
+***INH4  NITR TSAMS 5 0 SAME MEAN -2 SUM infw_solu_NH4
+***for rpd npd cpd
+***DNH4  NITR SEDN 2 0 SAME MEAN -2 SUM sed_NH4
+***for rpd npd cpd
+***BNH4  NITR SSAMS 3 0 SAME MEAN -2 SUM gw_solu_NH4
+***for rpd npd cpd
+***SNO3  NITR TSNO3 1 0 SAME MEAN -2 SUM su_NO3
+***for rpd npd cpd
+***INO3  NITR TSNO3 5 0 SAME MEAN -2 SUM infw_NO3
+***for rpd npd cpd
+***BNO3  NITR SSNO3 3 0 SAME MEAN -2 SUM gw_NO3
+***for rpd npd cpd
+***SLON  NITR TSSLN 1 0 SAME MEAN -2 SUM su_lab_ORGN
+***for rpd npd cpd
+***ILON  NITR TSSLN 5 0 SAME MEAN -2 SUM infw_lab_ORGN
+***for rpd npd cpd
+***DLON  NITR SEDN 1 0 SAME MEAN -2 SUM sed_lab_ORGN
+***for rpd npd cpd
+***BLON  NITR SSSLN 3 0 SAME MEAN -2 SUM gw_lab_ORGN
+***for rpd npd cpd
+***SRON  NITR TSSRN 1 0 SAME MEAN -2 SUM su_ref_ORGN
+***for rpd npd cpd
+***IRON  NITR TSSRN 5 0 SAME MEAN -2 SUM infw_ref_ORGN
+***for rpd npd cpd
+***DRON  NITR SEDN 3 0 SAME MEAN -2 SUM sed_ref_ORGN
+***for rpd npd cpd
+***BRON  NITR SSSRN 3 0 SAME MEAN -2 SUM gw_ref_ORGN
+***END PLTGEN
+***
+end

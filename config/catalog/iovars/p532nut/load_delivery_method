@@ -1,0 +1,18 @@
+LOAD method ***
+FLOW seg
+HEAT seg
+NH3X seg
+NO23 seg
+ORGN seg
+TOTN seg
+PO4X res
+ORGP res
+TOTP res
+TSSX res
+ORGC res
+TSED res
+end
+
+**********  the loads in column 1 of this file must match exactly with the 
+******* load names in column 1 of the rchres_out_to_loads file
+

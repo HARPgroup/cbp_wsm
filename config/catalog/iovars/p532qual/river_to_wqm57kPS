@@ -1,0 +1,84 @@
+WQM57K | WQunit | RVAR | WSunit | factor   | divide by | ***
+flow   | cms    | WATR | acft/hr| 0.01428  |      |
+
+doxx   | kg/d   | DOXY | lb/hr  | 0.45359  |      |
+
+bodx   | kg/d   | BODA | lb/hr  | 0.45359  |      |
+
+nh4x   | kg/d   | NH3D | lb/hr  | 0.45359  |      |
+
+no3x   | kg/d   | NO3D | lb/hr  | 0.45359  |      |
+
+orgn   | kg/d   | RORN | lb/hr  | 0.45359  |      |
+orgn   | kg/d   | BODA | lb/hr  | 0.01977  |      |
+
+orgp   | kg/d   | RORP | lb/hr  | 0.45359  |      |
+orgp   | kg/d   | BODA | lb/hr  | 0.002736 |      |
+
+po4x   | kg/d   | PO4D | lb/hr  | 0.45359  |      |
+
+totn   | kg/d   | NO3D | lb/hr  | 0.45359  |      |
+totn   | kg/d   | NH3D | lb/hr  | 0.45359  |      |
+totn   | kg/d   | RORN | lb/hr  | 0.45359  |      |
+totn   | kg/d   | BODA | lb/hr  | 0.01977  |      |
+
+totp   | kg/d   | PO4D | lb/hr  | 0.45359  |      |
+totp   | kg/d   | RORP | lb/hr  | 0.45359  |      |
+totp   | kg/d   | BODA | lb/hr  | 0.002736 |      |
+
+tssx   | kg/d   | SAND | lb/hr  | 907.180  |      |
+tssx   | kg/d   | SILT | lb/hr  | 907.180  |      |
+tssx   | kg/d   | CLAY | lb/hr  | 907.180  |      |
+end
+
+COMMENTS:
+
+**   1 lb/day = .45359 kg/day
+**   1 ton/day = 907.18 kg/day
+******* wdms have loads in lb/hour, but hours are added in the program so total loads are by day
+
+**   1 acft/day = 0.01428 cms
+
+**   BPCNTC = percentage of biomass which is carbon = 49
+**   CVBPC  = factor to convert P to C              = 106 mols/mol
+**   CVBPN  = factor to convert P to N              = 16  mols/mol
+**   CVBO   = factor to convert biomass to oxygen   = 1.98
+**   RATCLP = ratio of chla to P in phytoplankton   = 0.6
+
+**   BOD to carbon           = BODA / CVBO * BPCNTC/100                                          = 0.2475   * .45359 = 0.1123
+**   BOD to P                = BODA / CVBO * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC         = 0.00603  * .45359 = 0.002736
+**   BOD to N                = BODA / CVBO * BPCNTC/100 * (14/12 gN/gC per mole) / CVBPC * CVBPN = 0.0436   * .45359 = 0.01977
+ 
+**   phytoplankton to carbon = PHYT * BPCNTC/100                                                 = 0.49     * .45359 = 0.2223
+**   phytoplankton to P      = PHYT * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC                = 0.0119   * .45359 = 0.005417
+**   phytoplankton to N      = PHYT * BPCNTC/100 * (14/12 gN/gC per mole) / CVBPC * CVBPN        = 0.0863   * .45359 = 0.03914
+
+**   phytoplankton to chla   = PHYT * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC * RATCLP *1000 = 7.165    * 0.3677 = 2.635
+
+
+** DO, Temperature, and chlorophyll are given in concentration rather
+**  than load through special treatment in the loading program
+****** to calculate concentrations, divide load by flow
+******* there must be a variable called 'flow' in this file
+**
+**           M  ( lb/ivld )  (  m^3   ) (453590 mg) (  ivld   )
+**   [c] =  ---  ---------    --------   ---------   ---------   =  M/Q * 0.1260  ( mg/l )
+**           Q  ( m^3/sec )  ( 1000 l ) (    lb   ) (3600 sec )
+***
+**
+**      sand, silt, clay gets multiplied by 2000 for a factor of 735.4
+**
+****  to calculate temperature, get heat relative to freezing, divide by mass and specific heat
+**            q
+**  T (c) = -----
+**           M C
+**
+*****                          q (btu/ivld)
+**       T(c) = ------------------------------------------------------------------------
+**              (Q m^3) (1000 l) (3600 sec) (1000 g) ( 1 cal ) (0.003968 btu)
+**              (-----) (------) (--------) (------) (-------) (------------)
+**              ( sec ) ( m^3  ) ( ivld   ) (   l  ) ( g c   ) (   cal      )
+**
+**
+**       T(c) = q/Q * 7.000e-8
+**

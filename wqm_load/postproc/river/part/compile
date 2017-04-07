@@ -1,6 +1,0 @@
-#!/bin/csh
-set FC = $argv[1]
-$FC -o ../../../../bin/part_observed.exe part_observed.f ../../../lib/util_lib.a
-$FC -o ../../../../bin/part_daily_simulated.exe part_daily_simulated.f ../../../lib/util_lib.a
-$FC -c part_sub.f
-

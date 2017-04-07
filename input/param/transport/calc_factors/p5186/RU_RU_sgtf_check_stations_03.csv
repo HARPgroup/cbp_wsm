@@ -1,0 +1,26 @@
+ STATION RU5_6030_0001 for TOTN
+   upstream segment RU5_6030_0001 RU5_6030_0001 TOTN
+   upstream segment RU4_5640_6030 RU5_6030_0001 TOTN
+   upstream segment RU4_6040_6030 RU5_6030_0001 TOTN
+   upstream segment RU2_5220_5640 RU5_6030_0001 TOTN
+   upstream segment RU3_5610_5640 RU5_6030_0001 TOTN
+   upstream segment RU3_6170_6040 RU5_6030_0001 TOTN
+   upstream segment RU2_5500_5610 RU5_6030_0001 TOTN
+   upstream segment RU2_5810_5610 RU5_6030_0001 TOTN
+   upstream segment RU2_6200_6170 RU5_6030_0001 TOTN
+   upstream segment RU2_6220_6170 RU5_6030_0001 TOTN
+   upstream segment RU2_5940_6200 RU5_6030_0001 TOTN
+   upstream segment RU2_6090_6220 RU5_6030_0001 TOTN
+ STATION RU5_6030_0001 for TOTP
+   upstream segment RU5_6030_0001 RU5_6030_0001 TOTP
+   upstream segment RU4_5640_6030 RU5_6030_0001 TOTP
+   upstream segment RU4_6040_6030 RU5_6030_0001 TOTP
+   upstream segment RU2_5220_5640 RU5_6030_0001 TOTP
+   upstream segment RU3_5610_5640 RU5_6030_0001 TOTP
+   upstream segment RU3_6170_6040 RU5_6030_0001 TOTP
+   upstream segment RU2_5500_5610 RU5_6030_0001 TOTP
+   upstream segment RU2_5810_5610 RU5_6030_0001 TOTP
+   upstream segment RU2_6200_6170 RU5_6030_0001 TOTP
+   upstream segment RU2_6220_6170 RU5_6030_0001 TOTP
+   upstream segment RU2_5940_6200 RU5_6030_0001 TOTP
+   upstream segment RU2_6090_6220 RU5_6030_0001 TOTP

@@ -1,0 +1,75 @@
+PLOT UNIT NORM  CONS CON1 FACTOR1  CON2 FACTOR2  CON3 FACTOR3  CON4 FACTOR4  CON5 FACTOR5  CON6 FACTOR6  CON7 FACTOR7  CON8 FACTOR8
+FLOW cfs  1     1    WATR 12.10      
+WTMP dg C WATR  1    HEAT 2.043e-7
+DOXX mg/l WATR  1    DOXY 0.3677
+NH3X mg/l WATR  4    NH3D 0.3677   NH3A 0.3677   NH3I 0.3677   NH3C 0.3677   
+NO3X mg/l WATR  1    NO3D 0.3677
+ORGN mg/l WATR  3    RORN 0.3677   BODA 0.01602  PHYT 0.03173   
+TOTN mg/l WATR  8    NH3D 0.3677   NH3A 0.3677   NH3I 0.3677   NH3C 0.3677   NO3D 0.3677   RORN 0.3677   BODA 0.01602  PHYT 0.03173  
+PO4X mg/l WATR  1    PO4D 0.3677   
+ORGP mg/l WATR  6    PO4A 0.3677   PO4I 0.3677   PO4C 0.3677   RORP 0.3677   BODA 0.002218 PHYT 0.004391
+TOTP mg/l WATR  7    PO4D 0.3677   PO4A 0.3677   PO4I 0.3677   PO4C 0.3677   RORP 0.3677   BODA 0.002218 PHYT 0.004391
+TSSX mg/l WATR  4    SAND 735.4    SILT 735.4    CLAY 735.4    PHYT 0.3677
+TOCX mg/l WATR  3    TORC 0.3677   BODA 0.09099  PHYT 0.1802
+CHLA ug/l WATR  1    PHYT 2.635
+
+end
+
+orgP mg/l WATR  3    RORN 0.3677   BODA 0.01602  PHYT 0.03137  
+orgB mg/l WATR  1    BODA 0.01602
+orgR mg/l WATR  1    RORN 0.3677
+
+***********************************************************************************************************************************************
+** DERIVATION OF THE ABOVE FACTORS                                                                                                           **
+***********************************************************************************************************************************************
+**
+**    to change acft/ivld to cfs
+**
+**     ac-ft (  hr  ) (43560 ft^2)
+**     -----  -----    ----------  = 12.10 cfs / acft/hr
+**       hr  (3600 s) (    ac    )
+**
+**
+****** to calculate concentrations, divide load by flow
+**
+**           M  ( lb/ivld )  (   ac     ) (453590 mg) (  ft^3  )
+**   [c] =  ---  ---------    ----------   ---------   --------    =  M/Q * 0.3677  ( mg/l )
+**           Q  (acft/ivld)  (43560 ft^2) (    lb   ) (28.32 l )
+***
+**
+**      sand, silt, clay gets multiplied by 2000 for a factor of 735.4
+**
+****  to calculate temperature, get heat relative to freezing, divide by mass and specific heat
+**            q
+**  T (c) = -----
+**           M C
+**
+*****                          q (btu/ivld)
+**       T(c) = ------------------------------------------------------------------------
+**              (Q acft) (43560 ft^2) (28.32 l) (1000 g) ( 1 cal ) (0.003968 btu)
+**              (------) (----------) (-------) (------) (-------) (------------)
+**              ( ivld ) (   ac     ) ( ft^3  ) (   l  ) ( g c   ) (   cal      )
+**
+**
+**       T(c) = q/Q * 2.043e-7
+**
+*********   Algae, BOD, etc computations
+**
+**   BPCNTC = percentage of biomass which is carbon = 49
+**   CVBPC  = factor to convert P to C              = 106 mols/mol
+**   CVBPN  = factor to convert P to N              = 16  mols/mol
+**   CVBO   = factor to convert biomass to oxygen   = 1.98
+**   RATCLP = ratio of chla to P in phytoplankton   = 0.6
+**
+**   phytoplankton to carbon = PHYT * BPCNTC/100                                                 = 0.49     * 0.3677 = 0.1802
+**   phytoplankton to P      = PHYT * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC                = 0.0119   * 0.3677 = 0.004391
+**   phytoplankton to N      = PHYT * BPCNTC/100 * (14/12 gN/gC per mole) / CVBPC * CVBPN        = 0.0863   * 0.3677 = 0.03173
+**   phytoplankton to chla   = PHYT * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC * RATCLP *1000 = 7.165    * 0.3677 = 2.635
+**   BOD to carbon           = BODA / CVBO * BPCNTC/100                                          = 0.2475   * 0.3677 = 0.09099
+**   BOD to P                = BODA / CVBO * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC         = 0.00603  * 0.3677 = 0.002218
+**   BOD to N                = BODA / CVBO * BPCNTC/100 * (14/12 gN/gC per mole) / CVBPC * CVBPN = 0.0436   * 0.3677 = 0.01602
+**
+*****       
+************************************************************************
+
+

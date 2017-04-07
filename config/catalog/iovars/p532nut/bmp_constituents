@@ -1,0 +1,10 @@
+flo
+sed
+tn
+tp
+bod
+
+******************
+*** this file lists the types of bmps that can be specified
+*****  each type called for in the bmp specification files must
+*****  be listed here and also match the association in rchres_in

@@ -1,0 +1,29 @@
+MODULE | -RIVER VAR | - PS   VAR |  FACTOR  | 
+-NAME- | ID#   NAME | ID#   NAME
+HYDR   | 11    WATR | 3000  FLOW |          |
+
+HTRCH  | 12    HEAT | 3001  HEAT |          |
+
+OXRX   | 13    DOXY | 3023  DOXX |          | 
+OXRX   | 51    BODA | 3021  BODX |          | 
+
+SEDTRN | 23    CLAY | 3022  TSSX |  0.0005  | 
+
+NUTRX  | 31    NO3D | 3003  NO3X |          |
+NUTRX  | 32    NH3D | 3002  NH3X |          |
+NUTRX  | 41    PO4D | 3005  PO4X |          |
+
+PLANK  | 36    RORN | 3004  ORNX |          |
+PLANK  | 45    RORP | 3006  ORPX |          |
+PLANK  | 52    TORC | 3024  TOCX |          | 
+
+end
+
+COMMENTS:
+
+point sources in wdms are in HSPF-type units.  No factors necessary
+
+in the programs that create the wdms and data files, the TSS is reduced
+  by the fraction of BOD assumed to be biomass or 0.505
+The PSWQ was clear that a good portion of the measured TSS is VSS
+  and so we subtract the VSS from TSS before putting it in as clay

@@ -1,0 +1,23 @@
+#!/bin/csh
+
+  if (${#argv} != 1) then
+    echo ' '
+    echo 'usage:  compile calib_scenario '
+    echo ' '
+    exit
+  endif
+
+set calscen = $argv[1]
+set usrdir = ../../../../../../code/src/lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -c main.f
+f77 -c findupstream.f
+f77 -c get_area_percents.f
+f77 -c getlandtoriver.f
+
+
+f77 -o ../../../../../../code/bin/make_PSTEMP_weights_${calscen}.exe main.o findupstream.o get_area_percents.o getlandtoriver.o $usrlib
+
+rm *.o
+

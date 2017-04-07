@@ -1,0 +1,13 @@
+catname (a20),number of land uses, lu1, lu2, etc  ***,,,,,,,,,,,,,,,,
+forest,2,for,hvf,,,,,,,,,,,,,,,,,
+urban,4,imh,iml,puh,pul,,,,,,,,,,,,,,,
+Impervious_Urban,2,imh,iml,,,,,,,,,,,,,,,,,
+Pervious_Urban,2,puh,pul,,,,,,,,,,,,,,,,,
+crop,6,hom,hwm,lwm,nhi,nho,nlo,,,,,,,,,,,,,
+allhay,5,nal,alf,hyo,hyw,nhy,,,,,,,,,,,,,,
+crophay,11,hom,hwm,lwm,nhi,nho,nlo,nal,alf,hyo,hyw,nhy,,,,,,,,
+pasture,2,npa,pas,,,,,,,,,,,,,,,,,
+Hi_Till,4,hom,hwm,nhi,nho,,,,,,,,,,,,,,,
+Low_Till,2,lwm,nlo,,,,,,,,,,,,,,,,,
+ag,13,hom,hwm,lwm,nhi,nho,nlo,nal,alf,hyo,hyw,nhy,npa,pas,,,,,,
+nonurban,19,afo,hom,hwm,lwm,nhi,nho,nlo,nal,alf,hyo,hyw,nhy,npa,pas,trp,urs,for,hvf,ext

@@ -1,0 +1,11 @@
+sbatch run_postproc_WQ_cal.csh PM Pest WQ Pest 1985 2005
+sbatch run_postproc_WQ_cal.csh SW SW WQ SW 1985 2005
+sbatch run_postproc_WQ_cal.csh SU SU WQ SU 1985 2005
+sbatch run_postproc_WQ_cal.csh SJ SJ WQ SJ 1985 2005
+sbatch run_postproc_WQ_cal.csh JL JL WQ JLcal 1985 2005
+sbatch run_postproc_WQ_cal.csh CP CP WQ CPcal 1985 2005
+sbatch run_postproc_WQ_cal.csh RU RU WQ RU 1985 2005
+sbatch run_postproc_WQ_cal.csh JA JA WQ JA 1985 2005
+sbatch run_postproc_WQ_cal.csh YP YP WQ YPcal 1985 2005
+sbatch run_postproc_WQ_cal.csh XU XU WQ XU 1985 2005
+sbatch run_postproc_WQ_cal.csh GY GY WQ GYcal 1985 2005

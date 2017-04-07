@@ -1,0 +1,3 @@
+g/mkdir \.\.\//s//mkdir -p \.\.\/
+w
+q

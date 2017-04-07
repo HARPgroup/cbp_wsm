@@ -1,0 +1,10 @@
+This dataset, fjs8405xyz
+ was created by mbarnes
+ 
+ on
+Wed Apr 13 19:12:40 EDT 2011
+ 
+ by starting with the wdms in f8405xyz
+ and modifying the temperature between the 1/18/1996 and 1/21/1996 
+Using the code
+../../..//code/bin/modify_jan96_storm_temperature

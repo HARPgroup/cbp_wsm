@@ -1,0 +1,9 @@
+V = variable cover in sediment                                     
+P = plowing                                                        
+F = fertilizer                                                     
+M = manure                                                         
+L = fixation for legumes                                           
+T = variable total annual uptake target                            
+U = variable monthly fraction of uptake target                     
+R= removal of refractory organic N to simulate harvest            
+

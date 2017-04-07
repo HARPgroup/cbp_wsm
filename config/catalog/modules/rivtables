@@ -1,0 +1,125 @@
+HYDR
+  HYDR-PARM2       6f10
+    RCHRES                                                             ***
+  V # -  #    FTABNO       LEN     DELTH     STCOR        KS      DB50 ***
+  HYDR-INIT         unique
+    RCHRES  Initial conditions for HYDR section     ***
+    # -  #       VOL       Initial value of COLIND  ***  Initial value of OUTDGT
+             (ac-ft)       for each  possible exit  ***  for each  possible exit
+  V              VOL      CEX1 CEX2 CEX3 CEX4 CEX5  *** DEX1 DEX2 DEX3 DEX4 DEX5
+END HYDR
+ADCALC
+  ADCALC-DATA      2f10
+    RCHRES  Data for section ADCALC ***
+  V # -  #     CRRAT       VOL      *** 
+END ADCALC
+HTRCH
+  HT-BED-FLAGS     3i5
+  V #    # BDFG TGFG TSTP ***
+  HEAT-PARM        6f10
+  V # -  #      ELEV     ELDAT    CFSAEX    KATRAD     KCOND     KEVAP ***
+  MON-HT-TGRND    12f5
+  V #    #  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC***
+  HEAT-INIT        2f10
+  V # -  #        TW    AIRTMP ***
+END HTRCH
+SEDTRN
+  SANDFG           1i5
+  V # -  #SNDFG ***
+  SED-GENPARM      3f10
+  V RCHRES    BEDWID    BEDWRN       POR ***
+    # -  #      (ft)      (ft)       (-) ***
+  SAND-PM          5f10
+  V RCHRES         D         W       RHO     KSAND    EXPSND ***
+    # -  #      (in)    (in/s)   (g/cm3)                     ***
+  SILT-CLAY-PM#1   6f10
+  V RCHRES        SD        SW      SRHO    STAUCD    STAUCS        SM ***
+    # -  #      (in)    (in/s)   (g/cm3)                               ***
+  SILT-CLAY-PM#2   6f10
+  V RCHRES        CD        CW      CRHO    CTAUCD    CTAUCS        CM ***
+    # -  #      (in)    (in/s)   (g/cm3)                               ***
+  SSED-INIT        3f10
+    RCHRES     Suspended sed concs (mg/l) ***
+  V # -  #      SAND      SILT      CLAY  ***
+  BED-INIT         4f10
+    RCHRES      (ft)  Initial bed composition      ***
+  V # -  #    BEDDEP      SAND      SILT      CLAY ***
+END SEDTRN
+RQUAL
+  BENTH-FLAG       1i5
+  V # -  # BENF ***
+  SCOUR-PARMS      2f10
+  V RCHRES    SCRVEL    SCRMUL ***
+    # -  #    ft/sec           ***
+END RQUAL
+OXRX
+  OX-FLAGS         1i5
+  V RCHRES REAM ***
+  OX-GENPARM       4f10
+  V RCHRES    KBOD20     TCBOD    KODSET    SUPSAT ***
+  OX-BENPARM       6f10
+  V RCHRES     BENOD     TCBEN     EXPOD    BRBOD1    BRBOD2    EXPREL  ***
+  OX-CFOREA        1f10
+  V RCHRES    CFOREA ***
+  OX-REAPARM       4f10
+  V RCHRES    TCGINV      REAK    EXPRED    EXPREV ***
+  OX-INIT          3f10
+  V RCHRES       DOX       BOD     SATDO ***
+    # -  #      mg/l      mg/l      mg/l ***
+END OXRX
+NUTRX
+  NUT-FLAGS        8i5
+  V RCHRES  TAM  NO2  PO4  AMV  DEN ADNH ADPO PHFG ***
+  NUT-AD-FLAGS      unique
+    RCHRES   Atmospheric Deposition Flags ***
+    <PLS >   NO3    NH3    PO4    ***
+  V # -  # NOFNOC NHFNHC POFPOC   ***
+  CONV-VAL1        4f10
+  V RCHRES      CVBO     CVBPC     CVBPN    BPCNTC ***
+    # -  #     mg/mg  mols/mol  mols/mol           ***
+  NUT-BENPARM      5f10
+  V RCHRES    BRTAM1    BRTAM2    BRPO41    BRPO42     ANAER ***
+    # -  #  mg/m2.hr  mg/m2.hr  mg/m2.hr  mg/m2.hr      mg/l ***
+  NUT-NITDENIT     6f10
+  V RCHRES    KTAM20    KNO220     TCNIT    KNO320     TCDEN    DENOXT ***
+    # -  #       /hr       /hr                 /hr                mg/l ***
+  NUT-NH3VOLAT     2f10
+  V RCHRES    EXPNVG    EXPNVL ***
+  NUT-BEDCONC      6f10
+    RCHRES       Bed concentrations of NH4 & PO4 (mg/kg)               ***
+  V # -  #  NH4-sand  NH4-silt  NH4-clay  PO4-sand  PO4-silt  PO4-clay ***
+  NUT-ADSPARM      6f10
+    RCHRES       Partition coefficients for NH4 AND PO4  (ml/g)        ***
+  V # -  #  NH4-sand  NH4-silt  NH4-clay  PO4-sand  PO4-silt  PO4-clay ***
+  NUT-DINIT        5f10
+  V RCHRES       NO3       TAM       NO2       PO4        PH ***
+    # -  #      mg/l      mg/l      mg/l      mg/l           ***
+  NUT-ADSINIT      6f10
+    RCHRES        Initial suspended NH4 and PO4 concentrations (mg/kg) ***
+  V # -  #  NH4-sand  NH4-silt  NH4-clay  PO4-sand  PO4-silt  PO4-clay ***
+END NUTRX
+PLANK
+  PLNK-FLAGS       8i5
+  V RCHRES PHYF ZOOF BALF SDLT AMRF DECF NSFG ZFOO ***
+  PLK-AD-FLAGS      unique
+    RCHRES   Atmospheric Deposition Flags ***
+    <PLS >   ORN    ORP    ORC    ***
+  V # -  # ONFONC OPFOPC OCFOCC   ***
+  PLNK-PARM1       6f10
+  V RCHRES    RATCLP    NONREF    LITSED     ALNPR      EXTB     MALGR ***
+  PLNK-PARM2       7f10
+  V ***RES     CMMLT      CMMN     CMMNP      CMMP    TALGRH    TALGRL    TALGRM
+    # -  # ***ly/min      mg/l      mg/l      mg/l     deg F     deg F     deg F
+  PLNK-PARM3       6f10
+  V RCHRES     ALR20      ALDH      ALDL     OXALD     NALDH     PALDH ***
+    # -  #       /hr       /hr       /hr       /hr      mg/l      mg/l ***
+  PHYTO-PARM       6f10
+  V RCHRES      SEED    MXSTAY      OREF    CLALDH    PHYSET    REFSET ***
+    # -  #      mg/l      mg/l                ug/l                     ***
+  BENAL-PARM       3f10
+  V RCHRES      MBAL    CFBALR    CFBALG*** 
+  PLNK-INIT        6f10
+  V RCHRES     PHYTO       ZOO     BENAL       ORN       ORP       ORC ***
+    # -  #      mg/l     org/l     mg/m2      mg/l      mg/l      mg/l ***
+END PLANK
+end

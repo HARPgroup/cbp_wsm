@@ -1,0 +1,22 @@
+ STATION XU2_4330_4480 for TOTN
+   upstream segment XU2_4330_4480 XU2_4330_4480 TOTN
+   upstream segment XU2_4070_4330 XU2_4330_4480 TOTN
+   upstream segment XU0_4130_4070 XU2_4330_4480 TOTN
+ STATION XU3_4650_0001 for TOTN
+   upstream segment XU3_4650_0001 XU3_4650_0001 TOTN
+   upstream segment XU2_4270_4650 XU3_4650_0001 TOTN
+   upstream segment XU2_4480_4650 XU3_4650_0001 TOTN
+   upstream segment XU0_4090_4270 XU3_4650_0001 TOTN
+   upstream segment XU0_4091_4270 XU3_4650_0001 TOTN
+     upstream station XU2_4330_4480 XU3_4650_0001 TOTN
+ STATION XU2_4330_4480 for TOTP
+   upstream segment XU2_4330_4480 XU2_4330_4480 TOTP
+   upstream segment XU2_4070_4330 XU2_4330_4480 TOTP
+   upstream segment XU0_4130_4070 XU2_4330_4480 TOTP
+ STATION XU3_4650_0001 for TOTP
+   upstream segment XU3_4650_0001 XU3_4650_0001 TOTP
+   upstream segment XU2_4270_4650 XU3_4650_0001 TOTP
+   upstream segment XU2_4480_4650 XU3_4650_0001 TOTP
+   upstream segment XU0_4090_4270 XU3_4650_0001 TOTP
+   upstream segment XU0_4091_4270 XU3_4650_0001 TOTP
+     upstream station XU2_4330_4480 XU3_4650_0001 TOTP

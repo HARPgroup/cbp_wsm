@@ -1,0 +1,45 @@
+#
+# echo app,rchand,oxrx,"ox-reaparm",reak,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,oxrx,"ox-cforea",cforea,r,m,1.5 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,oxrx,"ox-benparm",benod,r,m,.5 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo app,rchand,SEDTRN,"SILT-CLAY-PM#1",staucs,r,p,100 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,SEDTRN,"SILT-CLAY-PM#1",staucd,r,p,100 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,SEDTRN,"SILT-CLAY-PM#2",ctaucs,r,p,98 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,SEDTRN,"SILT-CLAY-PM#2",ctaucd,r,p,98 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,SEDTRN,"SILT-CLAY-PM#1",sm,r,e,.1 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,SEDTRN,"SILT-CLAY-PM#2",cm,r,e,.1 | ../pp/bin/Rchange_params_one_line.exe
+ echo app,rchand,SEDTRN,"SILT-CLAY-PM#1",sw,r,e,.005   | ../pp/bin/Rchange_params_one_line.exe
+ echo app,rchand,SEDTRN,"SILT-CLAY-PM#2",cw,r,e,.0005  | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,sedtrn,"sand-pm",ksand,r,e,.0001 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,sedtrn,"sand-pm",expsnd,r,e,4 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo app,rchand,plank,"plnk-parm1",malgr,r,e,.1 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,plank,"phyto-parm",physet,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,plank,"plnk-parm3",aldh,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,plank,"plnk-parm3",aldl,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,plank,"plnk-parm3",alr20,r,m,2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,plank,"benal-parm",cfbalg,r,a,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,plank,"benal-parm",cfbalr,r,a,.1 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo app,rchand,plank,"phyto-parm",refset,r,m,.3 | ../pp/bin/Rchange_params_one_line.exe
+
+# echo app,rchand,nutrx,"nut-nitdenit",kno320,r,e,.001 | ../pp/bin/Rchange_params_one_line.exe
+ echo app,rchand,nutrx,"nut-nitdenit",ktam20,r,m,.3 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-nitdenit",denoxt,r,e,20 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-adsparm",po4-sand,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-adsparm",po4-silt,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-adsparm",po4-clay,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-adsparm",nh4-sand,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-adsparm",nh4-silt,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-adsparm",nh4-clay,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-bedconc",po4-sand,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-bedconc",po4-silt,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-bedconc",po4-clay,r,m,.2 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-bedconc",nh4-sand,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-bedconc",nh4-silt,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-bedconc",nh4-clay,r,m,10 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-benparm",brtam1,r,m,3 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-benparm",brtam2,r,m,3 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-benparm",brpo41,r,m,.4 | ../pp/bin/Rchange_params_one_line.exe
+# echo app,rchand,nutrx,"nut-benparm",brpo42,r,m,.4 | ../pp/bin/Rchange_params_one_line.exe

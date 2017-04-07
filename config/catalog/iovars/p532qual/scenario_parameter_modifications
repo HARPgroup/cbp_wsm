@@ -1,0 +1,26 @@
+MODULE | TABLE        |    VARIABLE  | LOAD ***
+NUTRX   NUT-BENPARM    BRTAM1         TOTN
+NUTRX   NUT-BENPARM    BRTAM2         TOTN
+NUTRX   NUT-BENPARM    BRPO41         TOTP
+NUTRX   NUT-BENPARM    BRPO42         TOTP
+NUTRX   NUT-BENPARM    BRPO42         TOTP
+NUTRX   NUT-BEDCONC    NH4-sand       TOTN
+NUTRX   NUT-BEDCONC    NH4-silt       TOTN
+NUTRX   NUT-BEDCONC    NH4-clay       TOTN
+NUTRX   NUT-BEDCONC    PO4-sand       TOTP
+NUTRX   NUT-BEDCONC    PO4-silt       TOTP
+NUTRX   NUT-BEDCONC    PO4-clay       TOTP
+SEDTRN  SILT-CLAY-PM#1 SM             TSSX
+SEDTRN  SILT-CLAY-PM#2 CM             TSSX
+end
+
+****************************** EXPLANATION OF THIS FILE ****************
+** Certain river parameters are adjusted based on the change in total **
+**   inputs to the river between the calibration and a scenario       **
+**                                                                    **
+** This table lists the parameters that change in response to changes **
+**   in the listed loads                                              **
+**                                                                    **
+** The loads in the final column of this table must be listed in the  **
+**   first column of the rchres_out_to_load file in this directory    **
+************************************************************************

@@ -1,0 +1,27 @@
+*** Targets used in the calibration
+TARGET
+p53
+END TARGET
+
+*** Constituents with targets to be calibrated 
+CONSTITUENTS
+SPO4
+BPO4
+END CONSTITUENTS
+
+PLTGEN
+SPO4
+IPO4
+DPO4
+BPO4
+END PLTGEN
+
+*** min and max allowed by user, min and max allowed by HSPF
+LIMITS
+KIMP,  0.0001,    5.0,   0.0,  1.0E20
+KMP,   0.0001,    1.0,   0.0,  1.0E20
+XFIX,    0.01,   100.,   0.0,  1.0E20
+K1,      0.01,   100.,   0.0,  1.0E20
+END LIMITS
+
+end

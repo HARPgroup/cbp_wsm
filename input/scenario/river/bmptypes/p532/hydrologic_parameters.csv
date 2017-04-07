@@ -1,0 +1,4 @@
+BMP,Shortname,Landuse_Type,HGMR,Const,hydtype,hydparm1,hydparm2,hydparm3 ***
+all,all,all,all,all,1,5,17,0.2
+Barnyard Runoff Control,BarnRunoffCont,afo,all,all,1,25,32,0.2
+Loafing Lot Management,LoafLot,afo,all,all,1,25,32,0.2

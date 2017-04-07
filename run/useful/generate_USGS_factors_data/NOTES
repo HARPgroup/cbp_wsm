@@ -1,0 +1,45 @@
+to generate the input for the USGS FAT report:
+
+  1.  Select the scenario.  You can use a real scenario or a dummy
+      one if the real one is currently in use.  You'll be generating
+      a lot of files in the output/input directory, which you may
+      want to delete and you'll be changing the dates in the land
+      control file, which may be in use.
+
+  2.  Get the segment lists.  The script all_basingen.csh should
+      work just fine.  You may have to edit the script if there
+      are changes in the basins.
+  2a. For confluence stations (DSID=0003), edit the files to remove
+      the downstream segment and change the name to *_0003.riv
+                rename.csh PM4_4040_4410 PM4_4040_0003
+                rename.csh SJ6_2130_2050 SJ6_2130_0003
+                rename.csh SW7_1640_1680 SW7_1640_0003
+                rename.csh YM4_6620_0001 YM4_6620_0003
+      Edit the new .riv files and remove the last segment
+  2b. If the allFAT.land files does not exist or is out of date, 
+      generate it by sticking together all of the recently-generated
+      .land files.  You can do this using the add script in the 
+      seglists directory or in a spreadsheet
+  2c. Remove extra .land and .calib seglists to keep the directory
+      under control.  Use the remove_extra_seglist_files.csh
+
+  3.  Generate all of the input files in 
+      ./output/input/$scenario/  
+      Use the script generate_all_inputs.csh
+      Check the script to make sure that the scenario is correct.
+      Check the control file to make sure that it starts and ends
+      in 1985.  This may take most of a day.
+
+  4.  Generate all of the summaries in ./output/basin/$scenario/
+      run the allyear_allbasin_summaries.csh, which calls
+      allbasin_annual_summaries.csh for each year
+
+  5.  Now generate the point source and septic, create the allFAT.riv
+      using the add script in ./run/seglists
+
+  6.  Generate the point source and septic files with the script
+      generate_pssep.csh
+
+  7.  Generate all of the pssep in ./output/basin/$scenario/
+      run the allyear_allbasin_pssep.csh, which calls
+      allbasin_annual_pssep.csh for each year

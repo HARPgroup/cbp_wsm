@@ -1,0 +1,29 @@
+MODULE ID#   GROUP  MEMBER # #    NAME   BMP_TYPE  DESCRIPTION  ***
+HYDR   11    INFLOW IVOL          WATR   flo       water acft/ivld
+HTRCH  12    INFLOW IHEAT         HEAT   flo       heat BTU/ivld
+OXRX   13    INFLOW OXIF   1      DOXY   flo       dissolved oxygen lb/ivld
+
+SEDTRN 21    INFLOW ISED   1      SAND   sed       sand ton/ivld
+SEDTRN 22    INFLOW ISED   2      SILT   sed       silt ton/ivld
+SEDTRN 23    INFLOW ISED   3      CLAY   sed       clay ton/ivld
+
+NUTRX  31    INFLOW NUIF1  1      NO3D   tn        nitrate lb/ivld
+NUTRX  32    INFLOW NUIF1  2      NH3D   tn        dissolved ammonia lb/ivld
+NUTRX  33    INFLOW NUIF2  1 1    NH3A   tn        ammonia on sand lb/ivld
+NUTRX  34    INFLOW NUIF2  2 1    NH3I   tn        ammonia on silt lb/ivld
+NUTRX  35    INFLOW NUIF2  3 1    NH3C   tn        ammonia on clay lb/ivld
+PLANK  36    INFLOW PKIF   3      RORN   tn        refractory org N lb/ivld
+
+NUTRX  41    INFLOW NUIF1  4      PO4D   tp        phosphate lb/ivld
+NUTRX  42    INFLOW NUIF2  1 2    PO4A   tp        phosphate on sand lb/ivld
+NUTRX  43    INFLOW NUIF2  2 2    PO4I   tp        phosphate on silt lb/ivld
+NUTRX  44    INFLOW NUIF2  3 2    PO4C   tp        phosphate on clay lb/ivld
+PLANK  45    INFLOW PKIF   4      RORP   tp        refractory org P lb/ivld
+
+OXRX   51    INFLOW OXIF   2      BODA   bod       BOD lb/ivld
+
+PLANK  52    INFLOW PKIF   5      TORC   bod       refractory organic carbon lb/ivld
+
+PLANK  53    INFLOW PKIF   1      PHYT   bod       phytoplankton lb/ivld
+
+end

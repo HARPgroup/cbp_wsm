@@ -1,0 +1,61 @@
+HYDR
+  HYDR-INIT
+  11f
+  11 26 31 36 41 46 56 61 66 71 76
+  20 30 35 40 45 50 60 65 70 75 80
+END HYDR
+NUTRX
+  NUT-AD-FLAGS
+   6i
+  12 15 19 22 26 29
+  14 17 21 24 28 31
+END NUTRX
+PLANK
+  PLK-AD-FLAGS
+   6i
+  12 15 19 22 26 29
+  14 17 21 24 28 31
+END PLANK
+NITR
+  NIT-AD-FLAGS
+  12i
+  12 15 19 22 27 30 34 37 42 45 49 52
+  14 17 21 24 29 32 36 39 44 47 51 54
+  CROP-DATES
+  13i
+  11 20 23 28 31 38 41 46 49 56 59 64 67
+  15 22 25 30 33 40 43 48 51 58 61 66 69
+END NITR
+PHOS
+  PHOS-AD-FLAGS
+   8i
+  12 15 19 22 27 30 34 37
+  14 17 21 24 29 32 36 39
+END PHOS
+IQUAL
+  QUAL-PROPS
+   4i
+  31 36 41 46 
+  35 40 45 50
+END IQUAL
+PQUAL
+  QUAL-PROPS
+   9i
+  31 36 41 46 51 56 61 66 71
+  35 40 45 50 55 60 65 70 75
+END PQUAL
+end
+
+********************** NOTES  ****************************
+This file contains table formats that are not simple and repeating.
+The code is set up to handle formats in the form n[i,f]l 
+where n is the number of variables, i or f is integer or floating point, 
+and l is the length of each variable.  Tables not in this format are all
+noted in this file.  They are listed under their module name.  The table
+name is indented two places.
+
+The 3 lines following the table name are as follows:
+line 1:  columns 3 and 4 are the number of variables in the table
+         column 5 is either i or f for integer or floating point
+line 2:  list of the first column of each variable
+line 3:  list of the last column of each variable

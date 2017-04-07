@@ -1,0 +1,944 @@
+BMPFullane,BMP Shortname,Landuse_Type,HGMR,TN,TP,BOD,SED
+Barnyard Runoff Control,BarnRunoffCont,afocafo,all,0.2,0.2,0.2,0.4
+Irrigation water Capture Reuse,CaptureReuse,urs,all,0.75,0.75,0.75,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,APCN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,APSN,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,BR_N,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,CPDN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,CPDT,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,CPLN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,CPLT,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,CPUN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,CPUT,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,ML_N,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,PCAN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,PCRN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,VRCN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,high,VRSN,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,APCN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,APSN,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,BR_N,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,CPDN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,CPDT,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,CPLN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,CPLT,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,CPUN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,CPUT,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,ML_N,0.13,0,0.065,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,PCAN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,PCRN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,VRCN,0.17,0,0.085,0
+Commodity Cover Crop Early Drilled Wheat,ComCovCropEDW,low,VRSN,0.13,0,0.065,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,APCN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,APSN,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,BR_N,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,ML_N,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,high,VRSN,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,APCN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,APSN,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,BR_N,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,ML_N,0.11,0,0.055,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Early-Planting Other Barley,ComCovCropEOB,low,VRSN,0.11,0,0.055,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,APCN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,APSN,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,BR_N,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,CPDN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,CPDT,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,CPLN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,CPLT,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,CPUN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,CPUT,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,ML_N,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,PCAN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,PCRN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,VRCN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,high,VRSN,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,APCN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,APSN,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,BR_N,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,CPDN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,CPDT,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,CPLN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,CPLT,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,CPUN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,CPUT,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,ML_N,0.16,0,0.08,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,PCAN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,PCRN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,VRCN,0.21,0,0.105,0
+Commodity Cover Crop Early Other Rye,ComCovCropEOR,low,VRSN,0.16,0,0.08,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,APCN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,APSN,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,BR_N,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,ML_N,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,high,VRSN,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,APCN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,APSN,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,BR_N,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,ML_N,0.111111111,0,0.055555556,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Early Other Wheat,ComCovCropEOW,low,VRSN,0.111111111,0,0.055555556,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,APCN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,APSN,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,BR_N,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,CPDN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,CPDT,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,CPLN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,CPLT,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,CPUN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,CPUT,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,ML_N,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,PCAN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,PCRN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,VRCN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,high,VRSN,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,APCN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,APSN,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,BR_N,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,CPDN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,CPDT,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,CPLN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,CPLT,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,CPUN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,CPUT,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,ML_N,0.06,0,0.03,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,PCAN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,PCRN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,VRCN,0.07,0,0.035,0
+Commodity Cover Crop Late-Planting Drilled Wheat,ComCovCropLDW,low,VRSN,0.06,0,0.03,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,APCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,APSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,BR_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,ML_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,high,VRSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,APCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,APSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,BR_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,ML_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Barley,ComCovCropSDB,low,VRSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,APCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,APSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,BR_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,ML_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,high,VRSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,APCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,APSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,BR_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,CPDN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,CPDT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,CPLN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,CPLT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,CPUN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,CPUT,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,ML_N,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,PCAN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,PCRN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,VRCN,0.15,0,0.075,0
+Commodity Cover Crop Standard-Planting Drilled Wheat,ComCovCropSDW,low,VRSN,0.11,0,0.055,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,APCN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,APSN,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,BR_N,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,CPDN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,CPDT,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,CPLN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,CPLT,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,CPUN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,CPUT,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,ML_N,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,PCAN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,PCRN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,VRCN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,high,VRSN,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,APCN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,APSN,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,BR_N,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,CPDN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,CPDT,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,CPLN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,CPLT,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,CPUN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,CPUT,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,ML_N,0.1,0,0.05,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,PCAN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,PCRN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,VRCN,0.12,0,0.06,0
+Commodity Cover Crop Standard-Planting Other Barley,ComCovCropSOB,low,VRSN,0.1,0,0.05,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,APCN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,APSN,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,BR_N,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,CPDN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,CPDT,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,CPLN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,CPLT,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,CPUN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,CPUT,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,ML_N,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,PCAN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,PCRN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,VRCN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,high,VRSN,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,APCN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,APSN,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,BR_N,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,CPDN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,CPDT,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,CPLN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,CPLT,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,CPUN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,CPUT,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,ML_N,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,PCAN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,PCRN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,VRCN,0.18,0,0.09,0
+Commodity Cover Crop Standard Other Rye,ComCovCropSOR,low,VRSN,0.14,0,0.07,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,APCN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,APSN,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,BR_N,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,CPDN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,CPDT,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,CPLN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,CPLT,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,CPUN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,CPUT,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,ML_N,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,PCAN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,PCRN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,VRCN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,high,VRSN,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,APCN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,APSN,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,BR_N,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,CPDN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,CPDT,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,CPLN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,CPLT,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,CPUN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,CPUT,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,ML_N,0.09,0,0.045,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,PCAN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,PCRN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,VRCN,0.12,0,0.06,0
+Commodity Cover Crop Standard Other Wheat,ComCovCropSOW,low,VRSN,0.09,0,0.045,0
+Conservation Plans,ConPlan,hay,all,0.03,0.05,0.04,0.08
+Conservation Plans,ConPlan,high,all,0.08,0.15,0.115,0.25
+Conservation Plans,ConPlan,urs,all,0.08,0.15,0.115,0.25
+Conservation Plans,ConPlan,low,all,0.03,0.05,0.04,0.08
+Conservation Plans,ConPlan,pasture,all,0.05,0.1,0.075,0.14
+Continuous No-Till,ContinuousNT,lwm,APCN,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,APSN,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,BR_N,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,CPDN,0.1,0.2,0.15,0.7
+Continuous No-Till,ContinuousNT,lwm,CPDT,0.1,0.2,0.15,0.7
+Continuous No-Till,ContinuousNT,lwm,CPLN,0.1,0.2,0.15,0.7
+Continuous No-Till,ContinuousNT,lwm,CPLT,0.1,0.2,0.15,0.7
+Continuous No-Till,ContinuousNT,lwm,CPUN,0.1,0.2,0.15,0.7
+Continuous No-Till,ContinuousNT,lwm,CPUT,0.1,0.2,0.15,0.7
+Continuous No-Till,ContinuousNT,lwm,ML_N,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,PCAN,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,PCRN,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,VRCN,0.15,0.4,0.275,0.7
+Continuous No-Till,ContinuousNT,lwm,VRSN,0.15,0.4,0.275,0.7
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,APCN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,APSN,0.29,0.15,0.22,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,BR_N,0.29,0.15,0.22,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,CPDN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,CPDT,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,CPLN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,CPLT,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,CPUN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,CPUT,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,ML_N,0.29,0.15,0.22,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,PCAN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,PCRN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,VRCN,0.38,0.15,0.265,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,high,VRSN,0.29,0.15,0.22,0.2
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,APCN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,APSN,0.29,0,0.145,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,BR_N,0.29,0,0.145,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,CPDN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,CPDT,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,CPLN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,CPLT,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,CPUN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,CPUT,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,ML_N,0.29,0,0.145,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,PCAN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,PCRN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,VRCN,0.38,0,0.19,0
+Cover Crop Early-Planting Drilled Barley,CoverCropEDB,low,VRSN,0.29,0,0.145,0
+Cover Crop Early Drilled Rye,CoverCropEDR,high,APCN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,APSN,0.34,0.15,0.245,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,BR_N,0.34,0.15,0.245,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,CPDN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,CPDT,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,CPLN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,CPLT,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,CPUN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,CPUT,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,ML_N,0.34,0.15,0.245,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,PCAN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,PCRN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,VRCN,0.45,0.15,0.3,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,high,VRSN,0.34,0.15,0.245,0.2
+Cover Crop Early Drilled Rye,CoverCropEDR,low,APCN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,APSN,0.34,0,0.17,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,BR_N,0.34,0,0.17,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,CPDN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,CPDT,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,CPLN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,CPLT,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,CPUN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,CPUT,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,ML_N,0.34,0,0.17,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,PCAN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,PCRN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,VRCN,0.45,0,0.225,0
+Cover Crop Early Drilled Rye,CoverCropEDR,low,VRSN,0.34,0,0.17,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,APCN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,APSN,0.24,0.15,0.195,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,BR_N,0.24,0.15,0.195,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,CPDN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,CPDT,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,CPLN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,CPLT,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,CPUN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,CPUT,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,ML_N,0.24,0.15,0.195,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,PCAN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,PCRN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,VRCN,0.31,0.15,0.23,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,high,VRSN,0.24,0.15,0.195,0.2
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,APCN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,APSN,0.24,0,0.12,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,BR_N,0.24,0,0.12,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,CPDN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,CPDT,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,CPLN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,CPLT,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,CPUN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,CPUT,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,ML_N,0.24,0,0.12,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,PCAN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,PCRN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,VRCN,0.31,0,0.155,0
+Cover Crop Early Drilled Wheat,CoverCropEDW,low,VRSN,0.24,0,0.12,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,APCN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,APSN,0.25,0.15,0.2,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,BR_N,0.25,0.15,0.2,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,CPDN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,CPDT,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,CPLN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,CPLT,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,CPUN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,CPUT,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,ML_N,0.25,0.15,0.2,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,PCAN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,PCRN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,VRCN,0.32,0.15,0.235,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,high,VRSN,0.25,0.15,0.2,0.2
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,APCN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,APSN,0.25,0,0.125,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,BR_N,0.25,0,0.125,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,CPDN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,CPDT,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,CPLN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,CPLT,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,CPUN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,CPUT,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,ML_N,0.25,0,0.125,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,PCAN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,PCRN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,VRCN,0.32,0,0.16,0
+Cover Crop Early-Planting Other Barley,CoverCropEOB,low,VRSN,0.25,0,0.125,0
+Cover Crop Early Other Rye,CoverCropEOR,high,APCN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,APSN,0.29,0.15,0.22,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,BR_N,0.29,0.15,0.22,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,CPDN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,CPDT,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,CPLN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,CPLT,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,CPUN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,CPUT,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,ML_N,0.29,0.15,0.22,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,PCAN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,PCRN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,VRCN,0.38,0.15,0.265,0.2
+Cover Crop Early Other Rye,CoverCropEOR,high,VRSN,0.29,0.15,0.22,0.2
+Cover Crop Early Other Rye,CoverCropEOR,low,APCN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,APSN,0.29,0,0.145,0
+Cover Crop Early Other Rye,CoverCropEOR,low,BR_N,0.29,0,0.145,0
+Cover Crop Early Other Rye,CoverCropEOR,low,CPDN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,CPDT,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,CPLN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,CPLT,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,CPUN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,CPUT,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,ML_N,0.29,0,0.145,0
+Cover Crop Early Other Rye,CoverCropEOR,low,PCAN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,PCRN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,VRCN,0.38,0,0.19,0
+Cover Crop Early Other Rye,CoverCropEOR,low,VRSN,0.29,0,0.145,0
+Cover Crop Early Other Wheat,CoverCropEOW,high,APCN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,APSN,0.2,0.15,0.175,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,BR_N,0.2,0.15,0.175,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,CPDN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,CPDT,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,CPLN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,CPLT,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,CPUN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,CPUT,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,ML_N,0.2,0.15,0.175,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,PCAN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,PCRN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,VRCN,0.27,0.15,0.21,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,high,VRSN,0.2,0.15,0.175,0.2
+Cover Crop Early Other Wheat,CoverCropEOW,low,APCN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,APSN,0.2,0,0.1,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,BR_N,0.2,0,0.1,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,CPDN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,CPDT,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,CPLN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,CPLT,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,CPUN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,CPUT,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,ML_N,0.2,0,0.1,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,PCAN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,PCRN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,VRCN,0.27,0,0.135,0
+Cover Crop Early Other Wheat,CoverCropEOW,low,VRSN,0.2,0,0.1,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,APCN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,APSN,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,BR_N,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,CPDN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,CPDT,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,CPLN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,CPLT,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,CPUN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,CPUT,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,ML_N,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,PCAN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,PCRN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,VRCN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,high,VRSN,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,APCN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,APSN,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,BR_N,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,CPDN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,CPDT,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,CPLN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,CPLT,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,CPUN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,CPUT,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,ML_N,0.1,0,0.05,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,PCAN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,PCRN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,VRCN,0.13,0,0.065,0
+Cover Crop Late-Planting Drilled Wheat,CoverCropLDW,low,VRSN,0.1,0,0.05,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,APCN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,APSN,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,BR_N,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,CPDN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,CPDT,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,CPLN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,CPLT,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,CPUN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,CPUT,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,ML_N,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,PCAN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,PCRN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,VRCN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,high,VRSN,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,APCN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,APSN,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,BR_N,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,CPDN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,CPDT,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,CPLN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,CPLT,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,CPUN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,CPUT,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,ML_N,0.12,0,0.06,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,PCAN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,PCRN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,VRCN,0.16,0,0.08,0
+Cover Crop Late-Planting Other Rye,CoverCropLOR,low,VRSN,0.12,0,0.06,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,APCN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,APSN,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,BR_N,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,CPDN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,CPDT,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,CPLN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,CPLT,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,CPUN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,CPUT,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,ML_N,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,PCAN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,PCRN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,VRCN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,high,VRSN,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,APCN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,APSN,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,BR_N,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,CPDN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,CPDT,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,CPLN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,CPLT,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,CPUN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,CPUT,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,ML_N,0.09,0,0.045,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,PCAN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,PCRN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,VRCN,0.11,0,0.055,0
+Cover Crop Late Other Wheat,CoverCropLOW,low,VRSN,0.09,0,0.045,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,APCN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,APSN,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,BR_N,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,CPDN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,CPDT,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,CPLN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,CPLT,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,CPUN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,CPUT,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,ML_N,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,PCAN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,PCRN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,VRCN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,high,VRSN,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,APCN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,APSN,0.22,0,0.11,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,BR_N,0.22,0,0.11,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,CPDN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,CPDT,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,CPLN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,CPLT,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,CPUN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,CPUT,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,ML_N,0.22,0,0.11,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,PCAN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,PCRN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,VRCN,0.29,0,0.145,0
+Cover Crop Standard Drilled Barley,CoverCropSDB,low,VRSN,0.22,0,0.11,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,APCN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,APSN,0.31,0.07,0.19,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,BR_N,0.31,0.07,0.19,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,CPDN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,CPDT,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,CPLN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,CPLT,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,CPUN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,CPUT,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,ML_N,0.31,0.07,0.19,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,PCAN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,PCRN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,VRCN,0.41,0.07,0.24,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,high,VRSN,0.31,0.07,0.19,0.1
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,APCN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,APSN,0.31,0,0.155,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,BR_N,0.31,0,0.155,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,CPDN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,CPDT,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,CPLN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,CPLT,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,CPUN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,CPUT,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,ML_N,0.31,0,0.155,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,PCAN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,PCRN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,VRCN,0.41,0,0.205,0
+Cover Crop Standard Drilled Rye,CoverCropSDR,low,VRSN,0.31,0,0.155,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,APCN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,APSN,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,BR_N,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,CPDN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,CPDT,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,CPLN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,CPLT,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,CPUN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,CPUT,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,ML_N,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,PCAN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,PCRN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,VRCN,0.29,0.07,0.18,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,high,VRSN,0.22,0.07,0.145,0.1
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,APCN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,APSN,0.22,0,0.11,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,BR_N,0.22,0,0.11,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,CPDN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,CPDT,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,CPLN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,CPLT,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,CPUN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,CPUT,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,ML_N,0.22,0,0.11,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,PCAN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,PCRN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,VRCN,0.29,0,0.145,0
+Cover Crop Standard Drilled Wheat,CoverCropSDW,low,VRSN,0.22,0,0.11,0
+Cover Crop Standard Other Barley,CoverCropSOB,high,APCN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,APSN,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,BR_N,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,CPDN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,CPDT,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,CPLN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,CPLT,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,CPUN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,CPUT,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,ML_N,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,PCAN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,PCRN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,VRCN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,high,VRSN,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Barley,CoverCropSOB,low,APCN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,APSN,0.19,0,0.095,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,BR_N,0.19,0,0.095,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,CPDN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,CPDT,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,CPLN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,CPLT,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,CPUN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,CPUT,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,ML_N,0.19,0,0.095,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,PCAN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,PCRN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,VRCN,0.24,0,0.12,0
+Cover Crop Standard Other Barley,CoverCropSOB,low,VRSN,0.19,0,0.095,0
+Cover Crop Standard Other Rye,CoverCropSOR,high,APCN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,APSN,0.27,0.07,0.17,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,BR_N,0.27,0.07,0.17,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,CPDN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,CPDT,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,CPLN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,CPLT,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,CPUN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,CPUT,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,ML_N,0.27,0.07,0.17,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,PCAN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,PCRN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,VRCN,0.35,0.07,0.21,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,high,VRSN,0.27,0.07,0.17,0.1
+Cover Crop Standard Other Rye,CoverCropSOR,low,APCN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,APSN,0.27,0,0.135,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,BR_N,0.27,0,0.135,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,CPDN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,CPDT,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,CPLN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,CPLT,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,CPUN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,CPUT,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,ML_N,0.27,0,0.135,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,PCAN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,PCRN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,VRCN,0.35,0,0.175,0
+Cover Crop Standard Other Rye,CoverCropSOR,low,VRSN,0.27,0,0.135,0
+Cover Crop Standard Other Wheat,CoverCropSOW,high,APCN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,APSN,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,BR_N,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,CPDN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,CPDT,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,CPLN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,CPLT,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,CPUN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,CPUT,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,ML_N,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,PCAN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,PCRN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,VRCN,0.24,0.07,0.155,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,high,VRSN,0.19,0.07,0.13,0.1
+Cover Crop Standard Other Wheat,CoverCropSOW,low,APCN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,APSN,0.19,0,0.095,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,BR_N,0.19,0,0.095,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,CPDN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,CPDT,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,CPLN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,CPLT,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,CPUN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,CPUT,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,ML_N,0.19,0,0.095,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,PCAN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,PCRN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,VRCN,0.24,0,0.12,0
+Cover Crop Standard Other Wheat,CoverCropSOW,low,VRSN,0.19,0,0.095,0
+Cropland Irrigation Management,Cropirrmgmt,ag,all,0.04,0,0.02,0
+Decision Agriculture,DecisionAg,nal,all,0.035,0,0.0175,0
+Decision Agriculture,DecisionAg,nhi,all,0.035,0,0.0175,0
+Decision Agriculture,DecisionAg,nho,all,0.035,0,0.0175,0
+Decision Agriculture,DecisionAg,nhy,all,0.035,0,0.0175,0
+Decision Agriculture,DecisionAg,nlo,all,0.035,0,0.0175,0
+Sorbing Materials in Ag Ditchs,DitchFilter,ag,all,0,0.4,0.2,0
+Dry Detention Ponds and Hydrodynamic Structures,DryPonds,urban,all,0.05,0.1,0.075,0.1
+E3 SWM On New Development,E3SWMNew,urban,all,0.5,0.6,0.55,0.9
+Erosion and Sediment Control,EandS,urban,all,0.25,0.4,0.325,0.4
+Erosion and Sediment Control on ext,EandSext,ext,all,0.25,0.4,0.325,0.4
+Erosion and Sediment Control on pul,EandSpul,npd,all,0.25,0.4,0.325,0.4
+Enhanced Nutrient Management,EnhancedNM,nal,all,0.07,0,0.035,0
+Enhanced Nutrient Management,EnhancedNM,nhi,all,0.07,0,0.035,0
+Enhanced Nutrient Management,EnhancedNM,nho,all,0.07,0,0.035,0
+Enhanced Nutrient Management,EnhancedNM,nhy,all,0.07,0,0.035,0
+Enhanced Nutrient Management,EnhancedNM,nlo,all,0.07,0,0.035,0
+Dry Extended Detention Ponds,ExtDryPonds,urban,all,0.2,0.2,0.2,0.6
+Urban Filtering Practices,Filter,urban,all,0.4,0.6,0.5,0.8
+Forest Buffers (Nitrogen),ForestBuffersN,ag,APCN,0.54,0,0.27,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,APSN,0.54,0,0.27,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,BR_N,0.34,0,0.17,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,CPDN,0.65,0,0.325,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,CPDT,0.19,0,0.095,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,CPLN,0.56,0,0.28,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,CPLT,0.19,0,0.095,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,CPUN,0.31,0,0.155,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,CPUT,0.19,0,0.095,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,ML_N,0.34,0,0.17,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,PCAN,0.46,0,0.23,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,PCRN,0.56,0,0.28,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,VRCN,0.34,0,0.17,0
+Forest Buffers (Nitrogen),ForestBuffersN,ag,VRSN,0.46,0,0.23,0
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,APCN,0,0.42,0.21,0.56
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,APSN,0,0.42,0.21,0.56
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,BR_N,0,0.3,0.15,0.4
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,CPDN,0,0.42,0.21,0.56
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,CPDT,0,0.45,0.225,0.6
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,CPLN,0,0.39,0.195,0.52
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,CPLT,0,0.45,0.225,0.6
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,CPUN,0,0.45,0.225,0.6
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,CPUT,0,0.45,0.225,0.6
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,ML_N,0,0.3,0.15,0.4
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,PCAN,0,0.36,0.18,0.48
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,PCRN,0,0.42,0.21,0.56
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,VRCN,0,0.3,0.15,0.4
+Forest Buffers (Phosphorus & Sediment),ForestBuffersPS,ag,VRSN,0,0.39,0.195,0.52
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,APCN,0.54,0,0.27,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,APSN,0.54,0,0.27,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,BR_N,0.34,0,0.17,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,CPDN,0.65,0,0.325,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,CPDT,0.19,0,0.095,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,CPLN,0.56,0,0.28,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,CPLT,0.19,0,0.095,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,CPUN,0.31,0,0.155,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,CPUT,0.19,0,0.095,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,ML_N,0.34,0,0.17,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,PCAN,0.46,0,0.23,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,PCRN,0.56,0,0.28,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,VRCN,0.34,0,0.17,0
+Forest Buffers trp (Nitrogen),ForestBufferstrpN,ag,VRSN,0.46,0,0.23,0
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,APCN,0,0.42,0.21,0.56
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,APSN,0,0.42,0.21,0.56
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,BR_N,0,0.3,0.15,0.4
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,CPDN,0,0.42,0.21,0.56
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,CPDT,0,0.45,0.225,0.6
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,CPLN,0,0.39,0.195,0.52
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,CPLT,0,0.45,0.225,0.6
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,CPUN,0,0.45,0.225,0.6
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,CPUT,0,0.45,0.225,0.6
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,ML_N,0,0.3,0.15,0.4
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,PCAN,0,0.36,0.18,0.48
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,PCRN,0,0.42,0.21,0.56
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,VRCN,0,0.3,0.15,0.4
+Forest Buffers trp (Phosphorus & Sediment),ForestBufferstrpPS,ag,VRSN,0,0.39,0.195,0.52
+Urban Forest Buffers,ForestBufUrban,urban,all,0.25,0.5,0.375,0.5
+Forest Harvesting Practices,ForHarvestBMP,forest,all,0.5,0.6,0.55,0.6
+Grass Buffers (Nitrogen),GrassBuffersN,ag,APCN,0.38,0,0.19,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,APSN,0.38,0,0.19,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,BR_N,0.24,0,0.12,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,CPDN,0.46,0,0.23,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,CPDT,0.13,0,0.065,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,CPLN,0.39,0,0.195,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,CPLT,0.13,0,0.065,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,CPUN,0.21,0,0.105,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,CPUT,0.13,0,0.065,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,ML_N,0.24,0,0.12,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,PCAN,0.32,0,0.16,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,PCRN,0.39,0,0.195,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,VRCN,0.24,0,0.12,0
+Grass Buffers (Nitrogen),GrassBuffersN,ag,VRSN,0.32,0,0.16,0
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,APCN,0,0.42,0.21,0.56
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,APSN,0,0.42,0.21,0.56
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,BR_N,0,0.3,0.15,0.4
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,CPDN,0,0.42,0.21,0.56
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,CPDT,0,0.45,0.225,0.6
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,CPLN,0,0.39,0.195,0.52
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,CPLT,0,0.45,0.225,0.6
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,CPUN,0,0.45,0.225,0.6
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,CPUT,0,0.45,0.225,0.6
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,ML_N,0,0.3,0.15,0.4
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,PCAN,0,0.36,0.18,0.48
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,PCRN,0,0.42,0.21,0.56
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,VRCN,0,0.3,0.15,0.4
+Grass Buffers (Phosphorus & Sediment),GrassBuffersPS,ag,VRSN,0,0.39,0.195,0.52
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,APCN,0.38,0,0.19,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,APSN,0.38,0,0.19,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,BR_N,0.24,0,0.12,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,CPDN,0.46,0,0.23,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,CPDT,0.13,0,0.065,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,CPLN,0.39,0,0.195,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,CPLT,0.13,0,0.065,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,CPUN,0.21,0,0.105,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,CPUT,0.13,0,0.065,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,ML_N,0.24,0,0.12,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,PCAN,0.32,0,0.16,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,PCRN,0.39,0,0.195,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,VRCN,0.24,0,0.12,0
+Grass Buffers trp (Nitrogen),GrassBufferstrpN,ag,VRSN,0.32,0,0.16,0
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,APCN,0,0.42,0.21,0.56
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,APSN,0,0.42,0.21,0.56
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,BR_N,0,0.3,0.15,0.4
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,CPDN,0,0.42,0.21,0.56
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,CPDT,0,0.45,0.225,0.6
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,CPLN,0,0.39,0.195,0.52
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,CPLT,0,0.45,0.225,0.6
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,CPUN,0,0.45,0.225,0.6
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,CPUT,0,0.45,0.225,0.6
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,ML_N,0,0.3,0.15,0.4
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,PCAN,0,0.36,0.18,0.48
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,PCRN,0,0.42,0.21,0.56
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,VRCN,0,0.3,0.15,0.4
+Grass Buffers trp (Phosphorus & Sediment),GrassBufferstrpPS,ag,VRSN,0,0.39,0.195,0.52
+Horse Pasture Management,HorsePasMan,pasture,all,0,0.2,0.1,0.4
+Urban Infiltration Practices - nosand\veg_no underdrain,Infiltration,urban,all,0.8,0.85,0.825,0.95
+Urban Infiltration Practices - with sandveg_no underdrain,InfiltWithSV,urban,all,0.85,0.85,0.85,0.95
+Liquid manure injection,LiquidInjection,ag,all,0.25,0,0.125,0
+Loafing Lot Management,LoafLot,afocafo,all,0.2,0.2,0.2,0.4
+Off Stream Watering Without Fencing,OSWnoFence,pasture,all,0.05,0.08,0.065,0.1
+Litter Injection,PoultryInjection,ag,all,0.25,0,0.125,0
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,APCN,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,APSN,0.11,0.24,0.175,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,BR_N,0.11,0.24,0.175,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,CPDN,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,CPDT,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,CPLN,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,CPLT,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,CPUN,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,CPUT,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,ML_N,0.11,0.24,0.175,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,PCAN,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,PCRN,0.11,0.24,0.175,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,VRCN,0.09,0.24,0.165,0.3
+Off Stream Watering With Fencing and Prescribed Grazing,PrecRotGrazing,pasture,VRSN,0.11,0.24,0.175,0.3
+Recent Stormwater Management,RcntSWM,urban,all,0.2,0.3,0.25,0.65
+Retrofit Stormwater Management,RetroSWM,urban,all,0.25,0.35,0.3,0.65
+Street Sweeping Mechanical Monthly,StreetSweep,IU,all,0.03,0.03,0.03,0.09
+Upland Prescribed Grazing,UplandPG,pasture,all,0.1,0.2,0.15,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,APCN,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,APSN,0.11,0.24,0.175,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,BR_N,0.11,0.24,0.175,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,CPDN,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,CPDT,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,CPLN,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,CPLT,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,CPUN,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,CPUT,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,ML_N,0.11,0.24,0.175,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,PCAN,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,PCRN,0.11,0.24,0.175,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,VRCN,0.09,0.24,0.165,0.3
+Upland Precision Intensive Rotational Grazing,UpPrecIntRotGraze,pasture,VRSN,0.11,0.24,0.175,0.3
+Urban Nutrient Management,UrbanNutMan,PU,all,0.17,0.22,0.195,0
+Water Control Structures,WaterContStruc,crop,all,0.33,0,0.165,0
+Wetland Restoration,WetlandRestore,ag,APCN,0.07,0.12,0.095,0.04
+Wetland Restoration,WetlandRestore,ag,APSN,0.07,0.12,0.095,0.04
+Wetland Restoration,WetlandRestore,ag,BR_N,0.14,0.26,0.2,0.08
+Wetland Restoration,WetlandRestore,ag,CPDN,0.25,0.5,0.375,0.15
+Wetland Restoration,WetlandRestore,ag,CPDT,0.25,0.5,0.375,0.15
+Wetland Restoration,WetlandRestore,ag,CPLN,0.25,0.5,0.375,0.15
+Wetland Restoration,WetlandRestore,ag,CPLT,0.25,0.5,0.375,0.15
+Wetland Restoration,WetlandRestore,ag,CPUN,0.25,0.5,0.375,0.15
+Wetland Restoration,WetlandRestore,ag,CPUT,0.25,0.5,0.375,0.15
+Wetland Restoration,WetlandRestore,ag,ML_N,0.14,0.26,0.2,0.08
+Wetland Restoration,WetlandRestore,ag,PCAN,0.14,0.26,0.2,0.08
+Wetland Restoration,WetlandRestore,ag,PCRN,0.14,0.26,0.2,0.08
+Wetland Restoration,WetlandRestore,ag,VRCN,0.14,0.26,0.2,0.08
+Wetland Restoration,WetlandRestore,ag,VRSN,0.14,0.26,0.2,0.08
+Wetland Restoration trp,WetlandRestoretrp,trp,APCN,0.07,0.12,0.095,0.04
+Wetland Restoration trp,WetlandRestoretrp,trp,APSN,0.07,0.12,0.095,0.04
+Wetland Restoration trp,WetlandRestoretrp,trp,BR_N,0.14,0.26,0.2,0.08
+Wetland Restoration trp,WetlandRestoretrp,trp,CPDN,0.25,0.5,0.375,0.15
+Wetland Restoration trp,WetlandRestoretrp,trp,CPDT,0.25,0.5,0.375,0.15
+Wetland Restoration trp,WetlandRestoretrp,trp,CPLN,0.25,0.5,0.375,0.15
+Wetland Restoration trp,WetlandRestoretrp,trp,CPLT,0.25,0.5,0.375,0.15
+Wetland Restoration trp,WetlandRestoretrp,trp,CPUN,0.25,0.5,0.375,0.15
+Wetland Restoration trp,WetlandRestoretrp,trp,CPUT,0.25,0.5,0.375,0.15
+Wetland Restoration trp,WetlandRestoretrp,trp,ML_N,0.14,0.26,0.2,0.08
+Wetland Restoration trp,WetlandRestoretrp,trp,PCAN,0.14,0.26,0.2,0.08
+Wetland Restoration trp,WetlandRestoretrp,trp,PCRN,0.14,0.26,0.2,0.08
+Wetland Restoration trp,WetlandRestoretrp,trp,VRCN,0.14,0.26,0.2,0.08
+Wetland Restoration trp,WetlandRestoretrp,trp,VRSN,0.14,0.26,0.2,0.08
+Wet Ponds and Wetlands,WetPondWetland,urban,all,0.2,0.45,0.325,0.6
+Stormwater Management by Era 1985 to 2002 MD,SWMEra8502,urban,all,0.17,0.3,0.235,0.4
+Stormwater Management by Era 2002 to 2010 MD,SWMEra0210,urban,all,0.3,0.4,0.35,0.8
+Bioswale,BioSwale,urban,all,0.75,0.7,0.725,0.8
+Biorentention - with underdrain with AB Soils,BioRet,urban,all,0.75,0.7,0.725,0.8
+Permeable Pavement - with sandveg with underdrain with AB soils,PermPavWSV,urban,all,0.5,0.5,0.5,0.7
+Permeable Pavement - no sandveg with underdrain with AB soils,PermPavNoSV,urban,all,0.5,0.45,0.475,0.7
+Vegetated Open Channels - no underdrain with AB soils,VegOpChan,urban,all,0.45,0.45,0.45,0.7
+Lo-till fix,Lotil25,low,all,0,0.211,0.106,0
+Efficiency Nutrient Management VA,EffNutManVA,hwm,all,0.059,0.092,0.0755,0
+Efficiency Nutrient Management VA,EffNutManVA,hom,all,0.059,0.092,0.0755,0
+Efficiency Nutrient Management VA,EffNutManVA,lwm,all,0.059,0.092,0.0755,0
+Efficiency Nutrient Management VA,EffNutManVA,hyw,all,0.059,0.092,0.0755,0
+Efficiency Nutrient Management VA,EffNutManVA,alf,all,0.059,0.092,0.0755,0
+Efficiency Nutrient Management VA,EffNutManVA,pas,all,0.059,0.092,0.0755,0
+Efficiency NutMan and DecisionAg VA,EffNutManDecAgVA,hwm,all,0.094,0.092,0.093,0
+Efficiency NutMan and DecisionAg VA,EffNutManDecAgVA,hom,all,0.094,0.092,0.093,0
+Efficiency NutMan and DecisionAg VA,EffNutManDecAgVA,lwm,all,0.094,0.092,0.093,0
+Efficiency NutMan and DecisionAg VA,EffNutManDecAgVA,hyw,all,0.094,0.092,0.093,0
+Efficiency NutMan and DecisionAg VA,EffNutManDecAgVA,alf,all,0.094,0.092,0.093,0

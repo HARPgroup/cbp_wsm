@@ -1,0 +1,16 @@
+This dataset, p532cal
+ was created by gshenk
+ 
+ on
+Tue Apr 26 07:17:03 EDT 2011
+ 
+Using the code
+../../..//code/bin/create_calib_septic_wdms
+ 
+and the data in
+input/unformatted/septic/septic_allyears_CALIBN040611.csv
+
+
+****  the data in septic_allyears_CALIBN040611.csv was created
+****    by combining the files septic_????CALIBN040611.csv
+

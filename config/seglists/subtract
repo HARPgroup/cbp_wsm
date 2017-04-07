@@ -1,0 +1,55 @@
+#!/bin/csh
+
+  if (${#argv} != 3) then
+      echo ' '
+      echo 'usage: subtract basin1 from basin2'
+      echo ' '
+      echo '  basin1 and basin2 should be the file name'
+      echo '     without the extension'
+      echo ' '
+      exit
+    endif
+  endif
+
+
+ set big = $argv[3]
+
+ set little = $argv[1]
+
+ set filetypes = (riv calib land)
+
+ foreach ft ($filetypes)  # loop over file types
+
+   if (-e ${big}.${ft}) then
+     if (-e ${little}.${ft}) then
+
+       echo $ft
+
+
+       source ${big}.${ft}      # read big file
+       set bigsegs = ($segments)
+
+       source ${little}.${ft}   # read little file
+       set littlesegs = ($segments)
+
+       set segments = ()
+
+       foreach bs ($bigsegs)
+         set test = '0'
+         foreach ls ($littlesegs)
+           if ( $bs == $ls ) then
+             set test = '1'
+           endif
+         end
+         if ( $test == '0' ) then
+           set segments = ($segments $bs)
+         endif
+       end
+
+       echo 'set segments = (' $segments ')' > ${big}_without_${little}.${ft}
+
+     endif
+   endif
+ end
+
+ 

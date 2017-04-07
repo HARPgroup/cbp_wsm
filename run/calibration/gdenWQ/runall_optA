@@ -1,0 +1,12 @@
+sbatch run_WQ_stream_optimization.csh PMA PestA Pest 1985 2005
+sbatch run_WQ_stream_optimization.csh SWA SWA SW 1985 2005
+sbatch run_WQ_stream_optimization.csh SUA SUA SU 1985 2005
+sbatch run_WQ_stream_optimization.csh SJA SJA SJ 1985 2005
+sbatch run_WQ_stream_optimization.csh JLA JLA JLcal 1985 2005
+sbatch run_WQ_stream_optimization.csh CPA CPA CPcal 1985 2005
+sbatch run_WQ_stream_optimization.csh RUA RUA RU 1985 2005
+sbatch run_WQ_stream_optimization.csh JAA JAA JA 1985 2005
+sbatch run_WQ_stream_optimization.csh YPA YPA YPcal 1985 2005
+sbatch run_WQ_stream_optimization.csh GYA GYA GYcal 1985 2005
+sbatch run_WQ_stream_optimization.csh XUA XUA XU 1985 2005
+sbatch run_WQ_stream_optimization.csh YMA YMA YM 1985 2005

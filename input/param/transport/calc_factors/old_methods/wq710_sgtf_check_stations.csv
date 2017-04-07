@@ -1,0 +1,46 @@
+  station XU0_4130_4070 for TOTN
+     upstream segments
+       XU0_4130_4070
+     upstream stations
+  station XU2_4270_0003 for TOTN
+     upstream segments
+       XU0_4090_4270
+       XU0_4091_4270
+     upstream stations
+  station XU2_4330_4480 for TOTN
+     upstream segments
+       XU2_4330_4480
+       XU2_4070_4330
+     upstream stations
+       XU0_4130_4070
+  station XU3_4650_0001 for TOTN
+     upstream segments
+       XU3_4650_0001
+       XU2_4480_4650
+       XU2_4270_4650
+     upstream stations
+       XU2_4270_0003
+       XU2_4330_4480
+  station XU0_4130_4070 for TOTP
+     upstream segments
+       XU0_4130_4070
+     upstream stations
+  station XU2_4270_0003 for TOTP
+     upstream segments
+       XU0_4090_4270
+       XU0_4091_4270
+     upstream stations
+  station XU2_4330_4480 for TOTP
+     upstream segments
+       XU2_4330_4480
+       XU2_4070_4330
+     upstream stations
+       XU0_4130_4070
+  station XU3_4650_0001 for TOTP
+     upstream segments
+       XU3_4650_0001
+       XU2_4480_4650
+       XU2_4270_4650
+     upstream stations
+       XU2_4270_0003
+       XU2_4330_4480

@@ -1,0 +1,18 @@
+LOAD EQUIVALENCIES ***
+FLOW 1 FLOW
+HEAT 1 HEAT
+TOTN 4 TOTN NH3X NO23 ORGN
+TOTP 3 TOTP PO4X ORGP
+TSSX 1 TSSX
+ORGC 1 ORGC
+TSED 1 TSED
+end
+
+****************************** EXPLANATION OF THIS FILE *************************
+** delivery ratios determine the amount of material that is transported through
+**   a particular stream.  They are the ratio of output to input.
+** 
+** Some delivery ratios are stand-ins for others.  Since transformations between
+**  nitrogen species and between phosphorus species are simulated, the TN ratio
+**  and TP ratios are applied to all of the individual species
+**********************************************************************************

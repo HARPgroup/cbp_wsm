@@ -1,8 +1,0 @@
- f77 -fbounds-check -c main.f
- f77 -fbounds-check -c onefile.f
- f77 -fbounds-check -c avesums.f
-
- f77 -o ../../../../../bin/progress_sumstats.exe main.o onefile.o avesums.o ../../../../lib/util_lib.a
-
- rm *.o
-

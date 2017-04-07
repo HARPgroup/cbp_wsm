@@ -1,0 +1,42 @@
+From: Gary Shenk 
+Sent: Tuesday, November 22, 2005 10:15 AM
+To: Jing Wu; Robert Burgholzer
+Cc: Lewis Linker
+Subject: Organic Phosphorus is complicated, read this carefully
+
+Here.s the deal:
+
+The PHOS subroutines only simulate outflow of Sorbed Refractory Organic P
+
+That leaves dissolved refractory organic P, sorbed labile organic P and dissolved labile organic P.  For these, we use a ratio from organic N when loading into the river.  The total output of P is not what gets into the land WDMs from the ../pp/catalog/iovars/perlnd. file, but what gets into the river in the ../pp/catalog/iovars/land_to_river. file.  Carefully reading both of those files and the .rchres_out_to_cali. file with the comments at the end will show how this goes together.
+
+The HSPF standard molar conversion from P to N is 16, giving a mass ratio of 0.1384.
+Therefore to get the total P you have to account for the other species of organic P by ratios of organic N
+
+Our list of P constituents is:
+spo4
+bpo4
+slorp
+blorp
+srorp
+brorp
+
+Using names from the .perlnd. file
+srorp = DORP + 0.1384 * (SRON+IRON) = 0.1384 * (part of slorn)
+brorp = 0.1384 * ARON = 0.1384 * brorn
+slorp = 0.1384 * (DLON+SLON+ILON) = 0.1384 * slorn
+blorp = 0.1384 * ALON = 0.1384 * blorn
+
+This also means that brorp, slorp, and blorp are completely constrained by the nitrogen calibration.
+
+Jing, you should only calibrate targets for spo4, bpo4, and srorp
+
+Rob, you should calculate srorp as follows:  set the brorp, slorp, and blorp as above. You have TP for each segment.  Subtract everything else to get srorp and make sure that it is positive.
+
+We will probably have to have a few iterations before we have it down completely.
+
+I am changing the land_to_river file in your directories since it had some incorrect ratios and I.ll put this file in that directory as well.
+
+- Gary
+
+

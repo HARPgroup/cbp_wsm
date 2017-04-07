@@ -1,0 +1,16 @@
+data mostly came from USGS Jeff Raffensperger
+
+Rou Shi updated from 2002-2005
+
+NO23 and NO3X combined to NO3X on 7/10/2008
+
+DNR Core trend data added 7/10/2008
+
+GWN0115 and JON0184 were both attributed to WM1_3660_3910 and most data were also 
+  attributed to WM1_3910_0001.  The correct attribution is
+WM1_3660_3910 GWN0115 
+WM0_3650_0001 JON0184
+WM1_3910_0001 nothing
+ fixed 7/17/2008
+
+SJ6_2130_0003 has bad data for WY 1996 through 1998 for 

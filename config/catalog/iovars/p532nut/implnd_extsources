@@ -1,0 +1,27 @@
+EXT SOURCES
+<-Volume-> <Member> SsysSgap<--Mult-->Tran <-Target vols> <-Grp> <-Member->***
+<Name>   # <Name> # tem strg<-factor->strg <Name>   #   #        <Name> # #***
+*** METEOROLOGY
+WDM1  1000 EVAP     ENGLZERO  1.000   SAME IMPLND   1     EXTNL  PETINP
+WDM1  1001 DEWP     ENGLZERO          SAME IMPLND   1     EXTNL  DTMPG
+WDM1  1002 WNDH     ENGLZERO          SAME IMPLND   1     EXTNL  WINMOV
+WDM1  1003 RADH     ENGLZERO          SAME IMPLND   1     EXTNL  SOLRAD
+WDM1  1004 ATMP     ENGLZERO          SAME IMPLND   1     EXTNL  GATMP
+
+*** PRECIPITATION AND ATMOSPHERIC DEPOSITION LOADS
+WDM2  2000 HPRC     ENGLZERO          SAME IMPLND   1     EXTNL  PREC
+WDM2  2001 NO23     ENGLZERO          DIV  IMPLND   1     EXTNL  IQADFX 2 1
+WDM2  2002 NH4A     ENGLZERO          DIV  IMPLND   1     EXTNL  IQADFX 1 1
+WDM2  2003 NO3D     ENGLZERO          DIV  IMPLND   1     EXTNL  IQADFX 2 1
+WDM2  2004 NH4D     ENGLZERO          DIV  IMPLND   1     EXTNL  IQADFX 1 1
+END EXT SOURCES
+
+end
+
+**********************************************************
+ the above lines must have DSNs associated with the variable names
+ in the file land_atdep_dsns.csv or land_met_dsns.csv in this directory 
+ for each segment simulated
+
+
+

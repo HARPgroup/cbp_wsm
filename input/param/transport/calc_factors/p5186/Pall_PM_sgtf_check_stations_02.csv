@@ -1,0 +1,552 @@
+ STATION PM0_4640_4820 for TOTN
+   upstream segment PM0_4640_4820 PM0_4640_4820 TOTN
+ STATION PM1_4500_4580 for TOTN
+   upstream segment PM1_4500_4580 PM1_4500_4580 TOTN
+   upstream segment PM1_4250_4500 PM1_4500_4580 TOTN
+ STATION PM1_3120_3400 for TOTN
+   upstream segment PM1_3120_3400 PM1_3120_3400 TOTN
+ STATION PM2_2860_3040 for TOTN
+   upstream segment PM2_2860_3040 PM2_2860_3040 TOTN
+ STATION PM1_3510_4000 for TOTN
+   upstream segment PM1_3510_4000 PM1_3510_4000 TOTN
+ STATION PM1_4000_4290 for TOTN
+   upstream segment PM1_4000_4290 PM1_4000_4290 TOTN
+     upstream station PM1_3510_4000 PM1_4000_4290 TOTN
+ STATION PU0_3000_3090 for TOTN
+   upstream segment PU0_3000_3090 PU0_3000_3090 TOTN
+ STATION PS2_6730_6660 for TOTN
+   upstream segment PS2_6730_6660 PS2_6730_6660 TOTN
+ STATION PU2_3090_4050 for TOTN
+   upstream segment PU2_3090_4050 PU2_3090_4050 TOTN
+     upstream station PU0_3000_3090 PU2_3090_4050 TOTN
+ STATION PM4_3340_3341 for TOTN
+   upstream segment PM4_3340_3341 PM4_3340_3341 TOTN
+   upstream segment PM2_3400_3340 PM4_3340_3341 TOTN
+   upstream segment PM3_3040_3340 PM4_3340_3341 TOTN
+   upstream segment PM1_3450_3400 PM4_3340_3341 TOTN
+     upstream station PM1_3120_3400 PM4_3340_3341 TOTN
+     upstream station PM2_2860_3040 PM4_3340_3341 TOTN
+ STATION PM4_4040_4410 for TOTN
+   upstream segment PM4_4040_4410 PM4_4040_4410 TOTN
+   upstream segment PM1_3710_4040 PM4_4040_4410 TOTN
+   upstream segment PM4_3341_4040 PM4_4040_4410 TOTN
+     upstream station PM4_3340_3341 PM4_4040_4410 TOTN
+ STATION PS2_5550_5560 for TOTN
+   upstream segment PS2_5550_5560 PS2_5550_5560 TOTN
+ STATION PS2_5560_5100 for TOTN
+   upstream segment PS2_5560_5100 PS2_5560_5100 TOTN
+     upstream station PS2_5550_5560 PS2_5560_5100 TOTN
+ STATION PS3_5100_5080 for TOTN
+   upstream segment PS3_5100_5080 PS3_5100_5080 TOTN
+     upstream station PS2_5560_5100 PS3_5100_5080 TOTN
+ STATION PS3_6460_6230 for TOTN
+   upstream segment PS3_6460_6230 PS3_6460_6230 TOTN
+ STATION PS2_6490_6420 for TOTN
+   upstream segment PS2_6490_6420 PS2_6490_6420 TOTN
+   upstream segment PS2_6660_6490 PS2_6490_6420 TOTN
+     upstream station PS2_6730_6660 PS2_6490_6420 TOTN
+ STATION PU3_3290_3390 for TOTN
+   upstream segment PU3_3290_3390 PU3_3290_3390 TOTN
+   upstream segment PU2_2790_3290 PU3_3290_3390 TOTN
+   upstream segment PU3_2510_3290 PU3_3290_3390 TOTN
+ STATION PU3_3390_3730 for TOTN
+   upstream segment PU3_3390_3730 PU3_3390_3730 TOTN
+     upstream station PU3_3290_3390 PU3_3390_3730 TOTN
+ STATION PS3_6161_6280 for TOTN
+   upstream segment PS3_6161_6280 PS3_6161_6280 TOTN
+   upstream segment PS3_5990_6161 PS3_6161_6280 TOTN
+   upstream segment PS0_6160_6161 PS3_6161_6280 TOTN
+   upstream segment PS0_6150_6160 PS3_6161_6280 TOTN
+ STATION PS4_6360_5840 for TOTN
+   upstream segment PS4_6360_5840 PS4_6360_5840 TOTN
+   upstream segment PS2_6420_6360 PS4_6360_5840 TOTN
+   upstream segment PS4_6230_6360 PS4_6360_5840 TOTN
+   upstream segment PS3_6280_6230 PS4_6360_5840 TOTN
+     upstream station PS2_6490_6420 PS4_6360_5840 TOTN
+     upstream station PS3_6460_6230 PS4_6360_5840 TOTN
+     upstream station PS3_6161_6280 PS4_6360_5840 TOTN
+ STATION PS4_5840_5240 for TOTN
+   upstream segment PS4_5840_5240 PS4_5840_5240 TOTN
+     upstream station PS4_6360_5840 PS4_5840_5240 TOTN
+ STATION PU3_3860_3610 for TOTN
+   upstream segment PU3_3860_3610 PU3_3860_3610 TOTN
+   upstream segment PU2_4340_3860 PU3_3860_3610 TOTN
+   upstream segment PU3_4280_3860 PU3_3860_3610 TOTN
+ STATION PS5_5240_5200 for TOTN
+   upstream segment PS5_5240_5200 PS5_5240_5200 TOTN
+     upstream station PS4_5840_5240 PS5_5240_5200 TOTN
+ STATION PS5_4380_4370 for TOTN
+   upstream segment PS5_4380_4370 PS5_4380_4370 TOTN
+   upstream segment PS4_5080_4380 PS5_4380_4370 TOTN
+   upstream segment PS5_5200_4380 PS5_4380_4370 TOTN
+   upstream segment PS1_4830_5080 PS5_4380_4370 TOTN
+   upstream segment PS1_4790_4830 PS5_4380_4370 TOTN
+     upstream station PS3_5100_5080 PS5_4380_4370 TOTN
+     upstream station PS5_5240_5200 PS5_4380_4370 TOTN
+ STATION PU2_3370_4020 for TOTN
+   upstream segment PU2_3370_4020 PU2_3370_4020 TOTN
+   upstream segment PU2_3180_3370 PU2_3370_4020 TOTN
+ STATION PU1_3170_3580 for TOTN
+   upstream segment PU1_3170_3580 PU1_3170_3580 TOTN
+ STATION PU2_3140_3680 for TOTN
+   upstream segment PU2_3140_3680 PU2_3140_3680 TOTN
+ STATION PU1_3940_3970 for TOTN
+   upstream segment PU1_3940_3970 PU1_3940_3970 TOTN
+ STATION PU3_3680_3890 for TOTN
+   upstream segment PU3_3680_3890 PU3_3680_3890 TOTN
+     upstream station PU2_3140_3680 PU3_3680_3890 TOTN
+ STATION PU1_4300_4440 for TOTN
+   upstream segment PU1_4300_4440 PU1_4300_4440 TOTN
+   upstream segment PU1_4190_4300 PU1_4300_4440 TOTN
+   upstream segment PU1_3850_4190 PU1_4300_4440 TOTN
+ STATION PU3_4450_4440 for TOTN
+   upstream segment PU3_4450_4440 PU3_4450_4440 TOTN
+   upstream segment PU1_4760_4450 PU3_4450_4440 TOTN
+   upstream segment PU2_4750_4450 PU3_4450_4440 TOTN
+   upstream segment PU1_4840_4760 PU3_4450_4440 TOTN
+   upstream segment PU2_4720_4750 PU3_4450_4440 TOTN
+ STATION PU4_3970_3890 for TOTN
+   upstream segment PU4_3970_3890 PU4_3970_3890 TOTN
+   upstream segment PU4_4440_3970 PU4_3970_3890 TOTN
+     upstream station PU1_3940_3970 PU4_3970_3890 TOTN
+     upstream station PU1_4300_4440 PU4_3970_3890 TOTN
+     upstream station PU3_4450_4440 PU4_3970_3890 TOTN
+ STATION PU4_3780_3930 for TOTN
+   upstream segment PU4_3780_3930 PU4_3780_3930 TOTN
+   upstream segment PU1_3580_3780 PU4_3780_3930 TOTN
+   upstream segment PU4_3990_3780 PU4_3780_3930 TOTN
+   upstream segment PU4_3890_3990 PU4_3780_3930 TOTN
+     upstream station PU1_3170_3580 PU4_3780_3930 TOTN
+     upstream station PU3_3680_3890 PU4_3780_3930 TOTN
+     upstream station PU4_3970_3890 PU4_3780_3930 TOTN
+ STATION PU5_3930_4170 for TOTN
+   upstream segment PU5_3930_4170 PU5_3930_4170 TOTN
+   upstream segment PU2_4160_3930 PU5_3930_4170 TOTN
+   upstream segment PU2_4360_4160 PU5_3930_4170 TOTN
+     upstream station PU4_3780_3930 PU5_3930_4170 TOTN
+ STATION PU6_4020_3870 for TOTN
+   upstream segment PU6_4020_3870 PU6_4020_3870 TOTN
+   upstream segment PU5_4170_4020 PU6_4020_3870 TOTN
+   upstream segment PU4_4210_4170 PU6_4020_3870 TOTN
+   upstream segment PU4_4310_4210 PU6_4020_3870 TOTN
+   upstream segment PU2_5190_4310 PU6_4020_3870 TOTN
+   upstream segment PU4_5050_4310 PU6_4020_3870 TOTN
+   upstream segment PU2_6050_5190 PU6_4020_3870 TOTN
+   upstream segment PU3_5210_5050 PU6_4020_3870 TOTN
+   upstream segment PU1_5380_5050 PU6_4020_3870 TOTN
+   upstream segment PU1_5520_5210 PU6_4020_3870 TOTN
+   upstream segment PU2_5700_5210 PU6_4020_3870 TOTN
+   upstream segment PU1_5820_5380 PU6_4020_3870 TOTN
+   upstream segment PU0_5620_5380 PU6_4020_3870 TOTN
+   upstream segment PU0_6080_5620 PU6_4020_3870 TOTN
+     upstream station PU2_3370_4020 PU6_4020_3870 TOTN
+     upstream station PU5_3930_4170 PU6_4020_3870 TOTN
+ STATION PU6_3610_3530 for TOTN
+   upstream segment PU6_3610_3530 PU6_3610_3530 TOTN
+   upstream segment PU6_3690_3610 PU6_3610_3530 TOTN
+   upstream segment PU0_3871_3690 PU6_3610_3530 TOTN
+   upstream segment PU1_3100_3690 PU6_3610_3530 TOTN
+   upstream segment PU6_3870_3690 PU6_3610_3530 TOTN
+     upstream station PU3_3860_3610 PU6_3610_3530 TOTN
+     upstream station PU6_4020_3870 PU6_3610_3530 TOTN
+ STATION PU6_3752_4080 for TOTN
+   upstream segment PU6_3752_4080 PU6_3752_4080 TOTN
+   upstream segment PU0_3751_3752 PU6_3752_4080 TOTN
+   upstream segment PU6_3750_3752 PU6_3752_4080 TOTN
+   upstream segment PU2_3900_3750 PU6_3752_4080 TOTN
+   upstream segment PU6_3730_3750 PU6_3752_4080 TOTN
+   upstream segment PU2_4220_3900 PU6_3752_4080 TOTN
+   upstream segment PU6_3602_3730 PU6_3752_4080 TOTN
+   upstream segment PU2_4730_4220 PU6_3752_4080 TOTN
+   upstream segment PU0_3601_3602 PU6_3752_4080 TOTN
+   upstream segment PU6_3600_3602 PU6_3752_4080 TOTN
+   upstream segment PU2_3770_3600 PU6_3752_4080 TOTN
+   upstream segment PU6_3640_3600 PU6_3752_4080 TOTN
+   upstream segment PU2_3080_3640 PU6_3752_4080 TOTN
+   upstream segment PU6_3590_3640 PU6_3752_4080 TOTN
+   upstream segment PU2_2840_3080 PU6_3752_4080 TOTN
+   upstream segment PU2_3630_3590 PU6_3752_4080 TOTN
+   upstream segment PU6_3440_3590 PU6_3752_4080 TOTN
+   upstream segment PU1_3030_3440 PU6_3752_4080 TOTN
+   upstream segment PU6_3530_3440 PU6_3752_4080 TOTN
+   upstream segment PU0_3611_3530 PU6_3752_4080 TOTN
+     upstream station PU3_3390_3730 PU6_3752_4080 TOTN
+     upstream station PU6_3610_3530 PU6_3752_4080 TOTN
+ STATION PM7_4820_0001 for TOTN
+   upstream segment PM7_4820_0001 PM7_4820_0001 TOTN
+   upstream segment PM7_4580_4820 PM7_4820_0001 TOTN
+   upstream segment PM7_4620_4580 PM7_4820_0001 TOTN
+   upstream segment PM3_4660_4620 PM7_4820_0001 TOTN
+   upstream segment PM7_4410_4620 PM7_4820_0001 TOTN
+   upstream segment PM3_4670_4660 PM7_4820_0001 TOTN
+   upstream segment PM7_4200_4410 PM7_4820_0001 TOTN
+   upstream segment PM2_4860_4670 PM7_4820_0001 TOTN
+   upstream segment PM1_4430_4200 PM7_4820_0001 TOTN
+   upstream segment PM7_4290_4200 PM7_4820_0001 TOTN
+   upstream segment PM7_4150_4290 PM7_4820_0001 TOTN
+   upstream segment PS5_4370_4150 PM7_4820_0001 TOTN
+   upstream segment PU6_4180_4150 PM7_4820_0001 TOTN
+   upstream segment PU2_4050_4180 PM7_4820_0001 TOTN
+   upstream segment PU6_4080_4180 PM7_4820_0001 TOTN
+     upstream station PM0_4640_4820 PM7_4820_0001 TOTN
+     upstream station PM1_4500_4580 PM7_4820_0001 TOTN
+     upstream station PM4_4040_4410 PM7_4820_0001 TOTN
+     upstream station PM1_4000_4290 PM7_4820_0001 TOTN
+     upstream station PS5_4380_4370 PM7_4820_0001 TOTN
+     upstream station PU2_3090_4050 PM7_4820_0001 TOTN
+     upstream station PU6_3752_4080 PM7_4820_0001 TOTN
+ STATION PM0_4640_4820 for TOTP
+   upstream segment PM0_4640_4820 PM0_4640_4820 TOTP
+ STATION PM1_4250_4500 for TOTP
+   upstream segment PM1_4250_4500 PM1_4250_4500 TOTP
+ STATION PM1_4500_4580 for TOTP
+   upstream segment PM1_4500_4580 PM1_4500_4580 TOTP
+     upstream station PM1_4250_4500 PM1_4500_4580 TOTP
+ STATION PM3_4670_4660 for TOTP
+   upstream segment PM3_4670_4660 PM3_4670_4660 TOTP
+   upstream segment PM2_4860_4670 PM3_4670_4660 TOTP
+ STATION PM1_4430_4200 for TOTP
+   upstream segment PM1_4430_4200 PM1_4430_4200 TOTP
+ STATION PM1_3120_3400 for TOTP
+   upstream segment PM1_3120_3400 PM1_3120_3400 TOTP
+ STATION PM2_2860_3040 for TOTP
+   upstream segment PM2_2860_3040 PM2_2860_3040 TOTP
+ STATION PM1_3510_4000 for TOTP
+   upstream segment PM1_3510_4000 PM1_3510_4000 TOTP
+ STATION PS1_4790_4830 for TOTP
+   upstream segment PS1_4790_4830 PS1_4790_4830 TOTP
+ STATION PM1_4000_4290 for TOTP
+   upstream segment PM1_4000_4290 PM1_4000_4290 TOTP
+     upstream station PM1_3510_4000 PM1_4000_4290 TOTP
+ STATION PU0_3000_3090 for TOTP
+   upstream segment PU0_3000_3090 PU0_3000_3090 TOTP
+ STATION PS2_6730_6660 for TOTP
+   upstream segment PS2_6730_6660 PS2_6730_6660 TOTP
+ STATION PU2_3090_4050 for TOTP
+   upstream segment PU2_3090_4050 PU2_3090_4050 TOTP
+     upstream station PU0_3000_3090 PU2_3090_4050 TOTP
+ STATION PM4_3340_3341 for TOTP
+   upstream segment PM4_3340_3341 PM4_3340_3341 TOTP
+   upstream segment PM2_3400_3340 PM4_3340_3341 TOTP
+   upstream segment PM3_3040_3340 PM4_3340_3341 TOTP
+   upstream segment PM1_3450_3400 PM4_3340_3341 TOTP
+     upstream station PM1_3120_3400 PM4_3340_3341 TOTP
+     upstream station PM2_2860_3040 PM4_3340_3341 TOTP
+ STATION PM4_4040_4410 for TOTP
+   upstream segment PM4_4040_4410 PM4_4040_4410 TOTP
+   upstream segment PM1_3710_4040 PM4_4040_4410 TOTP
+   upstream segment PM4_3341_4040 PM4_4040_4410 TOTP
+     upstream station PM4_3340_3341 PM4_4040_4410 TOTP
+ STATION PS2_5550_5560 for TOTP
+   upstream segment PS2_5550_5560 PS2_5550_5560 TOTP
+ STATION PS2_5560_5100 for TOTP
+   upstream segment PS2_5560_5100 PS2_5560_5100 TOTP
+     upstream station PS2_5550_5560 PS2_5560_5100 TOTP
+ STATION PS3_5100_5080 for TOTP
+   upstream segment PS3_5100_5080 PS3_5100_5080 TOTP
+     upstream station PS2_5560_5100 PS3_5100_5080 TOTP
+ STATION PS3_6460_6230 for TOTP
+   upstream segment PS3_6460_6230 PS3_6460_6230 TOTP
+ STATION PS2_6490_6420 for TOTP
+   upstream segment PS2_6490_6420 PS2_6490_6420 TOTP
+   upstream segment PS2_6660_6490 PS2_6490_6420 TOTP
+     upstream station PS2_6730_6660 PS2_6490_6420 TOTP
+ STATION PU3_3290_3390 for TOTP
+   upstream segment PU3_3290_3390 PU3_3290_3390 TOTP
+   upstream segment PU2_2790_3290 PU3_3290_3390 TOTP
+   upstream segment PU3_2510_3290 PU3_3290_3390 TOTP
+ STATION PU3_3390_3730 for TOTP
+   upstream segment PU3_3390_3730 PU3_3390_3730 TOTP
+     upstream station PU3_3290_3390 PU3_3390_3730 TOTP
+ STATION PS3_6161_6280 for TOTP
+   upstream segment PS3_6161_6280 PS3_6161_6280 TOTP
+   upstream segment PS3_5990_6161 PS3_6161_6280 TOTP
+   upstream segment PS0_6160_6161 PS3_6161_6280 TOTP
+   upstream segment PS0_6150_6160 PS3_6161_6280 TOTP
+ STATION PU3_4280_3860 for TOTP
+   upstream segment PU3_4280_3860 PU3_4280_3860 TOTP
+ STATION PS4_6360_5840 for TOTP
+   upstream segment PS4_6360_5840 PS4_6360_5840 TOTP
+   upstream segment PS2_6420_6360 PS4_6360_5840 TOTP
+   upstream segment PS4_6230_6360 PS4_6360_5840 TOTP
+   upstream segment PS3_6280_6230 PS4_6360_5840 TOTP
+     upstream station PS2_6490_6420 PS4_6360_5840 TOTP
+     upstream station PS3_6460_6230 PS4_6360_5840 TOTP
+     upstream station PS3_6161_6280 PS4_6360_5840 TOTP
+ STATION PS4_5840_5240 for TOTP
+   upstream segment PS4_5840_5240 PS4_5840_5240 TOTP
+     upstream station PS4_6360_5840 PS4_5840_5240 TOTP
+ STATION PU3_3860_3610 for TOTP
+   upstream segment PU3_3860_3610 PU3_3860_3610 TOTP
+   upstream segment PU2_4340_3860 PU3_3860_3610 TOTP
+     upstream station PU3_4280_3860 PU3_3860_3610 TOTP
+ STATION PS5_5240_5200 for TOTP
+   upstream segment PS5_5240_5200 PS5_5240_5200 TOTP
+     upstream station PS4_5840_5240 PS5_5240_5200 TOTP
+ STATION PS5_4380_4370 for TOTP
+   upstream segment PS5_4380_4370 PS5_4380_4370 TOTP
+   upstream segment PS4_5080_4380 PS5_4380_4370 TOTP
+   upstream segment PS5_5200_4380 PS5_4380_4370 TOTP
+   upstream segment PS1_4830_5080 PS5_4380_4370 TOTP
+     upstream station PS3_5100_5080 PS5_4380_4370 TOTP
+     upstream station PS5_5240_5200 PS5_4380_4370 TOTP
+     upstream station PS1_4790_4830 PS5_4380_4370 TOTP
+ STATION PU2_6050_5190 for TOTP
+   upstream segment PU2_6050_5190 PU2_6050_5190 TOTP
+ STATION PU2_3370_4020 for TOTP
+   upstream segment PU2_3370_4020 PU2_3370_4020 TOTP
+   upstream segment PU2_3180_3370 PU2_3370_4020 TOTP
+ STATION PU1_3170_3580 for TOTP
+   upstream segment PU1_3170_3580 PU1_3170_3580 TOTP
+ STATION PU2_3140_3680 for TOTP
+   upstream segment PU2_3140_3680 PU2_3140_3680 TOTP
+ STATION PU1_3940_3970 for TOTP
+   upstream segment PU1_3940_3970 PU1_3940_3970 TOTP
+ STATION PU3_3680_3890 for TOTP
+   upstream segment PU3_3680_3890 PU3_3680_3890 TOTP
+     upstream station PU2_3140_3680 PU3_3680_3890 TOTP
+ STATION PU1_4840_4760 for TOTP
+   upstream segment PU1_4840_4760 PU1_4840_4760 TOTP
+ STATION PU1_4300_4440 for TOTP
+   upstream segment PU1_4300_4440 PU1_4300_4440 TOTP
+   upstream segment PU1_4190_4300 PU1_4300_4440 TOTP
+   upstream segment PU1_3850_4190 PU1_4300_4440 TOTP
+ STATION PU3_4450_4440 for TOTP
+   upstream segment PU3_4450_4440 PU3_4450_4440 TOTP
+   upstream segment PU1_4760_4450 PU3_4450_4440 TOTP
+   upstream segment PU2_4750_4450 PU3_4450_4440 TOTP
+   upstream segment PU2_4720_4750 PU3_4450_4440 TOTP
+     upstream station PU1_4840_4760 PU3_4450_4440 TOTP
+ STATION PU4_3970_3890 for TOTP
+   upstream segment PU4_3970_3890 PU4_3970_3890 TOTP
+   upstream segment PU4_4440_3970 PU4_3970_3890 TOTP
+     upstream station PU1_3940_3970 PU4_3970_3890 TOTP
+     upstream station PU1_4300_4440 PU4_3970_3890 TOTP
+     upstream station PU3_4450_4440 PU4_3970_3890 TOTP
+ STATION PU4_3780_3930 for TOTP
+   upstream segment PU4_3780_3930 PU4_3780_3930 TOTP
+   upstream segment PU1_3580_3780 PU4_3780_3930 TOTP
+   upstream segment PU4_3990_3780 PU4_3780_3930 TOTP
+   upstream segment PU4_3890_3990 PU4_3780_3930 TOTP
+   upstream segment PU4_3970_3890 PU4_3780_3930 TOTP
+   upstream segment PU4_4440_3970 PU4_3780_3930 TOTP
+     upstream station PU1_3170_3580 PU4_3780_3930 TOTP
+     upstream station PU3_3680_3890 PU4_3780_3930 TOTP
+     upstream station PU1_3940_3970 PU4_3780_3930 TOTP
+     upstream station PU1_4300_4440 PU4_3780_3930 TOTP
+     upstream station PU3_4450_4440 PU4_3780_3930 TOTP
+ STATION PU5_3930_4170 for TOTP
+   upstream segment PU5_3930_4170 PU5_3930_4170 TOTP
+   upstream segment PU2_4160_3930 PU5_3930_4170 TOTP
+   upstream segment PU4_3780_3930 PU5_3930_4170 TOTP
+   upstream segment PU2_4360_4160 PU5_3930_4170 TOTP
+   upstream segment PU1_3580_3780 PU5_3930_4170 TOTP
+   upstream segment PU4_3990_3780 PU5_3930_4170 TOTP
+   upstream segment PU4_3890_3990 PU5_3930_4170 TOTP
+   upstream segment PU4_3970_3890 PU5_3930_4170 TOTP
+   upstream segment PU4_4440_3970 PU5_3930_4170 TOTP
+     upstream station PU1_3170_3580 PU5_3930_4170 TOTP
+     upstream station PU3_3680_3890 PU5_3930_4170 TOTP
+     upstream station PU1_3940_3970 PU5_3930_4170 TOTP
+     upstream station PU1_4300_4440 PU5_3930_4170 TOTP
+     upstream station PU3_4450_4440 PU5_3930_4170 TOTP
+ STATION PU6_4020_3870 for TOTP
+   upstream segment PU6_4020_3870 PU6_4020_3870 TOTP
+   upstream segment PU5_4170_4020 PU6_4020_3870 TOTP
+   upstream segment PU4_4210_4170 PU6_4020_3870 TOTP
+   upstream segment PU5_3930_4170 PU6_4020_3870 TOTP
+   upstream segment PU4_4310_4210 PU6_4020_3870 TOTP
+   upstream segment PU2_4160_3930 PU6_4020_3870 TOTP
+   upstream segment PU4_3780_3930 PU6_4020_3870 TOTP
+   upstream segment PU2_5190_4310 PU6_4020_3870 TOTP
+   upstream segment PU4_5050_4310 PU6_4020_3870 TOTP
+   upstream segment PU2_4360_4160 PU6_4020_3870 TOTP
+   upstream segment PU1_3580_3780 PU6_4020_3870 TOTP
+   upstream segment PU4_3990_3780 PU6_4020_3870 TOTP
+   upstream segment PU3_5210_5050 PU6_4020_3870 TOTP
+   upstream segment PU1_5380_5050 PU6_4020_3870 TOTP
+   upstream segment PU4_3890_3990 PU6_4020_3870 TOTP
+   upstream segment PU1_5520_5210 PU6_4020_3870 TOTP
+   upstream segment PU2_5700_5210 PU6_4020_3870 TOTP
+   upstream segment PU1_5820_5380 PU6_4020_3870 TOTP
+   upstream segment PU0_5620_5380 PU6_4020_3870 TOTP
+   upstream segment PU4_3970_3890 PU6_4020_3870 TOTP
+   upstream segment PU0_6080_5620 PU6_4020_3870 TOTP
+   upstream segment PU4_4440_3970 PU6_4020_3870 TOTP
+     upstream station PU2_3370_4020 PU6_4020_3870 TOTP
+     upstream station PU2_6050_5190 PU6_4020_3870 TOTP
+     upstream station PU1_3170_3580 PU6_4020_3870 TOTP
+     upstream station PU3_3680_3890 PU6_4020_3870 TOTP
+     upstream station PU1_3940_3970 PU6_4020_3870 TOTP
+     upstream station PU1_4300_4440 PU6_4020_3870 TOTP
+     upstream station PU3_4450_4440 PU6_4020_3870 TOTP
+ STATION PU6_3610_3530 for TOTP
+   upstream segment PU6_3610_3530 PU6_3610_3530 TOTP
+   upstream segment PU6_3690_3610 PU6_3610_3530 TOTP
+   upstream segment PU0_3871_3690 PU6_3610_3530 TOTP
+   upstream segment PU1_3100_3690 PU6_3610_3530 TOTP
+   upstream segment PU6_3870_3690 PU6_3610_3530 TOTP
+   upstream segment PU6_4020_3870 PU6_3610_3530 TOTP
+   upstream segment PU5_4170_4020 PU6_3610_3530 TOTP
+   upstream segment PU4_4210_4170 PU6_3610_3530 TOTP
+   upstream segment PU5_3930_4170 PU6_3610_3530 TOTP
+   upstream segment PU4_4310_4210 PU6_3610_3530 TOTP
+   upstream segment PU2_4160_3930 PU6_3610_3530 TOTP
+   upstream segment PU4_3780_3930 PU6_3610_3530 TOTP
+   upstream segment PU2_5190_4310 PU6_3610_3530 TOTP
+   upstream segment PU4_5050_4310 PU6_3610_3530 TOTP
+   upstream segment PU2_4360_4160 PU6_3610_3530 TOTP
+   upstream segment PU1_3580_3780 PU6_3610_3530 TOTP
+   upstream segment PU4_3990_3780 PU6_3610_3530 TOTP
+   upstream segment PU3_5210_5050 PU6_3610_3530 TOTP
+   upstream segment PU1_5380_5050 PU6_3610_3530 TOTP
+   upstream segment PU4_3890_3990 PU6_3610_3530 TOTP
+   upstream segment PU1_5520_5210 PU6_3610_3530 TOTP
+   upstream segment PU2_5700_5210 PU6_3610_3530 TOTP
+   upstream segment PU1_5820_5380 PU6_3610_3530 TOTP
+   upstream segment PU0_5620_5380 PU6_3610_3530 TOTP
+   upstream segment PU4_3970_3890 PU6_3610_3530 TOTP
+   upstream segment PU0_6080_5620 PU6_3610_3530 TOTP
+   upstream segment PU4_4440_3970 PU6_3610_3530 TOTP
+     upstream station PU3_3860_3610 PU6_3610_3530 TOTP
+     upstream station PU2_3370_4020 PU6_3610_3530 TOTP
+     upstream station PU2_6050_5190 PU6_3610_3530 TOTP
+     upstream station PU1_3170_3580 PU6_3610_3530 TOTP
+     upstream station PU3_3680_3890 PU6_3610_3530 TOTP
+     upstream station PU1_3940_3970 PU6_3610_3530 TOTP
+     upstream station PU1_4300_4440 PU6_3610_3530 TOTP
+     upstream station PU3_4450_4440 PU6_3610_3530 TOTP
+ STATION PU6_3752_4080 for TOTP
+   upstream segment PU6_3752_4080 PU6_3752_4080 TOTP
+   upstream segment PU0_3751_3752 PU6_3752_4080 TOTP
+   upstream segment PU6_3750_3752 PU6_3752_4080 TOTP
+   upstream segment PU2_3900_3750 PU6_3752_4080 TOTP
+   upstream segment PU6_3730_3750 PU6_3752_4080 TOTP
+   upstream segment PU2_4220_3900 PU6_3752_4080 TOTP
+   upstream segment PU6_3602_3730 PU6_3752_4080 TOTP
+   upstream segment PU2_4730_4220 PU6_3752_4080 TOTP
+   upstream segment PU0_3601_3602 PU6_3752_4080 TOTP
+   upstream segment PU6_3600_3602 PU6_3752_4080 TOTP
+   upstream segment PU2_3770_3600 PU6_3752_4080 TOTP
+   upstream segment PU6_3640_3600 PU6_3752_4080 TOTP
+   upstream segment PU2_3080_3640 PU6_3752_4080 TOTP
+   upstream segment PU6_3590_3640 PU6_3752_4080 TOTP
+   upstream segment PU2_2840_3080 PU6_3752_4080 TOTP
+   upstream segment PU2_3630_3590 PU6_3752_4080 TOTP
+   upstream segment PU6_3440_3590 PU6_3752_4080 TOTP
+   upstream segment PU1_3030_3440 PU6_3752_4080 TOTP
+   upstream segment PU6_3530_3440 PU6_3752_4080 TOTP
+   upstream segment PU0_3611_3530 PU6_3752_4080 TOTP
+   upstream segment PU6_3610_3530 PU6_3752_4080 TOTP
+   upstream segment PU6_3690_3610 PU6_3752_4080 TOTP
+   upstream segment PU0_3871_3690 PU6_3752_4080 TOTP
+   upstream segment PU1_3100_3690 PU6_3752_4080 TOTP
+   upstream segment PU6_3870_3690 PU6_3752_4080 TOTP
+   upstream segment PU6_4020_3870 PU6_3752_4080 TOTP
+   upstream segment PU5_4170_4020 PU6_3752_4080 TOTP
+   upstream segment PU4_4210_4170 PU6_3752_4080 TOTP
+   upstream segment PU5_3930_4170 PU6_3752_4080 TOTP
+   upstream segment PU4_4310_4210 PU6_3752_4080 TOTP
+   upstream segment PU2_4160_3930 PU6_3752_4080 TOTP
+   upstream segment PU4_3780_3930 PU6_3752_4080 TOTP
+   upstream segment PU2_5190_4310 PU6_3752_4080 TOTP
+   upstream segment PU4_5050_4310 PU6_3752_4080 TOTP
+   upstream segment PU2_4360_4160 PU6_3752_4080 TOTP
+   upstream segment PU1_3580_3780 PU6_3752_4080 TOTP
+   upstream segment PU4_3990_3780 PU6_3752_4080 TOTP
+   upstream segment PU3_5210_5050 PU6_3752_4080 TOTP
+   upstream segment PU1_5380_5050 PU6_3752_4080 TOTP
+   upstream segment PU4_3890_3990 PU6_3752_4080 TOTP
+   upstream segment PU1_5520_5210 PU6_3752_4080 TOTP
+   upstream segment PU2_5700_5210 PU6_3752_4080 TOTP
+   upstream segment PU1_5820_5380 PU6_3752_4080 TOTP
+   upstream segment PU0_5620_5380 PU6_3752_4080 TOTP
+   upstream segment PU4_3970_3890 PU6_3752_4080 TOTP
+   upstream segment PU0_6080_5620 PU6_3752_4080 TOTP
+   upstream segment PU4_4440_3970 PU6_3752_4080 TOTP
+     upstream station PU3_3390_3730 PU6_3752_4080 TOTP
+     upstream station PU3_3860_3610 PU6_3752_4080 TOTP
+     upstream station PU2_3370_4020 PU6_3752_4080 TOTP
+     upstream station PU2_6050_5190 PU6_3752_4080 TOTP
+     upstream station PU1_3170_3580 PU6_3752_4080 TOTP
+     upstream station PU3_3680_3890 PU6_3752_4080 TOTP
+     upstream station PU1_3940_3970 PU6_3752_4080 TOTP
+     upstream station PU1_4300_4440 PU6_3752_4080 TOTP
+     upstream station PU3_4450_4440 PU6_3752_4080 TOTP
+ STATION PM7_4820_0001 for TOTP
+   upstream segment PM7_4820_0001 PM7_4820_0001 TOTP
+   upstream segment PM7_4580_4820 PM7_4820_0001 TOTP
+   upstream segment PM7_4620_4580 PM7_4820_0001 TOTP
+   upstream segment PM3_4660_4620 PM7_4820_0001 TOTP
+   upstream segment PM7_4410_4620 PM7_4820_0001 TOTP
+   upstream segment PM7_4200_4410 PM7_4820_0001 TOTP
+   upstream segment PM7_4290_4200 PM7_4820_0001 TOTP
+   upstream segment PM7_4150_4290 PM7_4820_0001 TOTP
+   upstream segment PS5_4370_4150 PM7_4820_0001 TOTP
+   upstream segment PU6_4180_4150 PM7_4820_0001 TOTP
+   upstream segment PU2_4050_4180 PM7_4820_0001 TOTP
+   upstream segment PU6_4080_4180 PM7_4820_0001 TOTP
+   upstream segment PU6_3752_4080 PM7_4820_0001 TOTP
+   upstream segment PU0_3751_3752 PM7_4820_0001 TOTP
+   upstream segment PU6_3750_3752 PM7_4820_0001 TOTP
+   upstream segment PU2_3900_3750 PM7_4820_0001 TOTP
+   upstream segment PU6_3730_3750 PM7_4820_0001 TOTP
+   upstream segment PU2_4220_3900 PM7_4820_0001 TOTP
+   upstream segment PU6_3602_3730 PM7_4820_0001 TOTP
+   upstream segment PU2_4730_4220 PM7_4820_0001 TOTP
+   upstream segment PU0_3601_3602 PM7_4820_0001 TOTP
+   upstream segment PU6_3600_3602 PM7_4820_0001 TOTP
+   upstream segment PU2_3770_3600 PM7_4820_0001 TOTP
+   upstream segment PU6_3640_3600 PM7_4820_0001 TOTP
+   upstream segment PU2_3080_3640 PM7_4820_0001 TOTP
+   upstream segment PU6_3590_3640 PM7_4820_0001 TOTP
+   upstream segment PU2_2840_3080 PM7_4820_0001 TOTP
+   upstream segment PU2_3630_3590 PM7_4820_0001 TOTP
+   upstream segment PU6_3440_3590 PM7_4820_0001 TOTP
+   upstream segment PU1_3030_3440 PM7_4820_0001 TOTP
+   upstream segment PU6_3530_3440 PM7_4820_0001 TOTP
+   upstream segment PU0_3611_3530 PM7_4820_0001 TOTP
+   upstream segment PU6_3610_3530 PM7_4820_0001 TOTP
+   upstream segment PU6_3690_3610 PM7_4820_0001 TOTP
+   upstream segment PU0_3871_3690 PM7_4820_0001 TOTP
+   upstream segment PU1_3100_3690 PM7_4820_0001 TOTP
+   upstream segment PU6_3870_3690 PM7_4820_0001 TOTP
+   upstream segment PU6_4020_3870 PM7_4820_0001 TOTP
+   upstream segment PU5_4170_4020 PM7_4820_0001 TOTP
+   upstream segment PU4_4210_4170 PM7_4820_0001 TOTP
+   upstream segment PU5_3930_4170 PM7_4820_0001 TOTP
+   upstream segment PU4_4310_4210 PM7_4820_0001 TOTP
+   upstream segment PU2_4160_3930 PM7_4820_0001 TOTP
+   upstream segment PU4_3780_3930 PM7_4820_0001 TOTP
+   upstream segment PU2_5190_4310 PM7_4820_0001 TOTP
+   upstream segment PU4_5050_4310 PM7_4820_0001 TOTP
+   upstream segment PU2_4360_4160 PM7_4820_0001 TOTP
+   upstream segment PU1_3580_3780 PM7_4820_0001 TOTP
+   upstream segment PU4_3990_3780 PM7_4820_0001 TOTP
+   upstream segment PU3_5210_5050 PM7_4820_0001 TOTP
+   upstream segment PU1_5380_5050 PM7_4820_0001 TOTP
+   upstream segment PU4_3890_3990 PM7_4820_0001 TOTP
+   upstream segment PU1_5520_5210 PM7_4820_0001 TOTP
+   upstream segment PU2_5700_5210 PM7_4820_0001 TOTP
+   upstream segment PU1_5820_5380 PM7_4820_0001 TOTP
+   upstream segment PU0_5620_5380 PM7_4820_0001 TOTP
+   upstream segment PU4_3970_3890 PM7_4820_0001 TOTP
+   upstream segment PU0_6080_5620 PM7_4820_0001 TOTP
+   upstream segment PU4_4440_3970 PM7_4820_0001 TOTP
+     upstream station PM0_4640_4820 PM7_4820_0001 TOTP
+     upstream station PM1_4500_4580 PM7_4820_0001 TOTP
+     upstream station PM3_4670_4660 PM7_4820_0001 TOTP
+     upstream station PM4_4040_4410 PM7_4820_0001 TOTP
+     upstream station PM1_4430_4200 PM7_4820_0001 TOTP
+     upstream station PM1_4000_4290 PM7_4820_0001 TOTP
+     upstream station PS5_4380_4370 PM7_4820_0001 TOTP
+     upstream station PU2_3090_4050 PM7_4820_0001 TOTP
+     upstream station PU3_3390_3730 PM7_4820_0001 TOTP
+     upstream station PU3_3860_3610 PM7_4820_0001 TOTP
+     upstream station PU2_3370_4020 PM7_4820_0001 TOTP
+     upstream station PU2_6050_5190 PM7_4820_0001 TOTP
+     upstream station PU1_3170_3580 PM7_4820_0001 TOTP
+     upstream station PU3_3680_3890 PM7_4820_0001 TOTP
+     upstream station PU1_3940_3970 PM7_4820_0001 TOTP
+     upstream station PU1_4300_4440 PM7_4820_0001 TOTP
+     upstream station PU3_4450_4440 PM7_4820_0001 TOTP

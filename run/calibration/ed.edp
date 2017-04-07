@@ -1,0 +1,3 @@
+g/mkdir \$tree\/run\/temp/s//mkdir -p \.\.\/\.\.\/tmp\/scratch
+w
+q

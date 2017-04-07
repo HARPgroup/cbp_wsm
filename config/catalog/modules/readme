@@ -1,0 +1,21 @@
+This is the section that contains all of the information on model parameters
+Two files in this directory contain the names of variables stored in 
+    tables under ./pp/param
+
+The file 'tables' has an exhaustive list of table names, header lines, 
+    and variables.
+The header lines, including the variable name line are all comments 
+    (have '***').  
+The variable line has a 'V' as the third character.  
+The line with the name of the table has the format in specified column.  The 
+    table format follows the fortran formatting.  If the format is not a simple 
+    n[f,i]x format, then the string 'unique' or just 'u' is used.  The format 
+    for this table requires special coding in the pp/[l,r]ug/src/tables.f file.
+
+The file 'rivtables' is the same file for rivers.
+
+The parameters for each land use are contained in the directory of the same 
+    land use name.
+Each module has its own comma delimited file.
+
+

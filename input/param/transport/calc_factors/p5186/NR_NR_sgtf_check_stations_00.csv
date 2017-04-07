@@ -1,0 +1,74 @@
+ STATION NR5_8870_0003 for TOTN
+   upstream segment NR1_8960_8870 NR5_8870_0003 TOTN
+   upstream segment NR5_9050_8870 NR5_8870_0003 TOTN
+   upstream segment NR1_9150_9050 NR5_8870_0003 TOTN
+   upstream segment NR5_9080_9050 NR5_8870_0003 TOTN
+   upstream segment NR1_9030_9080 NR5_8870_0003 TOTN
+   upstream segment NR4_9130_9080 NR5_8870_0003 TOTN
+   upstream segment NR3_9170_9130 NR5_8870_0003 TOTN
+   upstream segment NR3_9240_9130 NR5_8870_0003 TOTN
+   upstream segment NR2_9250_9170 NR5_8870_0003 TOTN
+   upstream segment NR3_9190_9170 NR5_8870_0003 TOTN
+   upstream segment NR3_9310_9240 NR5_8870_0003 TOTN
+ STATION NR6_8500_0003 for TOTN
+   upstream segment NR3_8690_8500 NR6_8500_0003 TOTN
+   upstream segment NR3_8740_8500 NR6_8500_0003 TOTN
+   upstream segment NR6_8640_8500 NR6_8500_0003 TOTN
+   upstream segment NR5_8700_8640 NR6_8500_0003 TOTN
+   upstream segment NR5_8760_8640 NR6_8500_0003 TOTN
+   upstream segment NR2_8600_8700 NR6_8500_0003 TOTN
+   upstream segment NR1_8820_8760 NR6_8500_0003 TOTN
+   upstream segment NR5_8870_8760 NR6_8500_0003 TOTN
+     upstream station NR5_8870_0003 NR6_8500_0003 TOTN
+ STATION NR6_8051_8000 for TOTN
+   upstream segment NR6_8051_8000 NR6_8051_8000 TOTN
+   upstream segment NR1_8030_8051 NR6_8051_8000 TOTN
+   upstream segment NR6_8180_8051 NR6_8051_8000 TOTN
+   upstream segment NR6_8050_8051 NR6_8051_8000 TOTN
+   upstream segment NR2_8210_8180 NR6_8051_8000 TOTN
+   upstream segment NR1_7880_8050 NR6_8051_8000 TOTN
+   upstream segment NR6_7960_8050 NR6_8051_8000 TOTN
+   upstream segment NR6_8170_7960 NR6_8051_8000 TOTN
+   upstream segment NR6_7820_7960 NR6_8051_8000 TOTN
+   upstream segment NR3_8290_8170 NR6_8051_8000 TOTN
+   upstream segment NR3_8430_7820 NR6_8051_8000 TOTN
+   upstream segment NR3_8420_8430 NR6_8051_8000 TOTN
+   upstream segment NR6_8500_7820 NR6_8051_8000 TOTN
+     upstream station NR6_8500_0003 NR6_8051_8000 TOTN
+ STATION NR5_8870_0003 for TOTP
+   upstream segment NR1_8960_8870 NR5_8870_0003 TOTP
+   upstream segment NR5_9050_8870 NR5_8870_0003 TOTP
+   upstream segment NR1_9150_9050 NR5_8870_0003 TOTP
+   upstream segment NR5_9080_9050 NR5_8870_0003 TOTP
+   upstream segment NR1_9030_9080 NR5_8870_0003 TOTP
+   upstream segment NR4_9130_9080 NR5_8870_0003 TOTP
+   upstream segment NR3_9170_9130 NR5_8870_0003 TOTP
+   upstream segment NR3_9240_9130 NR5_8870_0003 TOTP
+   upstream segment NR2_9250_9170 NR5_8870_0003 TOTP
+   upstream segment NR3_9190_9170 NR5_8870_0003 TOTP
+   upstream segment NR3_9310_9240 NR5_8870_0003 TOTP
+ STATION NR6_8500_0003 for TOTP
+   upstream segment NR3_8690_8500 NR6_8500_0003 TOTP
+   upstream segment NR3_8740_8500 NR6_8500_0003 TOTP
+   upstream segment NR6_8640_8500 NR6_8500_0003 TOTP
+   upstream segment NR5_8700_8640 NR6_8500_0003 TOTP
+   upstream segment NR5_8760_8640 NR6_8500_0003 TOTP
+   upstream segment NR2_8600_8700 NR6_8500_0003 TOTP
+   upstream segment NR1_8820_8760 NR6_8500_0003 TOTP
+   upstream segment NR5_8870_8760 NR6_8500_0003 TOTP
+     upstream station NR5_8870_0003 NR6_8500_0003 TOTP
+ STATION NR6_8051_8000 for TOTP
+   upstream segment NR6_8051_8000 NR6_8051_8000 TOTP
+   upstream segment NR1_8030_8051 NR6_8051_8000 TOTP
+   upstream segment NR6_8180_8051 NR6_8051_8000 TOTP
+   upstream segment NR6_8050_8051 NR6_8051_8000 TOTP
+   upstream segment NR2_8210_8180 NR6_8051_8000 TOTP
+   upstream segment NR1_7880_8050 NR6_8051_8000 TOTP
+   upstream segment NR6_7960_8050 NR6_8051_8000 TOTP
+   upstream segment NR6_8170_7960 NR6_8051_8000 TOTP
+   upstream segment NR6_7820_7960 NR6_8051_8000 TOTP
+   upstream segment NR3_8290_8170 NR6_8051_8000 TOTP
+   upstream segment NR3_8430_7820 NR6_8051_8000 TOTP
+   upstream segment NR3_8420_8430 NR6_8051_8000 TOTP
+   upstream segment NR6_8500_7820 NR6_8051_8000 TOTP
+     upstream station NR6_8500_0003 NR6_8051_8000 TOTP

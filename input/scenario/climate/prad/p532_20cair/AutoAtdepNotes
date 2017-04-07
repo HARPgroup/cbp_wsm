@@ -1,0 +1,13 @@
+This dataset, p532_20cair
+ was created by gshenk
+ 
+ on
+Thu May 19 09:43:24 EDT 2011
+ 
+ from the old data set  f611nsA902
+ by replacing the old atmospheric deposition with the base deposition in
+/bluefish/archive/modeling/p532//input/unformatted/atdep/CMAQ/dry_2009_02_09/Chesapeake.base2002.12km/
+ modified by the factors in 
+/bluefish/archive/modeling/p532//input/unformatted/atdep/CMAQ/2020_CAIR_12k/Chesapeake.pct2020cair.12km/
+Using the code
+/bluefish/archive/modeling/p532//code/bin/add_atdep_grimm07_CMAQ12_ORG_PO4_CMAQ_scenario

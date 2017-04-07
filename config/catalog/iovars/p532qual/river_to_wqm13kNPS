@@ -1,0 +1,110 @@
+WQM13K | WQunit | RVAR | WSunit | factor   | divide by | ***
+doxx   | mg/l   | DOXY | lb/hr  | 0.00525  | flow |
+
+temp   | c      | HEAT | BTU/hr | 2.917e-9 | flow |
+
+chla   | ug/l   | PHYT | lb/hr  | 0.03672  | flow |
+
+flow   | cms    | WATR | acft/hr| 0.01428  |      |
+
+po4x   | kg/d   | PO4D | lb/hr  | 0.45359  |      |
+
+nh4x   | kg/d   | NH3D | lb/hr  | 0.45359  |      |
+nh4x   | kg/d   | NH3A | lb/hr  | 0.45359  |      |
+nh4x   | kg/d   | NH3I | lb/hr  | 0.45359  |      |
+nh4x   | kg/d   | NH3C | lb/hr  | 0.45359  |      |
+
+no3x   | kg/d   | NO3D | lb/hr  | 0.45359  |      |
+
+totn   | kg/d   | NO3D | lb/hr  | 0.45359  |      |
+totn   | kg/d   | NH3D | lb/hr  | 0.45359  |      |
+totn   | kg/d   | NH3A | lb/hr  | 0.45359  |      |
+totn   | kg/d   | NH3I | lb/hr  | 0.45359  |      |
+totn   | kg/d   | NH3C | lb/hr  | 0.45359  |      |
+totn   | kg/d   | RORN | lb/hr  | 0.45359  |      |
+totn   | kg/d   | BODA | lb/hr  | 0.01977  |      |
+totn   | kg/d   | PHYT | lb/hr  | 0.03914  |      |
+
+totp   | kg/d   | PO4D | lb/hr  | 0.45359  |      |
+totp   | kg/d   | PO4A | lb/hr  | 0.45359  |      |
+totp   | kg/d   | PO4I | lb/hr  | 0.45359  |      |
+totp   | kg/d   | PO4C | lb/hr  | 0.45359  |      |
+totp   | kg/d   | RORP | lb/hr  | 0.45359  |      |
+totp   | kg/d   | BODA | lb/hr  | 0.002736 |      |
+totp   | kg/d   | PHYT | lb/hr  | 0.005417 |      |
+
+orgp   | kg/d   | RORP | lb/hr  | 0.45359  |      |
+orgp   | kg/d   | BODA | lb/hr  | 0.002736 |      |
+orgp   | kg/d   | PHYT | lb/hr  | 0.005417 |      |
+
+orgn   | kg/d   | RORN | lb/hr  | 0.45359  |      |
+orgn   | kg/d   | BODA | lb/hr  | 0.01977  |      |
+orgn   | kg/d   | PHYT | lb/hr  | 0.03914  |      |
+
+pipx   | kg/d   | PO4A | lb/hr  | 0.45359  |      |
+pipx   | kg/d   | PO4I | lb/hr  | 0.45359  |      |
+pipx   | kg/d   | PO4C | lb/hr  | 0.45359  |      |
+
+tocx   | kg/d   | TORC | lb/hr  | 0.45359  |      |
+tocx   | kg/d   | BODA | lb/hr  | 0.1123   |      |
+tocx   | kg/d   | PHYT | lb/hr  | 0.2223   |      |
+
+tssx   | kg/d   | SAND | ton/hr | 907.18   |      |
+tssx   | kg/d   | SILT | ton/hr | 907.18   |      |
+tssx   | kg/d   | CLAY | ton/hr | 907.18   |      |
+tssx   | kg/d   | PHYT | lb/hr  | 0.45359  |      |
+
+end
+
+COMMENTS:
+
+**   1 lb/day = .45359 kg/day
+**   1 ton/day = 907.18 kg/day
+******* wdms have loads in lb/hour, but hours are added in the program so total loads are by day
+
+**   1 acft/day = 0.01428 cms
+
+**   BPCNTC = percentage of biomass which is carbon = 49
+**   CVBPC  = factor to convert P to C              = 106 mols/mol
+**   CVBPN  = factor to convert P to N              = 16  mols/mol
+**   CVBO   = factor to convert biomass to oxygen   = 1.98
+**   RATCLP = ratio of chla to P in phytoplankton   = 0.6
+
+**   BOD to carbon           = BODA / CVBO * BPCNTC/100                                          = 0.2475   * .45359 = 0.1123
+**   BOD to P                = BODA / CVBO * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC         = 0.00603  * .45359 = 0.002736
+**   BOD to N                = BODA / CVBO * BPCNTC/100 * (14/12 gN/gC per mole) / CVBPC * CVBPN = 0.0436   * .45359 = 0.01977
+ 
+**   phytoplankton to carbon = PHYT * BPCNTC/100                                                 = 0.49     * .45359 = 0.2223
+**   phytoplankton to P      = PHYT * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC                = 0.0119   * .45359 = 0.005417
+**   phytoplankton to N      = PHYT * BPCNTC/100 * (14/12 gN/gC per mole) / CVBPC * CVBPN        = 0.0863   * .45359 = 0.03914
+
+**   phytoplankton to chla   = PHYT * BPCNTC/100 * (31/12 gP/gC per mole) / CVBPC * RATCLP *1000 = 7.165 
+
+
+** DO, Temperature, and chlorophyll are given in concentration rather
+**  than load through special treatment in the loading program
+****** to calculate concentrations, divide load by flow
+******* there must be a variable called 'flow' in this file
+****** mass is lb per hour, but added to lb per day in the input file
+**
+**           M  ( lb/day  )  (  m^3   ) (453590 mg) (    day     )
+**   [c] =  ---  ---------    --------   ---------   ------------   =  M/Q * 0.00525  ( mg/l )
+**           Q  ( m^3/sec )  ( 1000 l ) (    lb   ) (3600*24 sec )
+***
+**
+**      sand, silt, clay gets multiplied by 2000 for a factor of 735.4
+**
+****  to calculate temperature, get heat relative to freezing, divide by mass and specific heat
+**            q
+**  T (c) = -----
+**           M C
+**
+*****                          q (btu/day )
+**       T(c) = ------------------------------------------------------------------------
+**              (Q m^3) (1000 l) (3600*24 sec) (1000 g) ( 1 cal ) (0.003968 btu)
+**              (-----) (------) (-----------) (------) (-------) (------------)
+**              ( sec ) ( m^3  ) (   day     ) (   l  ) ( g c   ) (   cal      )
+**
+**
+**       T(c) = q/Q * 2.917e-9
+**

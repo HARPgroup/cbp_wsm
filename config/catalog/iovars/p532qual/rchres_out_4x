@@ -1,0 +1,57 @@
+MODULE ID#   GROUP  MEMBER # #    NAME   DESCRIPTION  ***
+HYDR   111   OFLOW  OVOL   3      WATR   water acft/ivld
+HTRCH  112   OFLOW  OHEAT  3      HEAT   heat BTU/ivld
+OXRX   113   OFLOW  OXCF2  3 1    DOXY   dissolved oxygen lb/ivld
+
+SEDTRN 121   OFLOW  OSED   3 1    SAND   sand ton/ivld
+SEDTRN 122   OFLOW  OSED   3 2    SILT   silt ton/ivld
+SEDTRN 123   OFLOW  OSED   3 3    CLAY   clay ton/ivld
+
+NUTRX  131   OFLOW  NUCF9  3 1    NO3D   nitrate lb/ivld
+NUTRX  132   OFLOW  NUCF9  3 2    NH3D   dissolved ammonia lb/ivld
+NUTRX  133   OFLOW  OSNH4  3 1    NH3A   ammonia on sand lb/ivld
+NUTRX  134   OFLOW  OSNH4  3 2    NH3I   ammonia on silt lb/ivld
+NUTRX  135   OFLOW  OSNH4  3 3    NH3C   ammonia on clay lb/ivld
+PLANK  136   OFLOW  PKCF2  3 3    RORN   refractory org N lb/ivld
+
+NUTRX  141   OFLOW  NUCF9  3 4    PO4D   phosphate lb/ivld
+NUTRX  142   OFLOW  OSPO4  3 1    PO4A   phosphate on sand lb/ivld
+NUTRX  143   OFLOW  OSPO4  3 2    PO4I   phosphate on silt lb/ivld
+NUTRX  144   OFLOW  OSPO4  3 3    PO4C   phosphate on clay lb/ivld
+PLANK  145   OFLOW  PKCF2  3 4    RORP   refractory org P lb/ivld
+
+OXRX   151   OFLOW  OXCF2  3 2    BODA   BOD lb/ivld
+
+PLANK  152   OFLOW  PKCF2  3 5    TORC   refractory organic carbon lb/ivld
+
+PLANK  153   OFLOW  PKCF2  3 1    PHYT   phytoplankton lb/ivld
+
+HYDR   211   OFLOW  OVOL   4      WATR   water acft/ivld
+HTRCH  212   OFLOW  OHEAT  4      HEAT   heat BTU/ivld
+OXRX   213   OFLOW  OXCF2  4 1    DOXY   dissolved oxygen lb/ivld
+
+SEDTRN 221   OFLOW  OSED   4 1    SAND   sand ton/ivld
+SEDTRN 222   OFLOW  OSED   4 2    SILT   silt ton/ivld
+SEDTRN 223   OFLOW  OSED   4 3    CLAY   clay ton/ivld
+
+NUTRX  231   OFLOW  NUCF9  4 1    NO3D   nitrate lb/ivld
+NUTRX  232   OFLOW  NUCF9  4 2    NH3D   dissolved ammonia lb/ivld
+NUTRX  233   OFLOW  OSNH4  4 1    NH3A   ammonia on sand lb/ivld
+NUTRX  234   OFLOW  OSNH4  4 2    NH3I   ammonia on silt lb/ivld
+NUTRX  235   OFLOW  OSNH4  4 3    NH3C   ammonia on clay lb/ivld
+PLANK  236   OFLOW  PKCF2  4 3    RORN   refractory org N lb/ivld
+
+NUTRX  241   OFLOW  NUCF9  4 4    PO4D   phosphate lb/ivld
+NUTRX  242   OFLOW  OSPO4  4 1    PO4A   phosphate on sand lb/ivld
+NUTRX  243   OFLOW  OSPO4  4 2    PO4I   phosphate on silt lb/ivld
+NUTRX  244   OFLOW  OSPO4  4 3    PO4C   phosphate on clay lb/ivld
+PLANK  245   OFLOW  PKCF2  4 4    RORP   refractory org P lb/ivld
+
+OXRX   251   OFLOW  OXCF2  4 2    BODA   BOD lb/ivld
+
+PLANK  252   OFLOW  PKCF2  4 5    TORC   refractory organic carbon lb/ivld
+
+PLANK  253   OFLOW  PKCF2  4 1    PHYT   phytoplankton lb/ivld
+
+end
+

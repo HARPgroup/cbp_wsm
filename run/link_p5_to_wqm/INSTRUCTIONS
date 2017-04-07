@@ -1,0 +1,61 @@
+Generating the estuarine output:
+
+The code that generates the output is very similar to the etm.  For each cell, it loops over all lrsegs that that cell touches and get the loads from all land uses.  It also adds in the simulated rivers, septic, and non-tidal atmospheric deposition to water.  The point sources are run separately. and stored in separate files.
+
+ 
+
+The script to run is: /wqm/p5wqm/wqm/run/run_p5_and_ps_to_wqm13k.csh
+
+It takes the base directory, river scenario, point source method, and the year range as arguments
+
+for example: run_p5_and_ps_to_wqm13k.csh p517 ccbase, wcell, 1985 1990
+
+If the year range is to large, the code will be too large to run, so if you have problems with the code, reenter a shorter range.
+
+ 
+
+The script compiles and runs code in the directory /wqm/p5wqm/wqm/src/p5_and_ps_to_wqm13k/  There are separate point source and nps executables.
+
+The script has a variable called .hotstart. which should be generally be left at .0..  If you have a problem partway through a run and want it to pick up where it left off, change .hotstart. to .1..
+
+ 
+
+The code performs the linkage according to a physical linkage file that relates estuarine cells to watershed segments and a group of logical linkage files that relate estuarine variables to river, land, and other source variables.
+
+ 
+
+The physical linkage file is /wqm/p5wqm/wqm/link/p5_to_13k_wqm.prn
+
+The first column is the estuarine cell number, the second column is the number of simulated rivers (DSID=0001) or lrsegs (DSID=0000) that go into this cell.  The remaining columns are repeating triples of a weighting factor, the land segment, and the river segment.  if the land segment is zero, then the river segment is a simulated river.
+
+ 
+
+The logical linkage files are in: /model/p517/pp/catalog/iovars/
+
+ 
+
+river_to_wqm13k . links river variables to estuarine variables.  
+
+The first column gives the loads to the estuarine model in the correct column order for output.  If a load is repeated, it is summed.
+
+The second column is the output units, which is just book keeping, it is not read.
+
+The third column is the river variable that goes into the estuarine variable
+
+The fourth column is the output units, which is just book keeping, it is not read.
+
+The fifth column is the factor to make the translation.  Comments on the factors are at the end of the file.
+
+The sixth column is .flow. if the mass needs to be divided by flow to reach a concentration.  Otherwise it is blank.
+
+ 
+
+land_to_river septic_to_river atdep_to_river pointsource_to_river are the same files that are used in the etm.  These file link their source to the river, then the variables are linked to the bay using the relationship in river_to_wqm13k
+
+ 
+
+The code produces output under
+
+/wqm/p5wqm/wqm/out/$rscen/
+
+

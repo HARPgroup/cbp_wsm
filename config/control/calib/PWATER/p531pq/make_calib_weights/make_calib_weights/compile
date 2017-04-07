@@ -1,0 +1,27 @@
+#!/bin/csh
+
+  if (${#argv} != 1) then
+    echo ' '
+    echo 'usage:  compile calib_scenario '
+    echo ' '
+    exit
+  endif
+
+set calscen = $argv[1]
+set usrdir = ../../../../../../code/src/lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -c main.f
+f77 -c getlseglist.f
+f77 -c adddoubles.f
+f77 -c findupstream.f
+f77 -c get_area_percents.f
+f77 -c getlandtoriver.f
+f77 -c get_reservoir_info.f
+f77 -c remove_reservoir_stations.f
+
+
+f77 -o ../../../../../../code/bin/make_PWATER_weights_${calscen}.exe main.o getlseglist.o adddoubles.o findupstream.o get_area_percents.o getlandtoriver.o get_reservoir_info.o remove_reservoir_stations.o $usrlib
+
+rm *.o
+

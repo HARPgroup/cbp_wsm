@@ -1,0 +1,27 @@
+to change the segmentation:
+
+1. In ./pp/catalog/connect/
+calibsites.prn lists river segments that will be output on a daily basis
+landnames.prn is a list of land segments and the geographic name
+land_water_connect.csv is the list of land segments for each river
+rivernames.csv is the list of river segments and the geographic name
+rivers.prn is a list of rivers segment names
+water_water_connect.csv lists river segments and the upstream segment (this should go away)
+wqloadsites.prn is the list of rivers segments that go to the water quality model (this will be unnecessary)
+
+2. In ./pp/catalog/data/
+river_met_wdm.csv and river_prad_wdm.csv give met and precip/atdep wdm for each river
+
+3. In ./pp/param/river/
+gen_info_rseg.csv gives the number of exits and the lakeflag for each river
+
+4.  In ./pp/param/
+change land_evap for the ET modifier
+change all parameter files in all subdirectories
+
+5. In ./wdm/
+generate or rename all wdms for all categories
+
+6. In ./pp/data/
+ generate or modify all files in this directory
+

@@ -1,0 +1,19 @@
+WQM57K | WQunit | -ATDEP VAR    | factor   |
+no3x   | kg/d   | 2001  NO23    | 0.45359  |
+no3x   | kg/d   | 2003  NO3D    | 0.45359  |
+
+nh4x   | kg/d   | 2002  NH4A    | 0.45359  |
+nh4x   | kg/d   | 2004  NH4D    | 0.45359  |
+
+po4x   | kg/d   | 2006  PO4A    | 0.45359  |
+
+orgn   | kg/d   | 2005  ORGN    | 0.45359  |
+
+orgp   | kg/d   | 2007  ORGP    | 0.45359  |
+
+end
+
+COMMENTS:
+
+**   1 lb/day = .45359 kg/day
+** 

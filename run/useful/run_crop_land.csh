@@ -1,0 +1,68 @@
+#!/bin/csh
+#   GET SCENARIO, BASIN, and TREE
+
+  if (${#argv} != 3) then
+    if (${#argv} != 2) then
+      echo ' '
+      echo 'usage:  run_land.csh scenario basin'
+      echo ' or     run_land.csh scenario basin tree'
+      echo ' '
+      exit
+    endif
+  endif
+
+  set scenario = $argv[1]
+  set basin = $argv[2]
+  if (${#argv} == 3) then
+    set tree = $argv[3]
+  else
+    source ../fragments/set_tree
+    mkdir -p ../../tmp/scratch/temp$$/
+    cd ../../tmp/scratch/temp$$/
+  endif
+
+  source $tree/run/fragments/set_landuse
+  set perlnds = ( grs alf hyo nal hom nho hwm nhi lwm nlo )
+  set implnds = ( )
+
+  source $tree/run/fragments/set_quiet_hspf
+  source $tree/config/seglists/${basin}.land
+
+  foreach seg ($segments)
+
+    foreach lu ($perlnds $implnds)
+
+      echo running $lu for segment $seg land scenario $scenario
+
+      cp -v $tree/config/blank_wdm/land.wdm $lu$seg'.wdm'
+
+      set inp = $tree/tmp/uci/land/$lu/$scenario/$lu$seg'.uci'
+
+      echo $inp | $hspf
+
+      tail -1 $lu$seg'.ech' > EOJtest
+      diff $tree/run/test/EOJ EOJtest > diffeoj
+      if (!(-z diffeoj)) then
+        if (-e problem) then
+          rm problem
+        endif
+        echo 'land segment: ' $seg ' did not run for land use: ' $lu >problem
+        echo '  input file ' $inp >>problem
+        echo '  check the file $tree/run/'temp$$'/'$lu$seg'.ech' >>problem
+        cat problem
+        exit
+      endif
+
+      mv $lu$seg'.out' $tree/output/hspf/land/out/$lu/$scenario/
+      mv $lu$seg'.ech' $tree/output/hspf/land/ech/$lu/$scenario/
+      mv $lu$seg'.wdm' $tree/tmp/wdm/land/$lu/$scenario/
+
+    end
+
+  end
+
+  if (${#argv} == 2) then
+    cd ../
+    rm -r temp$$
+  endif
+

@@ -1,0 +1,55 @@
+**** values are relative to parameters for hom (hitil no manure)
+PARAMETERS
+param,  for,hvf,pas,npa,alf,nal,hyw,nhy,hyo,hwm,nhi,nho,lwm,nlo,rpd,cpd,npd,rex,nex,cex,rcn,ccn,trp,urs
+LZSN  ,   1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1
+AGWR,     1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1
+IRC,      1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1
+INTFW, 1.25,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,0.7,0.7,0.7,0.5,0.5,  1,  1
+INFILT, 1.6,1.3,1.5,1.5,1.5,1.5,1.5,1.5,1.5,  1,  1,  1,1.5,1.5,0.8,0.8,0.8,0.8,0.8,0.8,0.7,0.7,0.8,0.8
+AGWETP,   6,  3,1.5,1.5,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,0.1,0.1,0.1,0.1,0.1,0.1,0.1
+KVARY,    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1
+END PARAMETERS
+
+*** min and max allowed by user, min and max allowed by HSPF
+LIMITS
+LZSN,      8.0,    12.,   0.01,  100.
+AGWR,     0.92,  0.995,  0.001, 0.999
+IRC,       0.3,   0.85,    0.0, 0.999
+INTFW,       1,      5,    0.0,   999
+INFILT, 0.0125,   0.25, 0.0001,   100
+AGWETP, 0.0001,   0.30,    0.0,   1.0
+KVARY,     0.0,    0.0,    0.0,   999
+END LIMITS
+
+*** factor relative to LZSN
+UZSN FACTOR
+for,hvf,pas,npa,alf,nal,hyw,nhy,hyo,hwm,nhi,hom,nho,lwm,nlo,rpd,cpd,npd,rex,nex,cex,rcn,ccn,trp,urs
+.12, .1, .1, .1,.12,.12,.12,.12,.12,.14,.14,.14,.14,.14,.14, .1, .1, .1,.08,.08,.08,.08,.08,.07,.07
+END UZSN FACTOR
+
+*** monthly factor for UZSN
+MONTHLY UZSN 
+hom,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+nho,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+hwm,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+nhi,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+lwm,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+nlo,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+alf,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+nal,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+hyw,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+nhy,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+hyo,0.6,0.6,0.6,0.6,0.6,0.7,0.95,1,1,0.8,0.7,0.65
+END MONTHLY UZSN 
+
+*** min and max land evap values
+LAND EVAP
+0.75,1.25,0,999
+END LAND EVAP
+
+**** min and max SURO values (inches of surface runoff per year)
+SURO
+1.0, 6.0
+END SURO
+
+end

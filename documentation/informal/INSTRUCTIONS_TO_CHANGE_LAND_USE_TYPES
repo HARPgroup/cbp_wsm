@@ -1,0 +1,33 @@
+1. change the file ./run/fragments/set_landuse
+
+2. change the land uses in the processor code
+    ./code/src/lib/inc/land_use.inc 
+   - modify everything then recompile all code.
+
+3. in ./config/catalog/iovars/
+   change the files perlnd, implnd, and land_to_river
+   list the new land use 3 character names
+
+4. make parameter tables under ./input/param/
+
+5. Modify most file types under /input/scenario/land/
+    annual_uptake
+    bmp
+    dets
+    fert
+    land_cover
+    land_use
+    legume
+    manure
+    monthly_fraction_uptake
+    spec
+    transport
+
+6. Modify the control files in ./config/control/
+    land & river
+
+7. Some calibration routines are hard-wired for specific land uses.
+    Check the files 
+    ./code/src/calibration_utils/change_param/calib_iter/*/*.inc
+
+

@@ -1,0 +1,16 @@
+Add the following lines to your /bin/bash script to utilize functions.inc.sh
+
+## Begin functions.inc.sh detection and inclusion
+basepath=`dirname $0`
+functions_inc="$basepath/functions.inc.sh"
+
+if [ -e "$functions_inc" ] ; then
+        . $functions_inc
+else
+        echo "ERROR: functions.inc.sh doesn't exist or can't be read"
+        echo "ERROR: functions.inc.sh should exist in \"$PWD/$basepath\""
+        exit 1
+fi
+
+## End functions.inc.sh detection and inclusion
+

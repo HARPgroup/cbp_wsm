@@ -1,0 +1,47 @@
+**** Targets used in the calibration
+TARGET
+p532
+END TARGET
+
+**** Constituents with targets to be calibrated 
+CONSTITUENTS
+SNH4
+BNH4
+SNO3
+BNO3
+SLON
+BLON
+SRON
+BRON
+END CONSTITUENTS
+
+PLTGEN
+SNH4
+INH4
+DNH4
+BNH4
+SNO3
+INO3
+BNO3
+SLON
+ILON
+DLON
+BLON
+SRON
+IRON
+DRON
+BRON
+END PLTGEN
+
+*** min and max allowed by user, min and max allowed by HSPF
+LIMITS
+KIMNI,  0.0001,    1.0,   0.0,  1.0E2
+KAM,    0.0001,    0.1,   0.0,  1.0E2
+KDNI,  0.00001,   0.01,   0.0,  1.0E2
+KNI,      0.01,   10.0,   0.0,  1.0E2
+KIMAM,  0.0001,    1.0,   0.0,  1.0E20
+KLON,      0.1, 5.0E04,   0.0,  1.0E20
+KRON,      0.1, 5.0E04,   0.0,  1.0E20
+END LIMITS
+
+end

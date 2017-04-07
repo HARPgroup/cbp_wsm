@@ -1,0 +1,18 @@
+MODULE | -RIVER VAR | -ATDEP VAR |  FACTOR  | 
+-NAME- | ID#   NAME | ID#   NAME
+NUTRX  | 31    NO3D | 2001  NO23 |          |
+NUTRX  | 31    NO3D | 2003  NO3D |          |
+NUTRX  | 32    NH3D | 2002  NH4A |          |
+NUTRX  | 32    NH3D | 2004  NH4D |          |
+NUTRX  | 41    PO4D | 2006  PO4A |          |
+
+PLANK  | 36    RORN | 2005  ORGN |          |
+PLANK  | 45    RORP | 2007  ORGP |          |
+
+end
+
+COMMENTS:
+
+atmospheric deposition in wdms are in HSPF-type units.  No factors necessary
+
+

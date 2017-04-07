@@ -1,0 +1,10 @@
+NOTE.
+
+Landnames.csv has to be in ascending 
+    order for sediment automatic calibration
+
+Land_water_area.csv: in acres
+
+Watershed_area.csv:  in mi2      
+
+

@@ -1,0 +1,16 @@
+**** land uses in special load simulation
+LAND USE
+afo
+cfo
+END LAND USE
+
+***list of species in load file
+SPECIES
+no3n
+nh3n
+orgn
+po4p
+orgp
+END SPECIES
+
+end
