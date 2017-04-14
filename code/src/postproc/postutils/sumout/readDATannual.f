@@ -13,10 +13,11 @@
       include '../../../lib/inc/ps_septic_atdep.inc'
 
       integer nloadmax
-
+      
+      ! NEGIN
       character*(*) onelseg    ! land use segment
       character*(*) type  ! eos,eof,del
-      character*(*) lu   ! land use name
+      character*3 lu   ! land use name
       character*4 loadname(nloadmax)
       integer nloads
 

@@ -94,8 +94,8 @@
             end do
             if (BmpEffDistParm(nBmp,nb,indHG,l,2).eq.1) then
               do j = 1,ndays
-                DailyIndEff(j,nb,nBmp) = max(DailyIndEff(j,nb,nBmp),0)
-                DailyIndEff(j,nb,nBmp) = min(DailyIndEff(j,nb,nBmp),1)
+                DailyIndEff(j,nb,nBmp) = max(DailyIndEff(j,nb,nBmp),0.0)
+                DailyIndEff(j,nb,nBmp) = min(DailyIndEff(j,nb,nBmp),1.0)
               end do 
             end if
 
