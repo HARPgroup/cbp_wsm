@@ -3,7 +3,7 @@
 **    Scenario Builder, and then covert the loads to hourly values    **
 **    and put into land WDM                                           **
 ************************************************************************
-      subroutine getafoload(rscen,rseg,lscen,lseg,
+      subroutine getafoload(wdmfil,rscen,rseg,lscen,lseg,
      I                      clu,sdate,edate,Lvname,
      O                      nvals,hval)
 
@@ -63,7 +63,7 @@
 
 *************** WDM related variables
       integer wdmfil
-      parameter (wdmfil=dfile+10)
+C      parameter (wdmfil=dfile+10)
 
       integer sdate(ndate),edate(ndate)
 
@@ -71,7 +71,7 @@
       data    flowdsn /111/
 
       real flowvals(ndaymax*24)       ! flow
-      double precision annflow(EarliestYear:LatestYear)
+      real annflow(EarliestYear:LatestYear)
 
       real hSLON(ndaymax*24),hSNH3(ndaymax*24)
       real hSNO3(ndaymax*24),hSPO4(ndaymax*24)
@@ -225,8 +225,8 @@ C      end do
 ********** open land WDM to get flow info
       wdmfnam = outwdmdir//'land/'//clu//'/'//lscen(:lenlscen)//
      .          '/'//clu//lseg(:lenlseg)//'.wdm'
-      call wdbopnlong(wdmfil,wdmfnam,1,err)     ! open land read only
-      if (err .ne. 0) go to 996
+C      call wdbopnlong(wdmfil,wdmfnam,1,err)     ! open land read only
+C      if (err .ne. 0) go to 996
 
       call gethourdsn(wdmfil,sdate,edate,flowdsn,
      O                nvals,flowvals)
@@ -247,6 +247,7 @@ C      end do
         end if
           
         if (year.ne.oldyear .and.oldyear.le.year2) then
+		  print*,oldyear,annflow(oldyear)
           SNO3con(oldyear)= SNO3load(oldyear)/annflow(oldyear)
           SLONcon(oldyear)= SLONload(oldyear)/annflow(oldyear)
           SNH3con(oldyear)= SNH3load(oldyear)/annflow(oldyear)
@@ -290,8 +291,8 @@ C      end do
         if(Lvname .eq. 'SEDM') hval(i) = hSEDM(i)
       end do
 
-      call wdflcl(wdmfil,err)
-      if (err.ne.0) go to 997
+C      call wdflcl(wdmfil,err)
+C      if (err.ne.0) go to 997
        
       return
 

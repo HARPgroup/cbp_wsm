@@ -339,7 +339,7 @@
 !              8.  add to river variable temporary variable
 ************************************************************************
                 if (luname(l).eq.'afo' .or. luname(l).eq.'cfo') then
-                  call getafoload(rscen,rseg,LandScen(l),l2r(ns),
+                  call getafoload(wdmlnd,rscen,rseg,LandScen(l),l2r(ns),
      I                         luname(l),sdate,edate,Lname(Rvar,l,Lvar),
      O                         nvals,hval)
                 else 
