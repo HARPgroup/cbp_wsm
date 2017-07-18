@@ -13,7 +13,7 @@
 
   set EOF = 1
   set EOS = 1
-  set DEL = 1
+  set DEL = 0
 
   set scenario = $argv[1]
   set basin = $argv[2]
@@ -33,6 +33,7 @@
         rm problem
       endif
 
+  echo "Running command: echo $scenario $basin $year1 $year2 $EOF $EOS $DEL | $tree/code/bin/sumout_aveann.exe "
   echo $scenario $basin $year1 $year2 $EOF $EOS $DEL | $tree/code/bin/sumout_aveann.exe
       if (-e problem) then
         echo ' '
@@ -40,13 +41,15 @@
         exit
       endif
 
-  echo $scenario $basin $year1 $year2 | $tree/code/bin/sum_delivery_factor.exe
-      if (-e problem) then
-        echo ' '
-        cat problem
-        exit
-      endif
-
+  if (DEL == 1) then
+    echo "Running command: echo $scenario $basin $year1 $year2 | $tree/code/bin/sum_delivery_factor.exe "
+    echo $scenario $basin $year1 $year2 | $tree/code/bin/sum_delivery_factor.exe
+    if (-e problem) then
+      echo ' '
+      cat problem
+      exit
+    endif
+  endif
 
   if (${#argv} == 4) then
     cd ../

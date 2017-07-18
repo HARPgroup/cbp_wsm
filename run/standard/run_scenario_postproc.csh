@@ -63,16 +63,16 @@
     set TFSaveann =  1
 
 #  calculates delivery factors
-  set DFS =          1
+  set DFS =          0
     set DFSmonthly = 0
     set DFSannual =  0
-    set DFSaveann =  1
+    set DFSaveann =  0
 
 # calculates delivered load
-  set DEL =          1
+  set DEL =          0
     set DELmonthly = 0
     set DELannual =  0
-    set DELaveann =  1
+    set DELaveann =  0
 
 #  SET the number of peaks to investigate, zero if no investigation
   set npeaks = 50
