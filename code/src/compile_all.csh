@@ -78,6 +78,11 @@ foreach libname (create_p4_wdms pltgen2cal sumdfs sumin sumin_QA sumout sumplt s
    cd ../$libname
    ./compile $FCP
 end
+cd ../sumin/getAtdep
+./compile $FCP
+cd ../../sumin_QA/getAtdep
+./compile $FCP
+cd ../
 echo "############  RIVER  #########"
 cd ../../river/annual
 foreach libname (annual eval_stat part regress stats texture aveann monthly RiverLoads avemon daily obs_only_stats  rating)
