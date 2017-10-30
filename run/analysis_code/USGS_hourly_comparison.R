@@ -1,3 +1,6 @@
+#This script will translate the USGS 15-minute interval data to hourly data by taking the average of the flow for each hour. Once the
+#hourly average has been found, the USGS data and the model data will be compared in a line plot.
+
 URI_model_hourly <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSbD4ZuD68FK9ZqESd-_kWlsMhd1a66LWr1N8Xd5oo5zFZm3niigHhFiUJ98b2Y9ayQdncu-4q5VvL4/pub?output=csv'
 model_hourly = read.csv(URI_model_hourly, header = TRUE, sep = ",", stringsAsFactors = FALSE);
 model_hourly_year <- model_hourly[(184106:192064),] #gets just 2003 data
