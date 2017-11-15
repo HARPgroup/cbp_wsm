@@ -41,7 +41,10 @@ exp(qpearsonIII(0.1,params = pars$par))
 
 
 #Loads model data and calculates 7Q10s ----------------------------------------------
-URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxODFehfqbofJfrIwLFHGnoCrrpo0QUeSbhl5hehBJrbpqATfjlAuH3sOKT5f86wKVXbxMjUGzb4vY/pub?output=csv'
+#For OD5_8780_8660 river segment 
+#URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxODFehfqbofJfrIwLFHGnoCrrpo0QUeSbhl5hehBJrbpqATfjlAuH3sOKT5f86wKVXbxMjUGzb4vY/pub?output=csv'
+#For OD3_8638_8720 river segment 
+URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSt9LQQHtGK8kwfiOriEsPolDt_77JoXYW-KVMebP2GKptI8tzWsacshjqEWv0oWgR0J2zYYUx6ZSv/pub?output=csv'
 model_daily = read.csv(URI_model_daily, header = TRUE, sep = ",", stringsAsFactors = FALSE);
 
 Flow_model <- model_daily[,c(6,5)]
