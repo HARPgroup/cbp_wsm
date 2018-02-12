@@ -1,37 +1,58 @@
-# Automating August Low Flows
+# Load Libraries
+fxn_locations = "C:\\Users\\alexd15\\Documents\\ArcGIS\\HARP\\R\\7Q10";
+source(paste(fxn_locations,"fn_iha.R", sep = "/"));  
 
-library('zoo')
-library('IHA')
-library(PearsonDS)
+library(pander);
+library(httr);
+library(dataRetrieval)
+library(zoo)
+vignette("dataRetrieval",package = "dataRetrieval")
 
-fn_iha_7q10 <- function(zoots) {
-  g2 <- group2(zoots) 
-  #print("Group 2, 7-day low flow results ")
-  #print(g2["7 Day Min"])
-  x <- as.vector(as.matrix(g2["7 Day Min"]))
-  # fudge 0 values
-  # correct for zeroes?? If so, use this loop:
-  # This is not an "approved" method - we need to see how the GS/other authorities handles this
-  for (k in 1:length(x)) {
-    if (x[k] <= 0) {
-      x[k] <- 0.00000001
-      print (paste("Found 0.0 average in year", g2["year"], sep = " "))
-    }
-  }
-  x <- log(x)
-  pars <- PearsonDS:::pearsonIIIfitML(x)
-  x7q10 <- exp(qpearsonIII(0.1, params = pars$par))
-  return(x7q10);
-}
+# Loads model data 
+#For river segment OD5_8780_8660
+#URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxODFehfqbofJfrIwLFHGnoCrrpo0QUeSbhl5hehBJrbpqATfjlAuH3sOKT5f86wKVXbxMjUGzb4vY/pub?output=csv'
+#For river segment OD3_8630_8720
+URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRXEGI0n2G_ssvGiuXSaAKYST9Mu8JeuHjAyPBg2pfFpmImOb04U2iRoqjSV7ched35KTzoBiZdb0rJ/pub?output=csv'
+model_daily = read.csv(URI_model_daily, header = TRUE, sep = ",", stringsAsFactors = FALSE);
+model_daily <- model_daily[(1:7944),] #This must end on September 30 fo the last year included
 
-fn_iha_mlf <- function(zoots, targetmo) {
-  modat <- group1(zoots,'water','min')  # IHA function that calculates minimum monthly statistics for our data by water year	 
-  print(paste("Grabbing ", targetmo, " values ", sep=''))
-  g1vec <- as.vector(as.matrix(modat[,targetmo]))  # gives only August statistics
-  
-  # calculates the 50th percentile - this is the August Low Flow
-  # August Low Flow = median flow of the annual minimum flows in August for a chosen time period
-  print("Performing quantile analysis")
-  x <- quantile(g1vec, 0.5);
-  return(as.numeric(x));
-}
+Flow_model <- model_daily[,c(6,5)]
+Flow_modelv <- as.vector(Flow_model)
+colnames(Flow_modelv) <- c("Date", "Flow")
+
+Flow_modelx <- zoo(Flow_modelv$Flow, order.by = Flow_modelv$Date);
+model_7Q10 <- fn_iha_7q10(Flow_modelx)
+model_alf <- fn_iha_mlf(Flow_modelx,8)
+model_DOR <- fn_iha_DOR(Flow_modelx)
+model_DOR_Year <- fn_iha_DOR_Year(Flow_modelx)
+
+
+
+# Import data, select site, code, start/end dates
+# example for the Dan River at Paces, VA
+siteNo <- "02068500"
+pCode <- "00060"
+start.date <- "1984-01-01"
+# NOTE: fn_iha_mlf will fail if it lacks a complete water year, so date must be restricted to end on 9-30 
+end.date <- "2005-09-30"
+yahara <- readNWISdv(siteNumbers = siteNo,
+                     parameterCd = pCode,
+                     startDate = start.date,
+                     endDate = end.date)
+
+# names with codes
+names(yahara)
+# cleans up names
+yahara <- renameNWISColumns(yahara)
+# make date posix
+#datv$thisdate <- as.POSIXct(datv$thisdate)
+flows_USGS <- zoo(yahara[,"Flow"], order.by = yahara$Date);
+# get 7Q10
+USGS_7Q10 <- fn_iha_7q10(flows_USGS)
+# calculate August Low Flow (8 = August)
+# NOTE: fn_iha_mlf will fail if it lacks a complete water year, so date must be restricted to end on 9-30 
+USGS_alf <- fn_iha_mlf(flows_USGS,8)
+#Calculates Drought of Record Flow
+USGS_DOR <- fn_iha_DOR(flows_USGS)
+#Returns the year for the Drought of Record
+USGS_DOR_Year <- fn_iha_DOR_Year(flows_USGS)
