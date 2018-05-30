@@ -2,7 +2,7 @@ library(rgeos)
 library(rgdal)
 library(raster)
 
-my.filepath <- 'C:\\Users\\nrf46657\\Desktop\\VAHydro Development\\GitHub\\cbp_wsm\\evap\\'
+my.filepath <- 'C:\\Users\\connorb5\\Desktop\\GitHub\\cbp_wsm\\evap\\'
 
 m<-c('01','02','03','04','05','06','07','08','09','10','11','12')
 VA<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="VA")
@@ -32,11 +32,13 @@ BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_de
 
 ########Mean monthly raster creation using PRISM data (pre-downloaded)########
 #You MUST delete output TIFF files before writing new ones!
-#Can download ECHO as to get all monthly data for 1970 max temperature (can also call tmin, ppt, nad tmean). Works for 1895-1980
+#Can download ECHO as to get all monthly data for 1970 max temperature (can also call tmin, ppt, tdmean, and tmean). Works for 1895-1980
 yr<-as.character(seq(1955,1970))
+setwd(my.filepath)
 pathTMean<- paste(my.filepath,'PRISM\\TMean',sep="")
 pathTMax <- paste(my.filepath,'PRISM\\TMax',sep="")
 pathTMin <- paste(my.filepath,'PRISM\\TMin',sep="")
+pathTDew <- paste(my.filepath,'PRISM\\TDew',sep="")
 for(i in 1:length(yr)){
   temp<-tempfile()
   download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmean/",yr[i]),temp,mode='wb')
@@ -49,6 +51,10 @@ for(i in 1:length(yr)){
   temp<-tempfile()
   download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmin/",yr[i]),temp,mode='wb')
   unzip(temp,exdir=pathTMin)  
+  
+  temp<-tempfile()
+  download.file(paste0("http://services.nacse.org/prism/data/public/4km/tdmean/",yr[i]),temp,mode='wb')
+  unzip(temp,exdir=pathTDew)  
 }
 
 
@@ -135,6 +141,32 @@ for (j in 1:length(m)){
   writeRaster(mean(rstack), filename=paste0('Monthly Averages/MinTemp',m[j],'.tiff'))
 }
 
+#For dew point temperature
+setwd(paste(my.filepath,"PRISM\\TDew",sep=""))
+print(paste("Dew Point Temperature:",sep=""))
+dir.create('Monthly Averages')
+files<-list.files()
+files<-files[grep('bil.bil$',files)]
+yr<-as.character(seq(1955,1970))
+r<-character()
+for (i in 1:length(yr)){
+  case<-files[grep(yr[i],files)]
+  r<-c(case,r)
+}
+for (j in 1:length(m)){
+  print(paste("Month ",j," of ",length(m),sep=""))
+  case<-grep(paste0(m[j],'_bil.bil$'),r)
+  rstack<-stack()
+  for (i in 1:length(case)){
+    print(paste("case ",i," of ",length(case),sep=""))
+    test<-raster(r[case[i]])
+    test<-projectRaster(test,crs=proj4string(BB))
+    testclip<-mask(test,BB)
+    rstack<-addLayer(rstack,testclip)
+  }
+  assign(paste0('DewTemp_',m[j]),mean(rstack))
+  writeRaster(mean(rstack), filename=paste0('Monthly Averages/DewTemp',m[j],'.tiff'))
+}
 
 ########Solar radiation calculation########
 WB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="Waterbodies")
@@ -171,30 +203,66 @@ for (i in 1:length(WB@data$FID)){
 ########Evaporation Estimations########
 print(paste("WB Evap Estimations",sep=""))
 #Want to make sure the extracted values line up with correct waterbodies; test in GIS
-WB@data$JanDiffT<-extract(MaxTemp_01,WBCenter)-extract(MinTemp_01,WBCenter)
+WB@data$JanMaxT<-extract(MaxTemp_01,WBCenter)
+WB@data$JanMinT<-extract(MinTemp_01,WBCenter)
+WB@data$JanDiffT<-WB@data$JanMaxT-WB@data$JanMinT
 WB@data$JanMeanT<-extract(MeanTemp_01,WBCenter)
-WB@data$FebDiffT<-extract(MaxTemp_02,WBCenter)-extract(MinTemp_02,WBCenter)
+WB@data$JanDewT<-extract(DewTemp_01,WBCenter)
+WB@data$FebMaxT<-extract(MaxTemp_02,WBCenter)
+WB@data$FebMinT<-extract(MinTemp_02,WBCenter)
+WB@data$FebDiffT<-WB@data$FebMaxT-WB@data$FebMinT
 WB@data$FebMeanT<-extract(MeanTemp_02,WBCenter)
-WB@data$MarDiffT<-extract(MaxTemp_03,WBCenter)-extract(MinTemp_03,WBCenter)
+WB@data$FebDewT<-extract(DewTemp_02,WBCenter)
+WB@data$MarMaxT<-extract(MaxTemp_03,WBCenter)
+WB@data$MarMinT<-extract(MinTemp_03,WBCenter)
+WB@data$MarDiffT<-WB@data$MarMaxT-WB@data$MarMinT
 WB@data$MarMeanT<-extract(MeanTemp_03,WBCenter)
-WB@data$AprDiffT<-extract(MaxTemp_04,WBCenter)-extract(MinTemp_04,WBCenter)
+WB@data$MarDewT<-extract(DewTemp_03,WBCenter)
+WB@data$AprMaxT<-extract(MaxTemp_04,WBCenter)
+WB@data$AprMinT<-extract(MinTemp_04,WBCenter)
+WB@data$AprDiffT<-WB@data$AprMaxT-WB@data$AprMinT
 WB@data$AprMeanT<-extract(MeanTemp_04,WBCenter)
-WB@data$MayDiffT<-extract(MaxTemp_05,WBCenter)-extract(MinTemp_05,WBCenter)
+WB@data$AprDewT<-extract(DewTemp_04,WBCenter)
+WB@data$MayMaxT<-extract(MaxTemp_05,WBCenter)
+WB@data$MayMinT<-extract(MinTemp_05,WBCenter)
+WB@data$MayDiffT<-WB@data$MayMaxT-WB@data$MayMinT
 WB@data$MayMeanT<-extract(MeanTemp_05,WBCenter)
-WB@data$JunDiffT<-extract(MaxTemp_06,WBCenter)-extract(MinTemp_06,WBCenter)
+WB@data$MayDewT<-extract(DewTemp_05,WBCenter)
+WB@data$JunMaxT<-extract(MaxTemp_06,WBCenter)
+WB@data$JunMinT<-extract(MinTemp_06,WBCenter)
+WB@data$JunDiffT<-WB@data$JunMaxT-WB@data$JunMinT
 WB@data$JunMeanT<-extract(MeanTemp_06,WBCenter)
-WB@data$JulDiffT<-extract(MaxTemp_07,WBCenter)-extract(MinTemp_07,WBCenter)
+WB@data$JunDewT<-extract(DewTemp_06,WBCenter)
+WB@data$JulMaxT<-extract(MaxTemp_07,WBCenter)
+WB@data$JulMinT<-extract(MinTemp_07,WBCenter)
+WB@data$JulDiffT<-WB@data$JulMaxT-WB@data$JulMinT
 WB@data$JulMeanT<-extract(MeanTemp_07,WBCenter)
-WB@data$AugDiffT<-extract(MaxTemp_08,WBCenter)-extract(MinTemp_08,WBCenter)
+WB@data$JulDewT<-extract(DewTemp_07,WBCenter)
+WB@data$AugMaxT<-extract(MaxTemp_08,WBCenter)
+WB@data$AugMinT<-extract(MinTemp_08,WBCenter)
+WB@data$AugDiffT<-WB@data$AugMaxT-WB@data$AugMinT
 WB@data$AugMeanT<-extract(MeanTemp_08,WBCenter)
-WB@data$SepDiffT<-extract(MaxTemp_09,WBCenter)-extract(MinTemp_09,WBCenter)
+WB@data$AugDewT<-extract(DewTemp_08,WBCenter)
+WB@data$SepMaxT<-extract(MaxTemp_09,WBCenter)
+WB@data$SepMinT<-extract(MinTemp_09,WBCenter)
+WB@data$SepDiffT<-WB@data$SepMaxT-WB@data$SepMinT
 WB@data$SepMeanT<-extract(MeanTemp_09,WBCenter)
-WB@data$OctDiffT<-extract(MaxTemp_10,WBCenter)-extract(MinTemp_10,WBCenter)
+WB@data$SepDewT<-extract(DewTemp_09,WBCenter)
+WB@data$OctMaxT<-extract(MaxTemp_10,WBCenter)
+WB@data$OctMinT<-extract(MinTemp_10,WBCenter)
+WB@data$OctDiffT<-WB@data$OctMaxT-WB@data$OctMinT
 WB@data$OctMeanT<-extract(MeanTemp_10,WBCenter)
-WB@data$NovDiffT<-extract(MaxTemp_11,WBCenter)-extract(MinTemp_11,WBCenter)
+WB@data$OctDewT<-extract(DewTemp_10,WBCenter)
+WB@data$NovMaxT<-extract(MaxTemp_11,WBCenter)
+WB@data$NovMinT<-extract(MinTemp_11,WBCenter)
+WB@data$NovDiffT<-WB@data$NovMaxT-WB@data$NovMinT
 WB@data$NovMeanT<-extract(MeanTemp_11,WBCenter)
-WB@data$DecDiffT<-extract(MaxTemp_12,WBCenter)-extract(MinTemp_12,WBCenter)
+WB@data$NovDewT<-extract(DewTemp_11,WBCenter)
+WB@data$DecMaxT<-extract(MaxTemp_12,WBCenter)
+WB@data$DecMinT<-extract(MinTemp_12,WBCenter)
+WB@data$DecDiffT<-WB@data$DecMaxT-WB@data$DecMinT
 WB@data$DecMeanT<-extract(MeanTemp_12,WBCenter)
+WB@data$DecDewT<-extract(DewTemp_12,WBCenter)
 #The below line may summarize by polygon, but it takes a very long time to run (~10 min for each extraction)
 #extract(MinTemp_12,WB,fun=mean,border=F)
 
@@ -296,19 +364,97 @@ WB@data$NovThorn[is.na(WB@data$NovThorn)]<-0
 WB@data$DecThorn<-(c*WB@data$DecLd*(10*WB@data$DecMeanT/WB@data$I)^WB@data$a)/31/12
 WB@data$DecThorn[is.na(WB@data$DecThorn)]<-0
 
+#Hamon equation may take the form 0.55*25.4*Ld^2*(SVD/100). Need to find saturated vapor density SVD
+#Can use the metholody suggested by the Corps of Engineers in Harwell, 2012 and the FAO report
+#Output is in mm/day
+print("Hamon equation used to estimate monthly evaporation at each waterbody:")
+
+#Function to calculate saturated vapor pressure in kPa from the FAO report
+es<-function(temperature){
+  SVP<-0.6108*exp((17.27*temperature)/(temperature+237.3))
+  return(SVP)
+}
+#Need to find average saturated vapor pressure in kPa for each month at each waterbody
+WB@data$JanEs<-0.5*(es(WB@data$JanMinT)+es(WB@data$JanMaxT))
+WB@data$FebEs<-0.5*(es(WB@data$FebMinT)+es(WB@data$FebMaxT))
+WB@data$MarEs<-0.5*(es(WB@data$MarMinT)+es(WB@data$MarMaxT))
+WB@data$AprEs<-0.5*(es(WB@data$AprMinT)+es(WB@data$AprMaxT))
+WB@data$MayEs<-0.5*(es(WB@data$MayMinT)+es(WB@data$MayMaxT))
+WB@data$JunEs<-0.5*(es(WB@data$JunMinT)+es(WB@data$JunMaxT))
+WB@data$JulEs<-0.5*(es(WB@data$JulMinT)+es(WB@data$JulMaxT))
+WB@data$AugEs<-0.5*(es(WB@data$AugMinT)+es(WB@data$AugMaxT))
+WB@data$SepEs<-0.5*(es(WB@data$SepMinT)+es(WB@data$SepMaxT))
+WB@data$OctEs<-0.5*(es(WB@data$OctMinT)+es(WB@data$OctMaxT))
+WB@data$NovEs<-0.5*(es(WB@data$NovMinT)+es(WB@data$NovMaxT))
+WB@data$DecEs<-0.5*(es(WB@data$DecMinT)+es(WB@data$DecMaxT))
+
+#By assuming the ideal gas law applies as in Harwell, 2012 we can find SVD in g/m^3
+WB@data$JanSVD<-2166.74*(WB@data$JanEs/(273.15+WB@data$JanMeanT))
+WB@data$FebSVD<-2166.74*(WB@data$FebEs/(273.15+WB@data$FebMeanT))
+WB@data$MarSVD<-2166.74*(WB@data$MarEs/(273.15+WB@data$MarMeanT))
+WB@data$AprSVD<-2166.74*(WB@data$AprEs/(273.15+WB@data$AprMeanT))
+WB@data$MaySVD<-2166.74*(WB@data$MayEs/(273.15+WB@data$MayMeanT))
+WB@data$JunSVD<-2166.74*(WB@data$JunEs/(273.15+WB@data$JunMeanT))
+WB@data$JulSVD<-2166.74*(WB@data$JulEs/(273.15+WB@data$JulMeanT))
+WB@data$AugSVD<-2166.74*(WB@data$AugEs/(273.15+WB@data$AugMeanT))
+WB@data$SepSVD<-2166.74*(WB@data$SepEs/(273.15+WB@data$SepMeanT))
+WB@data$OctSVD<-2166.74*(WB@data$OctEs/(273.15+WB@data$OctMeanT))
+WB@data$NovSVD<-2166.74*(WB@data$NovEs/(273.15+WB@data$NovMeanT))
+WB@data$DecSVD<-2166.74*(WB@data$DecEs/(273.15+WB@data$DecMeanT))
+
+#Then, we can solve for the Hamon Evapotranspiration
+25.4*0.55*(WB@data$JanLd[1]/12)^2*(WB@data$JanSVD[1]/100)
+WB@data$JanHam<-25.4*0.55*(WB@data$JanLd/12)^2*(WB@data$JanSVD/100)
+WB@data$FebHam<-25.4*0.55*(WB@data$FebLd/12)^2*(WB@data$FebSVD/100)
+WB@data$MarHam<-25.4*0.55*(WB@data$MarLd/12)^2*(WB@data$MarSVD/100)
+WB@data$AprHam<-25.4*0.55*(WB@data$AprLd/12)^2*(WB@data$AprSVD/100)
+WB@data$MayHam<-25.4*0.55*(WB@data$MayLd/12)^2*(WB@data$MaySVD/100)
+WB@data$JunHam<-25.4*0.55*(WB@data$JunLd/12)^2*(WB@data$JunSVD/100)
+WB@data$JulHam<-25.4*0.55*(WB@data$JulLd/12)^2*(WB@data$JulSVD/100)
+WB@data$AugHam<-25.4*0.55*(WB@data$AugLd/12)^2*(WB@data$AugSVD/100)
+WB@data$SepHam<-25.4*0.55*(WB@data$SepLd/12)^2*(WB@data$SepSVD/100)
+WB@data$OctHam<-25.4*0.55*(WB@data$OctLd/12)^2*(WB@data$OctSVD/100)
+WB@data$NovHam<-25.4*0.55*(WB@data$NovLd/12)^2*(WB@data$NovSVD/100)
+WB@data$DecHam<-25.4*0.55*(WB@data$DecLd/12)^2*(WB@data$DecSVD/100)
+
+#Turc equation may take the form 0.013*(Rs+50)*T/(T+15). If below 50% RH, 0.013*(Rs+50)*T/(T+15)*(1+(50-RH)/70)
+#Need to find relative humidity (%) and daily solar radiation (in cal/cm^2/day)
+#Can use the metholody suggested by the FAO report
+#Output is in mm/day
+print("Turc equation used to estimate monthly evaporation at each waterbody:")
+#Find average relative humidity at each waterbody
+WB@data$JanRH<-100*(es(WB@data$JanDewT)/WB@data$JanEs)
+WB@data$FebRH<-100*(es(WB@data$FebDewT)/WB@data$FebEs)
+WB@data$MarRH<-100*(es(WB@data$MarDewT)/WB@data$MarEs)
+WB@data$AprRH<-100*(es(WB@data$AprDewT)/WB@data$AprEs)
+WB@data$MayRH<-100*(es(WB@data$MayDewT)/WB@data$MayEs)
+WB@data$JunRH<-100*(es(WB@data$JunDewT)/WB@data$JunEs)
+WB@data$JulRH<-100*(es(WB@data$JulDewT)/WB@data$JulEs)
+WB@data$AugRH<-100*(es(WB@data$AugDewT)/WB@data$AugEs)
+WB@data$SepRH<-100*(es(WB@data$SepDewT)/WB@data$SepEs)
+WB@data$OctRH<-100*(es(WB@data$OctDewT)/WB@data$OctEs)
+WB@data$NovRH<-100*(es(WB@data$NovDewT)/WB@data$NovEs)
+WB@data$DecRH<-100*(es(WB@data$DecDewT)/WB@data$DecEs)
+
+
 #Multiply by area, convert to m^3/day then convert to million gallons per year
 evapH<-numeric()
 evapT<-numeric()
+evapHa<-numeric()
 for (i in 1:length(WB@data$FID)){
   print(paste("Evap BGY estimation for WB ",i," of ",length(WB@data$FID),sep=""))
   evapH[i]<-sum(WB@data[i,grep('Harg',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
   evapT[i]<-sum(WB@data[i,grep('Thorn',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
+  evapHa[i]<-sum(WB@data[i,grep('Ham',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
 }
 WB@data$AnnualHrg_mmpyr<-evapH
 WB@data$AnnualHrg_BGY<-WB@data$AreaRcalc*(evapH/1000)*264.1721/1000000000
 WB@data$AnnualThrn_mmpyr<-evapT
 WB@data$AnnualThrn_BGY<-WB@data$AreaRcalc*(evapT/1000)*264.1721/1000000000
+WB@data$AnnualHamn_mmpyr<-evapHa
+WB@data$AnnualHamn_BGY<-WB@data$AreaRcalc*(evapHa/1000)*264.1721/1000000000
 
+sum(WB@data$AnnualHrg_BGY);sum(WB@data$AnnualThrn_BGY);sum(WB@data$AnnualHamn_BGY)
 #===================================================================================
 # PLOTS
 #===================================================================================
