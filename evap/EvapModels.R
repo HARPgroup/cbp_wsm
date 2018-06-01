@@ -34,28 +34,54 @@ BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_de
 ########Mean monthly raster creation using PRISM data (pre-downloaded)########
 #You MUST delete output TIFF files before writing new ones!
 #Can download ECHO as to get all monthly data for 1970 max temperature (can also call tmin, ppt, tdmean, and tmean). Works for 1895-1980
-yr<-as.character(seq(1955,1970))
+yr<-as.character(seq(2012,2016))
+psmC<-rep(T,length(yr))
+for(i in 1:length(yr)){
+  if(yr[i]>1980){
+    psmC[i]<-F 
+  }
+}
 setwd(my.filepath)
 pathTMean<- paste(my.filepath,'PRISM\\TMean',sep="")
 pathTMax <- paste(my.filepath,'PRISM\\TMax',sep="")
 pathTMin <- paste(my.filepath,'PRISM\\TMin',sep="")
 pathTDew <- paste(my.filepath,'PRISM\\TDew',sep="")
 for(i in 1:length(yr)){
-  temp<-tempfile()
-  download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmean/",yr[i]),temp,mode='wb')
-  unzip(zipfile=temp,exdir=pathTMean)
-
-  temp<-tempfile()
-  download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmax/",yr[i]),temp,mode='wb')
-  unzip(temp,exdir=pathTMax)  
+  if(psmC[i]){
+    temp<-tempfile()
+    download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmean/",yr[i]),temp,mode='wb')
+    unzip(zipfile=temp,exdir=pathTMean)
   
-  temp<-tempfile()
-  download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmin/",yr[i]),temp,mode='wb')
-  unzip(temp,exdir=pathTMin)  
-  
-  temp<-tempfile()
-  download.file(paste0("http://services.nacse.org/prism/data/public/4km/tdmean/",yr[i]),temp,mode='wb')
-  unzip(temp,exdir=pathTDew)  
+    temp<-tempfile()
+    download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmax/",yr[i]),temp,mode='wb')
+    unzip(temp,exdir=pathTMax)  
+    
+    temp<-tempfile()
+    download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmin/",yr[i]),temp,mode='wb')
+    unzip(temp,exdir=pathTMin)  
+    
+    temp<-tempfile()
+    download.file(paste0("http://services.nacse.org/prism/data/public/4km/tdmean/",yr[i]),temp,mode='wb')
+    unzip(temp,exdir=pathTDew)  
+  }else{
+    for(j in 1:length(m)){
+      temp<-tempfile()
+      download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmean/",yr[i],m[j]),temp,mode='wb')
+      unzip(zipfile=temp,exdir=pathTMean)
+      
+      temp<-tempfile()
+      download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmax/",yr[i],m[j]),temp,mode='wb')
+      unzip(temp,exdir=pathTMax)  
+      
+      temp<-tempfile()
+      download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmin/",yr[i],m[j]),temp,mode='wb')
+      unzip(temp,exdir=pathTMin)  
+      
+      temp<-tempfile()
+      download.file(paste0("http://services.nacse.org/prism/data/public/4km/tdmean/",yr[i],m[j]),temp,mode='wb')
+      unzip(temp,exdir=pathTDew)  
+    }
+  }
 }
 
 
@@ -65,7 +91,6 @@ print(paste("Mean Temperature:",sep=""))
 dir.create('Monthly Averages')
 files<-list.files()
 files<-files[grep('bil.bil$',files)]
-yr<-as.character(seq(1955,1970))
 r<-character()
 for (i in 1:length(yr)){
   case<-files[grep(yr[i],files)]
@@ -93,7 +118,6 @@ print(paste("Maximum Temperature:",sep=""))
 dir.create('Monthly Averages')
 files<-list.files()
 files<-files[grep('bil.bil$',files)]
-yr<-as.character(seq(1955,1970))
 r<-character()
 for (i in 1:length(yr)){
   case<-files[grep(yr[i],files)]
@@ -121,7 +145,6 @@ print(paste("Minimum Temperature:",sep=""))
 dir.create('Monthly Averages')
 files<-list.files()
 files<-files[grep('bil.bil$',files)]
-yr<-as.character(seq(1955,1970))
 r<-character()
 for (i in 1:length(yr)){
   case<-files[grep(yr[i],files)]
@@ -148,7 +171,6 @@ print(paste("Dew Point Temperature:",sep=""))
 dir.create('Monthly Averages')
 files<-list.files()
 files<-files[grep('bil.bil$',files)]
-yr<-as.character(seq(1955,1970))
 r<-character()
 for (i in 1:length(yr)){
   case<-files[grep(yr[i],files)]
@@ -210,7 +232,7 @@ diy<-seq(1,365)
 distFsun<-1+0.033*cos(2*pi*diy/365)
 sigma<-0.409*sin(2*pi*diy/365-1.39)
 for (i in 1:length(WB@data$FID)){
-  print(paste("Mean extraterrestrial radiation calc for WB ",i," of ",length(WB@data$FID),sep=""))
+  #print(paste("Mean extraterrestrial radiation calc for WB ",i," of ",length(WB@data$FID),sep=""))
   lat<-as.numeric(WBCenter@coords[i,2])*pi/180
   sunsethour<-acos(-tan(sigma)*tan(lat))
   Ra<-(25*60*0.0820/pi)*distFsun*(sunsethour*sin(lat)*sin(sigma)+cos(lat)*cos(sigma)*sin(sunsethour))
@@ -330,7 +352,7 @@ WB@data$DecHarg<-c1*WB@data$DecRa*sqrt(WB@data$DecDiffT)*(WB@data$DecMeanT+c2)/(
 #Calculate average monthly daylight hours for use in the Thornthwaite Method
 print("Calculate average monthly daylight hours for use in the Thornthwaite Method")
 for (i in 1:length(WB@data$FID)){
-  print(paste("Avg mo daylight hrs calc for WB ",i," of ",length(WB@data$FID),sep=""))
+  #print(paste("Avg mo daylight hrs calc for WB ",i," of ",length(WB@data$FID),sep=""))
   lat<-as.numeric(WBCenter@coords[i,2])*pi/180
   sunsethour<-acos(-tan(sigma)*tan(lat))
   Ld<-24*sunsethour/pi
@@ -360,7 +382,7 @@ ThornI<-function(meanT){
 
 #Calculate Thornthwaite temperature index and coefficient
 for (i in 1:length(WB@data$FID)){
-  print(paste("Thornthwaite temperature index calc for WB ",i," of ",length(WB@data$FID),sep=""))
+  #print(paste("Thornthwaite temperature index calc for WB ",i," of ",length(WB@data$FID),sep=""))
   Jan<-ThornI(WB@data$JanMeanT[i])
   Feb<-ThornI(WB@data$FebMeanT[i])
   Mar<-ThornI(WB@data$MarMeanT[i])
@@ -482,7 +504,7 @@ evapH<-numeric()
 evapT<-numeric()
 evapHa<-numeric()
 for (i in 1:length(WB@data$FID)){
-  print(paste("Evap BGY estimation for WB ",i," of ",length(WB@data$FID),sep=""))
+  #print(paste("Evap BGY estimation for WB ",i," of ",length(WB@data$FID),sep=""))
   evapH[i]<-sum(WB@data[i,grep('Harg',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
   evapT[i]<-sum(WB@data[i,grep('Thorn',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
   evapHa[i]<-sum(WB@data[i,grep('Ham',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
@@ -500,7 +522,7 @@ sum(WB@data$AnnualHrg_BGY);sum(WB@data$AnnualThrn_BGY);sum(WB@data$AnnualHamn_BG
 # PLOTS
 #===================================================================================
 # MEAN TEMP
-# plot(crop(MeanTemp_08,BB),main= expression('August Mean Temperature (1955-1970) ('*degree*'C)'),axes=T,xlab='Longitude',ylab='Latitude',cex.lab=2,cex.main=2,cex.axis=2)
+# plot(crop(MeanTemp_08,BB),main= expression('August Mean Temperature (2012-2016) ('*degree*'C)'),axes=T,xlab='Longitude',ylab='Latitude',cex.lab=2,cex.main=2,cex.axis=2)
 # plot(VA,add=T,lwd=2)
 # 
 # # SOLAR RADIATION 
