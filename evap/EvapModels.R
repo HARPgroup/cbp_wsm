@@ -1,6 +1,7 @@
 library(rgeos)
 library(rgdal)
 library(raster)
+library(dplyr)
 
 my.filepath <- 'C:\\Users\\connorb5\\Desktop\\GitHub\\cbp_wsm\\evap\\'
 
@@ -168,6 +169,26 @@ for (j in 1:length(m)){
   writeRaster(mean(rstack), filename=paste0('Monthly Averages/DewTemp',m[j],'.tiff'))
 }
 
+########Pan Evaporation Data########
+setwd(paste0(my.filepath,'ReferenceET/'))
+dyinmo<-c(31,28,31,30,31,30,31,31,30,31,30,31)
+for (i in 1:length(m)){
+  print(paste0("Checking month ",i," of ",length(m)))
+  files<-list.files()
+  files<-files[grep(month.abb[as.numeric(m[i])],files)]
+  if(length(files)>0){
+    lab<-paste0(month.abb[as.numeric(m[i])],"ReferenceET.tif")
+    test<-raster(lab)
+    test<-test*25.4/dyinmo[i]
+    test<-projectRaster(test,crs=proj4string(BB))
+    testclip<-mask(test,BB) 
+    assign(paste0('RefET_',m[i]),testclip)
+  }
+}
+PanCoeff<-raster('PanCoefficient.tif')
+PanCoeff<-projectRaster(PanCoeff,crs=proj4string(BB))
+PanCoeff<-mask(PanCoeff,BB) 
+
 ########Solar radiation calculation########
 WB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="Waterbodies")
 
@@ -178,6 +199,12 @@ WB@data$FID<-1:length(WB@data$COMID)
 WB@data$AreaRcalc<-gArea(WB,byid=T)
 WB<-spTransform(WB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs")
 WBCenter<-gCentroid(WB,byid=T,id=WB@data$FID)
+
+bins<-c(0,0.25,5,10,15,30,50,100,max(WB@data$AreaRcalc))
+lab<-c('< 0.25 acres','0.25 - 5 acres','5 - 10 acres','10 - 15 acres','15 - 30 acres','30 - 50 acres','50 - 100 acres','> 100 acres')
+WB@data$Bin<-as.character(cut(WB@data$AreaRcalc*10000/2.54/2.54/12/12/43560,bins,labels=1:8))
+WB@data$NewArea_Class<-as.character(cut(WB@data$AreaRcalc*10000/2.54/2.54/12/12/43560,bins,labels=lab))
+
 #See http://www.fao.org/docrep/x0490e/x0490e07.htm#TopOfPage
 diy<-seq(1,365)
 distFsun<-1+0.033*cos(2*pi*diy/365)
@@ -263,6 +290,19 @@ WB@data$DecMinT<-extract(MinTemp_12,WBCenter)
 WB@data$DecDiffT<-WB@data$DecMaxT-WB@data$DecMinT
 WB@data$DecMeanT<-extract(MeanTemp_12,WBCenter)
 WB@data$DecDewT<-extract(DewTemp_12,WBCenter)
+WB@data$PanCoeff<-extract(PanCoeff,WBCenter)
+WB@data$AprRefET<-extract(RefET_04,WBCenter)
+WB@data$MayRefET<-extract(RefET_05,WBCenter)
+WB@data$JunRefET<-extract(RefET_06,WBCenter)
+WB@data$JulRefET<-extract(RefET_07,WBCenter)
+WB@data$AugRefET<-extract(RefET_08,WBCenter)
+WB@data$SepRefET<-extract(RefET_09,WBCenter)
+WB@data$OctRefET<-extract(RefET_10,WBCenter)
+
+#Pan Coefficient raster is too small. Two waterbody centroids are outside its bounds. Below are the manual inputs:
+WB@data$PanCoeff[WB@data$FID==39447]<-0.78
+WB@data$PanCoeff[WB@data$FID==47772]<-0.78
+
 #The below line may summarize by polygon, but it takes a very long time to run (~10 min for each extraction)
 #extract(MinTemp_12,WB,fun=mean,border=F)
 
@@ -453,8 +493,9 @@ WB@data$AnnualThrn_mmpyr<-evapT
 WB@data$AnnualThrn_BGY<-WB@data$AreaRcalc*(evapT/1000)*264.1721/1000000000
 WB@data$AnnualHamn_mmpyr<-evapHa
 WB@data$AnnualHamn_BGY<-WB@data$AreaRcalc*(evapHa/1000)*264.1721/1000000000
+WB@data$AnnualAvg_BGY<-(WB@data$AnnualHrg_BGY+WB@data$AnnualThrn_BGY+WB@data$AnnualHamn_BGY)/3
 
-sum(WB@data$AnnualHrg_BGY);sum(WB@data$AnnualThrn_BGY);sum(WB@data$AnnualHamn_BGY)
+sum(WB@data$AnnualHrg_BGY);sum(WB@data$AnnualThrn_BGY);sum(WB@data$AnnualHamn_BGY);sum(WB@data$AnnualAvg_BGY)
 #===================================================================================
 # PLOTS
 #===================================================================================
@@ -493,5 +534,132 @@ sum(WB@data$AnnualHrg_BGY);sum(WB@data$AnnualThrn_BGY);sum(WB@data$AnnualHamn_BG
 # plot(ET,type='l',lwd=2,ylab='Mean PET (mm/day)',xlab='Month',cex.lab=2,cex.axis=2,col='red')
 # lines(ET2,col='blue',lwd=2)
 # legend(x=1,y=6,bty='n',col=c('red','blue'),legend=c("Hargreaves","Thornthwaite"),lwd=2,cex=2,y.intersp = 0.75)
+
+#WATERBODY SUMMARY
+#Summarize surface area, number of impoundments, and ET by waterbody class
+WBSummary<-summarize(group_by(WB@data,Bin),Class=first(NewArea_Class),ET_BGY=sum(AnnualAvg_BGY),SA_ac=sum(AreaRcalc*10000/2.54/2.54/12/12/43560),Number=n())
+
+#EVAPORATION COMPARISONS TO PAN ET DATA
+#Show how Pan data compares with each of the three models. Also, show the average
+summer<-data.frame(Month=month.abb[4:10],Hargreaves=NA,Thornthwaite=NA,Hamon=NA,Pan=NA,Average=NA)
+summer$Month<-as.character(summer$Month)
+for (i in 1:length(summer$Month)){
+  subst<-grep(paste0(summer$Month[i],'Harg'),colnames(WB@data))
+  subst<-WB@data[,subst]
+  summer$Hargreaves[i]<-sum(WB@data$AreaRcalc*(subst/1000)*264.1721/1000000000)
+  
+  subst<-grep(paste0(summer$Month[i],'Thorn'),colnames(WB@data))
+  subst<-WB@data[,subst]
+  summer$Thornthwaite[i]<-sum(WB@data$AreaRcalc*(subst/1000)*264.1721/1000000000)
+  
+  subst<-grep(paste0(summer$Month[i],'Ham'),colnames(WB@data))
+  subst<-WB@data[,subst]
+  summer$Hamon[i]<-sum(WB@data$AreaRcalc*(subst/1000)*264.1721/1000000000)
+  
+  subst<-grep(paste0(summer$Month[i],'RefET'),colnames(WB@data))
+  subst<-WB@data[,subst]
+  summer$Pan[i]<-sum(WB@data$AreaRcalc*(subst*WB@data$PanCoeff/1000)*264.1721/1000000000)
+  
+  summer$Average[i]<-mean(as.numeric(summer[i,2:4]))
+}
+par(mar=c(5,6,2,4),lwd=2,cex.axis=2,cex.lab=2)
+plot(4:10,summer$Hargreaves,type='o',lwd=4,pch=19,cex=2,xlab='Month',ylab='Evaporation (BGY)',ylim=c(0.25,1.5))
+lines(4:10,summer$Thornthwaite,type='o',cex=2,lwd=4,pch=19,col='dark red')
+lines(4:10,summer$Hamon,type='o',cex=2,lwd=4,pch=19,col='dark blue')
+lines(4:10,summer$Pan,type='o',cex=2,lwd=4,pch=19,col='dark orange')
+lines(4:10,summer$Average,type='o',cex=2,lwd=4,col='dark green',lty=3)
+legend(x=6.3,y=1.0,legend=c("Hargreaves","Thornthwaite","Hamon","Pan","Model Average"),
+       col=c('black','dark red','dark blue','dark orange','dark green'),lty=c(1,1,1,1,3),
+       pch=c(19,19,19,19,1),lwd=4,cex=2,x.intersp = 0.4,y.intersp = 0.5,seg.len=0.8,bty='n')
+
+#NORMALIZED EVAP BY 7q10
+#To plot evap across the state normalized by 7q10
+#Initialize 7q10 data
+HUCdata<-read.csv(paste0(my.filepath,"HUC8_7q10.csv"))
+HUCdata$HUC8<-paste0('0',HUCdata$HUC8)#To fix previous excel errors
+HUCdata$Area_sqmi<-as.numeric(as.character(HUCdata$Area_sqmi))
+HUCdata$AltArea_sqmi<-as.numeric(as.character(HUCdata$AltArea_sqmi))
+HUCdata$X7q10_cfs<-as.numeric(as.character(HUCdata$X7q10_cfs))
+HUCdata$Normalized7q10<-NA
+#Normalize by draiange area of the gauge used
+for(i in 1:length(HUCdata$Name)){
+  if(is.na(HUCdata$AltArea_sqmi[i])){
+    HUCdata$Normalized7q10[i]<-HUCdata$X7q10_cfs[i]/HUCdata$Area_sqmi[i]
+  }else{
+    HUCdata$Normalized7q10[i]<-HUCdata$X7q10_cfs[i]/HUCdata$AltArea_sqmi[i]
+  }
+}
+#load up some HUCs
+HUC8<-readOGR(paste(my.filepath,'HUC.gdb',sep=""),layer="WBDHU8")
+HUC8<-spTransform(HUC8,'+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs')
+HUC8@data$FID<-1:length(HUC8@data$TNMID)
+#Calculate area in UTM zone 17N
+HUC8@data$AreaRcalc<-gArea(HUC8,byid=T)
+HUC8<-spTransform(HUC8,CRS=proj4string(BB))
+#Create an extra copy for modification
+HUC8Overlay<-HUC8
+HUC8Overlay@data<-HUC8Overlay@data[,c(11,12)]
+names(HUC8Overlay@data)<-c("HUC8","HUC8Name")
+#Find the HUC each waterbody resides in through a spatial join
+WBHUC<-over(WBCenter,HUC8Overlay)
+WB@data$HUC8<-WBHUC$HUC8
+WB@data$HUC8Name<-WBHUC$HUC8Name
+#Summarize ET by HUC and then store in the HUC8 file
+HUCSum<-as.data.frame(summarize(group_by(WB@data,HUC8Name),HUC=first(HUC8),Hamn_BGY=sum(AnnualHamn_BGY),Thrn_BGY=sum(AnnualThrn_BGY),Hrg_BGY=sum(AnnualHrg_BGY),Average_BGY=sum(AnnualAvg_BGY)))
+HUC8@data$Normalized7q10<-NA
+for(i in 1:length(HUC8@data$TNMID)){
+  HUC8@data$Hamn_BGY[i]<-HUCSum$Hamn_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
+  HUC8@data$Thrn_BGY[i]<-HUCSum$Thrn_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
+  HUC8@data$Hrg_BGY[i]<-HUCSum$Hrg_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
+  HUC8@data$AvgET_BGY[i]<-HUCSum$Average_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
+  if(as.character(HUC8@data$HUC8[i])%in%HUCdata$HUC8){
+    HUC8@data$Normalized7q10[i]<-HUCdata$Normalized7q10[HUCdata$HUC8==HUC8@data$HUC8[i]]
+  }
+}
+#Some data for pretty plotting
+nonVA<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="NonVAStates")
+nonVA<-spTransform(nonVA,CRS=proj4string(BB))
+VAoutline<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="Virginia_ESRI")
+VAoutline<-spTransform(VAoutline,CRS=proj4string(BB))
+#Calculate HUC 7q10 and store all HUC data into the clipped file for plotting
+HUC8@data$HUC7q10<-HUC8@data$Normalized7q10*HUC8@data$AreaRcalc*100*100/2.54/2.54/12/12/5280/5280
+HUC8@data$RatioET_7q10<-(HUC8@data$AvgET_BGY*1000000000*231/12/12/12/365/24/3600)/HUC8@data$HUC7q10
+#Clip to the state boundary
+HUC8Cl<-gIntersection(HUC8,VAoutline,id=as.character(HUC8@data$HUC8),byid=TRUE,drop_lower_td=TRUE)
+HUC8Cl<-SpatialPolygonsDataFrame(HUC8Cl,HUC8@data[as.character(HUC8@data$HUC8)%in%names(HUC8Cl),],match.ID = "HUC8")
+HUC8Cl@data$Color<-cut(HUC8Cl@data$RatioET_7q10,c(0,0.05,0.1,0.25,0.5,0.75,1,2,max(HUC8Cl@data$RatioET_7q10,na.rm=T)),labels=c('dark blue','blue','cyan','light green','lime green','yellow','orange','red'))
+HUC8Cl@data$Color<-as.character(HUC8Cl@data$Color)
+HUC8Cl@data$Color[is.na(HUC8Cl@data$Color)]<-'wheat4'
+
+plot(nonVA,xlim=c(-86,-72),ylim=c(36,40),col='light grey')
+plot(HUC8Cl,add=T,col=HUC8Cl@data$Color)
+lines(nonVA,lwd=2)
+lines(VAoutline,lwd=2)
+legend(-74, 39, c('0 - 5%','5 - 10%','10 - 25%','25 - 50%','50 - 75%','75 - 100%','100 - 200%','> 200%','n.d.'),
+       col =c('dark blue','blue','cyan','light green','lime green','yellow','orange','red','wheat4'),lty=0,
+       pch=15,pt.cex=4,bty='n',y.intersp = 0.25,x.intersp = 0.25,cex=2,lwd=2,seg.len=0.25)
+mtext(at=-73,line=-17,'ET/7q10',cex=4)
+
+#WATERBODY DENSITY
+#To plot waterbody density across the state. Need to call PNG function here because raster and spatial data frames don't always agree when axes change
+#For instance, zooming can make mistakes by rescaling rasters differently from the spatial data frames
+WBDens<-raster(paste0(my.filepath,"ReferenceET/WBDensity_projected.tif"))
+WBDens<-projectRaster(WBDens,crs=proj4string(BB))
+colorfunc<-colorRampPalette(c('dark blue','cyan','yellow','red'))
+color<-colorfunc(100)
+png(paste0(my.filepath,'Density',".png"),width=1820,height=760)
+plot(nonVA,xlim=c(-86,-72),ylim=c(36,40),col='grey')
+plot(WBDens,add=T,col=color,legend=F)
+lines(nonVA,lwd=2)
+lines(VAoutline,lwd=2)
+r.range <- c(round(minValue(WBDens),1), round(maxValue(WBDens),1))
+plot(WBDens, legend.only=TRUE, col=color,
+     legend.width=2, legend.shrink=0.75,
+     axis.args=list(at=seq(r.range[1], r.range[2],0.5),
+                    labels=seq(r.range[1], r.range[2], 0.5), 
+                    cex.axis=2.5),
+     smallplot=c(0.80,0.85,0.3,0.65),
+     legend.args=list(text=expression(Imp.~Density~'(#/'*km^{2}*')'), side=4, font=2, line=7, cex=3))
+dev.off()
 
 #===================================================================================
