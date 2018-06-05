@@ -1,14 +1,16 @@
+library(lubridate)
 library(rgeos)
 library(rgdal)
 library(raster)
 library(dplyr)
 
-my.filepath <- 'C:\\Users\\connorb5\\Desktop\\GitHub\\cbp_wsm\\evap\\'
+my.filepath <- 'C:\\Users\\conno\\Desktop\\GitHub\\cbp_wsm\\evap\\'
 
 m<-c('01','02','03','04','05','06','07','08','09','10','11','12')
 VA<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="VA")
+VA<-spTransform(VA,CRS='+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs')
 BB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="BoundingBox")
-BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs")
+BB<-spTransform(BB,CRS="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 #crs(VA)
 
 #--------------------------------------------------------------------------------------------------
@@ -21,7 +23,7 @@ BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_de
 #y_max<-42
 #coords = matrix(c(x_min,y_min,x_max,y_min,x_max,y_max,x_min,y_max,x_min,y_min),ncol = 2, byrow = TRUE)
 #BB = Polygon(coords)
-#BB = SpatialPolygons(list(Polygons(list(BB), ID = "a")), proj4string=CRS("+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs"))
+#BB = SpatialPolygons(list(Polygons(list(BB), ID = "a")), proj4string=CRS('+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'))
 #--------------------------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------
@@ -34,7 +36,7 @@ BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_de
 ########Mean monthly raster creation using PRISM data (pre-downloaded)########
 #You MUST delete output TIFF files before writing new ones!
 #Can download ECHO as to get all monthly data for 1970 max temperature (can also call tmin, ppt, tdmean, and tmean). Works for 1895-1980
-yr<-as.character(seq(2012,2016))
+yr<-as.character(seq(1955,1970))
 psmC<-rep(T,length(yr))
 for(i in 1:length(yr)){
   if(yr[i]>1980){
@@ -215,11 +217,11 @@ PanCoeff<-mask(PanCoeff,BB)
 WB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="Waterbodies")
 
 #Project coordinates into NAD 1983 UTM zone 17N to caclulate area. Then, reproject back for consistency with other files
-WB<-spTransform(WB,'+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs')
+WB<-spTransform(WB,CRS='+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs')
 WB@data$FID<-1:length(WB@data$COMID)
 #Not sure about these yet
 WB@data$AreaRcalc<-gArea(WB,byid=T)
-WB<-spTransform(WB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs")
+WB<-spTransform(WB,CRS='+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs')
 WBCenter<-gCentroid(WB,byid=T,id=WB@data$FID)
 
 bins<-c(0,0.25,5,10,15,30,50,100,max(WB@data$AreaRcalc))
@@ -350,6 +352,16 @@ WB@data$NovHarg<-c1*WB@data$NovRa*sqrt(WB@data$NovDiffT)*(WB@data$NovMeanT+c2)/(
 WB@data$DecHarg<-c1*WB@data$DecRa*sqrt(WB@data$DecDiffT)*(WB@data$DecMeanT+c2)/(2.501-.002361*WB@data$DecMeanT)
 
 #Calculate average monthly daylight hours for use in the Thornthwaite Method
+#Also calculate the Thornthwaite temperature index with the following function:
+ThornI<-function(meanT){
+  if(meanT<0){
+    out<-0
+  }else{
+    out<-(meanT/5)^1.514
+  }
+  return(out)
+}
+
 print("Calculate average monthly daylight hours for use in the Thornthwaite Method")
 for (i in 1:length(WB@data$FID)){
   #print(paste("Avg mo daylight hrs calc for WB ",i," of ",length(WB@data$FID),sep=""))
@@ -369,20 +381,7 @@ for (i in 1:length(WB@data$FID)){
   WB@data$OctLd[i]<-mean(Ld[274:304])
   WB@data$NovLd[i]<-mean(Ld[305:334])
   WB@data$DecLd[i]<-mean(Ld[335:365])
-}
-
-ThornI<-function(meanT){
-  if(meanT<0){
-    out<-0
-  }else{
-    out<-(meanT/5)^1.514
-  }
-  return(out)
-}
-
-#Calculate Thornthwaite temperature index and coefficient
-for (i in 1:length(WB@data$FID)){
-  #print(paste("Thornthwaite temperature index calc for WB ",i," of ",length(WB@data$FID),sep=""))
+  
   Jan<-ThornI(WB@data$JanMeanT[i])
   Feb<-ThornI(WB@data$FebMeanT[i])
   Mar<-ThornI(WB@data$MarMeanT[i])
@@ -397,6 +396,8 @@ for (i in 1:length(WB@data$FID)){
   Dec<-ThornI(WB@data$DecMeanT[i])
   WB@data$I[i]<-Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec
 }
+
+#Calculate Thornthwaite coefficient
 WB@data$a<-(0.000000675*WB@data$I^3)-(0.0000771*WB@data$I^2)+(0.01791*WB@data$I)+0.49239
 
 #Calculate and set NAs to zero, as temperatures below 0 have 0 ET
@@ -499,7 +500,7 @@ WB@data$NovRH<-100*(es(WB@data$NovDewT)/WB@data$NovEs)
 WB@data$DecRH<-100*(es(WB@data$DecDewT)/WB@data$DecEs)
 
 
-#Multiply by area, convert to m^3/day then convert to million gallons per year
+#Multiply by area, convert to m^3/day then convert to billion gallons per year
 evapH<-numeric()
 evapT<-numeric()
 evapHa<-numeric()
@@ -515,8 +516,10 @@ WB@data$AnnualThrn_mmpyr<-evapT
 WB@data$AnnualThrn_BGY<-WB@data$AreaRcalc*(evapT/1000)*264.1721/1000000000
 WB@data$AnnualHamn_mmpyr<-evapHa
 WB@data$AnnualHamn_BGY<-WB@data$AreaRcalc*(evapHa/1000)*264.1721/1000000000
+WB@data$AnnualAvg_mmpyr<-(evapH+evapT+evapHa)/3
 WB@data$AnnualAvg_BGY<-(WB@data$AnnualHrg_BGY+WB@data$AnnualThrn_BGY+WB@data$AnnualHamn_BGY)/3
 
+#ALL WATERBODIES SHOULD HAVE VALUE, NO SUM SHOULD RETURN NA. This is important for the below plotting code, which is written under this assumption
 sum(WB@data$AnnualHrg_BGY);sum(WB@data$AnnualThrn_BGY);sum(WB@data$AnnualHamn_BGY);sum(WB@data$AnnualAvg_BGY)
 #===================================================================================
 # PLOTS
@@ -594,6 +597,36 @@ legend(x=6.3,y=1.0,legend=c("Hargreaves","Thornthwaite","Hamon","Pan","Model Ave
        col=c('black','dark red','dark blue','dark orange','dark green'),lty=c(1,1,1,1,3),
        pch=c(19,19,19,19,1),lwd=4,cex=2,x.intersp = 0.4,y.intersp = 0.5,seg.len=0.8,bty='n')
 
+#DEQ Withdraw
+Withdraw<-read.csv(paste0(my.filepath,'DEQwithdraw.csv'),stringsAsFactors = F)
+Withdraw$Date<-as.Date(Withdraw$Date,format='%m/%d/%Y')
+Withdraw$Month<-month(Withdraw$Date)
+WithdrawSummary<-as.data.frame(summarize(group_by(Withdraw,Month),AvgMGM=mean(Withdraw)))
+WithdrawSummary$AvgMGD<-WithdrawSummary$AvgMGM/c(31,28,31,30,31,30,31,31,30,31,30,31)
+
+
+#WATERBODY DENSITY
+#To plot waterbody density across the state. Need to call PNG function here because raster and spatial data frames don't always agree when axes change
+#For instance, zooming can make mistakes by rescaling rasters differently from the spatial data frames
+WBDens<-raster(paste0(my.filepath,"ReferenceET/WBDensity_projected.tif"))
+WBDens<-projectRaster(WBDens,crs=proj4string(BB))
+colorfunc<-colorRampPalette(c('dark blue','cyan','yellow','red'))
+color<-colorfunc(100)
+png(paste0(my.filepath,'Output/Density',".png"),width=1780,height=860)
+plot(nonVA,xlim=c(-83.5,-73),ylim=c(36,40),col='light grey')
+plot(WBDens,add=T,col=color,legend=F)
+lines(nonVA,lwd=2)
+lines(VAoutline,lwd=2)
+r.range <- c(round(minValue(WBDens),1), round(maxValue(WBDens),1))
+plot(WBDens, legend.only=TRUE, col=color,
+     legend.width=2, legend.shrink=0.75,
+     axis.args=list(at=seq(r.range[1], r.range[2],0.5),
+                    labels=seq(r.range[1], r.range[2], 0.5), 
+                    cex.axis=2.5),
+     smallplot=c(0.80,0.85,0.3,0.65),
+     legend.args=list(text=expression(Imp.~Density~'(#/'*km^{2}*')'), side=4, font=2, line=7, cex=3))
+dev.off()
+
 #NORMALIZED EVAP BY 7q10
 #To plot evap across the state normalized by 7q10
 #Initialize 7q10 data
@@ -613,7 +646,7 @@ for(i in 1:length(HUCdata$Name)){
 }
 #load up some HUCs
 HUC8<-readOGR(paste(my.filepath,'HUC.gdb',sep=""),layer="WBDHU8")
-HUC8<-spTransform(HUC8,'+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs')
+HUC8<-spTransform(HUC8,CRS='+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs')
 HUC8@data$FID<-1:length(HUC8@data$TNMID)
 #Calculate area in UTM zone 17N
 HUC8@data$AreaRcalc<-gArea(HUC8,byid=T)
@@ -628,14 +661,17 @@ WB@data$HUC8<-WBHUC$HUC8
 WB@data$HUC8Name<-WBHUC$HUC8Name
 #Summarize ET by HUC and then store in the HUC8 file
 HUCSum<-as.data.frame(summarize(group_by(WB@data,HUC8Name),HUC=first(HUC8),Hamn_BGY=sum(AnnualHamn_BGY),Thrn_BGY=sum(AnnualThrn_BGY),Hrg_BGY=sum(AnnualHrg_BGY),Average_BGY=sum(AnnualAvg_BGY)))
+HUCSum$HUC8Name<-as.character(HUCSum$HUC8Name)
 HUC8@data$Normalized7q10<-NA
 for(i in 1:length(HUC8@data$TNMID)){
-  HUC8@data$Hamn_BGY[i]<-HUCSum$Hamn_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
-  HUC8@data$Thrn_BGY[i]<-HUCSum$Thrn_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
-  HUC8@data$Hrg_BGY[i]<-HUCSum$Hrg_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
-  HUC8@data$AvgET_BGY[i]<-HUCSum$Average_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]][1]
-  if(as.character(HUC8@data$HUC8[i])%in%HUCdata$HUC8){
-    HUC8@data$Normalized7q10[i]<-HUCdata$Normalized7q10[HUCdata$HUC8==HUC8@data$HUC8[i]]
+  if(length(HUCSum$HUC8Name[HUCSum$HUC8Name==HUC8@data$Name[i]])>0){
+    HUC8@data$Hamn_BGY[i]<-HUCSum$Hamn_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]]
+    HUC8@data$Thrn_BGY[i]<-HUCSum$Thrn_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]]
+    HUC8@data$Hrg_BGY[i]<-HUCSum$Hrg_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]]
+    HUC8@data$AvgET_BGY[i]<-HUCSum$Average_BGY[HUCSum$HUC8Name==HUC8@data$Name[i]]
+    if(as.character(HUC8@data$HUC8[i])%in%HUCdata$HUC8){
+      HUC8@data$Normalized7q10[i]<-HUCdata$Normalized7q10[HUCdata$HUC8==HUC8@data$HUC8[i]]
+    }
   }
 }
 #Some data for pretty plotting
@@ -644,8 +680,8 @@ nonVA<-spTransform(nonVA,CRS=proj4string(BB))
 VAoutline<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="Virginia_ESRI")
 VAoutline<-spTransform(VAoutline,CRS=proj4string(BB))
 #Calculate HUC 7q10 and store all HUC data into the clipped file for plotting
-HUC8@data$HUC7q10<-HUC8@data$Normalized7q10*HUC8@data$AreaRcalc*100*100/2.54/2.54/12/12/5280/5280
-HUC8@data$RatioET_7q10<-(HUC8@data$AvgET_BGY*1000000000*231/12/12/12/365/24/3600)/HUC8@data$HUC7q10
+HUC8@data$HUC7q10_cfs<-HUC8@data$Normalized7q10*HUC8@data$AreaRcalc*100*100/2.54/2.54/12/12/5280/5280
+HUC8@data$RatioET_7q10<-(HUC8@data$AvgET_BGY*1000000000*231/12/12/12/365/24/3600)/HUC8@data$HUC7q10_cfs
 #Clip to the state boundary
 HUC8Cl<-gIntersection(HUC8,VAoutline,id=as.character(HUC8@data$HUC8),byid=TRUE,drop_lower_td=TRUE)
 HUC8Cl<-SpatialPolygonsDataFrame(HUC8Cl,HUC8@data[as.character(HUC8@data$HUC8)%in%names(HUC8Cl),],match.ID = "HUC8")
@@ -653,35 +689,161 @@ HUC8Cl@data$Color<-cut(HUC8Cl@data$RatioET_7q10,c(0,0.05,0.1,0.25,0.5,0.75,1,2,m
 HUC8Cl@data$Color<-as.character(HUC8Cl@data$Color)
 HUC8Cl@data$Color[is.na(HUC8Cl@data$Color)]<-'wheat4'
 
-plot(nonVA,xlim=c(-86,-72),ylim=c(36,40),col='light grey')
+png(paste0(my.filepath,'Output/E_7q10',".png"),width=1780,height=860)
+plot(nonVA,xlim=c(-83.5,-73),ylim=c(36,40),col='light grey')
 plot(HUC8Cl,add=T,col=HUC8Cl@data$Color)
 lines(nonVA,lwd=2)
 lines(VAoutline,lwd=2)
-legend(-74, 39, c('0 - 5%','5 - 10%','10 - 25%','25 - 50%','50 - 75%','75 - 100%','100 - 200%','> 200%','n.d.'),
+legend(-74.38, 39, c('0 - 5%','5 - 10%','10 - 25%','25 - 50%','50 - 75%','75 - 100%','100 - 200%','> 200%','n.d.'),
        col =c('dark blue','blue','cyan','light green','lime green','yellow','orange','red','wheat4'),lty=0,
-       pch=15,pt.cex=4,bty='n',y.intersp = 0.25,x.intersp = 0.25,cex=2,lwd=2,seg.len=0.25)
-mtext(at=-73,line=-17,'ET/7q10',cex=4)
-
-#WATERBODY DENSITY
-#To plot waterbody density across the state. Need to call PNG function here because raster and spatial data frames don't always agree when axes change
-#For instance, zooming can make mistakes by rescaling rasters differently from the spatial data frames
-WBDens<-raster(paste0(my.filepath,"ReferenceET/WBDensity_projected.tif"))
-WBDens<-projectRaster(WBDens,crs=proj4string(BB))
-colorfunc<-colorRampPalette(c('dark blue','cyan','yellow','red'))
-color<-colorfunc(100)
-png(paste0(my.filepath,'Density',".png"),width=1820,height=760)
-plot(nonVA,xlim=c(-86,-72),ylim=c(36,40),col='grey')
-plot(WBDens,add=T,col=color,legend=F)
-lines(nonVA,lwd=2)
-lines(VAoutline,lwd=2)
-r.range <- c(round(minValue(WBDens),1), round(maxValue(WBDens),1))
-plot(WBDens, legend.only=TRUE, col=color,
-     legend.width=2, legend.shrink=0.75,
-     axis.args=list(at=seq(r.range[1], r.range[2],0.5),
-                    labels=seq(r.range[1], r.range[2], 0.5), 
-                    cex.axis=2.5),
-     smallplot=c(0.80,0.85,0.3,0.65),
-     legend.args=list(text=expression(Imp.~Density~'(#/'*km^{2}*')'), side=4, font=2, line=7, cex=3))
+       pch=15,pt.cex=6,bty='n',y.intersp = 1,x.intersp = 1,cex=3,lwd=2,seg.len=0.25)
+mtext(at=-73.85,line=-14,'E/7q10',cex=4)
 dev.off()
 
+#NORMALIZED BY DEMAND
+#Read in demand measuring points. Note that some geometries are bad and need correction
+Hydro<-read.csv(paste0(my.filepath,"DEQwithdrawMP.csv"),stringsAsFactors = F)
+#Create new columns for unformatted lat/long
+Hydro$MPLat<-Hydro$Latitude
+Hydro$MPLong<-Hydro$Longitude
+#A simple search function to check for NAs and replace them for use in boolean code
+NAReplace<-function(x){
+  if(is.na(x)){
+    return(-99)
+  }else{
+    return(x)
+  }
+}
+plus<-function(x){
+  if(all(is.na(x))){
+    c(NA)
+  }else{
+    sum(x,na.rm = TRUE)}
+}
+#Correct lat/long values for possible typos i.e. missing negative signs, switched lat/long, or both
+#Is set to check if data falls in rough state boundaries set by (35.-70) and (45,-90)
+Hydro$Latitude<-numeric(length(Hydro$MPLat))
+Hydro$Longitude<-numeric(length(Hydro$MPLong))
+for (i in 1:length(Hydro$Facility)){
+  Hydro$Latitude[i]<-Hydro$MPLat[i]
+  Hydro$Longitude[i]<-Hydro$MPLong[i]
+  Hydro$Latitude[i]<-NAReplace(Hydro$Latitude[i])
+  Hydro$Longitude[i]<-NAReplace(Hydro$Longitude[i])
+  if((Hydro$Latitude[i]<35|Hydro$Latitude[i]>45)|(Hydro$Longitude[i]<(-90)|Hydro$Longitude[i]>(-70))){
+    Hydro$Latitude[i]<-Hydro$MPLong[i]
+    Hydro$Longitude[i]<-Hydro$MPLat[i]
+    Hydro$Latitude[i]<-NAReplace(Hydro$Latitude[i])
+    Hydro$Longitude[i]<-NAReplace(Hydro$Longitude[i]) 
+    if((Hydro$Latitude[i]<35|Hydro$Latitude[i]>45)|(Hydro$Longitude[i]<(-90)|Hydro$Longitude[i]>(-70))){
+      Hydro$Latitude[i]<-Hydro$MPLat[i]
+      Hydro$Longitude[i]<-(-1)*Hydro$MPLong[i]
+      Hydro$Latitude[i]<-NAReplace(Hydro$Latitude[i])
+      Hydro$Longitude[i]<-NAReplace(Hydro$Longitude[i]) 
+      if((Hydro$Latitude[i]<35|Hydro$Latitude[i]>45)|(Hydro$Longitude[i]<(-90)|Hydro$Longitude[i]>(-70))){
+        Hydro$Latitude[i]<-Hydro$MPLong[i]
+        Hydro$Longitude[i]<-(-1)*Hydro$MPLat[i]
+        Hydro$Latitude[i]<-NAReplace(Hydro$Latitude[i])
+        Hydro$Longitude[i]<-NAReplace(Hydro$Longitude[i]) 
+        if((Hydro$Latitude[i]<35|Hydro$Latitude[i]>45)|(Hydro$Longitude[i]<(-90)|Hydro$Longitude[i]>(-70))){
+          Hydro$Latitude[i]<-(-1)*Hydro$MPLat[i]
+          Hydro$Longitude[i]<-Hydro$MPLong[i]
+          Hydro$Latitude[i]<-NAReplace(Hydro$Latitude[i])
+          Hydro$Longitude[i]<-NAReplace(Hydro$Longitude[i])
+          if((Hydro$Latitude[i]<35|Hydro$Latitude[i]>45)|(Hydro$Longitude[i]<(-90)|Hydro$Longitude[i]>(-70))){
+            Hydro$Latitude[i]<-Hydro$MPLat[i]
+            Hydro$Longitude[i]<-Hydro$MPLong[i]
+          }
+        }
+      }
+    }
+  }
+}
+
+#Remove MPs with missing lat/long
+Hydro<-Hydro[!(is.na(Hydro$Latitude)&is.na(Hydro$Longitude)),]
+#Convert to spatial points
+Hydro<-SpatialPointsDataFrame(data.frame(lon=Hydro$Longitude,lat=Hydro$Latitude),Hydro,proj4string = crs(BB))
+Hydro<-spTransform(Hydro,proj4string(BB))
+#Spatially join with the HUC layer
+HydroHUC<-over(Hydro,HUC8Overlay)
+Hydro@data$HUC8<-HydroHUC$HUC8
+Hydro@data$HUC8Name<-HydroHUC$HUC8Name
+Hydro@data$Current.Use.Five.Year.Average..MGY.<-as.numeric(Hydro$Current.Use.Five.Year.Average..MGY.)
+#Add values to the spatial HUC polygons data frame layer
+HUCSum<-as.data.frame(summarize(group_by(Hydro@data,HUC8Name),Withdraw=plus(Current.Use.Five.Year.Average..MGY.)))
+HUCSum$HUC8Name<-as.character(HUCSum$HUC8Name)
+HUCSum$HUC8Name[is.na(HUCSum$HUC8Name)]<-'None'
+for(i in 1:length(HUC8@data$TNMID)){
+  if(length(HUCSum$HUC8Name[HUCSum$HUC8Name==HUC8@data$Name[i]])>0){
+    HUC8@data$Withdraw_BGY[i]<-HUCSum$Withdraw[HUCSum$HUC8Name==HUC8@data$Name[i]]/1000
+  }
+}
+
+HUC8@data$RatioET_ETpD<-HUC8@data$AvgET_BGY/(HUC8@data$AvgET_BGY+HUC8@data$Withdraw_BGY)
+HUC8Cl<-gIntersection(HUC8,VAoutline,id=as.character(HUC8@data$HUC8),byid=TRUE,drop_lower_td=TRUE)
+HUC8Cl<-SpatialPolygonsDataFrame(HUC8Cl,HUC8@data[as.character(HUC8@data$HUC8)%in%names(HUC8Cl),],match.ID = "HUC8")
+HUC8Cl@data$Color<-cut(HUC8Cl@data$RatioET_ETpD,c(0,0.2,0.4,0.6,0.8,1),labels=c('dark blue','cyan','light green','orange','red'))
+HUC8Cl@data$Color<-as.character(HUC8Cl@data$Color)
+HUC8Cl@data$Color[is.na(HUC8Cl@data$Color)]<-'wheat4'
+
+png(paste0(my.filepath,'Output/E_EpD',".png"),width=1780,height=860)
+plot(nonVA,xlim=c(-83.5,-73),ylim=c(36,40),col='light grey')
+plot(HUC8Cl,add=T,col=HUC8Cl@data$Color)
+lines(nonVA,lwd=2)
+lines(VAoutline,lwd=2)
+legend(-74.45, 39, c('0 - 20%','20 - 40%','40 - 60%','60 - 80%','80 - 100%','n.d.'),
+       col =c('dark blue','cyan','light green','orange','red','wheat4'),lty=0,
+       pch=15,pt.cex=6,bty='n',y.intersp = 1,x.intersp = 1,cex=3,lwd=2,seg.len=0.25)
+mtext(at=-73.85,line=-14,'E/(E+D)',cex=4)
+dev.off()
+
+setwd(paste0(my.filepath,"Output/"))
+#Just need the comid, area, size class, size class name, average ET in mm/py, HUC8, and HUC8name
+colnames(WB@data)
+WBexp<-WB
+WBexp@data<-WBexp@data[,c(1,16,17,18,191,193,194)]
+WBexp@data$AnnualAvg_inpyr<-WBexp@data$AnnualAvg_mmpyr/10/2.54
+WBexp<-SpatialPointsDataFrame(data.frame(lon=WBCenter@coords[1:length(WBCenter@coords[,2])],lat=WBCenter@coords[,2]),WBexp@data,proj4string = crs(BB))
+writeOGR(WBexp,'.','WBexp',driver="ESRI Shapefile")
+#Need to run kriging in ArcGIS and then export raster for plotting here
+AnnualE<-raster(paste0(my.filepath,"Output/Annual_evap.tif"))
+AnnualE<-projectRaster(AnnualE,crs=proj4string(BB))
+AnnualE<-mask(AnnualE,VAoutline)
+colorfunc<-colorRampPalette(c('dark blue','cyan','yellow','red'))
+color<-colorfunc(100)
+png(paste0(my.filepath,'Output/AnnualE_inpdy',".png"),width=1780,height=860)
+plot(nonVA,xlim=c(-83.5,-73),ylim=c(36,40),col='light grey')
+plot(AnnualE,add=T,col=color,legend=F)
+lines(nonVA,lwd=2)
+lines(VAoutline,lwd=2)
+r.range <- c(round(minValue(AnnualE),1), round(maxValue(AnnualE),1))
+plot(AnnualE, legend.only=TRUE, col=color,
+     legend.width=2, legend.shrink=0.75,
+     axis.args=list(at=seq(r.range[1], r.range[2],3),
+                    labels=seq(r.range[1], r.range[2],3), 
+                    cex.axis=2.5),
+     smallplot=c(0.80,0.85,0.3,0.65),
+     legend.args=list(text=expression(Annual~Evaporation~'(in/day)'), side=4, font=2, line=7, cex=3))
+dev.off()
+
+#To analyze monthly evap from a single HUC
+WB@data$HUC8<-as.character(WB@data$HUC8)
+WBsbst<-WB[WB@data$HUC8=='02070006',]
+monthlyHUC<-data.frame(Month=month.abb[1:12],Hargreaves=NA,Thornthwaite=NA,Hamon=NA,Average=NA)
+monthlyHUC$Month<-as.character(monthlyHUC$Month)
+for (i in 1:length(monthlyHUC$Month)){
+  subst<-grep(paste0(monthlyHUC$Month[i],'Harg'),colnames(WBsbst@data))
+  subst<-WBsbst@data[,subst]
+  monthlyHUC$Hargreaves[i]<-sum(WBsbst@data$AreaRcalc*(subst/1000)*264.1721/1000000)
+  
+  subst<-grep(paste0(monthlyHUC$Month[i],'Thorn'),colnames(WBsbst@data))
+  subst<-WBsbst@data[,subst]
+  monthlyHUC$Thornthwaite[i]<-sum(WBsbst@data$AreaRcalc*(subst/1000)*264.1721/1000000)
+  
+  subst<-grep(paste0(monthlyHUC$Month[i],'Ham'),colnames(WBsbst@data))
+  subst<-WBsbst@data[,subst]
+  monthlyHUC$Hamon[i]<-sum(WBsbst@data$AreaRcalc*(subst/1000)*264.1721/1000000)
+  
+  monthlyHUC$Average[i]<-mean(as.numeric(monthlyHUC[i,2:4]))
+}
 #===================================================================================
