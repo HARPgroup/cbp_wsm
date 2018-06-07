@@ -627,6 +627,25 @@ plot(WBDens, legend.only=TRUE, col=color,
      legend.args=list(text=expression(Imp.~Density~'(#/'*km^{2}*')'), side=4, font=2, line=7, cex=3))
 dev.off()
 
+#LANDCOVER
+NLCD<-raster(paste0(my.filepath,"ReferenceET/NLCD.tif"))
+NLCDval<-unique(values(NLCD))
+NLCDval<-NLCDval[order(NLCDval)]
+newclass<-c(1,2,2,2,2,2,3,3,3,3,3,4,4,1,1,NA)
+recls<-data.frame(is=NLCDval,becomes=newclass)
+recls<-as.matrix(recls)
+NLCD<-reclassify(NLCD,recls)
+
+png(paste0(my.filepath,'Output/NLCD',".png"),width=1780,height=860)
+plot(nonVA,xlim=c(-83.5,-73),ylim=c(36,40),col='light grey')
+plot(NLCD,add=T,col=c('blue','red','dark green','darkgoldenrod1'),legend=F)
+lines(nonVA,lwd=2)
+lines(VAoutline,lwd=2)
+legend(-74.38, 39, c('Agriculture','Forest','Developed','Water'),
+       col =c('darkgoldenrod1','dark green','red','blue'),lty=0,
+       pch=15,pt.cex=6,bty='n',y.intersp = 1,x.intersp = 1,cex=3,lwd=2,seg.len=0.25)
+dev.off()
+
 #NORMALIZED EVAP BY 7q10
 #To plot evap across the state normalized by 7q10
 #Initialize 7q10 data
