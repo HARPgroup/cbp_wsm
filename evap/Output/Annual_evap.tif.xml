@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20180605</CreaDate><CreaTime>15154200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\Kriging" Date="20180605" Time="151542">Kriging WBexp AnnlAvg_n C:\Users\conno\Desktop\GitHub\cbp_wsm\evap\Output\Annual_evap.tif "Spherical 0.011637 4.008193 5.687956 0.000000" 0.01163716512 "VARIABLE 12" #</Process></lineage></DataProperties></Esri></metadata>

@@ -24,17 +24,19 @@ library(rgeos)
 library(rgdal)
 library(raster)
 ```
-The next lines produce a vector of numeric monthly abbreviations used by PRISM and accesses a pre-downloaded geodatabase containing a polygon feature class of the state boundary and a bounding box for the analysis. This box was created prior to the analysis in ArcGIS. The bounding box was projected into EPSG 4326, as already used by the state boundary. 
+The next lines produce a vector of numeric monthly abbreviations used by PRISM and accesses a pre-downloaded geodatabase containing a polygon feature class of the state boundary and a bounding box for the analysis. This box was created prior to the analysis in ArcGIS. The bounding box was projected into EPSG 4326, as already used by the state boundary. Be sure to set your file path, as appropriate.
 ```{r,include=FALSE}
+my.filepath <- 'C:/Users/connorb5/Desktop/GitHub/cbp_wsm/evap/'
 m<-c('01','02','03','04','05','06','07','08','09','10','11','12')
-VA<-readOGR('C:\\Users\\connorb5\\Desktop\\GIS\\Post Summer\\PostSummer.gdb',layer="VA")
-BB<-readOGR('C:\\Users\\connorb5\\Desktop\\GIS\\Post Summer\\PostSummer.gdb',layer="BoundingBox")
+VA<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="VA")
+BB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="BoundingBox")
 BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs")
 ```
 ```{r,eval=FALSE}
+my.filepath <- 'C:/Users/connorb5/Desktop/GitHub/cbp_wsm/evap/'
 m<-c('01','02','03','04','05','06','07','08','09','10','11','12')
-VA<-readOGR('C:\\Users\\connorb5\\Desktop\\GIS\\Post Summer\\PostSummer.gdb',layer="VA")
-BB<-readOGR('C:\\Users\\connorb5\\Desktop\\GIS\\Post Summer\\PostSummer.gdb',layer="BoundingBox")
+VA<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="VA")
+BB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="BoundingBox")
 BB<-spTransform(BB,CRS="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs")
 ```
 ```{r}
@@ -53,11 +55,11 @@ x_max<--85
 y_min<-35
 y_max<-42
 coords = matrix(c(x_min,y_min,x_max,y_min,x_max,y_max,x_min,y_max,x_min,y_min),ncol = 2, byrow = TRUE)
-bb = Polygon(coords)
-bb = SpatialPolygons(list(Polygons(list(bb), ID = "a")), proj4string=CRS("+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs"))
+BB = Polygon(coords)
+BB = SpatialPolygons(list(Polygons(list(BB), ID = "a")), proj4string=CRS("+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs"))
 ```
 ```{r,fig.height=6,fig.width=8,echo=FALSE}
-plot(bb,axes=T)
+plot(BB,axes=T)
 plot(VA,add=T)
 ```
   
@@ -65,16 +67,18 @@ plot(VA,add=T)
 The next primary component of the code is the reformatting of PRISM data to produce long-term averaged values for maximum temperature, minimum temperature, and mean temperature for the boudning box. The PRISM data can be obtained automatically in R, but was here downloaded manually [here](http://prism.oregonstate.edu/historical/) using the "Download All Historical Data (.bil)" option at the bottom left. Create a folder with three subdirectories "TMean", "TMax", and "TMin" to hold data pertaining to each of the three variables respectivley. Data can be downloaded from PRISM in R using the following commands after setting the paths to the necessary folders as designating a year range. **NOTE** Data can only be downloaded once a day. Repeated requests may result in IP blocking:
 ```{r,eval=FALSE}
 yr<-as.character(seq(1955,1970))
-pathTMean<-"D:/PRISM/TMean"
-pathTMax<-"D:/PRISM/TMax"
-pathTMin<-"D:/PRISM/TMin"
+pathTMean<- paste(my.filepath,'PRISM\\TMean',sep="")
+pathTMax <- paste(my.filepath,'PRISM\\TMax',sep="")
+pathTMin <- paste(my.filepath,'PRISM\\TMin',sep="")
 for(i in 1:length(yr)){
   temp<-tempfile()
   download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmean/",yr[i]),temp,mode='wb')
-  unzip(temp,exdir=pathTMean)
+  unzip(zipfile=temp,exdir=pathTMean)
+  
   temp<-tempfile()
   download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmax/",yr[i]),temp,mode='wb')
   unzip(temp,exdir=pathTMax)  
+  
   temp<-tempfile()
   download.file(paste0("http://services.nacse.org/prism/data/public/4km/tmin/",yr[i]),temp,mode='wb')
   unzip(temp,exdir=pathTMin)  
@@ -82,12 +86,15 @@ for(i in 1:length(yr)){
 ```
 Once data has been downloaded, the code changes the working directory to the created folder containing all of the PRISM mean temperature data, where it creates a new folder called "Monthly Averages" to store output rasters.
 ```{r,eval=FALSE}
-setwd('C:/Users/connorb5/Desktop/PRISM/TMean')
+setwd(paste(my.filepath,"PRISM\\TMean",sep=""))
 dir.create('Monthly Averages')
 ```
 It searches the directory for all file containing bil.bil as the extension, which is how PRISM designates its raster files. It then creates a list of file names in vector *r* (for raster) for the PRISM rasters within the years of interest (only necessary if all historic data was downloaded). This will compile the PRISM rasters for each indiviudal month of the year for every year of interest.
+```{r,include=FALSE}
+my.filepath<-'C:/Users/connorb5/Desktop/'
+```
 ```{r}
-setwd('C:/Users/connorb5/Desktop/PRISM/TMean')
+setwd(paste(my.filepath,"PRISM\\TMean",sep=""))
 files<-list.files()
 files<-files[grep('bil.bil$',files)]
 yr<-as.character(seq(1955,1970))
@@ -103,9 +110,11 @@ head(r)
 The script then searches for each filename within the directory matching those in the vector *r* for a given month in the created monthly abbreviations vector *m*. It finds the raster files and stores their names in the vector *case*. One by one, it loads rasters from *case* using the **raster** package and projects them, extracts them from the national scale to the bounding box extent, and then adds them to a raster stack for that month. As the loop finishes, the mean value of the rasterstack is stored in raster "MeanTempYY" as the long-term temperature average of month YY. This raster is written out to the created "Monthly Average" directory as a *.tiff* file. This process is repeated for minimum and maximum temperature. Users MUST change the directories where the script searches for PRISM data!
 ```{r,eval=FALSE}
 for (j in 1:length(m)){
+  print(paste("Month ",j," of ",length(m),sep=""))
   case<-grep(paste0(m[j],'_bil.bil$'),r)
   rstack<-stack()
   for (i in 1:length(case)){
+    print(paste("case ",i," of ",length(case),sep=""))
     test<-raster(r[case[i]])
     test<-projectRaster(test,crs=proj4string(BB))
     testclip<-mask(test,BB)
@@ -117,6 +126,7 @@ for (j in 1:length(m)){
 ```
 ```{r,include=FALSE}
 load('G:\\My Drive\\HARP\\impoundment_evap_HARP-2016\\HargreavesData.RData')
+my.filepath <- 'C:/Users/connorb5/Desktop/GitHub/cbp_wsm/evap/'
 ```
 ```{r,echo=FALSE,fig.height=6,fig.width=8}
 plot(crop(MeanTemp_08,BB),main= expression('August Mean Temperature (1955-1970) ('*degree*'C)'),axes=T,xlab='Longitude',ylab='Latitude',cex.lab=2,cex.main=2,cex.axis=2)
@@ -164,7 +174,7 @@ $\large \omega_s=\frac{\pi}{2}[-tan(\phi)tan(\sigma)]$
 </center>
 The below script runs these calculations for using each waterbody in our dataset as a spatial state of reference for latitude inputs. It first reads in the waterbody dataset (stored locally, adjust paths) as spatial points data frame *WB*. It projects these polygons into UTM Zone 17N NAD 1983 and calculates area in square meters. It projects these back to EPSG 4326 for the spatial analysis. Using the **rgeos** package, it then creates a spatial points dataset at the center of mass of each waterbody in *WBCenter*. It additionally creates a new set of identifiers for the waterbodies and stores them in a new field "FID". The waterbody centroids in *WBCenter* will be used to drive the ET Models as now polygons have been simplified to a single spatial point.
 ```{r,eval=FALSE}
-WB<-readOGR('G:\\My Drive\\HARP\\impoundment_evap_HARP-2016\\Shapefiles',layer='Waterbodies')
+WB<-readOGR(paste(my.filepath,'EvapInputs.gdb',sep=""),layer="Waterbodies")
 WB<-spTransform(WB,'+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs')
 WB@data$FID<-1:length(WB@data$COMID)
 WB@data$AreaRcalc<-gArea(WB,byid=T)
@@ -180,6 +190,7 @@ sigma<-0.409*sin(2*pi*diy/365-1.39)
 Mean extraterrestiral radiation is then calculated for each month following the FAO equations above.
 ```{r,eval=FALSE}
 for (i in 1:length(WB@data$FID)){
+  print(paste("Mean extraterrestrial radiation calc for WB ",i," of ",length(WB@data$FID),sep=""))
   lat<-as.numeric(WBCenter@coords[i,2])*pi/180
   sunsethour<-acos(-tan(sigma)*tan(lat))
   Ra<-(25*60*0.0820/pi)*distFsun*(sunsethour*sin(lat)*sin(sigma)+cos(lat)*cos(sigma)*sin(sunsethour))
@@ -289,6 +300,7 @@ $\large L_d=\frac{24\omega_s}{pi}$
 The following piece of code calculates the mean number of sunlight hours for each day of the year. It looks at each waterbody indiviudally and uses their waterbody centroid latitude to drive sunset hour calculations and subsequently sunlight hours.
 ```{r,eval=FALSE}
 for (i in 1:length(WB@data$FID)){
+  print(paste("Avg mo daylight hrs calc for WB ",i," of ",length(WB@data$FID),sep=""))
   lat<-as.numeric(WBCenter@coords[i,2])*pi/180
   sunsethour<-acos(-tan(sigma)*tan(lat))
   Ld<-24*sunsethour/pi
@@ -327,6 +339,7 @@ ThornI<-function(meanT){
 The function is used to calculate the temperature index at each waterbody for each month by passing in a mean monthly temperature. The coefficietn $a$ is then calculated using the index at each waterbody. Typical values for $I$ range between 0 to 160 and those for $a$ between 0 and 4.5 (per Thornthwaite 1948 in "An Approach toward a Rational Classification of Climate" in Geographical Review)
 ```{r,eval=FALSE}
 for (i in 1:length(WB@data$FID)){
+  print(paste("Thornthwaite temperature index calc for WB ",i," of ",length(WB@data$FID),sep=""))
   Jan<-ThornI(WB@data$JanMeanT[i])
   Feb<-ThornI(WB@data$FebMeanT[i])
   Mar<-ThornI(WB@data$MarMeanT[i])
@@ -387,6 +400,7 @@ Although this is likely going to be a growing component to the code, this last s
 evapH<-numeric()
 evapT<-numeric()
 for (i in 1:length(WB@data$FID)){
+  print(paste("Evap BGY estimation for WB ",i," of ",length(WB@data$FID),sep=""))
   evapH[i]<-sum(WB@data[i,grep('Harg',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
   evapT[i]<-sum(WB@data[i,grep('Thorn',colnames(WB@data))]*c(31,28,31,30,31,30,31,31,30,31,30,31))
 }
