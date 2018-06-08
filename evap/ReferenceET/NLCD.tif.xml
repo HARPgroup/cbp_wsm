@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20180607</CreaDate><CreaTime>14132900</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\ExtractByMask" Date="20180607" Time="141329">ExtractByMask NLCDGeoRef_ProjectRaster Virginai_ESRI_4326 C:\Users\conno\Desktop\GitHub\cbp_wsm\evap\ReferenceET\NLCD.tif</Process></lineage></DataProperties></Esri></metadata>
