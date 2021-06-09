@@ -30,6 +30,8 @@ cd ../../../hspf11.1/src/
 make -f ICPRBmakefile clean
 make -f ICPRBmakefile FC=$FCP
 cd ../../../ 
+# debug
+exit
 
 echo "#########   COMPILE WSM LIBRARY   #####"
 cd lib/dsn/
