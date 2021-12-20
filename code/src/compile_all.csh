@@ -7,18 +7,21 @@ if( ! (-e /usr/bin/f77 || -e /bin/f77 || -e /usr/local/bin/f77) ) then
   exit 1
 endif 
 
+set basedir = $PWD
 set FCP = f77
 set CPC = gcc
 echo "##########  COMPILE HSPF LIBRARY  #########"
-rm hspf/lib3.2/lib/*
-rm hspf/lib3.2/bin/*
-rm lib/*.a
+rm $basedir/hspf/lib3.2/lib/*
+rm $basedir/hspf/lib3.2/bin/*
+rm $basedir/lib/*.a
 set libname = (aide util wdm adwdm awstat ghspf_den hspf ICPRBhspf phspf \
 ann ghspf graph hspnodss newaqt stats waide wdimex wdmrx)
-cd hspf/lib3.2/src/util
+cd $basedir/hspf/lib3.2/src/util
 set i = 1
  while ($i <= 18)
-   cd ../$libname[$i]
+   set lname = $libname[$i]
+   echo "Compiling Library $lname (# $i)" 
+   cd $basedir/hspf/lib3.2/src/$lname
    make clean
    make FC=$FCP
    make install
@@ -26,96 +29,92 @@ set i = 1
  end
 
 echo "###############   COMPILE HSPF  ######"
-cd ../../../hspf11.1/src/
+cd $basedir/hspf/hspf11.1/src/
 make -f ICPRBmakefile clean
 make -f ICPRBmakefile FC=$FCP
-cd ../../../ 
 
 echo "#########   COMPILE WSM LIBRARY   #####"
-cd lib/dsn/
+cd $basedir/lib/dsn/
 $FCP -fbounds-check -c dsn_utils.f
-cd ../tty
+cd $basedir/lib/tty
 $CPC -c -o ../ttyux.o ttyux.c
 foreach libname (util get)
-  cd ../$libname
+  cd $basedir/lib/$libname
   ./compile $FCP
 end
-cd ../../
 
 echo "###########  COMPILE WSM MODEL   ############"
-cd lug
+cd $basedir/lug
 ./compile $FCP
-cd ../rug
+cd $basedir/rug
 ./compile $FCP
-cd ../etm/etm_and_postproc/
+cd $basedir/etm/etm_and_postproc/
 foreach libname (check_river etm_and_postproc stream_wdm combine_ps_sep_div_ams_from_landsegs \
                  make_binary_transfer_coeffs)
-   cd ../$libname
+   cd $basedir/etm/$libname
    ./compile $FCP
 end
 echo "#############  DATA_IMPORT  #########"
-cd ../../data_import/add_atdep_to_precip
+cd $basedir/data_import/add_atdep_to_precip
 foreach libname (add_atdep_to_precip diversions met point_source precip quick_wdm septic)
-   cd ../$libname
+   cd $basedir/data_import/$libname
    ./compile $FCP
 end
-cd ../../postproc/data
+cd $basedir/postproc/data
    ./compile $FCP
-cd ../scenario_compare
+cd $basedir/postproc/scenario_compare
    ./compile $FCP
-cd ../del/delload/
 foreach libname (delload dfs otherDF_delload tfs)
-   cd ../$libname
+   cd $basedir/postproc/del/$libname
    ./compile $FCP
 end
-cd ../../pltgen/land
+cd $basedir/postproc/pltgen/land
    ./compile $FCP
-cd ../river
+cd $basedir/postproc/river
    ./compile $FCP
 echo "############  POSTUTILS  #########"
-cd ../../postutils/create_p4_wdms
+cd $basedir/postproc/postutils/create_p4_wdms
 foreach libname (create_p4_wdms pltgen2cal sumdfs sumin sumin_QA sumout sumplt sumstats sumWTMP)
-   cd ../$libname
+   cd $basedir/postproc/postutils/$libname
    ./compile $FCP
 end
-cd ../sumin/getAtdep
+cd $basedir/postproc/postutils/sumin/getAtdep
 ./compile $FCP
-cd ../../sumin_QA/getAtdep
+cd $basedir/postproc/postutils/sumin_QA/getAtdep
 ./compile $FCP
-cd ../
 echo "############  RIVER  #########"
-cd ../../river/annual
 foreach libname (annual eval_stat part regress stats texture aveann monthly RiverLoads avemon daily obs_only_stats  rating)
-   cd ../$libname
+   cd $basedir/postproc/river/$libname
    ./compile $FCP
 end
-cd ../
+cd $basedir/postproc/river
    ./compile $FCP
-cd ../../spec_landuse
+cd $basedir/spec_landuse
    ./compile $FCP
 echo "############  wqm_loads  #########"
-cd ../wqm_load/atdep_to_wqm57k
 foreach libname (atdep_to_wqm57k check_loads combine_2_wqm_scenarios river_factor_scenario \
         TMDL_daily_loads wqm_factor_scenario p5_and_ps_to_wqm57k wqmlib)
-   cd ../$libname
+   cd $basedir/wqm_load/$libname
    ./compile $FCP
 end
-cd ../../
 
 echo "################   CALIB_INTER    ###########"
 cd calibration_utils/change_param/calib_iter/IQUAL/
 foreach libname (IQUAL NITR_forest NITR_pasture PQUAL PWATER \
         NITR_alf NITR_hyw PHOS_crop PSTEMP SEDMNT WQ_sensitivity \
         NITR_crop NITR_noncrop PHOS_noncrop PSTEMP_river SOLIDS )
-   cd ../$libname
+   cd $basedir/calibration_utils/change_param/calib_iter/$libname
    ./compile $FCP
 end
-cd ../../land/
+cd $basedir/calibration_utils/change_param/land/
    ./compile $FCP
-cd ../river
+cd $basedir/calibration_utils/change_param/river
    ./compile $FCP
 echo "############  COMPILE CALIBRATION  ############"
-cd ../../a_priori_irc
+
+# special directive for sumout.a
+cd $basedir/calibration_utils/EOF_to_EOS_factors/sumout
+   ./compile $FCP
 foreach libname (a_priori_irc basingen copy_phase4_segs divide_rseg_by_stream_order \
         EOF_to_EOS_factors get1parameter get_pltgen_percentiles \
         get_total_watershed_size_for_part make_calib_seglist make_calib_site_list \
@@ -123,8 +122,8 @@ foreach libname (a_priori_irc basingen copy_phase4_segs divide_rseg_by_stream_or
         make_WQ_incremental_calib_list \
         postproc_for_censored_data read_dot_out_file reverse_seglist \
         riverinfo split_seglists )
-   cd ../$libname
-echo $libname
+   cd $basedir/calibration_utils/$libname
+   echo $libname
    ./compile $FCP
 end
 cd ../../
