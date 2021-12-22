@@ -6,9 +6,9 @@
       integer maxL2R,ndaymax,nyearmax,EarliestYear,LatestYear
 ********* commonly used parameters 
       parameter (maxL2R=15) ! max number of land segs flowing to 1 reach
-      parameter (ndaymax = 8036) ! max number of days in simulation
+      parameter (ndaymax = 20000) ! max number of days in simulation
       parameter (EarliestYear=1984)  ! first year simulated
-      parameter (LatestYear=2005)    ! last year simulated
+      parameter (LatestYear=2100)    ! last year simulated
       parameter (nyearmax=LatestYear-EarliestYear+1 )    ! max number of years
 
       integer lenseg
