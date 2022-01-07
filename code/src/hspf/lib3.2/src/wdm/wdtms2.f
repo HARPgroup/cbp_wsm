@@ -1033,19 +1033,23 @@ C
 C
 C
 C
-      SUBROUTINE   tty_date
-     I                   (indate)
+      SUBROUTINE   idate2str
+     I                   (indate,
+     O                    outdate)
 C this outputs an array date for debugging
       INTEGER   indate(6)
-      INTEGER elits
-      CHARACTER*255   outdate
-      CHARACTER*20   dps
-      do 15 elits = 1, 6
-         write(dps,*) indate(elits)
-         outdate = outdate // " " // dps
- 15   CONTINUE
+      CHARACTER*8   syear, smon, sday, shrs, smin, ssec
+      CHARACTER*24 outdate
+      write(syear,*) indate(1)
+      write(smon,*) indate(2)
+      write(sday,*) indate(3)
+C      write(shrs,*) indate(4)
+C      write(smin,*) indate(5)
+C      write(ssec,*) indate(6)
 
-      call ttyput( "Date is: " // outdate )
+C ** This prints out garbage when shrs, smin and ssec are included, maybe line length?
+C      outdate = syear // "/" // smon // "/" // sday // " "// shrs // ":" // smin // "":" ssec
+      outdate = syear // "/" // smon // "/" // sday 
       RETURN
       END
 
