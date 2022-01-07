@@ -1033,6 +1033,20 @@ C
 C
 C
 C
+      SUBROUTINE   tty_date
+     I                   (indate)
+C this outputs an array date for debugging
+      INTEGER   indate(6)
+      CHARACTER*80   outdate
+      CHARACTER*10   dps
+      do elits = 1, 6
+         write(dps,*) indate(elits)
+         outdate = outdate // " " // dps
+      end do
+      call ttyput( "Date is: " // outdate )
+      RETURN
+      END
+
       SUBROUTINE   WTDATE
      I                   (WDMFL, DSNCNT, DSN, CMMXFG,
      O                    SDATE, EDATE, ERRCOD)
