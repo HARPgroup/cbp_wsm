@@ -1040,10 +1040,10 @@ C this outputs an array date for debugging
       INTEGER elits
       CHARACTER*255   outdate
       CHARACTER*20   dps
-      do 10 elits = 1, 6
+      do 15 elits = 1, 6
          write(dps,*) indate(elits)
          outdate = outdate // " " // dps
- 10   CONTINUE
+ 15   CONTINUE
 
       call ttyput( "Date is: " // outdate )
       RETURN
