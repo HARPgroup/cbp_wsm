@@ -67,6 +67,7 @@
       call ttyput ('opseq   ')
       call opseq(perlnd,implnd,pltgen)
           
+      call ttyput ('lspecact   ')
       call lspecact(
      I              lseg,lenlseg,lscen,lenlscen,clu,
      I              startY,startM,startD,endY,endM,endD,
