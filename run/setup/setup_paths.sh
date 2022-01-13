@@ -6,3 +6,4 @@
 # or a global path variable but for now here we are
 sudo ln /opt/model/p53/cbp_wsm/code/src/hspf/lib3.2/lib_data/message.wdm /usr/local/lib/hspf/message.wdm -s
 sudo ln /opt/model/p53/cbp_wsm/code/src/hspf/hspf11.1/bin/hspf_ICPRB /usr/local/bin/hspf_ICPRB -s
+sudo ln /opt/model/p53/cbp_wsm/code/bin/quick_wdm_2_txt_hour_2_hour /usr/local/bin/wdm2text -s
