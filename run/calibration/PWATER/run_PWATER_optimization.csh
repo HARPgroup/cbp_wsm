@@ -36,7 +36,10 @@
 
   foreach num ($nums)
     
-     $tree/run/calibration/PWATER/run_PWATER_iter.csh $scenario $calscen ${calscen}_PWATER $tree
+# RWB: why are we running theiteration for this large custom seglist if we are telling it to do a single basin?
+#     $tree/run/calibration/PWATER/run_PWATER_iter.csh $scenario $calscen ${calscen}_PWATER $tree
+     echo "Running model for iteration $num"
+     $tree/run/calibration/PWATER/run_PWATER_iter.csh $scenario $calscen $basin $tree
 
      if (-e problem) then
        echo 'problem in run number: ',$num
@@ -45,6 +48,7 @@
        exit
      endif
 
+     echo "Adjusting Params after iteration $num"
      echo $calscen, $scenario | $tree/code/bin/calib_iter_PWATER_params_${calscen}.exe
 
      if (-e problem) then
@@ -56,7 +60,11 @@
 
   end
 
-  $tree/run/calibration/PWATER/run_PWATER_iter.csh $scenario $calscen ${calscen}_PWATER $tree
+  echo "Running final calibration iteration $num + 1"
+  # RWB: why are we running theiteration for this large custom seglist if we are telling it to do a single basin?
+  #$tree/run/calibration/PWATER/run_PWATER_iter.csh $scenario $calscen ${calscen}_PWATER $tree
+  $tree/run/calibration/PWATER/run_PWATER_iter.csh $scenario $calscen $basin $tree
+
 
   if (-e problem) then
     echo 'problem in run number: ',$num
