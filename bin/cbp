@@ -2,12 +2,24 @@
 
 # find environment
 . hspf_config
+if [ -z "$CBP_ROOT" ]; then
+  echo "Can not find file hspf.config"
+fi
 
 echo "$@"
 cmd=$1
 shift
 echo "$@"
 
-# todo: have specific handlers to catch legacy scripts and use a different directory
-# instead of the default "bin"
-$CBP_ROOT/bin/$cmd "$@"
+found=0
+for p in bin run run/standard run/useful; do
+  if test -f "$CBP_ROOT/$p/$cmd"; then
+    echo "Found $1 in $CBP_ROOT/$p/$cmd"
+    # todo: have specific handlers to catch legacy scripts and use a different directory
+    # instead of the default "bin"
+    cd $CBP_ROOT/$p
+    $CBP_ROOT/$p/$cmd "$@"
+    found=1
+  fi
+done
+
