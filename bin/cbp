@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# find environment
+. hspf_config
+
+echo "$@"
+cmd=$1
+shift
+echo "$@"
+
+# todo: have specific handlers to catch legacy scripts and use a different directory
+# instead of the default "bin"
+$CBP_ROOT/bin/$cmd "$@"
