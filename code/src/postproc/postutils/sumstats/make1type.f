@@ -18,20 +18,31 @@ C      open(91,file=fnam,status='unknown',iostat=err)
 C      if (err.ne.0) go to 991
 
       do np = 1,nparms
+**      Look into output dir opening each csv, 1 per param
+**      to verify that all files are there else bail
+**      stash a file pointer for each file in the fnum() array
+**      Note: fnum starts at 11, which is the first parm,
+**            which is "bias"
         fnam=outdir//'river/summary/'//rscen(:lenrscen)//'/'//
      .       type//'_'//parname(np)//'.csv' 
+        print*,"DEBUG: opening file ",fnum(np)," ",fnam
         open(unit=fnum(np),file=fnam,status='old',iostat=err)
         if (err.ne.0) go to 991
       end do
 
       ns=0
       do 
+***     This file "11" must be opened somewhere else? looking for 
+***     list of river segments? must find file 11!
         read(11,'(a200)',end=222) longline
         ns = ns + 1
-      do i=1,len(longline)
-        if (longline(i:i).eq.'/') segment(ns)=longline(i+1:i+13)
-      end do
-      call shift(longline)
+***     Check here
+        do i=1,len(longline)
+***       now we go through and extract each river seg, which are 
+***       delimited by slashes '/', stash in segments
+          if (longline(i:i).eq.'/') segment(ns)=longline(i+1:i+13)
+        end do
+        call shift(longline)
         read(longline,*) values(1,ns)
         do np = 2,nparms
           read(fnum(np),'(a200)',end=222) longline

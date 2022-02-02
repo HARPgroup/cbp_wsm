@@ -24,6 +24,7 @@
   endif
 
 # SET SCENARIO FOR OBSERVED DATA
+  echo "Setting observed scenario for calscen = $calscen"
   source $tree/config/control/calib/PWATER/$calscen/set_obscen
 
 #  SET AVERAGING YEARS
@@ -91,6 +92,7 @@
   set loud = 0
 
 ####### RIVER SEGMENTS or WQ RECEIVING AREAS ONLY, EOS OUTPUTS DEFINED BY THE BODY THEY FLOW INTO  ########
+  echo "Getting seglist for basin $basin"
   source $tree/config/seglists/${basin}.riv
 
   if (-e problem) then
@@ -103,6 +105,7 @@
   foreach seg ($segments)
 
     if ($land) then
+      echo "Checking land for seg = $seg"
       echo $scenario $seg $loud $EOFdaily $EOFmonthly $EOFannual $EOFaveann $EOSdaily $EOSmonthly $EOSannual $EOSaveann $AVEYEAR1 $AVEYEAR2 | $tree/code/bin/land.exe
       if (-e problem) then
         echo ' '
@@ -118,6 +121,7 @@
   foreach seg ($segments)
 
     if ($DAT) then
+      echo "Checking DAT for seg = $seg"
       echo $scenario $seg $DATdaily $DATmonthly $DATannual $DATaveann $AVEYEAR1 $AVEYEAR2 | $tree/code/bin/DAT.exe
       if (-e problem) then
         echo ' '
@@ -134,6 +138,7 @@
   foreach seg ($segments)
 
     if ($TSSRating) then
+      echo "Checking TSSRating for seg = $seg"
       echo $scenario $seg $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/TSSRating.exe
       if (-e problem) then
         echo ' '
@@ -144,6 +149,8 @@
 
 
     if ($Rstats) then
+      echo "Checking RStats for seg = $seg"
+      echo "$scenario $obscen $seg $AVEYEAR1 $AVEYEAR2 $npeaks $window | $tree/code/bin/Rstats.exe"
       echo $scenario $obscen $seg $AVEYEAR1 $AVEYEAR2 $npeaks $window | $tree/code/bin/Rstats.exe
       if (-e problem) then
         echo ' '
@@ -153,6 +160,7 @@
     endif
 
     if ($Rallmonth) then
+      echo "Checking Rallmonth for seg = $seg"
       echo $scenario $seg | $tree/code/bin/Rallmonth.exe
       if (-e problem) then
         echo ' '
@@ -162,6 +170,7 @@
     endif
 
     if ($Rannual) then
+      echo "Checking Rannual: $scenario, $seg | $tree/code/bin/Rannual.exe"
       echo $scenario, $seg | $tree/code/bin/Rannual.exe
       if (-e problem) then
         echo ' '
@@ -171,6 +180,7 @@
     endif
 
     if ($Rdaily) then
+      echo "Rdaily: $scenario, $seg | $tree/code/bin/Rdaily.exe"
       echo $scenario, $seg | $tree/code/bin/Rdaily.exe
       if (-e problem) then
         echo ' '
@@ -180,6 +190,7 @@
     endif
 
     if ($RdailyPart) then
+      echo "RdailyPart: $scenario, $seg | $tree/code/bin/part_daily_simulated.exe"
       echo $scenario, $seg | $tree/code/bin/part_daily_simulated.exe
       if (-e problem) then
         echo ' '
@@ -189,6 +200,7 @@
     endif
 
     if ($Raveann) then
+      echo "Raveann: $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/Raveann.exe"
       echo $scenario, $seg, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/Raveann.exe
       if (-e problem) then
         echo ' '
@@ -205,6 +217,7 @@
   foreach seg ($segments)
 
     if ($TFS) then
+      echo "TFS: $scenario, $seg, $TFSmonthly, $TFSannual, $TFSaveann, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/TFS.exe"
       echo $scenario, $seg, $TFSmonthly, $TFSannual, $TFSaveann, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/TFS.exe
       if (-e problem) then
         echo ' '
@@ -218,6 +231,7 @@
   foreach seg ($segments)
 
     if ($DFS) then
+      echo "DFS: $scenario, $seg, $DFSmonthly, $DFSannual, $DFSaveann, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DFS.exe"
       echo $scenario, $seg, $DFSmonthly, $DFSannual, $DFSaveann, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DFS.exe
       if (-e problem) then
         echo ' '
@@ -231,6 +245,7 @@
   foreach seg ($segments)
 
     if ($DEL) then
+      echo "DEL $scenario, $seg, $DELmonthly, $DELannual, $DELaveann, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DEL.exe"
       echo $scenario, $seg, $DELmonthly, $DELannual, $DELaveann, $AVEYEAR1, $AVEYEAR2 | $tree/code/bin/DEL.exe
       if (-e problem) then
         echo ' '

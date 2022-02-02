@@ -15,7 +15,6 @@
       character*200 pline    ! line long enough to read concfile line
 
       integer Tnccons         ! temporary variable for reading a line
-
       logical found,allfound
 
 *********** END DECLARATIONS

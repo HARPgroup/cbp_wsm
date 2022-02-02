@@ -35,6 +35,7 @@
     exit
   endif
 
+  echo "*** Running land simulation"
   $tree/run/standard/run_land.csh $scenario $basin $tree
 
   if (-e problem) then
@@ -47,6 +48,7 @@
     exit
   endif
 
+  echo "*** Running river etm"
   $tree/run/standard/run_etm.csh $scenario $basin $tree
 
   if (-e problem) then
@@ -59,6 +61,7 @@
     exit
   endif
 
+  echo "*** Running river simulation"
   $tree/run/standard/run_river.csh $scenario $basin $tree
 
   if (-e problem) then
@@ -71,6 +74,7 @@
     exit
   endif
 
+  echo "*** Running post processing analysis"
   $tree/run/calibration/PWATER/run_postproc_flow_calib.csh $scenario $calscen $basin $tree
 
   if (-e problem) then
@@ -83,6 +87,7 @@
     exit
   endif
 
+  echo "*** Running run summary"
   $tree/run/calibration/PWATER/sumall.csh $scenario $tree
 
   if (-e problem) then

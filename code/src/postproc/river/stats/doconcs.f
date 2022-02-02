@@ -62,6 +62,12 @@
 
 
 ******************* END DECLARATIONS ***********************************
+******************* BEGIN Local Common *********************************
+        call lencl(rscen,lenrscen)
+        call lencl(rseg,lenrseg)
+        call lencl(obscen,lenobscen)
+******************* END DECLARATIONS ***********************************
+
       write(*,*) 'Making concentration statistic file for ', rseg
 
       call concinfo(               ! POPULATE concentration variables
@@ -105,9 +111,6 @@
 
 ************ GET OBSERVED
 *************** check if observed file exist
-        call lencl(rscen,lenrscen)
-        call lencl(rseg,lenrseg)
-        call lencl(obscen,lenobscen)
 
         obldfnam=calibdir//'observed/'//obscen(:lenobscen)//'/'//
      .           concname(np)//'/'//rseg(:lenrseg)//'.O'//concname(np)
