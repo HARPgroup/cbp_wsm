@@ -1,5 +1,12 @@
 #!/bin/bash
 
-ln -s $PWD/bin/find_config /usr/local/bin/find_config
-ln -s $PWD/bin/hspf_config /usr/local/bin/hspf_config
-ln -s $PWD/bin/cbp /usr/local/bin/cbp
+ip=$1
+
+if [ -z "$ip" ]; then
+  ip="/usr/local/bin"
+fi
+
+cp $PWD/bin/find_config $ip/find_config
+cp $PWD/bin/hspf_config $ip/hspf_config
+cp $PWD/bin/cbp $ip/cbp
+cp $PWD/bin/hspf.config.default $PWD/hspf.config

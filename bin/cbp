@@ -11,15 +11,26 @@ cmd=$1
 shift
 echo "$@"
 
+
 found=0
-for p in bin run run/standard run/useful; do
-  if test -f "$CBP_ROOT/$p/$cmd"; then
-    echo "Found $1 in $CBP_ROOT/$p/$cmd"
+#for p in bin run run/standard run/useful run/calibration/PWATER; do
+#try replacing do loop with this find command
+# returns only the first match
+cd $CBP_ROOT/run
+fpath=`find *|grep $cmd | head -n 1`
+p=`dirname $fpath`
+echo "path=$p"
+echo "testing $CBP_ROOT/run/$p/$cmd"
+  if test -f "$CBP_ROOT/run/$p/$cmd"; then
+    echo "Found $cmd in $CBP_ROOT/run/$p/$cmd"
     # todo: have specific handlers to catch legacy scripts and use a different directory
     # instead of the default "bin"
-    cd $CBP_ROOT/$p
-    $CBP_ROOT/$p/$cmd "$@"
+    cd $CBP_ROOT/run/$p
+    $CBP_ROOT/run/$p/$cmd "$@"
     found=1
   fi
-done
+#done
 
+if [ $found -eq 0 ]; then
+  echo "Error: Could not find '$cmd' in directory tree"
+fi
