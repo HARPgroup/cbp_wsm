@@ -43,13 +43,23 @@
 
       real aggfactor ! variable to aggregate river factors for each lseg
       real avsuro    ! average surface runoff SURO
-
+      integer arginfo ! did we get 3 args or only 2?
 *************** END DECLARATIONS ***************************************
 
 
 ************ SPECIFICATION ENTRY SECTION
-      read*,calscen,rscen
-
+      module = 'PWATER'
+      call uppercase(module)
+      call lencl(module,lenmod)
+      read(*,*,IOSTAT=arginfo) calscen,rscen,basin
+      call lencl(calscen,lencalscen)
+      if (arginfo < 0) then
+        basin = calscen(:lencalscen)//'_'//module
+        print*,'Basin auto:',basin
+      else 
+        print*,'Basin arg:',basin
+      end if
+      call lencl(basin,lenbasin)
       call readcontrol_lscen(rscen,lscens)
 
       do nl = 1,numlu
@@ -60,12 +70,6 @@
         call lencl(paramscens(lus(nl)),lenparamscens(lus(nl)))
       end do
 
-      module = 'PWATER'
-      call uppercase(module)
-      call lencl(module,lenmod)
-      call lencl(calscen,lencalscen)
-
-      basin = calscen(:lencalscen)//'_'//module
 
 ************* PRINT SKIPPED LAND USES
       do i = 1,nlu ! total number of land uses
@@ -79,7 +83,6 @@
 **********HOUSE KEEPING ************************
       call readLandSeglist(basin,
      O                     lsegs,nlsegs)
-
       call readRiverSeglist(
      I                      basin,
      O                      rsegs,nrsegs)
@@ -95,7 +98,6 @@
         read(Tseg(5:8),'(i4)')uniqid(nr)
         uniqindex(uniqid(nr))=nr
       end do
-      
 *********** READ IN LAND-RIVER WEIGHTS
       call getR2L(
      I            calscen,lsegs,nlsegs,uniqindex,orphans,norphans,

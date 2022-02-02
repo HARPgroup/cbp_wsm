@@ -38,7 +38,6 @@ C
           end do
         end do
       end do
-
       call makeptype(rscen,ptype,
      O               segment,peakvalues,numpsites)
       do ns = 1,numpsites

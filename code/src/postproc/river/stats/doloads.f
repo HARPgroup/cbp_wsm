@@ -49,6 +49,11 @@
       logical foundany
 
 ******************* END DECLARATIONS ***********************************
+******************* BEGIN COMMON LENGTH ********************************
+      call lencl(rscen,lenrscen)
+      call lencl(rseg,lenrseg)
+******************* END COMMON LENGTH **********************************
+
       foundany = .false.
 
       call loadinfo(               ! POPULATE loading variables
@@ -61,7 +66,6 @@
         if (loadname(nl).eq.'FLOW') cycle   ! flow handled seperately
 
 *************** check if annual estimator file exist
-        call lencl(rseg,lenrseg)
 
         annexist = .false.
         obldfnam=calibdir//'observed/estimator/annual/'
@@ -184,7 +188,6 @@
 ****************** write out load stats
         write(cy1,'(i4)') year1
         write(cy2,'(i4)') year2
-        call lencl(rscen,lenrscen)
 
         if (annexist) then
           pfname = outdir//'river/stats/'//rscen(:lenrscen)//'/'

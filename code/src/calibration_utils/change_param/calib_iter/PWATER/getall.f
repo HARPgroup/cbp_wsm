@@ -237,12 +237,15 @@ C      print*,'getting land data'
               exit
             end if
           end do
-          if (.not.found) go to 995
-
-          call shift(line)  ! get weight
-          nR2L(nl) = nR2L(nl) + 1
-          R2L(nl,nR2L(nl)) = nr
-          read(line,*,err=997,end=997) weight(nl,nR2L(nl))
+*         previously this failed if any entry in weight file did not 
+*         occur in seg list, but since seglist may be a single basin
+*         and weight file is global this doesn't make sense
+          if (found) then
+            call shift(line)  ! get weight
+            nR2L(nl) = nR2L(nl) + 1
+            R2L(nl,nR2L(nl)) = nr
+            read(line,*,err=997,end=997) weight(nl,nR2L(nl))
+          end if
         end if
         read(dfile,'(a100)',err=992,end=993)line
         call d2x(line,last)
@@ -334,47 +337,49 @@ C      print*,'getting land data'
         call ryt(statline,dfile+1)
         read(statline(5:8),'(i4)',err=992,end=992) nr
         nr = uniqindex(nr)
-        call shift(statline)
-	read(statline,*,err=992,end=992)
+        if (nr.ne.0) then
+          call shift(statline)
+          read(statline,*,err=992,end=992)
      .            Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      .            rdum,rdum,rdum,
      .            QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      .            rdum,rdum,lo10bias(nr),lo05bias(nr)
-
-        facLandEvap(nr) = calfacLandEvap(
+  
+          facLandEvap(nr) = calfacLandEvap(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facLZSN(nr)     = calfacLZSN(
+          facLZSN(nr)     = calfacLZSN(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facINFILT(nr)   = calfacINFILT(
-     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
-     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
-     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-
-        facIRC(nr)      = calfacIRC(
-     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
-     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
-     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facAGWR(nr)     = calfacAGWR(
-     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
-     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
-     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facINTFW(nr)    = calfacINTFW(
-     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
-     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
-     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facAGWETP(nr)   = calfacAGWETP(
-     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
-     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
-     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facKVARY(nr)    = calfacKVARY(
+          facINFILT(nr)   = calfacINFILT(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
 
+          facIRC(nr)      = calfacIRC(
+     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
+     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
+     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
+          facAGWR(nr)     = calfacAGWR(
+     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
+     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
+     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
+          facINTFW(nr)    = calfacINTFW(
+     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
+     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
+     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
+          facAGWETP(nr)   = calfacAGWETP(
+     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
+     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
+     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
+          facKVARY(nr)    = calfacKVARY(
+     I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
+     I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
+     I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
+  
+        end if
       end do
 
 100   close(dfile)
