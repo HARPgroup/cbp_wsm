@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -lt 6 ]; then
-  echo "Usage: wdmexp scenario type(=land/river/met/prad) wdm dsn syear eyear"
+  echo "Usage: wdmexp scenario type(=land,river/eos,river/stream,met,prad) wdm dsn syear eyear"
   echo "May also be called with cbp wrapper: cbp wdmexp scenario type(=land/river/met/prad) wdm dsn syear eyear"
   exit 1
 fi
@@ -20,6 +20,18 @@ case $type in
   land)
     luname=${wdm:0:3}
     cd $CBP_ROOT/tmp/wdm/land/$luname/$scenario
+    ;;
+
+  met)
+    cd $CBP_ROOT/input/scenario/climate/met/$scenario/
+    ;;
+
+  river/eos)
+    cd $CBP_ROOT/tmp/wdm/river/$scenario/eos
+    ;;
+
+  river/stream)
+    cd $CBP_ROOT/tmp/wdm/river/$scenario/stream
     ;;
 
   *)
