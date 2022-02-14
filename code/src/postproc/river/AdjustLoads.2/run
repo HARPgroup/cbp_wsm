@@ -1,0 +1,4 @@
+./compile; cp -p ../../bin/reservoir_type_II.exe ../../../../gb560/code/bin/
+
+cd /bluefish/archive/modeling/gb560/tmp/gbhatt-scratch/tempRES
+cp ../../../tmp/wdm/river/P620151101WQb/stream/PL2_5140_5360.wdm .; rm problem; echo P620151101WQb PL2_5140_5360 | ../../../code/bin/reservoir_type_II.exe

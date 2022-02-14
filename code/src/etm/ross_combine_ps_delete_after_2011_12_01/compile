@@ -1,0 +1,24 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c readcontrol_tp.f
+f77 -fbounds-check -c resconvert.f
+f77 -fbounds-check -c resflo.f
+f77 -fbounds-check -c resout.f
+f77 -fbounds-check -c Rmasslink.f
+f77 -fbounds-check -c readftab.f
+f77 -fbounds-check -c getdsn.f
+
+f77 -o ../../../bin/ross_combine_ps_sep_div_ams_from_landsegs.exe main.o readcontrol_tp.o resconvert.o resflo.o resout.o Rmasslink.o readftab.o getdsn.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o
+

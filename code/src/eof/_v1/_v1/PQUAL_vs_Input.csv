@@ -1,0 +1,30 @@
+*** PQUAL to Inputs Table :: nquals=5 X nstates=4 X nappspecies=5
+*** 'NH3','NO3','LON','RON','PO4'
+*** 'D','O','I','A'
+*** 'no3n','nh3n','orgn','po4p','orgp'
+
+*** NQUALS = NH3, NSTATES = 1,2,3,4
+1,1,1,0,0
+1,1,1,0,0
+1,1,1,0,0
+1,1,1,0,0
+*** NQUALS = NO3, NSTATES = 1,2,3,4
+1,1,1,0,0
+1,1,1,0,0
+1,1,1,0,0
+1,1,1,0,0
+*** NQUALS = LON, NSTATES = 1,2,3,4
+1,1,1,0,0
+1,1,1,0,0
+1,1,1,0,0
+1,1,1,0,0
+*** NQUALS = RON, NSTATES = 1,2,3,4
+0,0,0,1,1
+0,0,0,1,1
+0,0,0,1,1
+0,0,0,1,1
+*** NQUALS = PO4, NSTATES = 1,2,3,4
+0,0,0,1,1
+0,0,0,1,1
+0,0,0,1,1
+0,0,0,1,1

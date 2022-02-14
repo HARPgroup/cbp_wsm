@@ -1,0 +1,7 @@
+#!/bin/csh
+
+cd /bluefish/archive/modeling/gb560/tmp/gbhatt-scratch/tempPP/
+if (-e problem) rm problem
+echo N20150521 P620151101WQb N11001 EVAP 1985 2014 | ../../../code/bin/Lhourly_met.exe 
+#echo N20150521 N10001 ATMP 1985 2014 | ../../../code/bin/Lhourly_met.exe
+ls -altr

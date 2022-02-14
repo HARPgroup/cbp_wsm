@@ -1,0 +1,27 @@
+#!/bin/csh
+
+set OUTPUT = testUNEC_N42071
+set LU    = gom
+
+set segments = ( N42071 )
+#source ../../../config/seglists/all_P6.land
+
+set I_WDM    = 1 ##WDM = 1 => work on WDM in tmp directory & WDM = 0 => overwrite the WDM in land directory
+set I_DEBUG0 = 1
+#rm problem; echo A10001 PQ20140613_01c 1984 1996 1985 1996 0 0 | ../../../code/bin/eofc_debug.exe > output; ls -altr
+
+#if (-e problem) rm problem; echo A10001 NLDc8514HydBeWQ 1984 1996 1985 1996 1 1 | ../../../code/bin/eofc_debug.exe > output; ls -altr
+#if (-e problem) rm problem; echo A10001 NLDc8514HydBeWQ 1984 2014 1985 2005 1 1 | ../../../code/bin/eofc_debug.exe > output; ls -altr
+
+mkdir -p ../../../tmp/gbhatt-scratch/tempUNEC
+cd    ../../../tmp/gbhatt-scratch/tempUNEC
+if (-e problem) rm problem;
+echo "" > $OUTPUT
+foreach SEG ( $segments )
+	cp -p ../../../tmp/wdm/land/$LU/testUNEC/${LU}${SEG}.wdm .
+	#cp -p ../../../tmp/wdm/land/*/P620150601WQa/*$SEG.wdm .
+	#echo $SEG testUNEC 360 1984 2014 DELwN20161122 1985 2014 $I_WDM $I_DEBUG0 | ../../../code/bin/unec_debug.exe >> $OUTPUT;
+        echo $SEG testUNEC 360 1984 2014 1985 2014 $I_WDM $I_DEBUG0 | ../../../code/bin/unec_debug.exe >> $OUTPUT;
+        if (-e problem) exit;
+	#ls -altr
+end

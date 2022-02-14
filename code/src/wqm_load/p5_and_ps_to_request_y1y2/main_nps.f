@@ -20,15 +20,16 @@
 C      include 'date.inc'
       integer Y1, Y2
 c      parameter (Y1=1990, Y2=2010)
-      parameter (Y1=1985, Y2=2005)
+c      parameter (Y1=1984, Y2=2000)
+      parameter (Y1=1995, Y2=2014)
       integer I1, I2, I3, I4
 
 ********** wqm cell variables
       integer maxcells,ncells,nc
       parameter (maxcells=2375) ! was 2400
-      character*11 cell(maxcells),Tcell
+      character*30 cell(maxcells),Tcell
       integer      intcell  ! integer version of cell
-      integer lencell
+      integer lencell,tlencell
 
 ********* lrseg variables
       character*13 Trseg
@@ -62,6 +63,8 @@ c      parameter (Y1=1990, Y2=2010)
       integer nd,ny,nm,nq,Divnq,itm
       real pairwq(366,Y1:Y2,maxBvar)
       double precision AverageCell(maxBvar)
+
+      real F_twq
 
       double precision DayTotal(maxBvar),DayTotalDiv(maxBvar)
       double precision DayCell(maxBvar),DayCellDiv(maxBvar)
@@ -110,6 +113,7 @@ c      character*5 psmethod ! must be either 'hcell, wcell, or lrseg'
       integer lenRequest
 
 ************ END DECLARATIONS ******************************************
+      lencell = -9
       read*,rscen,hotstart,Request,year1,year2,doCH3D ! get river scenario
 ********* stupid wdm thing
       wdmfnam = dummyWDMname
@@ -478,7 +482,7 @@ C     .          (RnameOut(nd),nd=1,nRvarOut),nRvarOut
 
 ****************** ALL DATA PROCESSED, NOW DO OUTPUTS
 *********** Make Concentrations from Loads for some variables
-      call ttyput(' making concentrations ') 
+cbhatt      call ttyput(' making concentrations ') 
       do nq = 1,nBvar  
                     
         if (DivBvar(nq).eq.'    ') then
@@ -486,8 +490,8 @@ C     .          (RnameOut(nd),nd=1,nRvarOut),nRvarOut
              cycle  
         end if      
                  
-        call ttyput(Bname(nq))
-        call ttyput(' ')
+cbhatt        call ttyput(Bname(nq))
+cbhatt        call ttyput(' ')
         found = .false.
         do Divnq = 1,nBvar  ! find divisor variable
           if (Bname(Divnq).eq.DivBvar(nq)) then
@@ -503,7 +507,13 @@ C      print*,' '
 
 ******************** got all data, now write to file
 
+
 ********** write out DAILY DATA
+      do nc = 1,ncells
+         call lencl(cell(nc),tlencell)
+         if (tlencell.gt.lencell) lencell=tlencell
+      end do
+
       do ny = year1,year2
 
         fnam = 'wsm57k_wsm_nps.YY'           ! open file
@@ -568,7 +578,7 @@ C              if (writecell(nc)) then
                  end if
               end do
               write(dfile,1234)
-     .          cell(nc),year,month,day,
+     .          cell(nc)(:lencell),year,month,day,
      .          (DayCell(nq)/DayCellDiv(nq),nq=1,nBvar)
 C              end if
            end do
@@ -656,7 +666,7 @@ C              if (writecell(nc)) then
                  end if
               end do
               write(dfile,1234)
-     .          cell(nc),ny,nm,1,
+     .          cell(nc)(:lencell),ny,nm,1,
      .          (MonthCell(nq)/MonthCellDiv(nq),nq=1,nBvar)
 C              end if
            end do
@@ -747,7 +757,7 @@ C              if (writecell(nc)) then
                end if
            end do
            write(dfile,1234)
-     .          cell(nc),ny,1,1,
+     .          cell(nc)(:lencell),ny,1,1,
      .          (YearCell(nq)/YearCellDiv(nq),nq=1,nBvar)
 C              end if
         end do
@@ -818,6 +828,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                    read(cell(nc),*) intcell
                    write(13,302) INT(intcell/1000),MOD(intcell,1000),
      .                         (35.314666*wq(nd,ny-1,nc,nq))
+                                ! 1 cmd = 35.314666 cfs
 c cell(nc)  imon(ic(j)),jmon(ic(j)),
                end do
                write(13,302) 134,282,750.
@@ -830,6 +841,7 @@ c cell(nc)  imon(ic(j)),jmon(ic(j)),
                    read(cell(nc),*) intcell
                    write(13,302) INT(intcell/1000),MOD(intcell,1000),
      .                         (35.314666*wq(nd,ny,nc,nq))
+                                ! 1 cmd = 35.314666 cfs
 c cell(nc)  imon(ic(j)),jmon(ic(j)),
                end do
                write(13,302) 134,282,750.
@@ -842,6 +854,7 @@ c cell(nc)  imon(ic(j)),jmon(ic(j)),
                    read(cell(nc),*) intcell
                    write(13,302) INT(intcell/1000),MOD(intcell,1000),
      .                         (35.314666*wq(nd,ny,nc,nq))
+                                ! 1 cmd = 35.314666 cfs
 c cell(nc)  imon(ic(j)),jmon(ic(j)),
                end do
                write(13,302) 134,282,750.
@@ -860,7 +873,8 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                do nc = 1,ncells
                    read(cell(nc),*) intcell
                    q(INT(intcell/1000),MOD(intcell,1000))= 0.0 +
-     .                     35.314666*(wq(nd,ny-1,nc,1))
+     .                     35.314666*(wq(nd,ny-1,nc,nq))
+                                ! 1 cmd = 35.314666 cfs
                end do
                do j=1,jcell1
                    write(33,211)(q(i,j),i=1,icell1)
@@ -877,7 +891,8 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                do nc = 1,ncells
                    read(cell(nc),*) intcell
                    q(INT(intcell/1000),MOD(intcell,1000))= 0.0 +
-     .                     35.314666*(wq(nd,ny-1,nc,1))
+     .                     35.314666*(wq(nd,ny,nc,nq))
+                                ! 1 cmd = 35.314666 cfs
                end do
                do j=1,jcell1
                    write(33,211)(q(i,j),i=1,icell1)
@@ -894,7 +909,8 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                do nc = 1,ncells
                    read(cell(nc),*) intcell
                    q(INT(intcell/1000),MOD(intcell,1000))= 0.0 +
-     .                     35.314666*(wq(nd,ny-1,nc,1))
+     .                     35.314666*(wq(nd,ny,nc,nq))
+                                ! 1 cmd = 35.314666 cfs
                end do      
                do j=1,jcell1
                    write(33,211)(q(i,j),i=1,icell1)
@@ -915,11 +931,26 @@ CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
                do nc = 1,ncells-1
                    read(cell(nc),*) intcell
+                   if ( wq(nd,ny-1,nc,Div_NQ(nq)) > 0 ) then
+                      F_twq = 1.0 * 
+     .                   wq(nd,ny-1,nc,nq) / wq(nd,ny-1,nc,Div_NQ(nq))
+                   else
+                      F_twq = 0.0
+                   end if
+
                    write(78,303) INT(intcell/1000),MOD(intcell,1000),
-     .                         (1*wq(nd,ny-1,nc,nq))
+     .                   F_twq
 c cell(nc)  imon(ic(j)),jmon(ic(j)),
                end do
-               write(78,303) 134,282,wq(nd,ny-1,9,nq)
+               nc = 9
+               if ( wq(nd,ny-1,nc,Div_NQ(nq)) > 0 ) then
+                   F_twq = 1.0 * 
+     .                wq(nd,ny-1,nc,nq) / wq(nd,ny-1,nc,Div_NQ(nq))
+               else
+                   F_twq = 0.0
+               end if
+               write(78,303) 134,282,
+     .                   F_twq
           end do
           ! ONE YEAR OF DATA FOR THE YEAR2
           do nd = 1,ndaysinyear(ny)
@@ -927,11 +958,25 @@ c cell(nc)  imon(ic(j)),jmon(ic(j)),
 
                do nc = 1,ncells-1
                    read(cell(nc),*) intcell
+                   if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                      F_twq = 1.0 * 
+     .                   wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+                   else
+                      F_twq = 0.0
+                   end if
                    write(78,303) INT(intcell/1000),MOD(intcell,1000),
-     .                         (1*wq(nd,ny,nc,nq))
+     .                   F_twq
 c cell(nc)  imon(ic(j)),jmon(ic(j)),
                end do
-               write(78,303) 134,282,wq(nd,ny-1,9,nq)
+               nc = 9
+               if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                   F_twq = 1.0 * 
+     .                wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+               else
+                   F_twq = 0.0
+               end if
+               write(78,303) 134,282,
+     .                   F_twq
           end do
           ! REPEAT LAST DAY OF THE PREVIOUS YEAR2
           do nd = ndaysinyear(ny),ndaysinyear(ny)
@@ -939,11 +984,25 @@ c cell(nc)  imon(ic(j)),jmon(ic(j)),
 
                do nc = 1,ncells-1
                    read(cell(nc),*) intcell
+                   if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                      F_twq = 1.0 * 
+     .                   wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+                   else
+                      F_twq = 0.0
+                   end if
                    write(78,303) INT(intcell/1000),MOD(intcell,1000),
-     .                         (1*wq(nd,ny,nc,nq))
+     .                   F_twq
 c cell(nc)  imon(ic(j)),jmon(ic(j)),
                end do
-               write(78,303) 134,282,wq(nd,ny-1,9,nq)
+               nc = 9
+               if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                   F_twq = 1.0 * 
+     .                wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+               else
+                   F_twq = 0.0
+               end if
+               write(78,303) 134,282,
+     .                   (1*wq(nd,ny,nc,nq)/wq(nd,ny,nc,Div_NQ(nq)))
           end do
           ! FILE 78 END
 CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -958,9 +1017,23 @@ CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                end do
                do nc = 1,ncells
                    read(cell(nc),*) intcell
+                   if ( wq(nd,ny-1,nc,Div_NQ(nq)) > 0 ) then
+                      F_twq = 1.0 * 
+     .                   wq(nd,ny-1,nc,nq) / wq(nd,ny-1,nc,Div_NQ(nq))
+                   else
+                      F_twq = 0.0
+                   end if
                    q(INT(intcell/1000),MOD(intcell,1000))= 0.0 +
-     .                     1*(wq(nd,ny-1,nc,nq))
+     .                   F_twq
                end do
+               nc = 9
+               if ( wq(nd,ny-1,nc,Div_NQ(nq)) > 0 ) then
+                    F_twq = 1.0 *
+     .                 wq(nd,ny-1,nc,nq) / wq(nd,ny-1,nc,Div_NQ(nq))
+               else
+                    F_twq = 0.0
+               end if
+               q(134,282) = F_twq
                do j=1,jcell1
                    write(34,211)(q(i,j),i=1,icell1)
                end do
@@ -975,9 +1048,23 @@ CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                end do
                do nc = 1,ncells
                    read(cell(nc),*) intcell
+                   if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                      F_twq = 1.0 * 
+     .                   wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+                   else
+                      F_twq = 0.0
+                   end if
                    q(INT(intcell/1000),MOD(intcell,1000))= 0.0 +
-     .                     1*(wq(nd,ny-1,nc,nq))
+     .                   F_twq
                end do
+               nc = 9
+               if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                    F_twq = 1.0 *
+     .                 wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+               else
+                    F_twq = 0.0
+               end if
+               q(134,282) = F_twq
                do j=1,jcell1
                    write(34,211)(q(i,j),i=1,icell1)
                end do
@@ -992,9 +1079,23 @@ CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                end do
                do nc = 1,ncells
                    read(cell(nc),*) intcell
+                   if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                      F_twq = 1.0 * 
+     .                   wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+                   else
+                      F_twq = 0.0
+                   end if
                    q(INT(intcell/1000),MOD(intcell,1000))= 0.0 +
-     .                     1*(wq(nd,ny-1,nc,nq))
+     .                   F_twq
                end do
+               nc = 9
+               if ( wq(nd,ny,nc,Div_NQ(nq)) > 0 ) then
+                    F_twq = 1.0 *
+     .                 wq(nd,ny,nc,nq) / wq(nd,ny,nc,Div_NQ(nq))
+               else
+                    F_twq = 0.0
+               end if
+               q(134,282) = F_twq
                do j=1,jcell1
                    write(34,211)(q(i,j),i=1,icell1)
                end do
@@ -1009,8 +1110,8 @@ CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       end if
       
       stop
-1234  format(A11,3(',',i4),18(',',e10.4))
-1233  format(A11,3(',',A4),18(',',A10))
+1234  format(A,3(',',i4),18(',',e10.4))
+1233  format(A,3(',',A4),18(',',A10))
 
 
  201  format(2i8)

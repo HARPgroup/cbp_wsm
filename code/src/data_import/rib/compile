@@ -1,0 +1,24 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib/
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c main_calib.f
+f77 -fbounds-check -c read_s2r.f
+#f77 -fbounds-check -c main_year_scenario_from_calib.f
+#f77 -fbounds-check -c main_scenario_from_scenario_csv.f
+
+f77 -o ../../../bin/create_calib_rib_wdms.exe main_calib.o read_s2r.o $usrlib $dsnlib $lib1 $lib2 $lib3
+set failed = $status; if( $failed == 1 ) exit 1
+
+#f77 -o ../../../bin/create_year_scenario_septic_wdms_from_calib main_year_scenario_from_calib.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+#f77 -o ../../../bin/create_septic_wdms_from_scenario_csv main_scenario_from_scenario_csv.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

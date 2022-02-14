@@ -1,0 +1,4 @@
+cd /bluefish/archive/modeling/gb560/tmp/gbhatt-scratch/tempPP/
+rm problem
+echo N1505211511 N10001 HPRC 1985 2014 | ../../../code/bin/Lhourly_prad.exe 
+

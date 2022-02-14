@@ -1,0 +1,8 @@
+#!/bin/csh
+
+set I_WDM    = 1 ##WDM = 1 => work on WDM in tmp directory & WDM = 0 => overwrite the WDM in land directory
+set I_DEBUG0 = 1
+
+#cp -p ../../../tmp/wdm/land/*/P620150601WQa/*N10001.wdm .
+cp -p ../eofc/*N10001.wdm .
+if (-e problem) rm problem; echo N10001 P620150601WQa 1984 2014 $WDM $DEBUG0 | ../../../code/bin/bodx_debug.exe > output; ls -altr

@@ -1,0 +1,242 @@
+diff -r sumin/compile sumin_QA/compile
+12,14c12,14
+< f77 -fbounds-check -c main_aveann.f
+< f77 -fbounds-check -c readInAveann.f
+< f77 -fbounds-check -c getacres.f
+---
+> f77 -c main_aveann.f
+> f77 -c readInAveann.f
+> f77 -c getacres.f
+16c16
+<  f77 -o ../../../../bin/sumin_aveann.exe main_aveann.o getacres.o readInAveann.o getAtdep/getatdep.a $dsnlib $lib1 $lib2 $lib3 $usrlib 
+---
+>  f77 -o ../../../../bin/sumin_aveann_QA.exe main_aveann.o getacres.o readInAveann.o getAtdep/getatdep.a $dsnlib $lib1 $lib2 $lib3 $usrlib 
+diff -r sumin/main_aveann.f sumin_QA/main_aveann.f
+78a79,92
+> ********** GY
+>       real allfertstatelu(nstatemax,nlu,nloads)
+>       real allmanurestatelu(nstatemax,nlu,nloads)
+>       real alllegumestatelu(nstatemax,nlu,nloads)
+>       real alluptakestatelu(nstatemax,nlu,nloads)
+>       real allatdepstatelu(nstatemax,nlu,nloads)
+>       real allacresstatelu(nstatemax,nlu)
+>       real allfertlseglu(maxlsegs,nlu,nloads)
+>       real allmanurelseglu(maxlsegs,nlu,nloads)
+>       real alllegumelseglu(maxlsegs,nlu,nloads)
+>       real alluptakelseglu(maxlsegs,nlu,nloads)
+>       real allatdeplseglu(maxlsegs,nlu,nloads)
+>       real allacreslseglu(maxlsegs,nlu)
+> ********** GY
+181c195,205
+<       end do
+---
+> **********GY
+>         do nstate = 1,nstates
+>           do nl = 1,nlu
+>           allfertstatelu(nstate,nl,nload) = 0.0
+>           allmanurestatelu(nstate,nl,nload) = 0.0
+>           alllegumestatelu(nstate,nl,nload) = 0.0
+>           alluptakestatelu(nstate,nl,nload) = 0.0
+>           allatdepstatelu(nstate,nl,nload) = 0.0
+>           allacresstatelu(nstate,nl) = 0.0
+>           end do
+>         end do
+182a207,218
+>         do nlseg = 1,nlsegs
+>           do nl = 1,nlu
+>           allfertlseglu(nlseg,nl,nload) = 0.0
+>           allmanurelseglu(nlseg,nl,nload) = 0.0
+>           alllegumelseglu(nlseg,nl,nload) = 0.0
+>           alluptakelseglu(nlseg,nl,nload) = 0.0
+>           allatdeplseglu(nlseg,nl,nload) = 0.0
+>           allacreslseglu(nlseg,nl) = 0.0
+>           end do
+>         end do
+> **********GY
+>       end do 
+319a356,378
+> *********************GY
+>               alluptakestatelu(nstate,nl,nload)=
+>      .         alluptakestatelu(nstate,nl,nload)+uptake(nload)*acres(nl)
+>               alllegumestatelu(nstate,nl,nload)=
+>      .         alllegumestatelu(nstate,nl,nload)+legume(nload)*acres(nl)
+>               allmanurestatelu(nstate,nl,nload)=
+>      .         allmanurestatelu(nstate,nl,nload)+manure(nload)*acres(nl)
+>               allfertstatelu(nstate,nl,nload)=
+>      .         allfertstatelu(nstate,nl,nload)+fert(nload)*acres(nl)
+>               allatdepstatelu(nstate,nl,nload)=
+>      .         allatdepstatelu(nstate,nl,nload)+atdep(nload)*acres(nl)
+> 
+>               alluptakelseglu(nlseg,nl,nload)= 
+>      .         alluptakelseglu(nlseg,nl,nload)+uptake(nload)*acres(nl)
+>               alllegumelseglu(nlseg,nl,nload)= 
+>      .         alllegumelseglu(nlseg,nl,nload)+legume(nload)*acres(nl)
+>               allmanurelseglu(nlseg,nl,nload)= 
+>      .         allmanurelseglu(nlseg,nl,nload)+manure(nload)*acres(nl)
+>               allfertlseglu(nlseg,nl,nload)= 
+>      .         allfertlseglu(nlseg,nl,nload)+fert(nload)*acres(nl)
+>               allatdeplseglu(nlseg,nl,nload)=
+>      .         allatdeplseglu(nlseg,nl,nload)+atdep(nload)*acres(nl)
+> *********************GY
+328c387,392
+< 
+---
+> *********************GY
+>             allacresstatelu(nstate,nl)=allacresstatelu(nstate,nl)
+>      .                                + acres(nl)
+>             allacreslseglu(nlseg,nl) = allacreslseglu(nlseg,nl)
+>      .                                + acres(nl)
+> *********************GY
+336,337c400,401
+<      .     '/'//basin(:lenbasin)//'_inputs_'//
+<      .     rscen(:lenrscen)//'_'//cy1//'_'//cy2//'.csv'
+---
+>      .       '/'//basin(:lenbasin)//'_'//rscen(:lenrscen)//
+>      .       '_inputs_totpounds_'//cy1//'_'//cy2//'.csv'
+343,348c407,417
+<      .                (', fert ',loadname(nload),nload=1,nloads),
+<      .                (', manure ',loadname(nload),nload=1,nloads),
+<      .                (', legume ',loadname(nload),nload=1,nloads),
+<      .                (', uptake ',loadname(nload),nload=1,nloads),
+<      .                (', atdep ',loadname(nload),nload=1,nloads),
+<      .                 ',','acres'
+---
+>      .                (','//rscen(:lenrscen)//'_fert_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_manure_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_legume_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_uptake_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_atdep_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                ',',rscen(:lenrscen)//'_acres'
+400c469
+<       write(11,1234,err=951) 'total',
+---
+>       write(11,1234,err=951) 'Total',
+407a477,593
+> **************************GY
+>       fnam = sumoutdir//'aveann/'//rscen(:lenrscen)//
+>      .       '/'//basin(:lenbasin)//'_'//rscen(:lenrscen)//
+>      .           '_inputs_poundsperacre_'//cy1//'_'//cy2//'.csv'
+>       print*,fnam(:78)
+>       open(11,file=fnam,status='unknown',iostat=err)
+>       if (err.ne.0) go to 991
+> 
+>       write(11,1233,err=951)'specifier',
+>      .                (','//rscen(:lenrscen)//'_fert_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_manure_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_legume_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_uptake_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                (','//rscen(:lenrscen)//'_atdep_'
+>      .                   ,loadname(nload),nload=1,nloads),
+>      .                ',',rscen(:lenrscen)//'_acres'
+> 
+>       do nl = 1,nlu
+>         write(11,1234,err=951) luname(nl),
+>      .                (',',allfertlu(nl,nload)/
+>      .                       allacreslu(nl),nload=1,nloads),
+>      .                (',',allmanurelu(nl,nload)/
+>      .                       allacreslu(nl),nload=1,nloads),
+>      .                (',',alllegumelu(nl,nload)/
+>      .                       allacreslu(nl),nload=1,nloads),
+>      .                (',',alluptakelu(nl,nload)/
+>      .                       allacreslu(nl),nload=1,nloads),
+>      .                (',',allatdeplu(nl,nload)/
+>      .                       allacreslu(nl),nload=1,nloads),
+>      .                 ',',allacreslu(nl)
+>       end do
+> 
+>       do nstate = 1,nstates
+>         do nl = 1,nlu
+>           write(11,1234,err=951) states(nstate)//' '//luname(nl),
+>      .               (',',allfertstatelu(nstate,nl,nload)/
+>      .                     allacresstatelu(nstate,nl),nload=1,nloads),
+>      .               (',',allmanurestatelu(nstate,nl,nload)/
+>      .                     allacresstatelu(nstate,nl),nload=1,nloads),
+>      .               (',',alllegumestatelu(nstate,nl,nload)/
+>      .                     allacresstatelu(nstate,nl),nload=1,nloads),
+>      .               (',',alluptakestatelu(nstate,nl,nload)/
+>      .                     allacresstatelu(nstate,nl),nload=1,nloads),
+>      .               (',',allatdepstatelu(nstate,nl,nload)/
+>      .                     allacresstatelu(nstate,nl),nload=1,nloads),
+>      .                ',',allacresstatelu(nstate,nl)
+>         end do
+>       end do
+> 
+>       do nstate = 1,nstates
+>         write(11,1234,err=951) states(nstate),
+>      .                (',',allfertstate(nstate,nload)/
+>      .                    allacresstate(nstate),nload=1,nloads),
+>      .                (',',allmanurestate(nstate,nload)/
+>      .                    allacresstate(nstate),nload=1,nloads),
+>      .                (',',alllegumestate(nstate,nload)/
+>      .                    allacresstate(nstate),nload=1,nloads),
+>      .                (',',alluptakestate(nstate,nload)/
+>      .                    allacresstate(nstate),nload=1,nloads),
+>      .                (',',allatdepstate(nstate,nload)/
+>      .                    allacresstate(nstate),nload=1,nloads),
+>      .                 ',',allacresstate(nstate)
+>       end do
+> 
+>       do nlseg = 1,nlsegs
+>         write(11,1234,err=951) lsegs(nlseg),
+>      .                (',',allfertlseg(nlseg,nload)/
+>      .                       allacreslseg(nlseg),nload=1,nloads),
+>      .                (',',allmanurelseg(nlseg,nload)/
+>      .                       allacreslseg(nlseg),nload=1,nloads),
+>      .                (',',alllegumelseg(nlseg,nload)/
+>      .                       allacreslseg(nlseg),nload=1,nloads),
+>      .                (',',alluptakelseg(nlseg,nload)/
+>      .                       allacreslseg(nlseg),nload=1,nloads),
+>      .                (',',allatdeplseg(nlseg,nload)/
+>      .                       allacreslseg(nlseg),nload=1,nloads),
+>      .                 ',',allacreslseg(nlseg)
+>       end do
+> 
+>       do nrseg = 1,nrsegs
+>         write(11,1234,err=951) rsegs(nrseg),
+>      .                (',',allfertrseg(nrseg,nload)/
+>      .                       allacresrseg(nrseg),nload=1,nloads),
+>      .                (',',allmanurerseg(nrseg,nload)/
+>      .                       allacresrseg(nrseg),nload=1,nloads),
+>      .                (',',alllegumerseg(nrseg,nload)/
+>      .                       allacresrseg(nrseg),nload=1,nloads),
+>      .                (',',alluptakerseg(nrseg,nload)/
+>      .                       allacresrseg(nrseg),nload=1,nloads),
+>      .                (',',allatdeprseg(nrseg,nload)/
+>      .                       allacresrseg(nrseg),nload=1,nloads),
+>      .                 ',',allacresrseg(nrseg)
+>       end do
+> 
+>       write(11,*,err=951)'*** R input ***'
+> 
+>       do nlseg = 1,nlsegs
+>         do nl = 1,nlu
+>           write(11,1234,err=951) lsegs(nlseg)//' '//luname(nl),
+>      .               (',',allfertlseglu(nlseg,nl,nload)/
+>      .                     allacreslseglu(nlseg,nl),nload=1,nloads),
+>      .               (',',allmanurelseglu(nlseg,nl,nload)/
+>      .                     allacreslseglu(nlseg,nl),nload=1,nloads),
+>      .               (',',alllegumelseglu(nlseg,nl,nload)/
+>      .                     allacreslseglu(nlseg,nl),nload=1,nloads),
+>      .               (',',alluptakelseglu(nlseg,nl,nload)/
+>      .                     allacreslseglu(nlseg,nl),nload=1,nloads),
+>      .               (',',allatdeplseglu(nlseg,nl,nload)/
+>      .                     allacreslseglu(nlseg,nl),nload=1,nloads),
+>      .              ',',allacreslseglu(nlseg,nl)
+>         end do
+>       end do
+> ************************GY
+411,412c597,598
+< 
+< 1233  format(a,10(a,a4),a1,a5)
+---
+> 1233  format(a,11(a,a),a1)
+> c1233  format(a,10(a,a4),a1,a5)

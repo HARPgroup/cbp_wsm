@@ -1,0 +1,32 @@
+#!/bin/csh
+
+set utillib = '../../lib/util_lib.a'
+
+f77 -mcmodel=medium -fbounds-check -c main36.f
+f77 -mcmodel=medium -fbounds-check -c getatdep36.f
+
+f77 -mcmodel=medium -fbounds-check -c main12.f
+f77 -mcmodel=medium -fbounds-check -c getatdep12.f
+
+f77 -mcmodel=medium -fbounds-check -c main12pct.f
+
+f77 -fbounds-check -c main12_year_scenario.f
+f77 -fbounds-check -c getatdep12_year_scenario.f
+
+f77 -fbounds-check -c main12_CMAQ_scenario.f
+f77 -fbounds-check -c getatdep12_CMAQ_scenario.f
+
+f77 -fbounds-check -c getatdep12_percent_of_existing_CMAQ_scenario.f
+f77 -fbounds-check -c main12_percent_of_existing_CMAQ.f
+
+f77 -mcmodel=medium -fbounds-check -c getcellarea.f
+
+f77  -o ../../../bin/atdep36_to_wqm57k_calib.exe main36.o getatdep36.o getcellarea.o $utillib
+f77  -o ../../../bin/atdep12_to_wqm57k_calib.exe main12.o getatdep12.o getcellarea.o $utillib
+f77  -o ../../../bin/atdep12_to_wqm57k_pct.exe   main12pct.o getatdep12.o getcellarea.o $utillib
+
+#f77  -o ../../../bin/atdep12_to_wqm57k_year_scenario.exe main12_year_scenario.o getatdep12_year_scenario.o getcellarea.o $utillib
+#f77  -o ../../../bin/atdep12_to_wqm57k_CMAQ_scenario.exe main12_CMAQ_scenario.o getatdep12_CMAQ_scenario.o getcellarea.o $utillib
+#f77  -o ../../../bin/atdep12_to_wqm57k_percent_of_CMAQ_scenario.exe main12_percent_of_existing_CMAQ.o getatdep12_percent_of_existing_CMAQ_scenario.o getcellarea.o $utillib
+
+rm *.o

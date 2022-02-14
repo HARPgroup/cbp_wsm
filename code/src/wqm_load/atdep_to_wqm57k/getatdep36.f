@@ -90,9 +90,9 @@
 
 ********* variables to read the wet deposition file
       integer icell,hydcell
-      real Pnarr,Pusgs  ! precip in inches
-      real CNH3,DNH3narr,DNH3usgs  ! conc and load of NH3
-      real CNO3,DNO3narr,DNO3usgs  ! conc and load of NO3
+      real Pnldas,Pusgs  ! precip in inches
+      real CNH3,DNH3nldas,DNH3usgs  ! conc and load of NH3
+      real CNO3,DNO3nldas,DNO3usgs  ! conc and load of NO3
 
       character*10 date
 
@@ -145,17 +145,18 @@
       do i = 1,5
         if (wetfnam(i:i).eq.' ') wetfnam(i:i) = '0'
       end do
-      wetfnam = tree//'input/unformatted/atdep/grimm/model/'
-     .       //'areastats/separate_wqm_cell_files/'//wetfnam
+      wetfnam = tree//'input/unformatted/atdep/AD20160919/'
+     .       //'WQMDATA/WQMCELL_V3/WQMCELLID_'//wetfnam
       open(dfile,file=wetfnam,status='old',iostat=err)
       if (err.ne.0) go to 992
 
 ******************** get the wetfall data
+      read(dfile,*)dummy ! header
       do 
-        read(dfile,*,end=111,err=998) icell,hydcell,dummy,date,
-     .                                  Pnarr,Pusgs,
-     .                                  CNH3,DNH3narr,DNH3usgs,
-     .                                  CNO3,DNO3narr,DNO3usgs
+        read(dfile,*,end=111,err=998) icell,hydcell,date,
+     .                                  Pnldas,
+     .                                  CNH3,DNH3nldas,
+     .                                  CNO3,DNO3nldas
         if (icell.ne.cell ) go to 993
         read(date(1:4),'(i4)') year
         read(date(5:6),'(i2)') month
@@ -163,9 +164,9 @@
         nd = julian(year1,month1,day1,
      .                year,month,day)
         if (nd.ge.1.and.nd.le.ndays) then
-          dailyrain(nd) = Pnarr  ! use NARR dataset as more complete
-          wetnh3load(nd) = DNH3narr * cellarea  ! in kg/day
-          wetno3load(nd) = DNO3narr * cellarea  ! in kg/day
+          dailyrain(nd) = Pnldas  ! use NARR dataset as more complete
+          wetnh3load(nd) = DNH3nldas * cellarea  ! in kg/day
+          wetno3load(nd) = DNO3nldas * cellarea  ! in kg/day
         end if
       end do
 111   close (dfile)

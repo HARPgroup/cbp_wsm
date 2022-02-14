@@ -1,0 +1,104 @@
+
+ SURO (in/ac/yr)   0.152886886
+ SEDM (tn/ac/yr)   0.13567637
+ IFWO (in/ac/yr)   1.2586845
+ AGWO (in/ac/yr)   10.5582866
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for NH3  0.142131043
+BTARGET for NH3  0.24171435
+
+I =   13.42700
+S =  0.02750
+D =  0.00555
+I =  0.10908
+A =  0.24171
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for NO3  0.331122003
+BTARGET for NO3  0.793532937
+
+I =   13.42700
+S =  0.04068
+D =  0.00000
+I =  0.29044
+A =  0.79353
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for LON  0.004660833
+BTARGET for LON  0.000523986
+
+I =   13.42700
+S =  0.00052
+D =  0.00047
+I =  0.00368
+A =  0.00052
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for RON  0.049786738
+BTARGET for RON  0.005004286
+
+I =   13.42700
+S =  0.00562
+D =  0.00408
+I =  0.04009
+A =  0.00500
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for PO4  0.015902294
+BTARGET for PO4  0.000838386
+
+I =    0.00000
+S =  0.00117
+D =  0.00506
+I =  0.00966
+A =  0.00084
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for LOP  0.012357004
+BTARGET for LOP  0.012357004
+
+I =    0.00000
+S =  0.00091
+D =  0.00393
+I =  0.00751
+A =  0.01236
+ 
+ 
+ 
+ 
+ Mean Residence Time,N10001,for, 1, 2, 13, 102
+ 
+STARGET for ROP  0.234783073
+BTARGET for ROP  0.234783073
+
+I =    0.00000
+S =  0.01733
+D =  0.07476
+I =  0.14269
+A =  0.23478
+ iRunning UNEC P620150601WQaN10001 Finished

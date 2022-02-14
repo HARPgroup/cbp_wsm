@@ -1,0 +1,18 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib/
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c main_calib.f
+f77 -fbounds-check -c read_s2r.f
+
+f77 -o ../../../bin/rpa_wdms_calib.exe main_calib.o read_s2r.o $usrlib $dsnlib $lib1 $lib2 $lib3
+set failed = $status; if( $failed == 1 ) exit 1
+
+rm *.o

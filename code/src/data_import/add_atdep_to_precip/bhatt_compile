@@ -1,0 +1,30 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib/
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+#f77 -fbounds-check -c XYZtoNLDAS.f
+#f77 -o ../../../bin/XYZtoNLDAS.exe XYZtoNLDAS.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+f77 -fbounds-check -c XYZtoNLDAS_20CAIR.f
+f77 -o ../../../bin/XYZtoNLDAS_20CAIR.exe XYZtoNLDAS_20CAIR.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+f77 -fbounds-check -c XYZtoNLDAS_20MF.f
+f77 -o ../../../bin/XYZtoNLDAS_20MF.exe XYZtoNLDAS_20MF.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+f77 -fbounds-check -c XYZtoNLDAS_YEAR.f
+f77 -o ../../../bin/XYZtoNLDAS_YEAR.exe XYZtoNLDAS_YEAR.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+#f77 -fbounds-check -c XYZtoNLDAS_FIPS.f
+#f77 -o ../../../bin/XYZtoNLDAS_FIPS.exe XYZtoNLDAS_FIPS.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+f77 -fbounds-check -c Extend_SYRtoEYR.f
+f77 -o ../../../bin/Extend_SYRtoEYR.exe Extend_SYRtoEYR.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

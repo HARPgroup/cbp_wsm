@@ -1,0 +1,23 @@
+#!/bin/csh
+
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib/
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+
+f77 -fbounds-check -c main_GrimmAtDep.f
+f77 -fbounds-check -c main_GrimmCMAQAtDep.f
+
+f77 -o ../../../bin/GrimmAtDep.exe main_GrimmAtDep.o $usrlib $dsnlib $lib1 $lib2 $lib3
+set failed = $status; if( $failed == 1 ) exit 1
+
+f77 -o ../../../bin/GrimmCMAQAtDep.exe main_GrimmCMAQAtDep.o $usrlib $dsnlib $lib1 $lib2 $lib3
+set failed = $status; if( $failed == 1 ) exit 1
+
+rm *.o

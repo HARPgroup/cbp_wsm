@@ -31,7 +31,8 @@ Ctest      double precision acc(maxRvar)
       character*13 Trseg
       character*6 Tlseg
 c      real pairwq(366,1990:2010,maxBvar)
-      real pairwq(366,1985:2005,maxBvar)
+c      real pairwq(366,1984:2000,maxBvar)
+      real pairwq(366,1995:2014,maxBvar)
       integer ny              ! year of infomation to get
 
       real lufac(ndaymax,nlu)           ! variables to hold the etm file
@@ -115,13 +116,16 @@ c      real pairwq(366,1990:2010,maxBvar)
      .       Tlseg(:lenlseg)//'to'//Trseg(:lenrseg)//'.etm'
       open(etmfil,file=fnam,status='old',form='unformatted',iostat=err)
       if (err.ne.0) go to 991
+      print*, 'BHATT 1'
       read(etmfil)
      .            etmSRTy,etmSRTm,etmSRTd,
      .            etmENDy,etmENDm,etmENDd,
      .            lufac,bmpfac,tranfac,dailypounds,dothislu,LStest
+      print*, 'BHATT 2'
       close(etmfil)
 
 ************* test data
+      print*,'LStest ',LStest,LandScen(1)
       if (LStest.ne.LandScen(1)) go to 997
       jday = julian(etmENDy,etmENDm,etmENDd,reqENDy,reqENDm,reqENDd)
       if (jday.gt.1) go to 9951
@@ -153,8 +157,8 @@ c      real pairwq(366,1990:2010,maxBvar)
 
         if (.not.dothislu(nl2r,l)) cycle
 
-        call ttyput(' ')
-        call ttyput(luname(l))
+c        call ttyput(' ')
+c        call ttyput(luname(l))
 
 ************ READY TO OPEN WDM FILE
         call lencl(LandScen(l),lenls)
@@ -391,7 +395,8 @@ Ctest************** end check
       report(3) = ' '
       go to 999
 
-997   report(1) = '  etm file not correct format'
+997   report(1) = '  etm file not correct format '//
+     .     Tlseg(:lenlseg)//'to'//Trseg(:lenrseg)
       report(2) = ' expected the string '//
      .         LandScen(1)//' after bmpfac variable'
       report(3) = '  got instead the string '//LStest

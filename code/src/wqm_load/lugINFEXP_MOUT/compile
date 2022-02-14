@@ -1,0 +1,50 @@
+#!/bin/csh
+
+source ../../set_wdmlibdir
+set wdmlibdir = ../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set dsnlib = ../lib/dsn/dsn_utils.o
+
+set usrdir = ../lib
+set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -fbounds-check -c actions.f
+f77 -fbounds-check -c extsources.f
+f77 -fbounds-check -c exttargets.f
+f77 -fbounds-check -c files.f
+f77 -fbounds-check -c getScenarioMod.f 
+f77 -fbounds-check -c getSpecies2Qual.f
+f77 -fbounds-check -c getSpecSpecies.f
+f77 -fbounds-check -c getspecflags.f
+f77 -fbounds-check -c global.f
+f77 -fbounds-check -c lspecact.f
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c network.f
+f77 -fbounds-check -c opseq.f
+f77 -fbounds-check -c pgen.f
+f77 -fbounds-check -c PQUALactions.f
+f77 -fbounds-check -c readcontrol1key.f
+f77 -fbounds-check -c readcontrol_Lmodules.f
+f77 -fbounds-check -c readvalues.f
+f77 -fbounds-check -c readrorgn.f
+f77 -fbounds-check -c readtables.f
+f77 -fbounds-check -c rmMissing.f
+f77 -fbounds-check -c uvnames.f
+f77 -fbounds-check -c uvquans.f
+f77 -fbounds-check -c writeapp.f
+f77 -fbounds-check -c writeatdep.f
+f77 -fbounds-check -c writeSpecActQual.f
+f77 -fbounds-check -c writetables.f
+
+f77 -fbounds-check -c main_writeapp_only.f
+f77 -fbounds-check -c lspecwrite.f
+f77 -fbounds-check -c actionwrite.f
+
+f77 -o ../../bin/lugINFEXP_MOUT.exe actions.o extsources.o exttargets.o files.o getScenarioMod.o getSpecies2Qual.o getSpecSpecies.o getspecflags.o global.o lspecact.o main.o network.o opseq.o pgen.o PQUALactions.o readcontrol1key.o readcontrol_Lmodules.o readvalues.o readtables.o rmMissing.o uvnames.o uvquans.o writeapp.o readrorgn.o writeatdep.o writeSpecActQual.o writetables.o $usrlib $dsnlib $lib1 $lib2 $lib3 
+set failed = $status; if( $failed == 1 ) exit 1
+
+#f77 -o ../../bin/write_actions_only.exe actionwrite.o extsources.o exttargets.o files.o getSpecies2Qual.o getScenarioMod.o getSpecSpecies.o getspecflags.o global.o lspecwrite.o main_writeapp_only.o network.o opseq.o pgen.o readcontrol1key.o readcontrol_Lmodules.o readvalues.o rmMissing.o uvnames.o uvquans.o writeapp.o writeatdep.o $usrlib $dsnlib $lib1 $lib2 $lib3 
+
+rm *.o

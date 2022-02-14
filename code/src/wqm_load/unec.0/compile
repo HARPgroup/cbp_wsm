@@ -1,0 +1,32 @@
+#!/bin/csh
+
+source ../../set_wdmlibdir
+set wdmlibdir = ../$wdmlibdir
+set wdmlib1 = $wdmlibdir/wdmlib.a
+set wdmlib2 = $wdmlibdir/adwdmlib.a
+set wdmlib3 = $wdmlibdir/utillib.a
+
+set usrdir = ../lib/
+#set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
+set usrlib2 = $usrdir/get_lib.a 
+set usrlib3 = $usrdir/util_lib.a
+set usrlib1 = $usrdir/ttyux.o
+set dsnlib = ../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c main.f
+
+f77 -o ../../../code/bin/unec_debug.exe main.o $usrlib1 $usrlib2 $usrlib3 $dsnlib $wdmlib1 $wdmlib2 $wdmlib3
+set failed = $status; if( $failed == 1 ) exit 1
+#f77 -o ./unec.exe main.o $usrlib1 $usrlib2 $usrlib3 $dsnlib $wdmlib1 $wdmlib2 $wdmlib3
+
+printf "\nUpdate / overwrite production version? [ Y/y for Yes ]: "
+set response = $<
+if ( $response == 'Y' || $response == 'y' ) then
+     cp -p ../../../code/bin/unec_debug.exe ../../../code/bin/unec.exe
+endif
+
+
+ls -al ../../../code/bin/unec_debug.exe
+ls -al ../../../code/bin/unec.exe
+
+rm *.o

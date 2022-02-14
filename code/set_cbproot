@@ -1,2 +1,0 @@
-#!/bin/bash
-source `find_config hspf.conf`

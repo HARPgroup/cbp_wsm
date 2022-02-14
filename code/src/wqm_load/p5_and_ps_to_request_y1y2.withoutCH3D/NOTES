@@ -1,0 +1,5 @@
+1. Copied from  p5_and_ps_to_request_CH3D_TempV2 [ which was developed for Flow (Q) & Temperature (T) ]
+
+
+2013 - March - 31
+  2. Added options to Run WQM input for "Request" with Option to run CH3D using doCH3D parameter

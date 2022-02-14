@@ -1,0 +1,3 @@
+cd /bluefish/archive/modeling/gb560/tmp/gbhatt-scratch/tempPP/
+echo P620151101WQbX1_Naomi N10001 for 1985 2014 | ../../../code/bin/Lhourly.exe 
+

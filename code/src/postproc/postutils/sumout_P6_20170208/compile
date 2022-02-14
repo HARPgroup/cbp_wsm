@@ -1,0 +1,41 @@
+#!/bin/csh
+
+f77 -fbounds-check -c main_aveann.f
+f77 -fbounds-check -c readDATaveann.f
+f77 -fbounds-check -c readEOaveann.f
+
+f77 -fbounds-check -c main_annual.f
+f77 -fbounds-check -c readDATannual.f
+f77 -fbounds-check -c readEOannual.f
+
+f77 -fbounds-check -c main_monthly.f
+f77 -fbounds-check -c readDATmonthly.f
+f77 -fbounds-check -c readEOmonthly.f
+
+f77 -fbounds-check -c loadinfosmall.f
+f77 -fbounds-check -c masslinksmall.f
+f77 -fbounds-check -c getDFmethod.f
+
+f77 -fbounds-check -c main_data_only_aveann.f
+f77 -fbounds-check -c main_pssep_only_aveann.f
+f77 -fbounds-check -c readPSSEPaveann.f
+
+f77 -fbounds-check -c main_otherDF_aveann.f
+
+f77 -fbounds-check -c main_copy_ps_loads.f
+f77 -fbounds-check -c main_copy_ps_loads_otherDF.f
+
+#f77 -o ../../../../bin/sumout_otherDF_aveann.exe main_otherDF_aveann.o loadinfosmall.o masslinksmall.o getDFmethod.o readDATaveann.o readEOaveann.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+#f77 -o ../../../../bin/sumout_aveann.exe main_aveann.o loadinfosmall.o masslinksmall.o getDFmethod.o readDATaveann.o readEOaveann.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+# f77 -o ../../../../bin/sumout_data_only_aveann.exe main_data_only_aveann.o loadinfosmall.o masslinksmall.o readDATaveann.o readEOaveann.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+# f77 -o ../../../../bin/sumout_pssep_only_aveann.exe main_pssep_only_aveann.o loadinfosmall.o masslinksmall.o readPSSEPaveann.o readEOaveann.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+# f77 -o ../../../../bin/sumout_monthly.exe main_monthly.o loadinfosmall.o masslinksmall.o getDFmethod.o readDATmonthly.o readEOmonthly.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+# f77 -o ../../../../bin/sumout_annual.exe main_annual.o loadinfosmall.o masslinksmall.o getDFmethod.o readDATannual.o readEOannual.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+# f77 -o ../../../../bin/copy_ps_loads.exe main_copy_ps_loads.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+# f77 -o ../../../../bin/copy_ps_loads_otherDF.exe main_copy_ps_loads_otherDF.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+
+f77 -o ../../../../bin/sumout_aveann_P6.exe main_aveann.o loadinfosmall.o masslinksmall.o getDFmethod.o readDATaveann.o readEOaveann.o ../../../lib/get_lib.a ../../../lib/util_lib.a ../../../lib/ttyux.o
+set failed = $status; if( $failed == 1 ) exit 1
+
+ rm *.o
+
