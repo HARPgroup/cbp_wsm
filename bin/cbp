@@ -32,12 +32,13 @@ found=0
 # BEGIN - find based method
 #try replacing do loop with this find command
 # returns only the first match
-for edir in bin run/standard run input/param/scripts; do
+for edir in bin run/standard run input/param/scripts config/control/calib/PWATER config/control/land config/control/river; do
   eroot="$CBP_ROOT/$edir"
   cd $eroot
   fpath=`find *|grep $cmd | head -n 1`
   # we extract this path in case their is a partial name match
   if [ "$fpath" != "" ]; then
+    echo "cd $eroot"
     p=`dirname $fpath`
     echo "searching $eroot/$p/$cmd"
     if test -f "$eroot/$p/$cmd"; then
