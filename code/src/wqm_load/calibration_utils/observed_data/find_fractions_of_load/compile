@@ -1,0 +1,5 @@
+f77 -c main.f
+
+f77 -o find_loads.exe main.o /model/p510/pp/src/lib/util_lib.a
+
+rm main.o

@@ -1,0 +1,12 @@
+#!/bin/csh
+
+set usrdir = ../../../src/lib
+
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -c main.f
+f77 -c read_flow.f
+
+f77 -o ../../../bin/add_flow_data.exe main.o read_flow.o $usrlib 
+
+rm *.o

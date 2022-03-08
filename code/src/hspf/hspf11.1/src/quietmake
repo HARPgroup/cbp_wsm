@@ -20,7 +20,7 @@ OptM   = -OM
 OptDbg = $(DbgF)
 Incl_1 = ../../lib3.2/src/aide
 Incls = -I$(Incl_1)
-FFLAGS = $(OptDbg) $(Incls) -std=legacy
+FFLAGS = $(OptDbg) $(Incls)
 
 # Compiler name
 F77 = f77

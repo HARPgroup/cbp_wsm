@@ -1,0 +1,29 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c getRvars.f
+f77 -fbounds-check -c getvars.f
+f77 -fbounds-check -c getwateracres.f
+f77 -fbounds-check -c loadinfo.f
+f77 -fbounds-check -c readcontrol_wdm.f
+f77 -fbounds-check -c writeDATannual.f
+f77 -fbounds-check -c writeDATaveann.f
+f77 -fbounds-check -c writeDATdaily.f
+f77 -fbounds-check -c writeDATmonthly.f
+
+f77 -fbounds-check -c main_pssep.f
+
+f77 -o ../../../bin/DAT.exe main.o getRvars.o getvars.o getwateracres.o loadinfo.o readcontrol_wdm.o writeDATannual.o writeDATaveann.o writeDATdaily.o writeDATmonthly.o $dsnlib $lib1 $lib2 $lib3 $usrlib
+f77 -o ../../../bin/PSSEP.exe main_pssep.o getRvars.o getvars.o getwateracres.o loadinfo.o readcontrol_wdm.o writeDATannual.o writeDATaveann.o writeDATdaily.o writeDATmonthly.o $dsnlib $lib1 $lib2 $lib3 $usrlib
+
+rm *.o
+

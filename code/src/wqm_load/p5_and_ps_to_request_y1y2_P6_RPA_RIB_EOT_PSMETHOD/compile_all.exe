@@ -1,0 +1,37 @@
+#!/bin/csh
+
+set IPWD = `pwd`
+
+cd ../wqmlib_P6
+rm time_period.inc
+ln -s time_period_0.inc time_period.inc
+cat time_period.inc
+cd $IPWD
+./compile.exe
+mv -v ../../../bin/TMP_p5_nps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe ../../../bin/p5_nps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe
+mv -v ../../../bin/TMP_p5_ps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe  ../../../bin/p5_ps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe
+mv -v ../../../bin/TMP_p5_sho_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe ../../../bin/p5_sho_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe
+
+
+set POST = "_8401"
+cd ../wqmlib_P6
+rm time_period.inc
+ln -s time_period${POST}.inc time_period.inc
+cat time_period.inc
+cd $IPWD
+./compile.exe
+mv -v ../../../bin/TMP_p5_nps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe ../../../bin/p5_nps_to_request_y1y2_P6_RPA_RIB_PSMETHOD${POST}.exe
+mv -v ../../../bin/TMP_p5_ps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe  ../../../bin/p5_ps_to_request_y1y2_P6_RPA_RIB_PSMETHOD${POST}.exe
+mv -v ../../../bin/TMP_p5_sho_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe ../../../bin/p5_sho_to_request_y1y2_P6_RPA_RIB_PSMETHOD${POST}.exe
+
+
+set POST = "_9514"
+cd ../wqmlib_P6
+rm time_period.inc
+ln -s time_period${POST}.inc time_period.inc
+cat time_period.inc
+cd $IPWD
+./compile.exe
+mv -v ../../../bin/TMP_p5_nps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe ../../../bin/p5_nps_to_request_y1y2_P6_RPA_RIB_PSMETHOD${POST}.exe
+mv -v ../../../bin/TMP_p5_ps_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe  ../../../bin/p5_ps_to_request_y1y2_P6_RPA_RIB_PSMETHOD${POST}.exe
+mv -v ../../../bin/TMP_p5_sho_to_request_y1y2_P6_RPA_RIB_PSMETHOD.exe ../../../bin/p5_sho_to_request_y1y2_P6_RPA_RIB_PSMETHOD${POST}.exe

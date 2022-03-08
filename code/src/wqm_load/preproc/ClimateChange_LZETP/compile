@@ -1,0 +1,6 @@
+#!/bin/csh
+
+c++ -o UpdateLZETP_GCM UpdateLZETP_GCM.cpp
+set failed = $status; if( $failed == 1 ) exit 1
+
+rm *.o

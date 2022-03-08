@@ -1,5 +1,5 @@
 #!/bin/csh
-set FC = $argv[1]
+
 source ../../../set_wdmlibdir
 set wdmlibdir = ../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -10,12 +10,12 @@ set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 set dsnlib = ../../lib/dsn/dsn_utils.o
 set wqmlib = ../wqmlib/wqmlib.a
 
-$FC -c main_nps.f
-$FC -c main_ps.f
-$FC -c getCellNrseg.f
+f77 -c main_nps.f
+f77 -c main_ps.f
+f77 -c getCellNrseg.f
 f77 -c getriverfactor.f
 
-$FC  -o ../../../bin/river_factor_scenario_ps_to_wqm57k.exe main_ps.o getriverfactor.o getCellNrseg.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
-$FC  -o ../../../bin/river_factor_scenario_nps_to_wqm57k.exe main_nps.o getriverfactor.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+f77  -o ../../../bin/river_factor_scenario_ps_to_wqm57k.exe main_ps.o getriverfactor.o getCellNrseg.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+f77  -o ../../../bin/river_factor_scenario_nps_to_wqm57k.exe main_nps.o getriverfactor.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
 
 rm *.o

@@ -1,0 +1,11 @@
+#!/bin/csh
+
+set usrdir = ../../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -c main.f
+
+f77 -o ../../../../bin/check_hydrograph_of_WQ_data.exe main.o $usrlib 
+
+rm *.o
+

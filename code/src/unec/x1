@@ -1,0 +1,238 @@
+44c44,45
+<       double precision   D_tMonApp, D_MonApp_Max, D_MonApp_Min
+---
+>       double precision   D_tMonApp
+>       double precision   D_MonApp_Max, D_MonApp_Min, D_MonApp_Amp
+47a49
+>       integer            I_nMonthsC,I_MonthsC1,I_MonthsC2
+204c206
+<          if ( luname(i).ne.'nch' ) cycle
+---
+>          if ( luname(i).ne.'gom' ) cycle
+772c774
+<             if ( luname(i).ne.'nch' ) cycle
+---
+>             if ( luname(i).ne.'gom' ) cycle
+847c849
+<          if ( luname(l).ne.'nch' ) cycle
+---
+>          if ( luname(l).ne.'gom' ) cycle
+1230,1233c1232,1236
+<                   D_tSURO = D_tSURO + F_hSURO(j)
+<                   D_tSEDM = D_tSEDM + F_hSEDM(j)
+<                   D_tIFWO = D_tIFWO + F_hIFWO(j)
+<                   D_tAGWO = D_tAGWO + F_hAGWO(j)
+---
+> c                  D_tSURO = D_tSURO + F_hSURO(j)
+> c                  D_tSEDM = D_tSEDM + F_hSEDM(j)
+> c                  D_tIFWO = D_tIFWO + F_hIFWO(j)
+> c                  D_tAGWO = D_tAGWO + F_hAGWO(j)
+> 
+1235a1239,1246
+> 
+>                if ( yy.ge.I_YearC1 .and. yy.le.I_YearC2 ) then
+>                   D_tSURO = D_tSURO + D_mSURO(m)
+>                   D_tSEDM = D_tSEDM + D_mSEDM(m)
+>                   D_tIFWO = D_tIFWO + D_mIFWO(m)
+>                   D_tAGWO = D_tAGWO + D_mAGWO(m)
+>                end if
+> 
+1240,1243c1251,1254
+<          D_tSURO = D_tSURO / (I_Year2-I_Year1+1)
+<          D_tSEDM = D_tSEDM / (I_Year2-I_Year1+1)
+<          D_tIFWO = D_tIFWO / (I_Year2-I_Year1+1)
+<          D_tAGWO = D_tAGWO / (I_Year2-I_Year1+1)
+---
+>          D_tSURO = D_tSURO / (I_YearC2-I_YearC1+1)
+>          D_tSEDM = D_tSEDM / (I_YearC2-I_YearC1+1)
+>          D_tIFWO = D_tIFWO / (I_YearC2-I_YearC1+1)
+>          D_tAGWO = D_tAGWO / (I_YearC2-I_YearC1+1)
+1251c1262,1266
+<          I_nMonths = (I_Year2 - I_Year1 + 1) * 12
+---
+>          I_nMonths  = (I_Year2 - I_Year1 + 1) * 12
+>          I_MonthsC1 = (I_YearC1 - I_Year1 ) * 12 + 1
+>          I_MonthsC2 = (I_YearC2 - I_Year1 + 1 ) * 12
+>          I_nMonthsC = ( I_MonthsC2 - I_MonthsC1 + 1 )
+>          print*,'I_nMonths',I_nMonths,I_MonthsC1,I_MonthsC2,I_nMonthsC
+1272a1288,1289
+>             D_TargetT = D_TargetS + D_TargetD + D_TargetI + D_TargetA
+> 
+1313c1330,1331
+<                              D_MonApp_Pve_Tot = D_MonApp_Pve_Tot
+---
+>                              if (yy.ge.I_YearC1 .and. yy.le.I_YearC2)
+>      .                          D_MonApp_Pve_Tot = D_MonApp_Pve_Tot
+1325c1343,1344
+<                              D_MonApp_Nve_Tot = D_MonApp_Nve_Tot
+---
+>                              if (yy.ge.I_YearC1 .and. yy.le.I_YearC2)
+>      .                         D_MonApp_Nve_Tot = D_MonApp_Nve_Tot
+1329c1348,1349
+<                           D_MonApp_Tot = D_MonApp_Tot + D_tMonApp
+---
+>                           if (yy.ge.I_YearC1 .and. yy.le.I_YearC2)
+>      .                      D_MonApp_Tot = D_MonApp_Tot + D_tMonApp
+1343c1363,1364
+<                              D_MonApp_Pve_Tot = D_MonApp_Pve_Tot
+---
+>                              if (yy.ge.I_YearC1 .and. yy.le.I_YearC2)
+>      .                         D_MonApp_Pve_Tot = D_MonApp_Pve_Tot
+1351c1372,1373
+<                              D_MonApp_Nve_Tot = D_MonApp_Nve_Tot
+---
+>                              if (yy.ge.I_YearC1 .and. yy.le.I_YearC2)
+>      .                         D_MonApp_Nve_Tot = D_MonApp_Nve_Tot
+1354c1376,1377
+<                            D_MonApp_Tot = D_MonApp_Tot + D_tMonApp
+---
+>                            if (yy.ge.I_YearC1 .and. yy.le.I_YearC2)
+>      .                       D_MonApp_Tot = D_MonApp_Tot + D_tMonApp
+1390,1391c1413,1416
+<               if (D_tMonApp.gt.D_MonApp_Max) D_MonApp_Max=D_tMonApp
+<               if (D_tMonApp.lt.D_MonApp_Min) D_MonApp_Min=D_tMonApp
+---
+>               if (yy.ge.I_YearC1 .and. yy.le.I_YearC2) then
+>                 if (D_tMonApp.gt.D_MonApp_Max) D_MonApp_Max=D_tMonApp
+>                 if (D_tMonApp.lt.D_MonApp_Min) D_MonApp_Min=D_tMonApp
+>               end if
+1393a1419
+>             D_MonApp_Amp = D_MonApp_Max - D_MonApp_Min
+1416,1418c1442,1444
+<      .         D_MonApp_Tot/(I_nMonths/12),
+<      .         D_MonApp_Pve_Tot/(I_nMonths/12),
+<      .         D_MonApp_Nve_Tot/(I_nMonths/12),
+---
+>      .         D_MonApp_Tot/(I_nMonthsC/12),
+>      .         D_MonApp_Pve_Tot/(I_nMonthsC/12),
+>      .         D_MonApp_Nve_Tot/(I_nMonthsC/12),
+1547c1573
+<             do yy = I_Year1,I_Year2
+---
+>             do yy = I_YearC1,I_YearC2
+1569c1595
+< c            do i = 1,I_nMonths
+---
+> c            do i = I_MonthsC1,I_MonthsC2
+1580a1607,1611
+>             s2FactorsAmp = s2FactorsMax - s2FactorsMin
+>             d2FactorsAmp = d2FactorsMax - d2FactorsMin
+>             i2FactorsAmp = i2FactorsMax - i2FactorsMin
+>             a2FactorsAmp = a2FactorsMax - a2FactorsMin
+> 
+1587c1618
+<      .           (D_MonApp_Max-D_MonApp_Min)
+---
+>      .           D_MonApp_Amp
+1589,1596c1620,1627
+<      .           (D_TargetS/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .           (D_MonApp_Max-D_MonApp_Min),
+<      .           (D_TargetD/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .           (D_MonApp_Max-D_MonApp_Min),
+<      .           (D_TargetI/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .           (D_MonApp_Max-D_MonApp_Min),
+<      .           (D_TargetA/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .           (D_MonApp_Max-D_MonApp_Min)
+---
+>      .           (D_TargetS/(D_TargetT))*
+>      .           (D_MonApp_Amp),
+>      .           (D_TargetD/(D_TargetT))*
+>      .           (D_MonApp_Amp),
+>      .           (D_TargetI/(D_TargetT))*
+>      .           (D_MonApp_Amp),
+>      .           (D_TargetA/(D_TargetT))*
+>      .           (D_MonApp_Amp)
+1598,1599c1629,1630
+<      .           (D_TargetD/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .           (D_MonApp_Max-D_MonApp_Min)/(d2FactorsMax-d2FactorsMin)
+---
+>      .           (D_TargetD/(D_TargetT))*
+>      .           (D_MonApp_Amp)/(d2FactorsAmp)
+1602,1603c1633,1634
+<      .           (D_TargetA/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .           (D_MonApp_Max-D_MonApp_Min)/(a2FactorsMax-a2FactorsMin)
+---
+>      .           (D_TargetA/(D_TargetT))*
+>      .           (D_MonApp_Amp)/(a2FactorsAmp)
+1611c1642
+<               if(s2FactorsMax .ne. s2FactorsMin)
+---
+>               if(s2FactorsAmp .ne. 0 )
+1613,1614c1644,1645
+<      .         (D_TargetS/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .         ((D_MonApp_Max-D_MonApp_Min)/(s2FactorsMax-s2FactorsMin))
+---
+>      .         (D_TargetS/(D_TargetT))*
+>      .         ((D_MonApp_Amp)/(s2FactorsAmp))
+1616c1647
+<               if(d2FactorsMax .ne. d2FactorsMin)
+---
+>               if(d2FactorsAmp .ne. 0 )
+1618,1619c1649,1650
+<      .         (D_TargetD/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .         ((D_MonApp_Max-D_MonApp_Min)/(d2FactorsMax-d2FactorsMin))
+---
+>      .         (D_TargetD/(D_TargetT))*
+>      .         ((D_MonApp_Amp)/(d2FactorsAmp))
+1621c1652
+<               if(i2FactorsMax .ne. i2FactorsMin)
+---
+>               if(i2FactorsAmp .ne. 0 )
+1623,1624c1654,1655
+<      .         (D_TargetI/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .         ((D_MonApp_Max-D_MonApp_Min)/(i2FactorsMax-i2FactorsMin))
+---
+>      .         (D_TargetI/(D_TargetT))*
+>      .         ((D_MonApp_Amp)/(i2FactorsAmp))
+1626c1657
+<               if(a2FactorsMax .ne. a2FactorsMin)
+---
+>               if(a2FactorsAmp .ne. 0 )
+1628,1629c1659,1660
+<      .         (D_TargetA/(D_TargetS+D_TargetD+D_TargetI+D_TargetA))*
+<      .         ((D_MonApp_Max-D_MonApp_Min)/(a2FactorsMax-a2FactorsMin))
+---
+>      .         (D_TargetA/(D_TargetT))*
+>      .         ((D_MonApp_Amp)/(a2FactorsAmp))
+2006,2022c2037,2055
+<             m = 1
+<             do yy = I_Year1,I_Year2
+<             !{
+<                do mm = 1,12
+<                !{
+<                   do dd=1,ndaysinmonth(yy,mm)
+<                   !{
+<                      if ( I_DEBUG0 .eq. 1 )
+<      .                print*,'S3: ',yy,mm,dd,s3Factors(m,dd),
+<      .                  d3Factors(m,dd),i3Factors(m,dd),a3Factors(m,dd)
+<                   !}
+<                   end do
+<                   m = m + 1
+<                !}
+<                end do
+<             !}
+<             end do
+---
+>             I_DEBUG1 = 0
+>             if ( I_DEBUG1 .eq. 1 ) then
+>               m = 1
+>               do yy = I_Year1,I_Year2
+>               !{
+>                  do mm = 1,12
+>                  !{
+>                     do dd=1,ndaysinmonth(yy,mm)
+>                     !{
+>                        print*,'S3: ',yy,mm,dd,s3Factors(m,dd),
+>      .                   d3Factors(m,dd),i3Factors(m,dd),a3Factors(m,dd)
+>                     !}
+>                     end do
+>                     m = m + 1
+>                  !}
+>                  end do
+>               !}
+>               end do
+>             end if
+2210c2243
+<                   if ( I_DEBUG0 .eq. 1 )
+---
+>                   if ( I_DEBUG1 .eq. 1 )

@@ -1,0 +1,15 @@
+#!/bin/csh
+
+source ../../../../../set_libdir
+set lib1 = $libdir/wdmlib.a
+set lib2 = $libdir/adwdmlib.a
+set lib3 = $libdir/utillib.a
+set usrdir = ../../../../lib/
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../../../lib/dsn/dsn_utils.o
+
+f77 -c main_flash10_from_uniform.f
+
+f77 -o ../../bin/flash10_from_uniform main_flash10_from_uniform.o $usrlib $dsnlib $lib1 $lib2 $lib3
+
+rm *.o

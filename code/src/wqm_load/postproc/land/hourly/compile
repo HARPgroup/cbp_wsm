@@ -1,0 +1,26 @@
+#!/bin/csh
+
+source ../../../../set_wdmlibdir
+set wdmlibdir = ../../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c lnddsn.f
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c main_prad.f
+f77 -fbounds-check -c main_met.f
+
+f77 -o ../../../../bin/Lhourly.exe lnddsn.o main.o $dsnlib $lib1 $lib2 $lib3 $usrlib 
+set failed = $status; if( $failed == 1 ) exit 1
+
+f77 -o ../../../../bin/Lhourly_prad.exe main_prad.o $dsnlib $lib1 $lib2 $lib3 $usrlib
+set failed = $status; if( $failed == 1 ) exit 1
+
+f77 -o ../../../../bin/Lhourly_met.exe main_met.o $dsnlib $lib1 $lib2 $lib3 $usrlib
+set failed = $status; if( $failed == 1 ) exit 1
+
+rm *.o

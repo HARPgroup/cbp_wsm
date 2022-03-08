@@ -121,6 +121,7 @@ Ctest      double precision acc(maxRvar)
       close(etmfil)
 
 ************* test data
+      print*,'LStest ',LStest,LandScen(1)
       if (LStest.ne.LandScen(1)) go to 997
       jday = julian(etmENDy,etmENDm,etmENDd,reqENDy,reqENDm,reqENDd)
       if (jday.gt.1) go to 9951

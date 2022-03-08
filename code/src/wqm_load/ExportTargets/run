@@ -1,0 +1,10 @@
+#!/bin/csh
+
+set InputFile = inputP
+
+set LANDUSE = 1985CALIBN040611
+set LANDUSE = 2002AnnV1N112514
+
+#echo watershed TOTN $LANDUSE | ./ExportTargets.exe > output
+
+echo watershed TOTP $LANDUSE $InputFile | ./ExportTargets.exe > outputP

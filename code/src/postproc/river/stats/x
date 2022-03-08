@@ -1,0 +1,37 @@
+orig
+  0.2074752, KS statistic
+ 5, number of bins
+ bin#, Simulated ave, Observed ave, Bias
+   1,  0.884734E-01,  0.421215E+00, -0.332741E+00
+   2,  0.534440E+00,  0.824960E+00, -0.290521E+00
+   3,  0.980547E+00,  0.107870E+01, -0.981529E-01
+   4,  0.148162E+01,  0.137483E+01,  0.106788E+00
+   5,  0.209403E+01,  0.207474E+01,  0.192876E-01
+ 1015, number of observations
+  0.860072434, efficiency
+
+
+NEW CODE OLD BIN
+  0.2074752, KS statistic
+ 5, number of bins
+ bin#, Simulated ave, Observed ave, Bias
+   1,  0.884734E-01,  0.421215E+00, -0.332741E+00
+   2,  0.534440E+00,  0.824960E+00, -0.290521E+00
+   3,  0.980547E+00,  0.107870E+01, -0.981529E-01
+   4,  0.148162E+01,  0.137483E+01,  0.106788E+00
+   5,  0.209403E+01,  0.207474E+01,  0.192876E-01
+ 1015, number of observations
+  0.860072434, efficiency
+
+
+NEW CODE NEW BIN
+  0.2074752, KS statistic
+ 5, number of bins
+ bin#, Simulated ave, Observed ave, Bias
+   1,  0.884734E-01,  0.421215E+00, -0.332741E+00
+   2,  0.534440E+00,  0.824960E+00, -0.290521E+00
+   3,  0.123108E+01,  0.122676E+01,  0.431788E-02
+   4,  0.198164E+01,  0.190755E+01,  0.740820E-01
+   5,  0.242900E+01,  0.257302E+01, -0.144022E+00
+ 1015, number of observations
+  0.925007105, efficiency

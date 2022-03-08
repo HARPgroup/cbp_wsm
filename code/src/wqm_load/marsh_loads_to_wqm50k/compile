@@ -1,10 +1,10 @@
 #!/bin/csh
-set FC = $argv[1]
+
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-$FC -c main.f
+f77 -c main.f
 
-$FC  -o ../../../bin/marsh_loads_to_wqm50k.exe main.o $usrlib
+f77  -o ../../../bin/marsh_loads_to_wqm50k.exe main.o $usrlib
 
 rm *.o

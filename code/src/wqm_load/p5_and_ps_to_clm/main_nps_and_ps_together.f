@@ -147,7 +147,6 @@
       call readcontrol_Rioscen(
      I                         rscen,lenrscen,
      O                         ioscen)
-      print*, 'ioscen: ', ioscen
       call readcontrol_Rgeoscen(
      I                          rscen,lenrscen,
      O                          geoscen)
@@ -199,7 +198,7 @@
 
 ********** END OF SETUP, OPEN AND READ LRSEG LINK FILE
       fnam = catdir//'geo/'//geoscen(:lengeoscen)//
-     .       '/request/p5_to_basins_clm_lrsegs_new.csv'
+     .       '/request/p5_to_basins_clm_lrsegs.csv'
       open(dfile-1,file=fnam,status='old',iostat=err)
       if (err.ne.0) go to 991
       print*,'reading ',fnam
@@ -335,7 +334,7 @@
         end if
 
 *********************** loop over cells in Lrseg
-        call readpair_mb(rscen,Tlseg,Trseg,
+        call readpair(rscen,Tlseg,Trseg,
      I                ioscen,lenioscen,
      I                year1,month1,day1,year2,month2,day2,
      I                nBvar,Bname,nRv2Bv,Rname2Bv,Rfactor,
@@ -366,7 +365,7 @@
           wdmfnam = ScenDatDir//'river/septic/'//
      .              sepscen(:lensepscen)//
      .              '/septic_'//Tlseg//'_to_'//Trseg//'.wdm'
-          call readdailydat_mb(
+          call readdailydat(
      I                      year1,month1,day1,year2,month2,day2,
      I                      nBvar,Bname,nRv2Bv,Rname2Bv,Rfactor,
      I                      wdmfnam,nRvar,Rname,Rdsn,
@@ -395,76 +394,9 @@
         if (dops.and.psmethod.eq.'lrseg') then
           write(*,'(" ps",$)')
           wdmfnam = ScenDatDir//'river/ps/'//
-     .              psscen(:lenpsscen)//'/wwtp_'//
+     .              psscen(:lenpsscen)//'/ps_'//
      .                Tlseg//'_to_'//Trseg//'.wdm'
-          print*,
-     .            'wdmfnam: ', wdmfnam
-     
-          call readdailydat_mb(
-     I                      year1,month1,day1,year2,month2,day2,
-     I                      nBvar,Bname,nRv2Bv,Rname2Bv,Rfactor,
-     I                      wdmfnam,nRvar,Rname,Rdsn,
-     I                      nPSvar,PSdsn,PSname,PSfac,
-     O                      pairwq)
-          do ncLR = 1,CellsPerLrseg(nlrseg)
-            nc = lrsegCellIndex(nlrseg,ncLR)
-            do nq = 1,nBvar  ! add to big storage variables
-              do ny = year1,year2
-                do nd = 1,ndaysinyear(ny)
-                  wq(nd,ny,nc,nq) = wq(nd,ny,nc,nq)
-     .                            + pairwq(nd,ny,nq)
-     .                            * lrsegWeight(nlrseg,ncLR)
-                  AnnualTotal(ny,nq) = AnnualTotal(ny,nq)
-     .                               + pairwq(nd,ny,nq)
-     .                               * lrsegWeight(nlrseg,ncLR)
-                  AnnualCell(ny,nc,nq) = AnnualCell(ny,nc,nq)
-     .                                 + pairwq(nd,ny,nq)
-     .                                 * lrsegWeight(nlrseg,ncLR)
-                end do
-              end do
-            end do
-          end do
-
-          write(*,'(" indus",$)')
-        wdmfnam = ScenDatDir//'river/ps/'//
-     .              psscen(:lenpsscen)//'/indus_'//
-     .                Tlseg//'_to_'//Trseg//'.wdm'
-          print*, 
-     .            'wdmfnam: ', wdmfnam
-     
-          call readdailydat_mb(
-     I                      year1,month1,day1,year2,month2,day2,
-     I                      nBvar,Bname,nRv2Bv,Rname2Bv,Rfactor,
-     I                      wdmfnam,nRvar,Rname,Rdsn,
-     I                      nPSvar,PSdsn,PSname,PSfac,
-     O                      pairwq)
-          do ncLR = 1,CellsPerLrseg(nlrseg)
-            nc = lrsegCellIndex(nlrseg,ncLR)
-            do nq = 1,nBvar  ! add to big storage variables
-              do ny = year1,year2
-                do nd = 1,ndaysinyear(ny)
-                  wq(nd,ny,nc,nq) = wq(nd,ny,nc,nq)
-     .                            + pairwq(nd,ny,nq)
-     .                            * lrsegWeight(nlrseg,ncLR)
-                  AnnualTotal(ny,nq) = AnnualTotal(ny,nq)
-     .                               + pairwq(nd,ny,nq)
-     .                               * lrsegWeight(nlrseg,ncLR)
-                  AnnualCell(ny,nc,nq) = AnnualCell(ny,nc,nq)
-     .                                 + pairwq(nd,ny,nq)
-     .                                 * lrsegWeight(nlrseg,ncLR)
-                end do
-              end do
-            end do
-          end do
-
-          write(*,'(" cso",$)')
-          wdmfnam = ScenDatDir//'river/ps/'//
-     .              psscen(:lenpsscen)//'/cso_'//
-     .                Tlseg//'_to_'//Trseg//'.wdm'
-          print*, 
-     .            'wdmfnam: ', wdmfnam
-     
-          call readdailydat_mb(
+          call readdailydat(
      I                      year1,month1,day1,year2,month2,day2,
      I                      nBvar,Bname,nRv2Bv,Rname2Bv,Rfactor,
      I                      wdmfnam,nRvar,Rname,Rdsn,
@@ -496,7 +428,7 @@
      .              pradscen(:lenpradscen)//
      .              '/prad_'//Tlseg//'.wdm'
 
-          call getwateracres_mb(
+          call getwateracres(
      I                       rscen,lenrscen,Trseg,Tlseg,
      I                       year1,month1,day1,
      I                       year2,month2,day2,

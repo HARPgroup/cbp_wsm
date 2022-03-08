@@ -1,5 +1,5 @@
 #!/bin/csh
-set FC = $argv[1]
+
 source ../../../set_wdmlibdir
 set wdmlibdir = ../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -10,10 +10,10 @@ set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 set dsnlib = ../../lib/dsn/dsn_utils.o
 set wqmlib = ../wqmlib/wqmlib.a
 
-$FC -c main_nps.f
-$FC -c main_ps.f
+f77 -c main_nps.f
+f77 -c main_ps.f
 
-$FC  -o ../../../bin/p5_ps_to_wqm57k.exe main_ps.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
-$FC  -o ../../../bin/p5_nps_to_wqm57k.exe main_nps.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+f77  -o ../../../bin/p5_ps_to_wqm57k.exe main_ps.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+f77  -o ../../../bin/p5_nps_to_wqm57k.exe main_nps.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
 
 rm *.o

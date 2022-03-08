@@ -35,7 +35,8 @@ Ctest      double precision acc(maxRvar)
       integer ny              ! year of infomation to get
 
 c      real pairwq(366,1990:2010,maxBvar)
-      real pairwq(366,1985:2005,maxBvar)
+c      real pairwq(366,1984:2000,maxBvar)
+      real pairwq(366,1995:2014,maxBvar)
  
       real dvaltemp(ndaymax,maxRvar)   ! hourly values to river
 

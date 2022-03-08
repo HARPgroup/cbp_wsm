@@ -1,0 +1,1 @@
+rm problem; echo A10001 PQ20140613_01c 1984 1996 1985 1996 | ../../../code/bin/eofc_debug.exe > output; ls -altr

@@ -3,21 +3,26 @@
 ***** the entire pre- and post-processors ( recompile necessary )     **
 ************************************************************************
 
-      integer maxL2R,ndaymax,nyearmax,EarliestYear,LatestYear
+      integer maxL2R,ndaymax,nyearmax
+      integer EarliestYear,LatestYear
+      integer EARLIESTYEARMAX,LATESTYEARMAX
 ********* commonly used parameters 
-      parameter (maxL2R=15) ! max number of land segs flowing to 1 reach
-      parameter (ndaymax = 20000) ! max number of days in simulation
+      parameter (maxL2R=75) ! max number of land segs flowing to 1 reach
+c      parameter (ndaymax = 11323) ! max number of days in simulation
+      parameter (ndaymax = 18993) ! max number of days in simulation
       parameter (EarliestYear=1984)  ! first year simulated
-      parameter (LatestYear=2100)    ! last year simulated
-      parameter (nyearmax=LatestYear-EarliestYear+1 )    ! max number of years
+      parameter (LatestYear=2020)    ! last year simulated
+      parameter (EARLIESTYEARMAX = 1984)  ! first year max
+      parameter (LATESTYEARMAX   = 2035)  ! last year max 
+      parameter (nyearmax=LATESTYEARMAX-EARLIESTYEARMAX+1 )    ! max number of years
 
       integer lenseg
       parameter (lenseg = 13)      ! length of the segment variables,
                                    !   need to change below also
 
 ********* commonly used variables
-      character*25 rscen,lscen     ! name of the current scenario
-      character*200 fnam      ! file name variable 
+      character*50 rscen,lscen     ! name of the current scenario
+      character*250 fnam      ! file name variable 
       character*100 line      ! variable to read one line
       character*1 c           ! single character reading variable
 

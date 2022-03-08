@@ -1,0 +1,206 @@
+
+      implicit none
+
+      include 'reservoir_type_II.inc'
+
+      character*4 load
+      character*4 loads(5)
+      data loads /'BODA','PHYT','TOTN','TOTP','TSSX'/
+      real        facQ,facN,facP,facS
+      real        factorL,factorR
+      real        factors(5)
+      real        before, after
+
+      integer     asdate(ndate),aedate(ndate)
+
+      integer     wdmfil
+      parameter   (wdmfil=12)           ! file number for wdm
+
+      logical     founddouble
+
+      character*1 resflag
+
+      integer     Nexits,idummy,timestep
+
+      integer     iRvar,iLoad,iCon,iVal
+
+      real        hvalL(ndaymax*24), hvalR(ndaymax*24)
+
+      read(*,*) rscen,rseg
+      call lencl(rscen,lenrscen)
+      call lencl(rseg,lenrseg)
+
+      call gettransport_res_eff(rscen,rseg,facQ,facN,facP,facS)
+      print*,facQ,facN,facP,facS
+      if ( facQ.eq.1 .and. facN.eq.1 .and. facP.eq.1 .and. facS.eq.1 )
+     .        return
+
+
+c      factor(1) = min(facTN,facTP)
+c      factor(2) = min(min(facTN,facTP),facSS)
+c      factor(3) = facTN
+c      factor(4) = facTP
+c      factor(5) = facSS
+
+      call readcontrol_Rparamscen(
+     I                            rscen,lenrscen,
+     O                            paramscen)
+      call lencl(paramscen,lenparamscen)
+      call getrflags(
+     I               paramscen,lenparamscen,rseg,
+     O               Nexits,idummy,resflag,timestep)
+
+
+      wdmfnam = dummyWDMname
+      call wdbopnlong(wdmfil+5,wdmfnam,0,err)
+
+
+      wdmfnam = rseg(:lenrseg)//'.wdm'
+      call wdbopnlong(wdmfil,wdmfnam,0,err)                           ! open main wdm read/write
+      if (err .ne. 0) go to 991
+
+
+      call WDMinfo(rscen,Nexits,nRvar,Rdsn,Rname)!POPULATE nRvar,Rdsn,Rname
+
+      call wtdate(wdmfil,1,Rdsn(1),2,asdate,aedate,err)
+
+      print*,nRvar
+      print*,Rdsn
+      print*,Rname
+      print*,asdate(1)
+      print*,aedate(1)
+
+
+      call loadinfo(rscen,lenrscen,nRvar,Rname,
+     .              nloads,loadname,unit,ncons,con,confactor)
+
+
+      do iLoad = 1,nloads
+c         call get_factor(loadname(iLoad),facQ,facN,facP,facS,
+c     .                                   factorL,factorR)
+         do iRvar = 1,nRvar
+            do iCon = 1,ncons(iLoad)
+              if ( Rname(iRvar) .eq. con(iLoad,iCon) ) then
+                call get_factor(loadname(iLoad),Rname(iRvar),
+     .                               facQ,facN,facP,facS,
+     .                                   factorL,factorR)
+c                dsnL = Rdsn(iRvar)
+c                print*,Rname(iRvar),'<->',con(iLoad,iCon),'<->',dsn
+c                call gethourdsn(wdmfil,asdate,aedate,dsn,nvals,hval)
+                before = 0
+                after  = 0
+                if ( confactor .gt. 0 ) then
+                  dsnL = Rdsn(iRvar)
+                  dsnR = Rdsn(iRvar)
+                else if
+                  dsnL = Rdsn(iRvar)
+                  dsnR = Rdsn(1)
+                end if
+                call gethourdsn(wdmfil,asdate,aedate,dsnL,nvals,hvalL)
+                call gethourdsn(wdmfil,asdate,aedate,dsnR,nvals,hvalR)
+                do iVal = 1,nvals
+                   if ( confactor .gt. 0 ) then
+                      before      = before + hval(iVal)
+                      hvalL(iVal) = hvalL(iVal) * factor
+                      after       = after  + hval(iVal)
+                   else if
+                   end if
+                end do
+                call puthourdsn(wdmfil,asdate,aedate,dsnL,nvals,hvalL)
+                print*,'Loads ',before,' x ',factor,' -> ',after
+              end if
+            end do
+          end do
+      end do
+
+      
+
+ 
+      call wdflcl(wdmfil,err)
+
+      stop
+
+991   report(1) = 'Problem with opening wdm for river segment '//rseg
+      report(2) = '  Error =    '
+      write(report(2)(11:13),'(i3)') err
+      report(3) = ' '
+      go to 999
+
+999   call stopreport(report)      
+
+      end
+
+
+
+
+
+
+
+
+
+
+
+      subroutine stopit(fnam,tabnam)
+      include '../lib/inc/standard.inc'
+      character*(*) tabnam
+
+      report(1) = 'Problem reading control file for table'
+      report(2) = fnam
+      report(3) = tabnam
+      call stopreport(report)
+
+      end
+
+
+
+
+      subroutine get_factor(loadL,loadR,facQ,facN,facP,facS,
+     .                                  factorL,factorR)
+
+      include '../lib/inc/standard.inc'
+
+      character*4   loadL, loadR
+      real          factorL,factorR
+
+      factorL = -9.9
+      factorR = -9.9
+
+      if (loadL .eq. 'TOTN') then
+         factorL = facN
+         factorR = facN
+      end if
+
+      if (loadL .eq. 'TOTP') then
+         factorL = facP
+         factorR = facP
+      end if
+
+      if (loadL .eq. 'TSED') then
+         factorL = facS
+         factorR = facS
+      end if
+
+      if (loadL .eq. 'BODA') then
+         factorR = min(facN,facP)
+         if (loadR .eq. 'RORN') factorL = facN-factorR
+         if (loadR .eq. 'RORP') factorL = facP-factorR
+      end if
+
+      if (loadL .eq. 'PHYT') then
+         factorR = min(min(facN,facP),facS)
+         if (loadR .eq. 'RORN') factorL = facN-factorR
+         if (loadR .eq. 'RORP') factorL = facP-factorR
+      end if
+
+      if (factorR .eq. -9.9) go to 900
+
+      print*,loadL,', ',loadR,' -> ',factorL,', ',factorR
+
+      return
+
+900   report(1) = 'load variable not defined in the function get_factor'
+      report(2) = 'load variable '//load
+      report(3) = ''
+      call stopreport(report)
+
+      end

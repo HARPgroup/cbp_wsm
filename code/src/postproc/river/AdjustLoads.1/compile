@@ -1,0 +1,21 @@
+#!/bin/csh
+
+source ../../../../set_wdmlibdir
+set wdmlibdir = ../../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+
+set usrdir = ../../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../../lib/dsn/dsn_utils.o
+
+set postlib = ../postriverlib.a
+
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c loadinfo.f
+
+f77 -o ../../../../bin/AdjustLoads.exe main.o loadinfo.o $postlib $dsnlib $lib1 $lib2 $lib3 $usrlib
+set failed = $status; if( $failed == 1 ) exit 1
+
+rm *.o

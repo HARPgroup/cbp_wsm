@@ -25,6 +25,8 @@
 ** outputs are in kg/day for the WQM                                  **
 ************************************************************************
       subroutine getatdep12(
+     I                      fCWNOX,fCWNHX,fLDNOX,fLDNHX,
+     I                      fLORGN,fLORGP,fLPO4X,
      I                      CMAQbase,lenCbase,
      I                      CbaseDir2,lenCb2,
      I                      CbaseSuperLong,lenCbLong,
@@ -79,6 +81,13 @@
       real annwetpo4(year1:year2)
       real annprecip(year1:year2)
 
+*********** monthly totals
+      real mondryno3(year1:year2,12),mondrynh3(year1:year2,12)
+      real monwetno3(year1:year2,12),monwetnh3(year1:year2,12)
+      real monwetorn(year1:year2,12),monwetorp(year1:year2,12)
+      real monwetpo4(year1:year2,12)
+      real monprecip(year1:year2,12)
+
 *********** aveann totals
       real totalwetno3,totaldryno3,totalwetnh3,totaldrynh3
       real totalwetorn,totalwetorp,totalwetpo4,totalprecip
@@ -91,9 +100,11 @@
 
 ********* variables to read the wet deposition file
       integer icell,hydcell
-      real Pnarr,Pusgs  ! precip in inches
-      real CNH3,DNH3narr,DNH3usgs  ! conc and load of NH3
-      real CNO3,DNO3narr,DNO3usgs  ! conc and load of NO3
+      real Pnldas,Pusgs  ! precip in inches
+      real cWNHX,WNHXnldas,WNHXusgs  ! conc and load of NH3
+      real cWNOX,WNOXnldas,WNOXusgs  ! conc and load of NO3
+
+      real DNHX,DNOX
 
       character*10 date
 
@@ -113,7 +124,7 @@
       real Tdryno3,Tdrynh3
 
 ********* dry dep storage
-      real mondryno3(12),mondrynh3(12)
+c      real mondryno3(12),mondrynh3(12)
      
 ********* year transformation 
       real slope
@@ -150,17 +161,20 @@
       do i = 1,5
         if (wetfnam(i:i).eq.' ') wetfnam(i:i) = '0'
       end do
-      wetfnam = tree//'input/unformatted/atdep/grimm/model/'
-     .       //'areastats/separate_wqm_cell_files/'//wetfnam
+c      wetfnam = tree//'input/unformatted/atdep/grimm/model/'
+c     .       //'areastats/separate_wqm_cell_files/'//wetfnam
+      wetfnam = tree//'input/unformatted/atdep/WQMDATA/'
+     .       //'AD20160919/WQMCELL_V3/WQMCELLID_'//wetfnam
       open(dfile,file=wetfnam,status='old',iostat=err)
       if (err.ne.0) go to 992
 
 ******************** get the wetfall data
+      read(dfile,*)dummy ! header line
       do 
-        read(dfile,*,end=111,err=998) icell,hydcell,dummy,date,
-     .                                  Pnarr,Pusgs,
-     .                                  CNH3,DNH3narr,DNH3usgs,
-     .                                  CNO3,DNO3narr,DNO3usgs
+        read(dfile,*,end=111,err=998) icell,hydcell,date,
+     .                                  Pnldas,
+     .                                  cWNHX,WNHXnldas,
+     .                                  cWNOX,WNOXnldas
         if (icell.ne.cell ) go to 993
         read(date(1:4),'(i4)') year
         read(date(5:6),'(i2)') month
@@ -168,12 +182,42 @@
         nd = julian(year1,month1,day1,
      .                year,month,day)
         if (nd.ge.1.and.nd.le.ndays) then
-          dailyrain(nd) = Pnarr  ! use NARR dataset as more complete
-          wetnh3load(nd) = DNH3narr * cellarea  ! in kg/day
-          wetno3load(nd) = DNO3narr * cellarea  ! in kg/day
+          dailyrain(nd) = Pnldas  ! use NARR dataset as more complete
+          wetnh3load(nd) = WNHXnldas * cellarea * fCWNHX(year) ! in kg/day
+          wetno3load(nd) = WNOXnldas * cellarea * fCWNOX(year) ! in kg/day
         end if
       end do
 111   close (dfile)
+
+************* open dry dep datafile
+      dryfnam = '00000.csv'
+      write(dryfnam(:5),'(i5)') cell
+      do i = 1,5
+        if (dryfnam(i:i).eq.' ') dryfnam(i:i) = '0'
+      end do
+      dryfnam = tree//'input/unformatted/atdep/WQMDATA/'
+     .       //'AD20160919/DRYDEP_20170731/WQMCELLID_'//dryfnam
+      open(dfile,file=dryfnam,status='old',iostat=err)
+      if (err.ne.0) go to 971
+
+******************** get the drydep data
+      read(dfile,*)dummy ! header line
+      do
+        read(dfile,*,end=222,err=998) icell,hydcell,date,
+     .                                  DNHX,DNOX
+        if (icell.ne.cell ) go to 993
+        read(date(1:4),'(i4)') year
+        read(date(5:6),'(i2)') month
+        read(date(7:8),'(i2)') day
+        nd = julian(year1,month1,day1,
+     .                year,month,day)
+        if (nd.ge.1.and.nd.le.ndays) then
+c          dailyrain(nd) = Pnldas  ! use NARR dataset as more complete
+          drynh3load(nd) = DNHX * cellarea * fLDNHX(year) ! in kg/day
+          dryno3load(nd) = DNOX * cellarea * fLDNOX(year) ! in kg/day
+        end if
+      end do
+222   close (dfile)
 
 *********** ORGANIC AND PO4 LOAD
 *************** multiply rain * conc
@@ -183,12 +227,18 @@
       do nd = 1,ndays
         if (month.ge.4.and.month.le.6) then
           wetornload(nd) = dailyrain(nd) * wetornspr * mih2kg * cellarea
+     .                        * fLORGN(year)
           wetorpload(nd) = dailyrain(nd) * wetorpspr * mih2kg * cellarea
+     .                        * fLORGP(year)
           wetpo4load(nd) = dailyrain(nd) * wetpo4spr * mih2kg * cellarea
+     .                        * fLPO4X(year)
         else
           wetornload(nd) = dailyrain(nd) * wetornroy * mih2kg * cellarea
+     .                        * fLORGN(year)
           wetorpload(nd) = dailyrain(nd) * wetorproy * mih2kg * cellarea
+     .                        * fLORGP(year)
           wetpo4load(nd) = dailyrain(nd) * wetpo4roy * mih2kg * cellarea
+     .                        * fLPO4X(year)
         end if
         call tomorrow(year,month,day)
       end do
@@ -202,6 +252,14 @@
         annwetorn(year) = 0.0
         annwetorp(year) = 0.0
         annwetpo4(year) = 0.0
+        do nm = 1,12
+          monprecip(year,nm) = 0.0
+          monwetno3(year,nm) = 0.0
+          monwetnh3(year,nm) = 0.0
+          monwetorn(year,nm) = 0.0
+          monwetorp(year,nm) = 0.0
+          monwetpo4(year,nm) = 0.0
+        end do
       end do
       do nm = 1,12
         monprecipav(nm) = 0.0
@@ -221,6 +279,12 @@
         annwetorn(year) = annwetorn(year) + wetornload(nd)
         annwetorp(year) = annwetorp(year) + wetorpload(nd)
         annwetpo4(year) = annwetpo4(year) + wetpo4load(nd)
+        monprecip(year,month) = monprecip(year,month) + dailyrain(nd)
+        monwetno3(year,month) = monwetno3(year,month) + wetno3load(nd)
+        monwetnh3(year,month) = monwetnh3(year,month) + wetnh3load(nd)
+        monwetorn(year,month) = monwetorn(year,month) + wetornload(nd)
+        monwetorp(year,month) = monwetorp(year,month) + wetorpload(nd)
+        monwetpo4(year,month) = monwetpo4(year,month) + wetpo4load(nd)
         monprecipav(month) = monprecipav(month) + dailyrain(nd)
         monwetno3av(month) = monwetno3av(month) + wetno3load(nd)
         monwetnh3av(month) = monwetnh3av(month) + wetnh3load(nd)
@@ -239,139 +303,15 @@
         monwetorpav(nm) = monwetorpav(nm) / real(year2-year1+1)
       end do
 
-**************** DRY DEPOSITION
-********* read linkage file
-      fnam = tree//'input/unformatted/atdep/CMAQ/'//
-     .      'cmaq12_to_wqm57.csv'
-      open(dfile,file=fnam,status='old',iostat=err)
-      if (err.ne.0) go to 970
-      ncells = 0
-      do 
-        read(dfile,*,err=978,end=222) icell,Tcell,Tfac
-        if (icell.eq.cell) then
-          ncells = ncells + 1
-          if (ncells.gt.maxcells) go to 977
-          Acell(ncells) = Tcell
-          cellfactor(ncells) = Tfac
-        end if
-      end do
-222   close(dfile)
-      
-      Tfac = 0         ! check that factors add up to 1
-      do nc = 1,ncells
-        Tfac = Tfac + cellfactor(nc)
-      end do
-      if (abs(Tfac-1.0) .gt. 0.001) go to 972
-
-************ read dry dep cells for this segment, units kg/ha
-      do nm = 1,12
-        mondryno3(nm) = 0.0
-        mondrynh3(nm) = 0.0
-      end do
-      do nc = 1,ncells
-        dryfnam = tree//'input/unformatted/atdep/CMAQ/'//
-     .            CMAQbase(:lenCbase)//'/'//
-     .            CbaseDir2(:lenCb2)//'/'//
-     .            CbaseSuperLong(:lenCbLong)//Acell(nc)//'.csv'
-        open(dfile,file=dryfnam,status='old',iostat=err)
-        if (err.ne.0) go to 971
-        read(dfile,*) dummy
-        denom = real(CMAQyear2-CMAQyear1+1)
-        do ny = CMAQyear1,CMAQyear2
-          do nm = 1,12
-            read(dfile,*,err=973,end=974) year,month,Tdryno3,Tdrynh3
-            if (ny.ne.year.or.nm.ne.month) go to 975
-            mondryno3(nm) = mondryno3(nm) 
-     .                    + Tdryno3*cellfactor(nc)/denom
-            mondrynh3(nm) = mondrynh3(nm) 
-     .                    + Tdrynh3*cellfactor(nc)/denom
-          end do
-        end do
-        close(dfile)
-      end do
-
-********* calculate time trend for dry deposition variables
-********  the assumption is that dry deposition trend is equal to the
-*******   wet deposition trend.  (reasonable per Robin Dennis, pc 2006)
-******** The true trend is not an explicit part of the wet deposition
-*******  regression model as it was in the 2003 version.  In the 2007
-******** version, the inputs change with time and the temporal trend
-*******  that is in the model should be interpreted as only the portion
-*******  of the trend not explained by other variables.
-*******  The method for calculating the trend for each lseg follows:
-*******    calculate annual precip-weighted average concentration as:
-*********    total dep / total precip            
-*********  regress precip-weighted concentration against time
-*********  assume that the CMAQ dry dep from 2001-2003 is the 2001 dep.
-********    2001-2003 are the met years, 2001 is the emmission scenario
-*********  use the slope to estimate dry deposition for all other years
-
-********** calculate wet deposition change per year
-********** by finding slope in fraction per year
-
-******** first populate year variable
-      nyears = year2 - year1 + 1
-      do year = 1,nyears
-        years(year) = real(year1 + year - 1)
-      end do
-
-********** nitrate first
-      do year = 1,nyears
-        annconc(year) = annwetno3(year1+year-1)/annprecip(year1+year-1)
-      end do
-      no3slope = slope(years,annconc,nyears,vsize,err) 
-
-********* convert slope to fraction change per year 
-      denom = 0.0  ! divide by average concentration over CMAQ period
-      do ny = CMAQyear1,CMAQyear2
-        denom = denom + annconc(ny-year1+1)
-      end do
-      denom = denom / real(CMAQyear2-CMAQyear1+1)
-
-      no3slope = no3slope / denom   !  fraction change per year
-
-
-********* repeat for ammonia
-      do year = 1,nyears
-        annconc(year) = annwetnh3(year1+year-1)/annprecip(year1+year-1)
-      end do
-      nh3slope = slope(years,annconc,nyears,vsize,err)
-
-********* convert slope to fraction change per year
-      denom = 0.0  ! divide by average concentration over CMAQ period
-      do ny = CMAQyear1,CMAQyear2
-        denom = denom + annconc(ny-year1+1)
-      end do
-      denom = denom / real(CMAQyear2-CMAQyear1+1)
-
-      nh3slope = nh3slope / denom   !  fraction change per year
-
-********* convert slope to fraction change per year based on 2001
-*******   to 2003 load, which matches with the dry information
-
-************* populate dry variables
-********** This algorithm has jumps between months and between years
-***** you could smooth this by finding the julian day for the time trend
-****** and calculating an interpolated monthly transition s.t. the 
-******** monthly averages are preserved.
-********** outputs in kg as native units of mondryno3 are kg/ha/month
-      year = year1
-      month = month1
-      day = day1
-      do nd = 1,ndays
-        dryno3load(nd) = mondryno3(month)/real(ndaysinmonth(year,month))
-     .                   * (1.0 + real(year-emissionyear)*no3slope)
-     .                   * cellarea
-        drynh3load(nd) = mondrynh3(month)/real(ndaysinmonth(year,month))
-     .                   * (1.0 + real(year-emissionyear)*nh3slope)
-     .                   * cellarea
-        call tomorrow(year,month,day)
-      end do
 
 ************** CALCULATE ANNUAL AND MONTHLY VALUES OF DRY LOADS
       do year = year1,year2
         anndryno3(year) = 0.0
         anndrynh3(year) = 0.0
+        do nm = 1,12
+           mondryno3(year,nm) = 0.0
+           mondrynh3(year,nm) = 0.0
+        end do
       end do
       do nm = 1,12
         mondryno3av(nm) = 0.0
@@ -383,6 +323,8 @@
       do nd = 1,ndays
         anndryno3(year) = anndryno3(year) + dryno3load(nd) 
         anndrynh3(year) = anndrynh3(year) + drynh3load(nd) 
+        mondryno3(year,month) = mondryno3(year,month) + dryno3load(nd)
+        mondrynh3(year,month) = mondrynh3(year,month) + drynh3load(nd)
         mondryno3av(month) = mondryno3av(month) + dryno3load(nd)
         mondrynh3av(month) = mondrynh3av(month) + drynh3load(nd)
         call tomorrow(year,month,day)
@@ -399,14 +341,25 @@
      .                        annwetno3(year),annwetnh3(year),
      .                        anndryno3(year),anndrynh3(year),
      .                        annwetorn(year),annwetpo4(year),
-     .                        annwetorp(year)
+     .                        annwetorp(year),
+     .                        cellarea
+        do nm = 1,12
+           write(sumfile+3,1236)cell,year,nm,monprecip(year,nm),
+     .                monwetno3(year,nm),monwetnh3(year,nm),
+     .                mondryno3(year,nm),mondrynh3(year,nm),
+     .                monwetorn(year,nm),monwetpo4(year,nm),
+     .                monwetorp(year,nm),
+     .                cellarea
+           !print*,year,month,mondryno3(year,nm),mondrynh3(year,nm)
+        end do
       end do
       do nm = 1,12
         write(sumfile+1,1234)cell,nm,monprecipav(nm),
      .                      monwetno3av(nm),monwetnh3av(nm),
      .                      mondryno3av(nm),mondrynh3av(nm),
      .                      monwetornav(nm),monwetpo4av(nm),
-     .                      monwetorpav(nm)
+     .                      monwetorpav(nm),
+     .                      cellarea
       end do
       totalwetno3 = 0.0
       totaldryno3 = 0.0
@@ -438,7 +391,8 @@
      .                          totalwetno3,totalwetnh3,
      .                          totaldryno3,totaldrynh3,
      .                          totalwetorn,totalwetpo4,
-     .                          totalwetorp
+     .                          totalwetorp,
+     .                          cellarea
 
 *************** store in wq variable
       do nB = 1,nBvar  ! initialize
@@ -465,8 +419,9 @@
 
       return
 
-1234  format(i6,',',i4,8(',',f9.4))
-1235  format(i6,8(',',f9.4))
+1234  format(i6,',',i4,9(',',f9.4))
+1235  format(i6,9(',',f9.4))
+1236  format(i6,',',i4,',',i2,9(',',f9.4))
 
 
 ********************************* ERROR SPACE **************************

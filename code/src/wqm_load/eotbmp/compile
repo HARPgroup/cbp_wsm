@@ -1,0 +1,22 @@
+#!/bin/csh
+
+set usrdir = ../lib/
+set usrlib = ( $usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a $usrdir/dsn/dsn_utils.o )
+
+source ../../set_wdmlibdir
+set wdmlibdir = ../$wdmlibdir
+set wdmlib = ( $wdmlibdir/wdmlib.a $wdmlibdir/adwdmlib.a $wdmlibdir/utillib.a )
+
+f77 -fbounds-check -c pourpoint.f
+f77 -fbounds-check -c findupstream.f
+f77 -fbounds-check -c annualeotloads.f
+f77 -fbounds-check -c ../postproc/river/WDMinfo.f
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c main_nonpour.f
+
+f77 -o ../../bin/eotbmp.exe main.o pourpoint.o findupstream.o annualeotloads.o WDMinfo.o $usrlib $wdmlib
+f77 -o ../../bin/eotbmp_nonpour.exe main_nonpour.o pourpoint.o findupstream.o annualeotloads.o WDMinfo.o $usrlib $wdmlib
+
+set failed = $status; if( $failed == 1 ) exit 1
+
+rm *.o

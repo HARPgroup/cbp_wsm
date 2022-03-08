@@ -1,0 +1,153 @@
+      implicit none
+
+      include '../../../lib/inc/standard.inc'
+      include '../../../lib/inc/locations.inc'
+      include '../../../lib/inc/wdm.inc'
+
+      integer     wdmfil
+      parameter   (wdmfil=21)
+
+      integer     I_year1,I_year2
+      integer     sdate(ndate),edate(ndate)
+      data        sdate /0,1,1,0,0,0/
+      data        edate /0,12,31,24,0,0/
+
+      integer     ival
+      real        F_AVG_Load
+
+      character*4 C_VAR
+      character*3 C_lu
+
+c      character*30 C30_ioscen
+c      integer      lenioscen
+
+      read(*,*) lscen,lseg,C_lu,I_year1,I_year2
+
+      call lencl(lscen,lenlscen)
+      call lencl(lseg, lenlseg)
+
+      wdmfnam = dummyWDMname
+      call wdbopnlong(wdmfil+5,wdmfnam,0,err)
+
+      wdmfnam = outwdmdir//'land/'//C_lu//'/'//
+     .         lscen(:lenlscen)//'/'//C_lu//lseg(:lenlseg)//'.wdm'
+      print*,'>',wdmfnam,'<'
+      call wdbopnlong(wdmfil,wdmfnam,0,err)
+      if (err.ne.0) go to 903
+
+      sdate(1) = I_year1
+      edate(1) = I_year2
+
+      call readcontrol_Lioscen(lscen,lenlscen,ioscen)
+      call lencl(ioscen,lenioscen)
+
+c      fnam = catdir//'iovars/'//'p600'//'/land_loads'
+      fnam = catdir//'iovars/'//ioscen(:lenioscen)//'/land_loads'
+      open (dfile,file=fnam,status='old',iostat=err)
+      if (err.ne.0) go to 901
+
+      fnam = outdir//'land/aveann/'//lscen(:lenlscen)//'/'//C_lu//'_'//
+     .       lseg(:lenlseg)//'.out'
+      print*,fnam
+      open (dfile+1,file=fnam,status='unknown',iostat=err)
+      if (err.ne.0) go to 901
+
+      write(dfile+1,'(A,A,A$)'),lseg(:lenlseg),',',C_lu
+      read(dfile,'(a4)',err=902) C_VAR
+      do while ( C_VAR(:1) .ne. ' ' )
+         call FlowDSN(ioscen,lenioscen,C_VAR,dsn)
+         print*,C_VAR,'->',dsn
+         print*,sdate(1),sdate(2),sdate(3),sdate(4),sdate(5),sdate(6)
+         print*,edate(1),edate(2),edate(3),edate(4),edate(5),edate(6)
+
+         call gethourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
+         print*,nvals
+
+         F_AVG_Load = 0
+         do ival = 1,nvals
+             F_AVG_Load = F_AVG_Load + hval(ival)
+         end do
+         F_AVG_Load = F_AVG_Load / ( I_Year2 - I_Year1 )
+         write(dfile+1,'(A,E10.5$)') ',',F_AVG_Load
+
+
+         read(dfile,'(a4)',err=902) C_VAR
+      end do
+      write(dfile+1,*),''
+
+      close(dfile)
+      close(dfile+1)
+
+
+      return
+
+901   report(1) = 'Problem opening file '//fnam
+      goto 999
+
+902   report(1) = 'Problem reading line '// fnam
+      goto 999
+
+903   report(1) = 'Problem opening file'//wdmfnam
+      goto 999
+
+999   call stopreport(report)
+
+      end
+
+
+      SUBROUTINE FlowDSN(ioscen,lenioscen,dsnstr,dsn)
+      !{
+         implicit none
+         include '../../../lib/inc/standard.inc'
+         include '../../../lib/inc/locations.inc'
+
+         character*200 filename
+c         integer       dfile
+c         parameter     (dfile=10)
+c         integer       err
+c         character*200 line
+
+         character*4   dsnstr
+         integer       dsn
+
+         logical       comment
+         external      comment
+
+c         filename = catdir//'iovars/'//'p600'//'/perlnd'
+         filename = catdir//'iovars/'//ioscen(:lenioscen)//'/perlnd'
+         open(dfile+2,file=filename,status='old',iostat=err)
+         if (err.ne.0) go to 991
+
+         do
+         !{
+            read(dfile+2,'(a100)',err=992,end=310) line
+            call d2x(line,last)
+            if (comment(line)) cycle
+            if (line(:20).eq.'                    ') cycle
+c            print*,line(26:29),'<>',C4_tStr
+            if (line(26:29).eq.dsnstr) then
+            !{
+               read(line(:3),*) dsn
+               go to 310
+            !}
+            end if
+         !}
+         end do
+310      close (dfile+2)
+
+         return
+
+991      report(1) = 'Error 991b Problem opening file:'
+         report(2) = fnam
+         write(report(3),*)'iostat error = ',err
+         go to 999
+
+992      report(1) = 'Error 992c Problem reading file: near line:'
+         report(2) = fnam
+         report(3) = line
+         go to 999
+
+999   call stopreport(report)
+
+      !}
+      END
