@@ -1,13 +1,12 @@
 #!/bin/csh
-
+  set FC = $argv[1]
   set usrdir = ../../../lib
   set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-  f77 -fbounds-check -c main.f
-  f77 -fbounds-check -c readcontrol_vartypes.f
+  $FC -fbounds-check -c main.f
+  $FC -fbounds-check -c readcontrol_vartypes.f
 
-  f77 -o ../../../../bin/sumplt.exe main.o readcontrol_vartypes.o $usrlib
-  set failed = $status; if( $failed == 1 ) exit 1
+  $FC -o ../../../../bin/sumplt.exe main.o readcontrol_vartypes.o $usrlib
 
   rm *.o
 

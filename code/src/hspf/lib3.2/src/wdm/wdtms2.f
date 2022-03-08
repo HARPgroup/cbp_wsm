@@ -1033,6 +1033,26 @@ C
 C
 C
 C
+      SUBROUTINE   idate2str
+     I                   (indate,
+     O                    outdate)
+C this outputs an array date for debugging
+      INTEGER   indate(6)
+      CHARACTER*8   syear, smon, sday, shrs, smin, ssec
+      CHARACTER*24 outdate
+      write(syear,*) indate(1)
+      write(smon,*) indate(2)
+      write(sday,*) indate(3)
+C      write(shrs,*) indate(4)
+C      write(smin,*) indate(5)
+C      write(ssec,*) indate(6)
+
+C ** This prints out garbage when shrs, smin and ssec are included, maybe line length?
+C      outdate = syear // "/" // smon // "/" // sday // " "// shrs // ":" // smin // "":" ssec
+      outdate = syear // "/" // smon // "/" // sday 
+      RETURN
+      END
+
       SUBROUTINE   WTDATE
      I                   (WDMFL, DSNCNT, DSN, CMMXFG,
      O                    SDATE, EDATE, ERRCOD)
@@ -1073,7 +1093,7 @@ C
       CALL ZIPI (L3, L0, SD(4,1))
       CALL ZIPI (L3, L0, ED(4,1))
       SD(1,1) = 1000
-      ED(1,1) = 2035 ! BHATT CHANGED TO 2015 FROM 2010
+      ED(1,1) = 2035 ! BHATT CHANGED TO 2035 FROM 2010
       SD(2,1) = 1
       SD(3,1) = 1
       ED(2,1) = 12

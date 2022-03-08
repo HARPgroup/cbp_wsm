@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 source ../../set_wdmlibdir
 set wdmlibdir = ../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -10,13 +10,12 @@ set dsnlib = ../lib/dsn/dsn_utils.o
 set usrdir = ../lib
 set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c readloads.f
-f77 -fbounds-check -c readcontrolkey.f
-f77 -fbounds-check -c readspeclu.f
-f77 -fbounds-check -c rmMissingloads.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c readloads.f
+$FC -fbounds-check -c readcontrolkey.f
+$FC -fbounds-check -c readspeclu.f
+$FC -fbounds-check -c rmMissingloads.f
 
-f77 -o ../../bin/create_land_wdm_from_loads.exe main.o readloads.o readcontrolkey.o readspeclu.o rmMissingloads.o $usrlib $dsnlib $lib1 $lib2 $lib3 
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../bin/create_land_wdm_from_loads.exe main.o readloads.o readcontrolkey.o readspeclu.o rmMissingloads.o $usrlib $dsnlib $lib1 $lib2 $lib3 
 
 rm *.o

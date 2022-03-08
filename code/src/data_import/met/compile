@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 source ../../../set_wdmlibdir
 set wdmlibdir = ../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -10,23 +10,16 @@ set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 set dsnlib = ../../lib/dsn/dsn_utils.o
 
 
-f77 -fbounds-check -c getmetreg.f
-f77 -fbounds-check -c main_84_05.f
-f77 -fbounds-check -c fixmiss.f
-f77 -fbounds-check -c main_janstorm.f
-f77 -fbounds-check -c main_add_xyz_PET_and_temp.f
-f77 -fbounds-check -c main_summarize_temp_for_uptake_curve.f
+$FC -fbounds-check -c getmetreg.f
+$FC -fbounds-check -c main_84_05.f
+$FC -fbounds-check -c fixmiss.f
+$FC -fbounds-check -c main_janstorm.f
+$FC -fbounds-check -c main_add_xyz_PET_and_temp.f
+$FC -fbounds-check -c main_summarize_temp_for_uptake_curve.f
 
-f77 -o ../../../bin/met_84_05 main_84_05.o getmetreg.o fixmiss.o $usrlib $dsnlib $lib1 $lib2 $lib3
-set failed = $status; if( $failed == 1 ) exit 1
-
-f77 -o ../../../bin/modify_jan96_storm_temperature main_janstorm.o getmetreg.o fixmiss.o $usrlib $dsnlib $lib1 $lib2 $lib3
-set failed = $status; if( $failed == 1 ) exit 1
-
-f77 -o ../../../bin/add_xyz_PET_and_temp main_add_xyz_PET_and_temp.o $usrlib $dsnlib $lib1 $lib2 $lib3
-set failed = $status; if( $failed == 1 ) exit 1
-
-f77 -o ../../../bin/main_summarize_temp_for_uptake_curve main_summarize_temp_for_uptake_curve.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../bin/met_84_05 main_84_05.o getmetreg.o fixmiss.o $usrlib $dsnlib $lib1 $lib2 $lib3
+$FC -o ../../../bin/modify_jan96_storm_temperature main_janstorm.o getmetreg.o fixmiss.o $usrlib $dsnlib $lib1 $lib2 $lib3
+$FC -o ../../../bin/add_xyz_PET_and_temp main_add_xyz_PET_and_temp.o $usrlib $dsnlib $lib1 $lib2 $lib3
+$FC -o ../../../bin/main_summarize_temp_for_uptake_curve main_summarize_temp_for_uptake_curve.o $usrlib
 
 rm *.o

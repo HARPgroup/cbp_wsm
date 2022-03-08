@@ -47,7 +47,6 @@
         if (.not.comment(templine).and.templine(:3).ne.'   ') then
           line(12:17) = templine(14:19)  ! group
           line(19:28) = templine(21:30) ! member
-          line(31:34) = templine(31:34) ! BHATT
           read(templine(8:10),'(i3)')dsn ! dsn
           write(line(51:53),'(i3)') dsn
           line(55:58) = templine(35:38) ! name

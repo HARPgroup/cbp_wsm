@@ -4,7 +4,7 @@
       include 'septic.inc'
 
       integer maxBreaks,nbreaks
-      parameter (maxBreaks=53)
+      parameter (maxBreaks=30)
 
       real septic(maxBreaks)  ! septic break points 
       integer BJday(maxBreaks) ! julian day of the breaks from start
@@ -33,9 +33,9 @@
       character*50 dfnam,sepscen   ! base data file and septic scenario
       integer lendfnam,lensepscen
 
-c      integer maxnlrsegs,nlrsegs,nlr  ! number of lrsegs
-c      parameter (maxnlrsegs = 3000) 
-c      character*19 lrsegs(maxnlrsegs)
+      integer maxnlrsegs,nlrsegs,nlr  ! number of lrsegs
+      parameter (maxnlrsegs = 3000) 
+      character*19 lrsegs(maxnlrsegs)
 
       integer lowyear,highyear
       parameter (lowyear = 1981, highyear = lowyear + maxBreaks)
@@ -44,10 +44,9 @@ c      character*19 lrsegs(maxnlrsegs)
       logical found
 
 **************** END DECLARATIONS **************************************
-      read*,sdate(1),edate(1),dfnam,sepscen,s2rfnam
+      read*,sdate(1),edate(1),dfnam,sepscen
       call lencl(dfnam,lendfnam)
       call lencl(sepscen,lensepscen)
-      call lencl(sep,lensep)
 
 ******** housekeeping
       do nlr = 1,maxnlrsegs
@@ -62,7 +61,7 @@ c      character*19 lrsegs(maxnlrsegs)
 
       ndays = julian(sdate(1),1,1,edate(1),12,31)
       if (ndays.gt.ndaymax) go to 994
-c      dsn = 3010     ! dsn for septic nitrate
+      dsn = 3010     ! dsn for septic nitrate
 
 ************ read data file
       fnam = tree//'input/unformatted/septic/'//dfnam(:lendfnam)
@@ -98,38 +97,12 @@ c      dsn = 3010     ! dsn for septic nitrate
 
 111   close(dfile)
 
-
-
-      !! >> READ S2R FACTORS
-      nconx     = 1
-      C_conx(1) = 'no3n'
-      call read_s2r(s2rfnam,lrsegs,C_conx,nlrsegs,nconx,s2rfac)
-
-      fnam = ScenDatDir//'river/septic/'//sepscen(:lensepscen)//
-     .            '/'//sep(:lensep)//'_lrsegs_ann.csv'
-      open (dfile,file=fnam,status='unknown',iostat=err)
-      if (err.ne.0) go to 991
-
-      !! >> APPLY S2R FACTORS
-      do nlr = 1,nlrsegs
-         print*,'S2R APPLY ', lrsegs(nlr),s2rfac(nlr,1)
-         do year = sdate(1),edate(1)
-            Tseptic = annseptic(year,nlr)
-            annseptic(year,nlr) = annseptic(year,nlr) * s2rfac(nlr,1)
-            write(dfile,*)lrsegs(nlr)(:6),',',lrsegs(nlr)(7:19),',',
-     .       year,',',Tseptic,',',annseptic(year,nlr)
-         end do
-      end do
-      close(dfile)
-
-
-
 *********** got all data, now loop over nlrsegs found
 ************ copy blank file, open file, create breaks, and interpolate
       do nlr = 1,nlrsegs
 
         wdmfnam = ScenDatDir//'river/septic/'//sepscen(:lensepscen)//
-     .            '/'//sep(:lensep)//'_'//lrsegs(nlr)(:6)//'_to_'//
+     .            '/septic_'//lrsegs(nlr)(:6)//'_to_'//
      .            lrsegs(nlr)(7:19)//'.wdm'
         command = 'cp '//tree//'config/blank_wdm/blank_septic.wdm '//
      .            wdmfnam
@@ -185,7 +158,7 @@ C            if (daily(j).lt. -0.1) go to 996
 
 ************** write to wdm
         print*,'writing ',j,' values to ',wdmfnam
-        call putdailydsn(wdmfil,sdate,edate,sepdsn,j,daily)
+        call putdailydsn(wdmfil,sdate,edate,dsn,j,daily)
         call wdflcl(wdmfil,err)   ! close wdm file
         if (err.ne.0) go to 995
 

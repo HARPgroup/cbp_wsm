@@ -2,7 +2,7 @@
 ** variables that are used in special actions portion only            **
 ************************************************************************
       integer maxTimeBreaks   ! break points for time-varying special actions
-      parameter (maxTimeBreaks = 35)
+      parameter (maxTimeBreaks = 30)
 
       integer flaglength
       parameter (flaglength=10)

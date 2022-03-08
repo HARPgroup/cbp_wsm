@@ -1,11 +1,10 @@
 #!/bin/csh
-
-f77 -fbounds-check -fPIE -c checkflow.f
-f77 -fbounds-check -c WDMinfo.f
-f77 -fbounds-check -c WDMinfoIN.f
+set FC = $argv[1]
+$FC -fbounds-check -c checkflow.f
+$FC -fbounds-check -c WDMinfo.f
+$FC -fbounds-check -c WDMinfoIN.f
 
 ar rv postriverlib.a checkflow.o WDMinfo.o WDMinfoIN.o
-set failed = $status; if( $failed == 1 ) exit 1
 
 rm *.o
 

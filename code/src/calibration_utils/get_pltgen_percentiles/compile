@@ -1,9 +1,9 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c main.f
+$FC -c main.f
 
-f77 -o ../../../bin/readtau.exe main.o $usrlib 
+$FC -o ../../../bin/readtau.exe main.o $usrlib 
 

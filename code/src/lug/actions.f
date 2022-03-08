@@ -60,14 +60,11 @@
       call readcontrol1key(lscen,lenlscen,keyword,
      O                       nB,Jday,Byear,Bmonth,Bday,LCVfile)
        
-C      print*,"nB = ",nB
       call readlucv(lseg,lenlseg,clu,nB,LCVfile,pctcov)
 
-C      print*,"before rmMissingMonthly ", nB
       call rmMissingMonthly(maxTimeBreaks,lseg,clu,year1,year2,
      M                      nB,Jday,Byear,Bmonth,Bday,pctcov)
 
-C      print*,"after rmMissingMonthly ", nB
       if (nB.lt.2) then  ! try to go for defaults
         keyword = 'DEFAULT CROPDATA'
         call readcontrol1key(lscen,lenlscen,keyword,

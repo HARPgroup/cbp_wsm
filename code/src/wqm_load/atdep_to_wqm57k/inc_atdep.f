@@ -38,10 +38,3 @@
       integer lenCbase, lenCscen, lenCb2, lenCs2, lenCbLong, lenCsLong
 
 
-      real fCWNOX(year1:year2)
-      real fCWNHX(year1:year2)
-      real fLDNOX(year1:year2)
-      real fLDNHX(year1:year2)
-      real fLORGN(year1:year2)
-      real fLORGP(year1:year2)
-      real fLPO4X(year1:year2)

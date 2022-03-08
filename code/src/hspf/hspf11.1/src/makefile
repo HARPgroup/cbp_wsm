@@ -15,12 +15,12 @@
 #   OM - optimization
 # (NOTE: set OpgDbg to: OptM to generate optimized code
 #                       DbgF to generate debug code)
-DbgF   = -fbounds-check
+DbgF   = -g
 OptM   = -OM
-OptDbg = $(DbgF)
+OptDbg = $(OptM)
 Incl_1 = ../../lib3.2/src/aide
 Incls = -I$(Incl_1)
-FFLAGS = $(OptDbg) $(Incls)
+FFLAGS = -C -u $(OptDbg) $(Incls) -std=legacy
 
 # Compiler name
 F77 = f77
@@ -32,8 +32,8 @@ SHELL = /bin/sh
 #***** You should not need to modify anything below this line. *****
 #*******************************************************************
 
-program  = hspf_quiet
-Objects  = hspfbat.o hspsta_quiet.o
+program  = hspf_ICPRB
+Objects  = hspfbat.o hspsta.o
 Share    = pmesfl.inc
 
 #LibDir   = ../../lib3.0/lib
@@ -43,8 +43,8 @@ Share    = pmesfl.inc
 #           $(LibDir)/heclib.a
 
 LibDir   = ../../lib3.2/lib
-Libs     = $(LibDir)/ghspflib.a  $(LibDir)/hspnodsslib.a \
-           $(LibDir)/ghspflib.a  $(LibDir)/wdmlib.a    \
+Libs     = $(LibDir)/ICPRBhspflib.a  $(LibDir)/hspnodsslib.a \
+           $(LibDir)/ICPRBhspflib.a  $(LibDir)/wdmlib.a    \
            $(LibDir)/adwdmlib.a  $(LibDir)/utillib.a       
 #adwdmlib.a  aidelib.a  annlib.a  awstatlib.a  graphlib.a  hspflib.a  hspnodsslib.a  newaqtlib.a  statslib.a  utillib.a  waidelib.a  wdmlib.a
 

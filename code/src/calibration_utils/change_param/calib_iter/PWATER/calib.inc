@@ -12,12 +12,12 @@
       integer lencalscen      ! calibration run
 
       integer numlu,nl  ! number of land uses to act on
-      parameter (numlu=29)
+      parameter (numlu=25)
       integer lus(numlu) ! index of land uses to act on
 
-      data lus /laop,lsoy,lgwm,lgom,llhy,lswm,lsom,lsgg,ldbl,lsch,
-     .          lscl,loac,lohy,lpas,lnch,lntg,lmch,lmtg,lmcn,lcch,
-     .          lctg,lccn,lcmo,lcfr,lhfr,lfor,lwfp,lwto,losp/
+      data lus /lfor,lhvf,lhwm,llwm,lhom,lalf,lhyw,lhyo,lpas,
+     .          ltrp,lurs,lnhi,lnlo,lnho,lnal,lnhy,lnpa,lrpd,
+     .          lnpd,lcpd,lrcn,lccn,lrex,lnex,lcex/
 
 ************** uncalibrated land seg liked to surrogate
 ******************** calibrated land segments
@@ -49,7 +49,7 @@
      .     INFILT(nlu),AGWETP(nlu),KVARY(nlu),UZSN
 
 ************************* Variables To Contain Parameter Factors
-      real lufacLZSN(nlu)  ! factor relativer to gom
+      real lufacLZSN(nlu)  ! factor relativer to hom
       real lufacINFILT(nlu)
       real lufacIRC(nlu)
       real lufacAGWR(nlu)

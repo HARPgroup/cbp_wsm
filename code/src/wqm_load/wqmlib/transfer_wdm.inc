@@ -6,7 +6,7 @@
       include '../../lib/inc/masslinks.inc'
       include '../../lib/inc/rsegs.inc'
 
-      character*50 LandScen(nlu)        ! scenario for land wdms
+      character*25 LandScen(nlu)        ! scenario for land wdms
       integer lenls
 
 *********** definition of bay variables

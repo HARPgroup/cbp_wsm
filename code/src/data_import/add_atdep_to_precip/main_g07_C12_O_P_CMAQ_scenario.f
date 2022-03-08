@@ -42,9 +42,8 @@
       integer lenCMAQ
 
 *********** time variables
-C      integer minyear,maxyear,
-      integer vsize,nyears
-C      parameter (minyear=1980,maxyear = 2010)
+      integer minyear,maxyear,vsize,nyears
+      parameter (minyear=1980,maxyear = 2010)
       parameter (vsize = maxyear-minyear+1)
       real years(vsize)
       real annconc(vsize)
@@ -337,7 +336,6 @@ C      edate(1) = 2003
      .            CMAQscen(:lenCMAQ)//'/'//
      .            dir2scen(:lendir2)//'/'//
      .            longnamescen(:lenlongname)//cell(nc)//'.csv'
-        write(*,*) dryfnam
         open(dfile,file=dryfnam,status='old',iostat=err)
         if (err.ne.0) go to 976
         read(dfile,*) dummy

@@ -33,9 +33,6 @@
 
       real value
       character*1 qflag
-
-      integer NMINOBS
-      parameter ( NMINOBS = 5 )
 *********** END DECLARATIONS ******************************************
 
       print*,' determining the calibration sites'
@@ -82,8 +79,7 @@
           end do
 333       close(dfile)           ! close observed load file
 
-c          if (npoints.ge.24) then
-          if (npoints.ge.NMINOBS) then
+          if (npoints.ge.24) then
             ncsegs = ncsegs + 1
             csegs(ncsegs) = tseg
           end if

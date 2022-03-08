@@ -11,7 +11,7 @@
       include '../../../lib/inc/standard.inc'
       include '../../../lib/inc/locations.inc'
 
-c      character*(*) type  ! eos,eof,del
+      character*3 type  ! eos,eof,del
       character*(*) lu   ! land use name
       integer nloads
       character*4 loadname(nloads)

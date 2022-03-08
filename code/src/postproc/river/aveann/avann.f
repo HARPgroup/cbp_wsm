@@ -58,7 +58,6 @@
       if (err .ne. 0) go to 991
       
       call wtdate(wdmfil,1,Rdsn(1),2,asdate,aedate,err) ! tests date
-      print*,"bhatt here"
 
       if (err .ne. 0) go to 992
 
@@ -145,7 +144,7 @@
 
 1233  format(a11, 4x,a4,2e13.5,2f13.3)
 1234  format( a4,11x,a4, e13.5)
-1235  format(2(a4,2x),e17.8)
+1235  format(2(a4,2x),e14.5)
 
 ************************ error reporting
 951   report(1) = 'error writing to file'

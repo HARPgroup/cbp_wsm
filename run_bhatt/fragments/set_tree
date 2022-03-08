@@ -1,3 +1,0 @@
-#### all scripts are run in ./tmp/scratch/temp$$
-#### tree gets them back to the application root
-set tree = "../../.."

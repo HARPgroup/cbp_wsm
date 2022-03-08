@@ -219,7 +219,7 @@
       include '../inc/locations.inc'
       include '../inc/land_use.inc'
 
-      character*50 LandScen(nlu)                ! scenario for land wdms
+      character*25 LandScen(nlu)                ! scenario for land wdms
       integer lenls
 
       character*3 clu                            ! character land use
@@ -259,13 +259,13 @@
                 do l = 1,nlu
                   if (foundLU(l)) go to 993
                   foundLU(l) = .true.
-                  LandScen(l) = line(5:55)
+                  LandScen(l) = line(5:29)
                 end do
               end if
               do l = 1,nlu
                 if (clu.eq.luname(l)) then
                   foundLU(l) = .true.
-                  LandScen(l) = line(5:55)
+                  LandScen(l) = line(5:29)
                 end if
               end do
             end if
@@ -989,21 +989,21 @@
 
 
 
+
 ************************************************************************
-** reads the control file for this scenario into memory               **
-**   finds:  UNEC Parameter Folder for land scenario                  **
+** gbhatt added on 04/25/2013                                         **
+** reads the LAND control file for this scenario into memory          **
+**   finds:  HYDROBASE for a land scenario                            **
 ************************************************************************
-      subroutine readcontrol_Lunec(
-     I                                  lscen,lenlscen,
-     O                                  unecparam)
+      subroutine readcontrol_LHYDROBASE(
+     I                                lscen,lenlscen,
+     O                                HYDROBASE)
       implicit none
       include '../inc/standard.inc'
       include '../inc/locations.inc'
+      logical comment
 
-      logical comment,found
-      external comment
-
-      integer l,n
+      character*(*) HYDROBASE
 
 ************** END DECLARATION *****************************************
       fnam = controldir//'land/'//lscen(:lenlscen)//'.con'
@@ -1015,19 +1015,29 @@
         read(dfile,'(a100)',err=993)line
         if (.not.comment(line)) then
 
-          if (line(:10).eq.'UNEC PARAM') then
-            read(dfile,'(a)') unecparam
+          if (line(:9).eq.'HYDROBASE') then
             read(dfile,'(a100)',err=993)line
-            if (line(:14).ne.'END UNEC PARAM') go to 992
-            close(dfile)
-            return
+            call d2x(line,last)
+            do while (comment(line))
+              read(dfile,'(a100)',err=993)line
+              call d2x(line,last)
+            end do
+            HYDROBASE = line(:last)
+            read(dfile,'(a100)',err=993)line
+            call d2x(line,last)
+            do while (comment(line))
+              read(dfile,'(a100)',err=993)line
+              call d2x(line,last)
+            end do
+            if (line(:13).ne.'END HYDROBASE') go to 992
+
           end if
         end if
       end do
 
       close (dfile)
 
-      go to 994
+      return
 
 *********** ERROR SPACE ************************************************
 991   report(1) = 'Problem opening file:'
@@ -1038,237 +1048,12 @@
 
 992   report(1) = ' ERROR in control file '
       report(2) = fnam
-      report(3) = ' only allowed one row in table UNEC PARAM'
+      report(3)=' only allowed one row in table HYDROBASE'
       go to 999
 
 993   report(1) = 'ERROR reading line in file '
       report(2) = fnam
       report(3) = line(:64)
-      go to 999
-
-994   report(1) = ' Error in control file'
-      report(2) = fnam
-      report(3) = ' must have UNEC PARAM table'
-      go to 999
-
-999   call stopreport(report)
-
-      end
-
-
-************************************************************************
-** reads the control file for this scenario into memory               **
-**   finds:  UNEC Parameter Folder for land scenario                  **
-************************************************************************
-      subroutine readcontrol_Lunec_Table(
-     I                                  lscen,lenlscen,ctable,ltable,
-     O                                  unectable)
-      implicit none
-      include '../inc/standard.inc'
-      include '../inc/locations.inc'
-
-      logical comment,found
-      external comment
-
-      integer l,n
-      character*(*) ctable
-      character*50 unectable
-      integer      ltable,stable,etable
-
-************** END DECLARATION *****************************************
-      stable = ltable
-      etable = ltable + 4
-      fnam = controldir//'land/'//lscen(:lenlscen)//'.con'
-      open (dfile,file=fnam,status='old',iostat=err)
-      if (err.ne.0) go to 991
-
-      line = 'GO HOOS'
-      do while (line(:3).ne.'end')
-        read(dfile,'(a100)',err=993)line
-        if (.not.comment(line)) then
-
-          if (line(:stable).eq.ctable(:stable)) then
-            read(dfile,'(a)') unectable
-            read(dfile,'(a100)',err=993)line
-            if (line(:etable).ne.'END '//ctable(:stable)) go to 992
-            close(dfile)
-            return
-          end if
-        end if
-      end do
-
-      close (dfile)
-
-      go to 994
-
-*********** ERROR SPACE ************************************************
-991   report(1) = 'Problem opening file:'
-      report(2) = fnam
-      report(3) = 'error = '
-      write(report(3)(9:11),'(i3)')err
-      go to 999
-
-992   report(1) = ' ERROR in control file '
-      report(2) = fnam
-      report(3) = ' only allowed one row in table '//ctable(:ltable)
-      go to 999
-
-993   report(1) = 'ERROR reading line in file '
-      report(2) = fnam
-      report(3) = line(:64)
-      go to 999
-
-994   report(1) = ' Error in control file'
-      report(2) = fnam
-      report(3) = ' must have table for '//ctable(:ltable)
-      go to 999
-
-999   call stopreport(report)
-
-      end
-
-************************************************************************
-** reads the control file for this scenario into memory               **
-**   finds:  STREAM BED/BANK LOAD for river scenarios                 **
-************************************************************************
-      subroutine readcontrol_Rbedbank(
-     I                                  rscen,lenrscen,
-     O                                  syear,eyear,bedbank)
-      implicit none                  
-      include '../inc/standard.inc'
-      include '../inc/locations.inc'
-      
-      logical comment,found
-      external comment
-
-      integer syear,eyear
-      character*(*) bedbank
-      integer l,n
-      
-************** END DECLARATION *****************************************
-      fnam = controldir//'river/'//rscen(:lenrscen)//'.con'
-      open (11,file=fnam,status='old',iostat=err)
-      if (err.ne.0) go to 991
-
-      print*,'... reading bedbank load table'
-      line = 'GO HOOS'
-      do while (line(:3).ne.'end')
-        read(11,'(a100)',err=993)line
-        if (.not.comment(line)) then
-        
-          if (line(:13).eq.'BEDBANK LOADS') then
-            read(11,1234) syear,eyear,bedbank
-            read(11,'(a100)',err=993)line
-            if (line(:17).ne.'END BEDBANK LOADS') go to 992
-            close(11)
-            print*,'Start Year ', syear
-            print*,'End   Year ', eyear
-            print*,'Dataset     ', bedbank
-            return
-          end if
-        end if
-      end do
-      
-      close (11)
-
-1234  format(i4,i5,1x,a)
-      
-      go to 994
-      
-*********** ERROR SPACE ************************************************
-991   report(1) = 'Problem opening file:'
-      report(2) = fnam
-      report(3) = 'error = '
-      write(report(3)(9:11),'(i3)')err
-      go to 999
-      
-992   report(1) = ' ERROR in control file '
-      report(2) = fnam
-      report(3) = ' only allowed one row in table BEDBANK LOADS'
-      go to 999 
-      
-993   report(1) = 'ERROR reading line in file '
-      report(2) = fnam
-      report(3) = line(:64)
-      go to 999 
-      
-994   report(1) = ' Error in control file'
-      report(2) = fnam
-      report(3) = ' must have BEDBANK LOADS table'
-      go to 999 
-      
-999   call stopreport(report)
-
-      end
-
-************************************************************************
-** reads the control file for this scenario into memory               **
-**   finds:  STREAM FLOODPLAIN LOAD for river scenarios               **
-************************************************************************
-      subroutine readcontrol_Rfloodplain(
-     I                                  rscen,lenrscen,
-     O                                  syear,eyear,floodplain)
-      implicit none
-      include '../inc/standard.inc'
-      include '../inc/locations.inc'
-
-      logical comment,found
-      external comment
-
-      integer syear,eyear
-      character*(*) floodplain
-      integer l,n
-
-************** END DECLARATION *****************************************
-      fnam = controldir//'river/'//rscen(:lenrscen)//'.con'
-      open (dfile,file=fnam,status='old',iostat=err)
-      if (err.ne.0) go to 991
-
-      print*,'... reading floodplain load table'
-      line = 'GO HOOS'
-      do while (line(:3).ne.'end')
-        read(dfile,'(a100)',err=993)line
-        if (.not.comment(line)) then
-
-          if (line(:16).eq.'FLOODPLAIN LOADS') then
-            read(dfile,1234) syear, eyear, floodplain
-            read(dfile,'(a100)',err=993)line
-            if (line(:20).ne.'END FLOODPLAIN LOADS') go to 992
-            print*,'Start Year ', syear
-            print*,'End   Year ', eyear
-            print*,'Dataset     ', floodplain
-            close(dfile)
-            return
-          end if
-        end if
-      end do
-
-      close (dfile)
-
-1234  format(i4,i5,1x,a)
-
-      go to 994
-
-*********** ERROR SPACE ************************************************
-991   report(1) = 'Problem opening file:'
-      report(2) = fnam
-      report(3) = 'error = '
-      write(report(3)(9:11),'(i3)')err
-      go to 999
-
-992   report(1) = ' ERROR in control file '
-      report(2) = fnam
-      report(3) = ' only allowed one row in table FLOODPLAIN LOADS'
-      go to 999
-
-993   report(1) = 'ERROR reading line in file '
-      report(2) = fnam
-      report(3) = line(:64)
-      go to 999
-
-994   report(1) = ' Error in control file'
-      report(2) = fnam
-      report(3) = ' must have FLOODPLAIN LOADS table'
       go to 999
 
 999   call stopreport(report)

@@ -1,6 +1,5 @@
 ************************************************************************
-**  compare loads against WRTDS loads                                 **
-**  compare loads against !estimator loads                            **
+**  compare loads against estimator loads                             **
 ************************************************************************
       subroutine doloads(
      I                   rscen,rseg,year1,year2,
@@ -25,11 +24,6 @@
       real simannld(EarliestYear:LatestYear)
       real simmonld(EarliestYear:LatestYear,12)
       real load(ndaymax*24)
-
-      real simdayq(EarliestYear:LatestYear,12,31)
-      real simannq(EarliestYear:LatestYear)
-      real simmonq(EarliestYear:LatestYear,12)
-      real simq(ndaymax)
                     
 ********  observed annual and monthly loads and confidence intervals
       real obsannld(EarliestYear:LatestYear)
@@ -55,9 +49,13 @@
       logical foundany
 
 ******************* END DECLARATIONS ***********************************
+******************* BEGIN COMMON LENGTH ********************************
+      call lencl(rscen,lenrscen)
+      call lencl(rseg,lenrseg)
+******************* END COMMON LENGTH **********************************
+
       foundany = .false.
 
-      call lencl(rscen,lenrscen)
       call loadinfo(               ! POPULATE loading variables
      I              rscen,lenrscen,nRvar,Rname,
      O              nloads,loadname,lunit,nlcons,lcon,lconfactor)
@@ -65,69 +63,12 @@
 ******************** loop over all pollutants
       do nl = 1,nloads
 
-        if (loadname(nl).eq.'FLOW') then
-c           do i = 1,nvals
-           do i = 1,ndaymax*24
-             load(i) = 0.      ! initialize load value
-           end do
-
-           do nc = 1,nlcons(nl)     ! for each constituent
-
-             do Rvar = 1,nRvar       ! get the right dsn
-               if (lcon(nl,nc).eq.Rname(Rvar)) then
-                 dsn = Rdsn(Rvar)
-                 call gethourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
-
-                 do i = 1,nvals   ! hourly load,lbs/hr (tons/hr for sed)
-                   if (hval(i).gt.0.) then
-                     load(i)=load(i)+hval(i)*lconfactor(nl,nc)
-                   end if
-                 end do
-               end if
-             end do
-
-           end do
-
-*********** code to re-arrange the load to get daily
-           ny = sdate(1)
-           nm = sdate(2)
-           nd = sdate(3)
-           i = 1
-           do while (ny.le.year2)
-             simdayq(ny,nm,nd) = 0.0
-             do nh = 1,24
-               simdayq(ny,nm,nd) = simdayq(ny,nm,nd) + load(i)
-               i = i + 1
-             end do
-             call tomorrow(ny,nm,nd)
-           end do
-
-********** get monthly from daily
-           do ny = sdate(1),year2
-             do nm = 1,12
-              simmonq(ny,nm) = 0.0
-              do nd = 1,ndaysinmonth(ny,nm)
-               simmonq(ny,nm) = simmonq(ny,nm) + simdayq(ny,nm,nd)
-              end do
-             end do
-           end do
-
-********** get annual from monthly
-           do ny = sdate(1),year2
-             simannq(ny) = 0.0
-             do nm = 1,12
-               simannq(ny) = simannq(ny) + simmonq(ny,nm)
-             end do
-           end do
-           cycle   ! flow handled seperately
-        end if
+        if (loadname(nl).eq.'FLOW') cycle   ! flow handled seperately
 
 *************** check if annual estimator file exist
-        call lencl(rseg,lenrseg)
 
         annexist = .false.
-CBHATT        obldfnam=calibdir//'observed/estimator/annual/'
-        obldfnam=calibdir//'observed/WRTDS/annual/'
+        obldfnam=calibdir//'observed/estimator/annual/'
      .           //rseg(:lenrseg)//'_'//loadname(nl)//'_CLD.csv'
         call findopen(ifl)
         open(ifl,file=obldfnam,status='old',iostat=err)
@@ -151,8 +92,7 @@ CBHATT        obldfnam=calibdir//'observed/estimator/annual/'
 
 *************** check if monthly estimator file exist
         monexist = .false.
-CBHATT        obldfnam=calibdir//'observed/estimator/monthly/'
-        obldfnam=calibdir//'observed/WRTDS/monthly/'
+        obldfnam=calibdir//'observed/estimator/monthly/'
      .           //rseg(:lenrseg)//'_'//loadname(nl)//'_MLD.csv'
         call findopen(ifl)
         open(ifl,file=obldfnam,status='old',iostat=err)
@@ -248,12 +188,11 @@ CBHATT        obldfnam=calibdir//'observed/estimator/monthly/'
 ****************** write out load stats
         write(cy1,'(i4)') year1
         write(cy2,'(i4)') year2
-        call lencl(rscen,lenrscen)
 
         if (annexist) then
           pfname = outdir//'river/stats/'//rscen(:lenrscen)//'/'
      .           //rseg(:lenrseg)//'_'//cy1//'_'//cy2//
-     .           '_annual_vs_wrtds.'//loadname(nl)
+     .           '_annual_vs_estimator.'//loadname(nl)
           open (pltfil,file = pfname, status = 'unknown',iostat = err)
           if (err.ne.0) goto 994
 
@@ -266,13 +205,10 @@ CBHATT        obldfnam=calibdir//'observed/estimator/monthly/'
               ndays = ndays + 1
               obs(ndays) = obsannld(ny)
               sim(ndays) = simannld(ny)
-              simq(ndays)= simannq(ny)
             end if
           end do
-          print*,'Annual-'
-          call wqstatsld(
-     I       obs,sim,simq,ndays,ndaymax,pltfil,loadname(nl),rseg,err)
-          if (err .ne. 0) print*,'995 A'
+          call wqstats(
+     I             obs,sim,ndays,ndaymax,pltfil,loadname(nl),rseg,err)
           if (err .ne. 0) go to 995
 
           close (pltfil)
@@ -291,7 +227,6 @@ CBHATT        obldfnam=calibdir//'observed/estimator/monthly/'
 
           ndays = 0
           do ny = year1,year2
-c            print*,ny,obsannld(ny)
             if (obsannld(ny).gt.-9.0) then
               ndays = ndays + 1
               obs(ndays) = obsannld(ny)
@@ -302,7 +237,6 @@ c            print*,ny,obsannld(ny)
           call eval(
      I             obs,sim,ndays,ndaymax,
      O          NSE,Bias,RSR,Nbias,Nsd,r,sdd,NRMSD,err)
-          if (err .ne. 0) print*,'995 B ',loadname(nl)
           if (err .ne. 0) go to 995
           write(pltfil,400)rseg,ndays,NSE,Bias,RSR,
      .           Nbias,Nsd,r,sdd,NRMSD,err
@@ -313,7 +247,7 @@ c            print*,ny,obsannld(ny)
         if (monexist) then
           pfname = outdir//'river/stats/'//rscen(:lenrscen)//'/'
      .           //rseg(:lenrseg)//'_'//cy1//'_'//cy2//
-     .           '_monthly_vs_wrtds.'//loadname(nl)
+     .           '_monthly_vs_estimator.'//loadname(nl)
           open (pltfil,file = pfname, status = 'unknown',iostat = err)
           if (err.ne.0) goto 994
 
@@ -327,14 +261,11 @@ c            print*,ny,obsannld(ny)
                 ndays = ndays + 1
                 obs(ndays) = obsmonld(ny,nm)
                 sim(ndays) = simmonld(ny,nm)
-                simq(ndays)= simmonq(ny,nm)
               end if
             end do
           end do
-          print*,'Monthly-'
-          call wqstatsld(
-     I       obs,sim,simq,ndays,ndaymax,pltfil,loadname(nl),rseg,err)
-          if (err .ne. 0) print*,'995 C'
+          call wqstats(
+     I           obs,sim,ndays,ndaymax,pltfil,loadname(nl),rseg,err)
           if (err .ne. 0) go to 995
 
           close (pltfil)
@@ -365,7 +296,6 @@ c            print*,ny,obsannld(ny)
           call eval(
      I             obs,sim,ndays,ndaymax,
      O          NSE,Bias,RSR,Nbias,Nsd,r,sdd,NRMSD,err)
-          if (err .ne. 0) print*,'995 D'
           if (err .ne. 0) go to 995
           write(pltfil,500)rseg,ndays,NSE,Bias,RSR,
      .           Nbias,Nsd,r,sdd,NRMSD,err
@@ -398,8 +328,8 @@ c            print*,ny,obsannld(ny)
       write(report(3)(11:13),'(i3)') err
       go to 999
 
-995   report(1) ='Problem writing statistics to file for segment '//rseg
-      write(report(2),*) pfname
+995   report(1) = 'Problem writing statistics to file for segment'//rseg
+      report(2) = pfname
       report(3) = '  Error =    '
       write(report(3)(11:13),'(i3)') err
       go to 999

@@ -38,7 +38,6 @@ C
           end do
         end do
       end do
-
       call makeptype(rscen,ptype,
      O               segment,peakvalues,numpsites)
       do ns = 1,numpsites
@@ -53,7 +52,7 @@ C
       if (err.ne.0) go to 991
 
       write(dfile,'(a13,17(a1,a8))',err=951)
-     .      'SEGMENT      ',',','Tbias',',','Wstat',
+     .      'SEGMENT',',','Tbias',',','Wstat',
      .      ',','Sstat',',','Qstat',',','Bstat',',',
      .      'Total_E',',','Total_LE',',','Mon_eff',',',
      .      'QaveRI',',','BaveRI',',','Pbias',',','VPbias',

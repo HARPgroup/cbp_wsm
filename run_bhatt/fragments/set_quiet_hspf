@@ -1,3 +1,0 @@
-#### all scripts are run in ./tmp/scratch/temp$$
-#### hspf is the executable name from this directory
-set hspf = "../../../code/src/hspf/hspf11.1/bin/hspf_quiet"

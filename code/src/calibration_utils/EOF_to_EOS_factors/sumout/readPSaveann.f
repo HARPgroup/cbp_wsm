@@ -11,13 +11,11 @@
       include '../../../lib/inc/standard.inc'
       include '../../../lib/inc/locations.inc'
       include '../../../lib/inc/ps_septic_atdep.inc'
-      include '../../../lib/inc/land_use.inc'
 
       integer nloads
       character*(*) onelseg    ! land use segment
       character*(*) type  ! eos,eof,del
-c      character*(*) lu   ! land use name
-      character*3 lu(nlu)  ! land use name
+      character*3 lu   ! land use name
       character*4 loadname(nloads),Tload
 
       integer year1,year2,y1,y2

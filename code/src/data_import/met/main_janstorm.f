@@ -1,20 +1,9 @@
       implicit none
       include '../../lib/inc/standard.inc'
       include '../../lib/inc/locations.inc'
-c      include '../../lib/inc/wdm.inc'
-
-      integer indaymax
-      parameter (indaymax=16836) !(2025-1980+1)*366
-
-      real hval(indaymax*24)
-      real dval(indaymax)
+      include '../../lib/inc/wdm.inc'
 
       character*64 wdmgname,wdmpname,wdm0103,wdm0405
-
-      integer ndate
-      parameter (ndate = 6)
-
-      integer dsn,tcode,dtran,nvals
 
       integer sdate(ndate),edate(ndate)
       integer wdmget,wdmput
@@ -28,7 +17,7 @@ c      include '../../lib/inc/wdm.inc'
       integer sdate03(ndate),sdate05(ndate)
       integer edate03(ndate),edate05(ndate)
 
-      real dv2(indaymax),hv2(indaymax*24)
+      real dv2(ndaymax),hv2(ndaymax*24)
       integer nv2
 
       integer missing
@@ -37,9 +26,6 @@ c      include '../../lib/inc/wdm.inc'
       external julian
 
       integer starthour,endhour
-
-      real Temp1, Temp2
-      parameter (Temp1 = 10.0)
 
 ******************** END SPECIFICATIONS ********************************
 
@@ -72,17 +58,15 @@ c      include '../../lib/inc/wdm.inc'
 ********* ends on the last hour of 1/21/1996
       starthour = julian(sdate(1),sdate(2),sdate(3),1996,1,17)
       endhour = julian(sdate(1),sdate(2),sdate(3),1996,1,21)
-CBHATT      starthour = starthour*24 + 1
       starthour = starthour*24 + 1
       endhour = endhour*24
 
 *********** ATMP **********
       dsn = 1004
-      print*,lseg,' ',dsn,' ATMP', ' dT = ', Temp1
+      print*,lseg,' ',dsn,' ATMP'
       call gethourdsn(wdmput,sdate,edate,dsn,nvals,hval)
       do n = starthour,endhour  ! 1/18/1996 to 1/21/1996
-CBHATT        hval(n) = hval(n) + 10.0
-        hval(n) = hval(n) + Temp1
+        hval(n) = hval(n) + 10.0
       end do
       call puthourdsn(wdmput,sdate,edate,dsn,nvals,hval)
       call wdflcl (wdmput,err)

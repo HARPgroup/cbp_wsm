@@ -19,7 +19,7 @@ C     O                       MaxImplement,AdditiveBmp,
       logical comment
       external comment
 
-      character*2700 longline
+      character*2300 longline ! BHATT changed 2000 to 2300 on Oct 28 2013
 
       character*3 templu(nlu)  ! temporary reading variable for land use
       integer nl, nl2, nb, nb2  ! indices
@@ -320,9 +320,9 @@ C               MaxImplement(nBmp,nHG,CatLU(nc,nl)) = TmaxI
 
       firstline = .true.
       do
-        read(dfile,'(a2700)',err=992,end=400) longline
+        read(dfile,'(a2300)',err=992,end=400) longline  ! BHATT changed 2000 to 2300 on Oct 28 2013
         call d2x(longline,last)
-        if (last.ge.2700-1) go to 990  ! check for overrun
+        if (last.ge.2300-1) go to 990  ! check for overrun ! BHATT changed 2000 to 2300 on Oct 28 2013
         if (comment(longline)) cycle
         if (firstline) then  ! parse first line and find order
           call shift(longline) ! bmp

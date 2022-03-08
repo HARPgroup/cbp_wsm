@@ -30,7 +30,9 @@
                                  ! and distribution specs
 
       integer MaxBmpTypes,nBmpTypes,nBmp    ! number of bmp types
-      parameter (MaxBmpTypes=174)
+      parameter (MaxBmpTypes=171) ! GY increased 100 to 111
+                                  ! BHATT increased to 129 on Aug 22 2013
+                                  ! BHATT increased to 171 on Oct 28 2013
 
 *************** Acres for each BMP
       real BmpAcres(MaxBmpTypes,MaxTimeBreaks,MaxL2R,nlu)  ! acres

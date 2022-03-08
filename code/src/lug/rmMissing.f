@@ -36,7 +36,6 @@
         end do
         if (somemissing(n)) missing = missing + 1
       end do
-C      print*," missing = ", missing
       do n = 1,nB - missing
         do while (somemissing(n))
           do n2 = n,nB-1

@@ -168,10 +168,6 @@
 
         KRER = KSER/lufacKSKR    ! update KRER for RATIO OF KS-KR
 
-        if(ns .eq. 1) then
-            print*,'ITER',' KS=',KSER,' KR=',KRER
-        end if
-
 *************** put variables in files in memory
         call putvar(parline(iline),vcKRER,KRER)
         call putvar(parline(iline),vcAFFIX,AFFIX)

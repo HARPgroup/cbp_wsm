@@ -37,9 +37,8 @@
       character*6,seg
 
 *********** time variables
-C      integer minyear,maxyear,
-      integer vsize,nyears
-C      parameter (minyear=1980,maxyear = 2010)
+      integer minyear,maxyear,vsize,nyears
+      parameter (minyear=1980,maxyear = 2010)
 
       integer scenyear  ! year of the scenario
 

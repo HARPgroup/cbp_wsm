@@ -1,24 +1,11 @@
       implicit none
       include '../../lib/inc/standard.inc'
       include '../../lib/inc/locations.inc'
-c      include '../../lib/inc/wdm.inc'
-
-      integer   NDAYSMAX
-      parameter (NDAYSMAX=16836) !(2025-1980+1)*366
-      real      hval(NDAYSMAX*24)
-      character*200 wdmfnam,msgfname
-      integer ndate
-      parameter (ndate = 6)
-      integer dsn,tcode,nvals
-      integer TSTEP, dtran, qualfg, dtovwr
-      parameter (TSTEP=1, dtran=0, qualfg=0, dtovwr=1)
-      integer HCODE, DCODE ! Hourly, Daily
-      parameter (HCODE=3, DCODE=4)
-      integer retcod
+      include '../../lib/inc/wdm.inc'
 
       integer sdate(ndate), edate(ndate), tdate(ndate)  ! start and end dates in wdm format
-      integer wdmfil,msgfile
-      parameter (wdmfil=12,msgfile=9)         ! file number for wdm
+      integer wdmfil
+      parameter (wdmfil=12)         ! file number for wdm
 
       integer year,day,month,hour,oldyear
       double precision dacc
@@ -51,26 +38,10 @@ C      edate(1) = 2000
         tdate(i) = sdate(i)
       end do
 
-      msgfname= './message.wdm'
-      call wdbopn(msgfile,msgfname,1,retcod)  ! open msgfile read only
-      if (retcod.ne.0) stop 'ERROR opening message wdm'
-
       wdmfnam = 'prad_'//lseg//'.wdm'
-      call wdbopn(wdmfil,wdmfnam,0,retcod)     ! open main wdm read/write
-      if (retcod.ne.0) then
-             print*, 'retcod = ', retcod
-             stop 'ERROR opening wdm'
-      end if
-c      call gethourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
-      call timdif(
-     I            sdate,edate,HCODE,TSTEP,
-     O            nvals)
-      call wdtget(
-     I            wdmfil,dsn,TSTEP,sdate,nvals,
-     I            dtran, qualfg, HCODE,
-     O            hval, retcod)
+      call wdbopn(wdmfil,wdmfnam,0,err)     ! open main wdm read/write
+      call gethourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
       
-      print*,retcod
       do i = 1,nvals-24,24
         if (tdate(1).eq.1985) then
           if (tdate(2).eq.11) then
@@ -111,22 +82,9 @@ c      call gethourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
         call onehour(year,day,month,hour)
       end do
 
-c      call puthourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
-      call wdtput(
-     I            wdmfil,dsn,TSTEP,sdate,nvals,
-     I            dtovwr, qualfg, HCODE,hval,
-     O            retcod)
+      call puthourdsn(wdmfil,sdate,edate,dsn,nvals,hval)
 
-c      call wdflc1(wdmfil,err)
-      if (retcod.ne.0) then
-            print*, 'retcod = ', retcod
-            stop 'ERROR writing wdm'
-      end if
-************write back to the wdm file**********************************
-      call wdflcl(
-     I            wdmfil,
-     O            retcod)
-      if (retcod.ne.0) stop 'ERROR closing wdm'
+      call wdflc1(wdmfil,err)
 
       end
 

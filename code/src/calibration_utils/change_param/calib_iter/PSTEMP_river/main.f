@@ -35,7 +35,7 @@
       parameter (lfile = dfile + 1)
       logical fileexist
       integer locktry, maxlocktries  ! number of attempts at opening
-      parameter (maxlocktries = 200) ! shouldn't take long
+      parameter (maxlocktries = 20) ! shouldn't take long
 
       character*203 deletecommand
 
@@ -135,7 +135,7 @@ C     I            limitsLGTP1,limitsASLT,limitsULTP1,BSLT,ULTP2)
         open(dfile,file=fnam,status='old',iostat=err)
         if (err.eq.0) exit
         print*,'waiting for file to exist, try ',locktry
-        call sleep(2)
+        call sleep(1)
       end do
       if (err.ne.0) go to 991
 

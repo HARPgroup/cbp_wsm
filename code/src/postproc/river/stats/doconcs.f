@@ -28,12 +28,12 @@
       real load(ndaymax*24)  ! wdm accumulation variable
 
 ********  shear stress for use in windowed comparison.
-      real dailytau(EarliestYear:LatestYear,12,31)
+      real dailytau(1984:2005,12,31)
       logical gottau
 
 ************ date-indexed concentrations and loads
-      real simloaddate(EarliestYear:LatestYear,12,31,24)
-      real simconcdate(EarliestYear:LatestYear,12,31,24)
+      real simloaddate(1984:2005,12,31,24)
+      real simconcdate(1984:2005,12,31,24)
 
 ************ variables to send into statistics routines
       real obload(ndaymax),simload(ndaymax) ! daily load
@@ -52,7 +52,6 @@
 *********** variables for separating CFD into Bins and calculating KS
       integer nbins,nbinsmax,nb
       parameter (nbinsmax=5)
-      real lowerbound(nbinsmax),upperbound(nbinsmax)
       real simBinAve(nbinsmax),obsBinAve(nbinsmax) ! ave for bin
       real ksKstat  ! KS statistic 
       real nse ! nash-sutcliff efficiency
@@ -61,24 +60,25 @@
       integer minobs  ! minimum observations for calculating stats
       parameter (minobs = 10)
 
-      real MINFLOW
-      parameter ( MINFLOW = 0.1 ) ! 0.1 cfs = 0.198347 ac-ft/d
 
 ******************* END DECLARATIONS ***********************************
+******************* BEGIN Local Common *********************************
+        call lencl(rscen,lenrscen)
+        call lencl(rseg,lenrseg)
+        call lencl(obscen,lenobscen)
+******************* END DECLARATIONS ***********************************
+
       write(*,*) 'Making concentration statistic file for ', rseg
 
-      call lencl(rscen,lenrscen)
       call concinfo(               ! POPULATE concentration variables
      I              rscen,lenrscen,nRvar,Rname,
      O              nconcs,concname,cunit,norm,nccons,ccon,cconfactor)
-c      write(*,*) 'BHATT nconcs ', nconcs, concname
 
       write(cy1,'(i4)') year1
       write(cy2,'(i4)') year2
 
       gottau = .false.
 ******************** loop over all pollutants
-c      write(*,*) 'BHATT Begin loop. nconcs= ',nconcs
       do np = 1,nconcs
 
         if (concname(np).eq.'FLOW') cycle   ! flow handled seperately
@@ -111,13 +111,9 @@ c      write(*,*) 'BHATT Begin loop. nconcs= ',nconcs
 
 ************ GET OBSERVED
 *************** check if observed file exist
-c        call lencl(rscen,lenrscen)
-        call lencl(rseg,lenrseg)
-        call lencl(obscen,lenobscen)
 
         obldfnam=calibdir//'observed/'//obscen(:lenobscen)//'/'//
      .           concname(np)//'/'//rseg(:lenrseg)//'.O'//concname(np)
-c        write(*,*) 'BHATT A',obldfnam
        
         call findopen(ifl)
         open(ifl,file=obldfnam,status='old',iostat=err)
@@ -125,8 +121,7 @@ c        write(*,*) 'BHATT A',obldfnam
         ndays = 0
 ************* read observed concentration and calculate daily load 
         if (err.eq.0) then !  observation file exists
-c          write(*,*) 'BHATT B',obldfnam
-          tconc = 0 ! bhatt
+
           do
             read(ifl,*,err=992,end=333) ny,nm,nd,nh,nmin,tconc,QWflag
             if (ny.lt.year1 .or. ny.gt.year2) cycle  
@@ -137,7 +132,6 @@ c          write(*,*) 'BHATT B',obldfnam
               call tomorrow(ny,nm,nd)
             end if
 
-            print*, ndays, ',', tconc
             ndays = ndays + 1
             obconc(ndays) = tconc
             
@@ -181,7 +175,7 @@ c          write(*,*) 'BHATT B',obldfnam
             end do
   
                       ! check to see if allowable value
-            if(simflow(ndays).gt.MINFLOW.and.simload(ndays).gt.0.0)then
+            if (simflow(ndays).gt.0.0.and.simload(ndays).gt.0.0) then  
               if (abs(log10(simflow(ndays))
      .               -log10(simload(ndays))).lt.9.) then  
                 simconc(ndays)=simload(ndays)/simflow(ndays)*loadfactor
@@ -250,7 +244,7 @@ c          write(*,*) 'BHATT B',obldfnam
           end do
 
                       ! check to see if allowable value
-          if (simflow(nday).gt.MINFLOW.and.simload(nday).gt.0.0) then  
+          if (simflow(nday).gt.0.0.and.simload(nday).gt.0.0) then  
             if (abs(log10(simflow(nday))
      .             -log10(simload(nday))).lt.9.) then  
               simconc(nday) = simload(nday)/simflow(nday)*loadfactor
@@ -325,39 +319,12 @@ c          write(*,*) 'BHATT B',obldfnam
      I                     simconc,bofl,bsfl,qofl,qsfl)
         end if
 
-**************** check for bins
-        nbins = 5
-        do nb=1,nbins
-           upperbound(nb) = real(nb)/real(nbins)
-           lowerbound(nb) = real(nb-1)/real(nbins)
-        end do
-        call readcontrol_Rioscen(
-     I                         rscen,lenrscen,
-     O                         ioscen)
-        call lencl(ioscen,lenioscen)
-        fnam = catdir//'iovars/'//ioscen(:lenioscen)//
-     .         '/binbound_'//concname(np)
-        print*,fnam
-        open (dfile,file=fnam,status='old',iostat = err)
-        if (err.eq.0) then
-          read(dfile,*)nbins
-          do nb=1,nbins
-            read (dfile,*) lowerbound(nb),upperbound(nb)
-          end do
-        end if
-        close(dfile)
-
 *************** calculate KS statistic and cfd bin averages
         if (ndays.ge.minobs) then  ! only if enough obs
-c          nbins = 5
-c          call vodkatest(
-c     I                   simconc,obconc,obLOD,
-c     I                   ndaymax,ndays,nbinsmax,nbins,
-c     O                   simBinAve,obsBinAve,ksKstat,nse,cfdnobs)
-          call vodkatest_bins(
+          nbins = 5
+          call vodkatest(
      I                   simconc,obconc,obLOD,
      I                   ndaymax,ndays,nbinsmax,nbins,
-     I                   lowerbound,upperbound,
      O                   simBinAve,obsBinAve,ksKstat,nse,cfdnobs)
 
           pfname = outdir//'river/cfd/'//rscen(:lenrscen)//'/'

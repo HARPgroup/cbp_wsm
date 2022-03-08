@@ -1,7 +1,7 @@
 ************************************************************************
 ** subroutine to modify HSPF pltgen files for readiblilty             **
 ************************************************************************
-      subroutine plt2cal(file1,pfnam)
+      subroutine plt2cal(file1,fnam)
 
       implicit none
 
@@ -9,7 +9,6 @@
       include '../../../lib/inc/locations.inc'
 
       integer:: file1          ! file number
-      character*100 pfnam
 
       character(16):: date(ndaymax),pltvalue(ndaymax)   ! reading variables
       character(3):: clu                                ! character land use
@@ -35,7 +34,7 @@
 111     nd = nd-1
         close(file1)
 
-        open(file1,file=pfnam,status='unknown',iostat=err)
+        open(file1,file=fnam,status='unknown',iostat=err)
         if (err.ne.0) go to 991    ! open file of same name, overwriting
         
         do i = 1,nd
@@ -48,12 +47,12 @@
 
 ************* ERROR SPACE **********************************************
 951   report(1) = 'error writing to file'
-      report(2) = pfnam
+      report(2) = fnam
       report(3) = 'possible permission problem'
       go to 999
 
 991   report(1) = 'Problem opening file'
-      report(2) = pfnam
+      report(2) = fnam
       report(3) = ' '
       go to 999
 

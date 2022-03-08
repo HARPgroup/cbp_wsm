@@ -73,7 +73,7 @@
       print 11, 'pcnt',(pcntle(np),np=1,npcnt)
       print 12, rseg,(taupctle(np),np=1,npcnt)
 11    format (A4,50(',',F10.3))
-12    format (A13,50(',',e11.5))
+12    format (A13,50(',',e11.4))
 
       return
 

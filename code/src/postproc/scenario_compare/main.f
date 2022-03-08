@@ -12,30 +12,18 @@
       double precision ScenPSrvar(maxRvar) 
       double precision ScenATDEPrvar(maxRvar) 
       double precision ScenSEPrvar(maxRvar) 
-      double precision ScenRIBrvar(maxRvar)
-      double precision ScenRPArvar(maxRvar)
-
       double precision ScenSTREAMload(nloadmax)     
       double precision ScenPSload(nloadmax)     
       double precision ScenATDEPload(nloadmax)     
       double precision ScenSEPload(nloadmax)     
-      double precision ScenRIBload(maxRvar)
-      double precision ScenRPAload(maxRvar)
-
       double precision CalSTREAMrvar(maxRvar) 
       double precision CalPSrvar(maxRvar) 
       double precision CalATDEPrvar(maxRvar) 
       double precision CalSEPrvar(maxRvar) 
-      double precision CalRIBrvar(maxRvar)
-      double precision CalRPArvar(maxRvar)
-
       double precision CalSTREAMload(nloadmax)     
       double precision CalPSload(nloadmax)     
       double precision CalATDEPload(nloadmax)     
       double precision CalSEPload(nloadmax)     
-      double precision CalRIBload(nloadmax)
-      double precision CalRPAload(nloadmax)
-
 
 *********** total loads
       real totalCal(nloadmax),totalScen(nloadmax)
@@ -49,22 +37,16 @@
 
       integer numsegs          ! number of land segments with this river
 
-c      character*11 ps,sep,atdep         ! atdep, pointsource, or septic
-c      data ps,sep,atdep /'pointsource','septic','atdep'/
-      character*11 ps
-      data ps /'pointsource'/
+      character*11 ps,sep,atdep         ! atdep, pointsource, or septic
+      data ps,sep,atdep /'pointsource','septic','atdep'/
 
 ************ scenario and calibration data specifiers
-      character*50 Scenpradscen, Scenpsscen, Scensepscen
-      character*50 Calpradscen, Calpsscen, Calsepscen
+      character*25 Scenpradscen, Scenpsscen, Scensepscen
+      character*25 Calpradscen, Calpsscen, Calsepscen
       integer lenpradscen, lenpsscen, lensepscen
 
-      character*50 Scenrpascen, Scenribscen
-      character*50 Calrpascen, Calribscen
-      integer lenrpascen, lenribscen
-
 ************* calibration scenario to compare current loads against
-      character*50 calscen
+      character*25 calscen
       integer lencalscen
 
 ************* output flags
@@ -85,7 +67,7 @@ c      data ps,sep,atdep /'pointsource','septic','atdep'/
       integer julian
       external julian
 
-      logical doatdep,dops,dosep,dorib,dorpa
+      logical doatdep,dops,dosep
       logical fileexists
 
       character*1 dummy
@@ -93,9 +75,8 @@ c      data ps,sep,atdep /'pointsource','septic','atdep'/
 *********** PS vaiables
       integer nps,np
       parameter (nps=3)
-      character*3 psnam(nps)         ! pointsource
-c      data psnam /'wwtp','indus','cso'/
-c      data psnam /wwtp,indus,cso/
+      character*5 psnam(nps)         ! pointsource
+      data psnam /'wwtp','indus','cso'/
       integer lenpsnam(nps)
  
 ***************** END DECLARATIONS *************************************
@@ -105,14 +86,6 @@ c      data psnam /wwtp,indus,cso/
 
       call lencl(rscen,lenrscen)
       call lencl(rseg,lenrseg)
-
-      psnam(1) = wwtp
-      psnam(2) = indus
-      psnam(3) = cso
-
-      call lencl(sep,lensep)
-      call lencl(rib,lenrib)
-      call lencl(rpa,lenrpa)
 
       print*,'comparing river loads for ',rseg,' ',rscen(:lenrscen)
 
@@ -181,29 +154,17 @@ c      data psnam /wwtp,indus,cso/
 
       call getvars(
      I             ioscen,lenioscen,
-     I             nRvar,Rname,rib,
-     O             nRIBvar,RIBdsn,RIBname,RIBfac)
-
-      call getvars(
-     I             ioscen,lenioscen,
-     I             nRvar,Rname,rpa,
-     O             nRPAvar,RPAdsn,RPAname,RPAfac)
-
-      call getvars(
-     I             ioscen,lenioscen,
      I             nRvar,Rname,atdep,
      O             nATDEPvar,ATDEPdsn,ATDEPname,ATDEPfac)
 
 *********** READ CONTROL FILES FOR DATA SPECIFIERS
       call readcontrol_wdm(rscen,lenrscen,
      O                     scenpradscen,scenpsscen,scensepscen,
-     O                     scenribscen,scenrpascen,
-     O                     doatdep,dops,dosep,dorib,dorpa)  ! names of wdms
+     O                     doatdep,dops,dosep)  ! names of wdms
 
       call readcontrol_wdm(calscen,lencalscen,
      O                     calpradscen,calpsscen,calsepscen,
-     O                     calribscen,calrpascen,
-     O                     doatdep,dops,dosep,dorib,dorpa)  ! names of wdms
+     O                     doatdep,dops,dosep)  ! names of wdms
 
       do Rvar = 1,nRvar    ! initialize
         ScenPSrvar(Rvar) = 0.0
@@ -228,7 +189,6 @@ c      data psnam /wwtp,indus,cso/
             wdmfnam = ScenDatDir//'river/ps/'//Scenpsscen(:lenpsscen)//
      .                '/'//psnam(np)(:lenpsnam(np))//'_'//
      .                l2r(ns)(:lenlseg)//'_to_'//rseg(:lenrseg)//'.wdm'
-            print*,'postproc/scenario_compare 1 ',wdmfnam
             inquire (file=wdmfnam,exist=foundwdm)
 
             if (foundwdm) then
@@ -261,7 +221,6 @@ c      data psnam /wwtp,indus,cso/
             wdmfnam = ScenDatDir//'river/ps/'//Calpsscen(:lenpsscen)//
      .                '/'//psnam(np)(:lenpsnam(np))//'_'//
      .                l2r(ns)(:lenlseg)//'_to_'//rseg(:lenrseg)//'.wdm'
-            print*,'postproc/scenario_compare 2 ',wdmfnam
             inquire (file=wdmfnam,exist=foundwdm)
 
             if (foundwdm) then
@@ -299,9 +258,8 @@ c      data psnam /wwtp,indus,cso/
           call lencl(Scensepscen,lensepscen)
           wdmfnam = ScenDatDir//'river/septic/'//
      .              Scensepscen(:lensepscen)//
-     .              '/'//sep(:lensep)//'_'//l2r(ns)(:lenlseg)//'_to_'//
+     .              '/septic_'//l2r(ns)(:lenlseg)//'_to_'//
      .              rseg(:lenrseg)//'.wdm'
-          print*,'postproc/scenario_compare 3 ',wdmfnam
           call wdbopnlong(datwdm,wdmfnam,0,err)
           if (err .ne. 0) go to 998     ! open septic wdm
 
@@ -325,9 +283,8 @@ c      data psnam /wwtp,indus,cso/
           call lencl(Calsepscen,lensepscen)
           wdmfnam = ScenDatDir//'river/septic/'//
      .              Calsepscen(:lensepscen)//
-     .              '/'//sep(:lensep)//'_'//l2r(ns)(:lenlseg)//'_to_'//
+     .              '/septic_'//l2r(ns)(:lenlseg)//'_to_'//
      .              rseg(:lenrseg)//'.wdm'
-          print*,'postproc/scenario_compare 4 ',wdmfnam
           call wdbopnlong(datwdm,wdmfnam,0,err)
           if (err .ne. 0) go to 998     ! open septic wdm
 
@@ -352,132 +309,6 @@ c      data psnam /wwtp,indus,cso/
 
       end if
 
-
-***************** RIB SECTION
-      if (dorib) then
-        call ttyput('RIB,  ')
-
-        do ns = 1,numsegs
-          call lencl(Scenribscen,lenribscen)
-          wdmfnam = ScenDatDir//'river/rib/'//
-     .              Scenribscen(:lenribscen)//
-     .              '/'//rib(:lenrib)//'_'//l2r(ns)(:lenlseg)//'_to_'//
-     .              rseg(:lenrseg)//'.wdm'
-          print*,'postproc/scenario_compare 3 ',wdmfnam
-          call wdbopnlong(datwdm,wdmfnam,0,err)
-          if (err .ne. 0) go to 998     ! open rib wdm
-
-          do Rvar = 1,nRvar
-            if (nRIBvar(Rvar).le.0) cycle
-            do nvar = 1,nRIBvar(Rvar)
-              call getdailydsn(datwdm,sdate,edate,RIBdsn(Rvar,nvar),
-     O                         nvals,dval)
-              if (nvals.ne.ndays) go to 990
-
-              do nv = 1,ndays
-                ScenRIBrvar(Rvar) = ScenRIBrvar(Rvar)
-     .                            + dval(nv) * RIBfac(Rvar,nvar)
-              end do
-            end do
-          end do
-
-          call wdflcl(datwdm,err)
-          if (err.ne.0) go to 997
-
-          call lencl(Calribscen,lenribscen)
-          wdmfnam = ScenDatDir//'river/rib/'//
-     .              Calribscen(:lenribscen)//
-     .              '/'//rib(:lenrib)//'_'//l2r(ns)(:lenlseg)//'_to_'//
-     .              rseg(:lenrseg)//'.wdm'
-          print*,'postproc/scenario_compare 4 ',wdmfnam
-          call wdbopnlong(datwdm,wdmfnam,0,err)
-          if (err .ne. 0) go to 998     ! open rib wdm
-
-          do Rvar = 1,nRvar
-            if (nRIBvar(Rvar).le.0) cycle
-            do nvar = 1,nRIBvar(Rvar)
-              call getdailydsn(datwdm,sdate,edate,RIBdsn(Rvar,nvar),
-     O                         nvals,dval)
-              if (nvals.ne.ndays) go to 990
-
-              do nv = 1,ndays
-                CalRIBrvar(Rvar) = CalRIBrvar(Rvar)
-     .                          + dval(nv) * RIBfac(Rvar,nvar)
-              end do
-            end do
-          end do
-
-          call wdflcl(datwdm,err)
-          if (err.ne.0) go to 997
-
-        end do
-
-      end if
-
-
-
-***************** RPA SECTION
-      if (dorpa) then
-        call ttyput('RPA,  ')
-        
-        do ns = 1,numsegs
-          call lencl(Scenrpascen,lenrpascen)
-          wdmfnam = ScenDatDir//'river/rpaload/'//
-     .              Scenrpascen(:lenrpascen)//
-     .              '/'//rpa(:lenrpa)//'_'//l2r(ns)(:lenlseg)//'_to_'//
-     .              rseg(:lenrseg)//'.wdm'
-          print*,'postproc/scenario_compare 3 ',wdmfnam
-          call wdbopnlong(datwdm,wdmfnam,0,err)
-          if (err .ne. 0) go to 998     ! open rpa wdm
-
-          do Rvar = 1,nRvar
-            if (nRPAvar(Rvar).le.0) cycle
-            do nvar = 1,nRPAvar(Rvar)
-              call getdailydsn(datwdm,sdate,edate,RPAdsn(Rvar,nvar),
-     O                         nvals,dval)
-              if (nvals.ne.ndays) go to 990
-
-              do nv = 1,ndays
-                ScenRPArvar(Rvar) = ScenRPArvar(Rvar)
-     .                            + dval(nv) * RPAfac(Rvar,nvar)
-              end do
-            end do
-          end do
-
-          call wdflcl(datwdm,err)
-          if (err.ne.0) go to 997
-
-          call lencl(Calrpascen,lenrpascen)
-          wdmfnam = ScenDatDir//'river/rpaload/'//
-     .              Calrpascen(:lenrpascen)//
-     .              '/'//rpa(:lenrpa)//'_'//l2r(ns)(:lenlseg)//'_to_'//
-     .              rseg(:lenrseg)//'.wdm'
-          print*,'postproc/scenario_compare 4 ',wdmfnam
-          call wdbopnlong(datwdm,wdmfnam,0,err)
-          if (err .ne. 0) go to 998     ! open rpa wdm
-
-          do Rvar = 1,nRvar
-            if (nRPAvar(Rvar).le.0) cycle
-            do nvar = 1,nRPAvar(Rvar)
-              call getdailydsn(datwdm,sdate,edate,RPAdsn(Rvar,nvar),
-     O                         nvals,dval)
-              if (nvals.ne.ndays) go to 990
-
-              do nv = 1,ndays
-                CalRPArvar(Rvar) = CalRPArvar(Rvar)
-     .                          + dval(nv) * RPAfac(Rvar,nvar)
-              end do
-            end do
-          end do
-
-          call wdflcl(datwdm,err)
-          if (err.ne.0) go to 997
-
-        end do
-
-      end if
-
-
 ***************** ATMOSPHERIC DEPOSITION SECTION
       if (doatdep) then
         call ttyput('Atmospheric Deposition,  ')
@@ -488,7 +319,6 @@ c      data psnam /wwtp,indus,cso/
           wdmfnam = ScenDatDir//'climate/prad/'//
      .              Scenpradscen(:lenpradscen)//
      .       '/prad_'//l2r(ns)(:lenlseg)//'.wdm'
-          print*,'postproc/scenario_compare 5 ',wdmfnam
           call wdbopnlong(datwdm,wdmfnam,0,err)
           if (err .ne. 0) go to 998                  ! open atdep wdm
 
@@ -522,7 +352,6 @@ c      data psnam /wwtp,indus,cso/
           wdmfnam = ScenDatDir//'climate/prad/'//
      .              Calpradscen(:lenpradscen)//
      .       '/prad_'//l2r(ns)(:lenlseg)//'.wdm'
-          print*,'postproc/scenario_compare 6 ',wdmfnam
           call wdbopnlong(datwdm,wdmfnam,0,err)
           if (err .ne. 0) go to 998                  ! open atdep wdm
 
@@ -569,7 +398,6 @@ c      data psnam /wwtp,indus,cso/
       end do
 
       wdmfnam = rseg(:lenrseg)//'.wdm'
-      print*,'postproc/scenario_compare 7 ',wdmfnam
       call wdbopnlong(datwdm,wdmfnam,0,err)
       if (err .ne. 0) go to 998     ! open ps wdm
 
@@ -589,7 +417,6 @@ c      data psnam /wwtp,indus,cso/
       call lencl(calscen,lencalscen)
       wdmfnam = outwdmdir//'river/'//calscen(:lencalscen)//
      .          '/stream/'//rseg(:lenrseg)//'.wdm'
-      print*,'postproc/scenario_compare 8 ',wdmfnam
       call wdbopnlong(datwdm,wdmfnam,0,err)
       if (err .ne. 0) go to 998     ! open ps wdm
 
@@ -629,8 +456,6 @@ c      data psnam /wwtp,indus,cso/
      .                          + ScenATDEPrvar(Rvar) * confactor(nl,nc)
               ScenSTREAMload(nl) = ScenSTREAMload(nl)
      .                           + ScenSTREAMrvar(Rvar)*confactor(nl,nc)
-              print*,'XXX',nc,Rvar,Rname(Rvar),ScenSTREAMrvar(Rvar),
-     .           ScenSTREAMload(nl)
               CalPSload(nl) = CalPSload(nl)
      .                      + CalPSrvar(Rvar) * confactor(nl,nc)
               CalSEPload(nl) = CalSEPload(nl)
@@ -655,7 +480,6 @@ c      data psnam /wwtp,indus,cso/
 *********** open and write output file for each rseg
       fnam = outdir//'river/scenario_compare/'//
      .       rscen(:lenrscen)//'/'//rseg(:lenrseg)//'.csv'
-      print*,'BHATT',fnam
       open(outfil,file=fnam,status='unknown',iostat=err)
       if (err.ne.0) go to 991
 

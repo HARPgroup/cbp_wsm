@@ -13,7 +13,7 @@
 
       character*(*) onelseg    ! land use segment
       character*(*) type  ! eos,eof,del
-      character*(*) lu   ! land use name
+      character*3 lu   ! land use name
       integer nloads
       character*4 loadname(nloads),Tload
 

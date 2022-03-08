@@ -1,20 +1,20 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c main.f
-f77 -c findcolumn.f
-f77 -c getcolumns.f
-f77 -c ioparvar.f
-f77 -c getall.f
-f77 -c minmax.f
-f77 -c change_storage.f
-f77 -c change_params.f
-f77 -c getuptake.f
-f77 -c read_outfile.f
+$FC -c main.f
+$FC -c findcolumn.f
+$FC -c getcolumns.f
+$FC -c ioparvar.f
+$FC -c getall.f
+$FC -c minmax.f
+$FC -c change_storage.f
+$FC -c change_params.f
+$FC -c getuptake.f
+$FC -c read_outfile.f
 
-f77 -o ../../../../../bin/calib_nitr_for.exe main.o findcolumn.o getcolumns.o getall.o ioparvar.o minmax.o change_storage.o change_params.o getuptake.o read_outfile.o $usrlib
+$FC -o ../../../../../bin/calib_nitr_for.exe main.o findcolumn.o getcolumns.o getall.o ioparvar.o minmax.o change_storage.o change_params.o getuptake.o read_outfile.o $usrlib
 
 rm *.o
 

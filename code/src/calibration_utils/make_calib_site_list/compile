@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
@@ -8,6 +8,5 @@ f77 -c getall.f
 f77 -c process.f
 
 f77 -o ../../../bin/make_calib_site_list.exe main.o getall.o process.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
 
 rm *.o

@@ -115,13 +115,13 @@
       go to 999
 
 992   report(1) = fnam
-      report(2)=' has out variable '//RnameOut(nOut)//' not found in '
+      report(2)=' has a variable '//RnameOut(nOut)//' not found in '
       report(3)=' rchres_in in the same directory'
       go to 999
 
 993   report(1) = fnam
       report(2)=' has no variable for '//RnameIn(nIn)//' in the file'
-      report(3)=' rchres_in in the same directory'//'Rmas..confluence.f'
+      report(3)=' rchres_in in the same directory'
       go to 999
 
 994   report(1) = 'Too many dsns in file:'

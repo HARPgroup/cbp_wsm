@@ -1,8 +1,7 @@
 #!/bin/csh
+set FC = $argv[1]
+$FC -fbounds-check -c main.f
 
-f77 -fbounds-check -c main.f
-
-f77 -o ../../../bin/check_river.exe main.o ../../lib/get_lib.a ../../lib/util_lib.a
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../bin/check_river.exe main.o ../../lib/get_lib.a ../../lib/util_lib.a
 
 rm *.o

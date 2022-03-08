@@ -9,16 +9,14 @@
       include '../inc/standard.inc'
       include '../inc/locations.inc'
 
-      include '../inc/ps_septic_atdep.inc'
-
       integer nl,numsegs,np
       logical found,comment
       external comment
 
       integer nps
       parameter (nps=3)
-      character*3 psnam(nps)         ! pointsource
-c      data psnam /'wwtp','indus','cso'/
+      character*5 psnam(nps)         ! pointsource
+      data psnam /'wwtp','indus','cso'/
       integer lenpsnam(nps)
 
       character*100 dfnam
@@ -36,10 +34,6 @@ c      data psnam /'wwtp','indus','cso'/
       integer lwc  ! open file
        
 **************** END DECLARATIONS **************************************
-
-      psnam(1) = wwtp
-      psnam(2) = indus
-      psnam(3) = cso
       
 ******** READ THE CONTROL FILE FOR SCENARIOS
       call readcontrol_Rgeoscen(rscen,lenrscen,

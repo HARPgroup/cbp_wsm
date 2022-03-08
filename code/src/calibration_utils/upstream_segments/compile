@@ -1,6 +1,0 @@
-#!/bin/csh
-
-c++ -o upstream_segments upstream_segments.cpp
-set failed = $status; if( $failed == 1 ) exit 1
-
-rm *.o

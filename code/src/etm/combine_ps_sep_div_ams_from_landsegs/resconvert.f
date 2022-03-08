@@ -39,9 +39,9 @@ C      integer conindex
      1        QREGU,TOTIN,TOTOUT,DIFFQ,QST,QINI,
      1        QROSUM(7,6),QROWIN(7,6),QPRSUM(7,6),QPRWIN(7,6)
 C
-      INTEGER IWKDAY, IWKDAY_V2
+      INTEGER IWKDAY
       REAL    TABLE
-      external IWKDAY,TABLE, IWKDAY_V2
+      external IWKDAY,TABLE
 C
  1000 FORMAT (6(F8.2,F5.2))
  1010 FORMAT (8X,I2,2I3,6X,G14.5)
@@ -107,35 +107,18 @@ Cgshenk      WRITE (9,2000) YRI,MOI,DAYI,QINI
       QST= 0
 C
 Cgshenk      READ (8,1010) YRI,MOI,DAYI,QINI
-      print*,'BHATT resconvert a',YRI,MOI,DAYI
       call tomorrow(YRI,MOI,DAYI)  ! increment day
-      print*,'BHATT resconvert b',YRI,MOI,DAYI
       nv = nv + 1
-      QINI = conin(nv)
-      ! I= IWKDAY(MOI,DAYI,YRI) - 2
-      I= IWKDAY_V2(MOI,DAYI,YRI) ! BHATT added
-      print*,'my I= ',I
+      QINI = conin(nv)           
+      I= IWKDAY(MOI,DAYI,YRI) - 2 
       IF (QINI .GE. 50000.) QREGU= 50000.0
 Cgshenk      BACKSPACE 8
       nv = nv - 1
       call yesterday(YRI,MOI,DAYI)
-
-Cgbhatt      I= IWKDAY(01,02,1984)
-Cgbhatt      I= IWKDAY(02,02,1984)
-Cgbhatt      I= IWKDAY(03,02,1984)
-Cgbhatt      I= IWKDAY(04,02,1984)
-Cgbhatt      I= IWKDAY(05,02,1984)
-Cgbhatt      I= IWKDAY(01,01,2000)
-Cgbhatt      I= IWKDAY(05,02,2000)
-Cgbhatt      I= IWKDAY(03,02,2010)
-Cgbhatt      I= IWKDAY(05,10,2013)
-Cgbhatt      stop
-
 C
 C     READ IN A WEEK OF INFLOW
 C
  40   CONTINUE
-Cgbhatt      print*,'A ',I,YRI,MOI,DAYI
       DO 50 J= I, 7
 Cgshenk        READ (8,1010,END=100) YR(J),MO(J),DAY(J),QIN(J)
         nv = nv + 1
@@ -214,14 +197,12 @@ C     OUTPUT THE RESULTS
 C
       DO 140 J= I, K
         QST= QST + QIN(J) - QOUT(J)
-Cgbhatt        if (QST > 1.0) print*,'BHATT date qst ',YRI,MOI,DAYI,QST
 Cgshenk        WRITE (9,2000) YR(J),MO(J),DAY(J),QOUT(J),QIN(J),QST
         conout(nv-k+j) = QOUT(J)
 C        conindex = nv - k + j
 C       WRITE (99,*) conindex,conin(conindex),conout(conindex),
 C     .               YR(J),MO(J),DAY(J),QIN(J),QOUT(J),QST
  140  CONTINUE
-Cgbhatt      if (QST > 1.0) print*,'BHATT date qst ',YRI,MOI,DAYI,QST
       IF (TEST .EQ. 1) GO TO 200
       I= 1
       TOTIN= 0.0
@@ -274,55 +255,6 @@ C
       X= AMOD(X,1.0)*7.0
       IWKDAY= INT(X)
       IF (IWKDAY .EQ. 0) IWKDAY= 7
-C
-      RETURN
-      END
-
-C******** BHATT added IWKDAY_V2 funtion
-C******** Function fixes the computation of IWKDAY
-      INTEGER FUNCTION IWKDAY_V2
-     I                        (tm,td,ty)
-C
-      INTEGER   M,IDY,IYR
-      REAL      X
-      integer   tm,td,ty  ! added by gary shenk so that input vars
-                          ! do not change
-
-C     MONDAY IS CODE NO. 1.  INPUT: MONTH,DAY, AND LAST TWO DIGITS OF YEAR.
-C     INPUT:INTEGER. OUTPUT:INTEGER.
-C
-      integer Y12, Y34, ID, IM, IY, IC, var  ! BHATT added
-      integer mtable(2,12)
-      data mtable/ 0,-1,3,2,3,3,6,6,1,1,4,4,6,6,2,2,5,5,0,0,3,3,5,5 /
-
-      M = tm
-      IDY = td
-      IYR = ty
-
-      print*,'IWKDAY a',tm,td,ty
-
-      Y12 = INT(IYR / 100)
-      Y34 = IYR - (Y12 * 100)
-
-      ID = MOD(IDY, 7)
-
-      LEAPYR = 0
-      IF ( MOD(IYR,4).EQ.0) LEAPYR = 1
-      IF ( MOD(IYR,100).EQ.0 .AND. MOD(IYR,400).NE.0 ) LEAPYR = 0 
-      LEAPYR = LEAPYR + 1
-
-      IM = MTABLE(LEAPYR,M)
-
-      IY = Y34 + INT(Y34 / 4)
-
-      C  = MOD((39 - Y12), 4) * 2
-
-      IWKDAY_V2 = MOD(ID + IM + IY + C, 7) 
-      IF (IWKDAY_V2.EQ.0) IWKDAY_V2 = 7
-
-      print*, ID, IM, IY, C, LEAPYR-1
-
-      print*,'IWKDAY = ',IWKDAY_V2
 C
       RETURN
       END

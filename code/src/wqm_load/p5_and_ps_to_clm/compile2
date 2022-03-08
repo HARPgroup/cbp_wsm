@@ -1,0 +1,79 @@
+#!/bin/csh
+
+source ../../../set_wdmlibdir
+set wdmlibdir = ../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../lib/dsn/dsn_utils.o
+set wqmlib = ../wqmlib/wqmlib.a
+
+rm -i ../../../bin/p5_nps_and_ps_to_clm_*.exe
+
+echo "       parameter ( year1 = 1990 )" >  date.inc
+echo "       parameter ( year2 = 1990 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1990.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1991 )" >  date.inc
+echo "       parameter ( year2 = 1991 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1991.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1992 )" >  date.inc
+echo "       parameter ( year2 = 1992 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1992.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1993 )" >  date.inc
+echo "       parameter ( year2 = 1993 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1993.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1994 )" >  date.inc
+echo "       parameter ( year2 = 1994 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1994.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1995 )" >  date.inc
+echo "       parameter ( year2 = 1995 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1995.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1996 )" >  date.inc
+echo "       parameter ( year2 = 1996 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1996.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1997 )" >  date.inc
+echo "       parameter ( year2 = 1997 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1997.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1998 )" >  date.inc
+echo "       parameter ( year2 = 1998 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1998.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 1999 )" >  date.inc
+echo "       parameter ( year2 = 1999 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_1999.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o
+
+echo "       parameter ( year1 = 2000 )" >  date.inc
+echo "       parameter ( year2 = 2000 )" >> date.inc
+f77 -c main_nps_and_ps_together.f
+f77  -o ../../../bin/p5_nps_and_ps_to_clm_2000.exe main_nps_and_ps_together.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
+rm *.o

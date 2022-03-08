@@ -154,9 +154,6 @@
 ***************** apply factors if not yet calibrated
         KEIM  = KEIM * facKEIM(ns) 
 
-        if(ns .eq. 1) then
-            print*,'ITER',' KEIM=',KEIM
-        end if
 *************** put variables in files in memory
         call putvar(parline(iline),vcKEIM,KEIM)
       end do       ! end loop for land segments

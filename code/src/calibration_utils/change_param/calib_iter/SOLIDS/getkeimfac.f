@@ -40,8 +40,7 @@
          
 ************ Save the results for each run      
       do
-C BHATT        read(dfile,'(a110)',err=992,end=111)dline
-        read(dfile,'(a125)',err=992,end=111)dline
+        read(dfile,'(a110)',err=992,end=111)dline
         call d2x(dline,last)
         call ryt(dline,dfile+1)
         
@@ -83,7 +82,6 @@ C BHATT        read(dfile,'(a110)',err=992,end=111)dline
           facKEIM(ns) = targets(ns)/simEOF(ns)
         end if
       end do
-      print*,'ITER tar sim: ',targets(1),simEOF(1),facKEIM(1)
 
       return
 

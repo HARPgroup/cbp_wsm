@@ -1,6 +1,0 @@
-This directory contains a stand-alone program that will calculate
-  EOF-EOS factors based on the observed bias.
-
-It requires that the land simulation has been run and that the
-  postprocessors for the EOS and DAT average annual have been run.
-

@@ -9,7 +9,7 @@
       integer lenlink
 
       call findopen(ifl)
-      fnam = tree//'input/unformatted/atdep/WQMDATA/'//
+      fnam = tree//'input/unformatted/atdep/CMAQ/'//
      .       linkdir(:lenlink)//'/cellsize.csv'
       open(ifl,file=fnam,status='old',iostat=err)
       if (err.ne.0) go to 991

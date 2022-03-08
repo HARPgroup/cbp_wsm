@@ -107,7 +107,31 @@
 
       end
 
-
+      SUBROUTINE   date2str
+     I                   (indate,
+     O                    outdate)
+! this outputs an array date for debugging
+      INTEGER   indate(6)
+      CHARACTER*4   syear
+      CHARACTER*2   smon, sday, shrs, smin, ssec
+      CHARACTER*14 outymd
+      CHARACTER*10 outhms
+      CHARACTER*24 outdate
+      CHARACTER*8 fmat
+      write(syear,'(I4)') indate(1)
+      write(smon,'(I2)') indate(2)
+      write(sday,'(I2)') indate(3)
+      write(shrs,'(I2)') indate(4)
+      write(smin,'(I2)') indate(5)
+      write(ssec,'(I2)') indate(6)
+!      ztrim(syear)
+! ** This prints out garbage when shrs, smin and ssec are included, maybe line length?
+!      outdate = syear // "/" // smon // "/" // sday // " "// shrs // ":" // smin // "":" ssec
+      outymd = syear // "/" // smon // "/" // sday
+      outhms = shrs // ":" // smin // ":" // ssec
+      outdate = outymd // outhms
+      return
+      end
 
       subroutine getdailydsn(wdmfil,sdate,edate,dsn,
      O                       nvals,dval)
@@ -134,16 +158,15 @@
 
       integer sdate(ndate),edate(ndate),asdate(ndate),aedate(ndate)
       integer i
-
 !------------- function definitions
       integer timchk
       external timchk
 
       tcode = 4    ! for days
 ! timdif gets the number of tcode intervals between sdate and edate
+
       call timdif(sdate,edate,tcode,1,nvals)
 ! make interval inclusive of enddate
-
       dtran = 0
 
 ! find start and end date in data set
@@ -176,10 +199,11 @@
       write(report(3),*)'DSN start date ',asdate
       go to 999
         
-993   write(report(1),*)
+993   call ttyput( "requested end date later than DSN end date" )
+      write(report(1),*)
      .          'requested end date later than DSN end date ',dsn
       write(report(2),*)'requested date ',edate
-      write(report(3),*)'DSN endA date ',aedate
+      write(report(3),*)'DSN end date ',aedate
       go to 999
 
 999   call stopreport(report)
@@ -231,7 +255,6 @@
 
 ! find start and end date in data set
       call wtdate(wdmfil,1,dsn,2,asdate,aedate,err)
-      !print*,'BHATT ',asdate,' # ',aedate,' # ',err
       if (err .ne. 0) go to 991
 
 ! check to see if dates are ok
@@ -257,14 +280,12 @@
 993   write(report(1),*)
      .      'requested end date later than DSN end date ',dsn
       write(report(2),*)'requested date ',edate
-      write(report(3),*)'DSN endB date ',aedate
+      write(report(3),*)'DSN end date ',aedate
       go to 999
 
 999   call stopreport(report)
 
       end
-
-
 
 
 

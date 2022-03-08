@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
@@ -11,9 +11,7 @@ f77 -c findtau.f
 f77 -c main_one_line_read.f
 
 f77 -o ../../../../bin/Rchange_params.exe main.o rproc.o findcolumn.o doaction.o findtau.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
 
 f77 -o ../../../../bin/Rchange_params_one_line.exe main_one_line_read.o rproc.o findcolumn.o doaction.o findtau.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
 
 rm *.o

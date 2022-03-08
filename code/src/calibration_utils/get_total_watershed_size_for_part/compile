@@ -1,12 +1,12 @@
 #!/bin/csh
-
+set set FC = $argv[1]
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c main.f
-f77 -c getall.f
-f77 -c process.f
+$FC -c main.f
+$FC -c getall.f
+$FC -c process.f
 
-f77 -o ../../../bin/get_watershed_size.exe main.o getall.o process.o $usrlib
+$FC -o ../../../bin/get_watershed_size.exe main.o getall.o process.o $usrlib
 
 rm *.o

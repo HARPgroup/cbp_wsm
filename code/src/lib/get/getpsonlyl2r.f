@@ -8,7 +8,6 @@
       implicit none
       include '../inc/standard.inc'
       include '../inc/locations.inc'
-      include '../inc/ps_septic_atdep.inc'
 
       integer nl,numsegs,np,npssegs
       character*6 psl2r(maxL2R)
@@ -17,8 +16,8 @@
 
       integer nps
       parameter (nps=3)
-      character*3 psnam(nps)         ! pointsource
-c      data psnam /'wwtp','indus','cso'/
+      character*5 psnam(nps)         ! pointsource
+      data psnam /'wwtp','indus','cso'/
       integer lenpsnam(nps)
 
       character*35 psscen            ! ps data scenario for wdm location
@@ -29,10 +28,7 @@ c      data psnam /'wwtp','indus','cso'/
       character*6 Tlseg
        
 **************** END DECLARATIONS **************************************
-
-      psnam(1) = wwtp
-      psnam(2) = indus
-      psnam(3) = cso      
+      
 ******** READ THE CONTROL FILE FOR SCENARIOS
       call readcontrol_Rpsscen(rscen,lenrscen,
      O                         psscen)

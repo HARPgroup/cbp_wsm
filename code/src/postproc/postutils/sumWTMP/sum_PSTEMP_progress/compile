@@ -1,11 +1,8 @@
-#!/bin/csh
-
  f77 -c main.f
  f77 -c onefile.f
  f77 -c avesums.f
 
  f77 -o ../../../../../bin/progress_sum_PSTEMP_stats.exe main.o onefile.o avesums.o ../../../../lib/util_lib.a
- set failed = $status; if( $failed == 1 ) exit 1
 
  rm *.o
 
