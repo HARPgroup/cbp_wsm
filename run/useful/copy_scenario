@@ -1,0 +1,11 @@
+#!/bin/csh
+# load env vars
+. hspf_config
+
+ set scen1 = $argv[1]
+ set scen2 = $argv[2]
+
+ cp $CBP_ROOT/config/control/land/${scen1}.con $CBP_ROOT/config/control/land/${scen2}.con
+ cp $CBP_ROOT/config/control/river/${scen1}.con $CBP_ROOT/config/control/river/${scen2}.con
+ cp $CBP_ROOT/config/control/script/${scen1}.con $CBP_ROOT/config/control/script/${scen2}.con
+
