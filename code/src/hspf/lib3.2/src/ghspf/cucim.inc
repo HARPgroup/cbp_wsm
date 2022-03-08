@@ -1,7 +1,7 @@
 C
 C     parameter for size of in memory UCI file
       INTEGER   MXUCI,MXSKWD,MXCKWD
-      PARAMETER(MXUCI=62000,MXSKWD=1000,MXCKWD=2000)
+      PARAMETER(MXUCI=60000,MXSKWD=1000,MXCKWD=2000)
 C
 C     in memory common block for OSUP file
       COMMON/CUCIMC/UCIM,UKWD,UEND

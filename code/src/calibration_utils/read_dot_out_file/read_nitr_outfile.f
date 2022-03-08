@@ -43,7 +43,7 @@
       real s1,s2
 *************** END DECLARATIONS ***************************************
 
-      print*, 'please input scenario, landuse, landseg'
+      !print*, 'please input scenario, landuse, landseg'
       read*, lscen,clu,thislseg
 
       do ny = year1,year2
@@ -238,7 +238,7 @@
 
       fnam = outdir//'hspf/land/out/'//clu//'/'//lscen(:lenlscen)//
      .           '/'//'outfile.out'
-      open(dfile,file=fnam,status='new',iostat=err)
+      open(dfile,file=fnam,status='unknown',iostat=err)
       if (err.ne.0) go to 991
 
       write(dfile,1211,err=951) 'SEGMNT','appNH4','appNO3',
@@ -250,7 +250,13 @@
      .                  avatmosNH4,avatmosNO3,avuptkNH4,avuptkNO3,
      .                  avdenit,avnitr,avmin,avvolt,
      .                  avimbNH4,avimbNO3,avoutNH4,avoutNO3,
-     .                  stNH4(1985),stNH4(1999),stNO3(1985),stNO3(1999) 
+     .                  stNH4(1985),stNH4(1999),stNO3(1985),stNO3(1999)
+ 
+      write(*,1222,err=951) thislseg,avappNH4,avappNO3,
+     .                  avatmosNH4,avatmosNO3,avuptkNH4,avuptkNO3,
+     .                  avdenit,avnitr,avmin,avvolt,
+     .                  avimbNH4,avimbNO3,avoutNH4,avoutNO3,
+     .                  stNH4(1985),stNH4(1999),stNO3(1985),stNO3(1999)
       close(dfile)
 
 1211  format(a6,18(',',a8))

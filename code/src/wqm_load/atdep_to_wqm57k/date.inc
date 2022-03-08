@@ -1,5 +1,5 @@
        parameter ( year1 = 1985 )
-       parameter ( year2 = 2014 )
+       parameter ( year2 = 2005 )
 *********** DO NOT CHANGE THESE DATES WITHOUT CAREFUL CONSIDERATION
 ********** MAKING CHANGES WILL CHANGE THE REGRESSED SLOPE OF THE LINE
 ********** AND WILL RESULT IN OUTPUT THAT IS NOT CONSISTENT EXCEPT

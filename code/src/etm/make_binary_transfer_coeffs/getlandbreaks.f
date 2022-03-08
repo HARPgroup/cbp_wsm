@@ -10,7 +10,7 @@
       subroutine getlandbreaks(rseg,numsegs,l2r,LBfile,LBdata,nLB)
       implicit none
       include 'mbtc.f'
-      character*800 dline
+      character*600 dline
       character*13 ctemp
       integer order(nlu)                ! indexed to the column, not land use
       logical found
@@ -50,8 +50,8 @@
         open (dfile,file=fnam,status='old',iostat=err)
         if (err.ne.0) go to 991
 
-        read(dfile,'(a800)',err=996)dline            ! read header line
-        if (dline(800-2:800).ne.'   ') go to 990
+        read(dfile,'(a600)',err=996)dline            ! read header line
+        if (dline(600-2:600).ne.'   ') go to 990
 
         call findcomma(dline,i)                    ! check that first column is river
         ctemp = dline(:i-1)
@@ -87,23 +87,13 @@
           call shift(dline)
         end do
 
-        l = nlu
-        ctemp = 'rpa'
-        call trims(ctemp,i)
-        do ll = 1,nlu
-           if (ctemp(:i).eq.luname(ll)) then
-             order(l) = ll
-             found = .true.
-           end if
-        end do
-
         ifound = 0
         do i = 1,numsegs
           foundl(i) = .false.
         end do
         do while (ifound.lt.numsegs)          ! read down until all land segs found
-          read(dfile,'(a800)',err=997,end=998) dline
-          if (dline(800-2:800).ne.'   ') go to 990
+          read(dfile,'(a600)',err=997,end=998) dline
+          if (dline(600-2:600).ne.'   ') go to 990
           if (dline(:3).eq.'end') go to 998
           call findcomma(dline,last)
           Trseg = dline(:last-1)
@@ -122,11 +112,6 @@
             end do
             if (.not.found) go to 995
             do l = 1,nlu                       ! we have land seg, read across
-              print*,luname(order(l))
-              if ( luname(order(l)) .eq. 'rpa') then
-                 LBdata(n,nl2r,order(l)) = 0.1
-                 cycle
-              end if
               call shift(dline)                ! according to order found above
               read(dline,*,end=988,err=987) LBdata(n,nl2r,order(l)) 
             end do
@@ -194,7 +179,7 @@
       report(3) = fnam
       go to 999
 
-995   report(1) = 'getlandbreaks found unexpected land segment '//Tl2r
+995   report(1) = 'found unexpected land segment '//Tl2r
       report(2) = ' associated with '//rseg//' in file '
       report(3) = fnam
       go to 999

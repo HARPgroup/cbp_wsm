@@ -47,7 +47,7 @@ C     osv in scratch pad
 C
 C     + + + PARAMETERS + + +
       INTEGER      MXSPBF,MXBKLV,MXVACC
-      PARAMETER   (MXSPBF=150000)
+      PARAMETER   (MXSPBF=120000)
       PARAMETER   (MXBKLV=10)
       PARAMETER   (MXVACC=50)
 C

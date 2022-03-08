@@ -1,13 +1,12 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c plotinfo.f
-f77 -fbounds-check -c eval.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c plotinfo.f
+$FC -fbounds-check -c eval.f
 
-f77 -o ../../../../bin/evaluation_stat.exe main.o plotinfo.o eval.o $usrlib ../postriverlib.a
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../../bin/evaluation_stat.exe main.o plotinfo.o eval.o $usrlib ../postriverlib.a
 
 rm *.o

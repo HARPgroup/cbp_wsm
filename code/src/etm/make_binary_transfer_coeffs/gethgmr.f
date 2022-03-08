@@ -100,7 +100,7 @@
       report(3) = fnam
       go to 999
 
-997   report(1) = 'gethgmr found unexpected land segment '//Tl2r
+997   report(1) = 'found unexpected land segment '//Tl2r
       report(2) = ' associated with '//Trseg//' in file '
       report(3) = fnam
       go to 999

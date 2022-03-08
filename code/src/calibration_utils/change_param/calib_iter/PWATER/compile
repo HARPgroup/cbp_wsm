@@ -1,24 +1,23 @@
 #!/bin/csh
 
-## set usrdir = ../../../lib
-## set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
-
-f77 -c findcolumn.f
-f77 -c allcolumns.f
-f77 -c ioparvar.f
-f77 -c minmax.f
-f77 -c getall.f
-f77 -c getlufacs.f
-f77 -c zipall.f
-f77 -c printall.f
-###f77 -o ../../../../bin/calib_iter_params.exe main.o proc.o findcolumn.o doaction.o $usrlib
+ set usrdir = ../../../../lib
+ set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set FC = $argv[1]
+$FC -c findcolumn.f
+$FC -c allcolumns.f
+$FC -c ioparvar.f
+$FC -c minmax.f
+$FC -c getall.f $usrlib
+$FC -c getlufacs.f
+$FC -c zipall.f
+$FC -c printall.f
+###$FC -o ../../../../bin/calib_iter_params.exe main.o proc.o findcolumn.o doaction.o $usrlib
 
 ar rv caliter.a findcolumn.o allcolumns.o ioparvar.o minmax.o getall.o getlufacs.o zipall.o printall.o
-set failed = $status; if( $failed == 1 ) exit 1
 
 rm *.o
 
-f77 -c main.f
+$FC -c main.f
 
 ### this compile script only forms the objects.  The final linkage
 ###  is done in the run script that starts the whole iteration process

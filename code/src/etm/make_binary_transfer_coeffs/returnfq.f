@@ -92,13 +92,11 @@
 *********** open WDM file to read in simulated flow
       wdmfnam = outwdmdir//'land/'//luname(nl)//'/'//lscen(:lenlscen)//
      .          '/'//luname(nl)//landseg(:lenlandseg)//'.wdm'
-      print*,'BHATT ',wdmfnam
       call wdbopnlong(wdmlnd,wdmfnam,1,err)     ! open land read only
       if (err .ne. 0) go to 991
 
       dsn = 111  ! SURO, hardcode dsn number
                  ! (see config/catalog/iovars/land_to_river)     
-      print *,'BHATT$ ',sdate,edate,nvals
       call gethourdsn(
      I                wdmlnd,sdate,edate,dsn,
      O                nvals,hsuro)
@@ -206,9 +204,8 @@
       call Ktable (Tk)           ! read K value 
 
 CBHATT??      if (abs(skew) .GT. 3.30) go to 992     !  skew out of range
-CBHATT??      if (abs(skew) .GT. 3.399) go to 992     !  skew out of range
-      if ( skew .GT.  3.399) skew =  3.399
-      if ( skew .LT. -3.399) skew = -3.399
+      if (abs(skew) .GT. 3.399) go to 992     !  skew out of range
+
 ****  skew in valid range, interpolate
       do i = 1,69
         if (skew .le. Tskew(i) .and. skew.ge.Tskew(i+1)) then
@@ -264,8 +261,9 @@ C        print*,indx1,',',flow(n),',',p(n),',',retfreq(n) ! verified
 
 992   report(1) = 'computed skew value'
       report(2) = 'outside the range in K table [-3.3, 3.3] '
-c      report(3) = 'skew =   '
-c      write(report(3)(8:13),'(i5)') skew
+C      report(3) = 'skew =       '
+C      write(report(3)(8:13),'(i5)') skew
+C      write(report(3)(8:13),'(e6.3)') skew
       write(report(3),*) 'skew= ',skew
       go to 999
 
@@ -300,8 +298,6 @@ c      write(report(3)(8:13),'(i5)') skew
 ** Table of Frequency Factors K for Gamma and log Pearson Type III    **
 ** Distributions                                                      **
 ************************************************************************
-
-CBHATT ftp://ftp-fc.sc.egov.usda.gov/NHQ/pub/outgoing/jbernard/CED-Directives/technical-releases/tr38.pdf
 
       subroutine Ktable
      O                 (Tk)

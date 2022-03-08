@@ -1,8 +1,0 @@
-srun: error
-srun: error: Unable to create job step
-unpack error in io_init_msg_unpack
-Invalid IO init header version
-failed reading io init message
-io_init_msg_read too small
-appears to have a different slurm.conf than the slurmctld
-Fortran runtime error: Stale file handle

@@ -66,8 +66,6 @@
         end do
       end do
 
-      print*,'return readRiverSeglist'
-
       return
 
 ************ ERROR SPACE ***********************************************

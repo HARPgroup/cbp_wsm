@@ -43,13 +43,23 @@
 
       real aggfactor ! variable to aggregate river factors for each lseg
       real avsuro    ! average surface runoff SURO
-
+      integer arginfo ! did we get 3 args or only 2?
 *************** END DECLARATIONS ***************************************
 
 
 ************ SPECIFICATION ENTRY SECTION
-      read*,calscen,rscen
-
+      module = 'PWATER'
+      call uppercase(module)
+      call lencl(module,lenmod)
+      read(*,*,IOSTAT=arginfo) calscen,rscen,basin
+      call lencl(calscen,lencalscen)
+      if (arginfo < 0) then
+        basin = calscen(:lencalscen)//'_'//module
+        print*,'Basin auto:',basin
+      else 
+        print*,'Basin arg:',basin
+      end if
+      call lencl(basin,lenbasin)
       call readcontrol_lscen(rscen,lscens)
 
       do nl = 1,numlu
@@ -60,12 +70,6 @@
         call lencl(paramscens(lus(nl)),lenparamscens(lus(nl)))
       end do
 
-      module = 'PWATER'
-      call uppercase(module)
-      call lencl(module,lenmod)
-      call lencl(calscen,lencalscen)
-
-      basin = calscen(:lencalscen)//'_'//module
 
 ************* PRINT SKIPPED LAND USES
       do i = 1,nlu ! total number of land uses
@@ -79,7 +83,6 @@
 **********HOUSE KEEPING ************************
       call readLandSeglist(basin,
      O                     lsegs,nlsegs)
-
       call readRiverSeglist(
      I                      basin,
      O                      rsegs,nrsegs)
@@ -95,7 +98,6 @@
         read(Tseg(5:8),'(i4)')uniqid(nr)
         uniqindex(uniqid(nr))=nr
       end do
-      
 *********** READ IN LAND-RIVER WEIGHTS
       call getR2L(
      I            calscen,lsegs,nlsegs,uniqindex,orphans,norphans,
@@ -141,7 +143,6 @@ C     O      monthlyUZSNfac,SUROtargets)
           end do
         if (.not.anyexist) exit
       end do
-      print*,'PWATER/main.f ',version
 
 ************ READ IN ALL RIVER STATISTICS
       call getRstats(rscen,uniqindex,version,R2L,nR2L,nlsegs,rsegs,
@@ -219,7 +220,7 @@ C     O      monthlyUZSNfac,SUROtargets)
           end do
         end do      
 
-        nl = lgom  ! all other land uses ratioed against gom
+        nl = lhom  ! all other land uses ratioed against hom
         call getvar(parline(iline(nl),nl),vcLZSN(nl),LZSN(nl))
         call getvar(parline(iline(nl),nl),vcAGWR(nl),AGWR(nl))
         call getvar(parline(iline(nl),nl),vcIRC(nl),IRC(nl))
@@ -238,59 +239,59 @@ C     O      monthlyUZSNfac,SUROtargets)
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facLZSN(R2L(ns,nr))
         end do
-        LZSN(lgom) = LZSN(lgom) * aggfactor
+        LZSN(lhom) = LZSN(lhom) * aggfactor
         aggfactor = 0.0
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facAGWR(R2L(ns,nr))
         end do
-        AGWR(lgom) = AGWR(lgom) * aggfactor
+        AGWR(lhom) = AGWR(lhom) * aggfactor
         aggfactor = 0.0
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facIRC(R2L(ns,nr))
         end do
-        IRC(lgom) = IRC(lgom) * aggfactor
+        IRC(lhom) = IRC(lhom) * aggfactor
         aggfactor = 0.0
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facINTFW(R2L(ns,nr))
         end do
-        INTFW(lgom) = INTFW(lgom) * aggfactor
+        INTFW(lhom) = INTFW(lhom) * aggfactor
         aggfactor = 0.0
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facINFILT(R2L(ns,nr))
         end do
-        INFILT(lgom) = INFILT(lgom) * aggfactor
+        INFILT(lhom) = INFILT(lhom) * aggfactor
         aggfactor = 0.0
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facAGWETP(R2L(ns,nr))
         end do
-        AGWETP(lgom) = AGWETP(lgom) * aggfactor
+        AGWETP(lhom) = AGWETP(lhom) * aggfactor
         aggfactor = 0.0
         do nr = 1,nR2L(ns)
           aggfactor = aggfactor + weight(ns,nr)*facKVARY(R2L(ns,nr))
         end do
-        KVARY(lgom) = KVARY(lgom) * aggfactor
+        KVARY(lhom) = KVARY(lhom) * aggfactor
     
 *************** make sure that all factors are positive by 
 ************ enforcing minumum, this corrects an error where a parameter of
 ************* zero would produce a corrupt parameter file.  maxima and minima
 ************* are reset for all land uses in the subroutine minmax below
-        LZSN(lgom) = max(LZSN(lgom),limitsLZSN(1))
-        AGWR(lgom) = max(AGWR(lgom),limitsAGWR(1))
-        IRC(lgom) = max(IRC(lgom),limitsIRC(1))
-        INTFW(lgom) = max(INTFW(lgom),limitsINTFW(1))
-        INFILT(lgom) = max(INFILT(lgom),limitsINFILT(1))
-        AGWETP(lgom) = max(AGWETP(lgom),limitsAGWETP(1))
-        KVARY(lgom) = max(KVARY(lgom),limitsKVARY(1))
+        LZSN(lhom) = max(LZSN(lhom),limitsLZSN(1))
+        AGWR(lhom) = max(AGWR(lhom),limitsAGWR(1))
+        IRC(lhom) = max(IRC(lhom),limitsIRC(1))
+        INTFW(lhom) = max(INTFW(lhom),limitsINTFW(1))
+        INFILT(lhom) = max(INFILT(lhom),limitsINFILT(1))
+        AGWETP(lhom) = max(AGWETP(lhom),limitsAGWETP(1))
+        KVARY(lhom) = max(KVARY(lhom),limitsKVARY(1))
 **************** apply factors to all land uses
         do nl = 1,numlu
-          if (lus(nl).eq.lgom) cycle
-          LZSN(lus(nl)) = LZSN(lgom)*lufacLZSN(lus(nl))
-          AGWR(lus(nl)) = AGWR(lgom)*lufacAGWR(lus(nl))
-          IRC(lus(nl)) = IRC(lgom)*lufacIRC(lus(nl))
-          INTFW(lus(nl)) = INTFW(lgom)*lufacINTFW(lus(nl))
-          INFILT(lus(nl)) = INFILT(lgom)*lufacINFILT(lus(nl))
-          AGWETP(lus(nl)) = AGWETP(lgom)*lufacAGWETP(lus(nl))
-          KVARY(lus(nl)) = KVARY(lgom)*lufacKVARY(lus(nl))
+          if (lus(nl).eq.lhom) cycle
+          LZSN(lus(nl)) = LZSN(lhom)*lufacLZSN(lus(nl))
+          AGWR(lus(nl)) = AGWR(lhom)*lufacAGWR(lus(nl))
+          IRC(lus(nl)) = IRC(lhom)*lufacIRC(lus(nl))
+          INTFW(lus(nl)) = INTFW(lhom)*lufacINTFW(lus(nl))
+          INFILT(lus(nl)) = INFILT(lhom)*lufacINFILT(lus(nl))
+          AGWETP(lus(nl)) = AGWETP(lhom)*lufacAGWETP(lus(nl))
+          KVARY(lus(nl)) = KVARY(lhom)*lufacKVARY(lus(nl))
         end do
 
 ***************** check for max and min
@@ -301,22 +302,22 @@ C     O      monthlyUZSNfac,SUROtargets)
      I               limitsINTFW, limitsAGWETP, limitsKVARY)
   
 *************** adjust intfw so that surface runoff is available
-        if (SURO(ns,lgom).lt.SUROtargets(1)) then
-          if (SURO(ns,lgom).gt.0.00001) then
+        if (SURO(ns,lhom).lt.SUROtargets(1)) then
+          if (SURO(ns,lhom).gt.0.00001) then
             do nl = 1,numlu
-              INTFW(lus(nl))=INTFW(lus(nl))*SURO(ns,lgom)/SUROtargets(1)
+              INTFW(lus(nl))=INTFW(lus(nl))*SURO(ns,lhom)/SUROtargets(1)
             end do
           else
-            INTFW(lgom) = limitsINTFW(1)
+            INTFW(lhom) = limitsINTFW(1)
             do nl = 1,numlu
-              if (lus(nl).eq.lgom) cycle
-              INTFW(lus(nl)) = INTFW(lgom)*lufacINTFW(lus(nl))
+              if (lus(nl).eq.lhom) cycle
+              INTFW(lus(nl)) = INTFW(lhom)*lufacINTFW(lus(nl))
             end do
           end if
         end if
-        if (SURO(ns,lgom).gt.SUROtargets(2)) then
+        if (SURO(ns,lhom).gt.SUROtargets(2)) then
           do nl = 1,numlu
-            INTFW(lus(nl))=INTFW(lus(nl))*SURO(ns,lgom)/SUROtargets(2)
+            INTFW(lus(nl))=INTFW(lus(nl))*SURO(ns,lhom)/SUROtargets(2)
           end do 
         end if
         
@@ -398,8 +399,8 @@ C     O      monthlyUZSNfac,SUROtargets)
       end do
 
 ************** LAND EVAP PORTION
-      fnam = pardir//'common/'//paramscens(lgom)
-     .            (:lenparamscens(lgom))//'/land_evap.csv'
+      fnam = pardir//'common/'//paramscens(lhom)
+     .            (:lenparamscens(lhom))//'/land_evap.csv'
       open(dfile,file=fnam,status='old',iostat=err)
       if (err.ne.0) go to 991
 
@@ -413,8 +414,8 @@ C     O      monthlyUZSNfac,SUROtargets)
       end do
       close(dfile)  ! file read into memory
 
-      fnam = pardir//'common/'//paramscens(lgom)  ! write to new name
-     .            (:lenparamscens(lgom))//'/land_evap_'//version//'.csv'
+      fnam = pardir//'common/'//paramscens(lhom)  ! write to new name
+     .            (:lenparamscens(lhom))//'/land_evap_'//version//'.csv'
       open(dfile,file=fnam,status='unknown',iostat=err)
       if (err.ne.0) go to 991
 
@@ -444,29 +445,9 @@ C     O      monthlyUZSNfac,SUROtargets)
         i = i + 1
         read(LEline(i),*) tseg
       end do
-
-c BHATT: START Added Update of LandEvap of Orphans
-      print*,'Restoring LandEvap of Orphans'
-      do i = 2,nLElines
-        read(LEline(i),*) tseg
-        print*,'>',LEline(i),'<>',tseg,'<'
-        do j = 1,norphans
-          if( tseg(:6).eq.orphans(j) ) then
-             do k = 2,nLElines
-               read(LEline(k),*) tseg,landevap
-               if( tseg(:6).eq.surrogates(j) ) then
-                 print*,orphans(j),',',landevap
-                 write(LEline(i),*)orphans(j),',',landevap
-               end if
-             end do
-          end if
-        end do
-
-      end do
-c BHATT: END
       
-      fnam = pardir//'common/'//paramscens(lgom)
-     .            (:lenparamscens(lgom))//'/land_evap.csv'
+      fnam = pardir//'common/'//paramscens(lhom)
+     .            (:lenparamscens(lhom))//'/land_evap.csv'
       open(dfile,file=fnam,status='unknown',iostat=err)
       if (err.ne.0) go to 991
       do i = 1,nLElines
@@ -497,23 +478,23 @@ c BHATT: END
       report(3) = ' '
       go to 999
 
-994   report(1) = 'problem reading file 994'
+994   report(1) = 'problem reading file'
       report(2) = fnam
       report(3) = 'error occured in first two lines'
       go to 999
 
-996   report(1) = 'problem reading file 996:  near line:'
+996   report(1) = 'problem reading file:  near line:'
       report(2) = fnam
       report(3) = parline(nlines(lus(nl))-1,lus(nl))(:100)
       go to 999
 
-997   report(1) = 'problem reading file 997:  near line:'
+997   report(1) = 'problem reading file:  near line:'
       report(2) = fnam
       report(3) = 'file ended before literal '//char(39)//'end'//
      .             char(39)//' found'
       go to 999
 
-998   report(1) = 'problem reading file 998'
+998   report(1) = 'problem reading file '
       report(2) = fnam
       report(3) = ' '
       if (err.eq.993) report(3) = 'file ended before literal '//char(39)

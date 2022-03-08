@@ -88,7 +88,6 @@
 
       do nOut = 1,nRvarOut
         found = .false.
-        if(RnameOut(nOut).eq.'SSCR') found=.true.
         do nIn = 1,nRvarIn
           if (RnameOut(nOut).eq.RnameIn(nIn)) found = .true.
         end do
@@ -111,7 +110,7 @@
 
 993   report(1) = fnam
       report(2)=' has no variable for '//RnameIn(nIn)//' in the file'
-      report(3)=' rchres_in in the same directory'//'Rmasslink.f'
+      report(3)=' rchres_in in the same directory'
       go to 999
 
 994   report(1) = 'Too many dsns in file:'

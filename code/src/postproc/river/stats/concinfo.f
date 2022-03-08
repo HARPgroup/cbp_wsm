@@ -15,7 +15,6 @@
       character*200 pline    ! line long enough to read concfile line
 
       integer Tnccons         ! temporary variable for reading a line
-
       logical found,allfound
 
 *********** END DECLARATIONS
@@ -25,7 +24,6 @@
       call lencl(ioscen,lenioscen)
 
       fnam=catdir//'iovars/'//ioscen(:lenioscen)//'/rchres_out_to_conc'
-c      write(*,*) 'BHATT ',fnam
       open(11,file=fnam,status='old',iostat=err)
       if (err.ne.0) go to 991 
 
@@ -45,7 +43,6 @@ c      write(*,*) 'BHATT ',fnam
             if (ccon(nconcs,i).eq.'    ') go to 992
           end do
           allfound = .true.
-c          write(*,*) 'BHATT nRvar=',nRvar,' Rname= ',Rname
           do np = 1,nccons(nconcs)    ! test for existance of all concs
             found = .false.
             do Rvar = 1,nRvar

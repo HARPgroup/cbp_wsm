@@ -1,4 +1,0 @@
-hosuper.f:      SUBROUTINE OSUPER
-hspf.f:      EXTERNAL  PMXTFT, KEYUCI, DMPKEY, INTERP, OSUPER, WMSGTT
-hspf.f:CGaryShenk          CALL OSUPER (FILES)
-hspf.f:          CALL OSUPER (FILES,FILNAM)

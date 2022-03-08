@@ -24,7 +24,7 @@ Incls = -I$(Incl_1)
 FFLAGS = -C -u $(OptM) $(Incls)
 
 # Compiler name
-F77 = f77
+FC = f77
 
 # this description file uses the Bourne shell
 SHELL = /bin/sh
@@ -51,7 +51,7 @@ all: includes $(binary) $(binMake) install
 
 # program dependencies
 $(binMake):  $(Objects) $(Libs)
-	$(F77) $(Objects) $(Libs) -o $@
+	$(FC) $(Objects) $(Libs) -o $@
 $(binary):
 	@if [ ! -d $(binary) ]   ; then        \
 	   mkdir $(binary)  ;                  \

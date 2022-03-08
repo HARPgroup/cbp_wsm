@@ -1,0 +1,10 @@
+#!/bin/csh
+
+set usrdir = ../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+
+f77 -c read_nitr_outfile.f
+
+f77 -o ../../../bin/read_nitr_output.exe read_nitr_outfile.o $usrlib
+
+rm *.o

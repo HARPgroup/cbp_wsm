@@ -21,7 +21,6 @@
 
 ******Nash-Sutcliffe effciency (NSE) statistic*******************************
 
-c      print*,'n = ',n
       realn = real(n)
       sumOb = 0.
       sumSi = 0.
@@ -43,12 +42,10 @@ c      print*,'n = ',n
         sum1 = sum1 + (Si(i)-Ob(i))
         sum2 = sum2 + (Si(i)-Ob(i))**2
         sum3 = sum3 + (Ob(i)-meanOb)**2
-c        print*,Ob(i),meanOb,sum3
         sum4 = sum4 + (Si(i)-meanSi)**2
         sum5 = sum5 + (Ob(i)-meanOb)*(Si(i)-meanSi)
 
-      end do
-c      print*,meanOb,meanSi,sum3
+c      end do
 
         if (sum3.le.-0)then!1.0e-3) or zero?
            err = 1
@@ -91,7 +88,7 @@ c      print*,meanOb,meanSi,sum3
 
         end if
 
-c      end do
+      end do
 
       return
 

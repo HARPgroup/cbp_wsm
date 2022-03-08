@@ -7,7 +7,6 @@
   f77 -c readcontrol_vartypes.f
 
   f77 -o ../../../../../bin/pltgen_annave_summary.exe main.o readcontrol_vartypes.o $usrlib
-  set failed = $status; if( $failed == 1 ) exit 1
 
   rm *.o
 

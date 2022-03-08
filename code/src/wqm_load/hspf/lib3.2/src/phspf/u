@@ -1,7 +1,0 @@
-hpernit.f:C     orrganic n mineralization to ammonia
-hpernit_print.f:C     orrganic n mineralization to ammonia
-hperpho.f:C     store fluxes for po4 immobilization, orgp mineralization
-hperpho.f:C         organic phosphorus mineralization
-hrchaci.f:C     compute free aluminum conc. based on Gibbsite mineral solubility
-hrchaci.f:C     compute free Aluminum conc. based on Gibbsite mineral solubility
-hrchaci.f:C     ksp of solid mineral

@@ -402,16 +402,16 @@
       report(3) = ' '
       go to 999
 
-998   report(1) = wdmfnam(1:60)
-      report(2) = wdmfnam(61:150)
+998   report(1) = wdmfnam
       if (err.eq.0) then
-        report(3) = ' is not a wdm file'
+        report(2) = ' is not a wdm file'
       else if (err.eq.-2) then
-        report(3) = ' does not exist'
+        report(2) = ' does not exist'
       else
-        report(3) = 'Error: opening wdm= '
-        write(report(3)(22:24),'(i3)')err
+        report(2) = 'Error: opening wdm= '
+        write(report(2)(22:24),'(i3)')err
       end if
+      report(3) = ' '
       go to 999
 
 999   call stopreport(report)

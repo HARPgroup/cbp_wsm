@@ -1,16 +1,15 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c main.f
-f77 -c proc.f
-f77 -c findcolumn.f
-f77 -c readcontrol_tree2paramscen.f
-f77 -c doaction.f
-f77 -c getthislutype.f
+$FC -c main.f
+$FC -c proc.f
+$FC -c findcolumn.f
+$FC -c readcontrol_tree2paramscen.f
+$FC -c doaction.f
+$FC -c getthislutype.f
 
-f77 -o ../../../bin/get1parameter.exe main.o proc.o findcolumn.o readcontrol_tree2paramscen.o doaction.o getthislutype.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../bin/get1parameter.exe main.o proc.o findcolumn.o readcontrol_tree2paramscen.o doaction.o getthislutype.o $usrlib
 
 rm *.o

@@ -1,0 +1,28 @@
+#!/bin/csh
+
+source ../../../../set_wdmlibdir
+set wdmlibdir = ../../../$wdmlibdir
+set lib1 = $wdmlibdir/wdmlib.a
+set lib2 = $wdmlibdir/adwdmlib.a
+set lib3 = $wdmlibdir/utillib.a
+set usrdir = ../../../lib
+set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
+set dsnlib = ../../../lib/dsn/dsn_utils.o
+
+f77 -fbounds-check -c main.f
+f77 -fbounds-check -c FlowStats.f
+f77 -fbounds-check -c loadinfo.f
+f77 -fbounds-check -c gethours.f
+f77 -fbounds-check -c doflows.f
+
+f77 -fbounds-check -c flow.header.f
+
+f77 -o GCM_FlowStats.exe loadinfo.o main.o FlowStats.o gethours.o doflows.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
+
+f77 -o GCM_FlowHeader.exe flow.header.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib
+
+#f77 -o ../../../../bin/Rstats.exe loadinfo.o concinfo.o main.o flowstats.o wqstats.o gethours.o single.o peaks.o plt2cal.o doflows.o doloads.o doconcs.o readtau.o windowstats.o monthlybias.o vodkatest.o VAstats.o avmoneff.o bflowstats.o eval.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
+
+#f77 -o ../../../../bin/Rstats_write_obs.exe loadinfo.o concinfo.o main.o flowstats.o wqstats.o gethours.o single.o peaks.o plt2cal.o doflows_write_obs.o doloads.o doconcs.o readtau.o windowstats.o monthlybias.o vodkatest.o VAstats.o avmoneff.o bflowstats.o eval.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
+
+rm *.o

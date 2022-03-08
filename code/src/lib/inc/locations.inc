@@ -53,7 +53,4 @@
       character*25 paramscen  ! name of the directory for parameters
       integer lenparamscen
 
-      character*25 unecparam
-      integer lenunecparam
-
 

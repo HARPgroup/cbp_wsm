@@ -1,19 +1,17 @@
-#!/bin/csh
-
+#/bin/csh
+set FC = $argv[1]
 set usrdir = ../../../lib
 set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c main_otherDF.f
-f77 -fbounds-check -c getDFmethod.f
-f77 -fbounds-check -c getloads.f
-f77 -fbounds-check -c getRvars.f
-f77 -fbounds-check -c delinfo.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c main_otherDF.f
+$FC -fbounds-check -c getDFmethod.f
+$FC -fbounds-check -c getloads.f
+$FC -fbounds-check -c getRvars.f
+$FC -fbounds-check -c delinfo.f
 
-f77 -o ../../../../bin/sum_delivery_factor.exe main.o getDFmethod.o getloads.o getRvars.o delinfo.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
-f77 -o ../../../../bin/sum_otherDF_delivery_factor.exe main_otherDF.o getDFmethod.o getloads.o getRvars.o delinfo.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../../bin/sum_delivery_factor.exe main.o getDFmethod.o getloads.o getRvars.o delinfo.o $usrlib
+$FC -o ../../../../bin/sum_otherDF_delivery_factor.exe main_otherDF.o getDFmethod.o getloads.o getRvars.o delinfo.o $usrlib
 
 rm *.o
 

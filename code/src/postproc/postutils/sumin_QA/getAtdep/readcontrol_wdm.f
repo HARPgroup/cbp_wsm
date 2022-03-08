@@ -12,7 +12,7 @@
 
       logical comment
 
-      character*(*) pradscen, psscen, sepscen
+      character*25 pradscen, psscen, sepscen
       logical doatdep,dops,dosep
 
       fnam = controldir//'river/'//rscen(:lenrscen)//'.con'

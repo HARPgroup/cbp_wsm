@@ -1,31 +1,30 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c -W  main.f
-f77 -c -W  getall.f
-f77 -c -W  process.f
+$FC -c -W  main.f
+$FC -c -W  getall.f
+$FC -c -W  process.f
 
-f77 -c auto_calib_main.f
-f77 -c auto_calib_getall.f
+$FC -c auto_calib_main.f
+$FC -c auto_calib_getall.f
 
-f77 -W  -o ../../../bin/basingen.exe main.o getall.o process.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -W  -o ../../../bin/basingen.exe main.o getall.o process.o $usrlib
 
-f77 -o ../../../bin/make_calib_seg_lists.exe auto_calib_main.o auto_calib_getall.o process.o $usrlib
+$FC -o ../../../bin/make_calib_seg_lists.exe auto_calib_main.o auto_calib_getall.o process.o $usrlib
 
-f77 -c stand_alone_get_downstream.f
-f77 -o ../../../bin/stand_alone_get_downstream.exe stand_alone_get_downstream.o $usrlib
+$FC -c stand_alone_get_downstream.f
+$FC -o ../../../bin/stand_alone_get_downstream.exe stand_alone_get_downstream.o $usrlib
 
-f77 -c stand_alone_get_downstream_river_names.f
-f77 -o ../../../bin/stand_alone_get_downstream_river_names.exe stand_alone_get_downstream_river_names.o $usrlib
+$FC -c stand_alone_get_downstream_river_names.f
+$FC -o ../../../bin/stand_alone_get_downstream_river_names.exe stand_alone_get_downstream_river_names.o $usrlib
 
-f77 -c stand_alone_get_only_most_downstream.f
-f77 -o ../../../bin/stand_alone_get_only_most_downstream.exe stand_alone_get_only_most_downstream.o $usrlib
+$FC -c stand_alone_get_only_most_downstream.f
+$FC -o ../../../bin/stand_alone_get_only_most_downstream.exe stand_alone_get_only_most_downstream.o $usrlib
 
-f77 -c stand_alone_get_downstream_river_names_and_miles.f
-f77 -o ../../../bin/stand_alone_get_downstream_river_names_and_miles.exe stand_alone_get_downstream_river_names_and_miles.o $usrlib
+$FC -c stand_alone_get_downstream_river_names_and_miles.f
+$FC -o ../../../bin/stand_alone_get_downstream_river_names_and_miles.exe stand_alone_get_downstream_river_names_and_miles.o $usrlib
 
 
 rm *.o

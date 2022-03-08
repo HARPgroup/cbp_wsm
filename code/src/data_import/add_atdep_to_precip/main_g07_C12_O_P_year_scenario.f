@@ -39,9 +39,8 @@
       integer lenCMAQ
 
 *********** time variables
-C      integer minyear,maxyear,
-      integer vsize,nyears
-C      parameter (minyear=1980,maxyear = 2010)
+      integer minyear,maxyear,vsize,nyears
+      parameter (minyear=1980,maxyear = 2010)
       parameter (vsize = maxyear-minyear+1)
       real years(vsize)
       real annconc(vsize)

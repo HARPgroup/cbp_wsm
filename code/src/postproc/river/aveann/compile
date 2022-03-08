@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 source ../../../../set_wdmlibdir
 set wdmlibdir = ../../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -9,12 +9,11 @@ set usrdir = ../../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 set dsnlib = ../../../lib/dsn/dsn_utils.o
 
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c avann.f
-f77 -fbounds-check -c loadinfo.f
-f77 -fbounds-check -c gethours.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c avann.f
+$FC -fbounds-check -c loadinfo.f
+$FC -fbounds-check -c gethours.f
 
-f77 -o ../../../../bin/Raveann.exe loadinfo.o main.o gethours.o avann.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../../bin/Raveann.exe loadinfo.o main.o gethours.o avann.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
 
 rm *.o

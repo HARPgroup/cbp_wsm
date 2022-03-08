@@ -14,7 +14,7 @@
       parameter (maxTimeBreaks = 30)
 
       integer LBJday(maxTimeBreaks)             ! land use julian day
-      character*25 LBfile(maxTimeBreaks)        ! land use files
+      character*20 LBfile(maxTimeBreaks)        ! land use files
       real LBdata(maxTimeBreaks,nlu)     ! land use
 
       integer year1,year2
@@ -59,9 +59,9 @@
       parameter (maxTimeBreaks = 30)
 
       integer LBJday(maxTimeBreaks)             ! land use julian day
-      character*25 LBfile(maxTimeBreaks)        ! land use files
+      character*20 LBfile(maxTimeBreaks)        ! land use files
       integer itemp
-      character*25 tempfile
+      character*20 tempfile
 
       integer LByear(maxTimeBreaks)    ! land use year
       integer LBmonth(maxTimeBreaks)   ! land use month
@@ -138,7 +138,7 @@
 
       return
 
-1234  format(i4,i3,i3,1x,a25)
+1234  format(i4,i3,i3,1x,a20)
 
 *********** ERROR SPACE
 991   report(1) = 'Error reading file'
@@ -174,10 +174,10 @@
       integer maxTimeBreaks
       parameter (maxTimeBreaks = 30)
 
-      character*25 LBfile(maxTimeBreaks)        ! land use files
+      character*20 LBfile(maxTimeBreaks)        ! land use files
       real LBdata(maxTimeBreaks,nlu)     ! land use
 
-      character*1000 dline
+      character*600 dline
       character*13 ctemp
       integer order(nlu)  ! indexed to the column, not land use
       integer i,k,l,ll,j,n
@@ -216,8 +216,8 @@
         open (dfile,file=fnam,status='old',iostat=err)
         if (err.ne.0) go to 991
 
-        read(dfile,'(a1000)',err=996)dline            ! read header line
-        if (dline(1000-2:1000).ne.'   ') go to 990
+        read(dfile,'(a600)',err=996)dline            ! read header line
+        if (dline(600-2:600).ne.'   ') go to 990
 
         call findcomma(dline,i)   ! check that first column is river
         ctemp = dline(:i-1)
@@ -254,8 +254,8 @@
         end do
 
         do 
-          read(dfile,'(a1000)',err=997)dline
-          if (dline(1000-2:1000).ne.'   ') go to 990
+          read(dfile,'(a600)',err=997)dline
+          if (dline(600-2:600).ne.'   ') go to 990
           if (dline(:3).eq.'end') go to 998
           call findcomma(dline,last)
           Trseg = dline(:last-1)

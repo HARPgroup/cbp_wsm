@@ -153,7 +153,7 @@
         call trims(LCVfile(n),last) 
             
 ********** open land percent cover file
-        fnam = ScenDatDir//'land/cover/cover_'
+        fnam = ScenDatDir//'land/crop_cover/crop_cover_'
      .          //LCVfile(n)(:last)//'.csv'
         open (dfile,file=fnam,status='old',iostat=err)
         if (err.ne.0) go to 991

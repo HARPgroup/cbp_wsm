@@ -1,7 +1,0 @@
-
-rm /modeling/gb604/output/etm/CFP620171001WQg/* /modeling/gb604/output/eor/aveann/CFP620171001WQg/*
-
-ls -al /modeling/gb604/output/etm/CFP620171001WQg/*.csv | wc -l; ls -al /modeling/gb604/output/etm/CFP620171001WQg/*.etm | wc -l
-
-grep "Requested node configuration is not available" /modeling/gb604/tmp/gbhatt-slurm/CFP620171001WQg_2018-06-24-22-15-52.out | wc -l
-

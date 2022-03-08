@@ -53,13 +53,12 @@
       character*19 lrseg(maxlrsegs)
 
       integer maxCSOlrsegs
-C BHATT     parameter (maxCSOlrsegs = 120) 
-      parameter (maxCSOlrsegs = 200)
+      parameter (maxCSOlrsegs = 120)
       character*19 CSOlrseg(maxCSOlrsegs)
 
 **************** variables related to wqm or hydro cells
       integer maxcells
-      parameter (maxcells = 800)
+      parameter (maxcells = 600)
       character*6 w57cell(maxcells)
 
 ************* variables for the CSOs for the wqmcells
@@ -84,17 +83,13 @@ C BHATT     parameter (maxCSOlrsegs = 120)
       real dailydoxx(ndaymax),Tdox
       real dailyorcx(ndaymax)
       real Ndum,Pdum  ! dummies for TN and TP
-      real annflow,annheat,anntssx
-      real annnh3x,annno3x,annorgn
-      real annpo4x,annorpx
-      real annbodx
-      real anndoxx,annorcx
 
 ************** utility variables
-      character*500 longline,longfnam,command
+      character*400 longline,longfnam,command
       character*2 state
       character*20 SigInsig      ! sig/insig
       character*20 SourceType    ! municipal/industrial/cso
+      integer lenSI, lenSource
 
       integer julian
       external julian
@@ -102,13 +97,4 @@ C BHATT     parameter (maxCSOlrsegs = 120)
       integer ndaysinmonth
       external ndaysinmonth
 
-      character*10 iTfac
-      integer      iTdisPoint
-      character*6  ilseg
-      character*13 irseg
 
-      real F_FAC
-      real F_BOD
-
-      integer cbcsoid
-      integer comid,comidcb

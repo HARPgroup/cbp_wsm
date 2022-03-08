@@ -17,10 +17,8 @@
         do nd = 1,ndate    ! make end date = start date
           aedate(nd) = sdate(nd)
         end do
-c bhatt ??       aedate(2) = aedate(2) + 1        ! + 1 month
-c bhatt: start
-        aedate(2) = aedate(2) + 4
-c bhatt: end
+        aedate(2) = aedate(2) + 1        ! + 1 month
+
         call gethourdsn(wdmfil+n,sdate,aedate,dsn,nvals,hval)
 
         total = 0
@@ -28,24 +26,8 @@ c bhatt: end
           total = total + hval(nv)
         end do
 
-c        if (total.lt.1.) go to 991
-c bhatt: start ??
-        print*, 'BHATT wdmfnam $$ ', wdmfnam
-        print*, 'BHATT total   $$ ', total
-        print*, 'BHATT dsn     $$ ', dsn
-        print*, 'BHATT start   $$ ', sdate(1), sdate(2), sdate(3)
-        print*, 'BHATT aend    $$ ', aedate(1), aedate(2), aedate(3)
-        if(total.lt.1.) then
-          print*, 'total = ', total
-          print*, 'start = ', sdate(1), sdate(2), sdate(3)
-          print*, 'aend  = ', edate(1), edate(2), edate(3)
-          do nv = 1,nvals
-c              write(*,('F A $')) hval(nv), ' '
-             write(*,'(e14.7,a,$)') hval(nv), ' , '
-          end do
-          go to 991
-        end if
-c bhatt: end
+        if (total.lt.1.) go to 991
+
       end if
 
       return

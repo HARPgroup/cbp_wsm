@@ -1,24 +1,21 @@
 #!/bin/csh
-
+set FC = $argv[1]
 source ../../../set_wdmlibdir
 set wdmlibdir = ../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
 set lib2 = $wdmlibdir/adwdmlib.a
 set lib3 = $wdmlibdir/utillib.a
 
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c Rmasslink.f
-f77 -fbounds-check -c checkflow.f
-f77 -fbounds-check -c checktime.f
-f77 -fbounds-check -c addRwdm.f
-f77 -fbounds-check -c Rmasslink_confluence.f
-f77 -fbounds-check -c confluence.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c Rmasslink.f
+$FC -fbounds-check -c checkflow.f
+$FC -fbounds-check -c checktime.f
+$FC -fbounds-check -c addRwdm.f
+$FC -fbounds-check -c Rmasslink_confluence.f
+$FC -fbounds-check -c confluence.f
 
-f77 -o ../../../bin/stream_wdm.exe main.o Rmasslink.o checkflow.o checktime.o addRwdm.o ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3 ../../lib/get_lib.a ../../lib/util_lib.a
-set failed = $status; if( $failed == 1 ) exit 1
-
-f77 -o ../../../bin/confluence.exe confluence.o Rmasslink_confluence.o checktime.o checkflow.o addRwdm.o ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3 ../../lib/get_lib.a ../../lib/util_lib.a
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../bin/stream_wdm.exe main.o Rmasslink.o checkflow.o checktime.o addRwdm.o ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3 ../../lib/get_lib.a ../../lib/util_lib.a
+$FC -o ../../../bin/confluence.exe confluence.o Rmasslink_confluence.o checktime.o checkflow.o addRwdm.o ../../lib/dsn/dsn_utils.o $lib1 $lib2 $lib3 ../../lib/get_lib.a ../../lib/util_lib.a
 
 rm *.o
 

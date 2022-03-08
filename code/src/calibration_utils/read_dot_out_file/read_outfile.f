@@ -124,14 +124,12 @@
 
         found(ny) = .true.
 
-        print*,'YEAR = ',ny,' ',rseg
         do while (outline(1:1).ne.'1')
           read(dfile,'(a140)',err=994,end=111) outline
 
 ************* SEDIMENT
 
           if (outline(6:18).eq.'TOTAL INFLOWS') then
-          print*,'SEDIMENT'
             read(outline(42:71),*) sandin(ny),siltin(ny),clayin(ny)
             do i = 1,5
               read(dfile,'(a140)',err=994,end=111) outline
@@ -156,7 +154,6 @@
 
 ************* OXYGEN
           if (outline(4:19).eq.'DISSOLVED OXYGEN') then
-          print*,'OXYGEN'
             do i = 1,8
               read(dfile,'(a140)',err=994,end=111) outline
             end do
@@ -181,7 +178,6 @@
 
 ************* BOD
           if (outline(4:14).eq.'BIOCHEMICAL') then
-          print*,'BOD'
             do i = 1,8
               read(dfile,'(a140)',err=994,end=111) outline
             end do
@@ -206,7 +202,6 @@
 
 ************* AMMONIA
           if (outline(6:24).eq.'TOTAL INFLOW OF TAM') then
-          print*,'AMMONIA'
             read(outline(42:51),*) tamin(ny)
             do i = 1,6
               read(dfile,'(a140)',err=994,end=111) outline
@@ -252,7 +247,6 @@
 
 ************* NITRATE
           if (outline(4:10).eq.'NITRATE') then
-          print*,'NITRATE'
             do i = 1,8
               read(dfile,'(a140)',err=994,end=111) outline
             end do
@@ -279,7 +273,6 @@
 
 ************* PHOSPHATE
           if (outline(4:18).eq.'ORTHO-PHOSPHATE') then
-          print*,'ORTHO-PHOSPHATE'
             do i = 1,21
               read(dfile,'(a140)',err=994,end=111) outline
             end do
@@ -328,7 +321,6 @@
 
 ************** PLANK
           if (outline(6:24).eq.'PHYTOPLANKTON (LBS)') then
-          print*,'PHYTOPLANKTON'
             if (fourexits) then
               read(dfile,'(a140)',err=994,end=111) outline
               read(outline(32:91),*) phyin(ny),d1,d2,d3,d4,d5

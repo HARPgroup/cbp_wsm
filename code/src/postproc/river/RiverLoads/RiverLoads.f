@@ -134,7 +134,7 @@ c      end if
           open (pltfil,file = pfname, status = 'unknown',iostat = err)
           if (err.ne.0) goto 992
  
-           write(pltfil,'(a19,a4)',err=951)'CON ,YEAR,MO,DD,HH,',
+           write(pltfil,'(a22,a4)',err=951)'CON   YEAR MO DD HH   ',
      .       unit(np)
       
           do i = 1,6
@@ -192,7 +192,7 @@ C          write(pltfil,1234) loadname(np),asdate(1),asdate(2),dload
 
       return
 
-1234  format(a4,',',i6,',',i3,',',i3,',',i3,',',e16.9)
+1234  format(a4,i6,i3,i3,i3,e14.5)
 
 ************************ error reporting
 951   report(1) = 'error writing to file'

@@ -1,33 +1,31 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../lib
 set usrlib = ($usrdir/ttyux.o $usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -fbounds-check -c rextsources.f
-f77 -fbounds-check -c rexttargets.f
-f77 -fbounds-check -c rfiles.f
-f77 -fbounds-check -c rglobal.f
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c ropseq.f
-f77 -fbounds-check -c rspecact.f
-f77 -fbounds-check -c rtables.f
-f77 -fbounds-check -c ftables.f
-f77 -fbounds-check -c readvarftab.f
-f77 -fbounds-check -c varftab.f
-f77 -fbounds-check -c rnetwork.f
-f77 -fbounds-check -c rpgen.f
-f77 -fbounds-check -c special_case_varftab.f
-f77 -fbounds-check -c writeftables.f
-f77 -fbounds-check -c getdischarge.f
-f77 -fbounds-check -c getwdm.f
+$FC -fbounds-check -c rextsources.f
+$FC -fbounds-check -c rexttargets.f
+$FC -fbounds-check -c rfiles.f
+$FC -fbounds-check -c rglobal.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c ropseq.f
+$FC -fbounds-check -c rspecact.f
+$FC -fbounds-check -c rtables.f
+$FC -fbounds-check -c ftables.f
+$FC -fbounds-check -c readvarftab.f
+$FC -fbounds-check -c varftab.f
+$FC -fbounds-check -c rnetwork.f
+$FC -fbounds-check -c rpgen.f
+$FC -fbounds-check -c special_case_varftab.f
+$FC -fbounds-check -c writeftables.f
+$FC -fbounds-check -c getdischarge.f
+$FC -fbounds-check -c getwdm.f
 
-f77 -fbounds-check -c main_scenario.f
-f77 -fbounds-check -c rtables_scenario.f
+$FC -fbounds-check -c main_scenario.f
+$FC -fbounds-check -c rtables_scenario.f
 
-f77 -o ../../bin/rug.exe rextsources.o rexttargets.o rfiles.o rglobal.o main.o ropseq.o rspecact.o rtables.o ftables.o readvarftab.o varftab.o rnetwork.o rpgen.o special_case_varftab.o writeftables.o getdischarge.o getwdm.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../bin/rug.exe rextsources.o rexttargets.o rfiles.o rglobal.o main.o ropseq.o rspecact.o rtables.o ftables.o readvarftab.o varftab.o rnetwork.o rpgen.o special_case_varftab.o writeftables.o getdischarge.o getwdm.o $usrlib
 
-f77 -o ../../bin/scenario_rug.exe rextsources.o rexttargets.o rfiles.o rglobal.o main_scenario.o ropseq.o rspecact.o rtables_scenario.o ftables.o readvarftab.o varftab.o rnetwork.o rpgen.o special_case_varftab.o writeftables.o getdischarge.o getwdm.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../bin/scenario_rug.exe rextsources.o rexttargets.o rfiles.o rglobal.o main_scenario.o ropseq.o rspecact.o rtables_scenario.o ftables.o readvarftab.o varftab.o rnetwork.o rpgen.o special_case_varftab.o writeftables.o getdischarge.o getwdm.o $usrlib
 
 rm *.o

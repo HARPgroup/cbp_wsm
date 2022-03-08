@@ -1,12 +1,12 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c main.f
-f77 -c splitland.f
-f77 -c splitriv.f
+$FC -c main.f
+$FC -c splitland.f
+$FC -c splitriv.f
 
-f77 -o ../../../bin/splitseglists.exe main.o splitland.o splitriv.o $usrlib
+$FC -o ../../../bin/splitseglists.exe main.o splitland.o splitriv.o $usrlib
 
 rm *.o

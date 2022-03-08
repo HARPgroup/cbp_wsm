@@ -96,16 +96,10 @@
       end do
 
       nvals = ndays
-Cgbhatt      print*,'BHATT-2',sdate(1),sdate(2),sdate(3)
-Cgbhatt      print*,'BHATT resin: '
-Cgbhatt      print*,(resin(nd),nd=1,ndays)
       call resconvert(                 ! convert input to output
      I                rscen,rseg,resin,
      O                resout,
      I                nvals,sdate(1),sdate(2),sdate(3))
-
-Cgbhatt      print*,'BHATT resout: '
-Cgbhatt      print*,(resout(nd),nd=1,ndays)
 
       call findopen(n)
       open(n,file='resin_out.csv',status='unknown')

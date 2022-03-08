@@ -1,9 +1,0 @@
-
-  set perlnds = ( for hvf hwm lwm hom hyw hyo alf pas trp urs nhi nlo nho nhy nal npa rpd npd cpd rcn ccn rex nex cex )
-
-# pervious - forest, harvested forest, hightill with manure,lowtill with manure, hightill without manure,hay with nutrients, hay without nutrients, alfalfa, pasture, trampled, nursery, nutrient management hitil with manure, nutrient management lotil, nutrient management hitil without manure, nutrient management hay, nutrient management alfalfa, nutrient management pasture, regulated pervious developed, nonregulated pervious developed, combined pervious developed, regulated construction, combined construction, regulated extractive, nonregulated extractive, combined extractive
- 
-
-  set implnds = ( afo cfo rid nid cid )
-
-# animal feeding operations, confined animal feeding operations,regulated impervious developed, nonregulated impervious developed, combined impervious developed

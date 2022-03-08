@@ -1,16 +1,16 @@
 #!/bin/csh
-
+set FC = $argv[1]
 set usrdir = ../../../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 
-f77 -c main.f
-f77 -c findcolumn.f
-f77 -c ioparvar.f
-f77 -c gettargets.f
-f77 -c gettarscen.f
-f77 -c getkeimfac.f
+$FC -c main.f
+$FC -c findcolumn.f
+$FC -c ioparvar.f
+$FC -c gettargets.f
+$FC -c gettarscen.f
+$FC -c getkeimfac.f
 
-f77 -o ../../../../../bin/calib_SOLIDS.exe main.o findcolumn.o ioparvar.o gettargets.o gettarscen.o getkeimfac.o $usrlib
+$FC -o ../../../../../bin/calib_SOLIDS.exe main.o findcolumn.o ioparvar.o gettargets.o gettarscen.o getkeimfac.o $usrlib
 
 rm *.o
 

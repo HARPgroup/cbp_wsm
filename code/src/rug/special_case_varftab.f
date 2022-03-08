@@ -505,11 +505,11 @@ C      end do
       include 'rug.inc'
 
       real restriction
-      parameter (restriction = 0.15)
+      parameter (restriction = 0.10)
 
       integer startY,startM,startD  ! start of restriction
       integer endY,endM,endD        ! end of restriction
-      data startY,startM,startD /1996, 1, 7/
+      data startY,startM,startD /1995,10, 1/
       data endY,endM,endD       /1996, 1,20/
 
       integer maxrows,nrows,nr  ! number of rows in ftable
@@ -546,7 +546,7 @@ C      end do
       call ryt(line,uci)   ! put comments into special actions
 
 ********** blank line
-      line = '  RCHRES  1         Y1Y1  M  D  9      3 '//
+      line = '  RCHRES  1         Y1Y1  M  D  1      3 '//
      .       ' RCHTAB NT        =<<<value>>'
 
 ********** make restriction change

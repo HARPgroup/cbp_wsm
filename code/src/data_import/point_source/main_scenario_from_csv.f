@@ -13,7 +13,6 @@
       implicit none
       include 'ps.inc'
 
-      integer year  ! scenario year
       integer nlrsegs,nlrseg,ns ! land to water combinations
 
 **************** variables related to LRsegs
@@ -75,18 +74,42 @@
       real CSOcelldoxx(maxCSOcells,ndaymax)
       real CSOcellorcx(maxCSOcells,ndaymax)
 
+**************** variables related to text output summary
+******* keyed to facility type, lrseg, and NPDES
+      integer maxfacs,nfacs,nfac
+      parameter (maxfacs = 10000)
+      character*100 facilities(maxfacs),facility
+      integer lenTfac
+
+      real facflow(maxfacs,12)
+      real facheat(maxfacs,12)
+      real facbodx(maxfacs,12)
+      real factssx(maxfacs,12)
+      real facnh3x(maxfacs,12)
+      real facno3x(maxfacs,12)
+      real facornx(maxfacs,12)
+      real facpo4x(maxfacs,12)
+      real facorpx(maxfacs,12)
+      real facdoxx(maxfacs,12)
+      real facorcx(maxfacs,12)
+
 ************** utility variables
-      integer ny,nm,nd,nday
+      integer ny,nm,nd,nday,ndays
       integer nc 
       integer WWTPtnerr,WWTPtperr
       integer INDtnerr,INDtperr
       integer CSOtnerr,CSOtperr
       logical found,foundCSO,foundPS
+      integer aveyear1,aveyear2
+      real Theat,Torc,Ttn,Ttp
+      real rYearsInAve
+      real rDaysInMonth(12)  ! average days in a month 
 
 **************** END DECLARATIONS **************************************
 
 ******** get input data
-      read*, psscen,dataversion,WWTPfnam,INDfnam,CSOfnam
+      read*, psscen,dataversion,WWTPfnam,INDfnam,CSOfnam,
+     .       aveyear1,aveyear2
       call lencl(psscen,lenpsscen)
       call lencl(dataversion,lendv)
       call lencl(WWTPfnam,lenWWTPfnam)
@@ -95,7 +118,17 @@
       call lencl(wwtp,lenwwtp)
       call lencl(indus,lenindus)
       call lencl(cso,lencso)
-      
+
+******* calculate years in average and average days in each month
+      rYearsInAve = real(aveyear2-aveyear1+1)
+      do nm = 1,12
+        rDaysInMonth(nm) = 0.0
+        do ny = aveyear1,aveyear2
+          rDaysInMonth(nm) = rDaysInMonth(nm)+real(nDaysInMonth(ny,nm))
+        end do
+        rDaysInMonth(nm) = rDaysInMonth(nm)/rYearsInAve
+      end do
+
 **************  intitialize cell variables **************
       do nc = 1,maxcells
         do ny = y1,y2
@@ -156,7 +189,23 @@
         end do
       end do
 
-************* open rile to read in data
+      do nfac = 1,maxfacs
+        do nm = 1,12
+          facflow(nfac,nm) = 0.0
+          facheat(nfac,nm) = 0.0
+          facbodx(nfac,nm) = 0.0
+          factssx(nfac,nm) = 0.0
+          facnh3x(nfac,nm) = 0.0
+          facno3x(nfac,nm) = 0.0
+          facornx(nfac,nm) = 0.0
+          facpo4x(nfac,nm) = 0.0
+          facorpx(nfac,nm) = 0.0
+          facdoxx(nfac,nm) = 0.0
+          facorcx(nfac,nm) = 0.0
+        end do
+      end do
+
+************* open WWTP file
       longfnam = tree//'input/unformatted/point_source/'//
      .           dataversion(:lendv)//'/'//WWTPfnam(:lenWWTPfnam)
       open(dfile,file=longfnam,status='old',iostat=err)
@@ -172,8 +221,9 @@
 ************ loop over all lines and populate variables
       nlrsegs = 0
       n57cells = 0
+      nfacs = 0
       do
-        read(dfile,'(a300)',end = 111,err=996)longline
+        read(dfile,'(a400)',end = 111,err=996)longline
         call d2x(longline,last)
         read(longline,*,end=992,err=992)
      .                             SigInsig, SourceType,
@@ -181,6 +231,7 @@
      .                             ny,nm,nd,
      .                             Tflow,Tbod,Tdox,Tnh3,Tno3,Torn,
      .                             Ndum,Tpo4,Torp,Pdum,Ttss
+        if (longline(400-2:400).ne.'   ') go to 997
 
 ************* check for TN and TP errors
         if (abs(Tpo4+Torp-Pdum).gt.0.1.and.
@@ -205,7 +256,7 @@
           lrseg(nlrseg) = lseg//rseg
         end if
 
-**************** get total number of wqm57 cells represented
+**************** find wqm57 index if already exists, otherwise create new
         found = .false.
         do n57cell = 1,n57cells
           if (w57cell(n57cell) .eq. Tcell) then
@@ -218,6 +269,27 @@
           if (n57cells .gt. maxcells) go to 9931
           n57cell = n57cells
           w57cell(n57cell) = Tcell
+        end if
+
+**************** find facility index if already exists, otherwise create new
+        call lencl(SigInsig,lenSI)
+        call lencl(SourceType,lenSource)
+        call lencl(Tfac,lenTfac)
+        facility = SigInsig(:lenSI)//','//SourceType(:lenSource)//','//
+     .             rseg//','//lseg//','//Tfac(:lenTfac)
+
+        found = .false.
+        do nfac = 1,nfacs
+          if (facilities(nfac) .eq. facility) then
+            found = .true.
+            exit
+          end if
+        end do
+        if (.not.found) then
+          nfacs = nfacs + 1
+          if (nfacs .gt. maxfacs) go to 9933
+          nfac = nfacs
+          facilities(nfac) = facility
         end if
 
 ************** add this line to lrseg variables
@@ -265,7 +337,28 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
      .                         + Ttss
 
         end do  ! end loop that copies to all years
-      end do
+
+*********** facility expressed as annual average so outside of year loop
+        facflow(nfac,nm) = facflow(nfac,nm) + Tflow*mg2acft
+        facheat(nfac,nm) = facheat(nfac,nm)
+     .                   + Tflow*mg2acft*tempC(nm)*acftC2heat
+        facdoxx(nfac,nm) = facdoxx(nfac,nm) + Tdox
+        facnh3x(nfac,nm) = facnh3x(nfac,nm) + Tnh3
+        facno3x(nfac,nm) = facno3x(nfac,nm) + Tno3
+        facpo4x(nfac,nm) = facpo4x(nfac,nm) + Tpo4
+
+        ! for organics, calculate the labile portion and compare it
+        !  to the total organic, if labile is greater than total,
+        !  reset BOD so that labile is equal to total for the most limiting nutrient
+        Tbod = min(Torn/bod2lorn,Torp/bod2lorp,Tbod)
+        facornx(nfac,nm) = facornx(nfac,nm)+Torn-Tbod*bod2lorn
+        facorpx(nfac,nm) = facorpx(nfac,nm)+Torp-Tbod*bod2lorp
+        facorcx(nfac,nm) = facorcx(nfac,nm)
+     .                       + (Torn-Tbod*bod2lorn)*rorn2rorc
+        facbodx(nfac,nm) = facbodx(nfac,nm) + Tbod
+        factssx(nfac,nm) = factssx(nfac,nm) + Ttss
+
+      end do    ! go read next line
 111   close(dfile)
       
 ************ Write out list of LRsegs to update GEO file
@@ -290,7 +383,7 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
 
 ************ open the WDM
         wdmfnam = ScenDatDir//'river/ps/'//psscen(:lenpsscen)//
-     .            '/'//wwtp(:lenwwtp)//'_'//lrseg(nlrseg)(:6)//'_to_'//
+     .            '/'//wwtp(:4)//'_'//lrseg(nlrseg)(:6)//'_to_'//
      .            lrseg(nlrseg)(7:19)//'.wdm'
         print*,nlrseg,' of ',nlrsegs,' opening ',wdmfnam(:79)
 
@@ -375,7 +468,7 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
 ************ loop over all lines and populate variables
       nlrsegs = 0
       do
-        read(dfile,'(a300)',end=222,err=996) longline
+        read(dfile,'(a400)',end=222,err=996) longline
         call d2x(longline,last)
         read(longline,*,end=992,err=992)
      .                                  SigInsig, SourceType,
@@ -383,8 +476,9 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
      .                                  Tfac,TdisPoint,Tfips,
      .                                  ny,nm,nd,
      .                                  Tflow,Tbod,Tdox,Tnh3,Tno3,Torn,
-     .                                  Ndum,Tpo4,Torp,Pdum,Ttss
-        
+     .                                  Ndum,Tpo4,Torp,Pdum,Ttss 
+        if (longline(400-2:400).ne.'   ') go to 997 
+
 ************* check for TN and TP errors
         if (abs(Tpo4+Torp-Pdum).gt.0.1.and.
      .      abs((Tpo4+Torp-Pdum)/Pdum).gt.0.05) INDtperr=INDtperr+1
@@ -420,6 +514,27 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
           if (n57cells.gt.maxcells) go to 9931
           n57cell = n57cells
           w57cell(n57cell) = Tcell
+        end if
+
+**************** find facility index if already exists, otherwise create new
+        call lencl(SigInsig,lenSI)
+        call lencl(SourceType,lenSource)
+        call lencl(Tfac,lenTfac)
+        facility = SigInsig(:lenSI)//','//SourceType(:lenSource)//','//
+     .             rseg//','//lseg//','//Tfac(:lenTfac)
+
+        found = .false.
+        do nfac = 1,nfacs
+          if (facilities(nfac) .eq. facility) then
+            found = .true.
+            exit
+          end if
+        end do
+        if (.not.found) then
+          nfacs = nfacs + 1
+          if (nfacs .gt. maxfacs) go to 9933
+          nfac = nfacs
+          facilities(nfac) = facility
         end if
 
 ************** add this line to lrseg variables
@@ -468,7 +583,27 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
 
         end do     ! end loop copy to all years
 
-      end do       ! end loop all segments 
+*********** facility expressed as annual average so outside of year loop
+        facflow(nfac,nm) = facflow(nfac,nm) + Tflow*mg2acft
+        facheat(nfac,nm) = facheat(nfac,nm)
+     .                   + Tflow*mg2acft*tempC(nm)*acftC2heat
+        facdoxx(nfac,nm) = facdoxx(nfac,nm) + Tdox
+        facnh3x(nfac,nm) = facnh3x(nfac,nm) + Tnh3
+        facno3x(nfac,nm) = facno3x(nfac,nm) + Tno3
+        facpo4x(nfac,nm) = facpo4x(nfac,nm) + Tpo4
+
+        ! for organics, calculate the labile portion and compare it
+        !  to the total organic, if labile is greater than total,
+        !  reset BOD so that labile is equal to total for the most limiting nutrient
+        Tbod = min(Torn/bod2lorn,Torp/bod2lorp,Tbod)
+        facornx(nfac,nm) = facornx(nfac,nm)+Torn-Tbod*bod2lorn
+        facorpx(nfac,nm) = facorpx(nfac,nm)+Torp-Tbod*bod2lorp
+        facorcx(nfac,nm) = facorcx(nfac,nm)
+     .                       + (Torn-Tbod*bod2lorn)*rorn2rorc
+        facbodx(nfac,nm) = facbodx(nfac,nm) + Tbod
+        factssx(nfac,nm) = factssx(nfac,nm) + Ttss
+
+      end do       ! go read next line
 
 222   close(dfile)
 
@@ -562,6 +697,11 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
       end do
 
 ************* read in CSO data
+      SigInsig = 'CSO'
+      SourceType = 'CSO'
+      call lencl(SigInsig,lenSI)
+      call lencl(SourceType,lenSource)
+
       longfnam = tree//'input/unformatted/point_source/'//
      .           dataversion(:lendv)//'/'//CSOfnam(:lenCSOfnam)
       open(dfile,file=longfnam,status='old',iostat=err)
@@ -577,13 +717,14 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
       nCSOlrsegs = 0
       nCSOcells = 0
       do
-        read(dfile,'(a300)',end=333,err=996)longline
+        read(dfile,'(a400)',end=333,err=996)longline
         call d2x(longline,last)
         read(longline,*,end=992,err=992)
      .                             rseg,lseg,Tcell,Tfac,TdisPoint,Tfips,
      .                             ny,nm,nd,
      .                             Tflow,Tbod,Tdox,Tnh3,Tno3,Torn,
      .                             Ndum,Tpo4,Torp,Pdum,Ttss
+	if (longline(400-2:400).ne.'   ') go to 997
 
 ************* check for TN and TP errors
         if (abs(Tpo4+Torp-Pdum).gt.0.1.and.
@@ -625,6 +766,25 @@ C     .                          + max(0.0,Ttss-Tbod*bod2tss)
           if (nCSOcells.gt.maxCSOcells) go to 9932
           nCSOcell = nCSOcells
           CSOcell(nCSOcell) = Tcell
+        end if
+
+**************** find facility index if already exists, otherwise create new
+        call lencl(Tfac,lenTfac)
+        facility = SigInsig(:lenSI)//','//SourceType(:lenSource)//','//
+     .             rseg//','//lseg//','//Tfac(:lenTfac)
+
+        found = .false.
+        do nfac = 1,nfacs
+          if (facilities(nfac) .eq. facility) then
+            found = .true.
+            exit
+          end if
+        end do
+        if (.not.found) then
+          nfacs = nfacs + 1
+          if (nfacs .gt. maxfacs) go to 9933
+          nfac = nfacs
+          facilities(nfac) = facility
         end if
 
 ************ get day
@@ -680,7 +840,33 @@ C     .                               + max(0.0,Ttss-Tbod*bod2tss)
         
         end do  ! end loop that copies to all years
 
-      end do    ! end loop over all segments
+*********** facility expressed as average daily load for that month
+************ divide each days load by total days in averaging period
+        facflow(nfac,nm) = facflow(nfac,nm) 
+     .                   + Tflow*mg2acft/rDaysInMonth(nm)
+        facheat(nfac,nm) = facheat(nfac,nm)
+     .                   + Tflow*mg2acft*tempC(nm)*acftC2heat
+     .                   / rDaysInMonth(nm)
+        facdoxx(nfac,nm) = facdoxx(nfac,nm) + Tdox/rDaysInMonth(nm)
+        facnh3x(nfac,nm) = facnh3x(nfac,nm) + Tnh3/rDaysInMonth(nm)
+        facno3x(nfac,nm) = facno3x(nfac,nm) + Tno3/rDaysInMonth(nm)
+        facpo4x(nfac,nm) = facpo4x(nfac,nm) + Tpo4/rDaysInMonth(nm)
+
+        ! for organics, calculate the labile portion and compare it
+        !  to the total organic, if labile is greater than total,
+        !  reset BOD so that labile is equal to total for the most limiting nutrient
+        Tbod = min(Torn/bod2lorn,Torp/bod2lorp,Tbod)
+        facornx(nfac,nm) = facornx(nfac,nm)
+     .                   + (Torn-Tbod*bod2lorn) /rDaysInMonth(nm)
+        facorpx(nfac,nm) = facorpx(nfac,nm)
+     .                   + (Torp-Tbod*bod2lorp) /rDaysInMonth(nm)
+        facorcx(nfac,nm) = facorcx(nfac,nm)
+     .                   + (Torn-Tbod*bod2lorn)*rorn2rorc 
+     .                   / rDaysInMonth(nm)
+        facbodx(nfac,nm) = facbodx(nfac,nm) + Tbod/rDaysInMonth(nm)
+        factssx(nfac,nm) = factssx(nfac,nm) + Ttss/rDaysInMonth(nm)
+
+      end do    ! go read another line
 
 333   close(dfile)
 
@@ -911,16 +1097,98 @@ C     .                               + max(0.0,Ttss-Tbod*bod2tss)
       call wdflc1(wdmfil+1,err)   ! close junk wdm file
 
       print*,'done making all wdms'
-      print*,'there were ',WWTPtnerr,' TN errors and '
+      print*,' '
+********** write out annual point source loads
+      print*,'creating the summary text file'
+      longfnam = ScenDatDir//'river/ps/'//psscen(:lenpsscen)//
+     .           '/summary_ps_loads_'//psscen(:lenpsscen)//'.csv'
+      print*,longfnam
+      open(dfile,file=longfnam,status='unknown',iostat=err)
+      if (err.ne.0) go to 991
+
+      write(dfile,'(a,a,a)',err=951) 'significance,source,rseg,lseg,',
+     .                             'NPDES,year1,year2,',
+     .              'flow,heat,bod,do,nh3,no3,po4,tss,orn,orp,orc,TN,TP'
+
+**********write waste water loads
+      do nfac = 1,nfacs
+
+*********** facility expressed as daily value by month
+************  add the months of the year
+        Tflow = 0.0
+        Theat = 0.0
+        Tbod  = 0.0
+        Tdox  = 0.0
+        Tnh3  = 0.0
+        Tno3  = 0.0
+        Tpo4  = 0.0
+        Ttss  = 0.0
+        Torn  = 0.0
+        Torp  = 0.0
+        Torc  = 0.0
+        Ttn   = 0.0
+        Ttp   = 0.0
+        do nm = 1,12
+          Tflow= Tflow+ facflow(nfac,nm) * rDaysInMonth(nm)
+          Theat= Theat+ facheat(nfac,nm) * rDaysInMonth(nm)
+          Tbod = Tbod + facbodx(nfac,nm) * rDaysInMonth(nm)
+          Tdox = Tdox + facdoxx(nfac,nm) * rDaysInMonth(nm)
+          Tnh3 = Tnh3 + facnh3x(nfac,nm) * rDaysInMonth(nm)
+          Tno3 = Tno3 + facno3x(nfac,nm) * rDaysInMonth(nm)
+          Tpo4 = Tpo4 + facpo4x(nfac,nm) * rDaysInMonth(nm)
+          Ttss = Ttss + factssx(nfac,nm) * rDaysInMonth(nm)
+          Torn = Torn + (facornx(nfac,nm)+facbodx(nfac,nm)*bod2lorn) 
+     .                * rDaysInMonth(nm)
+          Torp = Torp + (facorpx(nfac,nm)+facbodx(nfac,nm)*bod2lorp) 
+     .                * rDaysInMonth(nm)
+          Torc = Torc + (facorcx(nfac,nm)
+     .                + facbodx(nfac,nm)*bod2lorn*rorn2rorc) 
+     .                * rDaysInMonth(nm)
+          Ttn  = Ttn  + (facnh3x(nfac,nm)+facno3x(nfac,nm)
+     .                + facornx(nfac,nm)+facbodx(nfac,nm)*bod2lorn) 
+     .                * rDaysInMonth(nm)
+          Ttp  = Ttp  + (facpo4x(nfac,nm)+facorpx(nfac,nm)
+     .                + facbodx(nfac,nm)*bod2lorp) * rDaysInMonth(nm)
+        end do
+        call lencl(facilities(nfac),lenTfac)
+        write(dfile,1234,err=951) facilities(nfac)(:lenTfac),',',
+     .       aveyear1,',',aveyear2,',',
+     .       Tflow ,',',
+     .       Theat ,',',
+     .       Tbod  ,',',
+     .       Tdox  ,',',
+     .       Tnh3  ,',',
+     .       Tno3  ,',',
+     .       Tpo4  ,',',
+     .       Ttss  ,',',
+     .       Torn  ,',',
+     .       Torp  ,',',
+     .       Torc  ,',',
+     .       Ttn   ,',',
+     .       Ttp   
+      end do
+      close(dfile)
+
+
+********** done with summary file
+
+      print*,'done making all wdms'
+      if ((WWTPtnerr+INDtperr+CSOtperr).gt.0) then
+         print*,'there were ',WWTPtnerr,' TN errors and '
      .        ,WWTPtperr,' TP errors in the WWTP file'
-      print*,'there were ',INDtnerr,' TN errors and ',
+         print*,'there were ',INDtnerr,' TN errors and ',
      .       INDtperr,' TP errors in the IND file'
-      print*,'there were ',CSOtnerr,' TN errors and ',
+         print*,'there were ',CSOtnerr,' TN errors and ',
      .       CSOtperr,' TP errors in the CSO file'
-      print*,'  '
+         print*,'  '
+      else
+        print*, 'processing completed successfully! '
+        print*, '  '
+      end if
 
       stop
 
+1234  format(a,a,i4,a,i4,13(a1,e14.7))
 ************************* ERROR SPACE **********************************
 951   report(1) = 'error writing to file'
       report(2) = longfnam
@@ -960,6 +1228,11 @@ C     .                               + max(0.0,Ttss-Tbod*bod2tss)
       report(3) = 'data_import/point_source/'
       go to 999
 
+9933  report(1) = 'more unique combinations of facility and lrseg than'
+      report(2) = 'anticipated in the WWTP file. increase maxfacs in'
+      report(3) = 'data_import/point_source/main_*f'
+      go to 999
+
 994   report(1) = 'WDM file must previously exist'
       report(2) = 'create wdm:'
       report(3) = wdmfnam
@@ -972,6 +1245,11 @@ C     .                               + max(0.0,Ttss-Tbod*bod2tss)
       go to 999
 
 996   report(1) = 'problem reading file:  near line:'
+      report(2) = fnam
+      report(3) = longline
+      go to 999
+
+997   report(1) = 'variable longline is over 400 characters'
       report(2) = fnam
       report(3) = longline
       go to 999

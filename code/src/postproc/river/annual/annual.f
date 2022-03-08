@@ -145,7 +145,7 @@ C          write(pltfil,1234) loadname(np),asdate(1),dload
 
       return
 
-1234  format(a4,i6,e17.8)
+1234  format(a4,i6,e14.5)
 
 ************************ error reporting
 951   report(1) = 'error writing to file'

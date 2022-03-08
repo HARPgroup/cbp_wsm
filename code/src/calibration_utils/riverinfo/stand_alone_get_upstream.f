@@ -7,6 +7,8 @@
       include 'basingen.inc'
 
       integer nb  ! indices
+      character*13 conseg
+      logical founddouble
 
       read*,rscen
       call lencl(rscen,lenrscen)
@@ -28,14 +30,26 @@
       print*,'river, upstream seg'
       do ns = 1,nrsegs
 
-        if (calsite(uniqid(ns))) then  ! only do this if a calib site
+********        if (calsite(uniqid(ns))) then  ! only do this if a calib site
 
           call findupstream(ns)
           do nb = 1,nallup(ns)
             print*,rsegs(ns),',',rsegs(allup(ns,nb))
           end do
 
-        end if
+          call getconseg(rsegs(ns),rscen,lenrscen,
+     O                   conseg,founddouble)
+          if (founddouble) then
+            do ns1 = 1,nrsegs
+              if (rsegs(ns1)(10:13).eq.conseg(5:8)) then
+                do nb = 1,nallup(ns1)
+                  print*,conseg,',',rsegs(allup(ns1,nb))
+                end do
+              end if
+            end do
+          end if
+
+********        end if
 
       end do
 

@@ -4,7 +4,6 @@
       include '../../lib/inc/wdm.inc'
       include '../../lib/inc/masslinks.inc'
       include '../../lib/inc/modules.inc'
-      include '../../lib/inc/ps_septic_atdep.inc'
 
 
       integer sdate(ndate), edate(ndate)  ! start and end dates 
@@ -42,18 +41,6 @@
       integer SEPdsn(maxRvar,maxDat2Rv)  ! dsns of SEPvars
       character*4 SEPname(maxRvar,maxDat2Rv) ! name of SEPvars
       real SEPfac(maxRvar,maxDat2Rv)      ! conversion factor
-
-************ rib vars
-      integer nRIBvar(maxRvar)        ! number of RIBvars for each Rvar
-      integer RIBdsn(maxRvar,maxDat2Rv)  ! dsns of RIBvars
-      character*4 RIBname(maxRvar,maxDat2Rv) ! name of RIBvars
-      real RIBfac(maxRvar,maxDat2Rv)      ! conversion factor
-
-************ rpa vars
-      integer nRPAvar(maxRvar)        ! number of RPAvars for each Rvar
-      integer RPAdsn(maxRvar,maxDat2Rv)  ! dsns of RPAvars
-      character*4 RPAname(maxRvar,maxDat2Rv) ! name of RPAvars
-      real RPAfac(maxRvar,maxDat2Rv)      ! conversion factor
 
 ************ atdep vars
       integer nATDEPvar(maxRvar)  ! number of ATDEPvars for each Rvar

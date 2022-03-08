@@ -71,10 +71,7 @@
       smed = median(sim,ndays,ndaymax,err)
       if (err.ne.0) smed = -9
 
-      print*, ndaymax
-      print*,(obs(nd),',',nd=1,ndays)
       ovar = variance(obs,ndays,ndaymax,err)
-      print*,err,',',ovar
       if (err.ne.0) ovar = -9
 
       svar = variance(sim,ndays,ndaymax,err)

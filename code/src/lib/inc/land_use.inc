@@ -6,72 +6,56 @@
 ************************************************************************
 
       integer nlu
+      integer lfor,lhvf,lpas,ltrp,lurs,lalf            ! perlnds
+      integer lhyw,lhyo,lhom,lhwm,llwm                 ! perlnds
+      integer lnhy,lnpa,lnal,lnho,lnhi,lnlo            ! nutrient management perlnds
+      integer lrpd,lnpd,lcpd,lrcn,lccn,lrex,lnex,lcex  !perlnds
 
-      integer laop,lsoy,lgwm,lgom,llhy,lswm,lsom,lsgg,ldbl,lsch
-      integer lscl,loac,lohy,lpas,lnch,lntg,lmch,lmtg,lmcn,lcch
-      integer lctg,lccn,lcmo,lcfr,lhfr,lfor,lwfp,lwto,losp
-
-      integer lfsp,lfnp,lnir,lnnr,lnci,lmir,lmnr,lmci,lcir,lcnr
-      integer lcci,lstb,lstf,lsho
-
-      integer lwat
+      integer lafo,lcfo,lrid,lnid,lcid                 ! implnds
+      integer lwat                                     ! water
 
 ********* parameters to size the problem
-      parameter (nlu=44)                               ! number of land uses
+      parameter (nlu=31)                               ! number of land uses
  
 ******** the following parameters correspond to nlu
-      parameter (laop =    1)
-      parameter (lsoy =    2)
-      parameter (lgwm =    3)
-      parameter (lgom =    4)
-      parameter (llhy =    5)
-      parameter (lswm =    6)
-      parameter (lsom =    7)
-      parameter (lsgg =    8)
-      parameter (ldbl =    9)
-      parameter (lsch =    10)
-      parameter (lscl =    11)
-      parameter (loac =    12)
-      parameter (lohy =    13)
-      parameter (lpas =    14)
-      parameter (lnch =    15)
-      parameter (lntg =    16)
-      parameter (lmch =    17)
-      parameter (lmtg =    18)
-      parameter (lmcn =    19)
-      parameter (lcch =    20)
-      parameter (lctg =    21)
-      parameter (lccn =    22)
-      parameter (lcmo =    23)
-      parameter (lcfr =    24)
-      parameter (lhfr =    25)
-      parameter (lfor =    26)
-      parameter (lwfp =    27)
-      parameter (lwto =    28)
-      parameter (losp =    29)
-      parameter (lfsp =    30)
-      parameter (lfnp =    31)
-      parameter (lnir =    32)
-      parameter (lnnr =    33)
-      parameter (lnci =    34)
-      parameter (lmir =    35)
-      parameter (lmnr =    36)
-      parameter (lmci =    37)
-      parameter (lcir =    38)
-      parameter (lcnr =    39)
-      parameter (lcci =    40)
-      parameter (lstb =    41)
-      parameter (lstf =    42)
-      parameter (lsho =    43)
-      parameter (lwat =    44)
+      parameter (lfor =  1)
+      parameter (lhvf =  2)
+      parameter (lhwm =  3)
+      parameter (llwm =  4)
+      parameter (lhom =  5)
+      parameter (lalf =  6)
+      parameter (lhyw =  7)
+      parameter (lhyo =  8)
+      parameter (lpas =  9)
+      parameter (ltrp = 10)
+      parameter (lurs = 11)
+      parameter (lnhi = 12)
+      parameter (lnlo = 13)
+      parameter (lnho = 14)
+      parameter (lnal = 15)
+      parameter (lnhy = 16)
+      parameter (lnpa = 17)
+      parameter (lrpd = 18)
+      parameter (lnpd = 19)
+      parameter (lcpd = 20)
+      parameter (lrcn = 21)
+      parameter (lccn = 22)
+      parameter (lrex = 23)
+      parameter (lnex = 24)
+      parameter (lcex = 25)
+      parameter (lafo = 26)
+      parameter (lcfo = 27)
+      parameter (lrid = 28)
+      parameter (lnid = 29)
+      parameter (lcid = 30)
+      parameter (lwat = 31)
 
       character*3 luname(nlu)
 
-      data luname /'aop','soy','gwm','gom','lhy','swm','som','sgg',
-     . 'dbl','sch','scl','oac','ohy','pas','nch','ntg','mch','mtg',
-     . 'mcn','cch','ctg','ccn','cmo','cfr','hfr','for','wfp','wto',
-     . 'osp','fsp','fnp','nir','nnr','nci','mir','mnr','mci','cir',
-     . 'cnr','cci','stb','stf','sho','wat'/
+      data luname /'for','hvf','hwm','lwm','hom','alf','hyw','hyo',
+     .             'pas','trp','urs','nhi','nlo','nho','nal','nhy',
+     .             'npa','rpd','npd','cpd','rcn','ccn','rex','nex',
+     .             'cex','afo','cfo','rid','nid','cid','wat'/
 
 **************** this could be replaced by a nlumax parameter and a data file
 ****************  that could be read whenever needed

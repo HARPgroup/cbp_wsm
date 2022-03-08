@@ -1,5 +1,0 @@
-
-set EMAIL_TO     = rburghol@vt.edu
-set EMAIL_FROM   = slurm@chesapeakebay.net
-
-set EMAIL_SERVER = 127.0.0.1

@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 source ../../../set_wdmlibdir
 set wdmlibdir = ../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -10,9 +10,8 @@ set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 set dsnlib = ../../lib/dsn/dsn_utils.o
 
 
-f77 -fbounds-check -c quick_wdm_2_txt_hour_2_hour.f
+$FC -fbounds-check -c quick_wdm_2_txt_hour_2_hour.f
 
-f77 -o ../../../bin/quick_wdm_2_txt_hour_2_hour quick_wdm_2_txt_hour_2_hour.o $usrlib $dsnlib $lib1 $lib2 $lib3
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../bin/quick_wdm_2_txt_hour_2_hour quick_wdm_2_txt_hour_2_hour.o $usrlib $dsnlib $lib1 $lib2 $lib3
 
 rm *.o

@@ -14,8 +14,7 @@
       integer year1,month1,day1,year2,month2,day2
       character*13 trseg
 C      real pairwq(366,1990:2010,maxBvar)
-c      real pairwq(366,1984:2000,maxBvar)
-      real pairwq(366,1995:2014,maxBvar)
+      real pairwq(366,1985:2005,maxBvar)
       integer ny              ! year of infomation to get
 
       real dvaltemp(ndaymax,maxRvar)   ! daily values from river

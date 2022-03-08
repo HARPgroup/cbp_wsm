@@ -28,16 +28,13 @@
       call findopen(etmfil)
       fnam = outdir//'etm/'//rscen(:lenrscen)//'/'//
      .       lseg(:lenlseg)//'to'//rseg(:lenrseg)//'.etm'
-      print*,'postproc/scenario_compare/getwateracres.f',
-     .           fnam
       open (etmfil,file=fnam,status='unknown',form='unformatted',
      .      iostat=err)
       if (err.ne.0) go to 991
       read(etmfil) temp1y,temp1m,temp1d,
      .             temp2y,temp2m,temp2d,
      .             lufac
-      print*,'postproc/scenario_compare/getwateracres.f',
-     .           temp2y,temp2m,temp2d
+
       jday = julian(temp2y,temp2m,temp2d,edate(1),edate(2),edate(3))
       if (jday.gt.1) go to 992
       jday = julian(temp1y,temp1m,temp1d,sdate(1),sdate(2),sdate(3))

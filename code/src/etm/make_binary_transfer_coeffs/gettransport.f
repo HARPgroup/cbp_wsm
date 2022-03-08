@@ -14,7 +14,7 @@
 
       include 'mbtc.f'
 
-      character(2000):: dline !BHATT 900 to 2000
+      character(900):: dline
       character(13):: ctemp,colname
       integer:: order(maxBMPcon*nlu,2)    ! first index is column
                                       ! second is  1:trancon, 2:lu
@@ -58,9 +58,9 @@
       open (dfile,file=fnam,status='old',iostat=err)
       if (err.ne.0) go to 991
 
-      read(dfile,'(a2000)',err=996)dline            ! read header line !BHATT 900 to 2000
+      read(dfile,'(a900)',err=996)dline            ! read header line
       call d2x(dline,i)
-      if (dline(2000-3:2000).ne.'    ') go to 988 !BHATT 900 to 2000
+      if (dline(900-3:900).ne.'    ') go to 988
 
       call findcomma(dline,i) 
       call shift(dline)
@@ -100,9 +100,9 @@
         foundl(i) = .false.
       end do
       do while (ifound.lt.numsegs)  ! file until all land segs are found
-        read(dfile,'(a2000)',err=997,end=998)dline !BHATT 900 to 2000
+        read(dfile,'(a900)',err=997,end=998)dline
         call d2x(dline,last)
-        if (dline(2000-5:2000).ne.'      ') go to 990 !BHATT 900 to 2000
+        if (dline(900-5:900).ne.'      ') go to 990
         if (dline(:3).eq.'end') go to 998
         call findcomma(dline,last)
         Trseg = dline(:last-1)
@@ -146,11 +146,11 @@
           foundTN = .false.  ! find tn and tp indices
           foundTP = .false.
           do nb = 1,nbcon
-            if (BMPconname(nb).eq.'tnx') then
+            if (BMPconname(nb).eq.'tn ') then
               foundTN = .true.
               nTN = nb
             end if
-            if (BMPconname(nb).eq.'tpx') then
+            if (BMPconname(nb).eq.'tp ') then
               foundTP = .true.
               nTP = nb
             end if
@@ -224,7 +224,7 @@
       report(3) = fnam
       go to 999
 
-995   report(1) = 'gettransport found unexpected land segment '//Tl2r
+995   report(1) = 'found unexpected land segment '//Tl2r
       report(2) = ' associated with '//Trseg//' in file '
       report(3) = fnam
       go to 999

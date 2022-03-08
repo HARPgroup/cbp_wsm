@@ -75,8 +75,6 @@
         
 111     close(ifl)                        ! close observed flow file
 
-cbhatt        print*,obflow(4036),',',simflow(4036)
-
         if (ndays.gt.50) then
           FloObsExist = .true.
           nm = 1
@@ -144,7 +142,7 @@ C          close(98)
         report(3) = catdir//'geo/'//geoscen(:lengeoscen)//
      .              '/watershed_area.csv'
       else
-        write(report(2),*) 'unspecified error ',err,' check file'
+        report(2) = 'unspecified error, check file'
         report(3) = './pp/src/postproc/river/part/part_sub.f'
       end if
       go to 999

@@ -127,7 +127,7 @@
 
 993   report(1) = 'simulation period not long enough'
       write(report(2),*) 'simulation stops in ',year
-      write(report(3),*) 'script calls for ',year2
+      write(report(2),*) 'script calls for ',year2
       go to 999
 
 994   report(1) = 'Problem reading file: near line'

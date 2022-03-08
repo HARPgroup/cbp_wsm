@@ -36,9 +36,9 @@
       character*50 dfnam,sepscen   ! base data file and septic scenario
       integer lendfnam,lensepscen
 
-c      integer maxnlrsegs,nlrsegs,nlr  ! number of lrsegs
-c      parameter (maxnlrsegs = 2500) 
-c      character*19 lrsegs(maxnlrsegs)
+      integer maxnlrsegs,nlrsegs,nlr  ! number of lrsegs
+      parameter (maxnlrsegs = 2500) 
+      character*19 lrsegs(maxnlrsegs)
 
       integer lowyear,highyear
       parameter (lowyear = 1981, highyear = lowyear + maxBreaks)

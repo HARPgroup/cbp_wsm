@@ -8,6 +8,5 @@ f77 -c getall.f
 f77 -c process.f
 
 f77 -o ../../../bin/make_incremental_calib_list.exe main.o getall.o process.o $usrlib
-set failed = $status; if( $failed == 1 ) exit 1
 
 rm *.o

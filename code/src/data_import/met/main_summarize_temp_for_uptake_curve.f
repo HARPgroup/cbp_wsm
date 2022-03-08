@@ -16,9 +16,7 @@
 
       double precision AccTempAve(12,31)
       integer TempAveCount(12,31)
-C      data AccTempAve /(12*31)*0.0/ 
-      data AccTempAve /372*0.0/
-C      data TempAveCount / (12*31)*0 /
+      data AccTempAve / 372*0.0 /
       data TempAveCount / 372*0 /
 
       real tempC,TempMin,TempMax

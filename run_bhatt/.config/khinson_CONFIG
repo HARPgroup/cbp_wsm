@@ -1,5 +1,0 @@
-
-set EMAIL_TO     = khinson@chesapeakebay.net
-set EMAIL_FROM   = slurm@chesapeakebay.net
-
-set EMAIL_SERVER = bluefish1

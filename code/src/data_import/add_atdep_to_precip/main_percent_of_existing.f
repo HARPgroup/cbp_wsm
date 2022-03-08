@@ -19,16 +19,7 @@
 **    = 0.035 mg/l                                                    **
 **                                        	                      **
 ************************************************************************
-!      include 'qstd.inc'
-
-      include '../../lib/inc/standard.inc'
-      include '../../lib/inc/locations.inc'
-      include '../../lib/inc/wdm.inc'
-      integer wdmfil,maxdsns
-      parameter (wdmfil=dfile+10)
-      parameter (maxdsns=20)
-      integer sdate(ndate),edate(ndate)
-
+      include 'qstd.inc'
       real hourlyrain(ndaymax*24),dailyrain(ndaymax)   ! rain in inches
 
       real wetno3load(ndaymax),wetnh3load(ndaymax) ! load in lbs
@@ -43,7 +34,7 @@
 
 *********** time variables
       integer minyear,maxyear,vsize,nyears
-      parameter (minyear=1980,maxyear = 2020)
+      parameter (minyear=1980,maxyear = 2010)
 
       integer scenyear  ! year of the scenario
 

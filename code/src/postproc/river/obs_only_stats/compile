@@ -1,5 +1,5 @@
 #!/bin/csh
-
+set FC = $argv[1]
 source ../../../../set_wdmlibdir
 set wdmlibdir = ../../../$wdmlibdir
 set lib1 = $wdmlibdir/wdmlib.a
@@ -9,13 +9,12 @@ set usrdir = ../../../lib
 set usrlib = ($usrdir/get_lib.a $usrdir/util_lib.a)
 set dsnlib = ../../../lib/dsn/dsn_utils.o
 
-f77 -fbounds-check -c binave.f
-f77 -fbounds-check -c doconcs.f
-f77 -fbounds-check -c doflows.f
-f77 -fbounds-check -c main.f
-f77 -fbounds-check -c single.f
+$FC -fbounds-check -c binave.f
+$FC -fbounds-check -c doconcs.f
+$FC -fbounds-check -c doflows.f
+$FC -fbounds-check -c main.f
+$FC -fbounds-check -c single.f
 
-f77 -o ../../../../bin/obs_only_stats.exe binave.o doconcs.o doflows.o main.o single.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
-set failed = $status; if( $failed == 1 ) exit 1
+$FC -o ../../../../bin/obs_only_stats.exe binave.o doconcs.o doflows.o main.o single.o $dsnlib $lib1 $lib2 $lib3 ../postriverlib.a $usrlib ../part/part_sub.o
 
 rm *.o

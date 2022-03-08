@@ -237,12 +237,15 @@ C      print*,'getting land data'
               exit
             end if
           end do
-          if (.not.found) go to 995
-
-          call shift(line)  ! get weight
-          nR2L(nl) = nR2L(nl) + 1
-          R2L(nl,nR2L(nl)) = nr
-          read(line,*,err=997,end=997) weight(nl,nR2L(nl))
+*         previously this failed if any entry in weight file did not 
+*         occur in seg list, but since seglist may be a single basin
+*         and weight file is global this doesn't make sense
+          if (found) then
+            call shift(line)  ! get weight
+            nR2L(nl) = nR2L(nl) + 1
+            R2L(nl,nR2L(nl)) = nr
+            read(line,*,err=997,end=997) weight(nl,nR2L(nl))
+          end if
         end if
         read(dfile,'(a100)',err=992,end=993)line
         call d2x(line,last)
@@ -255,16 +258,13 @@ C      print*,'getting land data'
           do nr = 1,norphans
             if (orphans(nr).eq.lsegs(nl)) found = .true.
           end do
-          if (.not.found) then
-             print*,'orphan ',lsegs(nl)
-             go to 996
-          end if
+          if (.not.found) go to 996
         else
           test = 0.0
           do nr = 1,nR2L(nl)
             test = test + weight(nl,nr)
           end do
-          if (abs(test-1.0).gt.0.0021) go to 996
+          if (abs(test-1.0).gt.0.01) go to 996
         end if
       end do
 
@@ -280,7 +280,6 @@ C      print*,'getting land data'
       return
 996   err = 996
       print*,lsegs(nl)
-      print*,'sum of weights = ',test
       return
 997   err = 997
       print*,rsegs(nr),lsegs(nl)
@@ -317,145 +316,73 @@ C      print*,'getting land data'
       external calfacLandEvap,calfacLZSN,calfacINFILT,calfacIRC
       external calfacAGWR,calfacINTFW,calfacAGWETP,calfacKVARY
 
-      character*4   tversion
-      character*200 statlineN
-      character*200 statlineO
-
-      real TbiasN(maxrsegs),WstatN(maxrsegs),SstatN(maxrsegs)
-      real QstatN(maxrsegs),BstatN(maxrsegs),QaveRIN(maxrsegs)
-      real BaveRIN(maxrsegs),PbiasN(maxrsegs),VPbiasN(maxrsegs)
-      real WBaveRIN(maxrsegs),SBaveRIN(maxrsegs),lo10biasN(maxrsegs)
-      real lo05biasN(maxrsegs)
-
-      real TbiasO(maxrsegs),WstatO(maxrsegs),SstatO(maxrsegs)
-      real QstatO(maxrsegs),BstatO(maxrsegs),QaveRIO(maxrsegs)
-      real BaveRIO(maxrsegs),PbiasO(maxrsegs),VPbiasO(maxrsegs)
-      real WBaveRIO(maxrsegs),SBaveRIO(maxrsegs),lo10biasO(maxrsegs)
-      real lo05biasO(maxrsegs)
-
-      integer iVER
-      integer I_temp
-
-      iVER = 0
-      tversion = version
-
       do nr = 1,maxrsegs    ! set to -9 to test that calib data exists
         facLandEvap(nr) = -9.0
       end do
 
       call lencl(rscen,lenrscen)
       fnam = outdir//'river/summary/'//rscen(:lenrscen)//
-     .             '_sum_stats_'//tversion//'.csv'
+     .             '_sum_stats_'//version//'.csv'
       open(dfile+1,file=fnam,status='unknown',iostat=err)
       if (err.ne.0) go to 991
-
-      read  (tversion, '(I4)') I_temp
-      if ( I_temp .gt. iVER ) then
-         write (tversion, '(I4)' ) I_temp-1
-         do I_temp = 1,4
-            if (tversion(I_temp:I_temp).eq.' ') 
-     .          tversion(I_temp:I_temp)='0'
-         end do
-         fnam = outdir//'river/summary/'//rscen(:lenrscen)//
-     .             '_sum_stats_'//tversion//'.csv'
-      else
-         fnam = outdir//'river/summary/'//rscen(:lenrscen)//
-     .             '_sum_stats.csv'
-      end if
-      print*,'dfile+2', fnam
-
-      open(dfile+2,file=fnam,status='old',iostat=err)
-      if (err.ne.0) go to 991
-
       fnam = outdir//'river/summary/'//rscen(:lenrscen)//
      .             '_sum_stats.csv'
       open(dfile,file=fnam,status='old',iostat=err)
       if (err.ne.0) go to 991
-      print*,'dfile ',fnam
 
-      read(dfile,'(a200)',end=100,err=992) statlineN
-      read(dfile+2,'(a200)',end=100,err=992) statlineO
-      call ryt(statlineN,dfile+1)
+      read(dfile,'(a200)',end=100,err=992) statline
+      call ryt(statline,dfile+1)
       do
-        read(dfile,'(a200)',end=100,err=992) statlineN
-        read(dfile+2,'(a200)',end=100,err=992) statlineO
-        call ryt(statlineN,dfile+1)
-        read(statlineN(5:8),'(i4)',err=992,end=992) nr
+        read(dfile,'(a200)',end=100,err=992) statline
+        call ryt(statline,dfile+1)
+        read(statline(5:8),'(i4)',err=992,end=992) nr
         nr = uniqindex(nr)
-        call shift(statlineN)
-        call shift(statlineO)
-        read(statlineN,*,err=992,end=992)
-     .           Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
-     .           rdum,rdum,rdum,
-     .           QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
-     .           rdum,rdum,lo10bias(nr),lo05bias(nr)
-        read(statlineO,*,err=992,end=992)
-     .           TbiasO(nr),WstatO(nr),SstatO(nr),QstatO(nr),BstatO(nr),
-     .           rdum,rdum,rdum,
-     .           QaveRIO(nr),BaveRIO(nr),PbiasO(nr),VPbiasO(nr),
-     .           rdum,rdum,lo10biasO(nr),lo05biasO(nr)
-
-        if ( Tbias(nr)*TbiasO(nr).lt.0 )
-     .             Tbias(nr) = 0.5 * Tbias(nr)
-        if ( (Wstat(nr)-1)*(WstatO(nr)-1).lt.0 )
-     .             Wstat(nr) = 1 + 0.5 * (Wstat(nr) - 1)
-        if ( (Sstat(nr)-1)*(SstatO(nr)-1).lt.0 )
-     .             Sstat(nr) = 1 + 0.5 * (Sstat(nr) - 1)
-        if ( (Qstat(nr)-1)*(QstatO(nr)-1).lt.0 )
-     .             Qstat(nr) = 1 + 0.5 * (Qstat(nr) - 1)
-        if ( (Bstat(nr)-1)*(BstatO(nr)-1).lt.0 )
-     .             Bstat(nr) = 1 + 0.5 * (Bstat(nr) - 1)
-        if ( (QaveRI(nr)-1)*(QaveRIO(nr)-1).lt.0 )
-     .             QaveRI(nr) = 1 + 0.5 * (QaveRI(nr) - 1)
-        if ( (BaveRI(nr)-1)*(BaveRIO(nr)-1).lt.0 )
-     .             BaveRI(nr) = 1 + 0.5 * (BaveRI(nr) - 1)
-        if ( Pbias(nr)*PbiasO(nr).lt.0 )
-     .             Pbias(nr) = 0.5 * Pbias(nr)
-        if ( VPbias(nr)*VPbiasO(nr).lt.0 )
-     .             VPbias(nr) = 0.5 * VPbias(nr)
-        if ( lo10bias(nr)*lo10biasO(nr).lt.0 )
-     .             lo10bias(nr) = 0.5 * lo10bias(nr)
-        if ( lo05bias(nr)*lo05biasO(nr).lt.0 )
-     .             lo05bias(nr) = 0.5 * lo05bias(nr)
-
-        facLandEvap(nr) = calfacLandEvap(
+        if (nr.ne.0) then
+          call shift(statline)
+          read(statline,*,err=992,end=992)
+     .            Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
+     .            rdum,rdum,rdum,
+     .            QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
+     .            rdum,rdum,lo10bias(nr),lo05bias(nr)
+  
+          facLandEvap(nr) = calfacLandEvap(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facLZSN(nr)     = calfacLZSN(
+          facLZSN(nr)     = calfacLZSN(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facINFILT(nr)   = calfacINFILT(
+          facINFILT(nr)   = calfacINFILT(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
 
-        facIRC(nr)      = calfacIRC(
+          facIRC(nr)      = calfacIRC(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facAGWR(nr)     = calfacAGWR(
+          facAGWR(nr)     = calfacAGWR(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facINTFW(nr)    = calfacINTFW(
+          facINTFW(nr)    = calfacINTFW(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facAGWETP(nr)   = calfacAGWETP(
+          facAGWETP(nr)   = calfacAGWETP(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-        facKVARY(nr)    = calfacKVARY(
+          facKVARY(nr)    = calfacKVARY(
      I                Tbias(nr),Wstat(nr),Sstat(nr),Qstat(nr),Bstat(nr),
      I                QaveRI(nr),BaveRI(nr),Pbias(nr),VPbias(nr),
      I                WBaveRI(nr),SBaveRI(nr),lo10bias(nr),lo05bias(nr))
-
+  
+        end if
       end do
 
 100   close(dfile)
-101   close(dfile+2)
       close(dfile+1)
 
 ************** CHECK THAT THE RIVER SEGMENT DATA WERE FOUND
@@ -564,7 +491,7 @@ C      print*,'getting land data'
       write(report(3),*) 'error = ',err
       go to 999
 
-992   report(1) = 'problem reading file - getall 992'
+992   report(1) = 'problem reading file'
       report(2) = fnam
       report(3) = 'near line:'//outline
       go to 999

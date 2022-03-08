@@ -172,7 +172,7 @@
       nlrsegs = 0
       n57cells = 0
       do
-        read(dfile,'(a400)',end = 111,err=996)longline
+        read(dfile,'(a300)',end = 111,err=996)longline
         call d2x(longline,last)
         read(longline,*,end=992,err=992)
      .                             SigInsig, SourceType,
@@ -373,7 +373,7 @@ C     .                         + max(0.0,Ttss-Tbod*bod2tss)
 ************ loop over all lines and populate variables
       nlrsegs = 0
       do
-        read(dfile,'(a400)',end=222,err=996) longline
+        read(dfile,'(a300)',end=222,err=996) longline
         call d2x(longline,last)
         read(longline,*,end=992,err=992)
      .                                  SigInsig, SourceType,
@@ -572,7 +572,7 @@ C     .                        + max(0.0,Ttss-Tbod*bod2tss)
       nCSOlrsegs = 0
       nCSOcells = 0
       do
-        read(dfile,'(a400)',end=333,err=996)longline
+        read(dfile,'(a300)',end=333,err=996)longline
         call d2x(longline,last)
         read(longline,*,end=992,err=992)
      .                             rseg,lseg,Tcell,Tfac,TdisPoint,Tfips,
@@ -903,13 +903,18 @@ C     .                             + max(0.0,Ttss-Tbod*bod2tss)
       call wdflc1(wdmfil+1,err)   ! close junk wdm file
 
       print*,'done making all wdms'
-      print*,'there were ',WWTPtnerr,' TN errors and '
+      if ((WWTPtnerr+INDtperr+CSOtperr).gt.0) then
+        print*,'there were ',WWTPtnerr,' TN errors and '
      .        ,WWTPtperr,' TP errors in the WWTP file'
-      print*,'there were ',INDtnerr,' TN errors and ',
+        print*,'there were ',INDtnerr,' TN errors and ',
      .       INDtperr,' TP errors in the IND file'
-      print*,'there were ',CSOtnerr,' TN errors and ',
+        print*,'there were ',CSOtnerr,' TN errors and ',
      .       CSOtperr,' TP errors in the CSO file'
-      print*,'  ' 
+        print*,'  ' 
+      else
+        print*, 'processing completed successfully! '
+        print*, '  '
+      end if
 
       stop
 
@@ -931,11 +936,10 @@ C     .                             + max(0.0,Ttss-Tbod*bod2tss)
       go to 999
 
 992   report(1) = 'problem reading file:  near line: could not parse'
-      write(report(2),*) longfnam
-      write(report(3),*) longline
-      write(*,*), longline
-      write(*,*), Tfac,nm,nd,ny,Tflow,Tbod,Tdox,Tnh3,
-     .                    Tno3,Torn,Ndum,Tpo4,Torp,Pdum,' tss',Ttss
+      report(2) = longfnam
+      report(3) = longline
+      print*, Tfac,nm,nd,ny,Tflow,Tbod,Tdox,Tnh3,
+     .                    Tno3,Torn,Ndum,Tpo4,Torp,Pdum,'tss',Ttss
       go to 999
 
 993   report(1) = 'more rseg lseg pairs than anticipated'

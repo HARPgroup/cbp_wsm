@@ -130,10 +130,9 @@
         end if
       end do
 
-C BHATT      if (nuncalsegs.eq.0) go to 989   !!! FINISHED !!!!!
+      if (nuncalsegs.eq.0) go to 989   !!! FINISHED !!!!!
       call writeLandSeglist(
      I                      basin,uncalsegs,nuncalsegs)
-      if (nuncalsegs.eq.0) go to 989   !!! FINISHED !!!!!
 
 ************* LOOP OVER QUALITY CONSTITUENTS AND PARAM FILES
 *************** COPY FILE AND MAKE CHANGES
@@ -277,7 +276,6 @@ C BHATT      if (nuncalsegs.eq.0) go to 989   !!! FINISHED !!!!!
       report(2) = 'basin '//basin
       report(3) = 'land use '//clu
       call NoProblemReport(report)
-      go to 999 ! BHATT
 
 990   report(1) = 'problem reading parameter file'
       report(2) = ' for land use '//clu//' quality constituent '//cnq
