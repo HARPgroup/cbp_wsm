@@ -1,0 +1,5711 @@
+ Binary ETM file for DE0_3791_0001 P620170331WQg_S4
+   reading data files
+ DE0_3791_0001 -> N10001 
+ BMP Con -> flo sed tnx tpx bod 
+ >tnx<
+ fn getBMPconsEOT  1
+ >tnx<
+ fn getBMPconsEOT  4
+ Land-uses -> 1984CAL20170331                          
+ 1985CAL20170331                          
+ 1986CAL20170331                          
+ 1987CAL20170331                          
+ 1988CAL20170331                          
+ 1989CAL20170331                          
+ 1990CAL20170331                          
+ 1991CAL20170331                          
+ 1992CAL20170331                          
+ 1993CAL20170331                          
+ 1994CAL20170331                          
+ 1995CAL20170331                          
+ 1996CAL20170331                          
+ 1997CAL20170331                          
+ 1998CAL20170331                          
+ 1999CAL20170331                          
+ 2000CAL20170331                          
+ 2001CAL20170331                          
+ 2002CAL20170331                          
+ 2003CAL20170331                          
+ 2004CAL20170331                          
+ 2005CAL20170331                          
+ 2006CAL20170331                          
+ 2007CAL20170331                          
+ 2008CAL20170331                          
+ 2009CAL20170331                          
+ 2010CAL20170331                          
+ 2011CAL20170331                          
+ 2012CAL20170331                          
+ 2013CAL20170331                          
+ 2013CAL20170331                          
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+ BMP PassThrus -> 1984CAL20170331                          
+ 1985CAL20170331                          
+ 1986CAL20170331                          
+ 1987CAL20170331                          
+ 1988CAL20170331                          
+ 1989CAL20170331                          
+ 1990CAL20170331                          
+ 1991CAL20170331                          
+ 1992CAL20170331                          
+ 1993CAL20170331                          
+ 1994CAL20170331                          
+ 1995CAL20170331                          
+ 1996CAL20170331                          
+ 1997CAL20170331                          
+ 1998CAL20170331                          
+ 1999CAL20170331                          
+ 2000CAL20170331                          
+ 2001CAL20170331                          
+ 2002CAL20170331                          
+ 2003CAL20170331                          
+ 2004CAL20170331                          
+ 2005CAL20170331                          
+ 2006CAL20170331                          
+ 2007CAL20170331                          
+ 2008CAL20170331                          
+ 2009CAL20170331                          
+ 2010CAL20170331                          
+ 2011CAL20170331                          
+ 2012CAL20170331                          
+ 2013CAL20170331                          
+ 2013CAL20170331                          
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> tnx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> tpx          
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp-> sed   N10001 aop soy gwm gom lhy swm som sgg dbl sch scl oac ohy pas nch ntg xmch xmtg mcn xcch xctg xccn xcmo xcfr hfr for wfp wto osp fsp fnp nir nnr nci xmir xmnr xmci xcir xcnr xcci xstb xstf xsho        
+ flo
+ sed
+ tnx
+ tpx
+ bod
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ Pnb->  1, 2
+ NO23 -> tnx
+ Pnb->  2, 1
+ NH3X -> tnx
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+ ctemp-> NH3X         
+ NO23
+ NH3X
+ ctemp-> NO23         
+ NO23
+ NH3X
+ ctemp->              
+   all data read, make binary etm file
+  
+10.204u 0.155s 0:10.41 99.4%	0+0k 0+0io 0pf+0w
+`../../../config/blank_wdm/river.wdm' -> `DE0_3791_0001.wdm'
+N10001 aop  Land Loads and transfer wdms for 
+ P620170331WQg_S4 DE0_3791_0001  1985  2014
+  
+ Stream Load Landuse
+ Number of str load landuse =  1
+  
+  
+ Annual Load Landuse
+ Number of Ann load landuse =  3
+    -> Load LU # 1 31 fnp
+    -> Load LU # 2 30 fsp
+    -> Load LU # 3 43 sho
+  
+  
+ Average Load Landuse
+ Number of Avg load landuse =  1
+    -> Load LU # 1 41 stb
+  
+  
+ No lbsBMP cap Landuse
+ Number of xlbsbmp landuse =  1
+    -> Load LU # 1 41 stb
+  
+  
+ Non-physical Load Landuse
+ Number of non-physical landuse =  2
+    -> Load LU # 1 43 sho
+    -> Load LU # 2 41 stb
+  
+ ../../../output/etm/P620170331WQg_S4/N10001toDE0_3791_0001.etm                                                                                                                                                                                            
+ BHATT> LStest= P620170331WQg_S4         LandScen= P620170331WQg_S4         
+ closing wdmlnd
+ aopflo 1984  0.  573401808.  1.
+ aopflo 1985  0.  709716748.  1.
+ aopflo 1986  0.  880950681.  1.
+ aopflo 1987  0.  1.27201905E+09  1.
+ aopflo 1988  0.  1.20016059E+09  1.
+ aopflo 1989  0.  1.87293009E+09  1.
+ aopflo 1990  0.  913453353.  1.
+ aopflo 1991  0.  431794173.  1.
+ aopflo 1992  0.  157326828.  1.
+ aopflo 1993  0.  149264200.  1.
+ aopflo 1994  0.  157850756.  1.
+ aopflo 1995  0.  48662914.8  1.
+ aopflo 1996  0.  59579255.1  1.
+ aopflo 1997  0.  6039178.56  1.
+ aopflo 1998  0.  0.  1.
+ aopflo 1999  0.  0.  1.
+ aopflo 2000  0.  0.  1.
+ aopflo 2001  0.  0.  1.
+ aopflo 2002  0.  0.  1.
+ aopflo 2003  0.  0.  1.
+ aopflo 2004  0.  0.  1.
+ aopflo 2005  0.  0.  1.
+ aopflo 2006  0.  0.  1.
+ aopflo 2007  0.  0.  1.
+ aopflo 2008  0.  0.  1.
+ aopflo 2009  0.  0.  1.
+ aopflo 2010  0.  0.  1.
+ aopflo 2011  0.  0.  1.
+ aopflo 2012  0.  630136.782  1.
+ aopflo 2013  0.  5119502.12  1.
+ aopflo 2014  0.  5044883.88  1.
+ aopsed 1984  0.  0.00127895844  1.
+ aopsed 1985  0.  0.0523999477  1.
+ aopsed 1986  0.  0.00993662667  1.
+ aopsed 1987  0.  0.17937064  1.
+ aopsed 1988  0.  0.0740863554  1.
+ aopsed 1989  0.  0.0653279553  1.
+ aopsed 1990  0.  0.126535312  1.
+ aopsed 1991  0.  0.00286576615  1.
+ aopsed 1992  0.  9.56238463E-05  1.
+ aopsed 1993  0.  0.00978035047  1.
+ aopsed 1994  0.  0.0043218169  1.
+ aopsed 1995  0.  6.27988798E-05  1.
+ aopsed 1996  0.  0.00810186488  1.
+ aopsed 1997  0.  0.000582652371  1.
+ aopsed 1998  0.  0.  1.
+ aopsed 1999  0.  0.  1.
+ aopsed 2000  0.  0.  1.
+ aopsed 2001  0.  0.  1.
+ aopsed 2002  0.  0.  1.
+ aopsed 2003  0.  0.  1.
+ aopsed 2004  0.  0.  1.
+ aopsed 2005  0.  0.  1.
+ aopsed 2006  0.  0.  1.
+ aopsed 2007  0.  0.  1.
+ aopsed 2008  0.  0.  1.
+ aopsed 2009  0.  0.  1.
+ aopsed 2010  0.  0.  1.
+ aopsed 2011  0.  0.  1.
+ aopsed 2012  0.  0.000135735459  1.
+ aopsed 2013  0.  0.000224394488  1.
+ aopsed 2014  0.  5.02135207E-05  1.
+ aoptnx 1984  0.  28.275446  1.
+ aoptnx 1985  0.  34.4776457  1.
+ aoptnx 1986  0.  51.5382951  1.
+ aoptnx 1987  0.  76.2076635  1.
+ aoptnx 1988  0.  66.371229  1.
+ aoptnx 1989  0.  98.591753  1.
+ aoptnx 1990  0.  50.0143246  1.
+ aoptnx 1991  0.  24.8483808  1.
+ aoptnx 1992  0.  8.09056648  1.
+ aoptnx 1993  0.  9.28131819  1.
+ aoptnx 1994  0.  10.3262759  1.
+ aoptnx 1995  0.  2.61050673  1.
+ aoptnx 1996  0.  3.669655  1.
+ aoptnx 1997  0.  0.459656273  1.
+ aoptnx 1998  0.  0.  1.
+ aoptnx 1999  0.  0.  1.
+ aoptnx 2000  0.  0.  1.
+ aoptnx 2001  0.  0.  1.
+ aoptnx 2002  0.  0.  1.
+ aoptnx 2003  0.  0.  1.
+ aoptnx 2004  0.  0.  1.
+ aoptnx 2005  0.  0.  1.
+ aoptnx 2006  0.  0.  1.
+ aoptnx 2007  0.  0.  1.
+ aoptnx 2008  0.  0.  1.
+ aoptnx 2009  0.  0.  1.
+ aoptnx 2010  0.  0.  1.
+ aoptnx 2011  0.  0.  1.
+ aoptnx 2012  0.  0.0385115503  1.
+ aoptnx 2013  0.  0.255320613  1.
+ aoptnx 2014  0.  0.272767155  1.
+ aoptpx 1984  0.  1.30637409  1.
+ aoptpx 1985  0.  2.56274947  1.
+ aoptpx 1986  0.  4.28084236  1.
+ aoptpx 1987  0.  6.68931089  1.
+ aoptpx 1988  0.  4.90413471  1.
+ aoptpx 1989  0.  8.73818916  1.
+ aoptpx 1990  0.  5.3160038  1.
+ aoptpx 1991  0.  1.91802569  1.
+ aoptpx 1992  0.  0.323492285  1.
+ aoptpx 1993  0.  0.965946174  1.
+ aoptpx 1994  0.  1.32858163  1.
+ aoptpx 1995  0.  0.1soy 19543961  1.
+ aoptpx 1996  0.  0.429748363  1.
+ aoptpx 1997  0.  0.0676785138  1.
+ aoptpx 1998  0.  0.  1.
+ aoptpx 1999  0.  0.  1.
+ aoptpx 2000  0.  0.  1.
+ aoptpx 2001  0.  0.  1.
+ aoptpx 2002  0.  0.  1.
+ aoptpx 2003  0.  0.  1.
+ aoptpx 2004  0.  0.  1.
+ aoptpx 2005  0.  0.  1.
+ aoptpx 2006  0.  0.  1.
+ aoptpx 2007  0.  0.  1.
+ aoptpx 2008  0.  0.  1.
+ aoptpx 2009  0.  0.  1.
+ aoptpx 2010  0.  0.  1.
+ aoptpx 2011  0.  0.  1.
+ aoptpx 2012  0.  0.00663567954  1.
+ aoptpx 2013  0.  0.0224561667  1.
+ aoptpx 2014  0.  0.0217648745  1.
+ aopbod 1984  0.  56.0733015  1.
+ aopbod 1985  0.  74.8536775  1.
+ aopbod 1986  0.  114.604504  1.
+ aopbod 1987  0.  172.259346  1.
+ aopbod 1988  0.  143.09821  1.
+ aopbod 1989  0.  222.571745  1.
+ aopbod 1990  0.  118.9136  1.
+ aopbod 1991  0.  53.6214146  1.
+ aopbod 1992  0.  15.2872691  1.
+ aopbod 1993  0.  21.7994736  1.
+ aopbod 1994  0.  25.9690536  1.
+ aopbod 1995  0.  4.98532867  1.
+ aopbod 1996  0.  8.88468452  1.
+ aopbod 1997  0.  1.2066569  1.
+ aopbod 1998  0.  0.  1.
+ aopbod 1999  0.  0.  1.
+ aopbod 2000  0.  0.  1.
+ aopbod 2001  0.  0.  1.
+ aopbod 2002  0.  0.  1.
+ aopbod 2003  0.  0.  1.
+ aopbod 2004  0.  0.  1.
+ aopbod 2005  0.  0.  1.
+ aopbod 2006  0.  0.  1.
+ aopbod 2007  0.  0.  1.
+ aopbod 2008  0.  0.  1.
+ aopbod 2009  0.  0.  1.
+ aopbod 2010  0.  0.  1.
+ aopbod 2011  0.  0.  1.
+ aopbod 2012  0.  0.108736452  1.
+ aopbod 2013  0.  0.559429933  1.
+ aopbod 2014  0.  0.581227065  1.
+ closing wdmlnd
+ soyflo 1984  0.  1.09741884E+11  1.
+ soyflo 1985  0.  9.13849456E+10  1.
+ soyflo 1986  0.  9.09592741E+10  1.
+ soyflo 1987  0.  9.45642188E+10  1.
+ soyflo 1988  0.  1.04300595E+11  1.
+ soyflo 1989  0.  1.99370421E+11  1.
+ soyflo 1990  0.  1.34765973E+11  1.
+ soyflo 1991  0.  9.94533514E+10  1.
+ soyflo 1992  0.  9.0310885E+10  1.
+ soyflo 1993  0.  1.20496514E+11  1.
+ soyflo 1994  0.  1.63604906E+11  1.
+ soyflo 1995  0.  8.78359046E+10  1.
+ soyflo 1996  0.  2.07753614E+11  1.
+ soyflo 1997  0.  1.14248852E+11  1.
+ soyflo 1998  0.  1.24311487E+11  1.
+ soyflo 1999  0.  1.30408403E+11  1.
+ soyflo 2000  0.  1.28601473E+11  1.
+ soyflo 2001  0.  1.05055989E+11  1.
+ soyflo 2002  0.  1.01686073E+11  1.
+ soyflo 2003  0.  2.05580651E+11  1.
+ soyflo 2004  0.  9.93813927E+10  1.
+ soyflo 2005  0.  1.0457404E+11  1.
+ soyflo 2006  0.  9.50899998E+10  1.
+ soyflo 2007  0.  5.54820657E+10  1.
+ soyflo 2008  0.  4.99305659E+10  1.
+ soyflo 2009  0.  9.31391067E+10  1.
+ soyflo 2010  0.  6.61410292E+10  1.
+ soyflo 2011  0.  7.92772771E+10  1.
+ soyflo 2012  0.  4.19964756E+10  1.
+ soyflo 2013  0.  6.63048873E+10  1.
+ soyflo 2014  0.  5.70002858E+10  1.
+ soysed 1984  0.  146.637593  1.
+ soysed 1985  0.  478.504651  1.
+ soysed 1986  0.  436.094888  1.
+ soysed 1987  0.  534.243754  1.
+ soysed 1988  0.  457.682845  1.
+ soysed 1989  0.  613.719015  1.
+ soysed 1990  0.  1041.45541  1.
+ soysed 1991  0.  179.405863  1.
+ soysed 1992  0.  29.8133319  1.
+ soysed 1993  0.  587.778472  1.
+ soysed 1994  0.  491.165952  1.
+ soysed 1995  0.  73.1667288  1.
+ soysed 1996  0.  1472.05553  1.
+ soysed 1997  0.  1256.16555  1.
+ soysed 1998  0.  1359.10541  1.
+ soysed 1999  0.  1276.91365  1.
+ soysed 2000  0.  831.699877  1.
+ soysed 2001  0.  848.178788  1.
+ soysed 2002  0.  500.221056  1.
+ soysed 2003  0.  1809.91275  1.
+ soysed 2004  0.  306.740011  1.
+ soysed 2005  0.  1026.99897  1.
+ soysed 2006  0.  391.075661  1.
+ soysed 2007  0.  565.672982  1.
+ soysed 2008  0.  93.2694414  1.
+ soysed 2009  0.  451.31529  1.
+ soysed 2010  0.  259.838793  1.
+ soysed 2011  0.  424.702651  1.
+ soysed 2012  0.  344.988707  1.
+ soysed 2013  0.  267.173124  1.
+ soysed 2014  0.  129.55863  1.
+ soytnx 1984  0.  25932.9021  1.
+ soytnx 1985  0.  21497.7364  1.
+ soytnx 1986  0.  26148.5687  1.
+ soytnx 1987  0.  27204.3216  1.
+ soytnx 1988  0.  27936.9657  1.
+ soytnx 1989  0.  48457.118  1.
+ soytnx 1990  0.  33929.667  1.
+ soytnx 1991  0.  26625.7513  1.
+ soytnx 1992  0.  22000.7147  1.
+ soytnx 1993  0.  34456.8082  1.
+ soytnx 1994  0.  46204.3394  1.
+ soytnx 1995  0.  22747.1108  1.
+ soytnx 1996  0.  59024.5651  1.
+ soytnx 1997  0.  34596.6028  1.
+ soytngwm x 1998  0.  40877.9114  1.
+ soytnx 1999  0.  37349.9472  1.
+ soytnx 2000  0.  37101.5627  1.
+ soytnx 2001  0.  29659.9871  1.
+ soytnx 2002  0.  28318.3862  1.
+ soytnx 2003  0.  61081.4408  1.
+ soytnx 2004  0.  27730.8397  1.
+ soytnx 2005  0.  31866.6354  1.
+ soytnx 2006  0.  24310.2665  1.
+ soytnx 2007  0.  17794.5169  1.
+ soytnx 2008  0.  13920.7123  1.
+ soytnx 2009  0.  24892.7029  1.
+ soytnx 2010  0.  18584.9666  1.
+ soytnx 2011  0.  19415.9736  1.
+ soytnx 2012  0.  11563.6157  1.
+ soytnx 2013  0.  16061.3926  1.
+ soytnx 2014  0.  15011.425  1.
+ soytpx 1984  0.  607.362956  1.
+ soytpx 1985  0.  901.345608  1.
+ soytpx 1986  0.  1228.64226  1.
+ soytpx 1987  0.  1246.95236  1.
+ soytpx 1988  0.  1101.55364  1.
+ soytpx 1989  0.  1936.99084  1.
+ soytpx 1990  0.  2001.43715  1.
+ soytpx 1991  0.  847.042027  1.
+ soytpx 1992  0.  339.168531  1.
+ soytpx 1993  0.  1652.32485  1.
+ soytpx 1994  0.  2182.25372  1.
+ soytpx 1995  0.  503.625409  1.
+ soytpx 1996  0.  3807.56114  1.
+ soytpx 1997  0.  2574.24144  1.
+ soytpx 1998  0.  3181.67471  1.
+ soytpx 1999  0.  2628.14372  1.
+ soytpx 2000  0.  2113.62791  1.
+ soytpx 2001  0.  1796.45874  1.
+ soytpx 2002  0.  1353.73651  1.
+ soytpx 2003  0.  4437.81895  1.
+ soytpx 2004  0.  1095.39695  1.
+ soytpx 2005  0.  2146.36208  1.
+ soytpx 2006  0.  1159.43772  1.
+ soytpx 2007  0.  1288.76328  1.
+ soytpx 2008  0.  404.489142  1.
+ soytpx 2009  0.  1240.89986  1.
+ soytpx 2010  0.  786.052553  1.
+ soytpx 2011  0.  1075.87894  1.
+ soytpx 2012  0.  744.421618  1.
+ soytpx 2013  0.  669.826682  1.
+ soytpx 2014  0.  497.655372  1.
+ soybod 1984  0.  33261.639  1.
+ soybod 1985  0.  32389.9078  1.
+ soybod 1986  0.  40183.9289  1.
+ soybod 1987  0.  41925.0354  1.
+ soybod 1988  0.  41442.125  1.
+ soybod 1989  0.  69730.0695  1.
+ soybod 1990  0.  55857.3651  1.
+ soybod 1991  0.  36589.394  1.
+ soybod 1992  0.  27153.633  1.
+ soybod 1993  0.  51286.2917  1.
+ soybod 1994  0.  66745.2585  1.
+ soybod 1995  0.  29678.0555  1.
+ soybod 1996  0.  102343.864  1.
+ soybod 1997  0.  65630.8678  1.
+ soybod 1998  0.  78449.1343  1.
+ soybod 1999  0.  72166.8698  1.
+ soybod 2000  0.  65925.3567  1.
+ soybod 2001  0.  54919.9078  1.
+ soybod 2002  0.  50069.8087  1.
+ soybod 2003  0.  123896.533  1.
+ soybod 2004  0.  47043.8196  1.
+ soybod 2005  0.  67081.116  1.
+ soybod 2006  0.  45635.2161  1.
+ soybod 2007  0.  39625.5969  1.
+ soybod 2008  0.  24218.7137  1.
+ soybod 2009  0.  50916.6082  1.
+ soybod 2010  0.  35982.6029  1.
+ soybod 2011  0.  40809.5481  1.
+ soybod 2012  0.  26380.6958  1.
+ soybod 2013  0.  30895.5058  1.
+ soybod 2014  0.  26979.2861  1.
+ closing wdmlnd
+ gwmflo 1984  0.  4.83441232E+10  1.
+ gwmflo 1985  0.  3.9149248E+10  1.
+ gwmflo 1986  0.  3.7932418E+10  1.
+ gwmflo 1987  0.  3.87912009E+10  1.
+ gwmflo 1988  0.  4.47749526E+10  1.
+ gwmflo 1989  0.  9.09411733E+10  1.
+ gwmflo 1990  0.  6.49020797E+10  1.
+ gwmflo 1991  0.  5.06638082E+10  1.
+ gwmflo 1992  0.  4.86144181E+10  1.
+ gwmflo 1993  0.  6.52033066E+10  1.
+ gwmflo 1994  0.  8.87542249E+10  1.
+ gwmflo 1995  0.  4.75558953E+10  1.
+ gwmflo 1996  0.  1.12545926E+11  1.
+ gwmflo 1997  0.  6.16624347E+10  1.
+ gwmflo 1998  0.  6.69090266E+10  1.
+ gwmflo 1999  0.  7.02588493E+10  1.
+ gwmflo 2000  0.  6.96164861E+10  1.
+ gwmflo 2001  0.  5.66461805E+10  1.
+ gwmflo 2002  0.  5.70539762E+10  1.
+ gwmflo 2003  0.  1.30436521E+11  1.
+ gwmflo 2004  0.  7.41505701E+10  1.
+ gwmflo 2005  0.  9.37058511E+10  1.
+ gwmflo 2006  0.  1.04266216E+11  1.
+ gwmflo 2007  0.  7.07944125E+10  1.
+ gwmflo 2008  0.  6.62317695E+10  1.
+ gwmflo 2009  0.  1.23002166E+11  1.
+ gwmflo 2010  0.  8.66589386E+10  1.
+ gwmflo 2011  0.  1.02541996E+11  1.
+ gwmflo 2012  0.  5.42848001E+10  1.
+ gwmflo 2013  0.  8.80038894E+10  1.
+ gwmflo 2014  0.  7.60559547E+10  1.
+ gwmsed 1984  0.  49.9692382  1.
+ gwmsed 1985  0.  180.722257  1.
+ gwmsed 1986  0.  139.737301  1.
+ gwmsed 1987  0.  124.627134  1.
+ gwmsed 1988  0.  111.586868  1.
+ gwmsed 1989  0.  230.373721  1.
+ gwmsed 1990  0.  406.425933  1.
+ gwmsed 1991  0.  77.3401485  1.
+ gwmsed 1992  0.  13.3112915  1.
+ gwmsed 1993  0.  222.965023  1.
+ gwmsed 19gom 94  0.  199.364718  1.
+ gwmsed 1995  0.  33.260311  1.
+ gwmsed 1996  0.  520.907948  1.
+ gwmsed 1997  0.  519.516067  1.
+ gwmsed 1998  0.  485.886486  1.
+ gwmsed 1999  0.  518.186935  1.
+ gwmsed 2000  0.  406.514812  1.
+ gwmsed 2001  0.  409.652774  1.
+ gwmsed 2002  0.  202.867222  1.
+ gwmsed 2003  0.  917.208184  1.
+ gwmsed 2004  0.  160.151929  1.
+ gwmsed 2005  0.  785.225644  1.
+ gwmsed 2006  0.  374.479998  1.
+ gwmsed 2007  0.  638.571902  1.
+ gwmsed 2008  0.  106.172406  1.
+ gwmsed 2009  0.  378.305018  1.
+ gwmsed 2010  0.  272.587846  1.
+ gwmsed 2011  0.  409.480723  1.
+ gwmsed 2012  0.  315.419474  1.
+ gwmsed 2013  0.  308.297654  1.
+ gwmsed 2014  0.  149.704148  1.
+ gwmtnx 1984  0.  18631.8179  1.
+ gwmtnx 1985  0.  16529.7207  1.
+ gwmtnx 1986  0.  20824.4399  1.
+ gwmtnx 1987  0.  20720.7979  1.
+ gwmtnx 1988  0.  21709.1706  1.
+ gwmtnx 1989  0.  41401.8172  1.
+ gwmtnx 1990  0.  32874.3783  1.
+ gwmtnx 1991  0.  25602.6255  1.
+ gwmtnx 1992  0.  20987.3014  1.
+ gwmtnx 1993  0.  38679.3183  1.
+ gwmtnx 1994  0.  54103.557  1.
+ gwmtnx 1995  0.  24179.2855  1.
+ gwmtnx 1996  0.  74308.5357  1.
+ gwmtnx 1997  0.  45338.5361  1.
+ gwmtnx 1998  0.  54575.6074  1.
+ gwmtnx 1999  0.  48833.5479  1.
+ gwmtnx 2000  0.  49148.0077  1.
+ gwmtnx 2001  0.  39964.1013  1.
+ gwmtnx 2002  0.  37801.0978  1.
+ gwmtnx 2003  0.  103364.642  1.
+ gwmtnx 2004  0.  48033.5447  1.
+ gwmtnx 2005  0.  74617.5919  1.
+ gwmtnx 2006  0.  65539.7883  1.
+ gwmtnx 2007  0.  61756.6636  1.
+ gwmtnx 2008  0.  42818.2498  1.
+ gwmtnx 2009  0.  79161.0984  1.
+ gwmtnx 2010  0.  58453.4106  1.
+ gwmtnx 2011  0.  62181.6411  1.
+ gwmtnx 2012  0.  38076.8294  1.
+ gwmtnx 2013  0.  52443.3439  1.
+ gwmtnx 2014  0.  48444.5157  1.
+ gwmtpx 1984  0.  284.63787  1.
+ gwmtpx 1985  0.  370.839533  1.
+ gwmtpx 1986  0.  499.671607  1.
+ gwmtpx 1987  0.  451.995354  1.
+ gwmtpx 1988  0.  425.482735  1.
+ gwmtpx 1989  0.  879.320178  1.
+ gwmtpx 1990  0.  880.723405  1.
+ gwmtpx 1991  0.  461.211488  1.
+ gwmtpx 1992  0.  231.323763  1.
+ gwmtpx 1993  0.  876.500371  1.
+ gwmtpx 1994  0.  1239.08433  1.
+ gwmtpx 1995  0.  337.686055  1.
+ gwmtpx 1996  0.  2030.76749  1.
+ gwmtpx 1997  0.  1382.32783  1.
+ gwmtpx 1998  0.  1662.32757  1.
+ gwmtpx 1999  0.  1430.9682  1.
+ gwmtpx 2000  0.  1280.95946  1.
+ gwmtpx 2001  0.  1065.89599  1.
+ gwmtpx 2002  0.  824.189359  1.
+ gwmtpx 2003  0.  2925.07959  1.
+ gwmtpx 2004  0.  865.423376  1.
+ gwmtpx 2005  0.  1975.28305  1.
+ gwmtpx 2006  0.  1337.32207  1.
+ gwmtpx 2007  0.  1671.18973  1.
+ gwmtpx 2008  0.  602.82895  1.
+ gwmtpx 2009  0.  1523.30856  1.
+ gwmtpx 2010  0.  1036.7722  1.
+ gwmtpx 2011  0.  1302.59378  1.
+ gwmtpx 2012  0.  880.881837  1.
+ gwmtpx 2013  0.  912.470472  1.
+ gwmtpx 2014  0.  705.088432  1.
+ gwmbod 1984  0.  125498.429  1.
+ gwmbod 1985  0.  120866.838  1.
+ gwmbod 1986  0.  141544.188  1.
+ gwmbod 1987  0.  138733.047  1.
+ gwmbod 1988  0.  144187.778  1.
+ gwmbod 1989  0.  277328.739  1.
+ gwmbod 1990  0.  237347.927  1.
+ gwmbod 1991  0.  162371.001  1.
+ gwmbod 1992  0.  127639.813  1.
+ gwmbod 1993  0.  249980.994  1.
+ gwmbod 1994  0.  336290.858  1.
+ gwmbod 1995  0.  143823.235  1.
+ gwmbod 1996  0.  488135.879  1.
+ gwmbod 1997  0.  312737.869  1.
+ gwmbod 1998  0.  360723.758  1.
+ gwmbod 1999  0.  334776.846  1.
+ gwmbod 2000  0.  317368.169  1.
+ gwmbod 2001  0.  263758.065  1.
+ gwmbod 2002  0.  234956.131  1.
+ gwmbod 2003  0.  671748.977  1.
+ gwmbod 2004  0.  281856.244  1.
+ gwmbod 2005  0.  492251.525  1.
+ gwmbod 2006  0.  404784.38  1.
+ gwmbod 2007  0.  405131.295  1.
+ gwmbod 2008  0.  241201.627  1.
+ gwmbod 2009  0.  485655.115  1.
+ gwmbod 2010  0.  349864.774  1.
+ gwmbod 2011  0.  398108.11  1.
+ gwmbod 2012  0.  251985.193  1.
+ gwmbod 2013  0.  320832.873  1.
+ gwmbod 2014  0.  275616.575  1.
+ closing wdmlnd
+ gomflo 1984  0.  6.15668942E+10  1.
+ gomflo 1985  0.  4.79693179E+10  1.
+ gomflo 1986  0.  4.49398393E+10  1.
+ gomflo 1987  0.  4.43214622E+10  1.
+ gomflo 1988  0.  4.86488908E+10  1.
+ gomflo 1989  0.  9.45850888E+10  1.
+ gomflo 1990  0.  6.49302032E+10  1.
+ gomflo 1991  0.  4.85316031E+10  1.
+ gomflo 1992  0.  4.45203916E+10  1.
+ gomflo 1993  0.  5.75573135E+10  1.
+ gomflo 1994  0.  7.46300772E+10  1.
+ gomflo 1995  0.  3.80358266E+10  1.
+ gomflo 1996  0.  8.58378846E+10  1.
+ gomflo 1997  0.  4.57780783E+10  1.
+ gomflo 1998  0.  4.99367047E+10  1.
+ gomflo 1999  0.  5.30279577E+10  1.
+ gomflo 2000  0.  5.25039173E+10  1.
+ gomflo 2001  0.  4.35665105E+10  1.
+ gomflo 2002  0.  4.39770879E+10  1.
+ gomflo 2003  0.  9.85887775E+10  1.
+ gomflo 2004  0.  5.41306979E+10  1.
+ gomflo 2005  0.  6.56742611E+10  1.
+ gomflo 2006  0.  7.10246153E+10  1.
+ gomflo 2007  0.  4.77630444E+10  1.
+ gomflo 2008  0.  4.43061056E+10  1.
+ gomflo 2009  0.  8.00384155E+10  1.
+ gomflo 2010  0.  5.60368534E+10  1.
+ gomflo 2011  0.  6.57609323E+10  1.
+ gomflo 2012  0.  3.43981737E+10  1.
+ gomflo 2013  0.  5.50251109E+10  1.
+ gomflo 2014  0.  4.74443602E+10  1.
+ gomsed 1984  0.  63.9382276  1.
+ gomsed 1985  0.  220.337818  1.
+ gomsed 1986  0.  163.811222  1.
+ gomsed 1987  0.  144.048455  1.
+ gomsed 1988  0.  122.542043  1.
+ gomsed 1989  0.  241.563403  1.
+ gomsed 1990  0.  407.902624  1.
+ gomsed 1991  0.  74.8307029  1.
+ gomsed 1992  0.  12.2715168  1.
+ gomsed 1993  0.  198.70625  1.
+ gomsed 1994  0.  168.928392  1.
+ gomsed 1995  0.  27.0147766  1.
+ gomsed 1996  0.  393.039471  1.
+ gomsed 1997  0.  385.604357  1.
+ gomsed 1998  0.  362.076143  1.
+ gomsed 1999  0.  391.018894  1.
+ gomsed 2000  0.  306.734464  1.
+ gomsed 2001  0.  314.99938  1.
+ gomsed 2002  0.  155.859565  1.
+ gomsed 2003  0.  692.394337  1.
+ gomsed 2004  0.  117.914853  1.
+ gomsed 2005  0.  553.392347  1.
+ gomsed 2006  0.  255.01787  1.
+ gomsed 2007  0.  430.962792  1.
+ gomsed 2008  0.  70.7518645  1.
+ gomsed 2009  0.  245.385244  1.
+ gomsed 2010  0.  176.352601  1.
+ gomsed 2011  0.  262.847086  1.
+ gomsed 2012  0.  199.080717  1.
+ gomsed 2013  0.  192.594657  1.
+ gomsed 2014  0.  93.3868834  1.
+ gomtnx 1984  0.  16717.9061  1.
+ gomtnx 1985  0.  13444.6134  1.
+ gomtnx 1986  0.  15984.7125  1.
+ gomtnx 1987  0.  15723.3482  1.
+ gomtnx 1988  0.  16100.0069  1.
+ gomtnx 1989  0.  28826.3585  1.
+ gomtnx 1990  0.  20853.178  1.
+ gomtnx 1991  0.  17025.954  1.
+ gomtnx 1992  0.  14407.4541  1.
+ gomtnx 1993  0.  22666.8561  1.
+ gomtnx 1994  0.  29938.1901  1.
+ gomtnx 1995  0.  14191.6291  1.
+ gomtnx 1996  0.  35739.2766  1.
+ gomtnx 1997  0.  20624.9315  1.
+ gomtnx 1998  0.  24638.2607  1.
+ gomtnx 1999  0.  22906.2826  1.
+ gomtnx 2000  0.  23642.3413  1.
+ gomtnx 2001  0.  19430.7377  1.
+ gomtnx 2002  0.  19424.4983  1.
+ gomtnx 2003  0.  47119.9447  1.
+ gomtnx 2004  0.  24037.376  1.
+ gomtnx 2005  0.  32177.2599  1.
+ gomtnx 2006  0.  29016.2459  1.
+ gomtnx 2007  0.  24528.6202  1.
+ gomtnx 2008  0.  20072.3698  1.
+ gomtnx 2009  0.  33411.5376  1.
+ gomtnx 2010  0.  24931.415  1.
+ gomtnx 2011  0.  24982.1605  1.
+ gomtnx 2012  0.  14849.3708  1.
+ gomtnx 2013  0.  21600.9456  1.
+ gomtnx 2014  0.  20533.272  1.
+ gomtpx 1984  0.  358.664686  1.
+ gomtpx 1985  0.  488.848372  1.
+ gomtpx 1986  0.  618.27105  1.
+ gomtpx 1987  0.  544.701255  1.
+ gomtpx 1988  0.  476.595884  1.
+ gomtpx 1989  0.  965.436964  1.
+ gomtpx 1990  0.  969.924971  1.
+ gomtpx 1991  0.  444.203738  1.
+ gomtpx 1992  0.  181.544943  1.
+ gomtpx 1993  0.  794.919495  1.
+ gomtpx 1994  0.  1055.48918  1.
+ gomtpx 1995  0.  238.369284  1.
+ gomtpx 1996  0.  1517.4677  1.
+ gomtpx 1997  0.  1023.21454  1.
+ gomtpx 1998  0.  1223.52387  1.
+ gomtpx 1999  0.  1049.71146  1.
+ gomtpx 2000  0.  923.818035  1.
+ gomtpx 2001  0.  787.863247  1.
+ gomtpx 2002  0.  590.392409  1.
+ gomtpx 2003  0.  2176.39617  1.
+ gomtpx 2004  0.  599.707244  1.
+ gomtpx 2005  0.  1389.65995  1.
+ gomtpx 2006  0.  914.511204  1.
+ gomtpx 2007  0.  1163.91441  1.
+ gomtpx 2008  0.  382.86755  1.
+ gomtpx 2009  0.  1007.62915  1.
+ gomtpx 2010  0.  681.345325  1.
+ gomtpx 2011  0.  872.141592  1.
+ gomtpx 2012  0.  568.511655  1.
+ gomtpx 2013  0.  573.389396  1.
+ gomtpx 2014  0.  434.775118  1.
+ gombod 1984  0.  35266.0675  1.
+ gombod 1985  0.  31656.5786  1.
+ gombod 1986  0.  35526.9491  1.
+ gombod 1987  0.  33889.0149  1.
+ gombod 1988  0.  33436.1648  1.
+ gombod 1989  0.  60941.0775  1.
+ gombod 1990  0.  49215.0772 lhy  1.
+ gombod 1991  0.  32655.1635  1.
+ gombod 1992  0.  24690.4981  1.
+ gombod 1993  0.  45144.8831  1.
+ gombod 1994  0.  57226.4944  1.
+ gombod 1995  0.  23448.4648  1.
+ gombod 1996  0.  71603.7692  1.
+ gombod 1997  0.  44457.7123  1.
+ gombod 1998  0.  51146.5687  1.
+ gombod 1999  0.  47506.1203  1.
+ gombod 2000  0.  45186.493  1.
+ gombod 2001  0.  37939.9594  1.
+ gombod 2002  0.  33693.7552  1.
+ gombod 2003  0.  92877.3919  1.
+ gombod 2004  0.  38676.0768  1.
+ gombod 2005  0.  63169.2817  1.
+ gombod 2006  0.  50386.0597  1.
+ gombod 2007  0.  49473.1539  1.
+ gombod 2008  0.  29885.0424  1.
+ gombod 2009  0.  57060.8882  1.
+ gombod 2010  0.  41314.5863  1.
+ gombod 2011  0.  45699.0901  1.
+ gombod 2012  0.  28214.5042  1.
+ gombod 2013  0.  35869.2365  1.
+ gombod 2014  0.  31069.9279  1.
+ closing wdmlnd
+ lhyflo 1984  0.  1.56160298E+10  1.
+ lhyflo 1985  0.  1.29839905E+10  1.
+ lhyflo 1986  0.  1.29022171E+10  1.
+ lhyflo 1987  0.  1.62336248E+10  1.
+ lhyflo 1988  0.  1.67583762E+10  1.
+ lhyflo 1989  0.  3.21431144E+10  1.
+ lhyflo 1990  0.  2.03881209E+10  1.
+ lhyflo 1991  0.  1.44053471E+10  1.
+ lhyflo 1992  0.  1.26323223E+10  1.
+ lhyflo 1993  0.  1.81961526E+10  1.
+ lhyflo 1994  0.  2.71768562E+10  1.
+ lhyflo 1995  0.  1.47501804E+10  1.
+ lhyflo 1996  0.  3.92856552E+10  1.
+ lhyflo 1997  0.  2.3279881E+10  1.
+ lhyflo 1998  0.  2.72243787E+10  1.
+ lhyflo 1999  0.  2.99750849E+10  1.
+ lhyflo 2000  0.  3.24594095E+10  1.
+ lhyflo 2001  0.  2.87166427E+10  1.
+ lhyflo 2002  0.  2.7713838E+10  1.
+ lhyflo 2003  0.  6.0541052E+10  1.
+ lhyflo 2004  0.  2.83057427E+10  1.
+ lhyflo 2005  0.  2.72253754E+10  1.
+ lhyflo 2006  0.  2.26259688E+10  1.
+ lhyflo 2007  0.  1.27468224E+10  1.
+ lhyflo 2008  0.  1.13390766E+10  1.
+ lhyflo 2009  0.  2.37780772E+10  1.
+ lhyflo 2010  0.  1.81954119E+10  1.
+ lhyflo 2011  0.  2.16702131E+10  1.
+ lhyflo 2012  0.  1.10080291E+10  1.
+ lhyflo 2013  0.  2.00171358E+10  1.
+ lhyflo 2014  0.  1.71816115E+10  1.
+ lhysed 1984  0.  0.131515925  1.
+ lhysed 1985  0.  2.29226944  1.
+ lhysed 1986  0.  0.455809062  1.
+ lhysed 1987  0.  4.59860372  1.
+ lhysed 1988  0.  3.00900248  1.
+ lhysed 1989  0.  3.10510576  1.
+ lhysed 1990  0.  12.1040788  1.
+ lhysed 1991  0.  0.311088714  1.
+ lhysed 1992  0.  0.0311338067  1.
+ lhysed 1993  0.  3.09149749  1.
+ lhysed 1994  0.  2.34909166  1.
+ lhysed 1995  0.  0.0738499721  1.
+ lhysed 1996  0.  36.0667102  1.
+ lhysed 1997  0.  6.2934886  1.
+ lhysed 1998  0.  24.8793246  1.
+ lhysed 1999  0.  62.8920885  1.
+ lhysed 2000  0.  6.95481802  1.
+ lhysed 2001  0.  7.65476493  1.
+ lhysed 2002  0.  19.5639527  1.
+ lhysed 2003  0.  30.0402508  1.
+ lhysed 2004  0.  2.75285568  1.
+ lhysed 2005  0.  10.5127913  1.
+ lhysed 2006  0.  3.16686858  1.
+ lhysed 2007  0.  6.80997582  1.
+ lhysed 2008  0.  0.119349988  1.
+ lhysed 2009  0.  17.9047342  1.
+ lhysed 2010  0.  3.11309867  1.
+ lhysed 2011  0.  7.90662789  1.
+ lhysed 2012  0.  3.55004054  1.
+ lhysed 2013  0.  2.50959747  1.
+ lhysed 2014  0.  0.609612101  1.
+ lhytnx 1984  0.  1259.09466  1.
+ lhytnx 1985  0.  1039.60758  1.
+ lhytnx 1986  0.  1245.22202  1.
+ lhytnx 1987  0.  1610.05657  1.
+ lhytnx 1988  0.  1521.47765  1.
+ lhytnx 1989  0.  2785.28341  1.
+ lhytnx 1990  0.  1851.88751  1.
+ lhytnx 1991  0.  1342.68516  1.
+ lhytnx 1992  0.  1037.81465  1.
+ lhytnx 1993  0.  1873.00752  1.
+ lhytnx 1994  0.  2937.43673  1.
+ lhytnx 1995  0.  1284.32198  1.
+ lhytnx 1996  0.  4206.75067  1.
+ lhytnx 1997  0.  2531.80314  1.
+ lhytnx 1998  0.  3462.42322  1.
+ lhytnx 1999  0.  3122.34825  1.
+ lhytnx 2000  0.  3329.92311  1.
+ lhytnx 2001  0.  2859.88202  1.
+ lhytnx 2002  0.  2628.84126  1.
+ lhytnx 2003  0.  6468.62891  1.
+ lhytnx 2004  0.  2739.39766  1.
+ lhytnx 2005  0.  2808.76572  1.
+ lhytnx 2006  0.  1979.80317  1.
+ lhytnx 2007  0.  1426.36359  1.
+ lhytnx 2008  0.  1003.4716  1.
+ lhytnx 2009  0.  2170.42085  1.
+ lhytnx 2010  0.  1758.28395  1.
+ lhytnx 2011  0.  1899.97528  1.
+ lhytnx 2012  0.  1026.65441  1.
+ lhytnx 2013  0.  1697.46021  1.
+ lhytnx 2014  0.  1559.18638  1.
+ lhytpx 1984  0.  22.0258168  1.
+ lhytpx 1985  0.  31.2201918  1.
+ lhytpx 1986  0.  41.5swm 557595  1.
+ lhytpx 1987  0.  56.091112  1.
+ lhytpx 1988  0.  42.5289664  1.
+ lhytpx 1989  0.  90.0491885  1.
+ lhytpx 1990  0.  72.5428939  1.
+ lhytpx 1991  0.  36.3161948  1.
+ lhytpx 1992  0.  14.1216792  1.
+ lhytpx 1993  0.  77.6849877  1.
+ lhytpx 1994  0.  158.283004  1.
+ lhytpx 1995  0.  24.0629815  1.
+ lhytpx 1996  0.  274.044464  1.
+ lhytpx 1997  0.  142.126694  1.
+ lhytpx 1998  0.  249.111418  1.
+ lhytpx 1999  0.  213.137822  1.
+ lhytpx 2000  0.  161.17785  1.
+ lhytpx 2001  0.  137.834481  1.
+ lhytpx 2002  0.  113.135844  1.
+ lhytpx 2003  0.  391.900481  1.
+ lhytpx 2004  0.  94.9013404  1.
+ lhytpx 2005  0.  116.967196  1.
+ lhytpx 2006  0.  54.8899568  1.
+ lhytpx 2007  0.  59.7158841  1.
+ lhytpx 2008  0.  13.6437135  1.
+ lhytpx 2009  0.  61.4199871  1.
+ lhytpx 2010  0.  39.6314905  1.
+ lhytpx 2011  0.  54.2057412  1.
+ lhytpx 2012  0.  22.8768959  1.
+ lhytpx 2013  0.  25.4306673  1.
+ lhytpx 2014  0.  19.8411007  1.
+ lhybod 1984  0.  2216.96802  1.
+ lhybod 1985  0.  2054.77757  1.
+ lhybod 1986  0.  2541.42492  1.
+ lhybod 1987  0.  3399.32499  1.
+ lhybod 1988  0.  3052.67727  1.
+ lhybod 1989  0.  5814.57011  1.
+ lhybod 1990  0.  4215.90269  1.
+ lhybod 1991  0.  2687.92749  1.
+ lhybod 1992  0.  1829.50673  1.
+ lhybod 1993  0.  4132.4453  1.
+ lhybod 1994  0.  6926.53451  1.
+ lhybod 1995  0.  2332.6892  1.
+ lhybod 1996  0.  10824.0302  1.
+ lhybod 1997  0.  6137.32591  1.
+ lhybod 1998  0.  9412.60068  1.
+ lhybod 1999  0.  8515.29353  1.
+ lhybod 2000  0.  7700.73498  1.
+ lhybod 2001  0.  6538.46641  1.
+ lhybod 2002  0.  5938.86315  1.
+ lhybod 2003  0.  16443.5787  1.
+ lhybod 2004  0.  5900.19165  1.
+ lhybod 2005  0.  6584.22713  1.
+ lhybod 2006  0.  4223.16941  1.
+ lhybod 2007  0.  3591.17504  1.
+ lhybod 2008  0.  1876.53246  1.
+ lhybod 2009  0.  5139.59931  1.
+ lhybod 2010  0.  3879.6992  1.
+ lhybod 2011  0.  4602.00887  1.
+ lhybod 2012  0.  2381.7107  1.
+ lhybod 2013  0.  3562.09343  1.
+ lhybod 2014  0.  3212.1909  1.
+ closing wdmlnd
+ swmflo 1984  0.  6.23178931E+09  1.
+ swmflo 1985  0.  5.68233695E+09  1.
+ swmflo 1986  0.  6.08536047E+09  1.
+ swmflo 1987  0.  6.65098144E+09  1.
+ swmflo 1988  0.  6.90469878E+09  1.
+ swmflo 1989  0.  1.19686505E+10  1.
+ swmflo 1990  0.  7.38147075E+09  1.
+ swmflo 1991  0.  4.95510969E+09  1.
+ swmflo 1992  0.  4.07200498E+09  1.
+ swmflo 1993  0.  5.50599308E+09  1.
+ swmflo 1994  0.  7.71495345E+09  1.
+ swmflo 1995  0.  4.30364497E+09  1.
+ swmflo 1996  0.  1.05021696E+10  1.
+ swmflo 1997  0.  5.96390301E+09  1.
+ swmflo 1998  0.  6.81413418E+09  1.
+ swmflo 1999  0.  7.74844531E+09  1.
+ swmflo 2000  0.  8.12483399E+09  1.
+ swmflo 2001  0.  7.06081832E+09  1.
+ swmflo 2002  0.  7.23221628E+09  1.
+ swmflo 2003  0.  1.3997494E+10  1.
+ swmflo 2004  0.  6.33853337E+09  1.
+ swmflo 2005  0.  6.17462199E+09  1.
+ swmflo 2006  0.  5.12298181E+09  1.
+ swmflo 2007  0.  2.76898752E+09  1.
+ swmflo 2008  0.  2.19033111E+09  1.
+ swmflo 2009  0.  3.55736812E+09  1.
+ swmflo 2010  0.  2.28006535E+09  1.
+ swmflo 2011  0.  2.28746969E+09  1.
+ swmflo 2012  0.  1.03957197E+09  1.
+ swmflo 2013  0.  1.6043748E+09  1.
+ swmflo 2014  0.  1.37898879E+09  1.
+ swmsed 1984  0.  10.6643818  1.
+ swmsed 1985  0.  37.5449621  1.
+ swmsed 1986  0.  37.9111352  1.
+ swmsed 1987  0.  58.3012482  1.
+ swmsed 1988  0.  46.3865638  1.
+ swmsed 1989  0.  47.8931722  1.
+ swmsed 1990  0.  66.4433432  1.
+ swmsed 1991  0.  12.0918217  1.
+ swmsed 1992  0.  1.89159905  1.
+ swmsed 1993  0.  38.6915427  1.
+ swmsed 1994  0.  32.0811515  1.
+ swmsed 1995  0.  4.87350458  1.
+ swmsed 1996  0.  119.843515  1.
+ swmsed 1997  0.  86.0631724  1.
+ swmsed 1998  0.  103.631025  1.
+ swmsed 1999  0.  150.546616  1.
+ swmsed 2000  0.  78.5745263  1.
+ swmsed 2001  0.  72.9316775  1.
+ swmsed 2002  0.  53.3701361  1.
+ swmsed 2003  0.  157.182915  1.
+ swmsed 2004  0.  27.3104518  1.
+ swmsed 2005  0.  75.8798593  1.
+ swmsed 2006  0.  24.8900241  1.
+ swmsed 2007  0.  36.2601987  1.
+ swmsed 2008  0.  5.33333711  1.
+ swmsed 2009  0.  28.7976198  1.
+ swmsed 2010  0.  12.0520154  1.
+ swmsed 2011  0.  15.9899609  1.
+ swmsed 2012  0.  11.3004832  1.
+ swmsed 2013  0.  7.7982454som 7  1.
+ swmsed 2014  0.  4.07085216  1.
+ swmtnx 1984  0.  2926.34807  1.
+ swmtnx 1985  0.  2944.72185  1.
+ swmtnx 1986  0.  4095.53016  1.
+ swmtnx 1987  0.  4542.55113  1.
+ swmtnx 1988  0.  4304.9251  1.
+ swmtnx 1989  0.  6721.82116  1.
+ swmtnx 1990  0.  4621.8875  1.
+ swmtnx 1991  0.  3059.48775  1.
+ swmtnx 1992  0.  2143.31099  1.
+ swmtnx 1993  0.  4053.08602  1.
+ swmtnx 1994  0.  5724.35804  1.
+ swmtnx 1995  0.  2682.56411  1.
+ swmtnx 1996  0.  9142.76913  1.
+ swmtnx 1997  0.  5593.51759  1.
+ swmtnx 1998  0.  7156.16345  1.
+ swmtnx 1999  0.  7531.6957  1.
+ swmtnx 2000  0.  7165.30844  1.
+ swmtnx 2001  0.  6128.04366  1.
+ swmtnx 2002  0.  6099.09293  1.
+ swmtnx 2003  0.  13702.274  1.
+ swmtnx 2004  0.  5075.02239  1.
+ swmtnx 2005  0.  5943.70494  1.
+ swmtnx 2006  0.  3786.88606  1.
+ swmtnx 2007  0.  2796.76535  1.
+ swmtnx 2008  0.  1614.69119  1.
+ swmtnx 2009  0.  2769.31988  1.
+ swmtnx 2010  0.  1753.13446  1.
+ swmtnx 2011  0.  1601.14997  1.
+ swmtnx 2012  0.  860.744609  1.
+ swmtnx 2013  0.  1057.79582  1.
+ swmtnx 2014  0.  953.159216  1.
+ swmtpx 1984  0.  26.6644032  1.
+ swmtpx 1985  0.  41.6567236  1.
+ swmtpx 1986  0.  63.5798481  1.
+ swmtpx 1987  0.  71.6455738  1.
+ swmtpx 1988  0.  62.2102165  1.
+ swmtpx 1989  0.  92.0573168  1.
+ swmtpx 1990  0.  81.8256332  1.
+ swmtpx 1991  0.  36.5081306  1.
+ swmtpx 1992  0.  16.0861882  1.
+ swmtpx 1993  0.  70.2265653  1.
+ swmtpx 1994  0.  97.9975011  1.
+ swmtpx 1995  0.  28.979919  1.
+ swmtpx 1996  0.  231.842717  1.
+ swmtpx 1997  0.  153.064377  1.
+ swmtpx 1998  0.  207.959406  1.
+ swmtpx 1999  0.  239.578249  1.
+ swmtpx 2000  0.  176.916597  1.
+ swmtpx 2001  0.  151.29928  1.
+ swmtpx 2002  0.  132.199356  1.
+ swmtpx 2003  0.  365.893392  1.
+ swmtpx 2004  0.  88.142273  1.
+ swmtpx 2005  0.  147.046803  1.
+ swmtpx 2006  0.  66.4592424  1.
+ swmtpx 2007  0.  70.2837244  1.
+ swmtpx 2008  0.  20.1378006  1.
+ swmtpx 2009  0.  59.6432268  1.
+ swmtpx 2010  0.  31.0039811  1.
+ swmtpx 2011  0.  34.6415862  1.
+ swmtpx 2012  0.  22.241138  1.
+ swmtpx 2013  0.  18.6243663  1.
+ swmtpx 2014  0.  14.341463  1.
+ swmbod 1984  0.  19324.4455  1.
+ swmbod 1985  0.  21178.1771  1.
+ swmbod 1986  0.  27401.9992  1.
+ swmbod 1987  0.  31744.1051  1.
+ swmbod 1988  0.  29648.0823  1.
+ swmbod 1989  0.  44458.4193  1.
+ swmbod 1990  0.  33159.1269  1.
+ swmbod 1991  0.  19324.7632  1.
+ swmbod 1992  0.  13248.2269  1.
+ swmbod 1993  0.  27159.5606  1.
+ swmbod 1994  0.  36130.9303  1.
+ swmbod 1995  0.  16434.8048  1.
+ swmbod 1996  0.  65167.0891  1.
+ swmbod 1997  0.  41157.5749  1.
+ swmbod 1998  0.  52003.6185  1.
+ swmbod 1999  0.  60126.2545  1.
+ swmbod 2000  0.  50361.0677  1.
+ swmbod 2001  0.  43787.0142  1.
+ swmbod 2002  0.  41902.669  1.
+ swmbod 2003  0.  96920.0726  1.
+ swmbod 2004  0.  33033.1019  1.
+ swmbod 2005  0.  43171.7972  1.
+ swmbod 2006  0.  25356.1319  1.
+ swmbod 2007  0.  20509.2934  1.
+ swmbod 2008  0.  10255.3508  1.
+ swmbod 2009  0.  20209.9017  1.
+ swmbod 2010  0.  12047.2135  1.
+ swmbod 2011  0.  11831.9506  1.
+ swmbod 2012  0.  6690.82946  1.
+ swmbod 2013  0.  7434.46288  1.
+ swmbod 2014  0.  6292.51458  1.
+ closing wdmlnd
+ somflo 1984  0.  1.09972761E+09  1.
+ somflo 1985  0.  1.00276538E+09  1.
+ somflo 1986  0.  1.07388713E+09  1.
+ somflo 1987  0.  1.17370262E+09  1.
+ somflo 1988  0.  1.21847628E+09  1.
+ somflo 1989  0.  2.11211507E+09  1.
+ somflo 1990  0.  1.30261255E+09  1.
+ somflo 1991  0.  874431146.  1.
+ somflo 1992  0.  718589190.  1.
+ somflo 1993  0.  971645842.  1.
+ somflo 1994  0.  1.36146244E+09  1.
+ somflo 1995  0.  759466776.  1.
+ somflo 1996  0.  1.85332414E+09  1.
+ somflo 1997  0.  1.05245354E+09  1.
+ somflo 1998  0.  1.20249438E+09  1.
+ somflo 1999  0.  1.36737274E+09  1.
+ somflo 2000  0.  1.43379428E+09  1.
+ somflo 2001  0.  1.24602683E+09  1.
+ somflo 2002  0.  1.27627337E+09  1.
+ somflo 2003  0.  2.47014603E+09  1.
+ somflo 2004  0.  1.11856487E+09  1.
+ somflo 2005  0.  1.08963916E+09  1.
+ somflo 2006  0.  904055628.  1.
+ somflo 2007  0.  488644876.  1.
+ somflo 2008  0.  386529011.  1.
+ somflo 2009  0.  627770837.  1.
+ somflo 2010  0.  402364501.  1.
+ somflo 2011  0.  403671123.  1.
+ somflo 2012  0.  183453887.  1.
+ somflo 2013  0.  283124990.  1.
+ somflo 2014  0.  243350989.  1.
+ somsed 1984  0.  1.88195017  1.
+ somsed 1985  0.  6.62558223  1.
+ somsed 1986  0.  6.69020093  1.
+ somsed 1987  0.  10.2884553  1.
+ somsed 1988  0.  8.18586377  1.
+ somsed 1989  0.  8.45173845  1.
+ somsed 1990  0.  11.7252965  1.
+ somsed 1991  0.  2.13385136  1.
+ somsed 1992  0.  0.333811716  1.
+ somsed 1993  0.  6.8279198  1.
+ somsed 1994  0.  5.66138071  1.
+ somsed 1995  0.  0.860030412  1.
+ somsed 1996  0.  21.148858  1.
+ somsed 1997  0.  15.1876222  1.
+ somsed 1998  0.  18.2878312  1.
+ somsed 1999  0.  26.5670509  1.
+ somsed 2000  0.  13.8660938  1.
+ somsed 2001  0.  12.8702971  1.
+ somsed 2002  0.  9.41825971  1.
+ somsed 2003  0.  27.7381654  1.
+ somsed 2004  0.  4.81949282  1.
+ somsed 2005  0.  13.3905651  1.
+ somsed 2006  0.  4.39235739  1.
+ somsed 2007  0.  6.39886028  1.
+ somsed 2008  0.  0.941177273  1.
+ somsed 2009  0.  5.08193316  1.
+ somsed 2010  0.  2.12682684  1.
+ somsed 2011  0.  2.82175826  1.
+ somsed 2012  0.  1.9942032  1.
+ somsed 2013  0.  1.37616124  1.
+ somsed 2014  0.  0.718385862  1.
+ somtnx 1984  0.  321.384388  1.
+ somtnx 1985  0.  309.379754  1.
+ somtnx 1986  0.  426.619302  1.
+ somtnx 1987  0.  471.409549  1.
+ somtnx 1988  0.  459.837396  1.
+ somtnx 1989  0.  722.307885  1.
+ somtnx 1990  0.  473.275708  1.
+ somtnx 1991  0.  347.697269  1.
+ somtnx 1992  0.  264.437077  1.
+ somtnx 1993  0.  442.224959  1.
+ somtnx 1994  0.  628.911698  1.
+ somtnx 1995  0.  329.58381  1.
+ somtnx 1996  0.  936.354008  1.
+ somtnx 1997  0.  561.359055  1.
+ somtnx 1998  0.  701.868388  1.
+ somtnx 1999  0.  726.275059  1.
+ somtnx 2000  0.  752.877744  1.
+ somtnx 2001  0.  641.747598  1.
+ somtnx 2002  0.  673.01879  1.
+ somtnx 2003  0.  1379.23309  1.
+ somtnx 2004  0.  578.46001  1.
+ somtnx 2005  0.  611.879604  1.
+ somtnx 2006  0.  421.279964  1.
+ somtnx 2007  0.  276.946477  1.
+ somtnx 2008  0.  194.144928  1.
+ somtnx 2009  0.  295.572627  1.
+ somtnx 2010  0.  194.706616  1.
+ somtnx 2011  0.  166.833576  1.
+ somtnx 2012  0.  87.6233992  1.
+ somtnx 2013  0.  118.731784  1.
+ somtnx 2014  0.  111.67652  1.
+ somtpx 1984  0.  5.92188032  1.
+ somtpx 1985  0.  10.043205  1.
+ somtpx 1986  0.  14.8051224  1.
+ somtpx 1987  0.  17.0438286  1.
+ somtpx 1988  0.  14.2801706  1.
+ somtpx 1989  0.  20.9542527  1.
+ somtpx 1990  0.  19.2493118  1.
+ somtpx 1991  0.  7.63970865  1.
+ somtpx 1992  0.  2.71292399  1.
+ somtpx 1993  0.  14.4032729  1.
+ somtpx 1994  0.  18.8192086  1.
+ somtpx 1995  0.  4.47246428  1.
+ somtpx 1996  0.  40.2578512  1.
+ somtpx 1997  0.  26.0667605  1.
+ somtpx 1998  0.  34.1431971  1.
+ somtpx 1999  0.  38.7935226  1.
+ somtpx 2000  0.  26.9728821  1.
+ somtpx 2001  0.  23.1026296  1.
+ somtpx 2002  0.  19.4799631  1.
+ somtpx 2003  0.  56.9733354  1.
+ somtpx 2004  0.  13.1423416  1.
+ somtpx 2005  0.  23.9241426  1.
+ somtpx 2006  0.  11.0458324  1.
+ somtpx 2007  0.  12.0548003  1.
+ somtpx 2008  0.  3.12441105  1.
+ somtpx 2009  0.  9.7399337  1.
+ somtpx 2010  0.  4.96373141  1.
+ somtpx 2011  0.  5.7290887  1.
+ somtpx 2012  0.  3.53363027  1.
+ somtpx 2013  0.  2.86931427  1.
+ somtpx 2014  0.  2.10086997  1.
+ sombod 1984  0.  719.077094  1.
+ sombod 1985  0.  759.342005  1.
+ sombod 1986  0.  971.024578  1.
+ sombod 1987  0.  1120.92758  1.
+ sombod 1988  0.  1041.40238  1.
+ sombod 1989  0.  1545.26378  1.
+ sombod 1990  0.  1125.42765  1.
+ sombod 1991  0.  663.175387  1.
+ sombod 1992  0.  453.827221  1.
+ sombod 1993  0.  893.207061  1.
+ sombod 1994  0.  1163.98793  1.
+ sombod 1995  0.  525.173968  1.
+ sombod 1996  0.  1932.45961  1.
+ sombod 1997  0.  1207.88128  1.
+ sombod 1998  0.  1502.90639  1.
+ sombod 1999  0.  1691.39621  1.
+ sombod 2000  0.  1423.85057  1.
+ sombod 2001  0.  1222.31772  1.
+ sombod 2002  0.  1157.57854  1.
+ sombod 2003  0.  2638.68593  1.
+ sombod 2004  0.  921.553865  1.
+ sombod 2005  0.  1182.30722  1.
+ sombod 2006  0.  699.095168  1.
+ sombod 2007  0.  561.577622  1.
+ sombod 2008  0.  287.625064  1.
+ sombod 2009  0.  551.211808  1.
+ sombod 2010  0.  334.340728  1.
+ sombod 2011  0.  322.434885 sgg  1.
+ sombod 2012  0.  180.070546  1.
+ sombod 2013  0.  202.606414  1.
+ sombod 2014  0.  174.018348  1.
+ closing wdmlnd
+ sggflo 1984  0.  2.0521393E+10  1.
+ sggflo 1985  0.  1.67206215E+10  1.
+ sggflo 1986  0.  1.63226698E+10  1.
+ sggflo 1987  0.  1.66484497E+10  1.
+ sggflo 1988  0.  1.74781276E+10  1.
+ sggflo 1989  0.  3.15289256E+10  1.
+ sggflo 1990  0.  2.01019664E+10  1.
+ sggflo 1991  0.  1.39029184E+10  1.
+ sggflo 1992  0.  1.17801878E+10  1.
+ sggflo 1993  0.  1.61416876E+10  1.
+ sggflo 1994  0.  2.2842918E+10  1.
+ sggflo 1995  0.  1.28633014E+10  1.
+ sggflo 1996  0.  3.15733158E+10  1.
+ sggflo 1997  0.  1.79454093E+10  1.
+ sggflo 1998  0.  2.02356867E+10  1.
+ sggflo 1999  0.  2.23640343E+10  1.
+ sggflo 2000  0.  2.28915174E+10  1.
+ sggflo 2001  0.  1.93729846E+10  1.
+ sggflo 2002  0.  1.91223432E+10  1.
+ sggflo 2003  0.  3.62950416E+10  1.
+ sggflo 2004  0.  1.57985131E+10  1.
+ sggflo 2005  0.  1.4198489E+10  1.
+ sggflo 2006  0.  9.89903485E+09  1.
+ sggflo 2007  0.  4.27011272E+09  1.
+ sggflo 2008  0.  5.43797079E+09  1.
+ sggflo 2009  0.  1.49346925E+10  1.
+ sggflo 2010  0.  1.28809801E+10  1.
+ sggflo 2011  0.  1.96378694E+10  1.
+ sggflo 2012  0.  1.20232492E+10  1.
+ sggflo 2013  0.  1.91513705E+10  1.
+ sggflo 2014  0.  1.64348395E+10  1.
+ sggsed 1984  0.  30.6909952  1.
+ sggsed 1985  0.  95.9363967  1.
+ sggsed 1986  0.  86.2597979  1.
+ sggsed 1987  0.  115.746835  1.
+ sggsed 1988  0.  91.6772519  1.
+ sggsed 1989  0.  108.883694  1.
+ sggsed 1990  0.  60.2667959  1.
+ sggsed 1991  0.  28.694501  1.
+ sggsed 1992  0.  4.48839919  1.
+ sggsed 1993  0.  86.1115147  1.
+ sggsed 1994  0.  78.4034373  1.
+ sggsed 1995  0.  12.0952341  1.
+ sggsed 1996  0.  300.835182  1.
+ sggsed 1997  0.  198.211974  1.
+ sggsed 1998  0.  239.416186  1.
+ sggsed 1999  0.  408.868785  1.
+ sggsed 2000  0.  147.434678  1.
+ sggsed 2001  0.  150.735764  1.
+ sggsed 2002  0.  119.578029  1.
+ sggsed 2003  0.  272.148986  1.
+ sggsed 2004  0.  58.5863464  1.
+ sggsed 2005  0.  93.1231279  1.
+ sggsed 2006  0.  90.6014933  1.
+ sggsed 2007  0.  30.237323  1.
+ sggsed 2008  0.  11.9808672  1.
+ sggsed 2009  0.  116.504032  1.
+ sggsed 2010  0.  53.9766768  1.
+ sggsed 2011  0.  111.678233  1.
+ sggsed 2012  0.  119.7198  1.
+ sggsed 2013  0.  62.0017592  1.
+ sggsed 2014  0.  39.9093471  1.
+ sggtnx 1984  0.  5417.23089  1.
+ sggtnx 1985  0.  4738.03658  1.
+ sggtnx 1986  0.  5771.53359  1.
+ sggtnx 1987  0.  5920.97167  1.
+ sggtnx 1988  0.  5620.98298  1.
+ sggtnx 1989  0.  9193.68944  1.
+ sggtnx 1990  0.  5926.54369  1.
+ sggtnx 1991  0.  4344.48284  1.
+ sggtnx 1992  0.  3114.02037  1.
+ sggtnx 1993  0.  5772.81604  1.
+ sggtnx 1994  0.  8158.94922  1.
+ sggtnx 1995  0.  3766.08298  1.
+ sggtnx 1996  0.  12472.9988  1.
+ sggtnx 1997  0.  7469.59609  1.
+ sggtnx 1998  0.  9381.80703  1.
+ sggtnx 1999  0.  9737.23305  1.
+ sggtnx 2000  0.  8547.27214  1.
+ sggtnx 2001  0.  7116.5436  1.
+ sggtnx 2002  0.  6866.93929  1.
+ sggtnx 2003  0.  14749.081  1.
+ sggtnx 2004  0.  5472.85923  1.
+ sggtnx 2005  0.  5556.06187  1.
+ sggtnx 2006  0.  3503.38493  1.
+ sggtnx 2007  0.  1787.46675  1.
+ sggtnx 2008  0.  1731.30405  1.
+ sggtnx 2009  0.  5249.18263  1.
+ sggtnx 2010  0.  4293.08664  1.
+ sggtnx 2011  0.  6067.21482  1.
+ sggtnx 2012  0.  4482.15425  1.
+ sggtnx 2013  0.  5466.01688  1.
+ sggtnx 2014  0.  5076.42047  1.
+ sggtpx 1984  0.  125.326839  1.
+ sggtpx 1985  0.  167.917265  1.
+ sggtpx 1986  0.  215.563065  1.
+ sggtpx 1987  0.  229.385876  1.
+ sggtpx 1988  0.  194.742271  1.
+ sggtpx 1989  0.  314.085699  1.
+ sggtpx 1990  0.  208.33254  1.
+ sggtpx 1991  0.  124.940557  1.
+ sggtpx 1992  0.  54.5551677  1.
+ sggtpx 1993  0.  223.29669  1.
+ sggtpx 1994  0.  308.586173  1.
+ sggtpx 1995  0.  83.5801663  1.
+ sggtpx 1996  0.  625.441069  1.
+ sggtpx 1997  0.  389.216989  1.
+ sggtpx 1998  0.  512.689575  1.
+ sggtpx 1999  0.  603.672554  1.
+ sggtpx 2000  0.  371.465581  1.
+ sggtpx 2001  0.  323.367207  1.
+ sggtpx 2002  0.  275.809252  1.
+ sggtpx 2003  0.  716.296201  1.
+ sggtpx 2004  0.  190.569026  1.
+ sggtpx 2005  0.  242.735968  1.
+ sggtpx 2006  0.  167.417971  1.
+ sggtpx 2007  0.  83.3550721  1.
+ sgdbl gtpx 2008  0.  47.8892797  1.
+ sggtpx 2009  0.  238.85974  1.
+ sggtpx 2010  0.  151.789626  1.
+ sggtpx 2011  0.  261.141522  1.
+ sggtpx 2012  0.  223.275618  1.
+ sggtpx 2013  0.  177.229739  1.
+ sggtpx 2014  0.  148.715894  1.
+ sggbod 1984  0.  32726.4329  1.
+ sggbod 1985  0.  31239.3726  1.
+ sggbod 1986  0.  36787.2287  1.
+ sggbod 1987  0.  38937.8495  1.
+ sggbod 1988  0.  36195.7186  1.
+ sggbod 1989  0.  57380.5391  1.
+ sggbod 1990  0.  36561.0986  1.
+ sggbod 1991  0.  26132.3226  1.
+ sggbod 1992  0.  17980.1999  1.
+ sggbod 1993  0.  36815.8769  1.
+ sggbod 1994  0.  49965.0428  1.
+ sggbod 1995  0.  21884.0864  1.
+ sggbod 1996  0.  84344.3973  1.
+ sggbod 1997  0.  51462.1935  1.
+ sggbod 1998  0.  64424.6144  1.
+ sggbod 1999  0.  74070.0229  1.
+ sggbod 2000  0.  55361.1946  1.
+ sggbod 2001  0.  47320.6696  1.
+ sggbod 2002  0.  44189.6652  1.
+ sggbod 2003  0.  95822.3955  1.
+ sggbod 2004  0.  33523.8736  1.
+ sggbod 2005  0.  35722.1761  1.
+ sggbod 2006  0.  23970.1459  1.
+ sggbod 2007  0.  11547.4802  1.
+ sggbod 2008  0.  10220.5031  1.
+ sggbod 2009  0.  35226.4878  1.
+ sggbod 2010  0.  26715.9627  1.
+ sggbod 2011  0.  39692.5341  1.
+ sggbod 2012  0.  31404.4541  1.
+ sggbod 2013  0.  33493.4509  1.
+ sggbod 2014  0.  30175.4094  1.
+ closing wdmlnd
+ dblflo 1984  0.  6.85648844E+10  1.
+ dblflo 1985  0.  5.75271786E+10  1.
+ dblflo 1986  0.  5.76351026E+10  1.
+ dblflo 1987  0.  6.06863807E+10  1.
+ dblflo 1988  0.  7.38736768E+10  1.
+ dblflo 1989  0.  1.57301306E+11  1.
+ dblflo 1990  0.  1.16542842E+11  1.
+ dblflo 1991  0.  9.37914395E+10  1.
+ dblflo 1992  0.  9.22314876E+10  1.
+ dblflo 1993  0.  1.19894751E+11  1.
+ dblflo 1994  0.  1.55674571E+11  1.
+ dblflo 1995  0.  7.89743976E+10  1.
+ dblflo 1996  0.  1.77969586E+11  1.
+ dblflo 1997  0.  9.34181541E+10  1.
+ dblflo 1998  0.  9.63470003E+10  1.
+ dblflo 1999  0.  9.25352172E+10  1.
+ dblflo 2000  0.  8.48492839E+10  1.
+ dblflo 2001  0.  6.40698012E+10  1.
+ dblflo 2002  0.  5.8593978E+10  1.
+ dblflo 2003  0.  1.34126911E+11  1.
+ dblflo 2004  0.  7.64764143E+10  1.
+ dblflo 2005  0.  9.66169888E+10  1.
+ dblflo 2006  0.  1.07928366E+11  1.
+ dblflo 2007  0.  7.38470265E+10  1.
+ dblflo 2008  0.  7.13024527E+10  1.
+ dblflo 2009  0.  1.36166011E+11  1.
+ dblflo 2010  0.  9.82081155E+10  1.
+ dblflo 2011  0.  1.205234E+11  1.
+ dblflo 2012  0.  6.54521881E+10  1.
+ dblflo 2013  0.  1.06245639E+11  1.
+ dblflo 2014  0.  9.17852487E+10  1.
+ dblsed 1984  0.  114.330742  1.
+ dblsed 1985  0.  405.844674  1.
+ dblsed 1986  0.  352.319292  1.
+ dblsed 1987  0.  271.952422  1.
+ dblsed 1988  0.  274.776863  1.
+ dblsed 1989  0.  471.92263  1.
+ dblsed 1990  0.  333.250622  1.
+ dblsed 1991  0.  241.270943  1.
+ dblsed 1992  0.  47.8154562  1.
+ dblsed 1993  0.  469.294514  1.
+ dblsed 1994  0.  509.666192  1.
+ dblsed 1995  0.  102.505626  1.
+ dblsed 1996  0.  1295.32572  1.
+ dblsed 1997  0.  1100.9492  1.
+ dblsed 1998  0.  784.831543  1.
+ dblsed 1999  0.  944.224354  1.
+ dblsed 2000  0.  407.322998  1.
+ dblsed 2001  0.  446.063324  1.
+ dblsed 2002  0.  341.5132  1.
+ dblsed 2003  0.  1054.37041  1.
+ dblsed 2004  0.  244.006758  1.
+ dblsed 2005  0.  517.787522  1.
+ dblsed 2006  0.  1060.74219  1.
+ dblsed 2007  0.  343.628899  1.
+ dblsed 2008  0.  193.747452  1.
+ dblsed 2009  0.  745.881866  1.
+ dblsed 2010  0.  418.991961  1.
+ dblsed 2011  0.  546.963024  1.
+ dblsed 2012  0.  701.403035  1.
+ dblsed 2013  0.  374.836973  1.
+ dblsed 2014  0.  257.662308  1.
+ dbltnx 1984  0.  17876.6197  1.
+ dbltnx 1985  0.  16487.9039  1.
+ dbltnx 1986  0.  20542.6573  1.
+ dbltnx 1987  0.  20733.6302  1.
+ dbltnx 1988  0.  23059.0456  1.
+ dbltnx 1989  0.  45535.3798  1.
+ dbltnx 1990  0.  34348.4227  1.
+ dbltnx 1991  0.  29645.5573  1.
+ dbltnx 1992  0.  24769.4298  1.
+ dbltnx 1993  0.  42673.0671  1.
+ dbltnx 1994  0.  56666.8236  1.
+ dbltnx 1995  0.  24042.8702  1.
+ dbltnx 1996  0.  70128.855  1.
+ dbltnx 1997  0.  41156.1172  1.
+ dbltnx 1998  0.  45350.9601  1.
+ dbltnx 1999  0.  38528.6959  1.
+ dbltnx 2000  0.  33507.3557  1.
+ dbltnx 2001  0.  25346.4221  1.
+ dbltnx 2002  0.  22743.3401  1.
+ dbltnx 2003  0.  59723.135  1.
+ dbltnx 2sch 004  0.  28618.2764  1.
+ dbltnx 2005  0.  40892.2917  1.
+ dbltnx 2006  0.  42434.2834  1.
+ dbltnx 2007  0.  33786.6919  1.
+ dbltnx 2008  0.  26478.047  1.
+ dbltnx 2009  0.  52307.4205  1.
+ dbltnx 2010  0.  38413.7466  1.
+ dbltnx 2011  0.  42069.6477  1.
+ dbltnx 2012  0.  28172.0853  1.
+ dbltnx 2013  0.  34929.7141  1.
+ dbltnx 2014  0.  32904.2148  1.
+ dbltpx 1984  0.  361.594677  1.
+ dbltpx 1985  0.  534.996404  1.
+ dbltpx 1986  0.  690.246309  1.
+ dbltpx 1987  0.  615.471806  1.
+ dbltpx 1988  0.  630.711009  1.
+ dbltpx 1989  0.  1321.27327  1.
+ dbltpx 1990  0.  1052.53658  1.
+ dbltpx 1991  0.  762.721338  1.
+ dbltpx 1992  0.  385.450451  1.
+ dbltpx 1993  0.  1387.51113  1.
+ dbltpx 1994  0.  1936.08764  1.
+ dbltpx 1995  0.  496.367095  1.
+ dbltpx 1996  0.  2938.37099  1.
+ dbltpx 1997  0.  1948.99022  1.
+ dbltpx 1998  0.  2003.78157  1.
+ dbltpx 1999  0.  1724.93717  1.
+ dbltpx 2000  0.  1193.17602  1.
+ dbltpx 2001  0.  979.452573  1.
+ dbltpx 2002  0.  789.339237  1.
+ dbltpx 2003  0.  2558.99017  1.
+ dbltpx 2004  0.  811.213159  1.
+ dbltpx 2005  0.  1402.26486  1.
+ dbltpx 2006  0.  1729.51767  1.
+ dbltpx 2007  0.  1125.27527  1.
+ dbltpx 2008  0.  592.960474  1.
+ dbltpx 2009  0.  1633.49561  1.
+ dbltpx 2010  0.  1042.19223  1.
+ dbltpx 2011  0.  1298.153  1.
+ dbltpx 2012  0.  1145.15956  1.
+ dbltpx 2013  0.  906.224892  1.
+ dbltpx 2014  0.  765.419393  1.
+ dblbod 1984  0.  100957.511  1.
+ dblbod 1985  0.  105805.956  1.
+ dblbod 1986  0.  126744.94  1.
+ dblbod 1987  0.  123586.32  1.
+ dblbod 1988  0.  136002.744  1.
+ dblbod 1989  0.  264031.626  1.
+ dblbod 1990  0.  198266.223  1.
+ dblbod 1991  0.  169714.694  1.
+ dblbod 1992  0.  133656.568  1.
+ dblbod 1993  0.  249459.369  1.
+ dblbod 1994  0.  325919.651  1.
+ dblbod 1995  0.  132626.087  1.
+ dblbod 1996  0.  440791.431  1.
+ dblbod 1997  0.  274568.375  1.
+ dblbod 1998  0.  282394.679  1.
+ dblbod 1999  0.  254315.494  1.
+ dblbod 2000  0.  199358.436  1.
+ dblbod 2001  0.  157141.956  1.
+ dblbod 2002  0.  139758.8  1.
+ dblbod 2003  0.  375463.308  1.
+ dblbod 2004  0.  164253.232  1.
+ dblbod 2005  0.  245406.307  1.
+ dblbod 2006  0.  282865.736  1.
+ dblbod 2007  0.  197575.18  1.
+ dblbod 2008  0.  149617.141  1.
+ dblbod 2009  0.  321632.402  1.
+ dblbod 2010  0.  226368.622  1.
+ dblbod 2011  0.  254538.091  1.
+ dblbod 2012  0.  194135.784  1.
+ dblbod 2013  0.  204555.184  1.
+ dblbod 2014  0.  187297.604  1.
+ closing wdmlnd
+ schflo 1984  0.  1.70601147E+10  1.
+ schflo 1985  0.  1.5328044E+10  1.
+ schflo 1986  0.  1.6234031E+10  1.
+ schflo 1987  0.  1.76752434E+10  1.
+ schflo 1988  0.  1.94012749E+10  1.
+ schflo 1989  0.  3.61722829E+10  1.
+ schflo 1990  0.  2.38843002E+10  1.
+ schflo 1991  0.  1.72026789E+10  1.
+ schflo 1992  0.  1.51110361E+10  1.
+ schflo 1993  0.  1.9370418E+10  1.
+ schflo 1994  0.  2.51283863E+10  1.
+ schflo 1995  0.  1.27323562E+10  1.
+ schflo 1996  0.  2.86612341E+10  1.
+ schflo 1997  0.  1.51822248E+10  1.
+ schflo 1998  0.  1.65897031E+10  1.
+ schflo 1999  0.  1.78362058E+10  1.
+ schflo 2000  0.  1.79176828E+10  1.
+ schflo 2001  0.  1.49094933E+10  1.
+ schflo 2002  0.  1.48184913E+10  1.
+ schflo 2003  0.  3.05904806E+10  1.
+ schflo 2004  0.  1.52226141E+10  1.
+ schflo 2005  0.  1.66361279E+10  1.
+ schflo 2006  0.  1.59137986E+10  1.
+ schflo 2007  0.  9.7207148E+09  1.
+ schflo 2008  0.  8.96535043E+09  1.
+ schflo 2009  0.  1.69046886E+10  1.
+ schflo 2010  0.  1.20916923E+10  1.
+ schflo 2011  0.  1.46560931E+10  1.
+ schflo 2012  0.  7.8481065E+09  1.
+ schflo 2013  0.  1.25090236E+10  1.
+ schflo 2014  0.  1.07712068E+10  1.
+ schsed 1984  0.  35.5976452  1.
+ schsed 1985  0.  119.323643  1.
+ schsed 1986  0.  120.959758  1.
+ schsed 1987  0.  215.502027  1.
+ schsed 1988  0.  161.21554  1.
+ schsed 1989  0.  171.278862  1.
+ schsed 1990  0.  172.337363  1.
+ schsed 1991  0.  50.9046457  1.
+ schsed 1992  0.  9.08044874  1.
+ schsed 1993  0.  174.517238  1.
+ schsed 1994  0.  133.885036  1.
+ schsed 1995  0.  19.2408056  1.
+ schsed 1996  0.  414.385534  1.
+ schsed 1997  0.  257.564708  1.
+ schsed 1998  0.  324.764939  1.
+ schsed 1999  0.  416.652666  1.
+ schsed 2000  0.  2scl 20.206568  1.
+ schsed 2001  0.  186.726439  1.
+ schsed 2002  0.  145.979568  1.
+ schsed 2003  0.  396.398116  1.
+ schsed 2004  0.  79.687537  1.
+ schsed 2005  0.  200.454931  1.
+ schsed 2006  0.  171.465637  1.
+ schsed 2007  0.  143.318005  1.
+ schsed 2008  0.  28.0035591  1.
+ schsed 2009  0.  188.670149  1.
+ schsed 2010  0.  77.443715  1.
+ schsed 2011  0.  123.685  1.
+ schsed 2012  0.  105.231395  1.
+ schsed 2013  0.  70.7643042  1.
+ schsed 2014  0.  39.7279404  1.
+ schtnx 1984  0.  5825.78391  1.
+ schtnx 1985  0.  5505.55447  1.
+ schtnx 1986  0.  7853.65115  1.
+ schtnx 1987  0.  8385.32555  1.
+ schtnx 1988  0.  8434.06752  1.
+ schtnx 1989  0.  14719.2661  1.
+ schtnx 1990  0.  10238.6575  1.
+ schtnx 1991  0.  7937.93101  1.
+ schtnx 1992  0.  6045.42382  1.
+ schtnx 1993  0.  10859.6282  1.
+ schtnx 1994  0.  14851.8134  1.
+ schtnx 1995  0.  6242.95645  1.
+ schtnx 1996  0.  18705.1324  1.
+ schtnx 1997  0.  10458.0032  1.
+ schtnx 1998  0.  13001.7151  1.
+ schtnx 1999  0.  12113.4997  1.
+ schtnx 2000  0.  11880.169  1.
+ schtnx 2001  0.  9553.07276  1.
+ schtnx 2002  0.  9587.86848  1.
+ schtnx 2003  0.  22454.6618  1.
+ schtnx 2004  0.  9392.23838  1.
+ schtnx 2005  0.  11620.3787  1.
+ schtnx 2006  0.  9287.94342  1.
+ schtnx 2007  0.  7211.10925  1.
+ schtnx 2008  0.  5148.94257  1.
+ schtnx 2009  0.  9812.68511  1.
+ schtnx 2010  0.  6997.40015  1.
+ schtnx 2011  0.  7510.08542  1.
+ schtnx 2012  0.  4644.6774  1.
+ schtnx 2013  0.  6098.46205  1.
+ schtnx 2014  0.  5731.55957  1.
+ schtpx 1984  0.  175.977765  1.
+ schtpx 1985  0.  294.837383  1.
+ schtpx 1986  0.  415.244863  1.
+ schtpx 1987  0.  527.809285  1.
+ schtpx 1988  0.  437.949474  1.
+ schtpx 1989  0.  661.614386  1.
+ schtpx 1990  0.  551.169675  1.
+ schtpx 1991  0.  276.413351  1.
+ schtpx 1992  0.  111.278514  1.
+ schtpx 1993  0.  558.140114  1.
+ schtpx 1994  0.  654.554676  1.
+ schtpx 1995  0.  146.006398  1.
+ schtpx 1996  0.  1186.25321  1.
+ schtpx 1997  0.  699.184072  1.
+ schtpx 1998  0.  913.163584  1.
+ schtpx 1999  0.  964.78418  1.
+ schtpx 2000  0.  649.933007  1.
+ schtpx 2001  0.  524.926655  1.
+ schtpx 2002  0.  444.939841  1.
+ schtpx 2003  0.  1276.56423  1.
+ schtpx 2004  0.  331.24947  1.
+ schtpx 2005  0.  611.425704  1.
+ schtpx 2006  0.  484.264482  1.
+ schtpx 2007  0.  431.784101  1.
+ schtpx 2008  0.  140.245263  1.
+ schtpx 2009  0.  540.714224  1.
+ schtpx 2010  0.  281.813457  1.
+ schtpx 2011  0.  394.866337  1.
+ schtpx 2012  0.  292.674954  1.
+ schtpx 2013  0.  239.235328  1.
+ schtpx 2014  0.  179.313301  1.
+ schbod 1984  0.  6401.49711  1.
+ schbod 1985  0.  7160.29993  1.
+ schbod 1986  0.  8928.93759  1.
+ schbod 1987  0.  10650.0451  1.
+ schbod 1988  0.  10646.362  1.
+ schbod 1989  0.  18799.9732  1.
+ schbod 1990  0.  14512.3145  1.
+ schbod 1991  0.  10184.9999  1.
+ schbod 1992  0.  8411.91084  1.
+ schbod 1993  0.  17562.007  1.
+ schbod 1994  0.  23019.6024  1.
+ schbod 1995  0.  10024.4783  1.
+ schbod 1996  0.  37404.5138  1.
+ schbod 1997  0.  21590.6756  1.
+ schbod 1998  0.  26528.8585  1.
+ schbod 1999  0.  30242.3466  1.
+ schbod 2000  0.  24988.7767  1.
+ schbod 2001  0.  21157.2359  1.
+ schbod 2002  0.  20772.3099  1.
+ schbod 2003  0.  47566.0103  1.
+ schbod 2004  0.  18480.2157  1.
+ schbod 2005  0.  25100.1919  1.
+ schbod 2006  0.  20978.5497  1.
+ schbod 2007  0.  15377.0435  1.
+ schbod 2008  0.  9420.10595  1.
+ schbod 2009  0.  20667.3033  1.
+ schbod 2010  0.  12625.7787  1.
+ schbod 2011  0.  14862.4169  1.
+ schbod 2012  0.  9991.64287  1.
+ schbod 2013  0.  11423.1524  1.
+ schbod 2014  0.  9454.60141  1.
+ closing wdmlnd
+ sclflo 1984  0.  3.2248065E+10  1.
+ sclflo 1985  0.  2.82367079E+10  1.
+ sclflo 1986  0.  2.93102213E+10  1.
+ sclflo 1987  0.  3.13467822E+10  1.
+ sclflo 1988  0.  3.28122703E+10  1.
+ sclflo 1989  0.  5.77322493E+10  1.
+ sclflo 1990  0.  3.5889084E+10  1.
+ sclflo 1991  0.  2.41154315E+10  1.
+ sclflo 1992  0.  1.95054556E+10  1.
+ sclflo 1993  0.  2.51085562E+10  1.
+ sclflo 1994  0.  3.32153771E+10  1.
+ sclflo 1995  0.  1.72664563E+10  1.
+ sclflo 1996  0.  3.97557409E+10  1.
+ sclflo 1997  0.  2.15536618E+10  1.
+ sclflo 1998  0.  2.42525966E+10  1.
+ sclflo 1999  0.  2.72254425E+10  1.
+ sclflo 2000  0.  2.81940473E+10  1.
+ sclflo 2001  0.  2.41408747E+10  1.
+ sclflo 2002  0.  2.46493668E+10  1.
+ sclflo 2003  0.  5.0565894E+10  1.
+ sclflo 2004  0.  2.52984346E+10  1.
+ sclflo 2005  0.  2.79237437E+10  1.
+ sclflo 2006  0.  2.70397644E+10  1.
+ sclflo 2007  0.  1.66853756E+10  1.
+ sclflo 2008  0.  1.5470849E+10  1.
+ sclflo 2009  0.  2.92400853E+10  1.
+ sclflo 2010  0.  2.09474761E+10  1.
+ sclflo 2011  0.  2.5449553E+10  1.
+ sclflo 2012  0.  1.36190447E+10  1.
+ sclflo 2013  0.  2.15383966E+10  1.
+ sclflo 2014  0.  1.85172818E+10  1.
+ sclsed 1984  0.  55.4928491  1.
+ sclsed 1985  0.  185.690788  1.
+ sclsed 1986  0.  181.134425  1.
+ sclsed 1987  0.  314.929847  1.
+ sclsed 1988  0.  229.91959  1.
+ sclsed 1989  0.  230.469225  1.
+ sclsed 1990  0.  222.311196  1.
+ sclsed 1991  0.  58.8798133  1.
+ sclsed 1992  0.  9.11972451  1.
+ sclsed 1993  0.  190.093736  1.
+ sclsed 1994  0.  144.3466  1.
+ sclsed 1995  0.  20.4081547  1.
+ sclsed 1996  0.  492.362293  1.
+ sclsed 1997  0.  314.234184  1.
+ sclsed 1998  0.  395.242307  1.
+ sclsed 1999  0.  533.542416  1.
+ sclsed 2000  0.  289.209631  1.
+ sclsed 2001  0.  257.588407  1.
+ sclsed 2002  0.  202.469784  1.
+ sclsed 2003  0.  544.26537  1.
+ sclsed 2004  0.  108.580781  1.
+ sclsed 2005  0.  285.086112  1.
+ sclsed 2006  0.  253.169645  1.
+ sclsed 2007  0.  220.576186  1.
+ sclsed 2008  0.  39.2530908  1.
+ sclsed 2009  0.  277.484991  1.
+ sclsed 2010  0.  112.06904  1.
+ sclsed 2011  0.  179.574998  1.
+ sclsed 2012  0.  155.434017  1.
+ sclsed 2013  0.  103.265378  1.
+ sclsed 2014  0.  56.1615136  1.
+ scltnx 1984  0.  4311.78101  1.
+ scltnx 1985  0.  3944.97821  1.
+ scltnx 1986  0.  5329.39224  1.
+ scltnx 1987  0.  5730.1171  1.
+ scltnx 1988  0.  5443.26034  1.
+ scltnx 1989  0.  8806.79547  1.
+ scltnx 1990  0.  5758.01701  1.
+ scltnx 1991  0.  4009.52694  1.
+ scltnx 1992  0.  2717.16289  1.
+ scltnx 1993  0.  4801.59418  1.
+ scltnx 1994  0.  6424.81921  1.
+ scltnx 1995  0.  2693.73776  1.
+ scltnx 1996  0.  8206.89489  1.
+ scltnx 1997  0.  4684.21902  1.
+ scltnx 1998  0.  5927.00621  1.
+ scltnx 1999  0.  5768.0595  1.
+ scltnx 2000  0.  5595.61114  1.
+ scltnx 2001  0.  4606.035  1.
+ scltnx 2002  0.  4579.89563  1.
+ scltnx 2003  0.  10705.609  1.
+ scltnx 2004  0.  4501.34756  1.
+ scltnx 2005  0.  5682.31033  1.
+ scltnx 2006  0.  4665.29916  1.
+ scltnx 2007  0.  3711.51048  1.
+ scltnx 2008  0.  2585.50851  1.
+ scltnx 2009  0.  5237.38119  1.
+ scltnx 2010  0.  3716.10009  1.
+ scltnx 2011  0.  4133.06306  1.
+ scltnx 2012  0.  2566.05661  1.
+ scltnx 2013  0.  3259.91221  1.
+ scltnx 2014  0.  3015.773  1.
+ scltpx 1984  0.  243.650327  1.
+ scltpx 1985  0.  384.45775  1.
+ scltpx 1986  0.  549.082175  1.
+ scltpx 1987  0.  680.407604  1.
+ scltpx 1988  0.  556.881739  1.
+ scltpx 1989  0.  817.716799  1.
+ scltpx 1990  0.  655.590435  1.
+ scltpx 1991  0.  322.605749  1.
+ scltpx 1992  0.  125.327357  1.
+ scltpx 1993  0.  626.599994  1.
+ scltpx 1994  0.  791.833528  1.
+ scltpx 1995  0.  188.010717  1.
+ scltpx 1996  0.  1557.22654  1.
+ scltpx 1997  0.  957.688165  1.
+ scltpx 1998  0.  1303.97939  1.
+ scltpx 1999  0.  1409.90517  1.
+ scltpx 2000  0.  1032.23341  1.
+ scltpx 2001  0.  861.348929  1.
+ scltpx 2002  0.  752.22345  1.
+ scltpx 2003  0.  2154.82755  1.
+ scltpx 2004  0.  567.676989  1.
+ scltpx 2005  0.  1029.32821  1.
+ scltpx 2006  0.  809.842781  1.
+ scltpx 2007  0.  748.583509  1.
+ scltpx 2008  0.  237.129483  1.
+ scltpx 2009  0.  907.673584  1.
+ scltpx 2010  0.  480.296903  1.
+ scltpx 2011  0.  666.211051  1.
+ scltpx 2012  0.  510.978638  1.
+ scltpx 2013  0.  420.002842  1.
+ scltpx 2014  0.  327.862412  1.
+ sclbod 1984  0.  14130.3073  1.
+ sclbod 1985  0.  14799.1981  1.
+ sclbod 1986  0.  18588.508  1.
+ sclbod 1987  0.  21746.39  1.
+ sclbod 1988  0.  20211.2207  1.
+ sclbod 1989  0.  30775.7148  1.
+ sclbod 1990  0.  21158.7039  1.
+ sclbod 1991  0.  13859.1778  1.
+ sclbod 1992  0.  9528.1615  1.
+ sclbod 1993  0.  18405.006  1.
+ sclbod 1994  0.  23015.331  1.
+ sclbod 1995  0.  9841.51243  1.
+ sclbod 1996  0.  35841.3686  1.
+ sclbod 1997  0.  2096oac 3.3076  1.
+ sclbod 1998  0.  26295.5147  1.
+ sclbod 1999  0.  29221.7396  1.
+ sclbod 2000  0.  24447.8247  1.
+ sclbod 2001  0.  20630.4395  1.
+ sclbod 2002  0.  20134.5339  1.
+ sclbod 2003  0.  46445.2575  1.
+ sclbod 2004  0.  18123.3718  1.
+ sclbod 2005  0.  24855.0522  1.
+ sclbod 2006  0.  21147.2909  1.
+ sclbod 2007  0.  16409.6389  1.
+ sclbod 2008  0.  10144.6283  1.
+ sclbod 2009  0.  23992.1651  1.
+ sclbod 2010  0.  15268.8608  1.
+ sclbod 2011  0.  18175.9363  1.
+ sclbod 2012  0.  12336.9801  1.
+ sclbod 2013  0.  13961.6872  1.
+ sclbod 2014  0.  12027.5877  1.
+ closing wdmlnd
+ oacflo 1984  0.  2.32274385E+10  1.
+ oacflo 1985  0.  2.56102789E+10  1.
+ oacflo 1986  0.  3.09530516E+10  1.
+ oacflo 1987  0.  3.65756176E+10  1.
+ oacflo 1988  0.  3.88626349E+10  1.
+ oacflo 1989  0.  6.68863394E+10  1.
+ oacflo 1990  0.  4.05558851E+10  1.
+ oacflo 1991  0.  2.64062459E+10  1.
+ oacflo 1992  0.  2.04589618E+10  1.
+ oacflo 1993  0.  2.62291868E+10  1.
+ oacflo 1994  0.  3.47869614E+10  1.
+ oacflo 1995  0.  1.81427417E+10  1.
+ oacflo 1996  0.  4.18910093E+10  1.
+ oacflo 1997  0.  2.25157478E+10  1.
+ oacflo 1998  0.  2.38452529E+10  1.
+ oacflo 1999  0.  2.39501776E+10  1.
+ oacflo 2000  0.  2.28219519E+10  1.
+ oacflo 2001  0.  1.79930614E+10  1.
+ oacflo 2002  0.  1.70231945E+10  1.
+ oacflo 2003  0.  3.65671426E+10  1.
+ oacflo 2004  0.  1.92741454E+10  1.
+ oacflo 2005  0.  2.25068425E+10  1.
+ oacflo 2006  0.  2.32456022E+10  1.
+ oacflo 2007  0.  1.51219481E+10  1.
+ oacflo 2008  0.  1.51795243E+10  1.
+ oacflo 2009  0.  3.07948224E+10  1.
+ oacflo 2010  0.  2.30503469E+10  1.
+ oacflo 2011  0.  2.98166926E+10  1.
+ oacflo 2012  0.  1.67806433E+10  1.
+ oacflo 2013  0.  2.73341076E+10  1.
+ oacflo 2014  0.  2.36092772E+10  1.
+ oacsed 1984  0.  9.52109334  1.
+ oacsed 1985  0.  51.3754933  1.
+ oacsed 1986  0.  53.7875575  1.
+ oacsed 1987  0.  128.176587  1.
+ oacsed 1988  0.  83.8482816  1.
+ oacsed 1989  0.  71.4519265  1.
+ oacsed 1990  0.  170.430113  1.
+ oacsed 1991  0.  14.1782351  1.
+ oacsed 1992  0.  1.6100772  1.
+ oacsed 1993  0.  57.6133399  1.
+ oacsed 1994  0.  34.1506999  1.
+ oacsed 1995  0.  3.66187356  1.
+ oacsed 1996  0.  159.001624  1.
+ oacsed 1997  0.  98.6892943  1.
+ oacsed 1998  0.  109.560635  1.
+ oacsed 1999  0.  160.565441  1.
+ oacsed 2000  0.  62.8656091  1.
+ oacsed 2001  0.  56.8219717  1.
+ oacsed 2002  0.  38.7662828  1.
+ oacsed 2003  0.  133.289057  1.
+ oacsed 2004  0.  18.9080195  1.
+ oacsed 2005  0.  92.8841048  1.
+ oacsed 2006  0.  72.0183662  1.
+ oacsed 2007  0.  54.5723983  1.
+ oacsed 2008  0.  8.32670546  1.
+ oacsed 2009  0.  75.2052387  1.
+ oacsed 2010  0.  32.2866892  1.
+ oacsed 2011  0.  54.6175625  1.
+ oacsed 2012  0.  58.5635288  1.
+ oacsed 2013  0.  37.2849937  1.
+ oacsed 2014  0.  16.7034568  1.
+ oactnx 1984  0.  3872.18243  1.
+ oactnx 1985  0.  4243.01744  1.
+ oactnx 1986  0.  6389.91115  1.
+ oactnx 1987  0.  7618.02289  1.
+ oactnx 1988  0.  7556.93235  1.
+ oactnx 1989  0.  11805.4051  1.
+ oactnx 1990  0.  7490.62586  1.
+ oactnx 1991  0.  5278.56847  1.
+ oactnx 1992  0.  3784.32398  1.
+ oactnx 1993  0.  5838.5595  1.
+ oactnx 1994  0.  7854.23387  1.
+ oactnx 1995  0.  3763.56498  1.
+ oactnx 1996  0.  9837.85559  1.
+ oactnx 1997  0.  5567.96778  1.
+ oactnx 1998  0.  6501.695  1.
+ oactnx 1999  0.  5823.07746  1.
+ oactnx 2000  0.  5515.09719  1.
+ oactnx 2001  0.  4253.79239  1.
+ oactnx 2002  0.  4065.3568  1.
+ oactnx 2003  0.  9381.61897  1.
+ oactnx 2004  0.  4570.24193  1.
+ oactnx 2005  0.  5818.2814  1.
+ oactnx 2006  0.  5150.20891  1.
+ oactnx 2007  0.  4050.45395  1.
+ oactnx 2008  0.  3574.69257  1.
+ oactnx 2009  0.  6929.20603  1.
+ oactnx 2010  0.  5390.47211  1.
+ oactnx 2011  0.  6025.1206  1.
+ oactnx 2012  0.  3849.94909  1.
+ oactnx 2013  0.  5552.98356  1.
+ oactnx 2014  0.  5278.87  1.
+ oactpx 1984  0.  182.528668  1.
+ oactpx 1985  0.  307.655733  1.
+ oactpx 1986  0.  572.117597  1.
+ oactpx 1987  0.  700.005957  1.
+ oactpx 1988  0.  574.108545  1.
+ oactpx 1989  0.  913.60909  1.
+ oactpx 1990  0.  826.812242  1.
+ oactpx 1991  0.  338.079669  1.
+ oactpx 1992  0.  121.917272  1.
+ oactpx 1993  0.  506.314319 ohy  1.
+ oactpx 1994  0.  680.952042  1.
+ oactpx 1995  0.  156.783689  1.
+ oactpx 1996  0.  1090.19163  1.
+ oactpx 1997  0.  629.711478  1.
+ oactpx 1998  0.  807.575528  1.
+ oactpx 1999  0.  713.387753  1.
+ oactpx 2000  0.  509.078535  1.
+ oactpx 2001  0.  386.157835  1.
+ oactpx 2002  0.  318.210221  1.
+ oactpx 2003  0.  1059.07493  1.
+ oactpx 2004  0.  299.609563  1.
+ oactpx 2005  0.  584.795144  1.
+ oactpx 2006  0.  455.275257  1.
+ oactpx 2007  0.  439.64111  1.
+ oactpx 2008  0.  178.066061  1.
+ oactpx 2009  0.  582.698286  1.
+ oactpx 2010  0.  367.367491  1.
+ oactpx 2011  0.  503.574578  1.
+ oactpx 2012  0.  364.247741  1.
+ oactpx 2013  0.  340.115949  1.
+ oactpx 2014  0.  289.462929  1.
+ oacbod 1984  0.  7324.91874  1.
+ oacbod 1985  0.  8827.33  1.
+ oacbod 1986  0.  13555.2274  1.
+ oacbod 1987  0.  16586.9452  1.
+ oacbod 1988  0.  15559.3162  1.
+ oacbod 1989  0.  24068.816  1.
+ oacbod 1990  0.  17530.3027  1.
+ oacbod 1991  0.  10534.2179  1.
+ oacbod 1992  0.  7100.62736  1.
+ oacbod 1993  0.  13297.3375  1.
+ oacbod 1994  0.  18080.4605  1.
+ oacbod 1995  0.  7809.9182  1.
+ oacbod 1996  0.  26783.2349  1.
+ oacbod 1997  0.  15378.3927  1.
+ oacbod 1998  0.  18584.1122  1.
+ oacbod 1999  0.  17686.5991  1.
+ oacbod 2000  0.  14891.7  1.
+ oacbod 2001  0.  11719.8465  1.
+ oacbod 2002  0.  11099.6199  1.
+ oacbod 2003  0.  28551.4451  1.
+ oacbod 2004  0.  11784.7914  1.
+ oacbod 2005  0.  17362.6248  1.
+ oacbod 2006  0.  14914.1113  1.
+ oacbod 2007  0.  12013.3811  1.
+ oacbod 2008  0.  8661.46471  1.
+ oacbod 2009  0.  19175.562  1.
+ oacbod 2010  0.  13788.8172  1.
+ oacbod 2011  0.  16473.9958  1.
+ oacbod 2012  0.  11289.2669  1.
+ oacbod 2013  0.  14215.812  1.
+ oacbod 2014  0.  12918.3407  1.
+ closing wdmlnd
+ ohyflo 1984  0.  3.153859E+10  1.
+ ohyflo 1985  0.  2.68226627E+10  1.
+ ohyflo 1986  0.  2.71078617E+10  1.
+ ohyflo 1987  0.  3.43952763E+10  1.
+ ohyflo 1988  0.  3.31383251E+10  1.
+ ohyflo 1989  0.  5.73014509E+10  1.
+ ohyflo 1990  0.  3.23987332E+10  1.
+ ohyflo 1991  0.  1.98529061E+10  1.
+ ohyflo 1992  0.  1.43611783E+10  1.
+ ohyflo 1993  0.  2.0157471E+10  1.
+ ohyflo 1994  0.  3.00564709E+10  1.
+ ohyflo 1995  0.  1.62690255E+10  1.
+ ohyflo 1996  0.  4.32145051E+10  1.
+ ohyflo 1997  0.  2.57359582E+10  1.
+ ohyflo 1998  0.  3.13009409E+10  1.
+ ohyflo 1999  0.  3.6583648E+10  1.
+ ohyflo 2000  0.  4.10847133E+10  1.
+ ohyflo 2001  0.  3.75563491E+10  1.
+ ohyflo 2002  0.  3.79429919E+10  1.
+ ohyflo 2003  0.  8.68387832E+10  1.
+ ohyflo 2004  0.  4.33643383E+10  1.
+ ohyflo 2005  0.  4.55078322E+10  1.
+ ohyflo 2006  0.  4.24384619E+10  1.
+ ohyflo 2007  0.  2.65183895E+10  1.
+ ohyflo 2008  0.  2.33115566E+10  1.
+ ohyflo 2009  0.  4.63095064E+10  1.
+ ohyflo 2010  0.  3.42456521E+10  1.
+ ohyflo 2011  0.  3.88116783E+10  1.
+ ohyflo 2012  0.  1.90434843E+10  1.
+ ohyflo 2013  0.  3.4373033E+10  1.
+ ohyflo 2014  0.  2.94886778E+10  1.
+ ohysed 1984  0.  0.0227839036  1.
+ ohysed 1985  0.  0.736308665  1.
+ ohysed 1986  0.  0.0913074265  1.
+ ohysed 1987  0.  1.7317236  1.
+ ohysed 1988  0.  0.862249639  1.
+ ohysed 1989  0.  0.759010675  1.
+ ohysed 1990  0.  6.16585722  1.
+ ohysed 1991  0.  0.0379215586  1.
+ ohysed 1992  0.  0.00233064412  1.
+ ohysed 1993  0.  0.473636282  1.
+ ohysed 1994  0.  0.268583286  1.
+ ohysed 1995  0.  0.00618397948  1.
+ ohysed 1996  0.  6.48696155  1.
+ ohysed 1997  0.  1.03974837  1.
+ ohysed 1998  0.  4.74892933  1.
+ ohysed 1999  0.  35.7901981  1.
+ ohysed 2000  0.  1.04891391  1.
+ ohysed 2001  0.  1.3401995  1.
+ ohysed 2002  0.  5.35665684  1.
+ ohysed 2003  0.  9.95743171  1.
+ ohysed 2004  0.  0.46930048  1.
+ ohysed 2005  0.  2.4851106  1.
+ ohysed 2006  0.  0.779892036  1.
+ ohysed 2007  0.  2.17574755  1.
+ ohysed 2008  0.  0.0170162209  1.
+ ohysed 2009  0.  5.54973181  1.
+ ohysed 2010  0.  0.807320426  1.
+ ohysed 2011  0.  1.95389645  1.
+ ohysed 2012  0.  0.874669617  1.
+ ohysed 2013  0.  0.517995613  1.
+ ohysed 2014  0.  0.0916160056  1.
+ ohytnx 1984  0.  3473.96465  1.
+ ohytnx 1985  0.  3091.70381  1.
+ ohytnx 1986  0.  3860.5301  1.
+ ohytnx 1987  0.  5071.21375  1.
+ ohytnx 1988  0.  4343.42136  1.
+ ohytnx 1989  0.  74pas 30.05684  1.
+ ohytnx 1990  0.  4557.60205  1.
+ ohytnx 1991  0.  2684.37818  1.
+ ohytnx 1992  0.  1545.01326  1.
+ ohytnx 1993  0.  3156.17599  1.
+ ohytnx 1994  0.  5232.56111  1.
+ ohytnx 1995  0.  1858.56588  1.
+ ohytnx 1996  0.  7545.78261  1.
+ ohytnx 1997  0.  4512.15835  1.
+ ohytnx 1998  0.  6829.53262  1.
+ ohytnx 1999  0.  6174.48722  1.
+ ohytnx 2000  0.  6611.92804  1.
+ ohytnx 2001  0.  5878.51415  1.
+ ohytnx 2002  0.  5474.67339  1.
+ ohytnx 2003  0.  16325.2321  1.
+ ohytnx 2004  0.  6524.59318  1.
+ ohytnx 2005  0.  7780.88707  1.
+ ohytnx 2006  0.  5745.04133  1.
+ ohytnx 2007  0.  5278.84969  1.
+ ohytnx 2008  0.  2901.7711  1.
+ ohytnx 2009  0.  6806.09107  1.
+ ohytnx 2010  0.  5300.56143  1.
+ ohytnx 2011  0.  5729.03957  1.
+ ohytnx 2012  0.  2808.8996  1.
+ ohytnx 2013  0.  4322.27131  1.
+ ohytnx 2014  0.  3894.63243  1.
+ ohytpx 1984  0.  55.0486622  1.
+ ohytpx 1985  0.  72.3141767  1.
+ ohytpx 1986  0.  101.18065  1.
+ ohytpx 1987  0.  139.918133  1.
+ ohytpx 1988  0.  104.193323  1.
+ ohytpx 1989  0.  207.29718  1.
+ ohytpx 1990  0.  149.24216  1.
+ ohytpx 1991  0.  65.5318223  1.
+ ohytpx 1992  0.  20.3629398  1.
+ ohytpx 1993  0.  97.9920765  1.
+ ohytpx 1994  0.  195.588134  1.
+ ohytpx 1995  0.  29.5047941  1.
+ ohytpx 1996  0.  338.309765  1.
+ ohytpx 1997  0.  200.699595  1.
+ ohytpx 1998  0.  376.415807  1.
+ ohytpx 1999  0.  335.868703  1.
+ ohytpx 2000  0.  304.027392  1.
+ ohytpx 2001  0.  269.485422  1.
+ ohytpx 2002  0.  221.816606  1.
+ ohytpx 2003  0.  914.40456  1.
+ ohytpx 2004  0.  264.864061  1.
+ ohytpx 2005  0.  369.158597  1.
+ ohytpx 2006  0.  215.902357  1.
+ ohytpx 2007  0.  281.853529  1.
+ ohytpx 2008  0.  70.9207105  1.
+ ohytpx 2009  0.  306.184746  1.
+ ohytpx 2010  0.  228.681103  1.
+ ohytpx 2011  0.  293.091678  1.
+ ohytpx 2012  0.  126.051556  1.
+ ohytpx 2013  0.  155.805432  1.
+ ohytpx 2014  0.  132.23014  1.
+ ohybod 1984  0.  13832.5262  1.
+ ohybod 1985  0.  12460.1823  1.
+ ohybod 1986  0.  15593.2217  1.
+ ohybod 1987  0.  20580.7423  1.
+ ohybod 1988  0.  17435.4734  1.
+ ohybod 1989  0.  30019.5434  1.
+ ohybod 1990  0.  18764.5282  1.
+ ohybod 1991  0.  10739.769  1.
+ ohybod 1992  0.  6033.61299  1.
+ ohybod 1993  0.  12900.1453  1.
+ ohybod 1994  0.  21747.6633  1.
+ ohybod 1995  0.  7325.56054  1.
+ ohybod 1996  0.  32050.3501  1.
+ ohybod 1997  0.  19091.802  1.
+ ohybod 1998  0.  29711.2732  1.
+ ohybod 1999  0.  27657.8365  1.
+ ohybod 2000  0.  28007.324  1.
+ ohybod 2001  0.  24861.1002  1.
+ ohybod 2002  0.  22889.2987  1.
+ ohybod 2003  0.  70364.3025  1.
+ ohybod 2004  0.  27158.3868  1.
+ ohybod 2005  0.  32921.5189  1.
+ ohybod 2006  0.  23787.0115  1.
+ ohybod 2007  0.  22682.4823  1.
+ ohybod 2008  0.  11652.6429  1.
+ ohybod 2009  0.  28768.4055  1.
+ ohybod 2010  0.  22252.0159  1.
+ ohybod 2011  0.  24532.6992  1.
+ ohybod 2012  0.  11864.9795  1.
+ ohybod 2013  0.  17912.8106  1.
+ ohybod 2014  0.  16076.1912  1.
+ closing wdmlnd
+ pasflo 1984  0.  5.49562741E+10  1.
+ pasflo 1985  0.  4.37914276E+10  1.
+ pasflo 1986  0.  4.20733355E+10  1.
+ pasflo 1987  0.  5.18308144E+10  1.
+ pasflo 1988  0.  5.81057772E+10  1.
+ pasflo 1989  0.  1.23949755E+11  1.
+ pasflo 1990  0.  8.64417257E+10  1.
+ pasflo 1991  0.  6.70594687E+10  1.
+ pasflo 1992  0.  6.36973721E+10  1.
+ pasflo 1993  0.  8.49699471E+10  1.
+ pasflo 1994  0.  1.14615314E+11  1.
+ pasflo 1995  0.  5.51739085E+10  1.
+ pasflo 1996  0.  1.33578764E+11  1.
+ pasflo 1997  0.  7.23046832E+10  1.
+ pasflo 1998  0.  7.52362538E+10  1.
+ pasflo 1999  0.  6.92659082E+10  1.
+ pasflo 2000  0.  6.5854687E+10  1.
+ pasflo 2001  0.  5.09548448E+10  1.
+ pasflo 2002  0.  4.3772885E+10  1.
+ pasflo 2003  0.  1.05127776E+11  1.
+ pasflo 2004  0.  5.66261543E+10  1.
+ pasflo 2005  0.  6.47908933E+10  1.
+ pasflo 2006  0.  6.64548109E+10  1.
+ pasflo 2007  0.  4.46574668E+10  1.
+ pasflo 2008  0.  4.03093209E+10  1.
+ pasflo 2009  0.  8.03892303E+10  1.
+ pasflo 2010  0.  5.95656988E+10  1.
+ pasflo 2011  0.  6.76575046E+10  1.
+ pasflo 2012  0.  3.32176397E+10  1.
+ pasflo 2013  0.  5.98716357E+10  1.
+ pasflo 2014  0.  5.13484636E+10  1.
+ passed 1984  0.  0.159790285  1.
+ passed 1985  0.  3.3742646nch 4  1.
+ passed 1986  0.  0.513891512  1.
+ passed 1987  0.  6.83868881  1.
+ passed 1988  0.  4.26143051  1.
+ passed 1989  0.  4.81773668  1.
+ passed 1990  0.  7.30250778  1.
+ passed 1991  0.  0.48264636  1.
+ passed 1992  0.  0.046213082  1.
+ passed 1993  0.  6.17380864  1.
+ passed 1994  0.  3.69381908  1.
+ passed 1995  0.  0.0824657065  1.
+ passed 1996  0.  64.0577934  1.
+ passed 1997  0.  8.35138159  1.
+ passed 1998  0.  31.9707038  1.
+ passed 1999  0.  165.259435  1.
+ passed 2000  0.  5.70505785  1.
+ passed 2001  0.  5.60260543  1.
+ passed 2002  0.  15.6487219  1.
+ passed 2003  0.  14.7959899  1.
+ passed 2004  0.  2.01202087  1.
+ passed 2005  0.  7.69790488  1.
+ passed 2006  0.  3.75349424  1.
+ passed 2007  0.  10.3328089  1.
+ passed 2008  0.  0.124899548  1.
+ passed 2009  0.  27.7978414  1.
+ passed 2010  0.  4.07493588  1.
+ passed 2011  0.  9.66452652  1.
+ passed 2012  0.  4.20641948  1.
+ passed 2013  0.  2.73871252  1.
+ passed 2014  0.  0.580821355  1.
+ pastnx 1984  0.  4696.02989  1.
+ pastnx 1985  0.  4580.9919  1.
+ pastnx 1986  0.  5728.88636  1.
+ pastnx 1987  0.  7518.3307  1.
+ pastnx 1988  0.  6822.34964  1.
+ pastnx 1989  0.  15366.7824  1.
+ pastnx 1990  0.  12440.4467  1.
+ pastnx 1991  0.  7981.93811  1.
+ pastnx 1992  0.  4787.01958  1.
+ pastnx 1993  0.  13551.7125  1.
+ pastnx 1994  0.  22126.0992  1.
+ pastnx 1995  0.  4645.04152  1.
+ pastnx 1996  0.  26624.4045  1.
+ pastnx 1997  0.  14454.8035  1.
+ pastnx 1998  0.  21028.2095  1.
+ pastnx 1999  0.  14367.5018  1.
+ pastnx 2000  0.  11765.4808  1.
+ pastnx 2001  0.  8719.73212  1.
+ pastnx 2002  0.  6401.32718  1.
+ pastnx 2003  0.  23970.604  1.
+ pastnx 2004  0.  8635.95606  1.
+ pastnx 2005  0.  12349.5518  1.
+ pastnx 2006  0.  8983.38467  1.
+ pastnx 2007  0.  10827.5657  1.
+ pastnx 2008  0.  4067.86448  1.
+ pastnx 2009  0.  12660.1861  1.
+ pastnx 2010  0.  9573.63324  1.
+ pastnx 2011  0.  11284.6654  1.
+ pastnx 2012  0.  5116.11534  1.
+ pastnx 2013  0.  7027.07991  1.
+ pastnx 2014  0.  6134.49484  1.
+ pastpx 1984  0.  330.162893  1.
+ pastpx 1985  0.  400.408249  1.
+ pastpx 1986  0.  525.246317  1.
+ pastpx 1987  0.  718.558968  1.
+ pastpx 1988  0.  605.028908  1.
+ pastpx 1989  0.  1430.16934  1.
+ pastpx 1990  0.  1201.38816  1.
+ pastpx 1991  0.  654.419086  1.
+ pastpx 1992  0.  273.59029  1.
+ pastpx 1993  0.  1168.61035  1.
+ pastpx 1994  0.  1980.54586  1.
+ pastpx 1995  0.  266.774521  1.
+ pastpx 1996  0.  2544.17428  1.
+ pastpx 1997  0.  1344.97133  1.
+ pastpx 1998  0.  2164.30895  1.
+ pastpx 1999  0.  1708.02218  1.
+ pastpx 2000  0.  1134.79362  1.
+ pastpx 2001  0.  844.085352  1.
+ pastpx 2002  0.  607.092713  1.
+ pastpx 2003  0.  2488.61215  1.
+ pastpx 2004  0.  785.158286  1.
+ pastpx 2005  0.  1201.95447  1.
+ pastpx 2006  0.  796.354192  1.
+ pastpx 2007  0.  1104.04108  1.
+ pastpx 2008  0.  285.318637  1.
+ pastpx 2009  0.  1185.39197  1.
+ pastpx 2010  0.  847.131857  1.
+ pastpx 2011  0.  1047.95482  1.
+ pastpx 2012  0.  443.961463  1.
+ pastpx 2013  0.  547.291732  1.
+ pastpx 2014  0.  458.48952  1.
+ pasbod 1984  0.  12307.4792  1.
+ pasbod 1985  0.  14681.3579  1.
+ pasbod 1986  0.  19104.8321  1.
+ pasbod 1987  0.  26116.5313  1.
+ pasbod 1988  0.  21902.3394  1.
+ pasbod 1989  0.  52418.4658  1.
+ pasbod 1990  0.  45265.1185  1.
+ pasbod 1991  0.  25231.9548  1.
+ pasbod 1992  0.  10840.7393  1.
+ pasbod 1993  0.  48642.8418  1.
+ pasbod 1994  0.  84606.0902  1.
+ pasbod 1995  0.  11406.8382  1.
+ pasbod 1996  0.  108427.674  1.
+ pasbod 1997  0.  56443.223  1.
+ pasbod 1998  0.  88848.5342  1.
+ pasbod 1999  0.  68510.2743  1.
+ pasbod 2000  0.  44647.2349  1.
+ pasbod 2001  0.  32899.707  1.
+ pasbod 2002  0.  23789.8974  1.
+ pasbod 2003  0.  98070.3077  1.
+ pasbod 2004  0.  30983.0601  1.
+ pasbod 2005  0.  47885.737  1.
+ pasbod 2006  0.  31984.0679  1.
+ pasbod 2007  0.  44561.116  1.
+ pasbod 2008  0.  11573.3951  1.
+ pasbod 2009  0.  48876.793  1.
+ pasbod 2010  0.  34994.3994  1.
+ pasbod 2011  0.  44069.9248  1.
+ pasbod 2012  0.  18900.0962  1.
+ pasbod 2013  0.  23452.9316  1.
+ pasbod 2014  0.  19771.331  1.
+ closing wdmlnd
+ nchflo 1984  0.  2.50443025E+10  1.
+ nchflo 1985  0.  3.10210743E+10  1.
+ nchflo 1986  0.  3.21875414E+10  1.
+ nchflo 1987  0.  3.28670375E+10  1.
+ nchflo 1988  0.  3.89825863E+10  1.
+ nchflo 1989  0.  7.00226965E+10  1.
+ nchflo 1990  0.  4.74808195E+10  1.
+ nchflo 1991  0.  4.43385469E+10  1.
+ nchflo 1992  0.  4.77482675E+10  1.
+ nchflo 1993  0.  5.72069442E+10  1.
+ nchflo 1994  0.  6.76500768E+10  1.
+ nchflo 1995  0.  5.04860582E+10  1.
+ nchflo 1996  0.  9.30385641E+10  1.
+ nchflo 1997  0.  5.58730113E+10  1.
+ nchflo 1998  0.  5.51163945E+10  1.
+ nchflo 1999  0.  8.15167034E+10  1.
+ nchflo 2000  0.  6.10060762E+10  1.
+ nchflo 2001  0.  6.00775241E+10  1.
+ nchflo 2002  0.  8.13650346E+10  1.
+ nchflo 2003  0.  1.09367663E+11  1.
+ nchflo 2004  0.  6.43438119E+10  1.
+ nchflo 2005  0.  8.93634551E+10  1.
+ nchflo 2006  0.  1.02182506E+11  1.
+ nchflo 2007  0.  6.13142997E+10  1.
+ nchflo 2008  0.  7.23793147E+10  1.
+ nchflo 2009  0.  1.16709214E+11  1.
+ nchflo 2010  0.  8.22813172E+10  1.
+ nchflo 2011  0.  1.15381231E+11  1.
+ nchflo 2012  0.  6.08701835E+10  1.
+ nchflo 2013  0.  9.59887691E+10  1.
+ nchflo 2014  0.  7.69714011E+10  1.
+ nchsed 1984  0.  0.145539029  1.
+ nchsed 1985  0.  0.344849174  1.
+ nchsed 1986  0.  0.331911795  1.
+ nchsed 1987  0.  0.226677886  1.
+ nchsed 1988  0.  0.330766306  1.
+ nchsed 1989  0.  0.648774811  1.
+ nchsed 1990  0.  0.361877463  1.
+ nchsed 1991  0.  0.399779793  1.
+ nchsed 1992  0.  0.409963667  1.
+ nchsed 1993  0.  0.352302437  1.
+ nchsed 1994  0.  0.263281349  1.
+ nchsed 1995  0.  0.35369712  1.
+ nchsed 1996  0.  1.28803806  1.
+ nchsed 1997  0.  0.956538665  1.
+ nchsed 1998  0.  0.511248374  1.
+ nchsed 1999  0.  1.54675327  1.
+ nchsed 2000  0.  0.561955114  1.
+ nchsed 2001  0.  0.719416934  1.
+ nchsed 2002  0.  0.932980814  1.
+ nchsed 2003  0.  1.20522234  1.
+ nchsed 2004  0.  0.745053288  1.
+ nchsed 2005  0.  0.942998335  1.
+ nchsed 2006  0.  0.98534226  1.
+ nchsed 2007  0.  0.624197514  1.
+ nchsed 2008  0.  0.68151675  1.
+ nchsed 2009  0.  1.16626062  1.
+ nchsed 2010  0.  0.679378024  1.
+ nchsed 2011  0.  1.33143604  1.
+ nchsed 2012  0.  0.759240755  1.
+ nchsed 2013  0.  1.00916674  1.
+ nchsed 2014  0.  0.623280402  1.
+ nchtnx 1984  0.  1541.84944  1.
+ nchtnx 1985  0.  1908.9779  1.
+ nchtnx 1986  0.  2600.68579  1.
+ nchtnx 1987  0.  2461.31645  1.
+ nchtnx 1988  0.  2870.24981  1.
+ nchtnx 1989  0.  4426.91021  1.
+ nchtnx 1990  0.  3115.84885  1.
+ nchtnx 1991  0.  3267.34533  1.
+ nchtnx 1992  0.  3149.34392  1.
+ nchtnx 1993  0.  4457.3307  1.
+ nchtnx 1994  0.  5251.57829  1.
+ nchtnx 1995  0.  3733.57865  1.
+ nchtnx 1996  0.  6901.23426  1.
+ nchtnx 1997  0.  4411.09319  1.
+ nchtnx 1998  0.  4665.3945  1.
+ nchtnx 1999  0.  5988.39557  1.
+ nchtnx 2000  0.  4573.25664  1.
+ nchtnx 2001  0.  3992.66182  1.
+ nchtnx 2002  0.  5570.65226  1.
+ nchtnx 2003  0.  8116.99357  1.
+ nchtnx 2004  0.  4571.33648  1.
+ nchtnx 2005  0.  6669.18962  1.
+ nchtnx 2006  0.  6089.8399  1.
+ nchtnx 2007  0.  4763.06876  1.
+ nchtnx 2008  0.  5486.95358  1.
+ nchtnx 2009  0.  8059.59967  1.
+ nchtnx 2010  0.  5957.47269  1.
+ nchtnx 2011  0.  7260.74253  1.
+ nchtnx 2012  0.  4771.32961  1.
+ nchtnx 2013  0.  6318.1827  1.
+ nchtnx 2014  0.  5890.61266  1.
+ nchtpx 1984  0.  72.3840126  1.
+ nchtpx 1985  0.  124.217627  1.
+ nchtpx 1986  0.  185.396852  1.
+ nchtpx 1987  0.  155.037375  1.
+ nchtpx 1988  0.  197.210593  1.
+ nchtpx 1989  0.  331.532871  1.
+ nchtpx 1990  0.  231.878197  1.
+ nchtpx 1991  0.  242.781332  1.
+ nchtpx 1992  0.  205.201536  1.
+ nchtpx 1993  0.  338.807475  1.
+ nchtpx 1994  0.  394.537747  1.
+ nchtpx 1995  0.  276.079828  1.
+ nchtpx 1996  0.  591.677403  1.
+ nchtpx 1997  0.  382.608673  1.
+ nchtpx 1998  0.  398.061028  1.
+ nchtpx 1999  0.  544.56152  1.
+ nchtpx 2000  0.  372.834596  1.
+ nchtpx 2001  0.  320.943274  1.
+ nchtpx 2002  0.  476.171338  1.
+ nchtpx 2003  0.  722.199265  1.
+ nchtpx 2004  0.  366.343272  1.
+ nchtpx 2005  0.  609.050284  1.
+ nchtpx 2006  0.  541.080947  1.
+ nchtpx 2007  0.  414.703266  1.
+ nchtpx 2008  0.  435.025342  1.
+ nchtpx 2009  0.  709.128357  1.
+ nchtpx 2010  0.  493.009307  1.
+ nchtpx 2011  0.  691.857759  1.
+ nchtpx 2012  0.ntg   432.383145  1.
+ nchtpx 2013  0.  517.504709  1.
+ nchtpx 2014  0.  455.563169  1.
+ nchbod 1984  0.  16537.3254  1.
+ nchbod 1985  0.  19888.9655  1.
+ nchbod 1986  0.  26889.2373  1.
+ nchbod 1987  0.  25758.1336  1.
+ nchbod 1988  0.  29779.5211  1.
+ nchbod 1989  0.  45547.3465  1.
+ nchbod 1990  0.  31987.2546  1.
+ nchbod 1991  0.  33499.5765  1.
+ nchbod 1992  0.  32703.927  1.
+ nchbod 1993  0.  45613.2166  1.
+ nchbod 1994  0.  53685.7643  1.
+ nchbod 1995  0.  38024.1569  1.
+ nchbod 1996  0.  69031.0065  1.
+ nchbod 1997  0.  43928.0928  1.
+ nchbod 1998  0.  46595.0055  1.
+ nchbod 1999  0.  59326.6151  1.
+ nchbod 2000  0.  45974.2285  1.
+ nchbod 2001  0.  40141.5392  1.
+ nchbod 2002  0.  55577.3708  1.
+ nchbod 2003  0.  80626.0319  1.
+ nchbod 2004  0.  45904.4794  1.
+ nchbod 2005  0.  65868.3614  1.
+ nchbod 2006  0.  60341.3286  1.
+ nchbod 2007  0.  47449.261  1.
+ nchbod 2008  0.  55246.8501  1.
+ nchbod 2009  0.  80192.2877  1.
+ nchbod 2010  0.  59732.1948  1.
+ nchbod 2011  0.  71561.9531  1.
+ nchbod 2012  0.  47310.5067  1.
+ nchbod 2013  0.  63366.6482  1.
+ nchbod 2014  0.  59472.0756  1.
+ closing wdmlnd
+ ntgflo 1984  0.  1.01101302E+11  1.
+ ntgflo 1985  0.  1.24855782E+11  1.
+ ntgflo 1986  0.  1.29178884E+11  1.
+ ntgflo 1987  0.  1.3165442E+11  1.
+ ntgflo 1988  0.  1.5617053E+11  1.
+ ntgflo 1989  0.  2.80735666E+11  1.
+ ntgflo 1990  0.  1.90503519E+11  1.
+ ntgflo 1991  0.  1.78037896E+11  1.
+ ntgflo 1992  0.  1.91790768E+11  1.
+ ntgflo 1993  0.  2.29304016E+11  1.
+ ntgflo 1994  0.  2.70490044E+11  1.
+ ntgflo 1995  0.  2.01142446E+11  1.
+ ntgflo 1996  0.  3.69646626E+11  1.
+ ntgflo 1997  0.  2.21350369E+11  1.
+ ntgflo 1998  0.  2.18037666E+11  1.
+ ntgflo 1999  0.  3.21837529E+11  1.
+ ntgflo 2000  0.  2.40470907E+11  1.
+ ntgflo 2001  0.  2.36395386E+11  1.
+ ntgflo 2002  0.  3.19903221E+11  1.
+ ntgflo 2003  0.  4.3332622E+11  1.
+ ntgflo 2004  0.  2.57438989E+11  1.
+ ntgflo 2005  0.  3.61296015E+11  1.
+ ntgflo 2006  0.  4.17770543E+11  1.
+ ntgflo 2007  0.  2.52871895E+11  1.
+ ntgflo 2008  0.  2.97709012E+11  1.
+ ntgflo 2009  0.  4.77170713E+11  1.
+ ntgflo 2010  0.  3.34748969E+11  1.
+ ntgflo 2011  0.  4.6634121E+11  1.
+ ntgflo 2012  0.  2.44719614E+11  1.
+ ntgflo 2013  0.  3.85845246E+11  1.
+ ntgflo 2014  0.  3.09417226E+11  1.
+ ntgsed 1984  0.  9.18636123  1.
+ ntgsed 1985  0.  15.3602512  1.
+ ntgsed 1986  0.  15.7037042  1.
+ ntgsed 1987  0.  13.6126011  1.
+ ntgsed 1988  0.  16.8909414  1.
+ ntgsed 1989  0.  34.8657872  1.
+ ntgsed 1990  0.  22.0361346  1.
+ ntgsed 1991  0.  26.5483021  1.
+ ntgsed 1992  0.  24.2455922  1.
+ ntgsed 1993  0.  22.8715408  1.
+ ntgsed 1994  0.  18.9908323  1.
+ ntgsed 1995  0.  24.8784539  1.
+ ntgsed 1996  0.  53.807126  1.
+ ntgsed 1997  0.  42.1504922  1.
+ ntgsed 1998  0.  25.9300844  1.
+ ntgsed 1999  0.  48.0229326  1.
+ ntgsed 2000  0.  31.4073229  1.
+ ntgsed 2001  0.  32.3692309  1.
+ ntgsed 2002  0.  44.929954  1.
+ ntgsed 2003  0.  55.7954489  1.
+ ntgsed 2004  0.  41.312817  1.
+ ntgsed 2005  0.  50.7930313  1.
+ ntgsed 2006  0.  50.7324741  1.
+ ntgsed 2007  0.  30.6751398  1.
+ ntgsed 2008  0.  38.812697  1.
+ ntgsed 2009  0.  63.8724889  1.
+ ntgsed 2010  0.  37.0465157  1.
+ ntgsed 2011  0.  57.5100921  1.
+ ntgsed 2012  0.  33.9433297  1.
+ ntgsed 2013  0.  53.6612125  1.
+ ntgsed 2014  0.  40.6909217  1.
+ ntgtnx 1984  0.  8208.22239  1.
+ ntgtnx 1985  0.  10124.6917  1.
+ ntgtnx 1986  0.  13701.6629  1.
+ ntgtnx 1987  0.  12958.5201  1.
+ ntgtnx 1988  0.  15098.7052  1.
+ ntgtnx 1989  0.  23341.9836  1.
+ ntgtnx 1990  0.  16428.556  1.
+ ntgtnx 1991  0.  17268.6394  1.
+ ntgtnx 1992  0.  16670.2263  1.
+ ntgtnx 1993  0.  23416.1434  1.
+ ntgtnx 1994  0.  27472.8017  1.
+ ntgtnx 1995  0.  19549.8905  1.
+ ntgtnx 1996  0.  35992.4698  1.
+ ntgtnx 1997  0.  22997.0234  1.
+ ntgtnx 1998  0.  24169.5496  1.
+ ntgtnx 1999  0.  31017.3524  1.
+ ntgtnx 2000  0.  23671.2087  1.
+ ntgtnx 2001  0.  20668.8612  1.
+ ntgtnx 2002  0.  28785.4242  1.
+ ntgtnx 2003  0.  42158.156  1.
+ ntgtnx 2004  0.  24089.6104  1.
+ ntgtnx 2005  0.  35363.587  1.
+ ntgtnx 2006  0.  32692.0189  1.
+ ntgtnx 2007  0.  25742.0381  1.
+ ntgtnx 2008  0.  29659.0mch mtg mcn 164  1.
+ ntgtnx 2009  0.  43272.7719  1.
+ ntgtnx 2010  0.  31805.3107  1.
+ ntgtnx 2011  0.  38491.8929  1.
+ ntgtnx 2012  0.  25155.3625  1.
+ ntgtnx 2013  0.  33431.7995  1.
+ ntgtnx 2014  0.  31138.4037  1.
+ ntgtpx 1984  0.  396.872751  1.
+ ntgtpx 1985  0.  674.578378  1.
+ ntgtpx 1986  0.  993.463526  1.
+ ntgtpx 1987  0.  832.180689  1.
+ ntgtpx 1988  0.  1056.43653  1.
+ ntgtpx 1989  0.  1784.5542  1.
+ ntgtpx 1990  0.  1246.37482  1.
+ ntgtpx 1991  0.  1311.35352  1.
+ ntgtpx 1992  0.  1113.73299  1.
+ ntgtpx 1993  0.  1806.85091  1.
+ ntgtpx 1994  0.  2088.92751  1.
+ ntgtpx 1995  0.  1474.21069  1.
+ ntgtpx 1996  0.  3141.35906  1.
+ ntgtpx 1997  0.  2037.15971  1.
+ ntgtpx 1998  0.  2091.12516  1.
+ ntgtpx 1999  0.  2868.89506  1.
+ ntgtpx 2000  0.  1964.44559  1.
+ ntgtpx 2001  0.  1696.22436  1.
+ ntgtpx 2002  0.  2509.05307  1.
+ ntgtpx 2003  0.  3812.22582  1.
+ ntgtpx 2004  0.  1975.4175  1.
+ ntgtpx 2005  0.  3284.15083  1.
+ ntgtpx 2006  0.  2959.45222  1.
+ ntgtpx 2007  0.  2274.42256  1.
+ ntgtpx 2008  0.  2395.53531  1.
+ ntgtpx 2009  0.  3876.71337  1.
+ ntgtpx 2010  0.  2674.54405  1.
+ ntgtpx 2011  0.  3729.78518  1.
+ ntgtpx 2012  0.  2316.70509  1.
+ ntgtpx 2013  0.  2798.14988  1.
+ ntgtpx 2014  0.  2455.87275  1.
+ ntgbod 1984  0.  88161.4725  1.
+ ntgbod 1985  0.  105614.681  1.
+ ntgbod 1986  0.  141608.557  1.
+ ntgbod 1987  0.  135623.573  1.
+ ntgbod 1988  0.  156608.852  1.
+ ntgbod 1989  0.  240263.2  1.
+ ntgbod 1990  0.  168667.096  1.
+ ntgbod 1991  0.  177197.496  1.
+ ntgbod 1992  0.  173331.784  1.
+ ntgbod 1993  0.  239333.487  1.
+ ntgbod 1994  0.  280266.002  1.
+ ntgbod 1995  0.  199109.676  1.
+ ntgbod 1996  0.  359867.577  1.
+ ntgbod 1997  0.  229186.13  1.
+ ntgbod 1998  0.  240981.784  1.
+ ntgbod 1999  0.  307032.344  1.
+ ntgbod 2000  0.  237887.45  1.
+ ntgbod 2001  0.  207912.841  1.
+ ntgbod 2002  0.  287202.806  1.
+ ntgbod 2003  0.  418292.946  1.
+ ntgbod 2004  0.  242215.978  1.
+ ntgbod 2005  0.  348993.371  1.
+ ntgbod 2006  0.  323867.916  1.
+ ntgbod 2007  0.  256151.302  1.
+ ntgbod 2008  0.  298644.13  1.
+ ntgbod 2009  0.  430472.441  1.
+ ntgbod 2010  0.  318642.443  1.
+ ntgbod 2011  0.  378983.31  1.
+ ntgbod 2012  0.  249191.462  1.
+ ntgbod 2013  0.  335594.885  1.
+ ntgbod 2014  0.  314492.529  1.
+  x 
+  x 
+ closing wdmlnd
+ mcnflo 1984  0.  2.73816069E+10  1.
+ mcnflo 1985  0.  3.00876542E+10  1.
+ mcnflo 1986  0.  2.03207448E+10  1.
+ mcnflo 1987  0.  8.05733246E+09  1.
+ mcnflo 1988  0.  2.90215587E+10  1.
+ mcnflo 1989  0.  6.41218061E+10  1.
+ mcnflo 1990  0.  4.030237E+10  1.
+ mcnflo 1991  0.  3.31497885E+10  1.
+ mcnflo 1992  0.  2.2205447E+10  1.
+ mcnflo 1993  0.  2.21621235E+10  1.
+ mcnflo 1994  0.  2.51141098E+10  1.
+ mcnflo 1995  0.  1.88971247E+10  1.
+ mcnflo 1996  0.  3.63054677E+10  1.
+ mcnflo 1997  0.  2.210756E+10  1.
+ mcnflo 1998  0.  2.05203086E+10  1.
+ mcnflo 1999  0.  3.04413582E+10  1.
+ mcnflo 2000  0.  2.24014419E+10  1.
+ mcnflo 2001  0.  2.32030368E+10  1.
+ mcnflo 2002  0.  4.46879686E+10  1.
+ mcnflo 2003  0.  5.93588044E+10  1.
+ mcnflo 2004  0.  3.47425723E+10  1.
+ mcnflo 2005  0.  4.58366282E+10  1.
+ mcnflo 2006  0.  3.93843204E+10  1.
+ mcnflo 2007  0.  1.09559268E+10  1.
+ mcnflo 2008  0.  9.77614421E+09  1.
+ mcnflo 2009  0.  1.63015805E+10  1.
+ mcnflo 2010  0.  1.10053994E+10  1.
+ mcnflo 2011  0.  1.69879753E+10  1.
+ mcnflo 2012  0.  1.20090838E+10  1.
+ mcnflo 2013  0.  2.06157766E+10  1.
+ mcnflo 2014  0.  1.53915985E+10  1.
+ mcnsed 1984  0.  72.8055304  1.
+ mcnsed 1985  0.  101.35872  1.
+ mcnsed 1986  0.  77.1826232  1.
+ mcnsed 1987  0.  27.972214  1.
+ mcnsed 1988  0.  95.0054901  1.
+ mcnsed 1989  0.  225.404518  1.
+ mcnsed 1990  0.  130.054286  1.
+ mcnsed 1991  0.  132.369098  1.
+ mcnsed 1992  0.  81.1055834  1.
+ mcnsed 1993  0.  67.5284413  1.
+ mcnsed 1994  0.  62.7934605  1.
+ mcnsed 1995  0.  69.2059359  1.
+ mcnsed 1996  0.  145.459767  1.
+ mcnsed 1997  0.  117.33871  1.
+ mcnsed 1998  0.  76.1384068  1.
+ mcnsed 1999  0.  131.438902  1.
+ mcnsed 2000  0.  81.7812281  1.
+ mcnsed 2001  0.  88.0113303  1.
+ mcnsed 2002  0.  185.016277  1.
+ mcnsed 2003  0.  236.927733  1.
+ mcnsed 2004  0.  148.78928cch ctg ccn cmo cfr hfr 3  1.
+ mcnsed 2005  0.  183.435434  1.
+ mcnsed 2006  0.  122.319338  1.
+ mcnsed 2007  0.  23.9318542  1.
+ mcnsed 2008  0.  34.4859898  1.
+ mcnsed 2009  0.  62.2834594  1.
+ mcnsed 2010  0.  35.6046979  1.
+ mcnsed 2011  0.  60.7822533  1.
+ mcnsed 2012  0.  46.6426336  1.
+ mcnsed 2013  0.  79.8535047  1.
+ mcnsed 2014  0.  57.0673368  1.
+ mcntnx 1984  0.  6595.5208  1.
+ mcntnx 1985  0.  6652.01219  1.
+ mcntnx 1986  0.  6134.24695  1.
+ mcntnx 1987  0.  2390.98612  1.
+ mcntnx 1988  0.  7101.36545  1.
+ mcntnx 1989  0.  13061.9322  1.
+ mcntnx 1990  0.  8693.6221  1.
+ mcntnx 1991  0.  8287.51074  1.
+ mcntnx 1992  0.  5271.35778  1.
+ mcntnx 1993  0.  5789.11258  1.
+ mcntnx 1994  0.  6527.2852  1.
+ mcntnx 1995  0.  4795.60058  1.
+ mcntnx 1996  0.  8161.23825  1.
+ mcntnx 1997  0.  5475.09153  1.
+ mcntnx 1998  0.  5415.19334  1.
+ mcntnx 1999  0.  6771.69696  1.
+ mcntnx 2000  0.  5346.32797  1.
+ mcntnx 2001  0.  4874.00498  1.
+ mcntnx 2002  0.  9519.15709  1.
+ mcntnx 2003  0.  13418.2911  1.
+ mcntnx 2004  0.  8066.73336  1.
+ mcntnx 2005  0.  10164.7442  1.
+ mcntnx 2006  0.  6892.96924  1.
+ mcntnx 2007  0.  2784.45432  1.
+ mcntnx 2008  0.  2453.78115  1.
+ mcntnx 2009  0.  3412.97093  1.
+ mcntnx 2010  0.  2499.83234  1.
+ mcntnx 2011  0.  3099.48278  1.
+ mcntnx 2012  0.  2876.32157  1.
+ mcntnx 2013  0.  4302.2565  1.
+ mcntnx 2014  0.  4000.21966  1.
+ mcntpx 1984  0.  555.934698  1.
+ mcntpx 1985  0.  718.707429  1.
+ mcntpx 1986  0.  634.58446  1.
+ mcntpx 1987  0.  247.758039  1.
+ mcntpx 1988  0.  763.676648  1.
+ mcntpx 1989  0.  1669.13965  1.
+ mcntpx 1990  0.  1030.07824  1.
+ mcntpx 1991  0.  1006.8534  1.
+ mcntpx 1992  0.  580.634068  1.
+ mcntpx 1993  0.  638.749107  1.
+ mcntpx 1994  0.  690.687759  1.
+ mcntpx 1995  0.  554.345715  1.
+ mcntpx 1996  0.  1128.07021  1.
+ mcntpx 1997  0.  806.11735  1.
+ mcntpx 1998  0.  679.254724  1.
+ mcntpx 1999  0.  992.767163  1.
+ mcntpx 2000  0.  661.167119  1.
+ mcntpx 2001  0.  625.382762  1.
+ mcntpx 2002  0.  1353.93458  1.
+ mcntpx 2003  0.  1865.81009  1.
+ mcntpx 2004  0.  1045.68315  1.
+ mcntpx 2005  0.  1443.45646  1.
+ mcntpx 2006  0.  994.592556  1.
+ mcntpx 2007  0.  371.056073  1.
+ mcntpx 2008  0.  297.944453  1.
+ mcntpx 2009  0.  474.089144  1.
+ mcntpx 2010  0.  300.543315  1.
+ mcntpx 2011  0.  459.776362  1.
+ mcntpx 2012  0.  385.833209  1.
+ mcntpx 2013  0.  565.030509  1.
+ mcntpx 2014  0.  452.970017  1.
+ mcnbod 1984  0.  61001.8422  1.
+ mcnbod 1985  0.  61541.6281  1.
+ mcnbod 1986  0.  55792.1046  1.
+ mcnbod 1987  0.  21566.9347  1.
+ mcnbod 1988  0.  64679.2373  1.
+ mcnbod 1989  0.  119545.525  1.
+ mcnbod 1990  0.  78946.2167  1.
+ mcnbod 1991  0.  75581.4437  1.
+ mcnbod 1992  0.  48639.7905  1.
+ mcnbod 1993  0.  51624.1448  1.
+ mcnbod 1994  0.  57458.1543  1.
+ mcnbod 1995  0.  43430.845  1.
+ mcnbod 1996  0.  73663.7074  1.
+ mcnbod 1997  0.  50349.2431  1.
+ mcnbod 1998  0.  48085.8387  1.
+ mcnbod 1999  0.  61199.4255  1.
+ mcnbod 2000  0.  48174.7796  1.
+ mcnbod 2001  0.  44715.623  1.
+ mcnbod 2002  0.  86634.3337  1.
+ mcnbod 2003  0.  120726.159  1.
+ mcnbod 2004  0.  74095.6061  1.
+ mcnbod 2005  0.  91328.0186  1.
+ mcnbod 2006  0.  62495.3407  1.
+ mcnbod 2007  0.  25009.3161  1.
+ mcnbod 2008  0.  22291.1928  1.
+ mcnbod 2009  0.  30905.518  1.
+ mcnbod 2010  0.  22439.2595  1.
+ mcnbod 2011  0.  28056.8861  1.
+ mcnbod 2012  0.  25774.3618  1.
+ mcnbod 2013  0.  39538.6806  1.
+ mcnbod 2014  0.  36318.6661  1.
+  x 
+  x 
+  x 
+  x 
+  x 
+ closing wdmlnd
+ hfrflo 1984  0.  4.00074109E+09  1.
+ hfrflo 1985  0.  3.83255269E+09  1.
+ hfrflo 1986  0.  3.58523733E+09  1.
+ hfrflo 1987  0.  3.93239134E+09  1.
+ hfrflo 1988  0.  4.48995528E+09  1.
+ hfrflo 1989  0.  7.960149E+09  1.
+ hfrflo 1990  0.  5.60881592E+09  1.
+ hfrflo 1991  0.  4.3318567E+09  1.
+ hfrflo 1992  0.  4.08855942E+09  1.
+ hfrflo 1993  0.  5.14982436E+09  1.
+ hfrflo 1994  0.  6.73127139E+09  1.
+ hfrflo 1995  0.  3.79267345E+09  1.
+ hfrflo 1996  0.  7.9833092E+09  1.
+ hfrflo 1997  0.  4.58004572E+09  1.
+ hfrflo 1998  0.  4.8333858E+09  1.
+ hfrflo 1999  0.  5.44929001E+09  1.
+ hfrflo 2000  0.  4.98855195E+09  1.
+ hfrflo 2001  0.  4.26182892E+09  1.
+ hfrflo 2002  0.  4.36620939E+09  1.
+ hfrflo 2003  0.  8.48768395E+09  1.
+ hfrflo 2004  0.  4.75359073E+09  1.
+ hfrflo 2005  0.  5.5544707E+09  1.
+ hfrflo 2006  0.  5.78967106E+09  1.
+ hfrflo 2007  0.  3.68785585E+09  1.
+ hfrflo 2008  0.  3.73585506E+09  1.
+ hfrflo 2009  0.  6.5811893E+09  1.
+ hfrflo 2010  0.  4.8198892E+09  1.
+ hfrflo 2011  0.  5.99952114E+09  1.
+ hfrflo 2012  0.  3.19954353E+09  1.
+ hfrflo 2013  0.  5.15398984E+09  1.
+ hfrflo 2014  0.  4.52394652E+09  1.
+ hfrsed 1984  0.  0.0216840472  1.
+ hfrsed 1985  0.  0.280085952  1.
+ hfrsed 1986  0.  0.204979852  1.
+ hfrsed 1987  0.  0.254144303  1.
+ hfrsed 1988  0.  0.180545373  1.
+ hfrsed 1989  0.  0.256090058  1.
+ hfrsed 1990  0.  0.785484892  1.
+ hfrsed 1991  0.  0.0477419982  1.
+ hfrsed 1992  0.  0.00957998773  1.
+ hfrsed 1993  0.  0.216500913  1.
+ hfrsed 1994  0.  0.107563263  1.
+ hfrsed 1995  0.  0.00719128945  1.
+ hfrsed 1996  0.  1.94622456  1.
+ hfrsed 1997  0.  0.799599627  1.
+ hfrsed 1998  0.  0.664793411  1.
+ hfrsed 1999  0.  3.16465144  1.
+ hfrsed 2000  0.  0.192361576  1.
+ hfrsed 2001  0.  0.353836956  1.
+ hfrsed 2002  0.  0.40391327  1.
+ hfrsed 2003  0.  0.902237344  1.
+ hfrsed 2004  0.  0.0712735384  1.
+ hfrsed 2005  0.  0.39624723  1.
+ hfrsed 2006  0.  0.48919146  1.
+ hfrsed 2007  0.  0.238224835  1.
+ hfrsed 2008  0.  0.030912838  1.
+ hfrsed 2009  0.  0.731294684  1.
+ hfrsed 2010  0.  0.22520622  1.
+ hfrsed 2011  0.  1.14375031  1.
+ hfrsed 2012  0.  0.869195467  1.
+ hfrsed 2013  0.  0.285015498  1.
+ hfrsed 2014  0.  0.0484525105  1.
+ hfrtnx 1984  0.  445.213444  1.
+ hfrtnx 1985  0.  400.694375  1.
+ hfrtnx 1986  0.  442.841655  1.
+ hfrtnx 1987  0.  485.137843  1.
+ hfrtnx 1988  0.  523.431138  1.
+ hfrtnx 1989  0.  853.12327  1.
+ hfrtnx 1990  0.  596.679828  1.
+ hfrtnx 1991  0.  508.939647  1.
+ hfrtnx 1992  0.  450.018539  1.
+ hfrtnx 1993  0.  628.593681  1.
+ hfrtnx 1994  0.  814.775413  1.
+ hfrtnx 1995  0.  430.939721  1.
+ hfrtnx 1996  0.  927.606451  1.
+ hfrtnx 1997  0.  546.995153  1.
+ hfrtnx 1998  0.  615.681961  1.
+ hfrtnx 1999  0.  609.48834  1.
+ hfrtnx 2000  0.  573.628213  1.
+ hfrtnx 2001  0.  473.337659  1.
+ hfrtnx 2002  0.  485.856027  1.
+ hfrtnx 2003  0.  957.278584  1.
+ hfrtnx 2004  0.  533.266264  1.
+ hfrtnx 2005  0.  631.71527  1.
+ hfrtnx 2006  0.  579.250733  1.
+ hfrtnx 2007  0.  440.708325  1.
+ hfrtnx 2008  0.  443.75649  1.
+ hfrtnx 2009  0.  726.006377  1.
+ hfrtnx 2010  0.  570.881751  1.
+ hfrtnx 2011  0.  605.118779  1.
+ hfrtnx 2012  0.  369.337647  1.
+ hfrtnx 2013  0.  557.643853  1.
+ hfrtnx 2014  0.  537.178954  1.
+ hfrtpx 1984  0.  1.45013363  1.
+ hfrtpx 1985  0.  2.27399188  1.
+ hfrtpx 1986  0.  2.75098412  1.
+ hfrtpx 1987  0.  2.72771535  1.
+ hfrtpx 1988  0.  2.77466071  1.
+ hfrtpx 1989  0.  5.20794663  1.
+ hfrtpx 1990  0.  4.09335567  1.
+ hfrtpx 1991  0.  2.67763184  1.
+ hfrtpx 1992  0.  1.37419422  1.
+ hfrtpx 1993  0.  4.17915481  1.
+ hfrtpx 1994  0.  6.07663787  1.
+ hfrtpx 1995  0.  1.5933668  1.
+ hfrtpx 1996  0.  9.07249985  1.
+ hfrtpx 1997  0.  5.22856006  1.
+ hfrtpx 1998  0.  6.65552655  1.
+ hfrtpx 1999  0.  6.52161732  1.
+ hfrtpx 2000  0.  4.38550585  1.
+ hfrtpx 2001  0.  3.6682635  1.
+ hfrtpx 2002  0.  3.32282791  1.
+ hfrtpx 2003  0.  10.2029285  1.
+ hfrtpx 2004  0.  3.53213536  1.
+ hfrtpx 2005  0.  5.50292544  1.
+ hfrtpx 2006  0.  4.71067914  1.
+ hfrtpx 2007  0.  4.3602525  1.
+ hfrtpx 2008  0.  2.26330554  1.
+ hfrtpx 2009  0.  5.95918816  1.
+ hfrtpx 2010  0.  4.15290787  1.
+ hfrtpx 2011  0.  6.59427583  1.
+ hfrtpx 2012  0.  3.69833998  1.
+ hfrtpx 2013  0.  3.59109595  1.
+ hfrtpx 2014  0.  3.03022777  1.
+ hfrbod 1984  0.  1080.4778  1.
+ hfrbod 1985  0.  1159.82874  1.
+ hfrbod 1986  0.  1326.298  1.
+ hfrbod 1987  0.  1396.47007  1.
+ hfrbod 1988  0.  1473.13202  1.
+ hfrbod 1989  0.  2534.99341  1.
+ hfrbod 1990  0.  1861.20509  1.
+ hfrbod 1991  0.  1425.10705  1.
+ hfrbod 1992  0.  1066.70229  1.
+ hfrbod 1993  0.  1929.06012  1.
+ hfrbod 1994  0.  2628.08785  1.
+ hfrbod 1995  0.  1072.90614  1.
+ hfrbod 1996  0.  3416.56496  1.
+ hfrbod 1997  0.  1987.57511  1.
+ hfrbod 1998  0.  2385.34863  1.
+ hfrbod 1999  0.  2359.97984  1for .
+ hfrbod 2000  0.  1866.69458  1.
+ hfrbod 2001  0.  1549.94826  1.
+ hfrbod 2002  0.  1504.96801  1.
+ hfrbod 2003  0.  3678.09904  1.
+ hfrbod 2004  0.  1627.0187  1.
+ hfrbod 2005  0.  2185.15196  1.
+ hfrbod 2006  0.  1938.88675  1.
+ hfrbod 2007  0.  1624.68499  1.
+ hfrbod 2008  0.  1221.31259  1.
+ hfrbod 2009  0.  2441.48208  1.
+ hfrbod 2010  0.  1813.51436  1.
+ hfrbod 2011  0.  2353.32121  1.
+ hfrbod 2012  0.  1372.50831  1.
+ hfrbod 2013  0.  1681.45537  1.
+ hfrbod 2014  0.  1534.86359  1.
+ closing wdmlnd
+ forflo 1984  0.  2.04167527E+11  1.
+ forflo 1985  0.  1.34038835E+11  1.
+ forflo 1986  0.  1.41364029E+11  1.
+ forflo 1987  0.  1.84100078E+11  1.
+ forflo 1988  0.  1.83826532E+11  1.
+ forflo 1989  0.  4.38555786E+11  1.
+ forflo 1990  0.  2.92094783E+11  1.
+ forflo 1991  0.  2.01895217E+11  1.
+ forflo 1992  0.  1.74032374E+11  1.
+ forflo 1993  0.  2.46741513E+11  1.
+ forflo 1994  0.  3.52466759E+11  1.
+ forflo 1995  0.  1.4992827E+11  1.
+ forflo 1996  0.  4.49372733E+11  1.
+ forflo 1997  0.  2.42853127E+11  1.
+ forflo 1998  0.  2.6724782E+11  1.
+ forflo 1999  0.  2.22941948E+11  1.
+ forflo 2000  0.  2.56573307E+11  1.
+ forflo 2001  0.  2.11977031E+11  1.
+ forflo 2002  0.  1.80343979E+11  1.
+ forflo 2003  0.  5.0233353E+11  1.
+ forflo 2004  0.  2.53796432E+11  1.
+ forflo 2005  0.  2.7356541E+11  1.
+ forflo 2006  0.  2.7203735E+11  1.
+ forflo 2007  0.  1.85866416E+11  1.
+ forflo 2008  0.  1.46836716E+11  1.
+ forflo 2009  0.  3.30909339E+11  1.
+ forflo 2010  0.  2.47768237E+11  1.
+ forflo 2011  0.  2.54804328E+11  1.
+ forflo 2012  0.  1.21908438E+11  1.
+ forflo 2013  0.  2.62160723E+11  1.
+ forflo 2014  0.  2.19446261E+11  1.
+ forsed 1984  0.  0.0372290674  1.
+ forsed 1985  0.  0.148600471  1.
+ forsed 1986  0.  0.0592347516  1.
+ forsed 1987  0.  0.0664848286  1.
+ forsed 1988  0.  0.707173888  1.
+ forsed 1989  0.  2.03107897  1.
+ forsed 1990  0.  6.65543418  1.
+ forsed 1991  0.  0.35885884  1.
+ forsed 1992  0.  0.0283534533  1.
+ forsed 1993  0.  1.85077157  1.
+ forsed 1994  0.  2.14251209  1.
+ forsed 1995  0.  0.0383678613  1.
+ forsed 1996  0.  15.0703153  1.
+ forsed 1997  0.  6.78411386  1.
+ forsed 1998  0.  9.7905785  1.
+ forsed 1999  0.  4.29256799  1.
+ forsed 2000  0.  3.90545324  1.
+ forsed 2001  0.  3.54585914  1.
+ forsed 2002  0.  2.83235347  1.
+ forsed 2003  0.  10.790821  1.
+ forsed 2004  0.  1.48026646  1.
+ forsed 2005  0.  6.2352691  1.
+ forsed 2006  0.  1.30336318  1.
+ forsed 2007  0.  5.22861437  1.
+ forsed 2008  0.  0.0408839464  1.
+ forsed 2009  0.  6.89941647  1.
+ forsed 2010  0.  2.12493082  1.
+ forsed 2011  0.  2.23191898  1.
+ forsed 2012  0.  0.384480773  1.
+ forsed 2013  0.  2.79445524  1.
+ forsed 2014  0.  0.731688034  1.
+ fortnx 1984  0.  2559.69575  1.
+ fortnx 1985  0.  1670.25298  1.
+ fortnx 1986  0.  2241.87762  1.
+ fortnx 1987  0.  3125.78429  1.
+ fortnx 1988  0.  2787.95513  1.
+ fortnx 1989  0.  7186.84689  1.
+ fortnx 1990  0.  6173.94158  1.
+ fortnx 1991  0.  3502.19989  1.
+ fortnx 1992  0.  2002.53913  1.
+ fortnx 1993  0.  5289.08968  1.
+ fortnx 1994  0.  9133.04597  1.
+ fortnx 1995  0.  1918.64191  1.
+ fortnx 1996  0.  11670.5063  1.
+ fortnx 1997  0.  6856.6268  1.
+ fortnx 1998  0.  9392.47348  1.
+ fortnx 1999  0.  4351.72207  1.
+ fortnx 2000  0.  5944.22804  1.
+ fortnx 2001  0.  4691.79249  1.
+ fortnx 2002  0.  3290.24529  1.
+ fortnx 2003  0.  14078.5929  1.
+ fortnx 2004  0.  5678.26668  1.
+ fortnx 2005  0.  6597.62473  1.
+ fortnx 2006  0.  4635.92631  1.
+ fortnx 2007  0.  6121.23005  1.
+ fortnx 2008  0.  2025.64531  1.
+ fortnx 2009  0.  7290.64394  1.
+ fortnx 2010  0.  5907.11125  1.
+ fortnx 2011  0.  4716.70159  1.
+ fortnx 2012  0.  2269.91438  1.
+ fortnx 2013  0.  4786.68701  1.
+ fortnx 2014  0.  4207.83576  1.
+ fortpx 1984  0.  37.4522867  1.
+ fortpx 1985  0.  25.896122  1.
+ fortpx 1986  0.  37.1633313  1.
+ fortpx 1987  0.  53.7617238  1.
+ fortpx 1988  0.  46.3353617  1.
+ fortpx 1989  0.  132.19462  1.
+ fortpx 1990  0.  128.801267  1.
+ fortpx 1991  0.  62.7751025  1.
+ fortpx 1992  0.  26.7266203  1.
+ fortpx 1993  0.  103.752867  1.
+ fortpx 1994  0.  194.618434  1.
+ fortpx 1995  0.  27.49wfp 77674  1.
+ fortpx 1996  0.  254.642085  1.
+ fortpx 1997  0.  151.421521  1.
+ fortpx 1998  0.  216.753375  1.
+ fortpx 1999  0.  84.8558741  1.
+ fortpx 2000  0.  123.914976  1.
+ fortpx 2001  0.  96.4654893  1.
+ fortpx 2002  0.  62.6513295  1.
+ fortpx 2003  0.  317.122714  1.
+ fortpx 2004  0.  117.373719  1.
+ fortpx 2005  0.  139.573814  1.
+ fortpx 2006  0.  87.5996444  1.
+ fortpx 2007  0.  140.988593  1.
+ fortpx 2008  0.  30.0499443  1.
+ fortpx 2009  0.  151.589298  1.
+ fortpx 2010  0.  121.81437  1.
+ fortpx 2011  0.  91.9589169  1.
+ fortpx 2012  0.  42.8368518  1.
+ fortpx 2013  0.  91.2392374  1.
+ fortpx 2014  0.  79.0407356  1.
+ forbod 1984  0.  11670.7686  1.
+ forbod 1985  0.  8318.95073  1.
+ forbod 1986  0.  12655.423  1.
+ forbod 1987  0.  19022.8581  1.
+ forbod 1988  0.  16008.3979  1.
+ forbod 1989  0.  49157.9018  1.
+ forbod 1990  0.  50621.0092  1.
+ forbod 1991  0.  22844.5302  1.
+ forbod 1992  0.  7797.72122  1.
+ forbod 1993  0.  39694.1292  1.
+ forbod 1994  0.  77400.7909  1.
+ forbod 1995  0.  8586.40237  1.
+ forbod 1996  0.  102465.943  1.
+ forbod 1997  0.  61053.864  1.
+ forbod 1998  0.  88856.4407  1.
+ forbod 1999  0.  32330.9406  1.
+ forbod 2000  0.  48772.5349  1.
+ forbod 2001  0.  37686.665  1.
+ forbod 2002  0.  23584.9781  1.
+ forbod 2003  0.  129245.498  1.
+ forbod 2004  0.  45986.3465  1.
+ forbod 2005  0.  55384.6771  1.
+ forbod 2006  0.  33000.3815  1.
+ forbod 2007  0.  57531.0456  1.
+ forbod 2008  0.  9670.28856  1.
+ forbod 2009  0.  59734.6534  1.
+ forbod 2010  0.  47650.8005  1.
+ forbod 2011  0.  35060.1576  1.
+ forbod 2012  0.  15908.1238  1.
+ forbod 2013  0.  34501.4762  1.
+ forbod 2014  0.  29504.8976  1.
+ closing wdmlnd
+ wfpflo 1984  0.  9.18146292E+10  1.
+ wfpflo 1985  0.  6.02969867E+10  1.
+ wfpflo 1986  0.  6.36022059E+10  1.
+ wfpflo 1987  0.  8.2828006E+10  1.
+ wfpflo 1988  0.  8.25676072E+10  1.
+ wfpflo 1989  0.  1.96600858E+11  1.
+ wfpflo 1990  0.  1.30736635E+11  1.
+ wfpflo 1991  0.  9.02334672E+10  1.
+ wfpflo 1992  0.  7.76635276E+10  1.
+ wfpflo 1993  0.  1.10073309E+11  1.
+ wfpflo 1994  0.  1.57193665E+11  1.
+ wfpflo 1995  0.  6.68337492E+10  1.
+ wfpflo 1996  0.  2.002158E+11  1.
+ wfpflo 1997  0.  1.0814263E+11  1.
+ wfpflo 1998  0.  1.189147E+11  1.
+ wfpflo 1999  0.  9.90800319E+10  1.
+ wfpflo 2000  0.  1.13920451E+11  1.
+ wfpflo 2001  0.  9.40283046E+10  1.
+ wfpflo 2002  0.  7.98782571E+10  1.
+ wfpflo 2003  0.  2.22221599E+11  1.
+ wfpflo 2004  0.  1.12151352E+11  1.
+ wfpflo 2005  0.  1.20795048E+11  1.
+ wfpflo 2006  0.  1.20083337E+11  1.
+ wfpflo 2007  0.  8.2052994E+10  1.
+ wfpflo 2008  0.  6.48053876E+10  1.
+ wfpflo 2009  0.  1.45955668E+11  1.
+ wfpflo 2010  0.  1.09227739E+11  1.
+ wfpflo 2011  0.  1.12205365E+11  1.
+ wfpflo 2012  0.  5.36453661E+10  1.
+ wfpflo 2013  0.  1.15428233E+11  1.
+ wfpflo 2014  0.  9.66353463E+10  1.
+ wfpsed 1984  0.  0.0167422955  1.
+ wfpsed 1985  0.  0.066849173  1.
+ wfpsed 1986  0.  0.0266509217  1.
+ wfpsed 1987  0.  0.0299145937  1.
+ wfpsed 1988  0.  0.317808235  1.
+ wfpsed 1989  0.  0.910896023  1.
+ wfpsed 1990  0.  2.97909662  1.
+ wfpsed 1991  0.  0.160421522  1.
+ wfpsed 1992  0.  0.0126540828  1.
+ wfpsed 1993  0.  0.825686661  1.
+ wfpsed 1994  0.  0.955571974  1.
+ wfpsed 1995  0.  0.0171053683  1.
+ wfpsed 1996  0.  6.71319208  1.
+ wfpsed 1997  0.  3.02113579  1.
+ wfpsed 1998  0.  4.35691733  1.
+ wfpsed 1999  0.  1.90745374  1.
+ wfpsed 2000  0.  1.73439726  1.
+ wfpsed 2001  0.  1.57289911  1.
+ wfpsed 2002  0.  1.2540743  1.
+ wfpsed 2003  0.  4.77370858  1.
+ wfpsed 2004  0.  0.654296796  1.
+ wfpsed 2005  0.  2.75341163  1.
+ wfpsed 2006  0.  0.575306739  1.
+ wfpsed 2007  0.  2.30826439  1.
+ wfpsed 2008  0.  0.018045201  1.
+ wfpsed 2009  0.  3.04263509  1.
+ wfpsed 2010  0.  0.936887082  1.
+ wfpsed 2011  0.  0.983105054  1.
+ wfpsed 2012  0.  0.169210137  1.
+ wfpsed 2013  0.  1.23045194  1.
+ wfpsed 2014  0.  0.322206111  1.
+ wfptnx 1984  0.  1151.09264  1.
+ wfptnx 1985  0.  751.35146  1.
+ wfptnx 1986  0.  1008.65723  1.
+ wfptnx 1987  0.  1406.3661  1.
+ wfptnx 1988  0.  1252.43235  1.
+ wfptnx 1989  0.  3222.32472  1.
+ wfptnx 1990  0.  2763.60514  1.
+ wfptnx 19wto 91  0.  1565.42511  1.
+ wfptnx 1992  0.  893.688981  1.
+ wfptnx 1993  0.  2359.5629  1.
+ wfptnx 1994  0.  4073.30326  1.
+ wfptnx 1995  0.  855.309352  1.
+ wfptnx 1996  0.  5199.41839  1.
+ wfptnx 1997  0.  3053.47597  1.
+ wfptnx 1998  0.  4179.55488  1.
+ wfptnx 1999  0.  1934.14725  1.
+ wfptnx 2000  0.  2639.55394  1.
+ wfptnx 2001  0.  2081.3139  1.
+ wfptnx 2002  0.  1457.16712  1.
+ wfptnx 2003  0.  6228.32092  1.
+ wfptnx 2004  0.  2509.51478  1.
+ wfptnx 2005  0.  2913.36942  1.
+ wfptnx 2006  0.  2046.40636  1.
+ wfptnx 2007  0.  2702.29797  1.
+ wfptnx 2008  0.  894.020352  1.
+ wfptnx 2009  0.  3215.5022  1.
+ wfptnx 2010  0.  2604.33518  1.
+ wfptnx 2011  0.  2077.21766  1.
+ wfptnx 2012  0.  998.903664  1.
+ wfptnx 2013  0.  2107.51464  1.
+ wfptnx 2014  0.  1852.96233  1.
+ wfptpx 1984  0.  16.8422807  1.
+ wfptpx 1985  0.  11.6492025  1.
+ wfptpx 1986  0.  16.7204071  1.
+ wfptpx 1987  0.  24.1890078  1.
+ wfptpx 1988  0.  20.8163688  1.
+ wfptpx 1989  0.  59.2746461  1.
+ wfptpx 1990  0.  57.6554494  1.
+ wfptpx 1991  0.  28.0604033  1.
+ wfptpx 1992  0.  11.9275723  1.
+ wfptpx 1993  0.  46.2864737  1.
+ wfptpx 1994  0.  86.799713  1.
+ wfptpx 1995  0.  12.2584402  1.
+ wfptpx 1996  0.  113.444794  1.
+ wfptpx 1997  0.  67.4337165  1.
+ wfptpx 1998  0.  96.453949  1.
+ wfptpx 1999  0.  37.7151019  1.
+ wfptpx 2000  0.  55.026291  1.
+ wfptpx 2001  0.  42.7932593  1.
+ wfptpx 2002  0.  27.7448155  1.
+ wfptpx 2003  0.  140.293863  1.
+ wfptpx 2004  0.  51.8751996  1.
+ wfptpx 2005  0.  61.6334244  1.
+ wfptpx 2006  0.  38.6684332  1.
+ wfptpx 2007  0.  62.2413187  1.
+ wfptpx 2008  0.  13.2626394  1.
+ wfptpx 2009  0.  66.8556178  1.
+ wfptpx 2010  0.  53.706663  1.
+ wfptpx 2011  0.  40.4990656  1.
+ wfptpx 2012  0.  18.8511482  1.
+ wfptpx 2013  0.  40.1716053  1.
+ wfptpx 2014  0.  34.8063773  1.
+ wfpbod 1984  0.  5248.33497  1.
+ wfpbod 1985  0.  3742.2312  1.
+ wfpbod 1986  0.  5693.89054  1.
+ wfpbod 1987  0.  8559.04235  1.
+ wfpbod 1988  0.  7192.15337  1.
+ wfpbod 1989  0.  22042.5196  1.
+ wfpbod 1990  0.  22659.7203  1.
+ wfpbod 1991  0.  10211.734  1.
+ wfpbod 1992  0.  3480.00077  1.
+ wfpbod 1993  0.  17708.5083  1.
+ wfpbod 1994  0.  34520.8296  1.
+ wfpbod 1995  0.  3827.86054  1.
+ wfpbod 1996  0.  45648.8533  1.
+ wfpbod 1997  0.  27189.7476  1.
+ wfpbod 1998  0.  39540.7932  1.
+ wfpbod 1999  0.  14369.9286  1.
+ wfpbod 2000  0.  21658.4349  1.
+ wfpbod 2001  0.  16718.3802  1.
+ wfpbod 2002  0.  10444.0944  1.
+ wfpbod 2003  0.  57177.6976  1.
+ wfpbod 2004  0.  20324.743  1.
+ wfpbod 2005  0.  24457.0438  1.
+ wfpbod 2006  0.  14567.0858  1.
+ wfpbod 2007  0.  25397.8661  1.
+ wfpbod 2008  0.  4268.03239  1.
+ wfpbod 2009  0.  26344.4866  1.
+ wfpbod 2010  0.  21008.9399  1.
+ wfpbod 2011  0.  15440.7611  1.
+ wfpbod 2012  0.  7000.73642  1.
+ wfpbod 2013  0.  15190.6261  1.
+ wfpbod 2014  0.  12992.7698  1.
+ closing wdmlnd
+ wtoflo 1984  0.  1.26520361E+11  1.
+ wtoflo 1985  0.  8.30891272E+10  1.
+ wtoflo 1986  0.  8.76437113E+10  1.
+ wtoflo 1987  0.  1.14136819E+11  1.
+ wtoflo 1988  0.  1.13777989E+11  1.
+ wtoflo 1989  0.  2.70915569E+11  1.
+ wtoflo 1990  0.  1.80154789E+11  1.
+ wtoflo 1991  0.  1.24341518E+11  1.
+ wtoflo 1992  0.  1.0702018E+11  1.
+ wtoflo 1993  0.  1.51680796E+11  1.
+ wtoflo 1994  0.  2.16612539E+11  1.
+ wtoflo 1995  0.  9.20967629E+10  1.
+ wtoflo 1996  0.  2.75896944E+11  1.
+ wtoflo 1997  0.  1.49020322E+11  1.
+ wtoflo 1998  0.  1.63864216E+11  1.
+ wtoflo 1999  0.  1.36532086E+11  1.
+ wtoflo 2000  0.  1.56982139E+11  1.
+ wtoflo 2001  0.  1.29570805E+11  1.
+ wtoflo 2002  0.  1.10072077E+11  1.
+ wtoflo 2003  0.  3.06220895E+11  1.
+ wtoflo 2004  0.  1.54544328E+11  1.
+ wtoflo 2005  0.  1.66455327E+11  1.
+ wtoflo 2006  0.  1.65474595E+11  1.
+ wtoflo 2007  0.  1.13068861E+11  1.
+ wtoflo 2008  0.  8.93016914E+10  1.
+ wtoflo 2009  0.  2.01126614E+11  1.
+ wtoflo 2010  0.  1.50515604E+11  1.
+ wtoflo 2011  0.  1.5461877E+11  1.
+ wtoflo 2012  0.  7.39029012E+10  1.
+ wtoflo 2013  0.  1.58856311E+11  1.
+ wtoflo 2014  0.  1.32966239E+11  1.
+ wtosed 1984  0.  0.023070847  1.
+ wtosed 1985  0.  0.0921180301  1.
+ wtosed 1986  0.  0.0367249192  1.
+ wtosed 1987 osp  0.  0.0412222383  1.
+ wtosed 1988  0.  0.437938996  1.
+ wtosed 1989  0.  1.25521332  1.
+ wtosed 1990  0.  4.10518856  1.
+ wtosed 1991  0.  0.221060546  1.
+ wtosed 1992  0.  0.0174373035  1.
+ wtosed 1993  0.  1.13779451  1.
+ wtosed 1994  0.  1.31677607  1.
+ wtosed 1995  0.  0.0235711605  1.
+ wtosed 1996  0.  9.25076451  1.
+ wtosed 1997  0.  4.16311925  1.
+ wtosed 1998  0.  6.00382348  1.
+ wtosed 1999  0.  2.62846687  1.
+ wtosed 2000  0.  2.38999572  1.
+ wtosed 2001  0.  2.16745153  1.
+ wtosed 2002  0.  1.72811177  1.
+ wtosed 2003  0.  6.57815955  1.
+ wtosed 2004  0.  0.901619573  1.
+ wtosed 2005  0.  3.79419579  1.
+ wtosed 2006  0.  0.792771526  1.
+ wtosed 2007  0.  3.1807835  1.
+ wtosed 2008  0.  0.0248662507  1.
+ wtosed 2009  0.  4.19274511  1.
+ wtosed 2010  0.  1.29102862  1.
+ wtosed 2011  0.  1.3547169  1.
+ wtosed 2012  0.  0.233024401  1.
+ wtosed 2013  0.  1.69326681  1.
+ wtosed 2014  0.  0.443342287  1.
+ wtotnx 1984  0.  1586.20322  1.
+ wtotnx 1985  0.  1035.36084  1.
+ wtotnx 1986  0.  1389.92766  1.
+ wtotnx 1987  0.  1937.96959  1.
+ wtotnx 1988  0.  1725.84922  1.
+ wtotnx 1989  0.  4440.35676  1.
+ wtotnx 1990  0.  3808.24164  1.
+ wtotnx 1991  0.  2157.15231  1.
+ wtotnx 1992  0.  1231.50157  1.
+ wtotnx 1993  0.  3251.47283  1.
+ wtotnx 1994  0.  5613.00346  1.
+ wtotnx 1995  0.  1178.61445  1.
+ wtotnx 1996  0.  7164.78715  1.
+ wtotnx 1997  0.  4207.68355  1.
+ wtotnx 1998  0.  5759.41817  1.
+ wtotnx 1999  0.  2665.25107  1.
+ wtotnx 2000  0.  3637.29967  1.
+ wtotnx 2001  0.  2868.046  1.
+ wtotnx 2002  0.  2007.97331  1.
+ wtotnx 2003  0.  8582.61306  1.
+ wtotnx 2004  0.  3458.10603  1.
+ wtotnx 2005  0.  4014.61711  1.
+ wtotnx 2006  0.  2819.94375  1.
+ wtotnx 2007  0.  3723.76117  1.
+ wtotnx 2008  0.  1231.95821  1.
+ wtotnx 2009  0.  4430.95554  1.
+ wtotnx 2010  0.  3588.76857  1.
+ wtotnx 2011  0.  2862.40184  1.
+ wtotnx 2012  0.  1376.03075  1.
+ wtotnx 2013  0.  2900.51541  1.
+ wtotnx 2014  0.  2549.59961  1.
+ wtotpx 1984  0.  23.2086263  1.
+ wtotpx 1985  0.  16.0525791  1.
+ wtotpx 1986  0.  23.0406883  1.
+ wtotpx 1987  0.  33.3323992  1.
+ wtotpx 1988  0.  28.6849134  1.
+ wtotpx 1989  0.  81.6803365  1.
+ wtotpx 1990  0.  79.4490582  1.
+ wtotpx 1991  0.  38.6671651  1.
+ wtotpx 1992  0.  16.436169  1.
+ wtotpx 1993  0.  63.7826637  1.
+ wtotpx 1994  0.  119.609821  1.
+ wtotpx 1995  0.  16.8921042  1.
+ wtotpx 1996  0.  156.326663  1.
+ wtotpx 1997  0.  92.9235243  1.
+ wtotpx 1998  0.  132.913353  1.
+ wtotpx 1999  0.  51.9713383  1.
+ wtotpx 2000  0.  75.8261209  1.
+ wtotpx 2001  0.  58.9690159  1.
+ wtotpx 2002  0.  38.2323028  1.
+ wtotpx 2003  0.  193.324666  1.
+ wtotpx 2004  0.  71.4839139  1.
+ wtotpx 2005  0.  84.9307317  1.
+ wtotpx 2006  0.  53.2850153  1.
+ wtotpx 2007  0.  85.7684277  1.
+ wtotpx 2008  0.  18.2758897  1.
+ wtotpx 2009  0.  92.1269075  1.
+ wtotpx 2010  0.  74.00768  1.
+ wtotpx 2011  0.  55.8076266  1.
+ wtotpx 2012  0.  25.967103  1.
+ wtotpx 2013  0.  55.2867563  1.
+ wtotpx 2014  0.  47.8921307  1.
+ wtobod 1984  0.  7232.20431  1.
+ wtobod 1985  0.  5156.79437  1.
+ wtobod 1986  0.  7846.17882  1.
+ wtobod 1987  0.  11794.3529  1.
+ wtobod 1988  0.  9910.77437  1.
+ wtobod 1989  0.  30374.5494  1.
+ wtobod 1990  0.  31225.0491  1.
+ wtobod 1991  0.  14071.7478  1.
+ wtobod 1992  0.  4795.43175  1.
+ wtobod 1993  0.  24402.2797  1.
+ wtobod 1994  0.  47569.6289  1.
+ wtobod 1995  0.  5274.78433  1.
+ wtobod 1996  0.  62904.037  1.
+ wtobod 1997  0.  37467.4309  1.
+ wtobod 1998  0.  54487.1498  1.
+ wtobod 1999  0.  19801.7352  1.
+ wtobod 2000  0.  29845.2809  1.
+ wtobod 2001  0.  23037.8934  1.
+ wtobod 2002  0.  14391.9417  1.
+ wtobod 2003  0.  78790.7468  1.
+ wtobod 2004  0.  28007.4561  1.
+ wtobod 2005  0.  33701.757  1.
+ wtobod 2006  0.  20073.4136  1.
+ wtobod 2007  0.  34998.1974  1.
+ wtobod 2008  0.  5881.33994  1.
+ wtobod 2009  0.  36302.636  1.
+ wtobod 2010  0.  28950.2606  1.
+ wtobod 2011  0.  21277.3237  1.
+ wtobod 2012  0.  9643.14316  1.
+ wtobod 2013  0.  20906.2618  1.
+ wtobod 2014  0.  17877.4982  1.
+ closing wdmlnd
+ ospflo 1984  0.  6.90653961E+10  1.
+ ospflo 1985  0.  4.66260775E+10  1.
+ ospflo 1986  0.  4.7682705E+10  1.
+ ospflo 1987  0.  6.06573645E+10  1.
+ ospflo 1988  0.  6.02244542E+10  1.
+ ospflo 1989  0.  1.39659355E+11  1.
+ ospflo 1990  0.  9.06829586E+10  1.
+ ospflo 1991  0.  6.23451818E+10  1.
+ ospflo 1992  0.  5.44022758E+10  1.
+ ospflo 1993  0.  7.61892829E+10  1.
+ ospflo 1994  0.  1.07659318E+11  1.
+ ospflo 1995  0.  4.81414919E+10  1.
+ ospflo 1996  0.  1.37122619E+11  1.
+ ospflo 1997  0.  7.25012611E+10  1.
+ ospflo 1998  0.  8.02844658E+10  1.
+ ospflo 1999  0.  6.94673223E+10  1.
+ ospflo 2000  0.  7.77934191E+10  1.
+ ospflo 2001  0.  6.44659598E+10  1.
+ ospflo 2002  0.  5.4674413E+10  1.
+ ospflo 2003  0.  1.47673432E+11  1.
+ ospflo 2004  0.  7.38064203E+10  1.
+ ospflo 2005  0.  8.20977857E+10  1.
+ ospflo 2006  0.  8.12753408E+10  1.
+ ospflo 2007  0.  5.53237048E+10  1.
+ ospflo 2008  0.  4.48743487E+10  1.
+ ospflo 2009  0.  9.75792134E+10  1.
+ ospflo 2010  0.  7.04416374E+10  1.
+ ospflo 2011  0.  7.48142792E+10  1.
+ ospflo 2012  0.  3.61200065E+10  1.
+ ospflo 2013  0.  7.50200328E+10  1.
+ ospflo 2014  0.  6.12746091E+10  1.
+ ospsed 1984  0.  18.8428391  1.
+ ospsed 1985  0.  27.748104  1.
+ ospsed 1986  0.  26.4046761  1.
+ ospsed 1987  0.  25.9544053  1.
+ ospsed 1988  0.  22.4136655  1.
+ ospsed 1989  0.  64.728577  1.
+ ospsed 1990  0.  43.0066083  1.
+ ospsed 1991  0.  26.3446998  1.
+ ospsed 1992  0.  6.40084966  1.
+ ospsed 1993  0.  28.6563818  1.
+ ospsed 1994  0.  42.2836524  1.
+ ospsed 1995  0.  7.86726014  1.
+ ospsed 1996  0.  97.3102598  1.
+ ospsed 1997  0.  78.1453798  1.
+ ospsed 1998  0.  66.8224234  1.
+ ospsed 1999  0.  67.493276  1.
+ ospsed 2000  0.  36.2979193  1.
+ ospsed 2001  0.  46.3221638  1.
+ ospsed 2002  0.  32.6907418  1.
+ ospsed 2003  0.  116.728142  1.
+ ospsed 2004  0.  28.9245403  1.
+ ospsed 2005  0.  53.8266817  1.
+ ospsed 2006  0.  52.6983867  1.
+ ospsed 2007  0.  40.4295973  1.
+ ospsed 2008  0.  11.5926052  1.
+ ospsed 2009  0.  51.5447421  1.
+ ospsed 2010  0.  32.3873298  1.
+ ospsed 2011  0.  65.4884195  1.
+ ospsed 2012  0.  37.0282358  1.
+ ospsed 2013  0.  49.3138958  1.
+ ospsed 2014  0.  30.6853741  1.
+ osptnx 1984  0.  1342.39921  1.
+ osptnx 1985  0.  971.900417  1.
+ osptnx 1986  0.  1263.62693  1.
+ osptnx 1987  0.  1703.15472  1.
+ osptnx 1988  0.  1375.20194  1.
+ osptnx 1989  0.  3297.50939  1.
+ osptnx 1990  0.  2493.95049  1.
+ osptnx 1991  0.  1540.77419  1.
+ osptnx 1992  0.  903.745718  1.
+ osptnx 1993  0.  2241.83108  1.
+ osptnx 1994  0.  3524.35386  1.
+ osptnx 1995  0.  876.236213  1.
+ osptnx 1996  0.  4791.14827  1.
+ osptnx 1997  0.  2835.75266  1.
+ osptnx 1998  0.  3685.64299  1.
+ osptnx 1999  0.  2189.13343  1.
+ osptnx 2000  0.  2430.79584  1.
+ osptnx 2001  0.  2059.6567  1.
+ osptnx 2002  0.  1485.49118  1.
+ osptnx 2003  0.  5583.80047  1.
+ osptnx 2004  0.  2064.17706  1.
+ osptnx 2005  0.  2723.51463  1.
+ osptnx 2006  0.  2085.48797  1.
+ osptnx 2007  0.  2316.27888  1.
+ osptnx 2008  0.  925.148531  1.
+ osptnx 2009  0.  2861.72297  1.
+ osptnx 2010  0.  2221.88004  1.
+ osptnx 2011  0.  2206.02821  1.
+ osptnx 2012  0.  1127.13092  1.
+ osptnx 2013  0.  2006.94376  1.
+ osptnx 2014  0.  1661.45857  1.
+ osptpx 1984  0.  30.8290401  1.
+ osptpx 1985  0.  25.3792947  1.
+ osptpx 1986  0.  33.7138686  1.
+ osptpx 1987  0.  45.8319539  1.
+ osptpx 1988  0.  34.3492423  1.
+ osptpx 1989  0.  89.0169205  1.
+ osptpx 1990  0.  71.9111837  1.
+ osptpx 1991  0.  39.9670342  1.
+ osptpx 1992  0.  17.6507872  1.
+ osptpx 1993  0.  61.5346882  1.
+ osptpx 1994  0.  101.452557  1.
+ osptpx 1995  0.  18.0772471  1.
+ osptpx 1996  0.  147.155391  1.
+ osptpx 1997  0.  90.239747  1.
+ osptpx 1998  0.  118.019175  1.
+ osptpx 1999  0.  66.710036  1.
+ osptpx 2000  0.  70.4729055  1.
+ osptpx 2001  0.  61.8634921  1.
+ osptpx 2002  0.  42.0147427  1.
+ osptpx 2003  0.  177.172099  1.
+ osptpx 2004  0.  57.3328356  1.
+ osptpx 2005  0.  81.8206587  1.
+ osptpx 2006  0.  59.5825079  1.
+ osptpx 2007  0.  73.3229408  1.
+ osptpx 2008  0.  20.7265111  1.
+ osptpx 2009  0.  82.9344416  1.
+ osptpx 2010  0.  63.1106504  1.
+ osptpx 2011  0.  66.611324  1.
+ osptpx 2012  0.  34.0649661  1.
+ osptpx 2013  0.  57.0489527  1.
+ osptpx 2014  0.  4fsp 4.8440089  1.
+ ospbod 1984  0.  7398.77442  1.
+ ospbod 1985  0.  6445.30658  1.
+ ospbod 1986  0.  8801.41265  1.
+ ospbod 1987  0.  12146.4549  1.
+ ospbod 1988  0.  8711.63398  1.
+ ospbod 1989  0.  23652.3516  1.
+ ospbod 1990  0.  19771.4362  1.
+ ospbod 1991  0.  10387.6846  1.
+ ospbod 1992  0.  3792.2774  1.
+ ospbod 1993  0.  16608.5395  1.
+ ospbod 1994  0.  28124.9112  1.
+ ospbod 1995  0.  4053.60062  1.
+ ospbod 1996  0.  41722.3983  1.
+ ospbod 1997  0.  25751.4306  1.
+ ospbod 1998  0.  34091.2391  1.
+ ospbod 1999  0.  18600.8285  1.
+ ospbod 2000  0.  19550.8078  1.
+ ospbod 2001  0.  17285.0409  1.
+ ospbod 2002  0.  11401.8741  1.
+ ospbod 2003  0.  50918.1703  1.
+ ospbod 2004  0.  15616.7466  1.
+ ospbod 2005  0.  22977.1068  1.
+ ospbod 2006  0.  16245.8807  1.
+ ospbod 2007  0.  21064.8554  1.
+ ospbod 2008  0.  4973.34423  1.
+ ospbod 2009  0.  22959.7909  1.
+ ospbod 2010  0.  17363.2767  1.
+ ospbod 2011  0.  18533.8255  1.
+ ospbod 2012  0.  9402.19305  1.
+ ospbod 2013  0.  15508.4598  1.
+ ospbod 2014  0.  11951.0931  1.
+ ../../../tmp/wdm/land/fsp/P620170331WQg_S4/fsp_N10001_DE0_3791_0001.wdm                                                                                                                                 
+ closing wdmlnd
+ fspflo 1984  0.  96030447.5  1.
+ fspflo 1985  0.  107705563.  1.
+ fspflo 1986  0.  85333348.1  1.
+ fspflo 1987  0.  74309094.  1.
+ fspflo 1988  0.  109888799.  1.
+ fspflo 1989  0.  183730020.  1.
+ fspflo 1990  0.  139847191.  1.
+ fspflo 1991  0.  133375554.  1.
+ fspflo 1992  0.  119674491.  1.
+ fspflo 1993  0.  132386568.  1.
+ fspflo 1994  0.  151971507.  1.
+ fspflo 1995  0.  146103605.  1.
+ fspflo 1996  0.  241738605.  1.
+ fspflo 1997  0.  163399908.  1.
+ fspflo 1998  0.  157384272.  1.
+ fspflo 1999  0.  208934273.  1.
+ fspflo 2000  0.  160274250.  1.
+ fspflo 2001  0.  140453473.  1.
+ fspflo 2002  0.  158697235.  1.
+ fspflo 2003  0.  203366927.  1.
+ fspflo 2004  0.  157619744.  1.
+ fspflo 2005  0.  171876776.  1.
+ fspflo 2006  0.  213267569.  1.
+ fspflo 2007  0.  123566161.  1.
+ fspflo 2008  0.  156278250.  1.
+ fspflo 2009  0.  219233652.  1.
+ fspflo 2010  0.  161334393.  1.
+ fspflo 2011  0.  295138866.  1.
+ fspflo 2012  0.  525705369.  1.
+ fspflo 2013  0.  772298911.  1.
+ fspflo 2014  0.  614606070.  1.
+ fspsed 1984  0.  0.925687969  1.
+ fspsed 1985  0.  0.970006065  1.
+ fspsed 1986  0.  1.00941919  1.
+ fspsed 1987  0.  1.04029134  1.
+ fspsed 1988  0.  1.07355123  1.
+ fspsed 1989  0.  1.10806054  1.
+ fspsed 1990  0.  1.14676676  1.
+ fspsed 1991  0.  1.18674722  1.
+ fspsed 1992  0.  1.23998366  1.
+ fspsed 1993  0.  1.32421337  1.
+ fspsed 1994  0.  1.41062074  1.
+ fspsed 1995  0.  1.52417646  1.
+ fspsed 1996  0.  1.62007011  1.
+ fspsed 1997  0.  1.68637176  1.
+ fspsed 1998  0.  1.61650248  1.
+ fspsed 1999  0.  1.48797564  1.
+ fspsed 2000  0.  1.3766196  1.
+ fspsed 2001  0.  1.27205134  1.
+ fspsed 2002  0.  1.17265273  1.
+ fspsed 2003  0.  1.19855909  1.
+ fspsed 2004  0.  1.23773792  1.
+ fspsed 2005  0.  1.27411183  1.
+ fspsed 2006  0.  1.30907112  1.
+ fspsed 2007  0.  1.33539819  1.
+ fspsed 2008  0.  1.32143636  1.
+ fspsed 2009  0.  1.19293738  1.
+ fspsed 2010  0.  1.12748608  1.
+ fspsed 2011  0.  1.54945058  1.
+ fspsed 2012  0.  4.04794178  1.
+ fspsed 2013  0.  4.34532955  1.
+ fspsed 2014  0.  4.35621028  1.
+ fsptnx 1984  0.  719.229959  1.
+ fsptnx 1985  0.  769.118413  1.
+ fsptnx 1986  0.  813.88269  1.
+ fsptnx 1987  0.  874.321243  1.
+ fsptnx 1988  0.  976.285326  1.
+ fsptnx 1989  0.  1080.11931  1.
+ fsptnx 1990  0.  1188.76426  1.
+ fsptnx 1991  0.  1316.86256  1.
+ fsptnx 1992  0.  1444.2031  1.
+ fsptnx 1993  0.  1554.99258  1.
+ fsptnx 1994  0.  1714.38292  1.
+ fsptnx 1995  0.  1865.80413  1.
+ fsptnx 1996  0.  2049.49525  1.
+ fsptnx 1997  0.  2147.45699  1.
+ fsptnx 1998  0.  2106.23556  1.
+ fsptnx 1999  0.  2014.64593  1.
+ fsptnx 2000  0.  1991.37897  1.
+ fsptnx 2001  0.  1799.74951  1.
+ fsptnx 2002  0.  1706.82147  1.
+ fsptnx 2003  0.  1745.98054  1.
+ fsptnx 2004  0.  1746.57439  1.
+ fsptnx 2005  0.  1833.17534  1.
+ fsptnx 2006  0.498138043  1809.0575  0.999724627
+ fsptnx 2007  35.07549fnp 17  1434.67325  0.975551605
+ fsptnx 2008  222.555622  1690.98903  0.868387282
+ fsptnx 2009  234.954983  1654.51884  0.857991934
+ fsptnx 2010  153.910893  1522.62378  0.898917317
+ fsptnx 2011  87.7142051  2034.65238  0.956889868
+ fsptnx 2012  15.4406751  6107.8897  0.997472048
+ fsptnx 2013  0.672672927  6861.87017  0.99990195
+ fsptnx 2014  0.  6878.37117  1.
+ fsptpx 1984  0.  40.765369  1.
+ fsptpx 1985  0.  43.5930056  1.
+ fsptpx 1986  0.  46.1302078  1.
+ fsptpx 1987  0.  49.5558203  1.
+ fsptpx 1988  0.  55.3350522  1.
+ fsptpx 1989  0.  61.2202831  1.
+ fsptpx 1990  0.  67.3781885  1.
+ fsptpx 1991  0.  74.6386926  1.
+ fsptpx 1992  0.  81.856253  1.
+ fsptpx 1993  0.  88.1357038  1.
+ fsptpx 1994  0.  97.1698189  1.
+ fsptpx 1995  0.  105.752277  1.
+ fsptpx 1996  0.  116.163728  1.
+ fsptpx 1997  0.  121.716104  1.
+ fsptpx 1998  0.  119.379722  1.
+ fsptpx 1999  0.  114.188477  1.
+ fsptpx 2000  0.  112.869742  1.
+ fsptpx 2001  0.  106.560908  1.
+ fsptpx 2002  0.  98.0212465  1.
+ fsptpx 2003  0.  90.1562681  1.
+ fsptpx 2004  0.  86.0562679  1.
+ fsptpx 2005  0.  86.0196257  1.
+ fsptpx 2006  0.  86.8297313  1.
+ fsptpx 2007  0.  68.7884226  1.
+ fsptpx 2008  0.  71.2733559  1.
+ fsptpx 2009  0.  72.5114255  1.
+ fsptpx 2010  0.  72.143555  1.
+ fsptpx 2011  0.  100.611288  1.
+ fsptpx 2012  0.  333.93735  1.
+ fsptpx 2013  0.  364.642354  1.
+ fsptpx 2014  0.  365.519244  1.
+ fspbod 1984  0.  0.  1.
+ fspbod 1985  0.  0.  1.
+ fspbod 1986  0.  0.  1.
+ fspbod 1987  0.  0.  1.
+ fspbod 1988  0.  0.  1.
+ fspbod 1989  0.  0.  1.
+ fspbod 1990  0.  0.  1.
+ fspbod 1991  0.  0.  1.
+ fspbod 1992  0.  0.  1.
+ fspbod 1993  0.  0.  1.
+ fspbod 1994  0.  0.  1.
+ fspbod 1995  0.  0.  1.
+ fspbod 1996  0.  0.  1.
+ fspbod 1997  0.  0.  1.
+ fspbod 1998  0.  0.  1.
+ fspbod 1999  0.  0.  1.
+ fspbod 2000  0.  0.  1.
+ fspbod 2001  0.  0.  1.
+ fspbod 2002  0.  0.  1.
+ fspbod 2003  0.  0.  1.
+ fspbod 2004  0.  0.  1.
+ fspbod 2005  0.  0.  1.
+ fspbod 2006  0.  0.  1.
+ fspbod 2007  0.  0.  1.
+ fspbod 2008  0.  0.  1.
+ fspbod 2009  0.  0.  1.
+ fspbod 2010  0.  0.  1.
+ fspbod 2011  0.  0.  1.
+ fspbod 2012  0.  0.  1.
+ fspbod 2013  0.  0.  1.
+ fspbod 2014  0.  0.  1.
+ ../../../tmp/wdm/land/fnp/P620170331WQg_S4/fnp_N10001_DE0_3791_0001.wdm                                                                                                                                 
+ closing wdmlnd
+ fnpflo 1984  0.  820389472.  1.
+ fnpflo 1985  0.  862103034.  1.
+ fnpflo 1986  0.  645485807.  1.
+ fnpflo 1987  0.  536575174.  1.
+ fnpflo 1988  0.  771858445.  1.
+ fnpflo 1989  0.  1.25786354E+09  1.
+ fnpflo 1990  0.  931390004.  1.
+ fnpflo 1991  0.  863010180.  1.
+ fnpflo 1992  0.  751898736.  1.
+ fnpflo 1993  0.  810017306.  1.
+ fnpflo 1994  0.  908737229.  1.
+ fnpflo 1995  0.  852548305.  1.
+ fnpflo 1996  0.  1.38216928E+09  1.
+ fnpflo 1997  0.  924989822.  1.
+ fnpflo 1998  0.  920738223.  1.
+ fnpflo 1999  0.  1.28689197E+09  1.
+ fnpflo 2000  0.  1.03525677E+09  1.
+ fnpflo 2001  0.  956826239.  1.
+ fnpflo 2002  0.  1.1369762E+09  1.
+ fnpflo 2003  0.  1.41926307E+09  1.
+ fnpflo 2004  0.  1.06849282E+09  1.
+ fnpflo 2005  0.  1.13345171E+09  1.
+ fnpflo 2006  0.  1.36983368E+09  1.
+ fnpflo 2007  0.  777160668.  1.
+ fnpflo 2008  0.  971937364.  1.
+ fnpflo 2009  0.  1.35478479E+09  1.
+ fnpflo 2010  0.  1.00380594E+09  1.
+ fnpflo 2011  0.  1.19671805E+09  1.
+ fnpflo 2012  0.  493490579.  1.
+ fnpflo 2013  0.  655099115.  1.
+ fnpflo 2014  0.  520436515.  1.
+ fnpsed 1984  0.  7.9393497  1.
+ fnpsed 1985  0.  7.79699751  1.
+ fnpsed 1986  0.  7.65172637  1.
+ fnpsed 1987  0.  7.5454781  1.
+ fnpsed 1988  0.  7.55435653  1.
+ fnpsed 1989  0.  7.59558475  1.
+ fnpsed 1990  0.  7.64228451  1.
+ fnpsed 1991  0.  7.6927062  1.
+ fnpsed 1992  0.  7.80024326  1.
+ fnpsed 1993  0.  8.12156925  1.
+ fnpsed 1994  0.  8.46118413  1.
+ fnpsed 1995  0.  8.9043266  1.
+ fnpsed 1996  0.  9.27490132  1.
+ fnpsed 1997  0.  9.55642153  1.
+ fnpsed 1998  0.  9.4193646  1.
+ fnpsed 1999  0.  9.12592095  1.
+ fnpsed 2000  0.  8.86883247  1.
+ fnpsed 2001  0.  8.62618757  1.
+ fnpsed 2002  0.  8.38429528  1.
+ fnpsed 2003  0.  8.38489178  1.nir 
+ fnpsed 2004  0.  8.40243369  1.
+ fnpsed 2005  0.  8.41093626  1.
+ fnpsed 2006  0.  8.41271416  1.
+ fnpsed 2007  0.  8.40781381  1.
+ fnpsed 2008  0.  8.22001203  1.
+ fnpsed 2009  0.  7.37476847  1.
+ fnpsed 2010  0.  7.01035368  1.
+ fnpsed 2011  0.  6.44812809  1.
+ fnpsed 2012  0.  3.91883899  1.
+ fnpsed 2013  0.  3.68914272  1.
+ fnpsed 2014  0.  3.68875442  1.
+ fnptnx 1984  0.  7509.16187  1.
+ fnptnx 1985  0.  7565.18126  1.
+ fnptnx 1986  0.  7605.33723  1.
+ fnptnx 1987  0.  7765.09206  1.
+ fnptnx 1988  0.  7972.17416  1.
+ fnptnx 1989  0.  8197.68147  1.
+ fnptnx 1990  0.  8420.69532  1.
+ fnptnx 1991  0.  8708.21115  1.
+ fnptnx 1992  0.  8997.53054  1.
+ fnptnx 1993  0.  9450.02931  1.
+ fnptnx 1994  0.  10092.843  1.
+ fnptnx 1995  0.  10703.6493  1.
+ fnptnx 1996  0.  11423.6147  1.
+ fnptnx 1997  0.  11850.0273  1.
+ fnptnx 1998  0.  11607.1885  1.
+ fnptnx 1999  0.  11259.8732  1.
+ fnptnx 2000  0.  11124.4609  1.
+ fnptnx 2001  0.  10350.0795  1.
+ fnptnx 2002  0.  9914.97384  1.
+ fnptnx 2003  0.  9859.55959  1.
+ fnptnx 2004  0.  9609.42869  1.
+ fnptnx 2005  0.  9680.46378  1.
+ fnptnx 2006  1.95064969  9342.33127  0.999791205
+ fnptnx 2007  136.971454  7629.66073  0.982047498
+ fnptnx 2008  868.262135  8471.02219  0.897502124
+ fnptnx 2009  915.363183  8088.58438  0.886832714
+ fnptnx 2010  612.88452  7578.45069  0.919128001
+ fnptnx 2011  355.506537  6803.47454  0.947746277
+ fnptnx 2012  47.162787  2014.75069  0.976591229
+ fnptnx 2013  0.080961746  1873.49969  0.999956787
+ fnptnx 2014  0.  1873.11614  1.
+ fnptpx 1984  0.  347.331327  1.
+ fnptpx 1985  0.  351.683282  1.
+ fnptpx 1986  0.  354.838327  1.
+ fnptpx 1987  0.  363.876018  1.
+ fnptpx 1988  0.  380.864289  1.
+ fnptpx 1989  0.  397.45914  1.
+ fnptpx 1990  0.  413.124238  1.
+ fnptpx 1991  0.  431.924755  1.
+ fnptpx 1992  0.  450.042747  1.
+ fnptpx 1993  0.  470.998221  1.
+ fnptpx 1994  0.  502.486576  1.
+ fnptpx 1995  0.  531.185082  1.
+ fnptpx 1996  0.  566.421769  1.
+ fnptpx 1997  0.  585.484969  1.
+ fnptpx 1998  0.  575.256283  1.
+ fnptpx 1999  0.  559.545125  1.
+ fnptpx 2000  0.  555.515937  1.
+ fnptpx 2001  0.  530.40735  1.
+ fnptpx 2002  0.  496.072888  1.
+ fnptpx 2003  0.  461.348053  1.
+ fnptpx 2004  0.  440.424416  1.
+ fnptpx 2005  0.  432.520663  1.
+ fnptpx 2006  0.  429.384562  1.
+ fnptpx 2007  0.  353.882376  1.
+ fnptpx 2008  0.  355.345791  1.
+ fnptpx 2009  0.  349.270564  1.
+ fnptpx 2010  0.  348.415293  1.
+ fnptpx 2011  0.  324.878592  1.
+ fnptpx 2012  0.  93.7870178  1.
+ fnptpx 2013  0.  87.7396359  1.
+ fnptpx 2014  0.  87.7216677  1.
+ fnpbod 1984  0.  0.  1.
+ fnpbod 1985  0.  0.  1.
+ fnpbod 1986  0.  0.  1.
+ fnpbod 1987  0.  0.  1.
+ fnpbod 1988  0.  0.  1.
+ fnpbod 1989  0.  0.  1.
+ fnpbod 1990  0.  0.  1.
+ fnpbod 1991  0.  0.  1.
+ fnpbod 1992  0.  0.  1.
+ fnpbod 1993  0.  0.  1.
+ fnpbod 1994  0.  0.  1.
+ fnpbod 1995  0.  0.  1.
+ fnpbod 1996  0.  0.  1.
+ fnpbod 1997  0.  0.  1.
+ fnpbod 1998  0.  0.  1.
+ fnpbod 1999  0.  0.  1.
+ fnpbod 2000  0.  0.  1.
+ fnpbod 2001  0.  0.  1.
+ fnpbod 2002  0.  0.  1.
+ fnpbod 2003  0.  0.  1.
+ fnpbod 2004  0.  0.  1.
+ fnpbod 2005  0.  0.  1.
+ fnpbod 2006  0.  0.  1.
+ fnpbod 2007  0.  0.  1.
+ fnpbod 2008  0.  0.  1.
+ fnpbod 2009  0.  0.  1.
+ fnpbod 2010  0.  0.  1.
+ fnpbod 2011  0.  0.  1.
+ fnpbod 2012  0.  0.  1.
+ fnpbod 2013  0.  0.  1.
+ fnpbod 2014  0.  0.  1.
+ closing wdmlnd
+ nirflo 1984  0.  2.92629089E+10  1.
+ nirflo 1985  0.  3.3414312E+10  1.
+ nirflo 1986  0.  2.75532276E+10  1.
+ nirflo 1987  0.  2.58222192E+10  1.
+ nirflo 1988  0.  3.59163216E+10  1.
+ nirflo 1989  0.  6.05120022E+10  1.
+ nirflo 1990  0.  4.68474665E+10  1.
+ nirflo 1991  0.  4.54044638E+10  1.
+ nirflo 1992  0.  4.21171235E+10  1.
+ nirflo 1993  0.  4.46652833E+10  1.
+ nirflo 1994  0.  4.90052752E+10  1.
+ nirflo 1995  0.  4.51134149E+10  1.
+ nirflo 1996  0.  7.1757346E+10  1.
+ nirflo 1997  0.  4.7646907E+10  1.
+ nirflo 1998  0.  4.93641389E+10  1.
+ nirflo 1999  0.  7.30970393E+10  1.
+ nirflo 2000  0.  6.17274375E+10  1.
+ nirflo 2001  0.  5.9840059E+10  1.
+ nirflo 2002  0.  7.33562629E+10  1.
+ nirflo 2003  0.  9.36114881E+10  1.
+ nirflo 2004  0.  7.20959153E+10  1.
+ nirflo 2005  0.  7.83283549E+10  1.
+ nirflo 2006  0.  9.84535241E+10  1.
+ nirflo 2007  0.  5.79873784E+10  1.
+ nirflo 2008  0.  7.39496995E+10  1.
+ nirflo 2009  0.  1.04499285E+11  1.
+ nirflo 2010  0.  7.81958107E+10  1.
+ nirflo 2011  0.  1.01420734E+11  1.
+ nirflo 2012  0.  6.94999329E+10  1.
+ nirflo 2013  0.  9.73641328E+10  1.
+ nirflo 2014  0.  7.73407254E+10  1.
+ nirsed 1984  0.  9.43800101  1.
+ nirsed 1985  0.  8.99586332  1.
+ nirsed 1986  0.  9.64859794  1.
+ nirsed 1987  0.  10.3608956  1.
+ nirsed 1988  0.  12.897599  1.
+ nirsed 1989  0.  13.3972959  1.
+ nirsed 1990  0.  13.4563522  1.
+ nirsed 1991  0.  15.2461954  1.
+ nirsed 1992  0.  13.4770606  1.
+ nirsed 1993  0.  15.6363368  1.
+ nirsed 1994  0.  14.8898786  1.
+ nirsed 1995  0.  15.7326607  1.
+ nirsed 1996  0.  19.7708505  1.
+ nirsed 1997  0.  22.506916  1.
+ nirsed 1998  0.  18.7938336  1.
+ nirsed 1999  0.  21.2971297  1.
+ nirsed 2000  0.  18.5700781  1.
+ nirsed 2001  0.  18.6465459  1.
+ nirsed 2002  0.  21.7291819  1.
+ nirsed 2003  0.  26.3274592  1.
+ nirsed 2004  0.  23.5608979  1.
+ nirsed 2005  0.  23.1338839  1.
+ nirsed 2006  0.  20.9674844  1.
+ nirsed 2007  0.  20.0915756  1.
+ nirsed 2008  0.  23.1654104  1.
+ nirsed 2009  0.  24.9244455  1.
+ nirsed 2010  0.  22.548546  1.
+ nirsed 2011  0.  26.0955496  1.
+ nirsed 2012  0.  21.3293177  1.
+ nirsed 2013  0.  26.7620484  1.
+ nirsed 2014  0.  28.2168463  1.
+ nirtnx 1984  0.  5131.02049  1.
+ nirtnx 1985  0.  4764.46562  1.
+ nirtnx 1986  0.  4952.22925  1.
+ nirtnx 1987  0.  4902.10327  1.
+ nirtnx 1988  0.  5810.07934  1.
+ nirtnx 1989  0.  8692.82398  1.
+ nirtnx 1990  0.  6679.74716  1.
+ nirtnx 1991  0.  6808.15655  1.
+ nirtnx 1992  0.  6445.34911  1.
+ nirtnx 1993  0.  7771.74335  1.
+ nirtnx 1994  0.  9103.28054  1.
+ nirtnx 1995  0.  7314.81708  1.
+ nirtnx 1996  0.  12061.5613  1.
+ nirtnx 1997  0.  8415.35203  1.
+ nirtnx 1998  0.  8683.6547  1.
+ nirtnx 1999  0.  10489.4893  1.
+ nirtnx 2000  0.  9605.52404  1.
+ nirtnx 2001  0.  8516.19454  1.
+ nirtnx 2002  0.  10800.2295  1.
+ nirtnx 2003  0.  14472.5951  1.
+ nirtnx 2004  0.  9927.44758  1.
+ nirtnx 2005  0.  11962.0434  1.
+ nirtnx 2006  0.  12062.6829  1.
+ nirtnx 2007  0.  9052.94789  1.
+ nirtnx 2008  0.  10833.8149  1.
+ nirtnx 2009  0.  15039.3696  1.
+ nirtnx 2010  0.  10991.2674  1.
+ nirtnx 2011  0.  12843.9613  1.
+ nirtnx 2012  0.  9652.85066  1.
+ nirtnx 2013  0.  12968.6673  1.
+ nirtnx 2014  0.  11826.8069  1.
+ nirtpx 1984  0.  178.306081  1.
+ nirtpx 1985  0.  166.260181  1.
+ nirtpx 1986  0.  174.190536  1.
+ nirtpx 1987  0.  173.417749  1.
+ nirtpx 1988  0.  206.870011  1.
+ nirtpx 1989  0.  309.652953  1.
+ nirtpx 1990  0.  236.708358  1.
+ nirtpx 1991  0.  241.25301  1.
+ nirtpx 1992  0.  229.776184  1.
+ nirtpx 1993  0.  276.974723  1.
+ nirtpx 1994  0.  321.129555  1.
+ nirtpx 1995  0.  257.003436  1.
+ nirtpx 1996  0.  422.987238  1.
+ nirtpx 1997  0.  294.514014  1.
+ nirtpx 1998  0.  304.327077  1.
+ nirtpx 1999  0.  368.908191  1.
+ nirtpx 2000  0.  338.663876  1.
+ nirtpx 2001  0.  300.186237  1.
+ nirtpx 2002  0.  381.364236  1.
+ nirtpx 2003  0.  510.650844  1.
+ nirtpx 2004  0.  349.794214  1.
+ nirtpx 2005  0.  421.865265  1.
+ nirtpx 2006  0.  427.522008  1.
+ nirtpx 2007  0.  321.779857  1.
+ nirtpx 2008  0.  385.712889  1.
+ nirtpx 2009  0.  538.153543  1.
+ nirtpx 2010  0.  395.2872  1.
+ nirtpx 2011  0.  462.813958  1.
+ nirtpx 2012  0.  348.162625  1.
+ nirtpx 2013  0.  469.619689  1.
+ nirtpx 2014  0.  430.351545  1.
+ nirbod 1984  0.  55828.0557  1.
+ nirbod 1985  0.  51863.0489  1.
+ nirbod 1986  0.  53915.4025  1.
+ nirbod 1987  0.  53365.2999  1.
+ nirbod 1988  0.  63250.8638  1.
+ nirbod 1989  0.  94585.434  1.
+ nirbod 1990  0.  72701.3334  1.
+ nirbod 1991  0.  74108.4139  1.
+ nirbod 1992  0.  70164.5575  1.
+ nirbod 1993  0.  84581.195  1.
+ nirbod 1994  0.  99060.1737  1.
+ nirbod 1995  0.  79632.2325  1.
+ nirbod 1996  0.  131267.555  1.
+ nirbod 1997  0.  91606.1083  1.
+ nirbod 1998  0.  94536.5479  1.
+ nirbod 1999  0.  114185.437  1.
+ nirbod 2000  0.  104554.917  1.
+ nirbod 2001  0.  92695.3845  1.
+ nirbod 2002  0.  117570.614  1.
+ nirbod 2003  0.  157507.683 nnr  1.
+ nirbod 2004  0.  108059.237  1.
+ nirbod 2005  0.  130208.131  1.
+ nirbod 2006  0.  131304.077  1.
+ nirbod 2007  0.  98544.8035  1.
+ nirbod 2008  0.  117940.054  1.
+ nirbod 2009  0.  163702.434  1.
+ nirbod 2010  0.  119647.837  1.
+ nirbod 2011  0.  139761.596  1.
+ nirbod 2012  0.  105056.52  1.
+ nirbod 2013  0.  141164.371  1.
+ nirbod 2014  0.  128736.189  1.
+ closing wdmlnd
+ nnrflo 1984  0.  7.50308313E+10  1.
+ nnrflo 1985  0.  8.56546624E+10  1.
+ nnrflo 1986  0.  7.06126939E+10  1.
+ nnrflo 1987  0.  6.61616742E+10  1.
+ nnrflo 1988  0.  9.20074073E+10  1.
+ nnrflo 1989  0.  1.54989497E+11  1.
+ nnrflo 1990  0.  1.19973047E+11  1.
+ nnrflo 1991  0.  1.16262469E+11  1.
+ nnrflo 1992  0.  1.07829733E+11  1.
+ nnrflo 1993  0.  1.1432322E+11  1.
+ nnrflo 1994  0.  1.25396446E+11  1.
+ nnrflo 1995  0.  1.15396999E+11  1.
+ nnrflo 1996  0.  1.83487319E+11  1.
+ nnrflo 1997  0.  1.21793531E+11  1.
+ nnrflo 1998  0.  1.26152216E+11  1.
+ nnrflo 1999  0.  1.86744253E+11  1.
+ nnrflo 2000  0.  1.57654495E+11  1.
+ nnrflo 2001  0.  1.52788184E+11  1.
+ nnrflo 2002  0.  1.8725076E+11  1.
+ nnrflo 2003  0.  2.39104246E+11  1.
+ nnrflo 2004  0.  1.84285531E+11  1.
+ nnrflo 2005  0.  2.00390888E+11  1.
+ nnrflo 2006  0.  2.52133205E+11  1.
+ nnrflo 2007  0.  1.48636132E+11  1.
+ nnrflo 2008  0.  1.89483546E+11  1.
+ nnrflo 2009  0.  2.67591376E+11  1.
+ nnrflo 2010  0.  2.00112879E+11  1.
+ nnrflo 2011  0.  2.59360917E+11  1.
+ nnrflo 2012  0.  1.77618725E+11  1.
+ nnrflo 2013  0.  2.48820067E+11  1.
+ nnrflo 2014  0.  1.97648954E+11  1.
+ nnrsed 1984  0.  24.1995651  1.
+ nnrsed 1985  0.  23.0606862  1.
+ nnrsed 1986  0.  24.7275177  1.
+ nnrsed 1987  0.  26.5471298  1.
+ nnrsed 1988  0.  33.0403696  1.
+ nnrsed 1989  0.  34.3148908  1.
+ nnrsed 1990  0.  34.4607862  1.
+ nnrsed 1991  0.  39.0395188  1.
+ nnrsed 1992  0.  34.5048085  1.
+ nnrsed 1993  0.  40.0228637  1.
+ nnrsed 1994  0.  38.1020386  1.
+ nnrsed 1995  0.  40.2445886  1.
+ nnrsed 1996  0.  50.5562153  1.
+ nnrsed 1997  0.  57.5332498  1.
+ nnrsed 1998  0.  48.0288678  1.
+ nnrsed 1999  0.  54.4101203  1.
+ nnrsed 2000  0.  47.4289893  1.
+ nnrsed 2001  0.  47.6111923  1.
+ nnrsed 2002  0.  55.4670693  1.
+ nnrsed 2003  0.  67.2430664  1.
+ nnrsed 2004  0.  60.2220274  1.
+ nnrsed 2005  0.  59.1810718  1.
+ nnrsed 2006  0.  53.6947088  1.
+ nnrsed 2007  0.  51.4977877  1.
+ nnrsed 2008  0.  59.3589359  1.
+ nnrsed 2009  0.  63.8253154  1.
+ nnrsed 2010  0.  57.7079478  1.
+ nnrsed 2011  0.  66.7381478  1.
+ nnrsed 2012  0.  54.5121992  1.
+ nnrsed 2013  0.  68.3920886  1.
+ nnrsed 2014  0.  72.1098797  1.
+ nnrtnx 1984  0.  10425.2317  1.
+ nnrtnx 1985  0.  9677.58918  1.
+ nnrtnx 1986  0.  10055.1208  1.
+ nnrtnx 1987  0.  9950.29468  1.
+ nnrtnx 1988  0.  11789.6659  1.
+ nnrtnx 1989  0.  17636.3549  1.
+ nnrtnx 1990  0.  13551.7345  1.
+ nnrtnx 1991  0.  13810.6314  1.
+ nnrtnx 1992  0.  13071.2439  1.
+ nnrtnx 1993  0.  15757.483  1.
+ nnrtnx 1994  0.  18456.2449  1.
+ nnrtnx 1995  0.  14825.9672  1.
+ nnrtnx 1996  0.  24439.5242  1.
+ nnrtnx 1997  0.  17046.231  1.
+ nnrtnx 1998  0.  17585.0206  1.
+ nnrtnx 1999  0.  21233.8454  1.
+ nnrtnx 2000  0.  19437.8974  1.
+ nnrtnx 2001  0.  17228.6409  1.
+ nnrtnx 2002  0.  21842.8847  1.
+ nnrtnx 2003  0.  29286.6479  1.
+ nnrtnx 2004  0.  20104.9526  1.
+ nnrtnx 2005  0.  24246.1294  1.
+ nnrtnx 2006  0.  24472.8117  1.
+ nnrtnx 2007  0.  18381.6707  1.
+ nnrtnx 2008  0.  21990.1557  1.
+ nnrtnx 2009  0.  30503.5752  1.
+ nnrtnx 2010  0.  22278.163  1.
+ nnrtnx 2011  0.  26013.3476  1.
+ nnrtnx 2012  0.  19536.9383  1.
+ nnrtnx 2013  0.  26244.3307  1.
+ nnrtnx 2014  0.  23931.1031  1.
+ nnrtpx 1984  0.  380.110386  1.
+ nnrtpx 1985  0.  354.345971  1.
+ nnrtpx 1986  0.  371.153161  1.
+ nnrtpx 1987  0.  369.42832  1.
+ nnrtpx 1988  0.  440.605458  1.
+ nnrtpx 1989  0.  659.402336  1.
+ nnrtpx 1990  0.  503.990073  1.
+ nnrtpx 1991  0.  513.604409  1.
+ nnrtpx 1992  0.  489.104945  1.
+ nnrtpx 1993  0.  589.430534  1.
+ nnrtpx 1994  0.  683.205894  1.
+ nnrtpx 1995  0.  546.572467  1.
+ nnrtpx 1996  0.  899.265471  1.
+ nnrtpx 1997  0.  625.9139  1.
+ nnrtpx 1998  0.  646.614059  1.
+ nnrtpx 1999  0.  783.594457  1.
+ nci nnrtpx 2000  0.  719.146488  1.
+ nnrtpx 2001  0.  637.255815  1.
+ nnrtpx 2002  0.  809.379606  1.
+ nnrtpx 2003  0.  1084.35297  1.
+ nnrtpx 2004  0.  743.348946  1.
+ nnrtpx 2005  0.  897.292658  1.
+ nnrtpx 2006  0.  910.254006  1.
+ nnrtpx 2007  0.  685.722703  1.
+ nnrtpx 2008  0.  821.700038  1.
+ nnrtpx 2009  0.  1145.72578  1.
+ nnrtpx 2010  0.  841.08627  1.
+ nnrtpx 2011  0.  984.047975  1.
+ nnrtpx 2012  0.  739.785832  1.
+ nnrtpx 2013  0.  997.80354  1.
+ nnrtpx 2014  0.  914.375868  1.
+ nnrbod 1984  0.  113422.515  1.
+ nnrbod 1985  0.  105335.736  1.
+ nnrbod 1986  0.  109462.494  1.
+ nnrbod 1987  0.  108312.237  1.
+ nnrbod 1988  0.  128336.735  1.
+ nnrbod 1989  0.  191881.333  1.
+ nnrbod 1990  0.  147482.506  1.
+ nnrbod 1991  0.  150319.726  1.
+ nnrbod 1992  0.  142283.058  1.
+ nnrbod 1993  0.  171476.557  1.
+ nnrbod 1994  0.  200819.683  1.
+ nnrbod 1995  0.  161389.128  1.
+ nnrbod 1996  0.  265956.021  1.
+ nnrbod 1997  0.  185543.531  1.
+ nnrbod 1998  0.  191428.356  1.
+ nnrbod 1999  0.  231126.771  1.
+ nnrbod 2000  0.  211561.736  1.
+ nnrbod 2001  0.  187511.441  1.
+ nnrbod 2002  0.  237761.224  1.
+ nnrbod 2003  0.  318704.343  1.
+ nnrbod 2004  0.  218822.422  1.
+ nnrbod 2005  0.  263900.186  1.
+ nnrbod 2006  0.  266368.333  1.
+ nnrbod 2007  0.  200075.17  1.
+ nnrbod 2008  0.  239371.981  1.
+ nnrbod 2009  0.  332001.56  1.
+ nnrbod 2010  0.  242493.889  1.
+ nnrbod 2011  0.  283038.724  1.
+ nnrbod 2012  0.  212611.273  1.
+ nnrbod 2013  0.  285646.376  1.
+ nnrbod 2014  0.  260470.865  1.
+ closing wdmlnd
+ nciflo 1984  0.  1.10820993E+10  1.
+ nciflo 1985  0.  1.26261639E+10  1.
+ nciflo 1986  0.  1.03886117E+10  1.
+ nciflo 1987  0.  9.71942126E+09  1.
+ nciflo 1988  0.  1.35162488E+10  1.
+ nciflo 1989  0.  2.27730459E+10  1.
+ nciflo 1990  0.  1.76322437E+10  1.
+ nciflo 1991  0.  1.70918227E+10  1.
+ nciflo 1992  0.  1.58519333E+10  1.
+ nciflo 1993  0.  1.67777752E+10  1.
+ nciflo 1994  0.  1.83692386E+10  1.
+ nciflo 1995  0.  1.68665075E+10  1.
+ nciflo 1996  0.  2.67614658E+10  1.
+ nciflo 1997  0.  1.77270628E+10  1.
+ nciflo 1998  0.  1.83402439E+10  1.
+ nciflo 1999  0.  2.71101018E+10  1.
+ nciflo 2000  0.  2.2857717E+10  1.
+ nciflo 2001  0.  2.21201885E+10  1.
+ nciflo 2002  0.  2.70836681E+10  1.
+ nciflo 2003  0.  3.4785391E+10  1.
+ nciflo 2004  0.  2.69803039E+10  1.
+ nciflo 2005  0.  2.95413429E+10  1.
+ nciflo 2006  0.  3.74506845E+10  1.
+ nciflo 2007  0.  2.22198429E+10  1.
+ nciflo 2008  0.  2.82595302E+10  1.
+ nciflo 2009  0.  3.97431165E+10  1.
+ nciflo 2010  0.  2.96050517E+10  1.
+ nciflo 2011  0.  3.81980915E+10  1.
+ nciflo 2012  0.  2.60599796E+10  1.
+ nciflo 2013  0.  3.65054505E+10  1.
+ nciflo 2014  0.  2.8998441E+10  1.
+ ncised 1984  0.  0.40321305  1.
+ ncised 1985  0.  0.270413439  1.
+ ncised 1986  0.  0.289328361  1.
+ ncised 1987  0.  0.310119642  1.
+ ncised 1988  0.  0.385996382  1.
+ ncised 1989  0.  0.400958486  1.
+ ncised 1990  0.  0.402760024  1.
+ ncised 1991  0.  0.456409015  1.
+ ncised 1992  0.  0.403362783  1.
+ ncised 1993  0.  0.467116732  1.
+ ncised 1994  0.  0.443986957  1.
+ ncised 1995  0.  0.467903441  1.
+ ncised 1996  0.  0.586454605  1.
+ ncised 1997  0.  0.666064479  1.
+ ncised 1998  0.  0.555286474  1.
+ ncised 1999  0.  0.628269285  1.
+ ncised 2000  0.  0.546875529  1.
+ ncised 2001  0.  0.548238019  1.
+ ncised 2002  0.  0.638016628  1.
+ ncised 2003  0.  0.777708987  1.
+ ncised 2004  0.  0.700920796  1.
+ ncised 2005  0.  0.693536751  1.
+ ncised 2006  0.  0.634159213  1.
+ ncised 2007  0.  0.612034701  1.
+ ncised 2008  0.  0.704207231  1.
+ ncised 2009  0.  0.754023586  1.
+ ncised 2010  0.  0.679155749  1.
+ ncised 2011  0.  0.782020005  1.
+ ncised 2012  0.  0.636166164  1.
+ ncised 2013  0.  0.797930334  1.
+ ncised 2014  0.  0.841358744  1.
+ ncitnx 1984  0.  1779.45463  1.
+ ncitnx 1985  0.  1646.05397  1.
+ ncitnx 1986  0.  1705.47282  1.
+ ncitnx 1987  0.  1681.51037  1.
+ ncitnx 1988  0.  1989.1706  1.
+ ncitnx 1989  0.  3004.20528  1.
+ ncitnx 1990  0.  2293.38036  1.
+ ncitnx 1991  0.  2330.27466  1.
+ ncitnx 1992  0.  2210.25066  1.
+ ncitnx 1993  0.  2663.14609  1.
+ ncitnx 1994  0.  3129.49403  1.
+ ncitnx mir mnr mci cir cnr cci stb 1995  0.  2489.36158  1.
+ ncitnx 1996  0.  4124.2511  1.
+ ncitnx 1997  0.  2828.29607  1.
+ ncitnx 1998  0.  2935.60076  1.
+ ncitnx 1999  0.  3546.48904  1.
+ ncitnx 2000  0.  3246.72789  1.
+ ncitnx 2001  0.  2863.06767  1.
+ ncitnx 2002  0.  3635.80284  1.
+ ncitnx 2003  0.  4913.39424  1.
+ ncitnx 2004  0.  3367.80756  1.
+ ncitnx 2005  0.  4115.75209  1.
+ ncitnx 2006  0.  4198.35737  1.
+ ncitnx 2007  0.  3151.38859  1.
+ ncitnx 2008  0.  3766.96789  1.
+ ncitnx 2009  0.  5240.03845  1.
+ ncitnx 2010  0.  3792.23074  1.
+ ncitnx 2011  0.  4409.36443  1.
+ ncitnx 2012  0.  3289.98358  1.
+ ncitnx 2013  0.  4428.60078  1.
+ ncitnx 2014  0.  4020.06841  1.
+ ncitpx 1984  0.  61.2944589  1.
+ ncitpx 1985  0.  56.9429935  1.
+ ncitpx 1986  0.  59.4859429  1.
+ ncitpx 1987  0.  58.9966414  1.
+ ncitpx 1988  0.  70.261274  1.
+ ncitpx 1989  0.  106.18672  1.
+ ncitpx 1990  0.  80.6287157  1.
+ ncitpx 1991  0.  81.9255598  1.
+ ncitpx 1992  0.  78.1967347  1.
+ ncitpx 1993  0.  94.1967212  1.
+ ncitpx 1994  0.  109.547035  1.
+ ncitpx 1995  0.  86.780748  1.
+ ncitpx 1996  0.  143.517402  1.
+ ncitpx 1997  0.  98.2002075  1.
+ ncitpx 1998  0.  102.087421  1.
+ ncitpx 1999  0.  123.786296  1.
+ ncitpx 2000  0.  113.620242  1.
+ ncitpx 2001  0.  100.172274  1.
+ ncitpx 2002  0.  127.44662  1.
+ ncitpx 2003  0.  172.094833  1.
+ ncitpx 2004  0.  117.801736  1.
+ ncitpx 2005  0.  144.097838  1.
+ ncitpx 2006  0.  147.737342  1.
+ ncitpx 2007  0.  111.23843  1.
+ ncitpx 2008  0.  133.190934  1.
+ ncitpx 2009  0.  186.211412  1.
+ ncitpx 2010  0.  135.480144  1.
+ ncitpx 2011  0.  157.841472  1.
+ ncitpx 2012  0.  117.898487  1.
+ ncitpx 2013  0.  159.340013  1.
+ ncitpx 2014  0.  145.39207  1.
+ ncibod 1984  0.  19361.2533  1.
+ ncibod 1985  0.  17918.0185  1.
+ ncibod 1986  0.  18567.7989  1.
+ ncibod 1987  0.  18305.3696  1.
+ ncibod 1988  0.  21655.0421  1.
+ ncibod 1989  0.  32688.0803  1.
+ ncibod 1990  0.  24960.7299  1.
+ ncibod 1991  0.  25365.62  1.
+ ncibod 1992  0.  24061.0043  1.
+ ncibod 1993  0.  28983.2987  1.
+ ncibod 1994  0.  34054.2397  1.
+ ncibod 1995  0.  27100.2863  1.
+ ncibod 1996  0.  44884.4298  1.
+ ncibod 1997  0.  30787.6252  1.
+ ncibod 1998  0.  31959.081  1.
+ ncibod 1999  0.  38605.884  1.
+ ncibod 2000  0.  35340.0128  1.
+ ncibod 2001  0.  31163.1271  1.
+ ncibod 2002  0.  39578.9415  1.
+ ncibod 2003  0.  53472.6935  1.
+ ncibod 2004  0.  36657.9342  1.
+ ncibod 2005  0.  44800.0737  1.
+ ncibod 2006  0.  45699.3948  1.
+ ncibod 2007  0.  34303.8172  1.
+ ncibod 2008  0.  41008.1247  1.
+ ncibod 2009  0.  57036.996  1.
+ ncibod 2010  0.  41280.9154  1.
+ ncibod 2011  0.  47979.7056  1.
+ ncibod 2012  0.  35805.9877  1.
+ ncibod 2013  0.  48205.0905  1.
+ ncibod 2014  0.  43758.5862  1.
+  x 
+  x 
+  x 
+  x 
+  x 
+  x 
+ ../../../tmp/wdm/land/stb/P620170331WQg_S4/stb_N10001_DE0_3791_0001.wdm                                                                                                                                 
+ closing wdmlnd
+ 1984flo  0.
+ stbflo 1984  0.  0.  1.
+ 1985flo  0.
+ stbflo 1985  0.  0.  1.
+ 1986flo  0.
+ stbflo 1986  0.  0.  1.
+ 1987flo  0.
+ stbflo 1987  0.  0.  1.
+ 1988flo  0.
+ stbflo 1988  0.  0.  1.
+ 1989flo  0.
+ stbflo 1989  0.  0.  1.
+ 1990flo  0.
+ stbflo 1990  0.  0.  1.
+ 1991flo  0.
+ stbflo 1991  0.  0.  1.
+ 1992flo  0.
+ stbflo 1992  0.  0.  1.
+ 1993flo  0.
+ stbflo 1993  0.  0.  1.
+ 1994flo  0.
+ stbflo 1994  0.  0.  1.
+ 1995flo  0.
+ stbflo 1995  0.  0.  1.
+ 1996flo  0.
+ stbflo 1996  0.  0.  1.
+ 1997flo  0.
+ stbflo 1997  0.  0.  1.
+ 1998flo  0.
+ stbflo 1998  0.  0.  1.
+ 1999flo  0.
+ stbflo 1999  0.  0.  1.
+ 2000flo  0.
+ stbflo 2000  0.  0.  1.
+ 2001flo  0.
+ stbflo 2001  0.  0.  1.
+ 2002flo  0.
+ stbflo 2002  0.  0.  1.
+ 2003flo  0.
+ stbflo 2003  0.  0.  1.
+ 2004flo  0.
+ stbflo 2004  0.  0.  1.
+ 2005flo  0.
+ stbflo 2005  0.  0.  1.
+ 2006flo  0.
+ stbflo 2006  0.  0.  1.
+ 2007flo  0.
+ stbflo 2007  0.  0.  1.
+ 2008flo  0.
+ stbflo 2008  0.  0.  1.
+ 2009flo  0.
+ stbflo 2009  0.  0.  1.
+ 2010flo  0.
+ stbflo 2010  0.  0.  1.
+ 2011flo  0.
+ stbflo 2011  0.  0.  1.
+ 2012flo  0.
+ stbflo 2012  0.  0.  1.
+ 2013flo  0.
+ stbflo 2013  0.  0.  1.
+ 2014flo  0.
+ stbflo 2014  0.  0.  1.
+ stbsed 1984  0.  0.000102851341  1.
+ stbsed 1985  0.  9.27645142E-05  1.
+ stbsed 1986  0.  8.88851207E-05  1.
+ stbsed 1987  0.  8.26696159E-05  1.
+ stbsed 1988  0.  0.000102489125  1.
+ stbsed 1989  0.  0.000135267455  1.
+ stbsed 1990  0.  0.000109024934  1.
+ stbsed 1991  0.  0.000104742749  1.
+ stbsed 1992  0.  8.68297366E-05  1.
+ stbsed 1993  0.  0.000102412676  1.
+ stbsed 1994  0.  0.000118451885  1.
+ stbsed 1995  0.  9.54413221E-05  1.
+ stbsed 1996  0.  0.00013903152  1.
+ stbsed 1997  0.  9.73742327E-05  1.
+ stbsed 1998  0.  0.000103197483  1.
+ stbsed 1999  0.  0.000119293735  1.
+ stbsed 2000  0.  0.000108712206  1.
+ stbsed 2001  0.  9.48826205E-05  1.
+ stbsed 2002  0.  0.00012382854  1.
+ stbsed 2003  0.  0.000150584806  1.
+ stbsed 2004  0.  0.000101968545  1.
+ stbsed 2005  0.  0.00012445368  1.
+ stbsed 2006  0.  0.000119297227  1.
+ stbsed 2007  0.  8.6215123E-05  1.
+ stbsed 2008  0.  0.00010212131  1.
+ stbsed 2009  0.  0.000140119026  1.
+ stbsed 2010  0.  0.000101332053  1.
+ stbsed 2011  0.  0.00011842202  1.
+ stbsed 2012  0.  9.02307849E-05  1.
+ stbsed 2013  0.  0.000124634165  1.
+ stbsed 2014  0.  0.000109185718  1.
+ stbtnx 1984  0.  9.32499332E-05  1.
+ stbtnx 1985  0.  8.41047333E-05  1.
+ stbtnx 1986  0.  8.05874895E-05  1.
+ stbtnx 1987  0.  7.49522177E-05  1.
+ stbtnx 1988  0.  9.29215285E-05  1.
+ stbtnx 1989  0.  0.000122639924  1.
+ stbtnx 1990  0.  9.88472044E-05  1.
+ stbtnx 1991  0.  9.49647674E-05  1.
+ stbtnx 1992  0.  7.87239802E-05  1.
+ stbtnx 1993  0.  9.28522165E-05  1.
+ stbtnx 1994  0.  0.000107394127  1.
+ stbtnx 1995  0.  8.65316583E-05  1.
+ stbtnx 1996  0.  0.000126052605  1.
+ stbtnx 1997  0.  8.82841233E-05  1.
+ stbtnx 1998  0.  9.356376E-05  1.
+ stbtnx 1999  0.  0.000108157391  1.
+ stbtnx 2000  0.  9.856366E-05  1.
+ stbtnx 2001  0.  8.60251086E-05  1.
+ stbtnx 2002  0.  0.000112268858  1.
+ stbtnx 2003  0.  0.000136527363  1.
+ stbtnx 2004  0.  9.24495468E-05  1.
+ stbtnx 2005  0.  0.000112835638  1.
+ stbtnx 2006  0.  0.000108160557  1.
+ stbtnx 2007  0.  7.81667387E-05  1.
+ stbtnx 2008  0.  9.25880477E-05  1.
+ stbtnx 2009  0.  0.000127038589  1.
+ stbtnx 2010  0.  9.18724726E-05  1.
+ stbtnx 2011  0.  0.000107367051  1.
+ stbtnx 2012  0.  8.18075319E-05  1.
+ stbtnx 2013  0.  0.000112999281  1.
+ stbtnx 2014  0.  9.89929793E-05  1.
+ stbtpx 1984  0.  0.00019827831  1.
+ stbtpx 1985  0.  0.000178832768  1.
+ stbtpx 1986  0.  0.000171354021  1.
+ stbtpx 1987  0.  0.000159371682  1.
+ stbtpx 1988  0.  0.000197580014  1.
+ stbtpx 1989  0.  0.000260770564  1.
+ stbtpx 1990  0.  0.000210179854  1.
+ stbtpx 1991  0.  0.000201924583  1.
+ stbtpx 1992  0.  0.000167391628  1.
+ stbtpx 1993  0.  0.000197432641  1.
+ stbtpx 1994  0.  0.000228353262  1.
+ stbtpx 1995  0.  0.000183993158  1.
+ stbtpx 1996  0.  0.00026802698  1.
+ stbtpx 1997  0.  0.000187719456  1.
+ stbtpx 1998  0.  0.000198945605  1.
+ stbtpx 1999  0.  0.000229976194  1.
+ stbtpx 2000  0.  0.000209576963  1.
+ stbtpx 2001  0.  0.000182916091  1.
+ stbtpx 2002  0.  0.000238718451  1.
+ stbtpx 2003  0.  0.000290299557  1.
+ stbtpx 2004  0.  0.000196576432  1.
+ stbtpx 2005  0.  0.00023992361  1.
+ stbtpx 2006  0.  0.00022998292  1.
+ stbtpx 2007  0.  0.000166206766  1.
+ stbtpx 2008  0.  0.000196870937  1.
+ stbtpx 2009  0.  0.000270123482  1.
+ stbtpx 2010  0.  0.000195349399  1.
+ stbtpx 2011  0.  0.000228295675  1.
+ stbtpx 2012  0.  0.00017394821  1.
+ stbtpx 2013  0.  0.000240271553  1.
+ stbtpx 2014  0.  0.000210489815  1.
+ 1984bod  0.
+ stbbod 1984  0.  0.  1.
+ 1985bod  0.
+ stbbod 1985  0.  0.  1.
+ 1986bod  0.
+ stbbod 1986  0.  0.  1.
+ 1987bod  0.
+ stbbod 1987  0.  0.  1.
+ 1988bod  0.
+ stbbod 1988  0.  0.  1.
+ 1989bod  0.
+ stbbod 1989  0.  0.  1.
+ 1990bod  0.
+ stbbod 1990  0.  0.  1.
+ 1991bod  0.
+ stbbod 1991  0.  0.  1.
+ 1992bod  0.
+ stbbod 1992  0.  0.  1.
+ 1993bod  0.
+ stbbod 1993  0.  0.  1.
+ 1994bod  0.
+ stbbod 1994  0.  0.  1.
+ 1995bod  0.
+ stbbod 1995  0.  0.  1.
+ 1996bod  0.
+ stbbod 1996  0.  0.  1.
+ 1997bod  0.
+ stbbod 1997  0.  0.  1.
+ 1998bod  0.
+ stbbod 1998  0.  0.  1.
+ 1999bod  0.
+ stbbod 1999  0.  0.  1.
+ 2000bod  0.
+ stbbod 2000  0.  0.  1.
+ 2001bodstf sho   0.
+ stbbod 2001  0.  0.  1.
+ 2002bod  0.
+ stbbod 2002  0.  0.  1.
+ 2003bod  0.
+ stbbod 2003  0.  0.  1.
+ 2004bod  0.
+ stbbod 2004  0.  0.  1.
+ 2005bod  0.
+ stbbod 2005  0.  0.  1.
+ 2006bod  0.
+ stbbod 2006  0.  0.  1.
+ 2007bod  0.
+ stbbod 2007  0.  0.  1.
+ 2008bod  0.
+ stbbod 2008  0.  0.  1.
+ 2009bod  0.
+ stbbod 2009  0.  0.  1.
+ 2010bod  0.
+ stbbod 2010  0.  0.  1.
+ 2011bod  0.
+ stbbod 2011  0.  0.  1.
+ 2012bod  0.
+ stbbod 2012  0.  0.  1.
+ 2013bod  0.
+ stbbod 2013  0.  0.  1.
+ 2014bod  0.
+ stbbod 2014  0.  0.  1.
+  x 
+ ../../../tmp/wdm/land/sho/P620170331WQg_S4/sho_N10001_DE0_3791_0001.wdm                                                                                                                                 
+ closing wdmlnd
+ shoflo 1984  0.  0.  1.
+ shoflo 1985  0.  0.  1.
+ shoflo 1986  0.  0.  1.
+ shoflo 1987  0.  0.  1.
+ shoflo 1988  0.  0.  1.
+ shoflo 1989  0.  0.  1.
+ shoflo 1990  0.  0.  1.
+ shoflo 1991  0.  0.  1.
+ shoflo 1992  0.  0.  1.
+ shoflo 1993  0.  0.  1.
+ shoflo 1994  0.  0.  1.
+ shoflo 1995  0.  0.  1.
+ shoflo 1996  0.  0.  1.
+ shoflo 1997  0.  0.  1.
+ shoflo 1998  0.  0.  1.
+ shoflo 1999  0.  0.  1.
+ shoflo 2000  0.  0.  1.
+ shoflo 2001  0.  0.  1.
+ shoflo 2002  0.  0.  1.
+ shoflo 2003  0.  0.  1.
+ shoflo 2004  0.  0.  1.
+ shoflo 2005  0.  0.  1.
+ shoflo 2006  0.  0.  1.
+ shoflo 2007  0.  0.  1.
+ shoflo 2008  0.  0.  1.
+ shoflo 2009  0.  0.  1.
+ shoflo 2010  0.  0.  1.
+ shoflo 2011  0.  0.  1.
+ shoflo 2012  0.  0.  1.
+ shoflo 2013  0.  0.  1.
+ shoflo 2014  0.  0.  1.
+ shosed 1984  0.  0.  1.
+ shosed 1985  0.  0.  1.
+ shosed 1986  0.  0.  1.
+ shosed 1987  0.  0.  1.
+ shosed 1988  0.  0.  1.
+ shosed 1989  0.  0.  1.
+ shosed 1990  0.  0.  1.
+ shosed 1991  0.  0.  1.
+ shosed 1992  0.  0.  1.
+ shosed 1993  0.  0.  1.
+ shosed 1994  0.  0.  1.
+ shosed 1995  0.  0.  1.
+ shosed 1996  0.  0.  1.
+ shosed 1997  0.  0.  1.
+ shosed 1998  0.  0.  1.
+ shosed 1999  0.  0.  1.
+ shosed 2000  0.  0.  1.
+ shosed 2001  0.  0.  1.
+ shosed 2002  0.  0.  1.
+ shosed 2003  0.  0.  1.
+ shosed 2004  0.  0.  1.
+ shosed 2005  0.  0.  1.
+ shosed 2006  0.  0.  1.
+ shosed 2007  0.  0.  1.
+ shosed 2008  0.  0.  1.
+ shosed 2009  0.  0.  1.
+ shosed 2010  0.  0.  1.
+ shosed 2011  0.  0.  1.
+ shosed 2012  0.  0.  1.
+ shosed 2013  0.  0.  1.
+ shosed 2014  0.  0.  1.
+ shotnx 1984  0.  0.  1.
+ shotnx 1985  0.  0.  1.
+ shotnx 1986  0.  0.  1.
+ shotnx 1987  0.  0.  1.
+ shotnx 1988  0.  0.  1.
+ shotnx 1989  0.  0.  1.
+ shotnx 1990  0.  0.  1.
+ shotnx 1991  0.  0.  1.
+ shotnx 1992  0.  0.  1.
+ shotnx 1993  0.  0.  1.
+ shotnx 1994  0.  0.  1.
+ shotnx 1995  0.  0.  1.
+ shotnx 1996  0.  0.  1.
+ shotnx 1997  0.  0.  1.
+ shotnx 1998  0.  0.  1.
+ shotnx 1999  0.  0.  1.
+ shotnx 2000  0.  0.  1.
+ shotnx 2001  0.  0.  1.
+ shotnx 2002  0.  0.  1.
+ shotnx 2003  0.  0.  1.
+ shotnx 2004  0.  0.  1.
+ shotnx 2005  0.  0.  1.
+ shotnx 2006  0.  0.  1.
+ shotnx 2007  0.  0.  1.
+ shotnx 2008  0.  0.  1.
+ shotnx 2009  0.  0.  1.
+ shotnx 2010  0.  0.  1.
+ shotnx 2011  0.  0.  1.
+ shotnx 2012  0.  0.  1.
+ shotnx 2013  0.  0.  1.
+ shotnx 2014  0.  0.  1.
+ shotpx 1984  0.  0.  1.
+ shotpx 1985  0.  0.  1.
+ shotpx 1986  0.  0.  1.
+ shotpx 1987  0.  0.  1.
+ shotpx 1988  0.  0.  1.
+ shotpx 1989  0.  0.  1.
+ shotpx 1990  0.  0.  1.
+ shotpx 1991  0.  0.  1.
+ shotpx 1992  0.  0.  1.
+ shotpx 1993  0.  0.  1.
+ shotpx 1994  0.  0.  1.
+ shotpx 1995  0.  0.  1.
+ shotpx 1996  0.  0.  1.
+ shotpx 1997  0.  0.  1.
+ shotpx 1998  0.  0.  1.
+ shotpx 1999  0.  0.  1.
+ shotpx 2000  0.  0.  1.
+ shotpx 2001  0.  0.  1.
+ shotpx 2002  0.  0.  1.
+ shotpx 2003  0.  0.  1.
+ shotpx 2004  0.  0.  1.
+ shotpx 2005  0.  0.  1.
+ shotpx 2006  0.  0.  1.
+ shotpx 2007  0.  0.  1.
+ shotpx 2008  0.  0.  1.
+ shotpx 2009  0.  0.  1.
+ shotpx 2010  0.  0.  1.
+ shotpx 2011  0.  0.  1.
+ shotpx 2012  0.  0.  1.
+ shotpx 2013  0.  0.  1.
+ shotpx 2014  0.  0.  1.
+ shobod 1984  0.  0.  1.
+ shobod 1985  0.  0.  1.
+ shobod 1986  0.  0.  1.
+ shobod 1987  0.  0.  1.
+ shobod 1988  0.  0.  1.
+ shobod 1989  0.  0.  1.
+ shobod 1990  0.  0.  1.
+ shobod 1991  0.  0.  1.
+ shobod 1992  0.  0.  1.
+ shobod 1993  0.  0.  1.
+ shobod 1994  0.  0.  1.
+ shobod 1995  0.  0.  1.
+ shobod 1996  0.  0.  1.
+ shobod 1997  0.  0.  1.
+ shobod 1998  0.  0.  1.
+ shobod 1999  0.  0.  1.
+ shobod 2000  0.  0.  1.
+ shobod 2001  0.  0.  1.
+ shobod 2002  0.  0.  1.
+ shobod 2003  0.  0.  1.
+ shobod 2004  0.  0.  1.
+ shobod 2005  0.  0.  1.
+ shobod 2006  0.  0.  1.
+ shobod 2007  0.  0.  1.
+ shobod 2008  0.  0.  1.
+ shobod 2009  0.  0.  1.
+ shobod 2010  0.  0.  1.
+ shobod 2011  0.  0.  1.
+ shobod 2012  0.  0.  1.
+ shobod 2013  0.  0.  1.
+ shobod 2014  0.  0.  1.
+ done lus
+  
+ done lsegs
+ ... START: reading bedbank and floodplain loads
+ ... reading bedbank load table
+ Start Year  1985
+ End   Year  2014
+ Dataset     no_loads                 
+ 1985 2014 no_loads                 
+ BB: DE0_3791_0001 N10001  0.  0.  0.  0.
+ ... reading floodplain load table
+ Start Year  1985
+ End   Year  2014
+ Dataset     no_loads                 
+ 1985 2014 no_loads                 
+ FL: DE0_3791_0001 N10001  0.  0.  0.  0.
+ ... FINISH: reading bedbank and floodplain loads
+ ... RORN
+DE0_3791_0001 N10001 BB  0.000000E+00
+DE0_3791_0001 N10001 FL  0.000000E+00
+ ... RORP
+DE0_3791_0001 N10001 BB  0.000000E+00
+DE0_3791_0001 N10001 FL  0.000000E+00
+ ... CLAY
+DE0_3791_0001 N10001 BB  0.000000E+00
+DE0_3791_0001 N10001 FL  0.000000E+00
+ ... SILT
+DE0_3791_0001 N10001 BB  0.000000E+00
+DE0_3791_0001 N10001 FL  0.000000E+00
+ 
+ ... LOADS FOR RSEG DE0_3791_0001
+BB :   0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+FL :   0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+  now using TOTN TOTP TSED
+ ---------------------------------------------------
+ SRC        TOTN         TOTP           TSED
+ ---------------------------------------------------
+BED:   0.000000E+00  0.000000E+00  0.000000E+00
+FLD:   0.000000E+00  0.000000E+00  0.000000E+00
+RIV:   0.836536E+07  0.405031E+06  0.782096E+05
+ 
+ ---------------------------------------------------
+ TOTN    STREAM         RIVER           FACTOR
+ ---------------------------------------------------
+BED   0.000000E+00  0.836536E+07      0.000000
+FLD   0.000000E+00  0.836536E+07      0.000000
+... fac before       1.000000
+... fac after        1.000000
+ 
+ ---------------------------------------------------
+ TOTP    STREAM         RIVER           FACTOR
+ ---------------------------------------------------
+BED   0.000000E+00  0.405031E+06      0.000000
+FLD   0.000000E+00  0.405031E+06      0.000000
+... fac before       1.000000
+... fac after        1.000000
+ 
+ ---------------------------------------------------
+ TSED    STREAM         RIVER           FACTOR
+ ---------------------------------------------------
+BED   0.000000E+00  0.782096E+05      0.000000
+FLD   0.000000E+00  0.782096E+05      0.000000
+... fac before       1.000000
+... fac after        1.000000
+ AVG_NO3D  =   141077.438
+ AVG_NH3D  =   23785.8125
+ AVG_NH3A  =   0.
+ AVG_NH3I  =   1917.87158
+ AVG_NH3C  =   821.947388
+ AVG_RORN  =   91439.2266
+ AVG_LORN  =   15979.4502
+ AVG_TOTN  =   275020.812
+ DE0_3791_0001 old NOX fraction =   0.51297003
+ DE0_3791_0001,N10001  20262.1328
+ DE0_3791_0001,   275020.812  20262.1328
+ DE0_3791_0001 LbPA   13.5731421
+ p600
+ ../../../config/catalog/iovars/p600/eor_nox                                                                                                                                                                                                               
+ ( -6.1330318E+28, -6.13312247E+28)(  0.,  0.)
+ (  0.,  0.)(  0.5,  0.0500000007)
+ (  0.5,  0.0500000007)(  1.,  0.1083)
+ (  1.,  0.1083)(  1.25,  0.249699995)
+ (  1.25,  0.249699995)(  1.35000002,  0.306199998)
+ (  1.35000002,  0.306199998)(  1.45000005,  0.362800002)
+ (  1.45000005,  0.362800002)(  1.54999995,  0.419400007)
+ (  1.54999995,  0.419400007)(  1.64999998,  0.475899994)
+ (  1.64999998,  0.475899994)(  1.75,  0.532500029)
+ (  1.75,  0.532500029)(  1.85000002,  0.588999987)
+ (  1.85000002,  0.588999987)(  1.95000005,  0.645600021)
+ (  1.95000005,  0.645600021)(  2.04999995,  0.702099979)
+ (  2.04999995,  0.702099979)(  2.1500001,  0.758700013)
+ (  2.1500001,  0.758700013)(  2.25,  0.815299988)
+ (  2.25,  0.815299988)(  2.3499999,  0.871800005)
+ (  2.3499999,  0.871800005)(  2.9375,  1.4152)
+ (  2.9375,  1.4152)(  3.67190003,  2.09439993)
+ (  3.67190003,  2.09439993)(  4.58979988,  2.94339991)
+ (  4.58979988,  2.94339991)(  5.73729992,  4.00470018)
+ (  5.73729992,  4.00470018)(  7.17159986,  5.33129978)
+ (  7.17159986,  5.33129978)(  8.96450043,  6.98960018)
+ (  8.96450043,  6.98960018)(  11.2056999,  9.06239986)
+ (  11.2056999,  9.06239986)(  14.0071001,  11.6534996)
+  11.2521191
+ DE0_3791_0001 reg NOX fraction =   0.828998864
+  275020.812  0.828998864  141077.438
+ fac   1.61607659  0.351110101  0.351110101
+ before close wdmrch
+  
+169.374u 0.877s 3:03.12 92.9%	0+0k 0+0io 0pf+0w
+  land segment N10001  WWTP, Indust Point Source, CSO, Septic, RIB, RPA, Atmospheric Deposition creating data output for DE0_3791_0001 P620170331WQg_S4
+ ../../../input/scenario/river/ps/PS_8514_20170518/mun_N10001_to_DE0_3791_0001.wdm                                                                                                                       
+ ../../../input/scenario/river/ps/PS_8514_20170518/ind_N10001_to_DE0_3791_0001.wdm                                                                                                                       
+ ../../../input/scenario/river/ps/PS_8514_20170518/cso_N10001_to_DE0_3791_0001.wdm                                                                                                                       
+ ../../../input/scenario/river/septic/S8514_20170331/sep_N10001_to_DE0_3791_0001.wdm                                                                                                                     
+ ../../../input/scenario/river/rib/R8514_20170331/rib_N10001_to_DE0_3791_0001.wdm                                                                                                                        
+ ../../../input/scenario/river/rpaload/CAL20170331/rpa_N10001_to_DE0_3791_0001.wdm                                                                                                                       
+ ../../../input/scenario/climate/prad/PRC20170329/prad_N10001.wdm                                                                                                                                        
+  

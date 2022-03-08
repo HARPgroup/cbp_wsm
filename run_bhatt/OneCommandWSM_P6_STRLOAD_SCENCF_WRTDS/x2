@@ -1,0 +1,342 @@
+‘/modeling/gb604/tmp/wdm/river/CXXWIP21903BXLXNOCNGENOCNGEN/stream/XU3_4650_0001.wdm’ -> ‘./XU3_4650_0001.wdm’
+ >tnx<
+ fn getBMPconsEOT            1
+ >tnx<
+ fn getBMPconsEOT            4
+        1984        2000
+ Nexits =            3
+ nRvar =           23
+ .            2
+ ..            1
+ NO3D = WATR ?
+ NO3D = HEAT ?
+ NO3D = DOXY ?
+ NO3D = SAND ?
+ NO3D = SILT ?
+ NO3D = CLAY ?
+ NO3D = NO3D ?
+ ... adding NO23 NO3D         131
+ NO23NO3D        1984   624311.062    
+ NO23NO3D        1985   631100.812    
+ NO23NO3D        1986   654702.500    
+ NO23NO3D        1987   760263.375    
+ NO23NO3D        1988   750966.812    
+ NO23NO3D        1989   1028896.50    
+ NO23NO3D        1990   850642.438    
+ NO23NO3D        1991   672277.125    
+ NO23NO3D        1992   729549.188    
+ NO23NO3D        1993   1060336.38    
+ NO23NO3D        1994   1023638.19    
+ NO23NO3D        1995   690199.250    
+ NO23NO3D        1996   1464394.38    
+ NO23NO3D        1997   885283.812    
+ NO23NO3D        1998   972515.938    
+ NO23NO3D        1999   765183.000    
+ NO23NO3D        2000   747117.188    
+ NO3D = NH3D ?
+ NO3D = NH3A ?
+ NO3D = NH3I ?
+ NO3D = NH3C ?
+ NO3D = RORN ?
+ NO3D = LORN ?
+ NO3D = PO4D ?
+ NO3D = PO4A ?
+ NO3D = PO4I ?
+ NO3D = PO4C ?
+ NO3D = RORP ?
+ NO3D = LORP ?
+ NO3D = BODA ?
+ NO3D = TORC ?
+ NO3D = PHYT ?
+ NO3D = SSCR ?
+ ..            4
+ NH3D = WATR ?
+ NH3D = HEAT ?
+ NH3D = DOXY ?
+ NH3D = SAND ?
+ NH3D = SILT ?
+ NH3D = CLAY ?
+ NH3D = NO3D ?
+ NH3D = NH3D ?
+ ... adding NH3X NH3D         132
+ NH3XNH3D        1984   62725.5977    
+ NH3XNH3D        1985              NaN
+ NH3XNH3D        1986              NaN
+ NH3XNH3D        1987              NaN
+ NH3XNH3D        1988              NaN
+ NH3XNH3D        1989              NaN
+ NH3XNH3D        1990              NaN
+ NH3XNH3D        1991              NaN
+ NH3XNH3D        1992              NaN
+ NH3XNH3D        1993              NaN
+ NH3XNH3D        1994              NaN
+ NH3XNH3D        1995              NaN
+ NH3XNH3D        1996              NaN
+ NH3XNH3D        1997              NaN
+ NH3XNH3D        1998              NaN
+ NH3XNH3D        1999              NaN
+ NH3XNH3D        2000              NaN
+ NH3D = NH3A ?
+ NH3D = NH3I ?
+ NH3D = NH3C ?
+ NH3D = RORN ?
+ NH3D = LORN ?
+ NH3D = PO4D ?
+ NH3D = PO4A ?
+ NH3D = PO4I ?
+ NH3D = PO4C ?
+ NH3D = RORP ?
+ NH3D = LORP ?
+ NH3D = BODA ?
+ NH3D = TORC ?
+ NH3D = PHYT ?
+ NH3D = SSCR ?
+ NH3A = WATR ?
+ NH3A = HEAT ?
+ NH3A = DOXY ?
+ NH3A = SAND ?
+ NH3A = SILT ?
+ NH3A = CLAY ?
+ NH3A = NO3D ?
+ NH3A = NH3D ?
+ NH3A = NH3A ?
+ ... adding NH3X NH3A         133
+ NH3XNH3A        1984   62725.5977    
+ NH3XNH3A        1985              NaN
+ NH3XNH3A        1986              NaN
+ NH3XNH3A        1987              NaN
+ NH3XNH3A        1988              NaN
+ NH3XNH3A        1989              NaN
+ NH3XNH3A        1990              NaN
+ NH3XNH3A        1991              NaN
+ NH3XNH3A        1992              NaN
+ NH3XNH3A        1993              NaN
+ NH3XNH3A        1994              NaN
+ NH3XNH3A        1995              NaN
+ NH3XNH3A        1996              NaN
+ NH3XNH3A        1997              NaN
+ NH3XNH3A        1998              NaN
+ NH3XNH3A        1999              NaN
+ NH3XNH3A        2000              NaN
+ NH3A = NH3I ?
+ NH3A = NH3C ?
+ NH3A = RORN ?
+ NH3A = LORN ?
+ NH3A = PO4D ?
+ NH3A = PO4A ?
+ NH3A = PO4I ?
+ NH3A = PO4C ?
+ NH3A = RORP ?
+ NH3A = LORP ?
+ NH3A = BODA ?
+ NH3A = TORC ?
+ NH3A = PHYT ?
+ NH3A = SSCR ?
+ NH3I = WATR ?
+ NH3I = HEAT ?
+ NH3I = DOXY ?
+ NH3I = SAND ?
+ NH3I = SILT ?
+ NH3I = CLAY ?
+ NH3I = NO3D ?
+ NH3I = NH3D ?
+ NH3I = NH3A ?
+ NH3I = NH3I ?
+ ... adding NH3X NH3I         134
+ NH3XNH3I        1984   62916.5352    
+ NH3XNH3I        1985              NaN
+ NH3XNH3I        1986              NaN
+ NH3XNH3I        1987              NaN
+ NH3XNH3I        1988              NaN
+ NH3XNH3I        1989              NaN
+ NH3XNH3I        1990              NaN
+ NH3XNH3I        1991              NaN
+ NH3XNH3I        1992              NaN
+ NH3XNH3I        1993              NaN
+ NH3XNH3I        1994              NaN
+ NH3XNH3I        1995              NaN
+ NH3XNH3I        1996              NaN
+ NH3XNH3I        1997              NaN
+ NH3XNH3I        1998              NaN
+ NH3XNH3I        1999              NaN
+ NH3XNH3I        2000              NaN
+ NH3I = NH3C ?
+ NH3I = RORN ?
+ NH3I = LORN ?
+ NH3I = PO4D ?
+ NH3I = PO4A ?
+ NH3I = PO4I ?
+ NH3I = PO4C ?
+ NH3I = RORP ?
+ NH3I = LORP ?
+ NH3I = BODA ?
+ NH3I = TORC ?
+ NH3I = PHYT ?
+ NH3I = SSCR ?
+ NH3C = WATR ?
+ NH3C = HEAT ?
+ NH3C = DOXY ?
+ NH3C = SAND ?
+ NH3C = SILT ?
+ NH3C = CLAY ?
+ NH3C = NO3D ?
+ NH3C = NH3D ?
+ NH3C = NH3A ?
+ NH3C = NH3I ?
+ NH3C = NH3C ?
+ ... adding NH3X NH3C         135
+ NH3XNH3C        1984   73080.0859    
+ NH3XNH3C        1985              NaN
+ NH3XNH3C        1986              NaN
+ NH3XNH3C        1987              NaN
+ NH3XNH3C        1988              NaN
+ NH3XNH3C        1989              NaN
+ NH3XNH3C        1990              NaN
+ NH3XNH3C        1991              NaN
+ NH3XNH3C        1992              NaN
+ NH3XNH3C        1993              NaN
+ NH3XNH3C        1994              NaN
+ NH3XNH3C        1995              NaN
+ NH3XNH3C        1996              NaN
+ NH3XNH3C        1997              NaN
+ NH3XNH3C        1998              NaN
+ NH3XNH3C        1999              NaN
+ NH3XNH3C        2000              NaN
+ NH3C = RORN ?
+ NH3C = LORN ?
+ NH3C = PO4D ?
+ NH3C = PO4A ?
+ NH3C = PO4I ?
+ NH3C = PO4C ?
+ NH3C = RORP ?
+ NH3C = LORP ?
+ NH3C = BODA ?
+ NH3C = TORC ?
+ NH3C = PHYT ?
+ NH3C = SSCR ?
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           1   1.00000000    
+           2   1.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+           2   0.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NO23 NO3D         131   1.00000000    
+ ... eot redux NH3X NH3D         132   1.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3D         132   0.00000000    
+ ... eot redux NH3X NH3A         133   1.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3A         133   0.00000000    
+ ... eot redux NH3X NH3I         134   1.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3I         134   0.00000000    
+ ... eot redux NH3X NH3C         135   1.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... eot redux NH3X NH3C         135   0.00000000    
+ ... completed processing XU3_4650_0001
+‘XU3_4650_0001.wdm’ -> ‘/modeling/gb604/tmp/wdm/river/CXXWIP21903BXLXNOCNGENOCNGEN/bay/XU3_4650_0001.wdm’
+/modeling/gb604/tmp/gbhatt-scratch/tempEOT
+total 680
+drwxr-xr-x     2 gbhatt modeling   4096 Mar 18 14:20 .
+drwxr-xr-x 17170 gbhatt modeling 684032 Mar 18 14:20 ..
+-rw-r--r--     1 gbhatt modeling      7 Mar 18 14:20 pourpoint

@@ -1,0 +1,3 @@
+cp -rip ../input/scenario/from_SB/P6B5_SCENARIO/CC_SCENARIOS_20170717/Y25PRMKKP50R45XXXXCO2X ../input/calib/target/; cp -rip ../input/scenario/from_SB/P6B5_SCENARIO/CC_SCENARIOS_20170717/Y25PRMXR45XCO2Y ../input/calib/target/; cp -rip ../input/scenario/from_SB/P6B5_SCENARIO/CC_SCENARIOS_20170717/Y25PRMXXXXXR45HSP50CO2N ../input/calib/target/; cp -rip ../input/scenario/from_SB/P6B5_SCENARIO/CC_SCENARIOS_20170717/Y25_BETA3_PXX ../input/calib/target/; cp -rip ../input/scenario/from_SB/P6B5_SCENARIO/CC_SCENARIOS_20170717/Y25_BETA3_XTE ../input/calib/target/;
+
+csh OneCommandWSM.csh Y25PRMKKP50R45XXXXCO2X; csh OneCommandWSM.csh Y25PRMXR45XCO2Y; csh OneCommandWSM.csh Y25PRMXXXXXR45HSP50CO2N; csh OneCommandWSM.csh Y25_BETA3_PXX; csh OneCommandWSM.csh Y25_BETA3_XTE
