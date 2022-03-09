@@ -6,10 +6,10 @@ if [ -z "$CBP_ROOT" ]; then
   echo "Can not find file hspf.config"
 fi
 
-echo "$@"
+#echo "$@"
 cmd=$1
 shift
-echo "$@"
+#echo "$@"
 
 
 found=0
@@ -32,20 +32,22 @@ found=0
 # BEGIN - find based method
 #try replacing do loop with this find command
 # returns only the first match
-for edir in bin run/standard run input/param/scripts; do
+for edir in bin run/standard run run_bhatt input/param/scripts config/control/calib/PWATER config/control/land config/control/river input/param/river; do
   eroot="$CBP_ROOT/$edir"
   cd $eroot
   fpath=`find *|grep $cmd | head -n 1`
   # we extract this path in case their is a partial name match
   if [ "$fpath" != "" ]; then
+    echo "cd $eroot" >/dev/stderr
     p=`dirname $fpath`
-    echo "searching $eroot/$p/$cmd"
+    echo "searching $eroot/$p/$cmd" >/dev/stderr
     if test -f "$eroot/$p/$cmd"; then
-      echo "Found $cmd in $eroot/$p/$cmd"
+      echo "Found $cmd in $eroot/$p/$cmd" >/dev/stderr
       # todo: have specific handlers to catch legacy scripts and use a different directory
       # instead of the default "bin"
       if [ "$edir" == "bin" ]; then
-        $cmd "$@"
+        echo "Executing: ./$cmd $@" >/dev/stderr
+        ./$cmd "$@"
       else
         cd $eroot/$p
         $eroot/$p/$cmd "$@"
@@ -56,5 +58,5 @@ for edir in bin run/standard run input/param/scripts; do
 done
 
 if [ $found -eq 0 ]; then
-  echo "Error: Could not find '$cmd' in directory tree"
+  echo "Error: Could not find '$cmd' in directory tree" >/dev/stderr
 fi

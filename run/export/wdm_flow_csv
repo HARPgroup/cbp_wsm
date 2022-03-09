@@ -1,0 +1,30 @@
+#!/bin/bash
+if [ $# -lt 2 ]; then
+  echo "Usage: cbp wdm_flow_csv scenario landseg syear eyear"
+    exit 1
+fi
+# load paths
+. hspf_config
+scenario=$1
+basin=$2
+syear=$3
+eyear=$4
+# check the directories
+if [ ! -d "$CBP_EXPORT_DIR" ] ; then mkdir $CBP_EXPORT_DIR; fi
+if [ ! -d "$CBP_EXPORT_DIR/$scenario" ] ; then mkdir $CBP_EXPORT_DIR/$scenario; fi
+if [ ! -d "$CBP_EXPORT_DIR/$scenario/eos" ] ; then mkdir $CBP_EXPORT_DIR/$scenario/eos; fi
+
+#segments=`cbp get_landsegs $basin`
+segments=`cbp get_landsegs $basin`
+for landseg in $segments; do
+  echo "Rscript $CBP_ROOT/run/export/wdm_export_flow.R $scenario $landseg $syear $eyear $CBP_EXPORT_DIR $CBP_ROOT"
+  Rscript $CBP_ROOT/run/export/wdm_export_flow.R $scenario $landseg $syear $eyear $CBP_EXPORT_DIR $CBP_ROOT
+done
+
+# Rscript expects
+# scenario <- as.character(argst[1])
+# lseg <- as.character(argst[2])
+# startyear <- as.integer(argst[3])
+# endyear <- as.integer(argst[4])
+# outbase <- as.character(argst[5])
+# wdmpath <- as.character(argst[6])
