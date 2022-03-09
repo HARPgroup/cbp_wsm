@@ -1,0 +1,12 @@
+# Find the path where this model tree lives and set a state variable
+# CBP_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+# or set manually
+CBP_ROOT="/opt/model/p53/p532c-sova"
+CBP_SRC="$CBP_ROOT/code/src"
+CBP_BIN="$CBP_ROOT/run"
+
+NLDAS_ROOT="/backup/meteorology"
+
+PATH="$PATH:$NLDAS_ROOT"
+
+export CBP_ROOT CBP_SRC CBP_BIN NLDAS_ROOT
