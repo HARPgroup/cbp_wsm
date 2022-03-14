@@ -34,27 +34,31 @@ found=0
 # returns only the first match
 for edir in bin run/standard run run_bhatt input/param/scripts config/control/calib/PWATER config/control/land config/control/river input/param/river; do
   eroot="$CBP_ROOT/$edir"
-  cd $eroot
-  fpath=`find *|grep $cmd | head -n 1`
-  # we extract this path in case their is a partial name match
-  if [ "$fpath" != "" ]; then
-    echo "cd $eroot" >/dev/stderr
-    p=`dirname $fpath`
-    echo "searching $eroot/$p/$cmd" >/dev/stderr
-    if test -f "$eroot/$p/$cmd"; then
-      echo "Found $cmd in $eroot/$p/$cmd" >/dev/stderr
-      # todo: have specific handlers to catch legacy scripts and use a different directory
-      # instead of the default "bin"
-      if [ "$edir" == "bin" ]; then
-        echo "Executing: ./$cmd $@" >/dev/stderr
-        ./$cmd "$@"
-      else
-        cd $eroot/$p
-        $eroot/$p/$cmd "$@"
+  if [ -d $eroot ]; then
+    cd $eroot
+    fpath=`find *|grep $cmd | head -n 1`
+    # we extract this path in case their is a partial name match
+    if [ "$fpath" != "" ]; then
+      echo "cd $eroot" >/dev/stderr
+      p=`dirname $fpath`
+      echo "searching $eroot/$p/$cmd" >/dev/stderr
+      if test -f "$eroot/$p/$cmd"; then
+        echo "Found $cmd in $eroot/$p/$cmd" >/dev/stderr
+        # todo: have specific handlers to catch legacy scripts and use a different directory
+        # instead of the default "bin"
+        if [ "$edir" == "bin" ]; then
+          echo "Executing: ./$cmd $@" >/dev/stderr
+          ./$cmd "$@"
+        else
+          cd $eroot/$p
+          $eroot/$p/$cmd "$@"
+        fi
+        found=1
       fi
-      found=1
     fi
-  fi
+  else 
+    echo "Warning: could not find $eroot in tree" >/dev/stderr
+  fi  
 done
 
 if [ $found -eq 0 ]; then
