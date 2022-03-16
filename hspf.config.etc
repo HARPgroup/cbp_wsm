@@ -4,9 +4,11 @@
 CBP_ROOT="/opt/model/p53/p532c-sova"
 CBP_SRC="$CBP_ROOT/code/src"
 CBP_BIN="$CBP_ROOT/run"
+CBP_EXPORT_DIR="/media/model/p532"
+CBP_RO_TEMPLATE="/opt/model/om/sh/cbp_p5_lseg_runoff_template"
 
 NLDAS_ROOT="/backup/meteorology"
 
 PATH="$PATH:$NLDAS_ROOT"
 
-export CBP_ROOT CBP_SRC CBP_BIN NLDAS_ROOT
+export CBP_ROOT CBP_SRC CBP_BIN NLDAS_ROOT CBP_EXPORT_DIR CBP_RO_TEMPLATE
