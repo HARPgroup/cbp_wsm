@@ -1,4 +1,7 @@
 # R script to export a wdm, combine into files
+basepath='/var/www/R';
+source("/var/www/R/config.R");
+
 library('lubridate')
 library('data.table')
 source('https://raw.githubusercontent.com/HARPgroup/cbp6/master/R/utils.R')
