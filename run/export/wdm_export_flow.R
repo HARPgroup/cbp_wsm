@@ -15,7 +15,7 @@ endyear <- as.integer(argst[4])
 outbase <- as.character(argst[5])
 wdmpath <- as.character(argst[6])
 
-outpath = paste(outbase, 'out/land', scenario, 'eos', sep='/')
+outpath = paste(outbase, 'land', scenario, 'eos', sep='/')
 outname <- paste0(lseg, '_0111-0211-0411.csv' )
 
 wdm_export_land_flow(lseg, wdmpath, scenario, startyear, endyear)
@@ -28,4 +28,4 @@ saved.file <- paste0(outpath, "/", outname)
 # also much faster than other version
 fwrite(merged_df1, saved.file, row.names = FALSE)
 message(paste("Exported file", saved.file))
-system(paste("chgrp almodelers ", saved.file))
+system(paste("chgrp allmodelers ", saved.file))
