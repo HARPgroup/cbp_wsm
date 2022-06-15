@@ -2,7 +2,7 @@
 
 if [ $# -lt 6 ]; then
   echo "Usage: wdmexp scenario type(=land,river/eos,river/stream,met,prad) wdm dsn syear eyear"
-  echo "May also be called with cbp wrapper: cbp wdmexp scenario type(=land/river/met/prad) wdm dsn syear eyear"
+  echo "May also be called with cbp wrapper: cbp wdmexp scenario type(=land, river/eos, river/stream, met, prad) wdm dsn syear eyear"
   exit 1
 fi
 
