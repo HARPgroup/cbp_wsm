@@ -31,6 +31,7 @@ case $type in
     ;;
 
   river/stream)
+    echo "Handling stream WDM"
     cd $CBP_ROOT/tmp/wdm/river/$scenario/stream
     ;;
 

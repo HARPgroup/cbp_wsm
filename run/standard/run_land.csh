@@ -36,25 +36,31 @@
 
       set inp = $tree/tmp/uci/land/$lu/$scenario/$lu$seg'.uci'
       echo $seg, $lu
-      echo $inp | $hspf
-
-      tail -1 $lu$seg'.ech' > EOJtest$$
-      diff $tree/run/fragments/EOJ EOJtest$$ > diffeoj
-      rm EOJtest$$
-      if (!(-z diffeoj)) then
-        if (-e problem) then
-          rm problem
+      if ($HSP_VERSION == "hsp2") then
+        hsp2 import_uci $inp $lu$seg'.h5'
+        hsp2 run $lu$seg'.h5'
+        mv $lu$seg'.h5' $tree/output/hspf/land/out/$lu/$scenario/
+      else 
+        echo $inp | $hspf
+        tail -1 $lu$seg'.ech' > EOJtest$$
+        diff $tree/run/fragments/EOJ EOJtest$$ > diffeoj
+        rm EOJtest$$
+        if (!(-z diffeoj)) then
+          if (-e problem) then
+            rm problem
+          endif
+          echo 'land segment: ' $seg ' did not run for land use: ' $lu >problem
+          echo '  input file ' $inp >>problem
+          echo   check the file ../../tmp/scratch/temp$$/$lu$seg.ech >>problem
+          cat problem
+          exit
         endif
-        echo 'land segment: ' $seg ' did not run for land use: ' $lu >problem
-        echo '  input file ' $inp >>problem
-        echo   check the file ../../tmp/scratch/temp$$/$lu$seg.ech >>problem
-        cat problem
-        exit
+        mv $lu$seg'.out' $tree/output/hspf/land/out/$lu/$scenario/
+        mv $lu$seg'.ech' $tree/output/hspf/land/ech/$lu/$scenario/
+        mv $lu$seg'.wdm' $tree/tmp/wdm/land/$lu/$scenario/
+
       endif
 
-      mv $lu$seg'.out' $tree/output/hspf/land/out/$lu/$scenario/
-      mv $lu$seg'.ech' $tree/output/hspf/land/ech/$lu/$scenario/
-      mv $lu$seg'.wdm' $tree/tmp/wdm/land/$lu/$scenario/
 
     end
 

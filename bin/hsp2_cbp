@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# read arguments from pipe if piped, otherwise just grab the normal args
+declare -a A=("$@")
+[[ -p /dev/stdin ]] && { \
+    mapfile -t -O ${#A[@]} A; set -- "${A[@]}"; \
+}
+
+# get base name
+uci=`basename $1`
+uci_base=`basename $uci .uci`
+# load uci
+hsp2 import_uci $1 $uci_base'.h5'
+# run model
+hsp2 run $uci_base'.h5'
+# Export data from h5 post run
+# remove h5 file if requested
+mv $uci_base'.h5' $tree/output/hspf/land/out/$lu/$scenario/
+
+# create EOJ file
+# todo: this is obviously a fudge, as it always reflects a complete run
+#       in reality if the run fails, there should be no EOJ and CBP hspf will bail
+cp $CBP_ROOT/run/fragments/EOJ ./EOJtest$$
