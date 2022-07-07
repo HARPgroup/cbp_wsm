@@ -39,11 +39,11 @@ for edir in bin run/standard run run_bhatt input/param/scripts config/control/ca
     fpath=`find *|grep $cmd | head -n 1`
     # we extract this path in case their is a partial name match
     if [ "$fpath" != "" ]; then
-      echo "cd $eroot" >/dev/stderr
+      #echo "cd $eroot" >/dev/stderr
       p=`dirname $fpath`
-      echo "searching $eroot/$p/$cmd" >/dev/stderr
+      #echo "searching $eroot/$p/$cmd" >/dev/stderr
       if test -f "$eroot/$p/$cmd"; then
-        echo "Found $cmd in $eroot/$p/$cmd" >/dev/stderr
+        #echo "Found $cmd in $eroot/$p/$cmd" >/dev/stderr
         # todo: have specific handlers to catch legacy scripts and use a different directory
         # instead of the default "bin"
         if [ "$edir" == "bin" ]; then
