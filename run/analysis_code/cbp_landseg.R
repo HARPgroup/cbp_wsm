@@ -35,6 +35,18 @@ model <- RomProperty$new(
   TRUE
 )
 
+lu <- RomProperty$new(
+  ds,
+  list(
+    varkey="om_hspf_landuse", 
+    propname="for",
+    featureid=model$pid, 
+    entity_type="dh_properties", 
+    propcode="for" 
+  ), 
+  TRUE
+)
+lu$save(TRUE)
 
 # Create/Load a model scenario property
 # tstime = the run time 
@@ -45,7 +57,7 @@ model_scenario <- RomProperty$new(
   ds, 
   list(
     varkey="om_scenario", 
-    featureid=model$pid, 
+    featureid=lu$pid, 
     entity_type="dh_properties", 
     propname="p532sova_2021", 
     propcode="p532sova_2021" 
