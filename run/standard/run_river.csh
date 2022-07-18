@@ -100,27 +100,42 @@
         exit
       endif
 
-      echo $inp | $hspf
+      if ($HSP_VERSION == "hsp2") then
+        hsp2 import_uci $inp $seg'.h5'
+        hsp2 run $seg'.h5'
+        set h5file = $CBP_EXPORT_DIR/river/$scenario/h5/$seg'.h5'
+        #csvfile =
+        if [ ! -d "$CBP_EXPORT_DIR/river" ] ; then mkdir  $CBP_EXPORT_DIR/river ; fi
+        if [ ! -d "$CBP_EXPORT_DIR/river/$scenario" ] ; then mkdir  $CBP_EXPORT_DIR/river/scenario ; fi
+        if [ ! -d "$CBP_EXPORT_DIR/river/scenario/h5" ] ; then mkdir  $CBP_EXPORT_DIR/river/scenario/h5 ; fi
+        mv $seg'.h5' $h5file
+        # Run post-process extract routine
+        #Rscript export_hsp_h5.R $h5file $csvfile /RESULTS/PERLND_P001/PWATER/table
+        # Remove h5 file to save space
+        #rm $h5file
+      else
+        echo $inp | $hspf
 
-      tail -1 $seg'.ech' > EOJtest$$
-      diff $tree/run/fragments/EOJ EOJtest$$ > diffeoj
-      rm EOJtest$$
-      if (!(-z diffeoj)) then
-        if (-e problem) then
-          rm problem
+        # Check the output to see if its OK
+        tail -1 $seg'.ech' > EOJtest$$
+        diff $tree/run/fragments/EOJ EOJtest$$ > diffeoj
+        rm EOJtest$$
+        if (!(-z diffeoj)) then
+          if (-e problem) then
+            rm problem
+          endif
+          echo 'river segment: ' $seg ' did not run'  >problem
+          echo '  input file ' $inp >>problem
+          set fnam = $tree/tmp/scratch/temp$$/$seg'.ech '
+          echo '  check the file ' $fnam >>problem
+          cat problem
+          exit
         endif
-        echo 'river segment: ' $seg ' did not run'  >problem
-        echo '  input file ' $inp >>problem
-        set fnam = $tree/tmp/scratch/temp$$/$seg'.ech '
-        echo '  check the file ' $fnam >>problem
-        cat problem
-        exit
+        mv $seg'.out' $tree/output/hspf/river/out/$scenario/
+        mv $seg'.ech' $tree/output/hspf/river/ech/$scenario/
+        mv $seg'.wdm' $tree/tmp/wdm/river/$scenario/stream/
+        mv ps_sep_div_ams_$scenario'_'$seg'.wdm' $tree/tmp/wdm/river/$scenario/eos/
       endif
-
-      mv $seg'.out' $tree/output/hspf/river/out/$scenario/
-      mv $seg'.ech' $tree/output/hspf/river/ech/$scenario/
-      mv $seg'.wdm' $tree/tmp/wdm/river/$scenario/stream/
-      mv ps_sep_div_ams_$scenario'_'$seg'.wdm' $tree/tmp/wdm/river/$scenario/eos/
 
     endif
 
