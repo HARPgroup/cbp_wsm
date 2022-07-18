@@ -1,11 +1,14 @@
 # Find the path where this model tree lives and set a state variable
 # CBP_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # or set manually
-CBP_ROOT="/opt/model/p53/p532c-sova"
+#CBP_ROOT="/opt/model/p53/p532c-sova"
+CBP_ROOT="/opt/model/p6/gb604b"
 CBP_SRC="$CBP_ROOT/code/src"
 CBP_BIN="$CBP_ROOT/run"
-CBP_EXPORT_DIR="/media/model/p532"
-CBP_RO_TEMPLATE="/opt/model/om/sh/cbp_p5_lseg_runoff_template"
+#CBP_EXPORT_DIR="/media/model/p532/out"
+CBP_EXPORT_DIR="/media/model/p6/out"
+#CBP_RO_TEMPLATE="/opt/model/om/sh/cbp_p5_lseg_runoff_template.sql"
+CBP_RO_TEMPLATE="/opt/model/om/sh/cbp_p6_lseg_runoff_template.sql"
 
 NLDAS_ROOT="/backup/meteorology"
 

@@ -40,6 +40,9 @@
       endif
 
       echo $seg, $lu, $scenario | $tree/code/bin/lug.exe
+      # modifies uci for hsp2 or hspf depending on environment variable
+      set uci_path="$tree/tmp/uci/land/$lu/$scenario/$lu${seg}.uci"
+      hsp_uci_version $uci_path $HSP_VERSION
 
       if (-e problem) then
         echo ' '
