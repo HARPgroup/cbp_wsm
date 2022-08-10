@@ -21,6 +21,8 @@
     cd ../../tmp/scratch/temp$$/
   endif
 
+  # load new scenario configuration script
+  source $tree/config/control/script/${scenario}.con
   source $tree/run/fragments/set_landuse
   source $tree/run/fragments/set_icprb_hspf
   
@@ -39,7 +41,23 @@
       if ($HSP_VERSION == "hsp2") then
         hsp2 import_uci $inp $lu$seg'.h5'
         hsp2 run $lu$seg'.h5'
-        mv $lu$seg'.h5' $tree/output/hspf/land/out/$lu/$scenario/
+        set h5file = $CBP_EXPORT_DIR/land/h5/$lu/$scenario/$lu$seg'.h5'
+        mv $lu$seg'.h5' $h5file
+        # Run post-process extract routine
+        if(" $perlnds " =~ *" $lu "*) then
+         echo "Exporting PERLND $lu"
+         set ds="/RESULTS/PERLND_P001/PWATER/table"
+         set mod="pwater"
+        else
+         echo "Exporting IMPLND $lu"
+         set ds="/RESULTS/IMPLND_P001/IWATER/table"
+         set mod="iwater"
+        endif
+        set csvfile = $CBP_EXPORT_DIR/land/$scenario/$mod/$lu${seg}_pwater'.csv'
+        echo "Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile /RESULTS/PERLND_P001/PWATER/table"
+        Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile /RESULTS/PERLND_P001/PWATER/table
+        # Remove h5 file to save space
+        rm $h5file
       else 
         echo $inp | $hspf
         tail -1 $lu$seg'.ech' > EOJtest$$

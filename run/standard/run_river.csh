@@ -21,10 +21,13 @@
     cd ../../tmp/scratch/temp$$/
   endif
 
+  # load new scenario configuration script
+  source $tree/config/control/script/${scenario}.con
   source $tree/run/fragments/set_icprb_hspf
 
 ####### RIVER SEGMENTS or WQ RECEIVING AREAS ONLY  ########
   source $tree/config/seglists/${basin}.riv
+echo "segments: $segments"
 
   foreach seg ($segments)
     if (-e problem) then
@@ -105,14 +108,21 @@
         hsp2 run $seg'.h5'
         set h5file = $CBP_EXPORT_DIR/river/$scenario/h5/$seg'.h5'
         #csvfile =
-        if [ ! -d "$CBP_EXPORT_DIR/river" ] ; then mkdir  $CBP_EXPORT_DIR/river ; fi
-        if [ ! -d "$CBP_EXPORT_DIR/river/$scenario" ] ; then mkdir  $CBP_EXPORT_DIR/river/scenario ; fi
-        if [ ! -d "$CBP_EXPORT_DIR/river/scenario/h5" ] ; then mkdir  $CBP_EXPORT_DIR/river/scenario/h5 ; fi
+        if (! -d "$CBP_EXPORT_DIR/river" ) mkdir  $CBP_EXPORT_DIR/river 
+        if (! -d "$CBP_EXPORT_DIR/river/$scenario" ) mkdir  $CBP_EXPORT_DIR/river/$scenario 
+        if (! -d "$CBP_EXPORT_DIR/river/$scenario/h5" ) mkdir  $CBP_EXPORT_DIR/river/$scenario/h5 
+        echo "Moving $seg'.h5' to $h5file"
         mv $seg'.h5' $h5file
         # Run post-process extract routine
-        #Rscript export_hsp_h5.R $h5file $csvfile /RESULTS/PERLND_P001/PWATER/table
+        echo "Exporting HYDR data for $seg"
+        set ds="/RESULTS/RCHRES_R001/HYDR/table"
+        set mod="hydr"
+        set csvfile = $CBP_EXPORT_DIR/river/$scenario/$mod/${seg}_hydr'.csv'
+        echo "Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile $ds"
+        Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile $ds
+
         # Remove h5 file to save space
-        #rm $h5file
+        rm $h5file
       else
         echo $inp | $hspf
 
