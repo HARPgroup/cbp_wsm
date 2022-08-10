@@ -1,0 +1,8 @@
+#!/bin/bash
+
+scenario=$1
+
+for i in `ls $CBP_ROOT/tmp/wdm/land/`; do
+  echo "rm $CBP_ROOT/tmp/wdm/land/$i/$scenario/*"
+  rm $CBP_ROOT/tmp/wdm/land/$i/$scenario/*
+done
