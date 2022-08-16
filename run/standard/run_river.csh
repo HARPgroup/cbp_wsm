@@ -24,11 +24,15 @@
   # load new scenario configuration script
   source $tree/config/control/script/${scenario}.con
   source $tree/run/fragments/set_icprb_hspf
+  # Set up export dirs - this could be moved
+  if (! -d "$CBP_EXPORT_DIR/river" ) mkdir  $CBP_EXPORT_DIR/river 
+  if (! -d "$CBP_EXPORT_DIR/river/$scenario" ) mkdir  $CBP_EXPORT_DIR/river/$scenario 
+  if (! -d "$CBP_EXPORT_DIR/river/$scenario/h5" ) mkdir  $CBP_EXPORT_DIR/river/$scenario/h5 
+  if (! -d "$CBP_EXPORT_DIR/river/$scenario/stream" ) mkdir  $CBP_EXPORT_DIR/river/$scenario/stream
 
 ####### RIVER SEGMENTS or WQ RECEIVING AREAS ONLY  ########
   source $tree/config/seglists/${basin}.riv
-echo "segments: $segments"
-
+  echo "Found segments: $segments"
   foreach seg ($segments)
     if (-e problem) then
       rm problem
@@ -108,9 +112,6 @@ echo "segments: $segments"
         hsp2 run $seg'.h5'
         set h5file = $CBP_EXPORT_DIR/river/$scenario/h5/$seg'.h5'
         #csvfile =
-        if (! -d "$CBP_EXPORT_DIR/river" ) mkdir  $CBP_EXPORT_DIR/river 
-        if (! -d "$CBP_EXPORT_DIR/river/$scenario" ) mkdir  $CBP_EXPORT_DIR/river/$scenario 
-        if (! -d "$CBP_EXPORT_DIR/river/$scenario/h5" ) mkdir  $CBP_EXPORT_DIR/river/$scenario/h5 
         echo "Moving $seg'.h5' to $h5file"
         mv $seg'.h5' $h5file
         # Run post-process extract routine
@@ -123,6 +124,7 @@ echo "segments: $segments"
 
         # Remove h5 file to save space
         rm $h5file
+        # todo: add the call to run the river hsp2 summary script here
       else
         echo $inp | $hspf
 
@@ -144,7 +146,14 @@ echo "segments: $segments"
         mv $seg'.out' $tree/output/hspf/river/out/$scenario/
         mv $seg'.ech' $tree/output/hspf/river/ech/$scenario/
         mv $seg'.wdm' $tree/tmp/wdm/river/$scenario/stream/
+        # export the flow data
+        if ( $?START_YEAR ) then
+          echo "echo ${seg}.wdm,$START_YEAR,$END_YEAR,111 | wdm2text"
+          echo "${seg}.wdm,$START_YEAR,$END_YEAR,111" | wdm2text
+          mv $seg'_0111.csv' $CBP_EXPORT_DIR/river/$scenario/stream/
+        endif
         mv ps_sep_div_ams_$scenario'_'$seg'.wdm' $tree/tmp/wdm/river/$scenario/eos/
+        # todo: add the call to run the river hspf summary script here
       endif
 
     endif
