@@ -50,14 +50,17 @@
          set mod="pwater"
         else
          echo "Exporting IMPLND $lu"
-         set ds="/RESULTS/IMPLND_P001/IWATER/table"
+         set ds="/RESULTS/IMPLND_I001/IWATER/table"
          set mod="iwater"
         endif
         set csvfile = $CBP_EXPORT_DIR/land/$scenario/$mod/$lu${seg}_pwater'.csv'
-        echo "Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile /RESULTS/PERLND_P001/PWATER/table"
-        Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile /RESULTS/PERLND_P001/PWATER/table
+        echo "Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile $ds"
+        Rscript $CBP_ROOT/run/export/export_hsp_h5.R $h5file $csvfile $ds
         # Remove h5 file to save space
         rm $h5file
+        # Now we run summary scripts.  At some point we should maybe moce to postproc area
+        # but there are advantages to having this feedback early in model execution 
+        $CBP_ROOT/run/export/summarize_landseg.csh $scenario $seg $lu $CBP_ROOT $CBP_EXPORT_DIR
       else 
         echo $inp | $hspf
         tail -1 $lu$seg'.ech' > EOJtest$$
