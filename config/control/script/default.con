@@ -1,0 +1,25 @@
+#!/bin/csh
+
+set PROJECT_HOME       = /opt/model/p53/p532c-sova
+set MODEL_FILES_GROUP  = allmodelers
+if ( $?MODEL_VERSION_CODE ) then
+   set MODEL_VERSION_CODE = cbp-5.3.2
+endif
+
+set INFEXP             = 1
+set LAND_QUIET         = 1
+set HSP_VERSION       = hspf # hsp2 or hspf
+set START_YEAR        = 1984
+set END_YEAR        = 2020
+# *** Check if processing completed successfully and Clean slurm-output
+set CHECK_SLURM        = 1
+# *** Remove slurm-output at the end of simulation
+set REMOVE_SLURM       = 0
+
+set NUM_NODES          = 1
+set NUM_CORES          = 1
+set NUM_TASKS          = 1
+set ProcPool           =
+set BASINS             = $basin
+#set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
+set SUMALL_BASINS      = ( $BASINS )

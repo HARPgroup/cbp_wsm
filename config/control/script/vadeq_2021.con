@@ -3,15 +3,21 @@
 set PROJECT_HOME       = /modeling/gb604
 set MY_HOME            = run_bhatt
 set SCRIPT_DIR         = OneCommandWSM_P6_STRLOAD_SCENCF
+set MODEL_FILES_GROUP  = allmodelers
+if ( $?MODEL_VERSION_CODE ) then
+   set MODEL_VERSION_CODE = cbp-5.3.2
+endif
+
+set HSP_VERSION       = hspf # hsp2 or hspf
 
 set INFEXP             = 1
 set LAND_QUIET         = 1
 set N_SPIN_MONTHS      = 360
-set HSP_VERSION        = hspf
+
 # *** Check if processing completed successfully and Clean slurm-output
 set CHECK_SLURM        = 1
 # *** Remove slurm-output at the end of simulation
-set REMOVE_SLURM       = 1
+set REMOVE_SLURM       = 0
 
 # *** DISTRIBUTE SCENARIO BUILDER (SB) DATA ***
 set DISTRIBUTE_SB_DATA = 0
@@ -47,20 +53,19 @@ set SEPTIC_YEAR1       = 1984
 set SEPTIC_YEAR2       = 2005
 
 # *** SETTING WHICH WSM MODULES TO RUN ***
-set RUN_MAKE_LAND_DIR  = 0
-set RUN_MAKE_RIVER_DIR = 0
-set RUN_LUG            = 0
-set RUN_LAND           = 0
+set RUN_MAKE_LAND_DIR  = 1
+set RUN_MAKE_RIVER_DIR = 1
+set RUN_LUG            = 1
+set RUN_LAND           = 1
 set RUN_LUGX           = 0
 set RUN_UNEC           = 0
 set RUN_BODX           = 0
-set RUN_ANNLOAD        = 0
-set RUN_AVGLOAD        = 0
-set RUN_ETM1           = 0
+set RUN_ANNLOAD        = 1
+set RUN_AVGLOAD        = 1
+set RUN_ETM1           = 1
 set RUN_ETM2           = 0
-set RUN_RIVER          = 0
-set RUN_RIVER_MODE     = CALIB
-#set RUN_RIVER_MODE     = SCENARIO
+set RUN_RIVER          = 1
+set RUN_RIVER_MODE     = SCENARIO
 set RUN_POSTPROC_GCM   = 0
 set RUN_POSTPROC       = 0
 set RUN_EOT            = 0
@@ -109,23 +114,9 @@ set NUM_TASKS          = 108
 set ProcPool           = 
 
 
-set BASINS             = allP6
-#set BASINS             = SUSQ
-#set BASINS             = JUNI
-#set BASINS             = HANDCAL
-#set BASINS              = allP6_WQx0000
-#set BASINS              = allP60000
-
-#set SUMALL_BASINS      = (ET3p1 ET5p2 LE1p1 LE2p2 RET2p2 RET5p2 TF1p5 TF1p7 TF2p3 TF5p5)
-#set SUMALL_BASINS      = (S P Y D E R J W G X N T O M B K allBay all)
-#set SUMALL_BASINS      = (S P Y D E R J W G X watershed RIMP)
-#set SUMALL_BASINS      = (S P Y E R J W X watershed RIMP)
-#set SUMALL_BASINS      = (uMDB mMDB lMDB EshVA)
-#set SUMALL_BASINS      = (watershed RIMP S P Y E R J W X X_AFL X_BFL P_AFL P_BFL R_AFL R_BFL Y_AFL Y_BFL R_AFL R_BFL J_AFL J_BFL UpES MidES LowES VaES VAcapes)
-#set SUMALL_BASINS      = ( watershed VAcapes RIMP X_AFL S VaES P R_AFL E R_AFL P_AFL R_BFL J Y_AFL P_BFL R_BFL J_AFL Y_BFL W X_BFL UpES R LowES MidES Y X J_BFL )
-#set SUMALL_BASINS      = ( watershed S J P RIMP )
-set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
-#set SUMALL_BASINS      = ( SUSQ )
+set BASINS             = JL2_6850_6890
+#set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
+set SUMALL_BASINS      = ( JL2_6850_6890 )
 
 
 # *** These are set automatically based on previous inputs
