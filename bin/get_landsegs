@@ -1,4 +1,5 @@
 #!/bin/csh
-. hspf_config
+#. hspf_config
 source $CBP_ROOT/config/seglists/$1.land
-echo $landsegs
+echo $segments
+setenv segments "$segments"
