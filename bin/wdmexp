@@ -19,28 +19,30 @@ eyear=$6
 case $type in
   land)
     luname=${wdm:0:3}
-    cd $CBP_ROOT/tmp/wdm/land/$luname/$scenario
+    fdir="$CBP_ROOT/tmp/wdm/land/$luname/$scenario"
     ;;
 
   met)
-    cd $CBP_ROOT/input/scenario/climate/met/$scenario/
+    fdir="$CBP_ROOT/input/scenario/climate/met/$scenario/"
     ;;
 
   river/eos)
-    cd $CBP_ROOT/tmp/wdm/river/$scenario/eos
+    fdir="$CBP_ROOT/tmp/wdm/river/$scenario/eos"
     ;;
 
   river/stream)
-    echo "Handling stream WDM"
-    cd $CBP_ROOT/tmp/wdm/river/$scenario/stream
+    echo "Handling stream WDM" >/dev/stderr
+    fdir="$CBP_ROOT/tmp/wdm/river/$scenario/stream"
     ;;
 
   *)
-    echo "Cannot handle wdm type $type"
+    echo "Cannot handle wdm type $type" >/dev/stderr
     exit
     ;;
 esac
 
+cd $fdir
+echo "Outputting to $fdir" >/dev/stderr
 params="$wdm,$syear,$eyear,$dsn"
 echo "echo $params | wdm2text"
 echo $params | wdm2text
