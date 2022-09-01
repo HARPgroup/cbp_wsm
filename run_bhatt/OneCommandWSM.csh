@@ -89,9 +89,14 @@ if ( $response == 'Y' || $response == 'y') then
      cd ../${MY_HOME}/${SCRIPT_DIR}; echo
 #     sbatch --mem-per-cpu=1500 --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks-per-node=$NUM_CORES $ProcPool --mail-type=BEGIN --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG
 #     sbatch --mem-per-cpu=1500 --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks-per-node=$NUM_CORES $ProcPool --mail-type=FAIL --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG
+<<<<<<< HEAD
+     echo "sbatch --mem-per-cpu=$MEM_PER_CPU --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks=$NUM_TASKS $ProcPool --mail-type=FAIL --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG"
+     sbatch --mem-per-cpu=$MEM_PER_CPU --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks=$NUM_TASKS $ProcPool --mail-type=FAIL --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG
+=======
 #     sbatch --mem-per-cpu=1000 --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks=$NUM_TASKS $ProcPool --mail-type=FAIL --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG
      echo "Running: sbatch --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks=$NUM_TASKS $ProcPool --mail-type=FAIL --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG"
      sbatch --nice=$PRIORITY --output=$SCENARIO_SLURM --error=$SCENARIO_SLURM --job-name=$SCENARIO --dependency=singleton --nodes=$NUM_NODES --ntasks=$NUM_TASKS $ProcPool --mail-type=FAIL --mail-user=$EMAIL_TO bhatt_one_command_wsm.csh $SCENARIO $SCENARIO_SLURM $SCENARIO_LOG
+>>>>>>> 65ec797cd641beb5e9a1acf705130606e8210647
      set iRETURN = $?
 
      if ( $iRETURN == 1 ) then

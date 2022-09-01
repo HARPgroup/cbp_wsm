@@ -4,9 +4,7 @@ set PROJECT_HOME       = /opt/model/p6/vadeq
 set MY_HOME            = run_bhatt
 set SCRIPT_DIR         = OneCommandWSM_P6_STRLOAD_SCENCF
 set MODEL_FILES_GROUP  = allmodelers
-if ( $?MODEL_VERSION_CODE ) then
-   set MODEL_VERSION_CODE = cbp-6.0
-endif
+set MODEL_VERSION_CODE = cbp-6.0
 
 set HSP_VERSION       = hspf # hsp2 or hspf
 
@@ -107,6 +105,7 @@ set PSMETHOD           = lrseg
 set NUM_NODES          = 1
 set NUM_CORES          = 1
 set NUM_TASKS          = 1
+set MEM_PER_CPU        = 1
 #set NUM_NODES          = 5
 #set NUM_TASKS          = 64
 #set ProcPool           = compute

@@ -2,9 +2,7 @@
 
 set PROJECT_HOME       = /opt/model/p53/p532c-sova
 set MODEL_FILES_GROUP  = allmodelers
-if ( $?MODEL_VERSION_CODE ) then
-   set MODEL_VERSION_CODE = cbp-5.3.2
-endif
+set MODEL_VERSION_CODE = cbp-6.0
 
 set INFEXP             = 1
 set LAND_QUIET         = 1
@@ -19,6 +17,7 @@ set REMOVE_SLURM       = 0
 set NUM_NODES          = 1
 set NUM_CORES          = 1
 set NUM_TASKS          = 1
+set MEM_PER_CPU        = 1
 set ProcPool           =
 set BASINS             = $basin
 #set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
