@@ -4,6 +4,7 @@
 # and if that file exists, we run it, otherwise, skip it
 scenario=$1
 uci_path=$2
+clean_up=$3
 uci=`basename $uci_path`
 uci_dir=`dirname $uci_path`
 seg=`basename $uci .uci`
@@ -57,14 +58,14 @@ has_pwater=`Rscript $CBP_BIN/export/detect_data_source.R $h5file "/RESULTS/PERLN
 if [ "$has_pwater" -eq "1" ]; then
   run_landsum=1
   ds="/RESULTS/PERLND_P001/PWATER/table"
-  csvfile=$CBP_EXPORT_DIR/land/$scenario/pwater/$lu${lseg}_pwater'.csv'
+  csvfile="$CBP_EXPORT_DIR/land/$scenario/pwater/$lu${lseg}_pwater.csv"
 fi
 
 has_iwater=`Rscript $CBP_BIN/export/detect_data_source.R $h5file "/RESULTS/PERLND_I001/IWATER"`
 if [ "$has_pwater" -eq "1" ]; then
   run_landsum=1
   ds="/RESULTS/IMPLND_I001/IWATER/table"
-  csvfile = $CBP_EXPORT_DIR/land/$scenario/iwater/$lu${seg}_iwater'.csv'
+  csvfile = "$CBP_EXPORT_DIR/land/$scenario/iwater/$lu${seg}_iwater.csv"
 fi
 
 if [ "$run_landsum" -eq "1" ]; then
@@ -76,5 +77,7 @@ if [ "$run_landsum" -eq "1" ]; then
   $CBP_ROOT/run/export/summarize_landseg.csh $scenario $seg $lu $CBP_ROOT $CBP_EXPORT_DIR
 fi
 
-echo "Cleaning up $h5file"
-rm $h5file
+if [ "$cleanup" -eq "1" ]; then
+  echo "Cleaning up $h5file"
+  rm $h5file
+fi
