@@ -556,11 +556,19 @@ if ($RUN_RIVER == 1 ) then
           set numnodes = $NUM_NODES
           set numcores = $NUM_CORES
 
-          source ../../config/seglists/${basin}_order.riv
-
+          set use_order = 1
+          if ( -f $CBP_ROOT/config/seglists/${basin}_order.riv ) then
+              source $CBP_ROOT/config/seglists/${basin}_order.riv
+          else
+              set order = ( $basin )
+              set use_order = 0
+          endif
           foreach odr ($order)
-	       source ../../config/seglists/${basin}_order/${odr}.riv
-
+               if ( use_order == 1 ) then
+    	           source $CBP_ROOT/config/seglists/${basin}_order/${odr}.riv
+               else 
+                   source $CBP_ROOT/config/seglists/${basin}.riv
+               endif
                @ i = 1
                echo RIV_MSG_STARTED $odr AT `date`
                foreach segment ( $segments )
