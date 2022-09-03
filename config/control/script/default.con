@@ -19,6 +19,3 @@ set NUM_CORES          = 1
 set NUM_TASKS          = 1
 set MEM_PER_CPU        = 1
 set ProcPool           =
-set BASINS             = $basin
-#set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
-set SUMALL_BASINS      = ( $BASINS )
