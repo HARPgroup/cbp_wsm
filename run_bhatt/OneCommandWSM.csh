@@ -46,6 +46,9 @@ endif
 echo ''
 
 source ./.config/${user}_CONFIG
+# load defaults
+source ../config/control/script/default.con
+# load scenario specifics
 source ../config/control/script/$SCENARIO.con
 
 if ( ($?EMAIL_TO_WSM) ) then
