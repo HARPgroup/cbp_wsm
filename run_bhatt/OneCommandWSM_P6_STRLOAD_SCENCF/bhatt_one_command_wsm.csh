@@ -627,15 +627,21 @@ if ($RUN_POSTPROC == 1) then
 
           set CDF_Sce  = $CDF_SCENARIO
 
-          source ../../config/seglists/${basin}_order.riv
-
           echo 'LOG-MESSAGE POST OTHER DEL START ' `date`
-          # *** DEL
+          set use_order = 1
+          if ( -f $CBP_ROOT/config/seglists/${basin}_order.riv ) then
+              source $CBP_ROOT/config/seglists/${basin}_order.riv
+          else
+              set order = ( $basin )
+              set use_order = 0
+          endif
           foreach odr ($order)
-               source ../../config/seglists/${basin}_order/${odr}.riv
-
+               if ( use_order == 1 ) then
+    	           source $CBP_ROOT/config/seglists/${basin}_order/${odr}.riv
+               else 
+                   source $CBP_ROOT/config/seglists/${basin}.riv
+               endif
                @ i = 1
-
                echo DEL_MSG_STARTED $odr AT `date`
                foreach segment ( $segments )
 
@@ -732,14 +738,22 @@ if ($RUN_POSTPROC == 1) then
           echo 'LOG-MESSAGE TFS_DFS_DEL TFS END ' `date`
 
 
-          echo 'LOG-MESSAGE TFS_DFS_DEL DFS START ' `date`
           # *** DFS
-          source ../../config/seglists/${basin}_order.riv
+          echo 'LOG-MESSAGE TFS_DFS_DEL DFS START ' `date`
+          set use_order = 1
+          if ( -f $CBP_ROOT/config/seglists/${basin}_order.riv ) then
+              source $CBP_ROOT/config/seglists/${basin}_order.riv
+          else
+              set order = ( $basin )
+              set use_order = 0
+          endif
           foreach odr ($order)
-               source ../../config/seglists/${basin}_order/${odr}.riv
-
+               if ( use_order == 1 ) then
+    	           source $CBP_ROOT/config/seglists/${basin}_order/${odr}.riv
+               else 
+                   source $CBP_ROOT/config/seglists/${basin}.riv
+               endif
                @ i = 1
-
                echo DFS_MSG_STARTED $odr AT `date`
                foreach segment ( $segments )
 
