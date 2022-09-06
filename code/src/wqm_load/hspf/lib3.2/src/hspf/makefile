@@ -20,7 +20,7 @@ DbgF   = -g
 OptM   = -OM
 OptDbg =
 # FFLAGS = -u $(OptDbg) 
-FFLAGS = -fbounds-check 
+FFLAGS = -std=legacy -fbounds-check 
 
 # Compiler names
 F77    = f77

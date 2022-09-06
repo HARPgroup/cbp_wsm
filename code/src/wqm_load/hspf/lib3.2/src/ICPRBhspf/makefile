@@ -20,7 +20,7 @@ DbgF   = -g
 OptM   = -OM
 OptDbg =
 # FFLAGS = -u $(OptDbg) 
-FFLAGS = -u $(OptM) 
+FFLAGS =  -u $(OptM) -std=legacy
 
 # Compiler names
 F77    = f77
