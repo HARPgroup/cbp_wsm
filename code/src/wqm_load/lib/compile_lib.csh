@@ -28,7 +28,7 @@ endif
 ######### end York Prado section
 
 cd dsn/
-f77 -fbounds-check -c dsn_utils.f
+f77 -fPIE -fbounds-check -c dsn_utils.f
 
 cd ../util
 rm ../util_lib.a
@@ -37,7 +37,7 @@ cd ../get
 rm ../get_lib.a
 ./compile
 cd ../tty/
-gcc -c -o ../ttyux.o ttyux.c
+gcc -fPIE -c -o ../ttyux.o ttyux.c
 
 cd ../../
   
