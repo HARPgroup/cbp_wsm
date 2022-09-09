@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ -n "$1" ] ; then
+  # we have been passed a scenario, find the control script variables
+  # sed -r 's/set//' $CBP_ROOT/config/control/script/${1}.con
+  while read cmd var eq val
+  do
+    if [[ $cmd == "set" ]]
+    then
+      declare -x "$var=$val"
+      if [[ $2 == "all" ]]
+      then
+        echo "$var=$val"
+      fi
+      if [[ $2 == "$var" ]]
+      then
+        echo "$val"
+      fi
+    fi
+  done < $CBP_ROOT/config/control/script/${1}.con
+fi
+
+

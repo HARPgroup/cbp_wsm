@@ -2,19 +2,25 @@
 # note: using double brackets in bash, tip from SUGGESTIONS
 #       section in https://stackoverflow.com/questions/18568706/check-number-of-arguments-passed-to-a-bash-script
 if [[ $# -lt 3 ]]; then
-  >&2 echo "Usage: get_config scenario BLOCK module(river/land)"
+  >&2 echo "Usage: get_config scenario BLOCK module(river/land/script)"
   >&2 echo "Ex: get_config vadeq_2021 IOVARS river "
 fi
 scenario=$1
-open_tag=$2
+varname=$2
 module=$3
-close_tag="END $open_tag"
-config_file="$CBP_ROOT/config/control/$module/${scenario}.con"
->&2 echo "Searching for $open_tag $close_tag in $config_file"
-awk 'flag{
-        if (/'"${close_tag}"'/)
-           {printf "%s", buf; flag=0; buf=""}
-        else
-            buf = buf $0 ORS
-     }
-     /'"${open_tag}"'/ {flag=1}' $config_file
+
+if [[ $module -eq "script" ]]; then
+  . cbp_scenario_vars_bash ${scenario} ${varname}
+else
+  open_tag=$varname
+  close_tag="END $open_tag"
+  config_file="$CBP_ROOT/config/control/$module/${scenario}.con"
+  >&2 echo "Searching for $open_tag $close_tag in $config_file"
+  awk 'flag{
+          if (/'"${close_tag}"'/)
+             {printf "%s", buf; flag=0; buf=""}
+          else
+              buf = buf $0 ORS
+       }
+       /'"${open_tag}"'/ {flag=1}' $config_file
+fi
