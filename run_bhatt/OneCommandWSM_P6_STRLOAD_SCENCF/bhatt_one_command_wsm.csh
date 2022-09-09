@@ -557,27 +557,27 @@ if ($RUN_RIVER == 1 ) then
           set numcores = $NUM_CORES
 
           set use_order = 1
-          if ( -f $CBP_ROOT/config/seglists/${basin}_order.riv ) then
+#          if ( -f $CBP_ROOT/config/seglists/${basin}_order.riv ) then
               source $CBP_ROOT/config/seglists/${basin}_order.riv
-          else
-              set order = ( $basin )
-              set use_order = 0
-          endif
+#          else
+#              set order = ( $basin )
+#              set use_order = 0
+#          endif
           foreach odr ($order)
-               if ( use_order == 1 ) then
+#               if ( use_order == 1 ) then
     	           source $CBP_ROOT/config/seglists/${basin}_order/${odr}.riv
-               else 
-                   source $CBP_ROOT/config/seglists/${basin}.riv
-               endif
+ #              else 
+ #                  source $CBP_ROOT/config/seglists/${basin}.riv
+ #              endif
                @ i = 1
-               echo RIV_MSG_STARTED $odr AT `date`
+               echo RIV_MSG_STARTED $odr AT `date` >> $SCENARIO_LOG
                foreach segment ( $segments )
 
                     if($RUN_RIVER_MODE == 'SCENARIO') then
                          srun --nodes=1 --ntasks=1 --exclusive --job-name=`printf "%03d" $i`_$iSLURM_JOB_NAME bhatt_run_river_oneseg.csh $scenario $segment $user-$iSLURM_JOBID-`printf "%04d" $i` &
                     endif
                     if($RUN_RIVER_MODE == 'CALIB') then
-                         srun --nodes=1 --ntasks=1 --exclusive --job-name=`printf "%03d" $i`_$iSLURM_JOB_NAME bhatt_run_river_oneseg_calib.csh $scenario $segment $user-$iSLURM_JOBID-`printf "%04d" $i` &
+                         srun --nodes=1 --ntasks=1 --exclusive --job-name=`printf "%03d" $i`_$iSLURM_JOB_NAME  bhatt_run_river_oneseg_calib.csh $scenario $segment $user-$iSLURM_JOBID-`printf "%04d" $i` &
                     endif
 
                     @ i += 1
