@@ -11,6 +11,8 @@ set HSP_VERSION       = hspf # hsp2 or hspf
 set INFEXP             = 1
 set LAND_QUIET         = 1
 set N_SPIN_MONTHS      = 360
+# *** this is to handle when BMP EOR factors are 0.0
+set HYDRO_ONLY         = 1
 
 # *** Check if processing completed successfully and Clean slurm-output
 set CHECK_SLURM        = 1
@@ -58,14 +60,14 @@ set RUN_LAND           = 0
 set RUN_LUGX           = 0
 set RUN_UNEC           = 0
 set RUN_BODX           = 0
-set RUN_ANNLOAD        = 1
+set RUN_ANNLOAD        = 0
 set RUN_AVGLOAD        = 1
 set RUN_ETM1           = 1
 set RUN_ETM2           = 0
 set RUN_RIVER          = 1
 set RUN_RIVER_MODE     = CALIB # SCENARIO, CALIB
 set RUN_POSTPROC_GCM   = 0
-set RUN_POSTPROC       = 1
+set RUN_POSTPROC       = 0
 set RUN_EOT            = 0
 set RUN_WQM_INPUT      = 0
 set RUN_CH3D_INPUT     = 0
@@ -96,9 +98,9 @@ set MEM_PER_CPU        = 1
 set ProcPool           = 
 
 
-set BASINS             = JL2_6850_6890
+set BASINS             = JL1_7190_7250
 #set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
-set SUMALL_BASINS      = ( JL2_6850_6890 )
+set SUMALL_BASINS      = ( JL1_7190_7250 )
 
 
 # *** These are set automatically based on previous inputs
