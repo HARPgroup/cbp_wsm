@@ -2,14 +2,14 @@
 # note: using double brackets in bash, tip from SUGGESTIONS
 #       section in https://stackoverflow.com/questions/18568706/check-number-of-arguments-passed-to-a-bash-script
 if [[ $# -lt 3 ]]; then
-  >&2 echo "Usage: get_config scenario BLOCK module(river/land/script)"
-  >&2 echo "Ex: get_config vadeq_2021 IOVARS river "
+  >&2 echo "Usage: get_config scenario type(river/land/script) varname"
+  >&2 echo "Ex: get_config vadeq_2021 river IOVARS"
 fi
 scenario=$1
-varname=$2
-module=$3
+module=$2
+varname=$3
 
-if [[ $module -eq "script" ]]; then
+if [[ "$module" == "script" ]]; then
   . cbp_scenario_vars_bash ${scenario} ${varname}
 else
   open_tag=$varname
