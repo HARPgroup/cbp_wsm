@@ -1,0 +1,44 @@
+#!/bin/csh
+#   GET SCENARIO, BASIN, and TREE
+
+echo "Arg count = ${#argv}" 
+if (${#argv} < 2) then
+  echo ' '
+  echo 'usage:  run_rug.csh scenario basin [tree=$CBP_ROOT] [clean=1]'
+  echo 'Note: set clean=0 to keep the temp directory with model files after running'
+  echo ' '
+  exit
+endif
+
+set tree = $CBP_ROOT
+set scenario = $argv[1]
+set segment = $argv[2]
+if (${#argv} >= 3) then
+  set tmp_dir = $argv[3]
+else
+  set tmp_dir = $tree/tmp/scratch/temp$$/
+endif
+if ( ! -d $tmp_dir ) then
+  mkdir -p $tmp_dir
+endif
+cd $tmp_dir
+
+set clean = 0 # this is the uci generation, so why would we clean at the end?
+if (${#argv} == 4) then
+  set clean = $argv[4]
+endif
+
+if (-e problem) then
+  rm problem
+endif
+
+echo making River UCI for segment $segment River scenario $scenario
+
+echo $segment, $scenario | $CBP_ROOT/code/bin/rug.exe
+
+if (-e problem) then
+  echo ' '
+  cat problem
+  exit
+endif
+
