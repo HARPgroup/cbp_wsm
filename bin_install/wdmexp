@@ -6,8 +6,10 @@ if [ $# -lt 6 ]; then
   exit 1
 fi
 
-. hspf_config
-
+# load the config if not already loaded
+if [ -z "$CBP_ROOT" ]; then
+  . hspf_config
+fi
 
 scenario=$1
 type=$2
@@ -24,6 +26,10 @@ case $type in
 
   met)
     fdir="$CBP_ROOT/input/scenario/climate/met/$scenario/"
+    ;;
+
+  prad)
+    fdir="$CBP_ROOT/input/scenario/climate/prad/$scenario/"
     ;;
 
   river/eos)
