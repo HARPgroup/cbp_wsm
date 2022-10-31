@@ -18,6 +18,7 @@ wdmpath <- as.character(argst[6])
 outpath = paste(outbase, 'land', scenario, 'eos', sep='/')
 outname <- paste0(lseg, '_0111-0211-0411.csv' )
 
+message(paste("Calling","wdm_export_land_flow(",lseg, wdmpath, scenario, startyear, endyear))
 wdm_export_land_flow(lseg, wdmpath, scenario, startyear, endyear)
 # use fast fread() mode, more than 2x speed enhancement
 merged_df1 <- wdm_merge_land_flow(lseg, wdmpath, scenario , outpath, TRUE, TRUE)

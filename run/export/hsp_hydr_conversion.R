@@ -1,14 +1,12 @@
 # This script will convert the hydr csv to a data table and perform analysis & generate graphs 
 #install.packages("IHA", repos="http://R-Forge.R-project.org")
 #install_github("HARPGroup/hydro-tools", force=TRUE)
-basepath='/var/www/R';
-source("/var/www/R/config.R") # will need file in same folder/directory
 
 suppressPackageStartupMessages(library(data.table)) 
 suppressPackageStartupMessages(library(lubridate))
 suppressPackageStartupMessages(library(zoo))
 suppressPackageStartupMessages(library(plyr))
-suppressPackageStartupMessages(library(PearsonDS))
+#suppressPackageStartupMessages(library(PearsonDS))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(R.utils))
 
@@ -34,13 +32,14 @@ hydr <- fread(hydr_file_path)
 #ps_flow <- fread(ps_file_path) # ps in units of ac-ft/hr
 
 hydr$date <- as.Date(hydr$index, format = "%m/%d/%Y %H:%M")
-hydr$hour <- hour(hydr$date)
+hydr$hour <- hour(hydr$index)
 hydr$day <- day(hydr$date)
 hydr$month <- month(hydr$date)
 hydr$year <- year(hydr$date)
 
 # Converting from ac-ft/hr (ROVOL) to cfs : 1 ac-ft/hr = 12.1 cfs
-hydr$Qout= hydr$ROVOL*12.1 #Qout in units of cfs
+hydr$Qout <- hydr$OVOL3*12.1 #Qout in units of cfs
+hydr$wd_mgd <- (hydr$RO - hydr$O3) /1.5472 # withdrawal cfs converted to mgd
 
 # Converting to mgd:
 #colnames(divr) = c('date','divr_achfth')
