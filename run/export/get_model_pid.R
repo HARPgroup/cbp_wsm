@@ -15,7 +15,11 @@ omsite = "http://deq1.bse.vt.edu:81"
 
 # Accepting command arguments:
 argst <- commandArgs(trailingOnly = T)
-element_name <- argst[1]
+if (length(argst) < 5) {
+  message("Use: Rscript get_model_pid.R element_name element_code bundle ftype model_version")
+  q("no")
+}
+model_name <- argst[1] # only used if create/save is needed
 element_code <- argst[2]
 bundle <- argst[3]
 ftype=argst[4]
@@ -48,8 +52,12 @@ model <- RomProperty$new(
   ), 
   TRUE
 )
-if (!(model$pid > 0)) {
+
+if (is.na(model$pid)) {
+  model$propname = model_name
+  model$varid = ds$get_vardef(list(varkey="om_model_element"))$varid # need to set here
+  model$propvalue = 0
   model$save(TRUE)
 }
 
-print($model$pid)
+print(model$pid)
