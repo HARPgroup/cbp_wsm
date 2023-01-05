@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaData xml:lang="en">
+	<DataProperties>
+		<ItemProps>
+			<ItemName>watershed_area.csv</ItemName>
+		</ItemProps>
+	</DataProperties>
+	<DataFields>
+		<attr>
+			<attrlabl>riverseg</attrlabl>
+			<attrtype>string</attrtype>
+			<attrunit>string</attrunit>
+		</attr>
+		<attr>
+			<attrlabl>area</attrlabl>
+			<attrtype>double</attrtype>
+			<attrunit>square miles</attrunit>
+		</attr>
+	</DataFields>
+</metaData>
