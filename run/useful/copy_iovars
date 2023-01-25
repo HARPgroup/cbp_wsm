@@ -16,5 +16,5 @@ if ( !(-d ${dir}) ) then
   mkdir $dir
 endif
 
-cp $CBP_ROOT/config/catalog/iovars/$FromScen/* $dir/
+cp $CBP_ROOT/config/catalog/iovars/$FromScen/* $dir/ -Rf
 
