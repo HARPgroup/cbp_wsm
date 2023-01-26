@@ -150,15 +150,17 @@ riverseg<- RomFeature$new(
 model <- RomProperty$new(
   ds,
   list(
-    varkey="om_model_element", 
-    propname=riverseg$name,
     featureid=riverseg$hydroid, 
     entity_type="dh_feature", 
     propcode=model_version
   ), 
   TRUE
 )
-model$save(TRUE)
+if (is.na(model$pid)) {
+  model$propname = paste(riverseg$name, model_version)
+  model$varid = ds$get_vardef('om_water_model_node')$varid
+  model$save(TRUE)
+}
 
 model_scenario <- RomProperty$new( 
   ds,
