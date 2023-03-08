@@ -55,15 +55,18 @@ wordname <- model$propname #e.g. "Linville Creek"
 model6 <- RomProperty$new(
   ds,
   list(
-    varkey="om_water_model_node",
     featureid=sub$hydroid,
     entity_type="dh_feature", 
     propcode=model_version,
-    propname=paste(model$propname, 'p6') #if not designating cbp-6.0, may have to change 'p6' ?
   ), 
   TRUE
 )
-model6$save(TRUE) #we save this one if it doesn't already exist. The previous ones should always exist. 
+#we save this one if it doesn't already exist. The previous ones should always exist. 
+if (is.na(model6$pid)) {
+  model6$propname = paste(riverseg$name, model_version)
+  model6$varid = ds$get_vardef('om_water_model_node')$varid
+  model6$save(TRUE)
+}
 
 #pull master list
 full_list <- read.csv(list, sep=',')

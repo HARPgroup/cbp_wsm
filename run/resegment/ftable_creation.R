@@ -14,7 +14,8 @@ ds$get_token(rest_pw)
 argst <- commandArgs(trailingOnly = T)
 riverseg <- as.character(argst[1]) 
 channel <- as.character(argst[2])
-path <- as.character(argst[3])
+src_model_version <- as.character(argst[3])
+path <- as.character(argst[4])
 
 #TESTING: comment these out later!
 #riverseg <- "OR1_7700_7980"
@@ -33,7 +34,7 @@ path <- as.character(argst[3])
     varkey="om_water_model_node",
     featureid=rseg$hydroid,
     entity_type="dh_feature", 
-    propcode="vahydro-1.0"), 
+    propcode=src_model_version), 
   TRUE)
 
   channel_prop <- RomProperty$new(ds,list(
@@ -77,6 +78,8 @@ path <- as.character(argst[3])
     propname='slope'),
   TRUE)
   cslope <-  slope$propvalue #longitudinal channel slope
+
+message(paste("Found Feature", rseg$hydroid, "with model", model$pid,", channel", channel_prop$pid, "and DA/province/length/slope=", da, prov, clength, cslope))
 
 #----Provincial Channel Geometry----
 if (prov == 1){
@@ -199,6 +202,7 @@ header6 <- paste(sprintf("%10s %9s %9s %9s %4s","DEPTH","AREA","VOLUME","DISCH",
 header7 <- paste(sprintf("%10s %9s %9s %9s %4s","(FT)","(ACRES)","(AC-FT)","(CFS)","***"),"\n")
 cat(paste(header1,header2,header3,header4,header5,header6,header7, sep="\n"), file = file, append=FALSE)
 
+message(paste("Opening file", file))
 #make table:
 uci_form <- write.table(ftable_formatted,
                         file=file,
@@ -209,3 +213,4 @@ uci_form <- write.table(ftable_formatted,
                         col.names = FALSE)
 #footer
 cat(paste("  END FTABLE"), file=file, append=TRUE)
+message(paste("Saved to file", file))
