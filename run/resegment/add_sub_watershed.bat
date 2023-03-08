@@ -28,7 +28,7 @@ SEPTIC=`cbp get_config $scenario river SEPTIC`
 RIB=`cbp get_config $scenario river 'RIB LOADS'`
 RPA=`cbp get_config $scenario river 'RPA LOADS'`
 # name subshed or retrieve the name if it already exists
-read -r subshed downstream <<< "$(Rscript $CBP_ROOT/run/resegment/subsheds_naming.R $hydrocode $CBP_ROOT/config/catalog/geo/${GEO}/rivernames.csv cbp-6.0)"
+read -r subshed downstream <<< "$(Rscript $CBP_ROOT/run/resegment/subsheds_naming.R $hydrocode $CBP_ROOT/config/catalog/geo/${GEO}/rivernames.csv $model_version)"
 echo 'new subshed:' $subshed
 
 # set and proportion watershed area
@@ -71,20 +71,14 @@ echo '${TRANSPORT}_s2r.csv duplicated'
 Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/gen_info_rseg.csv $subshed $downstream
 echo 'gen_info_rseg.csv duplicated'
 
-# we need to save the header for HYDR, ADCALC and SCRORG cause they're real screwed up with duplicate col names
-# not only that, but SCRORN has 2 header columns, and the others have 1
-for fname in "ADCALC" "HYDR"; do
-  head -n 1 "$CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv" > /tmp/tmp.header.txt
+# we need to save the header for HYDR, 'ADCALC and SCRORG cause they're real screwed up with duplicate col names
+# and 2 header columns, and the others have 1
+for fname in "ADCALC" "HYDR" "SCRORG"; do
+  head -n 2 "$CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv" > tmp.header.txt
+  echo "Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv $subshed $downstream"
   Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv $subshed $downstream
-  ( head -1 /tmp/tmp.header.txt; tail -n +2 $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv ) > /tmp/${fname}.tmp.csv
-  mv  /tmp/${fname}.tmp.csv $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv
-  echo '${fname}.csv duplicated'
-done
-for fname in "SCRORG"; do
-  head -n 2 "$CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv" > /tmp/tmp.header.txt
-  Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv $subshed $downstream
-  ( head -2 /tmp/tmp.header.txt; tail -n +2 $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv ) > /tmp/${fname}.tmp.csv
-  mv  /tmp/${fname}.tmp.csv $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv
+  ( head -2 tmp.header.txt; tail -n +2 $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv ) > ${fname}.tmp.csv
+  mv  ${fname}.tmp.csv $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv
   echo '${fname}.csv duplicated'
 done
 
