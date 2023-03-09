@@ -1,6 +1,9 @@
 #!/bin/bash
 if [ $# -lt 5 ]; then
-  echo "Usage: add_sub_watershed.bat hydrocode downstream_seg model_version scenario drainage_area"
+  echo "Usage: add_sub_watershed.bat hydrocode downstream_seg model_version scenario drainage_area [param_seg=downstream/other riverseg ID]  [land_wdm_src=downstream/blank]"
+  echo " - param_seg: optional river segment ID to use for in-stream properties SCRORG, ADCALC and HYDR, useful for "
+  echo "   resegmenting tidal water segments (0000) or situation where param_seg had more suitable parameters"
+  echo " - land_wdm_src: sep, rpa and rib data can be blank or come from param_seg watershed. blank is useful when param_seg <> downstream since land segments may differ."
   exit
 fi
 . hspf_config
@@ -17,7 +20,16 @@ downstream=$2
 model_version=$3
 scenario=$4
 darea=$5
-
+if [ $# -gt 5 ]; then
+  param_seg=$6
+else
+  param_seg=$downstream
+fi
+if [ $# -gt 6 ]; then
+  land_wdm_src=$7
+else
+  land_wdm_src=$downstream
+fi
 # get info
 GEO=`cbp get_config $scenario river GEO`
 TRANSPORT=`cbp get_config $scenario river TRANSPORT`
@@ -28,10 +40,16 @@ SEPTIC=`cbp get_config $scenario river SEPTIC`
 RIB=`cbp get_config $scenario river 'RIB LOADS'`
 RPA=`cbp get_config $scenario river 'RPA LOADS'`
 # name subshed or retrieve the name if it already exists
-read -r subshed downstream <<< "$(Rscript $CBP_ROOT/run/resegment/subsheds_naming.R $hydrocode $CBP_ROOT/config/catalog/geo/${GEO}/rivernames.csv $model_version)"
+read -r subshed downstream <<< "$(Rscript $CBP_ROOT/run/resegment/subsheds_naming.R $hydrocode $CBP_ROOT/config/catalog/geo/${GEO}/rivernames.csv $model_version $downstream)"
+if [ "$subshed" == "" ]; then
+  echo "Could not create a new subshed code from $hydrocode as trib to $downstream"
+  exit
+fi
 echo 'new subshed:' $subshed
+echo 'flows into:' $downstream
 
 # set and proportion watershed area
+echo "Running: Rscript $CBP_ROOT/run/resegment/area_propor.R $CBP_ROOT/config/catalog/geo/${GEO}/land_water_area.csv $subshed $downstream $darea"
 Rscript $CBP_ROOT/run/resegment/area_propor.R $CBP_ROOT/config/catalog/geo/${GEO}/land_water_area.csv $subshed $downstream $darea
 echo 'land_water_area.csv proportioned'
 
@@ -61,5 +79,6 @@ echo 'land use files proportioned'
 
 # duplicate information from downstream to new subshed:
 # transport, adcalc, 
-$CBP_ROOT/resegment/copy_ad_hy_sc $subshed $downstream $model_version $scenario
+echo "Calling: $CBP_ROOT/run/resegment/copy_ad_hy_sc $subshed $param_seg $model_version $scenario $land_wdm_src"
+$CBP_ROOT/run/resegment/copy_ad_hy_sc $subshed $param_seg $model_version $scenario $land_wdm_src
 

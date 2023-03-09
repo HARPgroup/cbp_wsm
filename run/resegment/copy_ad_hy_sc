@@ -1,7 +1,7 @@
 #!/bin/bash
 # note: subshed must already exist to user this. see add_sub_watershed.bat
 if [ $# -lt 4 ]; then
-  echo "Usage: copy_ad_hy_sc hydrocode downstream_seg model_version scenario"
+  echo "Usage: copy_ad_hy_sc hydrocode downstream_seg model_version scenario [land_wdm_src=downstream/blank]"
   exit
 fi
 . hspf_config
@@ -17,7 +17,11 @@ subshed=$1
 downstream=$2
 model_version=$3
 scenario=$4
-
+if [ $# -gt 4 ]; then
+  land_wdm_src=$5
+else
+  land_wdm_src="downstream"
+fi
 # get info
 GEO=`cbp get_config $scenario river GEO`
 TRANSPORT=`cbp get_config $scenario river TRANSPORT`
@@ -53,7 +57,7 @@ for fname in "ADCALC" "HYDR" "SCRORG"; do
   Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv $subshed $downstream
   ( head -2 tmp.header.txt; tail -n +2 $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv ) > ${fname}.tmp.csv
   mv  ${fname}.tmp.csv $CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv
-  echo '${fname}.csv duplicated'
+  echo "${fname}.csv duplicated"
 done
 
 
@@ -70,7 +74,17 @@ cp config/blank_wdm/blank_ps_sep_div.wdm input/scenario/river/div/${DIV}/DIV_${s
 # make this var so it fits on one line and is readable
 xpath="$CBP_ROOT/input/scenario/river"
 for lseg in $landsegs; do
-  cp $xpath/septic/${SEPTIC}/sep_${lseg}_to_${downstream}.wdm $xpath/septic/${SEPTIC}/sep_${lseg}_to_${subshed}.wdm
-  cp $xpath/rib/${RIB}/rib_${lseg}_to_${downstream}.wdm $xpath/rib/${RIB}/rib_${lseg}_to_${subshed}.wdm
-  cp $xpath/rpaload/${RPA}/rpa_${lseg}_to_${downstream}.wdm $xpath/rpaload/${RPA}/rpa_${lseg}_to_${subshed}.wdm
+  if [ "$land_wdm_src" == "blank" ]; then
+    src_septic="$CBP_ROOT/config/blank_wdm/blank_septic.wdm"
+    src_rib="$CBP_ROOT/config/blank_wdm/blank_rib.wdm"
+    src_rpaload="$CBP_ROOT/config/blank_wdm/blank_rpa.wdm"
+  else
+    src_septic=$xpath/septic/${SEPTIC}/sep_${lseg}_to_${downstream}.wdm 
+    src_rib=$xpath/rib/${RIB}/rib_${lseg}_to_${downstream}.wdm 
+    src_rpaload=$xpath/rpaload/${RPA}/rpa_${lseg}_to_${downstream}.wdm 
+ 
+  fi
+  cp $src_septic $xpath/septic/${SEPTIC}/sep_${lseg}_to_${subshed}.wdm
+  cp $src_rib $xpath/rib/${RIB}/rib_${lseg}_to_${subshed}.wdm
+  cp $src_rpaload $xpath/rpaload/${RPA}/rpa_${lseg}_to_${subshed}.wdm
 done

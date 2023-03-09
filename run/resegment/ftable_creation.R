@@ -31,7 +31,6 @@ path <- as.character(argst[4])
     TRUE)
   
   model <- RomProperty$new(ds,list(
-    varkey="om_water_model_node",
     featureid=rseg$hydroid,
     entity_type="dh_feature", 
     propcode=src_model_version), 

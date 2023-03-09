@@ -3,9 +3,15 @@
 
 #----Receive Arguments----
 argst <- commandArgs(trailingOnly = T)
+message(paste("number of args = ", length(argst)))
 subshed <- argst[1]
 list <- argst[2] #full path to rivernames.csv (the master list)
 model_version <- argst[3] #e.g. cbp-6.0
+if (length(argst) >= 4) {
+  downstream <- argst[4] #
+} else {
+  downstream = subshed # assumes that the subshed uses downstream in naming convention
+}
 #----!testing,comment!----
 #subshed <- 'PS2_5560_5100_linville_creek'
 #list <- 'http://deq1.bse.vt.edu:81/p6/vadeq/config/catalog/geo/vahydro/rivernames.csv'
@@ -40,7 +46,6 @@ sub <- RomFeature$new(
 model <- RomProperty$new(
   ds,
   list(
-    varkey = "om_water_model_node",
     featureid = sub$hydroid,
     entity_type = "dh_feature",
     propcode = "vahydro-1.0"
@@ -57,13 +62,13 @@ model6 <- RomProperty$new(
   list(
     featureid=sub$hydroid,
     entity_type="dh_feature", 
-    propcode=model_version,
+    propcode=model_version
   ), 
   TRUE
 )
 #we save this one if it doesn't already exist. The previous ones should always exist. 
 if (is.na(model6$pid)) {
-  model6$propname = paste(riverseg$name, model_version)
+  model6$propname = paste(sub$name, model_version)
   model6$varid = ds$get_vardef('om_water_model_node')$varid
   model6$save(TRUE)
 }
@@ -138,7 +143,7 @@ rseg <- RomProperty$new(
 if ((is.na(rseg$pid) == TRUE) || (rseg$propcode == "")) {
   #thus unique name doesn't exist yet
   #this is where we apply make_rseg_name function:
-  new_name <- make_rseg_name(subshed, unique_ids, wordname)
+  new_name <- make_rseg_name(downstream, unique_ids, wordname)
   
   #add to master list & save
   row <- data.frame(new_name, wordname)
@@ -197,6 +202,4 @@ if ((is.na(rseg$pid) == TRUE) || (rseg$propcode == "")) {
 
 # print subshed new name
 # print main_seg aka downstream riverseg name
-splits <- strsplit(subshed, "_")
-downstream <- paste(splits[[1]][[1]],splits[[1]][[2]],splits[[1]][[3]], sep = "_")
 cat(paste(new_name, downstream))
