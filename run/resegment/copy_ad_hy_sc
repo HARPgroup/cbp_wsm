@@ -38,16 +38,7 @@ seg_id="${ss_pieces[1]}"
 cbp basingen.csh $scenario $seg_id
 landsegs=`cbp get_landsegs $subshed`
 
-# duplicate information from downstream to new subshed:
-# transport
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_l2w.csv $subshed $downstream
-echo '${TRANSPORT}_l2w.csv duplicated'
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
-echo '${TRANSPORT}_s2r.csv duplicated'
-
-# Hydro PARAMETERS
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/gen_info_rseg.csv $subshed $downstream
-echo 'gen_info_rseg.csv duplicated'
+# duplicate riverine information from downstream to new subshed:
 
 # we need to save the header for HYDR, 'ADCALC and SCRORG cause they're real screwed up with duplicate col names
 # and 2 header columns, and the others have 1

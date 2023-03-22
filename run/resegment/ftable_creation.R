@@ -12,17 +12,26 @@ ds$get_token(rest_pw)
 
 # Accepting command arguments:
 argst <- commandArgs(trailingOnly = T)
+if (length(argst) < 4) {
+    message("Use: Rscript ftable_creation.R riverseg channel_name(or manual) src_model_version path(to ftable files) [da(if channel=manual)] [clength(manual) [province(manual)] [slope(manual)] ] ")
+    q()
+}
 riverseg <- as.character(argst[1]) 
 channel <- as.character(argst[2])
 src_model_version <- as.character(argst[3])
 path <- as.character(argst[4])
-
+if (channel == 'manual') {
+  da = as.numeric(argst[5])
+  clength = as.numeric(argst[6])
+  prov = as.numeric(argst[7])
+  cslope = as.numeric(argst[8])
+}
 #TESTING: comment these out later!
 #riverseg <- "OR1_7700_7980"
 #riverseg <- "JL2_6850_6890"
 #channel<- '0. River Channel' 
 #path <- '/aa_HARP/aa_GitHub/HARParchive/HARP-2022-Summer/AutomatedScripts/ftables/'
-
+if (channel != 'manual') {
 #----Pulling from VAHydro----
   rseg<- RomFeature$new(ds,list(
     hydrocode= paste("vahydrosw_wshed",riverseg,sep = "_"), 
@@ -77,8 +86,8 @@ path <- as.character(argst[4])
     propname='slope'),
   TRUE)
   cslope <-  slope$propvalue #longitudinal channel slope
-
-message(paste("Found Feature", rseg$hydroid, "with model", model$pid,", channel", channel_prop$pid, "and DA/province/length/slope=", da, prov, clength, cslope))
+  message(paste("Found Feature", rseg$hydroid, "with model", model$pid,", channel", channel_prop$pid, "and DA/province/length/slope=", da, prov, clength, cslope))
+}
 
 #----Provincial Channel Geometry----
 if (prov == 1){

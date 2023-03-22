@@ -40,6 +40,7 @@ SEPTIC=`cbp get_config $scenario river SEPTIC`
 RIB=`cbp get_config $scenario river 'RIB LOADS'`
 RPA=`cbp get_config $scenario river 'RPA LOADS'`
 # name subshed or retrieve the name if it already exists
+echo "Calling: Rscript $CBP_ROOT/run/resegment/subsheds_naming.R $hydrocode $CBP_ROOT/config/catalog/geo/${GEO}/rivernames.csv $model_version $downstream"
 read -r subshed downstream <<< "$(Rscript $CBP_ROOT/run/resegment/subsheds_naming.R $hydrocode $CBP_ROOT/config/catalog/geo/${GEO}/rivernames.csv $model_version $downstream)"
 if [ "$subshed" == "" ]; then
   echo "Could not create a new subshed code from $hydrocode as trib to $downstream"
@@ -76,6 +77,17 @@ for i in $LANDUSE; do
   fi
 done
 echo 'land use files proportioned'
+
+# transport
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_l2w.csv $subshed $downstream
+echo '${TRANSPORT}_l2w.csv duplicated'
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
+echo '${TRANSPORT}_s2r.csv duplicated'
+
+# Gen Info PARAMETERS
+echo "Caling: Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/gen_info_rseg.csv $subshed $downstream"
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/gen_info_rseg.csv $subshed $downstream
+echo 'gen_info_rseg.csv duplicated'
 
 # duplicate information from downstream to new subshed:
 # transport, adcalc, 

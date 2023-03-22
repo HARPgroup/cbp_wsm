@@ -3,6 +3,11 @@
 
 #----Receive Arguments----
 argst <- commandArgs(trailingOnly = T)
+if (length(argst) < 4) {
+    message("Use: Rscript subshedds_naming.R current_segid(hydrocode minus prefix) full_path_rivernames.csv model_version [downstream_riverseg(will infer from current riverseg if blank)")
+    q()
+}
+
 message(paste("number of args = ", length(argst)))
 subshed <- argst[1]
 list <- argst[2] #full path to rivernames.csv (the master list)
