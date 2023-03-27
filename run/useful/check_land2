@@ -12,7 +12,6 @@ lu_list=`ls $CBP_ROOT/tmp/wdm/land/`
 for lu in $lu_list; do
   lus=$((lus+1))
   for s in $segs; do
-    lu_is_null=0
     if [ $lus -eq 1 ]; then 
       lsegs=$((lsegs+1))
     fi 
@@ -21,20 +20,10 @@ for lu in $lu_list; do
     else
       lu_is_null=1
       null_lu_lsegs+=("$lu${s}.wdm")
-      #echo "Could not find $CBP_ROOT/tmp/wdm/land/$lu/$scenario/$lu${s}.wdm"
-    fi
-    if [ $lu_is_null -gt 0 ]; then
-      if echo "${null_lsegs[@]}" | grep "$s" -q; then
-        # already added to the list
-        aready=1
-      else
-        null_lsegs+=("$s")
-      fi
+      echo "Could not find $CBP_ROOT/tmp/wdm/land/$lu/$scenario/$lu${s}.wdm"
     fi
   done
 done
 echo "Found $lus land-uses, and $lsegs land-segments"
 echo "Missing land segment-landuse combos:"
 echo "${null_lu_lsegs[@]}" 
-echo "Land segments with at least one LU missing: "
-echo "${null_lsegs[@]}"

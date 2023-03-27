@@ -23,8 +23,8 @@
 #### define lists
   source $tree/config/seglists/${basin}.riv
 
-#  set files = (ADCALC.csv HYDR.csv OXRX.csv RQUAL.csv HTRCH.csv NUTRX.csv PLANK.csv SEDTRN.csv tau_percentiles.csv)
-  set files = (OXRX.csv RQUAL.csv NUTRX.csv PLANK.csv SEDTRN.csv )
+#  set files = (ADCALC.csv HYDR.csv OXRX.csv RQUAL.csv HTRCH.csv NUTRX.csv PLANK.csv SEDTRN.csv tau_percentiles.csv gen_info_rseg.csv)
+  set files = (OXRX.csv RQUAL.csv NUTRX.csv PLANK.csv SEDTRN.csv)
 
   cd $tree/input/param/river/$ToScen/
 
