@@ -32,8 +32,13 @@ found=0
 # BEGIN - find based method
 #try replacing do loop with this find command
 # returns only the first match
-for edir in bin run/standard run run_bhatt input/param/scripts config/control/calib/PWATER config/control/land config/control/river input/param/river; do
-  eroot="$CBP_ROOT/$edir"
+for edir in /usr/local/bin run/standard run run_bhatt run/useful input/param/scripts config/control/calib/PWATER config/control/land config/control/river input/param/river; do
+  if [[ ${edir::1} == "/" ]]
+  then
+    eroot=$edir
+  else
+    eroot="$CBP_ROOT/$edir"
+  fi
   if [ -d $eroot ]; then
     cd $eroot
     fpath=`find *|grep $cmd | head -n 1`
@@ -49,9 +54,11 @@ for edir in bin run/standard run run_bhatt input/param/scripts config/control/ca
         if [ "$edir" == "bin" ]; then
           echo "Executing: ./$cmd $@" >/dev/stderr
           ./$cmd "$@"
+          exit
         else
           cd $eroot/$p
           $eroot/$p/$cmd "$@"
+          exit
         fi
         found=1
       fi
