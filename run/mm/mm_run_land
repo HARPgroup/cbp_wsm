@@ -1,0 +1,28 @@
+#!/bin/bash
+scenario=$1
+river=$2
+use_slurm=$3
+
+. hspf_config
+
+model=`cbp get_config $scenario script "MM_MODEL"`
+
+if [ "$model" == "" ]; then
+   echo "Scenario $scenario does not have an entry for MM_MODEL in $CBP_ROOT/config/control/scripts/${scenario}.con"
+fi
+
+MODEL_ROOT=$CBP_ROOT
+META_MODEL_ROOT=/opt/model/meta_model
+IGNORE_PROBLEMS=0 # set this to 1 if you want to plow forward regardless of errors, not advisable but sometimes...
+export MODEL_ROOT META_MODEL_ROOT IGNORE_PROBLEMS
+
+segs=`cbp get_landsegs $river`
+for i in $segs; do
+  if [ "$use_slurm" -eq "1" ]; then
+    echo "sbatch /opt/model/meta_model/run_model $model $scenario $i auto land "
+    sbatch /opt/model/meta_model/run_model $model $scenario $i auto land 
+  else
+    echo "/opt/model/meta_model/run_model $model $scenario $i auto land "
+    /opt/model/meta_model/run_model $model $scenario $i auto land 
+  fi
+done
