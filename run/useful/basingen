@@ -9,13 +9,15 @@ if [ $# -le 1 ]; then
   echo "Ex: cbp basingen p600calib PS5_5200_4380"
   echo "Or: cbp basingen p600calib 5200"
 fi
- 
 n=$2
-if [ "$n" != "" ]; then 
-  #segid only
-  seg=$n
+pieces=(${n//_/ })
+n=${pieces[1]}
+if [ "$n" == "" ]; then 
+  #segid only given
+  seg=$2
 else
-  seg=`echo "$n"|awk -F'_' '{print $2}'`
+  seg=$n
 fi
+echo "Calling: cbp basingen.csh $1 $seg"
 result=`cbp basingen.csh $1 $seg`
 echo $result
