@@ -4,11 +4,10 @@ TIME
 2020 12 31
 END TIME
 
-**** We use only 2 land use entries, both pointing to the same file
 LAND USE
 year mo da <-file------------->***
-1984 07 01 2013BASE20180615
-2014 07 01 2013BASE20180615
+1984 07 01 2013VAHYDRO2018615
+2055 07 01 2013VAHYDRO2018615
 END LAND USE
 
 SCENARIO FACTOR
@@ -143,18 +142,19 @@ TRANSPORT
 wF180615RXAPXXXW
 END TRANSPORT
 
+***P620171001WQg
 PARAMETERS
-P620171001WQg
+vahydro_2022
 END PARAMETERS
 
 *** set of IO specifications under iovars
 IOVARS
-p600
+vahydro_2022
 END IOVARS
 
 LAND SCENARIO
 LU  <-file--->***
-all vadeq_2021
+all drought
 END LAND SCENARIO
 
 DIVERSIONS  
@@ -186,17 +186,17 @@ FLOODPLAIN LOADS
 END FLOODPLAIN LOADS
 
 PRECIP ATMOS DEPOSITION
-p20211221
+droughtprad
 END PRECIP ATMOS DEPOSITION
 
 METEOROLOGY
-nldas1221
+droughtmet
 END METEOROLOGY
 
 *** specifications that contain the total list of land and river
 *** segments and the connections between them
 GEOMETRY
-p600
+vahydro
 END GEOMETRY
 
 *** active modules for this scenario
@@ -215,7 +215,7 @@ END MODULES
 
 *** calibration scenario reference for river parameter modification
 CALIBSCEN
-vadeq_2021
+drought
 END CALIBSCEN
 
 PLTGEN

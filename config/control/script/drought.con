@@ -4,10 +4,13 @@ set PROJECT_HOME       = /opt/model/p6/vadeq
 set MY_HOME            = run_bhatt
 set SCRIPT_DIR         = OneCommandWSM_P6_STRLOAD_SCENCF
 set MODEL_FILES_GROUP  = allmodelers
-set MODEL_VERSION_CODE = cbp-6.0
+set MODEL_VERSION_CODE = cbp-6.1
+set LAND_FTYPE         = cbp6_landseg
+set RIVER_FTYPE        = vahydro
+set EXPORT_RUNOFF_OM   = 0 # 0 - do not create db exports, 1 - do create db exports for use in OM
 
 set HSP_VERSION       = hspf # hsp2 or hspf
-set MM_MODEL           = hspf_cbp6
+
 set INFEXP             = 1
 set LAND_QUIET         = 1
 set N_SPIN_MONTHS      = 360

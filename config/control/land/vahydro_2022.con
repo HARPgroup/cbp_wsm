@@ -426,7 +426,7 @@ END IOVARS
 *** specifications that contain the total list of land and river
 *** segments and the connections between them
 GEOMETRY
-p600
+vahydro
 END GEOMETRY
 
 *** perlnd modules to turn on.  First line is pervious land uses, followed by active modules

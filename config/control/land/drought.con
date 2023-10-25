@@ -3,7 +3,7 @@
 **** start and end time, must have exactly two lines in this table
 TIME
 1984 01 01
-2020 12 31
+2022 12 31
 END TIME
 
 *** for land cover, use the four points available and interpolate between
@@ -407,11 +407,11 @@ p600INFEXP
 END SPECIAL ACTION FLAGS
 
 PRECIP ATMOS DEPOSITION
-p20211221
+droughtprad
 END PRECIP ATMOS DEPOSITION
 
 METEOROLOGY
-nldas1221
+droughtmet
 END METEOROLOGY
 
 PARAMETERS
@@ -426,7 +426,7 @@ END IOVARS
 *** specifications that contain the total list of land and river
 *** segments and the connections between them
 GEOMETRY
-p600
+vahydro
 END GEOMETRY
 
 *** perlnd modules to turn on.  First line is pervious land uses, followed by active modules

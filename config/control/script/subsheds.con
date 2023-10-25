@@ -4,10 +4,11 @@ set PROJECT_HOME       = /opt/model/p6/vadeq
 set MY_HOME            = run_bhatt
 set SCRIPT_DIR         = OneCommandWSM_P6_STRLOAD_SCENCF
 set MODEL_FILES_GROUP  = allmodelers
-set MODEL_VERSION_CODE = cbp-6.0
+set MODEL_VERSION_CODE = cbp-6.1
 
-set HSP_VERSION       = hspf # hsp2 or hspf
-set MM_MODEL           = hspf_cbp6
+set HSP_EXEC       = /usr/local/bin/hsp2 # hsp2 or hspf
+set MM_MODEL           = hsp2_cbp6
+
 set INFEXP             = 1
 set LAND_QUIET         = 1
 set N_SPIN_MONTHS      = 360
@@ -55,21 +56,21 @@ set SEPTIC_YEAR2       = 2005
 # *** SETTING WHICH WSM MODULES TO RUN ***
 set RUN_MAKE_LAND_DIR  = 0
 set RUN_MAKE_RIVER_DIR = 0
-set RUN_LUG            = 1
-set RUN_LAND           = 1
+set RUN_LUG            = 0
+set RUN_LAND           = 0
 set RUN_LUGX           = 0
 set RUN_UNEC           = 0
 set RUN_BODX           = 0
 set RUN_ANNLOAD        = 1
 set RUN_AVGLOAD        = 1
-set RUN_ETM1           = 0
+set RUN_ETM1           = 1
 set RUN_ETM2           = 0
 set RUN_RIVER          = 1
 set RUN_RIVER_MODE     = CALIB # SCENARIO, CALIB
 set RUN_POSTPROC_GCM   = 0
 set RUN_POSTPROC       = 0
 set RUN_EOT            = 0
-set RUN_WQM_INPUT      = 1
+set RUN_WQM_INPUT      = 0
 set RUN_CH3D_INPUT     = 0
 set RUN_REMOVE_DIRS    = 0
 # *** Flags 0= NO; 1= ALL Land+Riv; 2= Everything!!; etc

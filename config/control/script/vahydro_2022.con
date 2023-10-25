@@ -7,7 +7,7 @@ set MODEL_FILES_GROUP  = allmodelers
 set MODEL_VERSION_CODE = cbp-6.0
 
 set HSP_VERSION       = hspf # hsp2 or hspf
-set MM_MODEL           = hspf_cbp6
+
 set INFEXP             = 1
 set LAND_QUIET         = 1
 set N_SPIN_MONTHS      = 360

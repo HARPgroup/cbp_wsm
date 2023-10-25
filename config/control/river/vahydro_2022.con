@@ -196,7 +196,7 @@ END METEOROLOGY
 *** specifications that contain the total list of land and river
 *** segments and the connections between them
 GEOMETRY
-p600
+vahydro
 END GEOMETRY
 
 *** active modules for this scenario
