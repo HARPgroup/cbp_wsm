@@ -11,9 +11,9 @@
 c      parameter (ndaymax = 11323) ! max number of days in simulation
       parameter (ndaymax = 18993) ! max number of days in simulation
       parameter (EarliestYear=1984)  ! first year simulated
-      parameter (LatestYear=2020)    ! last year simulated
+      parameter (LatestYear=2030)    ! last year simulated
       parameter (EARLIESTYEARMAX = 1984)  ! first year max
-      parameter (LATESTYEARMAX   = 2035)  ! last year max 
+      parameter (LATESTYEARMAX   = 2030)  ! last year max 
       parameter (nyearmax=LATESTYEARMAX-EARLIESTYEARMAX+1 )    ! max number of years
 
       integer lenseg
