@@ -43,7 +43,7 @@
 
 *********** time variables
       integer minyear,maxyear,vsize,nyears
-      parameter (minyear=1980,maxyear = 2020)
+      parameter (minyear=1980,maxyear = 2050)
 
       integer scenyear  ! year of the scenario
 
