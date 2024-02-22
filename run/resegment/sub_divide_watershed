@@ -1,0 +1,51 @@
+#!/bin/bash
+if [ $# -lt 5 ]; then
+  echo "Usage: sub_divide_watershed.bat subshed downstream_seg model_version scenario drainage_area "
+  exit
+fi
+. hspf_config
+# arguments:
+# - subshed
+# - receiving stream segment
+# - model version (cbp-6.0)
+# - cbp scenario (subsheds)
+# - drainage area of subshed
+# load name, rseg and area info
+
+subshed=$1
+downstream=$2
+model_version=$3
+scenario=$4
+darea=$5
+GEO=`cbp get_config $scenario river GEO`
+LANDUSE=`cbp get_config $scenario river 'LAND USE'`
+
+# set and proportion watershed area
+echo "Running: Rscript $CBP_ROOT/run/resegment/area_propor.R $CBP_ROOT/config/catalog/geo/${GEO}/land_water_area.csv $subshed $downstream $darea"
+Rscript $CBP_ROOT/run/resegment/area_propor.R $CBP_ROOT/config/catalog/geo/${GEO}/land_water_area.csv $subshed $downstream $darea
+echo 'land_water_area.csv proportioned'
+
+# now get a list of subwatersheds for later use
+read -r -a ss_pieces <<< $(echo $subshed | tr "_" " ")
+seg_id="${ss_pieces[1]}"
+cbp basingen.csh $scenario $seg_id
+landsegs=`cbp get_landsegs $subshed`
+
+# set land use area; iterate through multiple files and proportion them all
+cnt=0
+for i in $LANDUSE; do
+  ((cnt++))
+  if [[ $cnt -eq 1 ]]; then
+    yr=$i
+  fi
+  if [[ $cnt -eq 4 ]]; then
+    lu_file="input/scenario/river/land_use/land_use_${i}.csv"
+    echo "LU file for $yr = " $lu_file
+    Rscript $CBP_ROOT/run/resegment/area_propor.R $lu_file $subshed $downstream $darea
+
+    # reset our counter
+    cnt=0
+  fi
+done
+echo 'land use files proportioned'
+
