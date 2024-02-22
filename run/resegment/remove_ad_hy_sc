@@ -1,0 +1,96 @@
+#!/bin/bash
+# note: subshed must already exist to user this. see add_sub_watershed.bat
+if [ $# -lt 4 ]; then
+  echo "Usage: remove_ad_hy_sc hydrocode downstream_seg model_version scenario [land_wdm_src=downstream/blank]"
+  exit
+fi
+. hspf_config
+# arguments:
+# - hydrocode
+# - receiving stream segment
+# - model version (cbp-6.0)
+# - cbp scenario (subsheds)
+# - drainage area of subshed
+# load name, rseg and area info
+
+subshed=$1
+downstream=$2
+model_version=$3
+scenario=$4
+if [ $# -gt 4 ]; then
+  land_wdm_src=$5
+else
+  land_wdm_src="downstream"
+fi
+# get info
+GEO=`cbp get_config $scenario river GEO`
+TRANSPORT=`cbp get_config $scenario river TRANSPORT`
+PARAMS=`cbp get_config $scenario river PARAMETERS`
+LANDUSE=`cbp get_config $scenario river 'LAND USE'`
+DIV=`cbp get_config $scenario river DIV`
+SEPTIC=`cbp get_config $scenario river SEPTIC`
+RIB=`cbp get_config $scenario river 'RIB LOADS'`
+RPA=`cbp get_config $scenario river 'RPA LOADS'`
+BMPTYPES=`cbp get_config $scenario river 'TYPEBMP'`
+AFOCFO=`cbp get_config $scenario river 'AFO CFO LOADS'`
+# now get a list of subwatersheds for later use
+read -r -a ss_pieces <<< $(echo $subshed | tr "_" " ")
+seg_id="${ss_pieces[1]}"
+cbp basingen.csh $scenario $seg_id
+landsegs=`cbp get_landsegs $subshed`
+
+# duplicate riverine information from downstream to new subshed:
+
+# we need to save the header for HYDR, 'ADCALC and SCRORG cause they're real screwed up with duplicate col names
+# and 2 header columns, and the others have 1
+# in p6 we have 3
+# for fname in "ADCALC" "HYDR" "SCRORG"; do
+# in p5 we have only 2:
+for fname in "ADCALC" "HYDR"; do
+  cp "$CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv" /tmp/${fname}.csv
+  cat /tmp/${fname}.csv |grep -v $subshed > "$CBP_ROOT/input/param/river/${PARAMS}/${fname}.csv"
+done
+
+
+# WDM CSVs
+cp $CBP_ROOT/config/catalog/geo/${GEO}/river_met_wdm.csv /tmp/river_met_wdm.csv 
+cat /tmp/river_met_wdm.csv | grep -v $subshed > $CBP_ROOT/config/catalog/geo/${GEO}/river_met_wdm.csv
+echo 'removed $subshed from river_met_wdm.csv'
+cp $CBP_ROOT/config/catalog/geo/${GEO}/river_prad_wdm.csv /tmp/
+cat /tmp/river_prad_wdm.csv | grep -v $subshed > $CBP_ROOT/config/catalog/geo/${GEO}/river_prad_wdm.csv
+echo 'removed $subshed from river_prad_wdm.csv'
+
+# WDM files 
+rm input/scenario/river/div/${DIV}/DIV_${subshed}.wdm
+
+# this may not be needed, as these don't appear in the UCI but might be used in the ETM?
+# make this var so it fits on one line and is readable
+# p6 had 3 files, p532 only has 1, "septic"
+xpath="$CBP_ROOT/input/scenario/river"
+for lseg in $landsegs; do
+  rm $xpath/septic/${SEPTIC}/septic_${lseg}_to_${subshed}.wdm
+done
+
+cnt=0
+for i in $AFOCFO; do
+  ((cnt++))
+  if [[ $cnt -eq 1 ]]; then
+    yr=$i
+  fi
+  if [[ $cnt -eq 4 ]]; then
+    afo_file="input/scenario/river/loads/afocfoload_${i}.csv"
+    echo "zeroing $subshed in afo file for $yr = " $afo_file
+    Rscript $CBP_ROOT/run/resegment/area_propor.R $afo_file $subshed $downstream 0
+    cp $afo_file /tmp/
+    cat /tmp/afocfoload_${i}.csv |grep -v $subshed > $afo_file
+    print "$subshed removed from $afo_file"
+    # reset our counter
+    cnt=0
+  fi
+done
+echo 'AFO CFO files proportioned'
+
+
+cp $xpath/bmptypes/$BMPTYPES/lrseg_HGMRs.csv /tmp/
+cat /tmp/lrseg_HGMRs.csv | grep -v $subshed > $xpath/bmptypes/$BMPTYPES/lrseg_HGMRs.csv
+echo "removed $subshed from lrseg_HGMRs.csv"
