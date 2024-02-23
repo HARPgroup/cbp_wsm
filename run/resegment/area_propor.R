@@ -48,24 +48,27 @@ area_propor <- function(
   }
   # sum subshed area
   sub_area <- sum(subsheds[-1:-2]) / 640
+  rseg_col <- as.integer(which(names(main_segs) == 'riverseg'))
+  lseg_col <- as.integer(which(names(main_segs) == 'landseg'))
   
 # -- -- --
   # if subshed area has values, have to add them back to main_seg
   if (sub_area != 0) {
     
-    if (colnames(file)[2] == "landseg") { #means it's a 1 entry per lrseg file
-      
-      for (i in 1:length(main_segs[,2])) {
+    if (length(lseg_col) > 0) { #means it's a 1 entry per lrseg file
+      for (i in 1:length(main_segs[,lseg_col])) {
         #for each landuse in subshed, find the corresponding data in main_segs
         #sub_lsegs <- subsheds[grep(main_segs[i, 2], subsheds[, 2]), ]
         #main_lsegs <- main_segs[grep(main_segs[i, 2], main_segs[, 2]), ]
         
-        sub_lsegs <- sqldf(paste0("select * from subsheds where landseg = '",main_segs[i,2], "'"))
+        sub_lsegs <- sqldf(paste0("select * from subsheds where landseg = '",main_segs[i,lseg_col], "'"))
         
-        main_lsegs <- sqldf(paste0("select * from main_segs where landseg = '", main_segs[i,2], "'"))
+        main_lsegs <- sqldf(paste0("select * from main_segs where landseg = '", main_segs[i,lseg_col], "'"))
         
         if (length(sub_lsegs[, 1]) != 0) {
-          main_segs[i, -1:-2] <- sub_lsegs[-1:-2] + main_lsegs[-1:-2]
+          for (j in 1:nrow(sub_lsegs)) {
+            main_segs[i, -1:-2] <- sub_lsegs[-1:-2][1,] + main_lsegs[-1:-2]
+          }
         } # else: main_segs remains the same
       }
       
@@ -80,20 +83,24 @@ area_propor <- function(
   # do the proportioning
   new_sub <- main_segs
   new_sub[-1:-2] <- main_segs[-1:-2] * propor
-  new_sub[,1] <- subshed
+  new_sub[,rseg_col] <- subshed
   
   main_segs[-1:-2] <- main_segs[-1:-2] * (1-propor)
   
-  remove <- subset(file, file[,1] != main_seg) #remove old land use values
-  remove <- subset(remove, remove[,1] != subshed) # remove any pre-existing subshed values
+  remove <- subset(file, file[,rseg_col] != main_seg) #remove old land use values
+  remove <- subset(remove, remove[,rseg_col] != subshed) # remove any pre-existing subshed values
   
-  file <- rbind(remove, new_sub, main_segs)
+  file <- rbind(remove, main_segs)
+  if (sub_da > 0) {
+    # we only add these in if the DA > 0, otherwise, we are removing by not adding back in
+    file <- rbind(file, new_sub)
+  }
   
   # order by lrseg or just rseg
-  if (colnames(file)[2] == "landseg") { #means it's a 1 entry per lrseg file
-    file <- file[order(file$landseg, file[,1]),]
+  if (length(lseg_col) > 0) { #means it's a 1 entry per lrseg file
+    file <- file[order(file[,rseg_col], file[,lseg_col]),]
   } else { #means it's a 1 entry per rseg file
-    file <- file[order(file[,1]),]
+    file <- file[order(file[,rseg_col]),]
   }
   
   # add end row(s) back if exists

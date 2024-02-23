@@ -50,39 +50,19 @@ echo 'new subshed:' $subshed
 echo 'flows into:' $downstream
 
 # set and proportion watershed area
-echo "Running: Rscript $CBP_ROOT/run/resegment/area_propor.R $CBP_ROOT/config/catalog/geo/${GEO}/land_water_area.csv $subshed $downstream $darea"
-Rscript $CBP_ROOT/run/resegment/area_propor.R $CBP_ROOT/config/catalog/geo/${GEO}/land_water_area.csv $subshed $downstream $darea
-echo 'land_water_area.csv proportioned'
-
-# now get a list of subwatersheds for later use
-read -r -a ss_pieces <<< $(echo $subshed | tr "_" " ")
-seg_id="${ss_pieces[1]}"
-cbp basingen.csh $scenario $seg_id
-landsegs=`cbp get_landsegs $subshed`
-
-# set land use area; iterate through multiple files and proportion them all
-cnt=0
-for i in $LANDUSE; do
-  ((cnt++))
-  if [[ $cnt -eq 1 ]]; then
-    yr=$i
-  fi
-  if [[ $cnt -eq 4 ]]; then
-    lu_file="input/scenario/river/land_use/land_use_${i}.csv"
-    echo "LU file for $yr = " $lu_file
-    Rscript $CBP_ROOT/run/resegment/area_propor.R $lu_file $subshed $downstream $darea
-
-    # reset our counter
-    cnt=0
-  fi
-done
-echo 'land use files proportioned'
+echo "Running: $CBP_ROOT/run/resegment/sub_divide_watershed $subshed $downstream $model_version $scenario $darea"
+$CBP_ROOT/run/resegment/sub_divide_watershed $subshed $downstream $model_version $scenario $darea
 
 # transport
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_l2w.csv $subshed $downstream
-echo '${TRANSPORT}_l2w.csv duplicated'
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
-echo '${TRANSPORT}_s2r.csv duplicated'
+# PHASE 6 used these:
+#Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_l2w.csv $subshed $downstream
+#echo '${TRANSPORT}_l2w.csv duplicated'
+#Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
+#echo '${TRANSPORT}_s2r.csv duplicated'
+# PHASE 5 seems to have only this:
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}.csv $subshed $downstream
+echo '${TRANSPORT}.csv duplicated'
+
 
 # Gen Info PARAMETERS
 echo "Caling: Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/gen_info_rseg.csv $subshed $downstream"
