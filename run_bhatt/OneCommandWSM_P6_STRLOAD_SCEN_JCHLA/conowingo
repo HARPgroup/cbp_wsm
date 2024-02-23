@@ -1,0 +1,3 @@
+#csh bhatt_run_river_oneseg_calib.csh P620151101WQbX1 SL9_2520_2700 tempRIV
+#csh bhatt_run_river_oneseg_calib.csh P620151101WQbX1 SL9_2700_2720 tempRIV
+csh bhatt_run_river_oneseg_calib.csh P620151101WQbX1 SL9_2720_0001 tempRIV

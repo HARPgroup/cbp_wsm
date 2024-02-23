@@ -1,0 +1,10 @@
+#!/bin/bash
+
+hspf_config=`find_config hspf.config`
+if [ "$hspf_config" = "" ]; then
+  hspf_config="/etc/hspf.config"
+fi
+
+echo "Loading $hspf_config" >/dev/stderr
+source $hspf_config
+

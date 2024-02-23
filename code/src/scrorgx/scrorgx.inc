@@ -36,9 +36,9 @@
       parameter (maxrow=5)
       character*10 parscr(maxrow)
       real tscr
-      real annscr(1980:2020,maxrow)
+      real annscr(1980:2050,maxrow)
 
-      real anntssx(1980:2020)
+      real anntssx(1980:2050)
 
       character*50 calscen
       integer lencalscen

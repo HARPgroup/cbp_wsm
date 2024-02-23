@@ -1,0 +1,127 @@
+#!/bin/csh
+
+set PROJECT_HOME       = /modeling/gb604
+set MY_HOME            = run_bhatt
+set SCRIPT_DIR         = OneCommandWSM_P6_STRLOAD_SCENCF_WRTDS
+
+set INFEXP             = 1
+set LAND_QUIET         = 1
+set N_SPIN_MONTHS      = 360
+# *** Check if processing completed successfully and Clean slurm-output
+set CHECK_SLURM        = 1
+# *** Remove slurm-output at the end of simulation
+set REMOVE_SLURM       = 1
+
+# *** DISTRIBUTE SCENARIO BUILDER (SB) DATA ***
+set DISTRIBUTE_SB_DATA = 1
+set SB_FOLDER          = CAST20180615
+set SB_VERSION         = WRTDS20200427
+set SB_SCENARIO        = _SB_SCENARIO_NAME
+set WSM_SCENARIO       = _BLANK_PROG_RA
+
+# *** POINT-SOURCE ASCII-TO-WDM FLAGS ***
+set POINT_SOURCE_WDMS  = 1
+set PS_DATAVERSION     = _BLANK_PROG_RA
+set WWTP               = mun__BLANK_PROG_RA.csv
+set IND                = ind__BLANK_PROG_RA.csv
+set CSOPASSTHRU        = cso_passthru__BLANK_PROG_RA.csv
+set CSO                = P6_CSO_Base_Line_No_Action_2017-6-7.csv
+set PSFDF              = 1
+set PS_SCENARIO        = _BLANK_PROG_RA
+set MUNIND_S2R         = 20170406S2RCOMID_20180615FDF.csv
+set CSO_S2R            = S2R_COMID_Eq1.csv
+
+# *** RAPID INFILTRATION BASIN
+set RIB_WDMS           = 1
+set RIBDATA            = _BLANK_PROG_RA
+set RIBFDF             = 1
+set RIB_S2R            = S2R_CAL20180615F.csv
+
+# *** RIPARIAN PASTURE DEPOSITION
+set RPA_WDMS           = 1
+set RPADATA            = _BLANK_PROG_RA
+set RPAFDF             = 1
+set RPA_S2R            = S2R_CAL20180615F.csv
+
+# *** SEPTIC DATA ***
+set SEPTIC_WDMS        = 1
+set SEPDATA            = _BLANK_PROG_RA
+set SEPFDF             = 1
+set SEPTIC_YEAR1       = 1984
+set SEPTIC_YEAR2       = 2014
+set SEPTIC_S2R         = S2R_CAL20180615F.csv
+
+# *** SETTING WHICH WSM MODULES TO RUN ***
+set RUN_MAKE_LAND_DIR  = 1
+set RUN_MAKE_RIVER_DIR = 1
+set RUN_LUG            = 1
+set RUN_LAND           = 1
+set RUN_LUGX           = 1
+set RUN_UNEC           = 1
+set RUN_BODX           = 0
+set RUN_ANNLOAD        = 1
+set RUN_AVGLOAD        = 1
+set RUN_ETM1           = 1
+set RUN_ETM2           = 0
+set RUN_RIVER          = 1
+#set RUN_RIVER_MODE     = CALIB
+set RUN_RIVER_MODE     = SCENARIO
+set RUN_POSTPROC_GCM   = 0
+set RUN_POSTPROC       = 1
+set RUN_EOT            = 0
+set RUN_WQM_INPUT      = 0
+set RUN_CH3D_INPUT     = 0
+set RUN_REMOVE_DIRS    = 1
+# *** Flags 0= NO; 1= ALL Land+Riv; 2= Everything!!; etc
+
+set CDF                = 0
+set CDF_SCENARIO       = CDF_100511
+
+set AVG_YEAR1          = 1991
+set AVG_YEAR2          = 2000
+
+#set WQM_REQUEST        = WholeBayOneSeg
+set WQM_REQUEST        = all
+#set WQM_REQUEST        = JShenLRSEG
+#set WQM_REQUEST        = JShenCELLS
+#set WQM_REQUEST        = MarjyIsaacb2
+#set WQM_REQUEST        = LRSEG
+#set WQM_YEAR1          = 1984
+#set WQM_YEAR2          = 2000
+set WQM_YEAR1          = 1991
+set WQM_YEAR2          = 2000
+set PSMETHOD           = wcell
+#set PSMETHOD           = lrseg
+
+set NUM_NODES          = 4
+set NUM_CORES          = 36
+set NUM_TASKS          = 128
+set ProcPool           = compute
+#set ProcPool           = -pdebug
+
+
+set BASINS             = allP6
+#set BASINS             = HANDCAL
+#set BASINS              = allP6_WQx0000
+#set BASINS              = allP60000
+
+#set SUMALL_BASINS      = (ET3p1 ET5p2 LE1p1 LE2p2 RET2p2 RET5p2 TF1p5 TF1p7 TF2p3 TF5p5)
+#set SUMALL_BASINS      = (S P Y D E R J W G X N T O M B K allBay all)
+#set SUMALL_BASINS      = (S P Y D E R J W G X watershed RIMP)
+#set SUMALL_BASINS      = (S P Y E R J W X watershed RIMP)
+#set SUMALL_BASINS      = (uMDB mMDB lMDB EshVA)
+#set SUMALL_BASINS      = (watershed RIMP S P Y E R J W X X_AFL X_BFL P_AFL P_BFL R_AFL R_BFL Y_AFL Y_BFL R_AFL R_BFL J_AFL J_BFL UpES MidES LowES VaES VAcapes)
+#set SUMALL_BASINS      = ( watershed VAcapes RIMP X_AFL S VaES P R_AFL E R_AFL P_AFL R_BFL J Y_AFL P_BFL R_BFL J_AFL Y_BFL W X_BFL UpES R LowES MidES Y X J_BFL )
+#set SUMALL_BASINS      = ( watershed S J P RIMP )
+set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP allP6 )
+
+
+# *** These are set automatically based on previous inputs
+set SLURM_OUT_DIR = ${PROJECT_HOME}/tmp/${user}-slurm
+set SCRATCH       = ${PROJECT_HOME}/tmp/${user}-scratch
+set LOGDIR        = ${PROJECT_HOME}/tmp/${user}-logs
+
+# *** Priorty default is 5000. Set lower for higher priority
+set PRIORITY      = 5000
+
+set CALIBRATION   = P620170331WQg_S3

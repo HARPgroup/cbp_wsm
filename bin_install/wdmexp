@@ -1,0 +1,54 @@
+#!/bin/bash
+
+if [ $# -lt 6 ]; then
+  echo "Usage: wdmexp scenario type(=land,river/eos,river/stream,met,prad) wdm dsn syear eyear"
+  echo "May also be called with cbp wrapper: cbp wdmexp scenario type(=land, river/eos, river/stream, met, prad) wdm dsn syear eyear"
+  exit 1
+fi
+
+# load the config if not already loaded
+if [ -z "$CBP_ROOT" ]; then
+  . hspf_config
+fi
+
+scenario=$1
+type=$2
+wdm=$3
+dsn=$4
+syear=$5
+eyear=$6
+
+case $type in
+  land)
+    luname=${wdm:0:3}
+    fdir="$CBP_ROOT/tmp/wdm/land/$luname/$scenario"
+    ;;
+
+  met)
+    fdir="$CBP_ROOT/input/scenario/climate/met/$scenario/"
+    ;;
+
+  prad)
+    fdir="$CBP_ROOT/input/scenario/climate/prad/$scenario/"
+    ;;
+
+  river/eos)
+    fdir="$CBP_ROOT/tmp/wdm/river/$scenario/eos"
+    ;;
+
+  river/stream)
+    echo "Handling stream WDM" >/dev/stderr
+    fdir="$CBP_ROOT/tmp/wdm/river/$scenario/stream"
+    ;;
+
+  *)
+    echo "Cannot handle wdm type $type" >/dev/stderr
+    exit
+    ;;
+esac
+
+cd $fdir
+echo "Outputting to $fdir" >/dev/stderr
+params="$wdm,$syear,$eyear,$dsn"
+echo "echo $params | wdm2text"
+echo $params | wdm2text

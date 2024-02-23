@@ -1,9 +1,0 @@
-#!/bin/csh
-
-set InputFile = P6_TOTP
-
-set LANDUSE = 1995CAL20151009
-
-#echo watershed TOTN $LANDUSE | ./ExportTargets.exe > output
-
-echo watershed TOTP $LANDUSE $InputFile | ./ExportTargets.exe > $InputFile/$InputFile.out

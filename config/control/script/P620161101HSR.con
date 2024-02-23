@@ -1,0 +1,23 @@
+#!/bin/csh
+
+set PROJECT_HOME       = /bluefish/archive/modeling/gb590
+set SCRIPT_DIR         = run/calibration/bhatt_PWATER
+
+set CALIB_SCENARIO     = P620161101HSR
+set BASINS             = P620161101HSR_PWATER
+
+set AVG_YEAR1          = 1985
+set AVG_YEAR2          = 2014
+
+set NUM_NODES          = 6
+set NUM_CORES          = 8
+set NUM_TASKS          = 72
+set ProcPool           =
+#set ProcPool           = -pdebug
+
+set INFEXP             = 1
+
+# *** These are set automatically based on previous inputs
+set SLURM_OUT_DIR = ${PROJECT_HOME}/tmp/${user}-slurm
+set SCRATCH       = ${PROJECT_HOME}/tmp/${user}-scratch
+set LOGDIR        = ${PROJECT_HOME}/tmp/${user}-logs

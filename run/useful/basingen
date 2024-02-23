@@ -1,0 +1,23 @@
+#!/bin/bash
+# this is a more flexible form of basingen that is also consistent with other commands
+# since basingen.csh only wants a fragment of the river segment ID (the 4 number id)
+# but all other commands use the full river segment i.e. 
+# river segment id=PS5_5200_4380
+# unique segid=5200
+if [ $# -le 1 ]; then
+  echo "Use: cbp basingen scenario riverseg"
+  echo "Ex: cbp basingen p600calib PS5_5200_4380"
+  echo "Or: cbp basingen p600calib 5200"
+fi
+n=$2
+pieces=(${n//_/ })
+n=${pieces[1]}
+if [ "$n" == "" ]; then 
+  #segid only given
+  seg=$2
+else
+  seg=$n
+fi
+echo "Calling: cbp basingen.csh $1 $seg"
+result=`cbp basingen.csh $1 $seg`
+echo $result

@@ -1,0 +1,88 @@
+#!/bin/csh
+
+set PROJECT_HOME       = /bluefish/archive/modeling/gb580
+set MY_HOME            = run_bhatt
+set SCRIPT_DIR         = OneCommandWSM_P6_STRLOAD_20151205
+
+set INFEXP             = 1
+
+# *** Check if processing completed successfully and Clean slurm-output
+set CHECK_SLURM        = 1
+# *** Remove slurm-output at the end of simulation
+set REMOVE_SLURM       = 1
+
+# *** DISTRIBUTE SCENARIO BUILDER (SB) DATA ***
+set DISTRIBUTE_SB_DATA = 0
+set SB_SCENARIO        = 
+
+# *** SEPTIC ASCII-TO-WDM FLAGS ***
+set SEPTIC_WDMS        = 0
+set SEPTIC_YEAR1       = 1984
+set SEPTIC_YEAR2       = 2005
+
+# *** POINT-SOURCE ASCII-TO-WDM FLAGS ***
+set POINT_SOURCE_WDMS  = 0
+set PS_DATAVERSION     = p532_scenarios
+set PS_SCENARIO        = 2009_2011-6-7
+set WWTP               = PS_2009_WWTP_MUNICIPAL_2011-6-7.txt
+set IND                = PS_2009_WWTP_INDUSTRIAL_2011-6-7.txt
+set CSO                = PS_2009_CSO_2011-5-28.txt
+set CSO_AVG_YEAR1      = 1991
+set CSO_AVG_YEAR2      = 2000
+
+# *** SETTING WHICH WSM MODULES TO RUN ***
+set RUN_MAKE_LAND_DIR  = 0
+set RUN_MAKE_RIVER_DIR = 0
+set RUN_LUG            = 0
+set RUN_LAND           = 0
+set RUN_ETM1           = 1
+set RUN_ETM2           = 0
+set RUN_RIVER          = 0
+set RUN_RIVER_MODE     = CALIB
+#set RUN_RIVER_MODE     = SCENARIO
+set RUN_POSTPROC_GCM   = 0
+set RUN_POSTPROC       = 1
+set RUN_WQM_INPUT      = 0
+set RUN_CH3D_INPUT     = 0
+set RUN_REMOVE_DIRS    = 0
+# *** Flags 0= NO; 1= ALL Land+Riv; 2= Everything!!; etc
+
+set CDF                = 0
+set CDF_SCENARIO       = CDF_100511
+
+set AVG_YEAR1          = 1985
+set AVG_YEAR2          = 2014
+
+#set WQM_REQUEST        = WholeBayOneSeg
+#set WQM_REQUEST        = all
+set WQM_REQUEST        = MajFallL_CH3D
+set WQM_YEAR1          = 2000
+set WQM_YEAR2          = 2014
+
+set NUM_NODES          = 6
+set NUM_CORES          = 16
+set NUM_TASKS          = 72
+set ProcPool           =
+#set ProcPool           = -pdebug
+
+
+set BASINS             = allP6
+set BASINS             = allP6_WQx0000
+#set SUMALL_BASINS      = (ET3p1 ET5p2 LE1p1 LE2p2 RET2p2 RET5p2 TF1p5 TF1p7 TF2p3 TF5p5)
+#set SUMALL_BASINS      = (S P Y D E R J W G X N T O M B K allBay all)
+#set SUMALL_BASINS      = (S P Y D E R J W G X watershed RIMP)
+#set SUMALL_BASINS      = (S P Y E R J W X watershed RIMP)
+#set SUMALL_BASINS      = (uMDB mMDB lMDB EshVA)
+#set SUMALL_BASINS      = (watershed RIMP S P Y E R J W X X_AFL X_BFL P_AFL P_BFL R_AFL R_BFL Y_AFL Y_BFL R_AFL R_BFL J_AFL J_BFL UpES MidES LowES VaES VAcapes)
+set SUMALL_BASINS      = ( watershed VAcapes RIMP X_AFL S VaES P R_AFL E R_AFL P_AFL R_BFL J Y_AFL P_BFL R_BFL J_AFL Y_BFL W X_BFL UpES R LowES MidES Y X J_BFL )
+set SUMALL_BASINS      = ( watershed S J P RIMP )
+set SUMALL_BASINS      = ( SUSQ POTO JAME RAPP APPO PAMU MATT PATU CHOP watershed RIMP )
+
+
+# *** These are set automatically based on previous inputs
+set SLURM_OUT_DIR = ${PROJECT_HOME}/tmp/${user}-slurm
+set SCRATCH       = ${PROJECT_HOME}/tmp/${user}-scratch
+set LOGDIR        = ${PROJECT_HOME}/tmp/${user}-logs
+
+# *** Priorty default is 5000. Set lower for higher priority
+set PRIORITY      = 1000

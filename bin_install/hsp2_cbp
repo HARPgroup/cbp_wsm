@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# read arguments from pipe if piped, otherwise just grab the normal args
+declare -a A=("$@")
+[[ -p /dev/stdin ]] && { \
+    mapfile -t -O ${#A[@]} A; set -- "${A[@]}"; \
+}
+
+# get base name
+uci=`basename $
+uci_base=`basename $uci .uci`
+h5file=$uci_base'.h5'
+# load uci
+hsp2 import_uci $1 $h5file
+# run model
+hsp2 run $h5file
+
+######## Do optional Analysis and File Translation
+$CBP_BIN/export/cbp_postrun_export.sh $scenario $seg 
+

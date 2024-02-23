@@ -21,6 +21,10 @@
     cd ../../tmp/scratch/temp$$/
   endif
 
+  # load new scenario configuration script
+  source $CBP_ROOT/config/control/script/${scenario}.con
+  source $CBP_ROOT/run_bhatt/.config/${user}_CONFIG
+
   source $tree/run/fragments/set_landuse
 
   source $tree/config/seglists/${basin}.land
@@ -40,6 +44,9 @@
       endif
 
       echo $seg, $lu, $scenario | $tree/code/bin/lug.exe
+      # modifies uci for hsp2 or hspf depending on environment variable
+      set uci_path="$tree/tmp/uci/land/$lu/$scenario/$lu${seg}.uci"
+      hsp_uci_version $uci_path $HSP_VERSION
 
       if (-e problem) then
         echo ' '

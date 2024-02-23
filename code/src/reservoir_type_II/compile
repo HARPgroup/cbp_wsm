@@ -12,11 +12,19 @@ set dsnlib = ../lib/dsn/dsn_utils.o
 
 set postlib = ../postproc/river/postriverlib.a
 
+<<<<<<< HEAD
+f77 -fPIE -fbounds-check -c main.f
+f77 -fPIE -fbounds-check -c loadinfo.f
+f77 -fPIE -fbounds-check -c gettransport_res_eff.f
+
+f77 -fPIE -o ../../bin/reservoir_type_II.exe main.o loadinfo.o gettransport_res_eff.o $postlib $dsnlib $lib1 $lib2 $lib3 $usrlib
+=======
 f77 -fbounds-check -c main.f
 f77 -fbounds-check -c loadinfo.f
 f77 -fbounds-check -c gettransport_res_eff.f
 
 f77 -o ../../bin/reservoir_type_II.exe main.o loadinfo.o gettransport_res_eff.o $postlib $dsnlib $lib1 $lib2 $lib3 $usrlib
+>>>>>>> 65ec797cd641beb5e9a1acf705130606e8210647
 set failed = $status; if( $failed == 1 ) exit 1
 
 rm *.o

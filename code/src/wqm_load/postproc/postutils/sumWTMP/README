@@ -1,7 +1,0 @@
-sumstats.com takes an argument which is simply the scenario or
-subdirectory name and creates files with the statistics for all
-reaches found in that subdirectory.
-
-stats is called within grepstats.com and creates one file with
-all statistics.
-

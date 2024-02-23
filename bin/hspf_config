@@ -1,5 +1,0 @@
-#!/bin/bash
-
-hspf_config=`find_config hspf.config`
-echo "Loading $hspf_config"
-source $hspf_config

@@ -13,7 +13,7 @@ set wqmlib = ../wqmlib/wqmlib.a
 f77 -c main_nps.f
 f77 -c main_ps.f
 f77 -c getCellNrseg.f
-g77 -c getriverfactor.f
+f77 -c getriverfactor.f
 
 f77  -o ../../../bin/river_factor_scenario_ps_to_wqm57k.exe main_ps.o getriverfactor.o getCellNrseg.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3
 f77  -o ../../../bin/river_factor_scenario_nps_to_wqm57k.exe main_nps.o getriverfactor.o $wqmlib $usrlib $dsnlib $lib1 $lib2 $lib3

@@ -1,0 +1,40 @@
+#!/bin/bash
+. hspf_config
+segs=`cbp get_landsegs $2`
+scenario=$1
+echo "Looking for land segments: $segs"
+lus=0
+lsegs=0
+lu_lsegs=0
+null_lu_lsegs=()
+null_lsegs=()
+lu_list=`ls $CBP_ROOT/tmp/wdm/land/`
+for lu in $lu_list; do
+  lus=$((lus+1))
+  for s in $segs; do
+    lu_is_null=0
+    if [ $lus -eq 1 ]; then 
+      lsegs=$((lsegs+1))
+    fi 
+    if [ -f $CBP_ROOT/tmp/wdm/land/$lu/$scenario/$lu${s}.wdm ]; then
+      lu_lsegs=$((lu_lsegs+1))
+    else
+      lu_is_null=1
+      null_lu_lsegs+=("$lu${s}.wdm")
+      #echo "Could not find $CBP_ROOT/tmp/wdm/land/$lu/$scenario/$lu${s}.wdm"
+    fi
+    if [ $lu_is_null -gt 0 ]; then
+      if echo "${null_lsegs[@]}" | grep "$s" -q; then
+        # already added to the list
+        aready=1
+      else
+        null_lsegs+=("$s")
+      fi
+    fi
+  done
+done
+echo "Found $lus land-uses, and $lsegs land-segments"
+echo "Missing land segment-landuse combos:"
+echo "${null_lu_lsegs[@]}" 
+echo "Land segments with at least one LU missing: "
+echo "${null_lsegs[@]}"

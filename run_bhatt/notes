@@ -1,0 +1,31 @@
+csh master_srun_scenario.csh gb533hyd4_8505_LC8505 allBay 1991 2000 4 8
+csh master_srun_splitETM.csh gb533hyd4_8505_LC8505 allBay 1991 2000 4 8
+
+
+csh run_postproc_river_aveann_parallel.csh gb533hyd4_8505_LC8505 allBay 1991 2000
+	csh run_postproc_river_aveann_oneseg.csh gb533hyd4_8505_LC8505 SL2_2480_0001 1991 2000
+csh run_postproc_land_aveann.csh gb533hyd4_8505_LC8505 allBay 1991 2000
+
+csh run_tf_df_parallel.csh gb533hyd4_8505_LC8505 1991 2000
+
+csh sum_all_basins.csh gb533hyd4_8505_LC8505 1991 2000
+
+../../code/bin/TFS.exe gb533hyd4_8505_LC8505 SL2_2480_0001 0 0 1 1991 2000
+
+
+
+csh master_srun_splitETM.csh gb533hyd4_8511_LC8505 allBay 1991 2011 4 8
+
+
+
+cd /bluefish/archive/modeling/gb533/tmp/gbhatt-scratch/abc
+../../../code/bin/DAT.exe
+
+gb533hyd4_8511_LC8505
+SL2_2480_0001
+0
+0
+0
+1
+1991
+2011

@@ -1,0 +1,38 @@
+#!/bin/bash
+scenario=$1
+seg=$2
+IFS='_' read -ra segid <<< "$seg"
+cbp basingen.csh $scenario ${segid[@]:1:1} # this insures that we can get a dependency list
+dep_sheds=`cbp get_riversegs $seg | sed "s/$seg//"`
+dep_jobs=""
+delim=""
+dep=""
+dpre=""
+#echo "Searching $dep_sheds"
+for iup in $dep_sheds; do
+  #echo "cbp mm_job_name $scenario $iup"
+  dep_name=`cbp mm_job_name $scenario $iup`
+#echo "searching for job $dep_name"
+  djid=$(squeue --noheader --format %i --name $dep_name)
+  if [ "$djid" != "" ]; then
+    dep="$dep$delim$djid"
+    delim=','
+    dpre="--dependency="
+    #echo "djid: $djid delim: $delim"
+  fi
+done
+#echo "$dpre$dep"
+lsegs=`cbp get_landsegs $seg`
+for lup in $lsegs; do
+  dep_name=`cbp mm_job_name $scenario $lup`
+  #echo 'djid=$('"squeue --noheader --format %i --name $dep_name"')'
+#echo "searching for job $dep_name"
+  djid=$(squeue --noheader --format %i --name $dep_name)
+  #echo "Found job ID $djid for $dep_name"
+  if [ "$djid" != "" ]; then
+    dep="$dep$delim$djid"
+    delim=','
+    dpre="--dependency="
+  fi
+done  
+echo "$dpre$dep"

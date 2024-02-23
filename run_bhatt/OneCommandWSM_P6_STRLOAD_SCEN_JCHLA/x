@@ -1,0 +1,6 @@
+cp -pr ../../output/eop/aveann/2010WIP2_20170901/* ../../output/eop/aveann/2010WIP2_20170901DE/
+cp -pr ../../output/eof/aveann/2010WIP2_20170901/* ../../output/eof/aveann/2010WIP2_20170901DE/
+cp -pr ../../output/eos/aveann/2010WIP2_20170901/* ../../output/eos/aveann/2010WIP2_20170901DE/
+cp -pr ../../output/eor/aveann/2010WIP2_20170901/* ../../output/eor/aveann/2010WIP2_20170901DE/
+cp -pr ../../output/bay/aveann/2010WIP2_20170901/* ../../output/bay/aveann/2010WIP2_20170901DE/
+cp -pr ../../tmp/wdm/river/2010WIP2_20170901/eos/* ../../tmp/wdm/river/2010WIP2_20170901DE/eos/

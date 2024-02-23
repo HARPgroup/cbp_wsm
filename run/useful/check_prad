@@ -1,0 +1,24 @@
+#!/bin/bash
+. hspf_config
+segs=`cbp get_landsegs $2`
+scenario=$1
+echo "Looking for land segments: $segs"
+lsegs=0
+prad_lsegs=0
+null_lsegs=()
+null_count=0
+for s in $segs; do
+  lsegs=$((lsegs+1))
+  if [ -f $CBP_ROOT/input/scenario/climate/prad/$scenario/prad_${s}.wdm ]; then
+    prad_lsegs=$((prad_lsegs+1))
+  else
+    null_lsegs+=("$lu${s}.wdm")
+    null_count=$((null_count+1))
+    echo "Could not find $CBP_ROOT/input/scenario/climate/prad/$scenario/prad_${s}.wdm"
+  fi
+done
+echo "Found $lsegs land-segments"
+echo "Found $prad_lsegs land-segments with prad WDMs"
+echo "Missing $null_count land-segment prad:"
+echo "Missing land segment-landuse combos:"
+echo "${null_lsegs[@]}" 

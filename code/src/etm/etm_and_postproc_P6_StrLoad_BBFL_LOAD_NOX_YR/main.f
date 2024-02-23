@@ -619,7 +619,13 @@ c                      if (luname(l).eq.'dst') tlufac = 1.0
 ********** dealing with a particular LRseg and land use
 ************** start loop over BMP constituents
             do nb = 1,nbcon
-            !{
+              do Rvar = 1,nRvar
+                if (BMPconname(nb).eq.RvarBMP(Rvar)) then
+                  go to 721
+                end if
+              end do
+              cycle
+721           print*, "Compute Annual Lb Red. Factor ",BMPconname(nb)
 ************ calculate annual pound reduction no matter what
               do year = reqSRTy,reqENDy
                 AnnualPounds(year,nb,l,ns) = 0.0

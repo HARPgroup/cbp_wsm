@@ -1,0 +1,124 @@
+‘/modeling/gb604/tmp/wdm/river/CXXWIP21903BXLXNOCNGENOCNGEN/eos/SJ3_1980_2060.wdm’ -> ‘SJ3_1980_2060.wdm’
+ upstream segment SJ3_2040_1980 WATR HEAT DOXY SAND SILT CLAY NO3D NH3D NH3A NH3I NH3C RORN LORN PO4D PO4A PO4I PO4C RORP LORP BODA TORC PHYT Making stream wdm for segment SJ3_1980_2060
+  
+ BHATT wdmfnam $$ ../../../tmp/wdm/river/CXXWIP21903BXLXNOCNGENOCNGEN/stream/SJ3_2040_1980.wdm                                                                                                                            
+ BHATT total   $$    64233.4648    
+ BHATT dsn     $$          111
+ BHATT start   $$         1984           1           1
+ BHATT aend    $$         1984           5           1
+  
+‘/modeling/gb604/config/blank_wdm/blank_ps_sep_rib_rpa_div_ams.wdm’ -> ‘ps_sep_div_ams_CXXWIP21903BXLXNOCNGENOCNGEN_SJ3_1980_2060.wdm’
+River segment: SJ3_1980_2060 Diversions: DIVR DIVA  Point Sources:   Variables: FLOW HEAT NH3X NO3X ORNX PO4X ORPX BODX TSSX DOXX TOCX   Land segments: N42027  Septic:   Variables: SNO3   Land segments: N42027 N42061  RIB:   Variables: NH3X NO3X ORNX PO4X ORPX BODX   Land segments: N42027 N42061  RPA Loads:   Variables: NH3R NO3R RONR PO4R ROPR BODR SNDR SLTR CLYR   Land segments: N42027 N42061  Aeolian Sediment:   Variables: SFAS SFAC  Making ps_sep_div_ams WDM for SJ3_1980_2060 CXXWIP21903BXLXNOCNGENOCNGEN
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        3012
+        6210
+        3013
+        6210
+        3014
+        6210
+        3015
+        6210
+        3016
+        6210
+        3017
+        6210
+        3012
+        6210
+        3013
+        6210
+        3014
+        6210
+        3015
+        6210
+        3016
+        6210
+        3017
+        6210
+  
+  
+  
+  
+  
+  
+  
+  Point Source,  Septic,  RIB,  RPA,  Atmospheric Deposition,    Stream Loads   comparing river loads for SJ3_1980_2060 CXXWIP21903BXLXNOCNGENOCNGEN
+ postproc/scenario_compare 1../../../input/scenario/river/ps/2010WIP2AA_20190301/mun_N42027_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 1../../../input/scenario/river/ps/2010WIP2AA_20190301/ind_N42027_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 1../../../input/scenario/river/ps/2010WIP2AA_20190301/cso_N42027_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 2../../../input/scenario/river/ps/PS8514_170902RF1806/mun_N42027_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 2../../../input/scenario/river/ps/PS8514_170902RF1806/ind_N42027_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 2../../../input/scenario/river/ps/PS8514_170902RF1806/cso_N42027_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 1../../../input/scenario/river/ps/2010WIP2AA_20190301/mun_N42061_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 1../../../input/scenario/river/ps/2010WIP2AA_20190301/ind_N42061_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 1../../../input/scenario/river/ps/2010WIP2AA_20190301/cso_N42061_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 2../../../input/scenario/river/ps/PS8514_170902RF1806/mun_N42061_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 2../../../input/scenario/river/ps/PS8514_170902RF1806/ind_N42061_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 2../../../input/scenario/river/ps/PS8514_170902RF1806/cso_N42061_to_SJ3_1980_2060.wdm                                                                                                                    
+ postproc/scenario_compare 3../../../input/scenario/river/septic/2010WIP2AA_20190301/sep_N42027_to_SJ3_1980_2060.wdm                                                                                                                
+ postproc/scenario_compare 4../../../input/scenario/river/septic/BASE20180615F/sep_N42027_to_SJ3_1980_2060.wdm                                                                                                                      
+ postproc/scenario_compare 3../../../input/scenario/river/septic/2010WIP2AA_20190301/sep_N42061_to_SJ3_1980_2060.wdm                                                                                                                
+ postproc/scenario_compare 4../../../input/scenario/river/septic/BASE20180615F/sep_N42061_to_SJ3_1980_2060.wdm                                                                                                                      
+ postproc/scenario_compare 3../../../input/scenario/river/rib/2010WIP2AA_20190301/rib_N42027_to_SJ3_1980_2060.wdm                                                                                                                   
+ postproc/scenario_compare 4../../../input/scenario/river/rib/BASE20180615F/rib_N42027_to_SJ3_1980_2060.wdm                                                                                                                         
+ postproc/scenario_compare 3../../../input/scenario/river/rib/2010WIP2AA_20190301/rib_N42061_to_SJ3_1980_2060.wdm                                                                                                                   
+ postproc/scenario_compare 4../../../input/scenario/river/rib/BASE20180615F/rib_N42061_to_SJ3_1980_2060.wdm                                                                                                                         
+ postproc/scenario_compare 3../../../input/scenario/river/rpaload/2010WIP2AA_20190301/rpa_N42027_to_SJ3_1980_2060.wdm                                                                                                               
+ postproc/scenario_compare 4../../../input/scenario/river/rpaload/BASE20180615F/rpa_N42027_to_SJ3_1980_2060.wdm                                                                                                                     
+ postproc/scenario_compare 3../../../input/scenario/river/rpaload/2010WIP2AA_20190301/rpa_N42061_to_SJ3_1980_2060.wdm                                                                                                               
+ postproc/scenario_compare 4../../../input/scenario/river/rpaload/BASE20180615F/rpa_N42061_to_SJ3_1980_2060.wdm                                                                                                                     
+ postproc/scenario_compare 5../../../input/scenario/climate/prad/P602_2025/prad_N42027.wdm                                                                                                                                          
+ postproc/scenario_compare/getwateracres.f../../../output/etm/CXXWIP21903BXLXNOCNGENOCNGEN/N42027toSJ3_1980_2060.etm                                                                                                                                                                                
+ postproc/scenario_compare/getwateracres.f        2000          12          31
+ postproc/scenario_compare 6../../../input/scenario/climate/prad/PRC20170731/prad_N42027.wdm                                                                                                                                        
+ postproc/scenario_compare/getwateracres.f../../../output/etm/CXXBASE1808NOCNGENOCNGEN/N42027toSJ3_1980_2060.etm                                                                                                                                                                                    
+ postproc/scenario_compare/getwateracres.f        2000          12          31
+ postproc/scenario_compare 5../../../input/scenario/climate/prad/P602_2025/prad_N42061.wdm                                                                                                                                          
+ postproc/scenario_compare/getwateracres.f../../../output/etm/CXXWIP21903BXLXNOCNGENOCNGEN/N42061toSJ3_1980_2060.etm                                                                                                                                                                                
+ postproc/scenario_compare/getwateracres.f        2000          12          31
+ postproc/scenario_compare 6../../../input/scenario/climate/prad/PRC20170731/prad_N42061.wdm                                                                                                                                        
+ postproc/scenario_compare/getwateracres.f../../../output/etm/CXXBASE1808NOCNGENOCNGEN/N42061toSJ3_1980_2060.etm                                                                                                                                                                                    
+ postproc/scenario_compare/getwateracres.f        2000          12          31
+ postproc/scenario_compare 7SJ3_1980_2060.wdm                                                                                                                                                                                       
+ postproc/scenario_compare 8../../../tmp/wdm/river/CXXBASE1808NOCNGENOCNGEN/stream/SJ3_1980_2060.wdm                                                                                                                                
+making River UCI for segment SJ3_1980_2060 River scenario CXXWIP21903BXLXNOCNGENOCNGEN
+global  files   opseq   tables  ftables  extsources  exttargets  network  pltgen  spec    
+... Running river_special_action.csh
+... No special action defined for SJ3_1980_2060
+‘/modeling/gb604/tmp/uci/river/CXXWIP21903BXLXNOCNGENOCNGEN/SJ3_1980_2060.uci’ -> ‘./SJ3_1980_2060.uci’
+[;H[J[06;12H Beginning HSPF simulation.
+ 
+ 
+ Looking for FILES block in file:
+      SJ3_1980_2060.uci
+[;H[J[06;12H Reading user's control input file.
+[06;12H Processing a RUN data set from user's input file.
+[07;15HGLOBAL      [07;15HOPN SEQUENCE[07;15HFTABLES     [07;15HRCHRES      [07;28H     [07;28H1    [07;34HACTIVITY    [07;34HPRINT-INFO  [07;34HGEN-INFO    [07;34HHYDR-PARM1  [07;34HHYDR-PARM2  [07;34HHYDR-INIT   [07;34HADCALC-DATA [07;34HHT-BED-FLAGS[07;34HHEAT-PARM   [07;34HHEAT-INIT   [07;34HSANDFG      [07;34HSED-GENPARM [07;34HSAND-PM     [07;34HSILT-CLAY-PM[07;34HSILT-CLAY-PM[07;34HSSED-INIT   [07;34HBED-INIT    [07;34HBENTH-FLAG  [07;34HSCOUR-PARMS [07;34HOX-FLAGS    [07;34HOX-REAPARM  [07;34HOX-BENPARM  [07;34HOX-GENPARM  [07;34HOX-INIT     [07;34HNUT-FLAGS   [07;34HNUT-AD-FLAGS[07;34HCONV-VAL1   [07;34HNUT-BENPARM [07;34HNUT-NITDENIT[07;34HNUT-NH3VOLAT[07;34HNUT-BEDCONC [07;34HNUT-ADSPARM [07;34HNUT-DINIT   [07;34HNUT-ADSINIT [07;34HPLNK-FLAGS  [07;34HPLNK-AD-FLAG[07;34HPLNK-PARM1  [07;34HPLNK-PARM2  [07;34HPLNK-PARM3  [07;34HPHYTO-PARM  [07;34HBENAL-PARM  [07;34HPLNK-INIT   [07;15HPLTGEN      [07;28H     [07;28H1    [07;34HPLOTINFO    [07;34HGEN-LABELS  [07;34HSCALING     [07;34HCURV-DATA   [07;28H     [07;34H            [07;15HSPEC-ACTIONS[07;15HEXT SOURCES [07;15HNETWORK     [07;15HEXT TARGETS [06;12H Operations supervisor calling operating modules.
+[;H[J[06;12H HSPF simulation completed.
+
+
+ Enter the name of your input file: 
+ begin reading ../../../input/param/transport/wF180615RXAPXXXW_res.csv                                                                                                                                                                                                   
+ flo tnx tpx sed ->           1           2           3           4
+ flo tnx tpx sed ->           1           2           3           4
+ done reading ../../../input/param/transport/wF180615RXAPXXXW_res.csv                                                                                                                                                                                                   
+ Res Passthru Effs =    1.0000000000000000        1.0000000000000000       0.99900000000000000       0.99700000000000000     
+ calscen = CXXBASE1808NOCNGENOCNGEN
+ TOTNCXXWIP21903BXLXNOCNGENOCNGENCXXBASE1808NOCNGENOCNGEN
+  getscenmod
+ <TOTN><TOTN>
+ TOTN R_scenmod =   0.601948142    
+ TOTPCXXWIP21903BXLXNOCNGENOCNGENCXXBASE1808NOCNGENOCNGEN
+  getscenmod
+ <TOTN><TOTP>
+ <TOTP><TOTP>
+ TOTP R_scenmod =   0.716617465    

@@ -1,0 +1,13 @@
+
+  set perlnds = ( aop soy gwm gom lhy swm som sgg dbl sch scl oac ohy pas nch ntg mch mtg mcn cch ctg ccn cmo cfr hfr for wfp wto osp )
+
+# 
+ 
+
+  set implnds = ( fsp fnp nir nnr nci mir mnr mci cir cnr cci stb stf sho )
+
+# 
+
+  set annlnds = ( fsp fnp sho )
+
+  set avglnds = ( stb )

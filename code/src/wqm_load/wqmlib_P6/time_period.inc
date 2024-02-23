@@ -1,4 +1,1 @@
-      integer ISYEAR
-      integer IEYEAR
-      parameter ( ISYEAR = 1995 )
-      parameter ( IEYEAR = 2014 )
+time_period_9514.inc
