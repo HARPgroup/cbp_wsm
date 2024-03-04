@@ -41,6 +41,8 @@ for i in $LANDUSE; do
   if [[ $cnt -eq 4 ]]; then
     lu_file="input/scenario/river/land_use/land_use_${i}.csv"
     echo "LU file for $yr = " $lu_file
+    cp $lu_file "${lu_file}.bak"
+    echo "Stashed a copy in ${lu_file}.bak"
     Rscript $CBP_ROOT/run/resegment/area_propor.R $lu_file $subshed $downstream $darea
 
     # reset our counter
