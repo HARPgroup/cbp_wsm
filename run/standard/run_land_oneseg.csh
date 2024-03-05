@@ -21,8 +21,10 @@
     cd ../../tmp/scratch/temp$$/
   endif
 
+  # load new scenario configuration script
+  source $tree/config/control/script/${scenario}.con
   source $tree/run/fragments/set_landuse
-  source $tree/run/fragments/set_quiet_hspf
+  source $tree/run/fragments/set_icprb_hspf # was  source $tree/run/fragments/set_quiet_hspf
   
     foreach lu ($perlnds $implnds)
 
