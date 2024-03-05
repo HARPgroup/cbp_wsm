@@ -1,0 +1,4 @@
+#!/bin/bash
+job_name=$1
+djid=$(squeue --noheader --format %i --name $job_name)
+echo $djid

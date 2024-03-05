@@ -13,3 +13,5 @@ cp $PWD/bin_install/slurmq $ip/slurmq
 # get cbp config block
 cp $PWD/bin_install/get_config $ip/get_config
 cp $PWD/bin_install/hspf.config.default $PWD/hspf.config
+# slurm  meta model helpers
+cp $PWD/bin_install/mm_job_id $PWD/mm_job_id
