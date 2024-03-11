@@ -32,7 +32,6 @@ SEPTIC=`cbp get_config $scenario river SEPTIC`
 RIB=`cbp get_config $scenario river 'RIB LOADS'`
 RPA=`cbp get_config $scenario river 'RPA LOADS'`
 BMPTYPES=`cbp get_config $scenario river 'TYPEBMP'`
-AFOCFO=`cbp get_config $scenario river 'AFO CFO LOADS'`
 # now get a list of subwatersheds for later use
 read -r -a ss_pieces <<< $(echo $subshed | tr "_" " ")
 seg_id="${ss_pieces[1]}"
@@ -77,23 +76,6 @@ for lseg in $landsegs; do
   fi
   cp $src_septic $xpath/septic/${SEPTIC}/septic_${lseg}_to_${subshed}.wdm
 done
-
-
-cnt=0
-for i in $AFOCFO; do
-  ((cnt++))
-  if [[ $cnt -eq 1 ]]; then
-    yr=$i
-  fi
-  if [[ $cnt -eq 4 ]]; then
-    afo_file="input/scenario/river/loads/afocfoload_${i}.csv"
-    echo "AFO file for $yr = " $afo_file
-    Rscript $CBP_ROOT/run/resegment/area_propor.R $afo_file $subshed $downstream $darea
-    # reset our counter
-    cnt=0
-  fi
-done
-echo 'AFO CFO files proportioned'
 
 
 Rscript $CBP_ROOT/run/resegment/copy_parent.R $xpath/bmptypes/$BMPTYPES/lrseg_HGMRs.csv $subshed $downstream

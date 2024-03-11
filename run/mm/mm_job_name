@@ -1,0 +1,9 @@
+#!/bin/bash
+scenario=$1
+seg=$2
+model_n=`basename $MODEL_ROOT`
+model_d=`dirname $MODEL_ROOT`
+model_v=`basename $model_d`
+location="${model_v}_${model_n}"
+job_name="${location}_${scenario}_${seg}"
+echo $job_name
