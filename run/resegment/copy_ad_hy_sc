@@ -54,6 +54,24 @@ for fname in "ADCALC" "HYDR"; do
   echo "${fname}.csv duplicated"
 done
 
+cnt=0
+for i in $AFOCFO; do
+  ((cnt++))
+  if [[ $cnt -eq 1 ]]; then
+    yr=$i
+  fi
+  if [[ $cnt -eq 4 ]]; then
+    afo_file="input/scenario/river/loads/afocfoload_${i}.csv"
+    echo "AFO file for $yr = " $afo_file
+    echo "Running: Rscript $CBP_ROOT/run/resegment/copy_parent.R $afo_file $subshed $downstream "
+    Rscript $CBP_ROOT/run/resegment/copy_parent.R $afo_file $subshed $downstream 
+    # reset our counter
+    cnt=0
+  fi
+done
+echo 'AFO CFO files proportioned'
+
+
 
 # WDM CSVs
 Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/config/catalog/geo/${GEO}/river_met_wdm.csv $subshed $downstream

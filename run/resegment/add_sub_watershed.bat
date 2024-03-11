@@ -71,24 +71,6 @@ echo "Caling: Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/para
 Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/river/${PARAMS}/gen_info_rseg.csv $subshed $downstream
 echo 'gen_info_rseg.csv duplicated'
 
-cnt=0
-for i in $AFOCFO; do
-  ((cnt++))
-  if [[ $cnt -eq 1 ]]; then
-    yr=$i
-  fi
-  if [[ $cnt -eq 4 ]]; then
-    afo_file="input/scenario/river/loads/afocfoload_${i}.csv"
-    echo "AFO file for $yr = " $afo_file
-    echo "Running: Rscript $CBP_ROOT/run/resegment/area_propor.R $afo_file $subshed $downstream $darea"
-    Rscript $CBP_ROOT/run/resegment/area_propor.R $afo_file $subshed $downstream $darea
-    # reset our counter
-    cnt=0
-  fi
-done
-echo 'AFO CFO files proportioned'
-
-
 # duplicate information from downstream to new subshed:
 # transport, adcalc, 
 echo "Calling: $CBP_ROOT/run/resegment/copy_ad_hy_sc $subshed $param_seg $model_version $scenario $land_wdm_src $darea"
