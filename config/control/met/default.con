@@ -1,3 +1,4 @@
 # config vars, in csh format
 set PRECIP_DATA_SOURCES = "nldas2 prism daymet"
 set PRECIP_OPT_METHOD = "none" # options "lm_month", "hires", "lm_weekly_err", "storm_sep"
+set MET_EXPORT_DIR = "/media/model/met"
