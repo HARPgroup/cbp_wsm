@@ -8,9 +8,15 @@ fi
 scenario=$1
 module=$2
 varname=$3
-
+conf_type="block"
 if [[ "$module" == "script" ]]; then
-  . cbp_scenario_vars_bash ${scenario} ${varname}
+  conf_type="line"
+fi
+if [[ "$module" == "met" ]]; then
+  conf_type="line"
+fi
+if [[ "$conf_type" == "line" ]]; then
+  . cbp_scenario_vars_bash ${scenario} ${varname} ${module}
 else
   open_tag=$varname
   close_tag="END $open_tag"
@@ -22,5 +28,5 @@ else
           else
               buf = buf $0 ORS
        }
-       /'"${open_tag}"'/ {flag=1}' $config_file
+       /'"${open_tag}"'/ {flag=1}' $config_file | grep -v "*/*/*"
 fi

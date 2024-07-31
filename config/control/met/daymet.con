@@ -1,1 +1,7 @@
-# config file for daymet single source met input
+#!/bin/csh
+# config file for prism single source met input
+# do not include quotes on strings as they get passed back with quotes...
+set GEO_MET_MODEL = lm_simple
+set MET_DATA_SOURCE = daymet
+set MET_EXPORT_DIR = /media/model/met
+set START_DATE="1984-01-01"
