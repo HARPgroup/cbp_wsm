@@ -1,0 +1,19 @@
+#!/bin/csh
+# config file for prism single source met input
+# do not include quotes on strings as they get passed back with quotes...
+set GEO_MET_MODEL = storm_volume
+set MET_DATA_SOURCE = PRISM
+set MET_EXPORT_DIR = /media/model/met
+set START_DATE = "1984-01-01"
+
+
+#Set additional variables for Storm Separation Routine:
+set SEARCH_ALL_STORM = "TRUE"
+set BASELINE_FLOW_METHOD = "Month"
+set STORM_INCLUDE_DURATION = 1
+set STORMSEP_REGRESSION_METHOD = "LINEAR"
+set STORMSEP_PLOT = false
+
+#Set varkey
+set varkey = prism_mod_daily
+

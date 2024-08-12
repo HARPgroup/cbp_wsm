@@ -5,3 +5,23 @@ set GEO_MET_MODEL = lm_simple
 set MET_DATA_SOURCE = nldas2
 set MET_EXPORT_DIR = /media/model/met
 set START_DATE="1984-01-01"
+
+#Set varkey
+set varkey = nldas_obs_hourly
+
+#For met model runs only
+set datasource = nldas2
+set maskExtent = '/backup/meteorology/cbp_extent.csv'
+set maskExtentLayer = "cbp_extent"
+
+set extent_hydrocode = "cbp6_met_coverage"
+set extent_bundle = "landunit"
+set extent_ftype = "cbp_met_grid"
+set entity_type = "dh_feature"
+set tz_hr = 12
+set single_band = 10
+
+set TS_BAND = 10
+set dt = 3600
+
+set DB_FORCE_OVERWRITE = 0

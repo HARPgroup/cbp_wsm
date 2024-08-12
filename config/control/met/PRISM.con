@@ -5,3 +5,23 @@ set GEO_MET_MODEL = simple_lm
 set MET_DATA_SOURCE = PRISM
 set MET_EXPORT_DIR = /media/model/met
 set START_DATE="1984-01-01"
+
+#Set varkey
+set varkey = prism_mod_daily
+
+#For met model runs
+set datasource = PRISM
+set maskExtent = '/backup/meteorology/cbp_extent.csv'
+set maskExtentLayer = "cbp_extent"
+
+set extent_hydrocode = "cbp6_met_coverage"
+set extent_bundle = "landunit"
+set extent_ftype = "cbp_met_grid"
+set entity_type = "dh_feature"
+set tz_hr = 12
+set single_band = "false"
+
+set TS_BAND = 'none'
+set dt = 86400
+
+set DB_FORCE_OVERWRITE = 0
