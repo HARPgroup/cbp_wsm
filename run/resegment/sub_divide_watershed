@@ -39,7 +39,7 @@ for i in $LANDUSE; do
     yr=$i
   fi
   if [[ $cnt -eq 4 ]]; then
-    lu_file="input/scenario/river/land_use/land_use_${i}.csv"
+    lu_file="$CBP_ROOT/input/scenario/river/land_use/land_use_${i}.csv"
     echo "LU file for $yr = " $lu_file
     cp $lu_file "${lu_file}.bak"
     echo "Stashed a copy in ${lu_file}.bak"

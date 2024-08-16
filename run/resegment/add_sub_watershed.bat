@@ -62,8 +62,9 @@ $CBP_ROOT/run/resegment/sub_divide_watershed $subshed $downstream $model_version
 #Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
 #echo '${TRANSPORT}_s2r.csv duplicated'
 # PHASE 5 seems to have only this:
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}.csv $subshed $downstream
-echo '${TRANSPORT}.csv duplicated'
+echo "Running: Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT} $subshed $downstream"
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT} $subshed $downstream
+echo '${TRANSPORT} duplicated'
 
 
 # Gen Info PARAMETERS

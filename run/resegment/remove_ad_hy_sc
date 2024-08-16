@@ -79,8 +79,7 @@ for i in $AFOCFO; do
   fi
   if [[ $cnt -eq 4 ]]; then
     afo_file="input/scenario/river/loads/afocfoload_${i}.csv"
-    echo "zeroing $subshed in afo file for $yr = " $afo_file
-    Rscript $CBP_ROOT/run/resegment/area_propor.R $afo_file $subshed $downstream 0
+    echo "removing $subshed in afo file for $yr = " $afo_file
     cp $afo_file /tmp/
     cat /tmp/afocfoload_${i}.csv |grep -v $subshed > $afo_file
     print "$subshed removed from $afo_file"
@@ -88,7 +87,7 @@ for i in $AFOCFO; do
     cnt=0
   fi
 done
-echo 'AFO CFO files proportioned'
+echo 'AFO CFO files cleaned'
 
 
 cp $xpath/bmptypes/$BMPTYPES/lrseg_HGMRs.csv /tmp/
