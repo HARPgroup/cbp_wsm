@@ -16,8 +16,8 @@ for iup in $dep_sheds; do
   djid=$(squeue --noheader --format %i --name $dep_name)
   if [ "$djid" != "" ]; then
     dep="$dep$delim$djid"
-    delim=','
-    dpre="--dependency="
+    delim=':'
+    dpre="--dependency=afterok:"
     #echo "djid: $djid delim: $delim"
   fi
 done
