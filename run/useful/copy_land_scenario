@@ -1,0 +1,11 @@
+#!/bin/bash
+# load env vars
+. hspf_config
+
+scen1=$1
+scen2=$2
+
+cp $CBP_ROOT/config/control/land/${scen1}.con $CBP_ROOT/config/control/land/${scen2}.con
+cp $CBP_ROOT/config/control/script/${scen1}.con $CBP_ROOT/config/control/script/${scen2}.con
+# cause there's no reason not to
+cbp make_land_directories.csh $scen2

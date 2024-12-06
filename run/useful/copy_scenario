@@ -1,0 +1,9 @@
+#!/bin/bash
+# load env vars
+. hspf_config
+
+scen1=$1
+scen2=$2
+
+cbp copy_land_scenario $scen1 $scen2
+cbp copy_river_scenario $scen1 $scen2
