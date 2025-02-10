@@ -6,4 +6,5 @@ model_d=`dirname $MODEL_ROOT`
 model_v=`basename $model_d`
 location="${model_v}_${model_n}"
 job_name="${location}_${scenario}_${seg}"
+job_name=`echo "$job_name" | tr - _`
 echo $job_name

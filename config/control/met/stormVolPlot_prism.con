@@ -16,3 +16,6 @@ set STORMSEP_PLOT = true
 
 #Set varkey
 set varkey = prism_mod_daily
+set MET_PROCESS_METHOD = raster
+set COVERAGE_FTYPE     = usgs_full_drainage 
+set COVERAGE_BUNDLE     = watershed 

@@ -1,0 +1,21 @@
+set MET_EXPORT_DIR = /media/model/met
+set START_DATE="1984-01-01"
+set END_DATE="2023-12-31"
+#For ranking and best fit ranking files
+set SCENARIOS_TO_RANK = ( simple_lm_nldas2_tiled simple_lm_daymet simple_lm_PRISM )
+set RANKING_SCENARIO =  simple_lm_best
+
+set GEO_MET_MODEL = lm_simple
+
+set extent_hydrocode = cbp6_met_coverage
+set extent_bundle = landunit
+set extent_ftype = cbp_met_grid
+set entity_type = dh_feature
+
+
+set DB_FORCE_OVERWRITE = 0
+
+
+set MET_PROCESS_METHOD = raster
+set COVERAGE_FTYPE = usgs_full_drainage 
+set COVERAGE_BUNDLE = watershed 

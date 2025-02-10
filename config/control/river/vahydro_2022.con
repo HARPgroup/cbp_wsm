@@ -215,7 +215,7 @@ END MODULES
 
 *** calibration scenario reference for river parameter modification
 CALIBSCEN
-vadeq_2021
+vahydro_2022
 END CALIBSCEN
 
 PLTGEN

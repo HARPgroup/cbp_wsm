@@ -16,4 +16,10 @@ set STORMSEP_PLOT = false
 
 #Set varkey
 set varkey = prism_mod_daily
+set RATINGS_VARKEY = rating_prism
+set MET_PROCESS_METHOD = raster
+set COVERAGE_FTYPE     = usgs_full_drainage 
+set COVERAGE_BUNDLE     = watershed 
 
+#Best fit ratings varkey
+set RATINGS_BEST_VARKEY = met_best_rating

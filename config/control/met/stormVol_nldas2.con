@@ -15,5 +15,11 @@ set STORMSEP_REGRESSION_METHOD = "LINEAR"
 set STORMSEP_PLOT = false
 
 #Set varkey
-set varkey = nldas_obs_hourly
+set varkey = nldas2_obs_hourly
 
+set MET_PROCESS_METHOD = raster
+set COVERAGE_FTYPE     = usgs_full_drainage 
+set COVERAGE_BUNDLE     = watershed 
+
+#Best fit ratings varkey
+set RATINGS_BEST_VARKEY = met_best_rating

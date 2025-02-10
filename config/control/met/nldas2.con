@@ -4,14 +4,14 @@
 set GEO_MET_MODEL = lm_simple
 set MET_DATA_SOURCE = nldas2
 set MET_EXPORT_DIR = /media/model/met
-set START_DATE="1984-01-01"
-
+set START_DATE = 1984-01-01 00:00:00 EST
+set START_OFFSET = 3600
+set END_DATE = 2023-12-31 23:59:59 EST
 #Set varkey
-set varkey = nldas_obs_hourly
+set varkey = nldas2_obs_hourly
 
 #For met model runs only
 set datasource = nldas2
-set maskExtent = '/backup/meteorology/cbp_extent.csv'
 set maskExtentLayer = "cbp_extent"
 
 set extent_hydrocode = "cbp6_met_coverage"
@@ -19,9 +19,16 @@ set extent_bundle = "landunit"
 set extent_ftype = "cbp_met_grid"
 set entity_type = "dh_feature"
 set tz_hr = 12
-set single_band = 10
 
 set TS_BAND = 10
 set dt = 3600
 
-set DB_FORCE_OVERWRITE = 0
+set DB_FORCE_OVERWRITE = 1
+set MET_PROCESS_METHOD = raster
+set COVERAGE_FTYPE     = cbp6_landseg 
+set COVERAGE_BUNDLE     = landunit 
+#Switch to control if default storm distribution is used for temporal disaggregation of daily aggregated nldas2 data
+#e.g. for fractional rasters of nldas2 rainfall, how are days with 0 total rainfall represented? 
+#true = all hours of fraction raster are 0
+#false = all hours of fraction raster are 1/24
+set DAILY_DEFAULT = true
