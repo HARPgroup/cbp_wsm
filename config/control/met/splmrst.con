@@ -1,0 +1,25 @@
+#!/bin/csh
+# config file for prism single source met input
+# do not include quotes on strings as they get passed back with quotes...
+# amalgamate nldas2, prism, daymet
+set MET_DATA_SOURCE = amanpd
+set MET_EXPORT_DIR = /media/model/met
+set START_DATE = 1984-01-01 00:00:00 EST
+set START_OFFSET = 3600
+set DISSAG_TZ_OFFSET = 25201
+set END_DATE = 2023-12-31 23:59:59 EST
+#set END_DATE = 1984-12-31 23:59:59 EST
+#Set varkey
+set varkey = amalgamate_simple_lm
+# set a scenario name for the met/prad files that fits the 8 char restrictions
+set METPRAD_SCEN = splmrst
+
+set DB_FORCE_OVERWRITE = 0
+set MET_PROCESS_METHOD = raster
+set COVERAGE_FTYPE = cbp6_landseg 
+set COVERAGE_BUNDLE = landunit 
+
+#For temporal disaggregation, what hourly fractions are used 
+set DISAGGREGATE_VARKEY = nldas2_precip_daily_frac
+# NOTE: this should not be needed, but there is broken code in disaggregate_raster_ts
+set RESAMPLE_VARKEY = daymet_mod_daily

@@ -8,7 +8,10 @@ set START_DATE = 1984-01-01 00:00:00 EST
 set START_OFFSET = 3600
 set END_DATE = 2023-12-31 23:59:59 EST
 #Set varkey
-set varkey = nldas2_obs_hourly
+#set varkey = nldas2_obs_hourly
+set varkey = nldas2_precip_hourly_tiled_16x16
+set FRACTIONVARKEY = nldas2_precip_daily_frac
+set DAILYVARKEY = nldas2_precip_daily
 
 #For met model runs only
 set datasource = nldas2
@@ -32,3 +35,6 @@ set COVERAGE_BUNDLE     = landunit
 #true = all hours of fraction raster are 0
 #false = all hours of fraction raster are 1/24
 set DAILY_DEFAULT = true
+
+#Add the tile size with which to import the raster into the dbase
+set TILE_SIZE = 16

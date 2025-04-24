@@ -4,22 +4,28 @@
 set GEO_MET_MODEL = storm_volume
 set MET_DATA_SOURCE = PRISM
 set MET_EXPORT_DIR = /media/model/met
-set START_DATE = "1984-01-01"
-
+set START_DATE = 1984-01-01
+set END_DATE = 2023-12-31
 
 #Set additional variables for Storm Separation Routine:
-set SEARCH_ALL_STORM = "TRUE"
-set BASELINE_FLOW_METHOD = "Month"
+set SEARCH_ALL_STORM = TRUE
+set BASELINE_FLOW_METHOD = Month
 set STORM_INCLUDE_DURATION = 1
-set STORMSEP_REGRESSION_METHOD = "LINEAR"
+set STORMSEP_REGRESSION_METHOD = LINEAR
 set STORMSEP_PLOT = false
 
 #Set varkey
 set varkey = prism_mod_daily
-set RATINGS_VARKEY = rating_prism
+#Set the daily varkey that will be stored as a property to the scenario property
+set DAILY_VARKEY = prism_mod_daily
+
 set MET_PROCESS_METHOD = raster
 set COVERAGE_FTYPE     = usgs_full_drainage 
 set COVERAGE_BUNDLE     = watershed 
 
-#Best fit ratings varkey
-set RATINGS_BEST_VARKEY = met_best_rating
+#Ranking scenario
+set RANKING_SCENARIO = amalgamate_storm_vol
+
+set tz_hr = 12
+set TS_BAND = 'false'
+set dt = 86400

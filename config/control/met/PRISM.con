@@ -29,4 +29,5 @@ set MET_PROCESS_METHOD = raster
 set COVERAGE_FTYPE     = usgs_full_drainage 
 set COVERAGE_BUNDLE     = watershed 
 
-
+#Add the tile size with which to import the raster into the dbase
+set TILE_SIZE = 16

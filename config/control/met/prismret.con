@@ -6,9 +6,8 @@ set MET_DATA_SOURCE = PRISM
 set MET_EXPORT_DIR = /media/model/met
 set START_DATE = 1984-01-01 00:00:00 EST
 set START_OFFSET = 3600
-set END_DATE = 2024-01-01 07:00:00 EST
-set END_WDM_DATE = 2023-12-31 23:59:59 EST
-#set END_DATE = 1984-01-31 23:59:59 EST
+set DISSAG_TZ_OFFSET = 25201
+set END_DATE = 2023-12-31 23:59:59 EST
 #Set varkey
 set varkey = prism_mod_daily
 #set varkey = nldas2_obs_hourly

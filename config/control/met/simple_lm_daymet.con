@@ -1,7 +1,7 @@
 #!/bin/csh
 # config file for prism single source met input
 # do not include quotes on strings as they get passed back with quotes...
-set GEO_MET_MODEL = lm_simple
+set GEO_MET_MODEL = simple_lm
 set MET_DATA_SOURCE = daymet
 set MET_EXPORT_DIR = /media/model/met
 set START_DATE = 1984-01-01
@@ -9,9 +9,13 @@ set END_DATE = 2023-12-31
 
 #Set varkey
 set varkey = daymet_mod_daily
+#Set the daily varkey that will be stored as a property to the scenario property
+set DAILY_VARKEY = daymet_mod_daily
+
 
 #Ranking scenario
 set RANKING_SCENARIO = amalgamate_simple_lm
+
 
 #For met data model runs
 set datasource = daymet
