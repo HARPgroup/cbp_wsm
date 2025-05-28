@@ -1,0 +1,72 @@
+#!/bin/bash
+. hspf_config
+scenario=$1
+basin=$2
+met=1
+land=1
+river=1
+if [ $# -gt 2 ]; then
+  met=$3
+  if [ $# -gt 3 ]; then 
+    land=$4
+    if [ $# -gt 4 ]; then 
+      river=$5
+    fi
+  fi
+fi
+base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
+model=`cbp get_config $scenario script MM_MODEL`
+segs=`cbp get_riversegs $basin`
+cbp basingen $scenario $basin
+land_segs=`cbp get_landsegs $basin`
+met_scenario=`cbp get_config $scenario land "PRECIP ATMOS DEPOSITION"`
+
+# run WDM import
+# this still needs these it seems?
+MODEL_ROOT=$NLDAS_ROOT
+SCRIPT_DIR=/opt/model/model_meteorology/sh
+export MODEL_ROOT SCRIPT_DIR
+if [ "$met" == "1" ]; then
+  for i in $land_segs; do
+    job_name="${i}_wdm"
+    echo "sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm "
+    sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm 
+  done
+fi
+# Now, I don't think we need these either, as this shold be set by .hspf_config?  We need to streamline
+# set needed environment vars
+
+MODEL_ROOT=$CBP_ROOT
+export MODEL_ROOT
+. hspf_config
+# run land
+# using dependencies can be submitted immediately after running the wdm import and will wait till completed
+
+if [ "$land" == "1" ]; then
+  location="p6_vadeq" # crucial to avoid collisions if running multiple installs
+  read -r scope land_scenario < <(cbp get_config $scenario river "LAND SCENARIO")
+  for i in $land_segs; do
+    job_name=`cbp mm_job_name $scenario $i`
+    djid=`cbp mm_job_id ${i}_wdm`
+    deps=""
+    if [ "$djid" != "" ]; then
+       deps="--dependency=$djid"
+    fi
+    echo "sbatch --job-name=\"$job_name\" $deps run_model $model $land_scenario $i auto land "
+    sbatch --job-name="$job_name" $deps run_model $model $land_scenario $i auto land 
+  done
+fi
+# run river
+# can now immediately be submitted after submitting land 
+# since the dependency ordering works with land and river 
+if [ "$river" == "1" ]; then
+  segs=`cbp get_riversegs $basin`
+  for i in $segs; do
+    deps=`cbp mm_river_deps $scenario $i`
+    echo "Segment $i Found deps= $deps"
+    job_name=`cbp mm_job_name $scenario $i`
+    echo "sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river"
+    sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river
+  done
+fi
+

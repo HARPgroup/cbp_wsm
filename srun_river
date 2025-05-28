@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. hspf_config
+scenario=$1
+basin=$2
+base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
+model=`cbp get_config $scenario script MM_MODEL`
+cbp basingen $scenario $basin
+if [ $# -gt 2 ]; then
+  segs=$3
+else
+  segs=`cbp get_riversegs $basin`
+fi
+# alternative: just do certain segment that need re-running
+# Clone runoff (only needs to be done first time)
+echo $segs
+for i in $segs; do 
+  if [ "$model" == "om" ]; then
+    echo "/opt/model/meta_model/scripts/om/clone_runoff_data $i $base_scenario $scenario"
+    /opt/model/meta_model/scripts/om/clone_runoff_data $i $base_scenario $scenario
+  fi
+  jobname=`cbp mm_job_name $scenario $i`;
+  deps=`cbp mm_river_deps $scenario $i`; 
+  echo "sbatch --job-name=$jobname $deps run_model $model $scenario $i auto river"; 
+  FORCE_RERUN=1;export FORCE_RERUN; sbatch --job-name=$jobname $deps run_model $model $scenario $i auto river;
+done

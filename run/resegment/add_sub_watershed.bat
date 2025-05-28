@@ -55,13 +55,13 @@ $CBP_ROOT/run/resegment/sub_divide_watershed $subshed $downstream $model_version
 
 # transport
 # PHASE 6 used these:
-#Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_l2w.csv $subshed $downstream
-#echo '${TRANSPORT}_l2w.csv duplicated'
-#Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
-#echo '${TRANSPORT}_s2r.csv duplicated'
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_l2w.csv $subshed $downstream
+echo '${TRANSPORT}_l2w.csv duplicated'
+Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}_s2r.csv $subshed $downstream
+echo '${TRANSPORT}_s2r.csv duplicated'
 # PHASE 5 seems to have only this:
-Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}.csv $subshed $downstream
-echo '${TRANSPORT}.csv duplicated'
+#Rscript $CBP_ROOT/run/resegment/copy_parent.R $CBP_ROOT/input/param/transport/${TRANSPORT}.csv $subshed $downstream
+#echo '${TRANSPORT}.csv duplicated'
 
 
 # Gen Info PARAMETERS
