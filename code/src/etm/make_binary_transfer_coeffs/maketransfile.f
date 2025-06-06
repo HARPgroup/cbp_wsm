@@ -277,11 +277,17 @@ C       print*,'calculate BMPs'
           call ttyput(' ')
 
 ************ determine the return frequency of storm flow
+          lscen = LandScen(l)
+          call lencl(lscen,lenlscen)
+***          print*,'DEBUG: CALLING returnfq(LandScen(l))',LandScen(l)
+***          print*,'DEBUG:                  l2r(i)=',l2r(i)
+***          print*,'DEBUG:                  l=',l
           call returnfq(
-     I                  LandScen(l),l2r(i),l,
+     I                  lscen,l2r(i),l,
      I                  StartY,StartM,StartD,EndY,EndM,EndD,
      O                  retfreq, retflow)
 
+***          print*,'DEBUG finished returnfq()'
 ********** determine if acres for a bmp exist for a land use.
 ************ BMP acres are initialized to -999, so to interpolate,
 ********** assign to zero acres if missing for any particular index

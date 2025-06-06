@@ -338,8 +338,10 @@
 !              7.  multiply by the land to water factor
 !              8.  add to river variable temporary variable
 ************************************************************************
+                lscen = LandScen(l)
+                call lencl(lscen,lenlscen)
                 if (luname(l).eq.'afo' .or. luname(l).eq.'cfo') then
-                  call getafoload(wdmlnd,rscen,rseg,LandScen(l),l2r(ns),
+                  call getafoload(wdmlnd,rscen,rseg,lscen,l2r(ns),
      I                         luname(l),sdate,edate,Lname(Rvar,l,Lvar),
      O                         nvals,hval)
                 else 
