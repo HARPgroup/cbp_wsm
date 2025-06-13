@@ -5,6 +5,7 @@ scenario=$1
 basin=$2
 base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
 model=`cbp get_config $scenario script MM_MODEL`
+met_scenario=`cbp get_config $scenario land "PRECIP ATMOS DEPOSITION"`
 cbp basingen $scenario $basin
 if [ $# -gt 2 ]; then
   segs=$3
@@ -16,7 +17,8 @@ fi
 echo "Queueing land segments: $segs"
 for i in $segs; do 
   job_name=`cbp mm_job_name $scenario $i`
-  dep_name=`cbp mm_job_name $met_scenario $i`"
+  dep_name=`cbp mm_job_name $met_scenario $i`
+  echo "Met dep name = $dep_name"
   djid=`cbp mm_job_id $dep_name`
   deps=""
   if [ "$djid" != "" ]; then

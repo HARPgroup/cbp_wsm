@@ -33,6 +33,6 @@ echo "Queueing land segments: $segs"
 for i in $land_segs; do
   job_name=`cbp mm_job_name $met_scenario $i`
   echo "sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm "
-#  sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm 
+  sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm 
 done
 
