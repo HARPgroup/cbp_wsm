@@ -1,0 +1,27 @@
+#!/bin/bash
+
+. hspf_config
+scenario=$1
+basin=$2
+base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
+model=`cbp get_config $scenario script MM_MODEL`
+cbp basingen $scenario $basin
+if [ $# -gt 2 ]; then
+  segs=$3
+else
+  segs=`cbp get_landsegs $basin`
+fi
+# alternative: just do certain segment that need re-running
+# Clone runoff (only needs to be done first time)
+echo "Queueing land segments: $segs"
+for i in $segs; do 
+  job_name=`cbp mm_job_name $scenario $i`
+  dep_name=`cbp mm_job_name $met_scenario $i`"
+  djid=`cbp mm_job_id $dep_name`
+  deps=""
+  if [ "$djid" != "" ]; then
+     deps="--dependency=$djid"
+  fi
+  echo "sbatch --job-name=\"$job_name\" $deps run_model $model $scenario $i auto land "
+  sbatch --job-name="$job_name" $deps run_model $model $scenario $i auto land 
+done
