@@ -21,7 +21,7 @@ OptDbg =
 # FFLAGS = -u $(OptDbg)
 Incl_1 = ../adwdm 
 Incls = -I$(Incl_1) 
-FFLAGS = -C -u $(OptM) $(Incls)
+FFLAGS = -C -u $(OptM) $(Incls) -fPIE
 
 # Compiler name
 F77 = f77

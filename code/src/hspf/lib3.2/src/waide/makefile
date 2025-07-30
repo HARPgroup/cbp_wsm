@@ -19,7 +19,7 @@ DbgF   = -g
 OptM   = -OM
 OptDbg =
 # FFLAGS = -u $(OptDbg)
-FFLAGS = -fbounds-check
+FFLAGS = -fbounds-check -fallow-argument-mismatch -std=legacy
 
 # Compiler names
 F77    = f77
