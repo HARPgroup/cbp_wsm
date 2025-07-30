@@ -11,7 +11,7 @@
 # this description file uses the Bourne shell
 SHELL = /bin/sh
 shCmd = sh
-
+FFLAGS = "-fallow-argument-mismatch"
 # Sequential file, installation specific
 # where parm[dg ux pc].seq sets computer type, graphics parameters
 SeqDG   = dg

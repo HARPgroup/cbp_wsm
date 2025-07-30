@@ -19,7 +19,7 @@ DbgF   = -g
 OptM   = -OM
 OptDbg =
 # FFLAGS = -u $(OptDbg)
-FFLAGS = -C -u $(OptM)    
+FFLAGS = -C -u $(OptM) -fPIE
 
 # Compiler name
 F77 = f77
