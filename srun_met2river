@@ -14,13 +14,15 @@ if [ $# -gt 2 ]; then
     fi
   fi
 fi
+
 base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
 model=`cbp get_config $scenario script MM_MODEL`
 segs=`cbp get_riversegs $basin`
 cbp basingen $scenario $basin
 land_segs=`cbp get_landsegs $basin`
 met_scenario=`cbp get_config $scenario land "PRECIP ATMOS DEPOSITION"`
-
+baseline_met=`cbp get_config $met_scenario met BASELINE_MET_SCENARIO`
+refresh_baseline_met=`cbp get_config $met_scenario met REFRESH_BASELINE_MET`
 # run WDM import
 # this still needs these it seems?
 MODEL_ROOT=$NLDAS_ROOT
@@ -28,14 +30,47 @@ SCRIPT_DIR=/opt/model/model_meteorology/sh
 export MODEL_ROOT SCRIPT_DIR
 if [ "$met" == "1" ]; then
   for i in $land_segs; do
-    job_name="${i}_wdm"
-    echo "sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm "
-    sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm 
+    if [ "$refresh_baseline_met" == "1" ]; then
+      job_name=`mm_job_name $baseline_met $i`
+      job_id=`mm_job_id $job_name`
+      # skip if already running
+      if [ "$job_id" != "" ]; then
+        echo "$job_name is already running as $job_id"
+        continue
+      fi
+      met_upyears=`cbp get_config $baseline_met met UPDATE_YEARS`
+      MSTART_DATE=`cbp get_config $baseline_met met START_DATE`
+      MEND_DATE=`cbp get_config $baseline_met met END_DATE`
+      msdate=`date -d "$MSTART_DATE" +"%Y%m%d"`
+      medate=`date -d "$MEND_DATE" +"%Y%m%d"`
+      echo "sbatch --job-name="$job_name" $NLDAS_ROOT/make_met2date $i $msdate $medate \"$met_upyears\" landseg"
+      sbatch --job-name="$job_name" $NLDAS_ROOT/make_met2date $i $msdate $medate "$met_upyears" landseg
+    fi
   done
 fi
+
+if [ "$met" == "1" ]; then
+  for i in $land_segs; do
+    dep_name=`mm_job_name $baseline_met $i`
+    dep_str=""
+    dep_ids=`mm_job_id $dep_name`
+    if [ "$dep_ids" != "" ]; then
+      dep_str="--dependency=afterok:$dep_ids"
+    fi
+    job_name=`mm_job_name $met_scenario $i`
+    # skip if already running
+    job_id=`mm_job_id $job_name`
+    if [ "$job_id" != "" ]; then
+      echo "$job_name is already running as $job_id"
+      continue
+    fi
+    echo "sbatch --job-name="$job_name" $dep_str run_model raster_met $met_scenario $i auto wdm "
+    sbatch --job-name="$job_name" $dep_str run_model raster_met $met_scenario $i auto wdm 
+  done
+fi
+
 # Now, I don't think we need these either, as this shold be set by .hspf_config?  We need to streamline
 # set needed environment vars
-
 MODEL_ROOT=$CBP_ROOT
 export MODEL_ROOT
 . hspf_config
@@ -47,15 +82,23 @@ if [ "$land" == "1" ]; then
   read -r scope land_scenario < <(cbp get_config $scenario river "LAND SCENARIO")
   for i in $land_segs; do
     job_name=`cbp mm_job_name $scenario $i`
-    djid=`cbp mm_job_id ${i}_wdm`
+    dep_name=`mm_job_name $met_scenario $i`
+    djid=`cbp mm_job_id $dep_name`
     deps=""
     if [ "$djid" != "" ]; then
        deps="--dependency=$djid"
+    fi
+    # skip if already running
+    job_id=`mm_job_id $job_name`
+    if [ "$job_id" != "" ]; then
+      echo "$job_name is already running as $job_id"
+      continue
     fi
     echo "sbatch --job-name=\"$job_name\" $deps run_model $model $land_scenario $i auto land "
     sbatch --job-name="$job_name" $deps run_model $model $land_scenario $i auto land 
   done
 fi
+
 # run river
 # can now immediately be submitted after submitting land 
 # since the dependency ordering works with land and river 
@@ -65,8 +108,14 @@ if [ "$river" == "1" ]; then
     deps=`cbp mm_river_deps $scenario $i`
     echo "Segment $i Found deps= $deps"
     job_name=`cbp mm_job_name $scenario $i`
+    # skip if already running
+    job_id=`mm_job_id $job_name`
+    if [ "$job_id" != "" ]; then
+      echo "$job_name is already running as $job_id"
+      continue
+    fi
     echo "sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river"
-    sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river
+#    sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river
   done
 fi
 

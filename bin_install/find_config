@@ -3,4 +3,11 @@ dir=$(pwd -P)
 while [ -n "$dir" -a ! -f "$dir/$1" ]; do
     dir=${dir%/*}
 done
-if [ -f "$dir/$1" ]; then printf '%s\n' "$dir/$1"; fi
+fpath="$dir/$1"
+if [ ! -f "$fpath" ]; then 
+  if [ "$2" != "" ]; then
+    # user submitted a default path, check and return if it exists
+    fpath=$2
+  fi
+fi
+if [ -f "$fpath" ]; then printf '%s\n' "$fpath"; fi

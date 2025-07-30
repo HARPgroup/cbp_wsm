@@ -5,6 +5,8 @@ if [ "$hspf_config" = "" ]; then
   hspf_config="/etc/hspf.config"
 fi
 
-echo "Loading $hspf_config" >/dev/stderr
+if [ "$HSPF_CONFIG_DEBUG" = "1" ]; then
+  echo "Loading $hspf_config" 1>&2
+fi
 source $hspf_config
 

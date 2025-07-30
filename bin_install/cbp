@@ -44,15 +44,15 @@ for edir in /usr/local/bin run/standard run run_bhatt run/useful input/param/scr
     fpath=`find *|grep $cmd | head -n 1`
     # we extract this path in case their is a partial name match
     if [ "$fpath" != "" ]; then
-      #echo "cd $eroot" >/dev/stderr
+      #echo "cd $eroot" 1>&2
       p=`dirname $fpath`
-      #echo "searching $eroot/$p/$cmd" >/dev/stderr
+      #echo "searching $eroot/$p/$cmd" 1>&2
       if test -f "$eroot/$p/$cmd"; then
-        #echo "Found $cmd in $eroot/$p/$cmd" >/dev/stderr
+        #echo "Found $cmd in $eroot/$p/$cmd" 1>&2
         # todo: have specific handlers to catch legacy scripts and use a different directory
         # instead of the default "bin"
         if [ "$edir" == "bin" ]; then
-          echo "Executing: ./$cmd $@" >/dev/stderr
+          echo "Executing: ./$cmd $@" 1>&2
           ./$cmd "$@"
           exit
         else
@@ -64,10 +64,10 @@ for edir in /usr/local/bin run/standard run run_bhatt run/useful input/param/scr
       fi
     fi
   else 
-    echo "Warning: could not find $eroot in tree" >/dev/stderr
+    echo "Warning: could not find $eroot in tree" 1>&2
   fi  
 done
 
 if [ $found -eq 0 ]; then
-  echo "Error: Could not find '$cmd' in directory tree" >/dev/stderr
+  echo "Error: Could not find '$cmd' in directory tree" 1>&2
 fi

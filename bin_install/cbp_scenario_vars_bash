@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ "$#" -ge 3 ]; then
+  vtype=$3
+else
+  vtype="script"
+fi
+confile=$CBP_ROOT/config/control/$vtype/${1}.con
+target_val=""
 if [ -n "$1" ] ; then
   # we have been passed a scenario, find the control script variables
   # sed -r 's/set//' $CBP_ROOT/config/control/script/${1}.con
@@ -13,10 +20,24 @@ if [ -n "$1" ] ; then
       fi
       if [[ $2 == "$var" ]]
       then
+        target_val=$val
         echo "$val"
       fi
     fi
-  done < $CBP_ROOT/config/control/script/${1}.con
+  done < $confile
 fi
-
-
+# get default values if variables is missing
+if [ "$target_val" == "" ]; then
+  if [[ $2 != "all" ]]; then
+  # must avoid recursion
+    if [[ $1 != "default" ]]; then
+      val=`cbp_scenario_vars_bash default $2 $vtype`
+      if [[ "$val" != "" ]]; then
+        if [ "$HSPF_CONFIG_DEBUG" = "1" ]; then
+          >&2 echo "Warning: Val is empty, using '$val' from default.con"
+        fi
+        echo $val
+      fi
+    fi
+  fi
+fi

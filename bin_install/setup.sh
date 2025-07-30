@@ -6,6 +6,7 @@ if [ -z "$ip" ]; then
   ip="/usr/local/bin"
 fi
 
+cp $PWD/bin_install/hsp_uci_version $ip/hsp_uci_version
 cp $PWD/bin_install/find_config $ip/find_config
 cp $PWD/bin_install/hspf_config $ip/hspf_config
 cp $PWD/bin_install/cbp $ip/cbp
