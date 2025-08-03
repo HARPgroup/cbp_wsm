@@ -5,10 +5,10 @@ scenario=$1
 basin=$2
 base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
 model=`cbp get_config $scenario script MM_MODEL`
-cbp basingen $scenario $basin
 if [ $# -gt 2 ]; then
   segs=$3
 else
+  cbp basingen $scenario $basin
   segs=`cbp get_riversegs $basin`
 fi
 # alternative: just do certain segment that need re-running
