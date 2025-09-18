@@ -43,28 +43,49 @@ if [ "$met" == "1" ]; then
       MEND_DATE=`cbp get_config $baseline_met met END_DATE`
       msdate=`date -d "$MSTART_DATE" +"%Y%m%d"`
       medate=`date -d "$MEND_DATE" +"%Y%m%d"`
-      echo "sbatch --job-name="$job_name" $NLDAS_ROOT/make_met2date $i $msdate $medate \"$met_upyears\" landseg"
-      sbatch --job-name="$job_name" $NLDAS_ROOT/make_met2date $i $msdate $medate "$met_upyears" landseg
+      if [ "$baseline_met" == "met2date" ]; then
+        echo "sbatch --job-name="$job_name" $NLDAS_ROOT/make_met2date $i $msdate $medate \"$met_upyears\" landseg"
+        sbatch --job-name="$job_name" $NLDAS_ROOT/make_met2date $i $msdate $medate "$met_upyears" landseg
+      else
+        echo "Error: Can only handle BASELINE_MET_SCENARIO = 'met2date'. set REFRESH_BASELINE_MET = 0."
+        echo "Error: Can only handle BASELINE_MET_SCENARIO = 'met2date'. set REFRESH_BASELINE_MET = 0." >> problem
+      fi
     fi
   done
 fi
 
 if [ "$met" == "1" ]; then
   for i in $land_segs; do
+    # check for baseline met dependency
     dep_name=`mm_job_name $baseline_met $i`
     dep_str=""
     dep_ids=`mm_job_id $dep_name`
+    job_name=`mm_job_name $met_scenario $i`
     if [ "$dep_ids" != "" ]; then
       dep_str="--dependency=afterok:$dep_ids"
     fi
-    job_name=`mm_job_name $met_scenario $i`
+    MET_PROCESS_METHOD=`cbp get_config $met_scenario met MET_PROCESS_METHOD`
+    # TODO: maybe alt should just be another step in the wdm workflow?
+    #       or in the geo workflow?
+    if [ "$MET_PROCESS_METHOD" == 'alt' ]; then
+      # spawn the alt first, with the same baseline dependency
+      alt_job_name="alt_$job_name"
+      # skip if already running
+      alt_job_id=`mm_job_id $alt_job_name`
+      if [ "$alt_job_id" == "" ]; then
+        echo "sbatch --job-name=\"$alt_job_name\" $dep_str run_model raster_met $met_scenario $i auto alt "
+        sbatch --job-name="$alt_job_name" $dep_str run_model raster_met $met_scenario $i auto alt 
+        alt_id=`mm_job_id $alt_job_name`
+        dep_str="--dependency=afterok:$alt_id"
+      fi
+    fi
     # skip if already running
     job_id=`mm_job_id $job_name`
     if [ "$job_id" != "" ]; then
       echo "$job_name is already running as $job_id"
       continue
     fi
-    echo "sbatch --job-name="$job_name" $dep_str run_model raster_met $met_scenario $i auto wdm "
+    echo "sbatch --job-name=\"$job_name\" $dep_str run_model raster_met $met_scenario $i auto wdm "
     sbatch --job-name="$job_name" $dep_str run_model raster_met $met_scenario $i auto wdm 
   done
 fi

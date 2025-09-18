@@ -8,12 +8,16 @@ model=`cbp get_config $scenario script MM_MODEL`
 met_scenario=`cbp get_config $scenario land "PRECIP ATMOS DEPOSITION"`
 cbp basingen $scenario $basin
 if [ $# -gt 2 ]; then
+  # alternative: just do certain segment that need re-running
   segs=$3
 else
   segs=`cbp get_landsegs $basin`
 fi
-# alternative: just do certain segment that need re-running
-# Clone runoff (only needs to be done first time)
+# get the land scenario name
+read -r scope land_scenario < <(cbp get_config $scenario river "LAND SCENARIO")
+if [ "$land_scenario" != "" ]; then
+  scenario=$land_scenario
+fi
 echo "Queueing land segments: $segs"
 for i in $segs; do 
   job_name=`cbp mm_job_name $scenario $i`
