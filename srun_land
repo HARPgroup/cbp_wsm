@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ $# -lt 2 ]; then
+  echo "Use: srun_land scenario basin [segments='']"
+  echo "scenario=scenario indicated by config/control/script/[scenario].con"
+  echo "Specific segments as a space separated \"\" quoted will override the basin segments"
+  exit
+fi
 
 . hspf_config
 scenario=$1

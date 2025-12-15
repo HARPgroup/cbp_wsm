@@ -1,9 +1,14 @@
 #!/bin/bash
+if [ $# -lt 2 ]; then
+  echo "Use: srun_river scenario basin [segments='']"
+  echo "scenario=scenario indicated by config/control/script/[scenario].con"
+  echo "This routine currently is hard-wired to FORCE_RERUN, so no caching is possible"
+  echo "To avoid re-running upstream segments, run with 3rd argumnet = 2nd argument to only "
+  echo "run the outlet segment."
+  exit
+fi
 
 # 
-echo "This routine currently is hard-wired to FORCE_RERUN, so no caching is possible"
-echo "To avoid re-running upstream segments, run with 3rd argumnet = 2nd argument to only "
-echo "run the outlet segment."
 
 . hspf_config
 scenario=$1

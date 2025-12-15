@@ -1,9 +1,10 @@
 #!/bin/bash
 # set needed environment vars
-if [ $# -gt 2 ]; then
+if [ $# -lt 2 ]; then
   echo "Use: srun_met scenario basin [segments='']"
   echo "scenario=scenario indicated by config/control/script/[scenario].con"
   echo "Will retrieve the met scenario from the land simulation corresponding to this river"
+  exit
 fi
 . hspf_config
 MODEL_ROOT=$NLDAS_ROOT
