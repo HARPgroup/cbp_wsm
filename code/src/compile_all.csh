@@ -586,12 +586,12 @@ endif
 echo "... Compiling scenario-compare - done."
 
 cd ../../wqm_load/wqmlib/
-./compile.exe
+./compile
 if ( $status == 1 ) then
    echo "PROBLEM in `pwd`"; exit;
 endif
 cd ../wqmlib_P6/
-./compile.exe
+./compile
 if ( $status == 1 ) then
    echo "PROBLEM in `pwd`"; exit;
 endif
@@ -614,8 +614,7 @@ echo "... Compiling wqm-atdep - done."
 #cd ../p5_and_ps_to_wqm57k
 #./compile
 cd ../p5_and_ps_to_request_y1y2_P6_RPA_RIB_EOT_PSMETHOD
-#./compile.exe
-./compile_all.exe
+./x_compile.exe2
 if ( $status == 1 ) then
    echo "PROBLEM in `pwd`"; exit;
 endif
