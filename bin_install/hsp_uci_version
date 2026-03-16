@@ -1,0 +1,20 @@
+#!/bin/bash
+if [[ $# -lt 2 ]]; then
+  echo "Usage: hsp_uci_version uci_name desired_version(hsp2,hspf)">/dev/stderr
+  # just a uci path and a version, so, modify the selected file
+fi 
+path=$1
+HSP_VERSION=$2
+
+hsp2_resume="RESUME     0 RUN     1                   UNIT SYSTEM     1"
+hspf_resume="RESUME     0 RUN     1 TSSFL    15 WDMSFL   16"
+
+echo "converting $path to $HSP_VERSION ">/dev/stderr
+
+if [[ "$HSP_VERSION" = "hsp2" ]]; then
+  cat $path |sed "s/$hspf_resume/$hsp2_resume/" > "${path}.bak"
+else
+  cat $path |sed "s/$hsp2_resume/$hspf_resume/" > "${path}.bak"
+fi
+# now replace the original
+mv "${path}.bak" $path
