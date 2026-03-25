@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ $# -lt 2 ]; then
-  echo "Use: srun_land scenario basin [segments='']"
+  echo "Use: srun_land scenario basin [segments=all] [step='' (blank is all)]"
   echo "scenario=scenario indicated by config/control/script/[scenario].con"
   echo "Specific segments as a space separated \"\" quoted will override the basin segments"
   exit
@@ -13,12 +13,20 @@ base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
 model=`cbp get_config $scenario script MM_MODEL`
 met_scenario=`cbp get_config $scenario land "PRECIP ATMOS DEPOSITION"`
 cbp basingen $scenario $basin
+segs="all"
 if [ $# -gt 2 ]; then
   # alternative: just do certain segment that need re-running
   segs=$3
-else
+fi
+if [ "$segs" == "all" ]; then
   segs=`cbp get_landsegs $basin`
 fi
+step=""
+if [ $# -gt 3 ]; then
+  # alternative: just do certain segment that need re-running
+  step=$4
+fi
+
 # get the land scenario name
 read -r scope land_scenario < <(cbp get_config $scenario river "LAND SCENARIO")
 if [ "$land_scenario" != "" ]; then
@@ -34,6 +42,6 @@ for i in $segs; do
   if [ "$djid" != "" ]; then
      deps="--dependency=$djid"
   fi
-  echo "sbatch --job-name=\"$job_name\" $deps run_model $model $scenario $i auto land "
+  echo "sbatch --job-name=\"$job_name\" $deps run_model $model $scenario $i auto land $step"
   sbatch --job-name="$job_name" $deps run_model $model $scenario $i auto land 
 done

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+om_config=`find_config om.config`
+if [ "$om_config" = "" ]; then
+  om_config="/etc/om.config"
+fi
+
+if [ "$om_config_DEBUG" = "1" ]; then
+  echo "Loading $om_config" 1>&2
+fi
+source $om_config
+

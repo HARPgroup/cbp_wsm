@@ -1,6 +1,5 @@
 #!/bin/csh
 #   GET SCENARIO, BASIN, and TREE
-
   if (${#argv} != 3) then
     if (${#argv} != 2) then
       echo ' '
@@ -19,11 +18,10 @@
   if (${#argv} == 3) then
     set tree = $argv[3]
   else
-    source ../fragments/set_tree
-    mkdir -p ../../tmp/scratch/temp$$/
-    cd ../../tmp/scratch/temp$$/
+    set tree = $CBP_ROOT
+    mkdir -p $tree/tmp/scratch/temp$$/
+    cd $tree/tmp/scratch/temp$$/
   endif
-
   if (-e problem) then
     rm problem
   endif

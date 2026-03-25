@@ -13,6 +13,10 @@ cp $PWD/bin_install/cbp $ip/cbp
 cp $PWD/bin_install/cbp_scenario_vars_bash $ip/
 cp $PWD/bin_install/slurmq $ip/
 cp $PWD/bin_install/wdmexp $ip/
+cp $PWD/bin_install/get_landsegs $ip/
+cp $PWD/bin_install/get_riversegs $ip/
+# this must be done after successfull compiling
+cp $PWD/code/src/hspf/hspf11.1/bin/hspf_ICPRB $ip/
 # get cbp config block
 cp $PWD/bin_install/get_config $ip/get_config
 cp $PWD/bin_install/hspf.config.default $PWD/hspf.config

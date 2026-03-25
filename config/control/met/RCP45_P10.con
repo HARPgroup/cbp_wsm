@@ -1,6 +1,0 @@
-set overwrite_cc_factors = 0
-set FACTOR_METHOD = LOOKUP
-set BASELINE_MET_SCENARIO = nldas2rst
-set MET_PROCESS_METHOD = alt
-set COVERAGE_FTYPE     = cbp6_landseg 
-set COVERAGE_BUNDLE     = landunit 
