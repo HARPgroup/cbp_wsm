@@ -1,0 +1,39 @@
+#!/bin/bash
+# set needed environment vars
+if [ $# -lt 2 ]; then
+  echo "Use: srun_met scenario basin [segments='']"
+  echo "scenario=scenario indicated by config/control/script/[scenario].con"
+  echo "Will retrieve the met scenario from the land simulation corresponding to this river"
+  exit
+fi
+. hspf_config
+MODEL_ROOT=$NLDAS_ROOT
+SCRIPT_DIR="${MET_CODE_ROOT}/sh"
+export MODEL_ROOT SCRIPT_DIR
+# load vars
+scenario=$1
+basin=$2
+model=`cbp get_config $scenario script MM_MODEL`
+cbp basingen $scenario $basin
+if [ $# -gt 2 ]; then
+  # alternative: just do certain segment that need re-running
+  segs=$3
+else
+  # do everythign in this river
+  segs=`cbp get_landsegs $basin`
+fi
+# get the met scenario
+met_scenario=`cbp get_config $scenario land "PRECIP ATMOS DEPOSITION"`
+
+# Clone runoff (only needs to be done first time)
+cbp basingen $scenario $basin
+land_segs=`cbp get_landsegs $basin`
+
+echo "Queueing land segments: $segs"
+# run WDM import
+for i in $land_segs; do
+  job_name=`cbp mm_job_name $met_scenario $i`
+  echo "sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm "
+  sbatch --job-name="$job_name" run_model raster_met $met_scenario $i auto wdm 
+done
+

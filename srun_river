@@ -1,0 +1,61 @@
+#!/bin/bash
+if [ $# -lt 2 ]; then
+  echo "Use: srun_river scenario basin [segments='']"
+  echo "scenario=scenario indicated by config/control/script/[scenario].con"
+  echo "This routine currently is hard-wired to FORCE_RERUN, so no caching is possible"
+  echo "To avoid re-running upstream segments, run with 3rd argumnet = 2nd argument to only "
+  echo "run the outlet segment."
+  exit
+fi
+
+# 
+
+. hspf_config
+scenario=$1
+basin=$2
+
+base_scenario=`cbp get_config $scenario script BASELINE_SCENARIO_HYDRO`
+model=`cbp get_config $scenario script MM_MODEL`
+if [ $# -gt 2 ]; then
+  segs=$3
+else
+  cbp basingen $scenario $basin
+  segs=`cbp get_riversegs $basin`
+fi
+# alternative: just do certain segment that need re-running
+# Clone runoff (only needs to be done first time)
+echo $segs
+quad_zero_segs=`cbp get_config $scenario script QUAD_ZERO_SEGS`
+for i in $segs; do 
+  # check to see if we should skip this one if it is marked as tidal/no river sim
+  to_seg=${i: -4}
+  if [ "$to_seg" == "0000" ] ; then
+    if [ "$quad_zero_segs" == "" ]; then
+      echo "Skipping quad zero segment ${i}."
+      continue
+    fi
+    if [[ "$i" =~ "$quad_zero_segs" ]]; then
+      echo "Running quad zero segment $i as directed in conf."
+    else
+      echo "Skipping quad zero segment ${i}."
+      continue
+    fi
+  fi
+  if [ "$model" == "om" ]; then
+    if [ "$CLONE_RUNOFF" == "1" ]; then
+      echo "/opt/model/meta_model/scripts/om/clone_runoff_data $i $base_scenario $scenario"
+      /opt/model/meta_model/scripts/om/clone_runoff_data $i $base_scenario $scenario
+    fi
+  fi
+  jobname=`cbp mm_job_name $scenario $i`;
+  # skip if already running
+  job_id=`mm_job_id $jobname`
+  if [ "$job_id" != "" ]; then
+    echo "$jobname is already running as $job_id"
+    continue
+  fi
+
+  deps=`cbp mm_river_deps $scenario $i`; 
+  echo "sbatch --job-name=$jobname $deps run_model $model $scenario $i auto river"; 
+  FORCE_RERUN=1;export FORCE_RERUN; sbatch --job-name=$jobname $deps run_model $model $scenario $i auto river;
+done
