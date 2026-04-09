@@ -140,7 +140,7 @@ if [ "$river" == "1" ]; then
       continue
     fi
     echo "sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river"
-#    sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river
+    sbatch --job-name=$job_name $deps run_model $model $scenario $i auto river
   done
 fi
 
