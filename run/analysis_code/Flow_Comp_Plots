@@ -1,0 +1,186 @@
+#Alex Domiano HARP Research Group
+#Model Versus Gage Flow Data Analysis for a Calander Year
+
+# Load Libraries
+fxn_locations = "C:\\Users\\alexd15\\Documents\\ArcGIS\\HARP\\R\\7Q10";
+source(paste(fxn_locations,"fn_iha.R", sep = "/"));  
+
+library(pander);
+library(httr);
+library(dataRetrieval)
+library(zoo)
+library(lfstat)
+library(plyr)
+library(ggplot2)
+vignette("dataRetrieval",package = "dataRetrieval")
+
+# Loads model data 
+#For river segment OD5_8780_8660
+#URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxODFehfqbofJfrIwLFHGnoCrrpo0QUeSbhl5hehBJrbpqATfjlAuH3sOKT5f86wKVXbxMjUGzb4vY/pub?output=csv'
+#For river segment OD4_9140_8990
+URI_model_daily <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSl-sc0S90CF6zqo9FCCRv2Nwv8EmHgVsWlHR1SdH5m1k_5FDf2A1aAxHm7aTNRO8kPJqnbJDU8-Uyi/pub?output=csv'
+model_daily = read.csv(URI_model_daily, header = TRUE, sep = ",", stringsAsFactors = FALSE);
+model_full <- model_daily[(1:8036),]
+
+model_full <- rename(model_full, c("ovol"="flow"))
+model_full <- model_full[c("day", "month", "year", "flow")]
+model_daily <- model_daily[(1:7944),] #This must end on September 30 fo the last year included
+
+Flow_model <- model_daily[,c(6,5)]
+Flow_modelv <- as.vector(Flow_model)
+colnames(Flow_modelv) <- c("Date", "Flow")
+
+Flow_modelx <- zoo(Flow_modelv$Flow, order.by = Flow_modelv$Date);
+model_7Q10 <- fn_iha_7q10(Flow_modelx)
+
+
+
+# Import data, select site, code, start/end dates
+# example for the Dan River Near Wentworth, NC
+siteNo <- "02071000"
+pCode <- "00060"
+start.date <- "1984-01-01"
+# NOTE: fn_iha_mlf will fail if it lacks a complete water year, so date must be restricted to end on 9-30 
+end.date <- "2005-12-31"
+yahara <- readNWISdv(siteNumbers = siteNo,
+                     parameterCd = pCode,
+                     startDate = start.date,
+                     endDate = end.date)
+
+yahara_full <- rename(yahara, c("X_00060_00003"="flow"))
+yahara_full$day <- model_full$day
+yahara_full$month <- model_full$month
+yahara_full$year <- model_full$year
+yahara_full <- yahara_full[c("day", "month", "year", "flow")]
+
+# names with codes
+names(yahara)
+# cleans up names
+yahara <- renameNWISColumns(yahara)
+# make date posix
+#datv$thisdate <- as.POSIXct(datv$thisdate)
+flows_USGS <- zoo(yahara[,"Flow"], order.by = yahara$Date);
+# get 7Q10
+USGS_7Q10 <- fn_iha_7q10(flows_USGS)
+
+#Creates annual 7 day average low flow for model data
+myriver_model <- createlfobj(model_full, hyearstart = 1)
+Ann_7_Low_Model <- MAM(myriver_model, n = 7, year = 1984:2005, yearly = TRUE)
+  
+#Creates annual 7 day average low flow data for gage data
+myriver_gage <- createlfobj(yahara_full, hyearstart = 1)
+Ann_7_Low_Gage <- MAM(myriver_gage, n = 7, year = 1984:2005, yearly = TRUE)
+
+#Creates monthly mean flow timeseries for model data
+Month_Mean_Model <- meanflow(myriver_model, year = "any", monthly = TRUE, yearly = TRUE, breakdays = NULL, na.rm = TRUE)
+Month_Mean_Model$ID <- seq.int(nrow(Month_Mean_Model))
+
+#Creates monthly mean flow timeseries for gage data
+Month_Mean_Gage <- meanflow(myriver_gage, year = "any", monthly = TRUE, yearly = TRUE, breakdays = NULL, na.rm = TRUE)
+Month_Mean_Gage$ID <- seq.int(nrow(Month_Mean_Gage))
+
+#Creates yearly mean flow timeseries for model data
+Year_Mean_Model <- meanflow(myriver_model, year = "any", monthly = FALSE, yearly = TRUE, breakdays = NULL, na.rm = TRUE)
+Year_Mean_Model$ID <- seq.int(nrow(Year_Mean_Model))
+
+#Creates yearly mean flow timeseries for gage data
+Year_Mean_Gage <- meanflow(myriver_gage, year = "any", monthly = FALSE, yearly = TRUE, breakdays = NULL, na.rm = TRUE)
+Year_Mean_Gage$ID <- seq.int(nrow(Year_Mean_Gage))
+
+#Merges the 3 different comparison timeseries types together
+total <- merge(Ann_7_Low_Gage, Ann_7_Low_Model, by="hyear")
+total_month <- merge(Month_Mean_Gage, Month_Mean_Model, by = "ID")
+total_month$Date <- as.yearmon(paste(total_month$hyear.x, total_month$month.x), "%Y %m")
+total_year <- merge(Year_Mean_Gage, Year_Mean_Model, by = "ID")
+
+#Monthly Residuals
+total_month["residuals"] <- NA
+total_month$residuals <- total_month$flow.x-total_month$flow.y
+
+#Yearly Residuals
+total_year["residuals"] <- NA
+total_year$residuals <- total_year$flow.x-total_year$flow.y
+
+#Subsets the monthly and yearly mean data into a smaller 5 year timeseries
+total_5_month <- total_month[(73:144),]
+total_5_year <- total_year[(7:12),]
+
+#Generates the residuals for the low flow statistics
+total["residuals"] <- NA
+total$residuals <- total$MAn.x-total$MAn.y
+
+Model7Q10 <- data.frame( x =c(-Inf, Inf), y = model_7Q10, cutoff = factor(model_7Q10))
+Gage7Q10 <- data.frame(x = c(-Inf, Inf), y = USGS_7Q10, cutoff = factor(USGS_7Q10))
+zero <- data.frame(x = c(-Inf, Inf), y = 0)
+
+#7 day average low flow per year versus 7Q10 for model and gage
+#Residuals and linear regression plotted as well
+ggplot(total, aes(hyear, residuals)) +
+  geom_line(aes(y=MAn.x, color = "gage (cfs)")) +
+  geom_line(aes(y = MAn.y, color = "model (cfs)")) +
+  geom_line(aes(x, y, color = "Model 7Q10 (cfs)"), Model7Q10) +
+  geom_line(aes(x, y, color = "Gage 7Q10 (cfs)"), Gage7Q10) +
+  geom_point(aes(y = residuals, color = "Residuals")) +
+  stat_smooth(method = "lm", col ="red") +
+  geom_line(aes(x, y), zero) +
+  labs(title = "7 Day Average Low Flow and 7Q10 for Model and Gage", x = "Time (Years)", y = "Flow (cfs)")
+
+
+#Plots long term monthly average flow
+ggplot(total_month, aes(Date)) +
+  geom_line(aes(y = flow.x, color = "Gage Monthly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Monthly Average Flow (cfs)")) +
+  labs(title = "Long Term Monthly Average Flow", x = "Time (Years)", y = "Flow (cfs)")
+
+#Plots long term monthly average flow with residuals
+ggplot(total_month, aes(Date, residuals)) +
+  geom_line(aes(y = flow.x, color = "Gage Monthly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Monthly Average Flow (cfs)")) +
+  geom_point(aes(y = residuals, color = "Residuals")) +
+  stat_smooth(method = "lm", col ="red") +
+  labs(title = "Long Term Monthly Average Flow", x = "Time (Years)", y = "Flow (cfs)")
+
+#Plots long term yearly average flow
+ggplot(total_year, aes(hyear.x)) +
+  geom_line(aes(y = flow.x, color = "Gage Yearly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Yearly Average Flow (cfs)")) +
+  labs(title = "Long Term Yearly Average Flow", x = "Time (Years)", y = "Flow (cfs)")
+
+
+
+#Plots long term yearly average flow with reasiduals
+ggplot(total_year, aes(hyear.x, residuals)) +
+  geom_line(aes(y = flow.x, color = "Gage Yearly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Yearly Average Flow (cfs)")) +
+  geom_point(aes(y = residuals, color = "Residuals")) +
+  stat_smooth(method = "lm", col ="red") +
+  labs(title = "Long Term Yearly Average Flow", x = "Time (Years)", y = "Flow (cfs)")
+
+#Plots 5-year monthly average flow from 1990-1995
+ggplot(total_5_month, aes(Date)) +
+  geom_line(aes(y = flow.x, color = "Gage Monthly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Monthly Average Flow (cfs)")) +
+  labs(title = "5-Year Monthly Average Flow from 1990-1995", x = "Time (Years)", y = "Flow (cfs)")
+
+
+#Plots 5-year monthly average flow from 1990-1995 with residuals
+ggplot(total_5_month, aes(Date, residuals)) +
+  geom_line(aes(y = flow.x, color = "Gage Monthly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Monthly Average Flow (cfs)")) +
+  geom_point(aes(y = residuals, color = "Residuals")) +
+  stat_smooth(method = "lm", col ="red") +
+  labs(title = "5-Year Monthly Average Flow from 1990-1995", x = "Time (Years)", y = "Flow (cfs)")
+
+#Plots 5-year yearly average flow from 1990-1995
+ggplot(total_5_year, aes(hyear.x)) +
+  geom_line(aes(y = flow.x, color = "Gage Yearly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Yearly Average Flow (cfs)")) +
+  labs(title = "5-Year Yearly Average Flow from 1990-1995", x = "Time (Years)", y = "Flow (cfs)")
+
+#Plots 5-year yearly average flow from 1990-1995 with residuals
+ggplot(total_5_year, aes(hyear.x, residuals)) +
+  geom_line(aes(y = flow.x, color = "Gage Yearly Average Flow (cfs)")) +
+  geom_line(aes(y = flow.y, color ="Model Yearly Average Flow (cfs)")) +
+  geom_point(aes(y = residuals, color = "Residuals")) +
+  stat_smooth(method = "lm", col ="red") +
+  labs(title = "5-Year Yearly Average Flow from 1990-1995", x = "Time (Years)", y = "Flow (cfs)")
